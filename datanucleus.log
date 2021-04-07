@@ -1,0 +1,1375 @@
+12:17:37,815 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Creación del esquema para clases
+12:17:37,816 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Classpath
+12:17:37,816 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-maven-plugin\5.0.2\datanucleus-maven-plugin-5.0.2.jar
+12:17:37,816 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+12:17:37,816 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+12:17:37,816 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+12:17:37,817 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+12:17:37,817 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+12:17:37,817 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+12:17:37,817 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+12:17:37,817 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+12:17:37,817 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+12:17:37,817 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+12:17:37,817 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+12:17:37,817 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+12:17:37,817 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+12:17:37,818 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+12:17:37,818 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+12:17:37,818 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+12:17:37,818 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes
+12:17:37,818 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-core\5.2.6\datanucleus-core-5.2.6.jar
+12:17:37,818 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-api-jdo\5.2.5\datanucleus-api-jdo-5.2.5.jar
+12:17:37,818 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-rdbms\5.2.6\datanucleus-rdbms-5.2.6.jar
+12:17:37,818 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\javax.jdo\3.2.0-m13\javax.jdo-3.2.0-m13.jar
+12:17:37,818 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+12:17:37,818 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\mysql\mysql-connector-java\8.0.23\mysql-connector-java-8.0.23.jar
+12:17:37,818 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar
+12:17:37,818 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+12:17:37,840 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+12:17:37,879 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/Joel98/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+12:17:37,892 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+12:17:37,898 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.2.6 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-core/5.2.6/datanucleus-core-5.2.6.jar.
+12:17:37,902 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-core/5.2.6/datanucleus-core-5.2.6.jar!/plugin.xml.
+12:17:37,910 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.2.5 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.2.5/datanucleus-api-jdo-5.2.5.jar.
+12:17:37,919 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.2.5/datanucleus-api-jdo-5.2.5.jar!/plugin.xml.
+12:17:37,923 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.2.6 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-rdbms/5.2.6/datanucleus-rdbms-5.2.6.jar.
+12:17:37,928 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-rdbms/5.2.6/datanucleus-rdbms-5.2.6.jar!/plugin.xml.
+12:17:37,948 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validateconstraints desconocida - vamos a ignorarla
+12:17:37,948 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+12:17:37,948 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validatetables desconocida - vamos a ignorarla
+12:17:37,949 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+12:17:38,136 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+12:17:38,136 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+12:17:38,136 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+12:17:38,149 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+12:17:38,389 (main) ERROR [DataNucleus.Datastore.Schema] - La inicialización del base de datos ha fallado.
+Access denied for user 'spq'@'localhost' (using password: YES)
+org.datanucleus.exceptions.NucleusDataStoreException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:513)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:288)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:651)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:140)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:451)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:728)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:299)
+Caused by: java.sql.SQLException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	... 11 more
+Nested Throwables StackTrace:
+java.sql.SQLException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:288)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:651)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:140)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:451)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:728)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:299)
+12:17:38,390 (main) ERROR [DataNucleus.Datastore] - Exception thrown creating StoreManager : Access denied for user 'spq'@'localhost' (using password: YES)
+12:17:38,390 (main) ERROR [DataNucleus.SchemaTool] - Error creating NucleusContext
+Access denied for user 'spq'@'localhost' (using password: YES)
+org.datanucleus.exceptions.NucleusDataStoreException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:513)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:288)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:651)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:140)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:451)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:728)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:299)
+Caused by: java.sql.SQLException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	... 11 more
+Nested Throwables StackTrace:
+java.sql.SQLException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:288)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:651)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:140)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:451)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:728)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:299)
+12:20:47,218 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Creación del esquema para clases
+12:20:47,218 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Classpath
+12:20:47,218 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-maven-plugin\5.0.2\datanucleus-maven-plugin-5.0.2.jar
+12:20:47,219 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+12:20:47,219 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+12:20:47,219 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+12:20:47,219 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+12:20:47,219 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+12:20:47,219 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+12:20:47,219 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+12:20:47,219 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+12:20:47,219 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+12:20:47,219 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+12:20:47,219 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+12:20:47,220 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+12:20:47,220 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+12:20:47,220 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+12:20:47,220 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+12:20:47,220 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+12:20:47,220 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes
+12:20:47,220 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-core\5.2.6\datanucleus-core-5.2.6.jar
+12:20:47,220 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-api-jdo\5.2.5\datanucleus-api-jdo-5.2.5.jar
+12:20:47,220 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-rdbms\5.2.6\datanucleus-rdbms-5.2.6.jar
+12:20:47,220 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\javax.jdo\3.2.0-m13\javax.jdo-3.2.0-m13.jar
+12:20:47,220 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+12:20:47,220 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\mysql\mysql-connector-java\8.0.23\mysql-connector-java-8.0.23.jar
+12:20:47,221 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar
+12:20:47,221 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+12:20:47,237 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+12:20:47,258 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/Joel98/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+12:20:47,269 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+12:20:47,273 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.2.6 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-core/5.2.6/datanucleus-core-5.2.6.jar.
+12:20:47,276 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-core/5.2.6/datanucleus-core-5.2.6.jar!/plugin.xml.
+12:20:47,284 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.2.5 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.2.5/datanucleus-api-jdo-5.2.5.jar.
+12:20:47,295 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.2.5/datanucleus-api-jdo-5.2.5.jar!/plugin.xml.
+12:20:47,302 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.2.6 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-rdbms/5.2.6/datanucleus-rdbms-5.2.6.jar.
+12:20:47,307 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-rdbms/5.2.6/datanucleus-rdbms-5.2.6.jar!/plugin.xml.
+12:20:47,333 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validateconstraints desconocida - vamos a ignorarla
+12:20:47,333 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+12:20:47,334 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validatetables desconocida - vamos a ignorarla
+12:20:47,334 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+12:20:47,494 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+12:20:47,494 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+12:20:47,494 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+12:20:47,509 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+12:20:47,743 (main) ERROR [DataNucleus.Datastore.Schema] - La inicialización del base de datos ha fallado.
+Access denied for user 'spq'@'localhost' (using password: YES)
+org.datanucleus.exceptions.NucleusDataStoreException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:513)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:288)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:651)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:140)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:451)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:728)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:299)
+Caused by: java.sql.SQLException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	... 11 more
+Nested Throwables StackTrace:
+java.sql.SQLException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:288)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:651)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:140)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:451)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:728)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:299)
+12:20:47,744 (main) ERROR [DataNucleus.Datastore] - Exception thrown creating StoreManager : Access denied for user 'spq'@'localhost' (using password: YES)
+12:20:47,744 (main) ERROR [DataNucleus.SchemaTool] - Error creating NucleusContext
+Access denied for user 'spq'@'localhost' (using password: YES)
+org.datanucleus.exceptions.NucleusDataStoreException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:513)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:288)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:651)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:140)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:451)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:728)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:299)
+Caused by: java.sql.SQLException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	... 11 more
+Nested Throwables StackTrace:
+java.sql.SQLException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:288)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:651)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:140)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:451)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:728)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:299)
+12:32:30,933 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Creación del esquema para clases
+12:32:30,933 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Classpath
+12:32:30,934 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-maven-plugin\5.0.2\datanucleus-maven-plugin-5.0.2.jar
+12:32:30,934 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+12:32:30,934 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+12:32:30,934 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+12:32:30,934 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+12:32:30,934 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+12:32:30,934 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+12:32:30,934 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+12:32:30,934 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+12:32:30,934 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+12:32:30,934 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+12:32:30,934 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-core\5.2.6\datanucleus-core-5.2.6.jar
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-api-jdo\5.2.5\datanucleus-api-jdo-5.2.5.jar
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-rdbms\5.2.6\datanucleus-rdbms-5.2.6.jar
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\javax.jdo\3.2.0-m13\javax.jdo-3.2.0-m13.jar
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\mysql\mysql-connector-java\8.0.23\mysql-connector-java-8.0.23.jar
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar
+12:32:30,935 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+12:32:30,952 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+12:32:30,979 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/Joel98/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+12:32:30,986 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+12:32:30,989 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.2.6 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-core/5.2.6/datanucleus-core-5.2.6.jar.
+12:32:30,993 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-core/5.2.6/datanucleus-core-5.2.6.jar!/plugin.xml.
+12:32:30,999 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.2.5 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.2.5/datanucleus-api-jdo-5.2.5.jar.
+12:32:31,008 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.2.5/datanucleus-api-jdo-5.2.5.jar!/plugin.xml.
+12:32:31,012 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.2.6 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-rdbms/5.2.6/datanucleus-rdbms-5.2.6.jar.
+12:32:31,016 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-rdbms/5.2.6/datanucleus-rdbms-5.2.6.jar!/plugin.xml.
+12:32:31,038 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validateconstraints desconocida - vamos a ignorarla
+12:32:31,038 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+12:32:31,039 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validatetables desconocida - vamos a ignorarla
+12:32:31,039 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+12:32:31,197 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+12:32:31,197 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+12:32:31,198 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+12:32:31,211 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+12:32:31,439 (main) ERROR [DataNucleus.Datastore.Schema] - La inicialización del base de datos ha fallado.
+Access denied for user 'spq'@'localhost' (using password: YES)
+org.datanucleus.exceptions.NucleusDataStoreException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:513)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:288)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:651)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:140)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:451)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:728)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:299)
+Caused by: java.sql.SQLException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	... 11 more
+Nested Throwables StackTrace:
+java.sql.SQLException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:288)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:651)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:140)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:451)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:728)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:299)
+12:32:31,440 (main) ERROR [DataNucleus.Datastore] - Exception thrown creating StoreManager : Access denied for user 'spq'@'localhost' (using password: YES)
+12:32:31,441 (main) ERROR [DataNucleus.SchemaTool] - Error creating NucleusContext
+Access denied for user 'spq'@'localhost' (using password: YES)
+org.datanucleus.exceptions.NucleusDataStoreException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:513)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:288)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:651)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:140)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:451)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:728)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:299)
+Caused by: java.sql.SQLException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	... 11 more
+Nested Throwables StackTrace:
+java.sql.SQLException: Access denied for user 'spq'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:123)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:353)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:899)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:354)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:132)
+	at org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl.getConnection(ConnectionFactoryImpl.java:496)
+	at org.datanucleus.store.rdbms.RDBMSStoreManager.<init>(RDBMSStoreManager.java:288)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:651)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.NucleusContextHelper.createStoreManagerForProperties(NucleusContextHelper.java:140)
+	at org.datanucleus.PersistenceNucleusContextImpl.initialise(PersistenceNucleusContextImpl.java:451)
+	at org.datanucleus.store.schema.SchemaTool.getNucleusContextForMode(SchemaTool.java:728)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:299)
+12:38:33,169 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Creación del esquema para clases
+12:38:33,169 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Classpath
+12:38:33,170 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-maven-plugin\5.0.2\datanucleus-maven-plugin-5.0.2.jar
+12:38:33,170 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+12:38:33,170 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+12:38:33,170 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+12:38:33,170 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+12:38:33,170 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+12:38:33,170 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+12:38:33,171 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+12:38:33,171 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+12:38:33,171 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+12:38:33,171 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+12:38:33,171 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+12:38:33,171 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+12:38:33,171 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+12:38:33,171 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+12:38:33,171 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+12:38:33,171 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+12:38:33,171 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes
+12:38:33,171 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-core\5.2.6\datanucleus-core-5.2.6.jar
+12:38:33,171 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-api-jdo\5.2.5\datanucleus-api-jdo-5.2.5.jar
+12:38:33,172 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-rdbms\5.2.6\datanucleus-rdbms-5.2.6.jar
+12:38:33,172 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\javax.jdo\3.2.0-m13\javax.jdo-3.2.0-m13.jar
+12:38:33,172 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+12:38:33,172 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\mysql\mysql-connector-java\8.0.23\mysql-connector-java-8.0.23.jar
+12:38:33,172 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar
+12:38:33,172 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+12:38:33,188 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+12:38:33,212 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/Joel98/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+12:38:33,219 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+12:38:33,222 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.2.6 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-core/5.2.6/datanucleus-core-5.2.6.jar.
+12:38:33,226 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-core/5.2.6/datanucleus-core-5.2.6.jar!/plugin.xml.
+12:38:33,233 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.2.5 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.2.5/datanucleus-api-jdo-5.2.5.jar.
+12:38:33,244 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.2.5/datanucleus-api-jdo-5.2.5.jar!/plugin.xml.
+12:38:33,251 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.2.6 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-rdbms/5.2.6/datanucleus-rdbms-5.2.6.jar.
+12:38:33,257 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-rdbms/5.2.6/datanucleus-rdbms-5.2.6.jar!/plugin.xml.
+12:38:33,275 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validateconstraints desconocida - vamos a ignorarla
+12:38:33,275 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+12:38:33,276 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validatetables desconocida - vamos a ignorarla
+12:38:33,276 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+12:38:33,426 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+12:38:33,426 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+12:38:33,426 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+12:38:33,438 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+12:38:33,689 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@35fc6dc4 [conn=null, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx"
+12:38:33,738 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Integer, jdbc-type=NUMERIC
+12:38:33,738 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.math.BigDecimal, jdbc-type=NUMERIC
+12:38:33,738 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Long, jdbc-type=NUMERIC
+12:38:33,738 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.math.BigInteger, jdbc-type=NUMERIC
+12:38:33,738 (main) WARN  [DataNucleus.Datastore] - Default type for java type of java.math.BigInteger was previously jdbc-type=NUMERIC but this is not provided by the JDBC driver! Please report this to the DataNucleus developers
+12:38:33,738 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java org.datanucleus.identity.DatastoreId, jdbc-type=NUMERIC
+12:38:33,738 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Float, jdbc-type=REAL
+12:38:33,739 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.String, jdbc-type=NVARCHAR
+12:38:33,739 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.String, jdbc-type=NCHAR
+12:38:33,739 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "[B" con jdbc-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY], sql-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+12:38:33,739 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.File" con jdbc-types=[LONGVARBINARY], sql-types=[LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+12:38:33,739 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.Serializable" con jdbc-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY], sql-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+12:38:33,739 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Boolean" con jdbc-types=[SMALLINT, CHAR, BIT, BOOLEAN, TINYINT], sql-types=[SMALLINT, CHAR, BIT, BOOLEAN, TINYINT] y defecto (jdbc-type=BIT, sql-type=BIT)
+12:38:33,739 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Byte" con jdbc-types=[SMALLINT, TINYINT], sql-types=[SMALLINT, TINYINT] y defecto (jdbc-type=TINYINT, sql-type=TINYINT)
+12:38:33,739 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Character" con jdbc-types=[CHAR, INTEGER], sql-types=[CHAR, INTEGER] y defecto (jdbc-type=CHAR, sql-type=CHAR)
+12:38:33,739 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Double" con jdbc-types=[DECIMAL, DOUBLE], sql-types=[DECIMAL, DOUBLE] y defecto (jdbc-type=DOUBLE, sql-type=DOUBLE)
+12:38:33,740 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Float" con jdbc-types=[FLOAT, DECIMAL, DOUBLE], sql-types=[FLOAT, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+12:38:33,740 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Integer" con jdbc-types=[SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[SMALLINT, BIGINT, TINYINT, INTEGER] y defecto (jdbc-type=INTEGER, sql-type=INTEGER)
+12:38:33,740 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Long" con jdbc-types=[SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[SMALLINT, BIGINT, INT, TINYINT] y defecto (jdbc-type=BIGINT, sql-type=BIGINT)
+12:38:33,740 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Short" con jdbc-types=[SMALLINT, TINYINT, INTEGER], sql-types=[SMALLINT, TINYINT, INTEGER] y defecto (jdbc-type=SMALLINT, sql-type=SMALLINT)
+12:38:33,740 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.String" con jdbc-types=[BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT], sql-types=[BLOB, LONGVARCHAR, CLOB, LONGTEXT, CHAR, BIGINT, TEXT, MEDIUMTEXT, MEDIUMBLOB, VARCHAR, LONGBLOB] y defecto (jdbc-type=VARCHAR, sql-type=VARCHAR)
+12:38:33,740 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigDecimal" con jdbc-types=[DECIMAL], sql-types=[DECIMAL] y defecto (jdbc-type=DECIMAL, sql-type=DECIMAL)
+12:38:33,740 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigInteger" con jdbc-types=[<none>], sql-types=[<none>] y defecto (jdbc-type=, sql-type=)
+12:38:33,740 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT] y defecto (jdbc-type=DATE, sql-type=DATE)
+12:38:33,740 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Time" con jdbc-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIME, sql-type=TIME)
+12:38:33,740 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Timestamp" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+12:38:33,740 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.util.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+12:38:33,741 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "org.datanucleus.identity.DatastoreId" con jdbc-types=[VARCHAR, CHAR, BIGINT, INTEGER], sql-types=[VARCHAR, CHAR, BIGINT, INTEGER] y defecto (jdbc-type=BIGINT, sql-type=BIGINT)
+12:38:33,747 (main) DEBUG [DataNucleus.Datastore.Schema] - Vamos a añadir/drop una tabla para determinar el catalogo/esquema para el datasource. Pon "datanucleus.mapping.Catalog"/"datanucleus.mapping.Schema" para evitarlo
+12:38:33,781 (main) DEBUG [DataNucleus.Datastore.Schema] - CREATE TABLE `DELETEME1617791913752`
+(
+    `UNUSED` INTEGER NOT NULL
+) ENGINE=INNODB
+12:38:33,793 (main) DEBUG [DataNucleus.Datastore.Schema] - SQL Tiempo de cumplir = 12 ms
+12:38:33,813 (main) DEBUG [DataNucleus.Datastore.Schema] - No era posible determinar el nombre del esquema por este DataStore
+12:38:33,813 (main) DEBUG [DataNucleus.Datastore.Schema] - DROP TABLE `DELETEME1617791913752` CASCADE
+12:38:33,818 (main) DEBUG [DataNucleus.Datastore.Schema] - SQL Tiempo de cumplir = 5 ms
+12:38:33,818 (main) DEBUG [DataNucleus.Datastore] - ======================= Datastore =========================
+12:38:33,818 (main) DEBUG [DataNucleus.Datastore] - StoreManager : "rdbms" (org.datanucleus.store.rdbms.RDBMSStoreManager)
+12:38:33,818 (main) DEBUG [DataNucleus.Datastore] - Datastore : read-write
+12:38:33,818 (main) DEBUG [DataNucleus.Datastore] - Schema Control : AutoCreate(Tables,Columns,Constraints), Validate(None)
+12:38:33,818 (main) DEBUG [DataNucleus.Datastore] - Schema : NamingFactory=datanucleus2 identifierCase=null
+12:38:33,818 (main) DEBUG [DataNucleus.Datastore] - Query Languages : JDOQL, JPQL, STOREDPROC, SQL
+12:38:33,818 (main) DEBUG [DataNucleus.Datastore] - Queries : Timeout=0
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - Datastore Adapter : org.datanucleus.store.rdbms.adapter.MySQLAdapter
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - Datastore : name="MySQL" version="5.5.5-10.4.18-MariaDB"
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - Datastore Driver : name="MySQL Connector/J" version="mysql-connector-java-8.0.23 (Revision: 18bbd5e68195d0da083cbd5bd0d05d76320df7cd)"
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - Primary Connection Factory : URL[jdbc:mysql://localhost/cine?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC]
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - Secondary Connection Factory : URL[jdbc:mysql://localhost/cine?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC]
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - Datastore Identifiers : factory="datanucleus2" case="UPPERCASE" catalog=cine
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Cases : lowercase "lowercase" "UPPERCASE" 
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Lengths (max) : Table=64 Column=64 Constraint=64 Index=64 Delimiter=`
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - Support for Identifiers in DDL : catalog=true schema=false
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - Datastore : rdbmsConstraintCreateMode=DataNucleus, initialiseColumnInfo=ALL, checkTableViewExistence
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - Support Statement Batching : yes (max-batch-size=50)
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - Queries : Results direction=forward, type=forward-only, concurrency=read-only
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - Java-Types : string-default-length=255
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - JDBC-Types : VARCHAR, LONGVARCHAR, BOOLEAN, BINARY, VARBINARY, LONGVARBINARY, BIGINT, TINYINT, BIT, CHAR, DECIMAL, INTEGER, CLOB, SMALLINT, BLOB, FLOAT, DOUBLE, DATE, TIME, TIMESTAMP
+12:38:33,819 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+12:38:33,820 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@35fc6dc4 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@7f552bd3, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+12:38:33,820 (main) DEBUG [DataNucleus.Datastore] - StoreManager now created
+12:38:33,830 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+12:38:33,875 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+12:38:33,876 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigDecimal; to : java.nio.ByteBuffer
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigInteger; to : java.nio.ByteBuffer
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.image.BufferedImage to : byte[],java.nio.ByteBuffer
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,byte[],java.nio.ByteBuffer
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Character,java.lang.Integer
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+12:38:33,913 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.Double,java.lang.String
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.Long,java.lang.String,java.util.Date
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.Long,java.lang.String,java.util.Date
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.Long,java.lang.String,java.util.Date
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Duration to : java.lang.Double,java.lang.String,java.lang.Long
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Instant to : java.lang.String,java.lang.Long,java.sql.Timestamp,java.util.Date
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDate to : java.lang.String,java.util.Date,java.sql.Date
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDateTime to : java.lang.String,java.sql.Timestamp,java.util.Date
+12:38:33,914 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalTime to : java.lang.String,java.lang.Long,java.util.Date,java.sql.Time
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.MonthDay to : java.lang.String,java.util.Date,java.sql.Date,int[]
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetDateTime to : java.lang.String,java.sql.Timestamp,java.util.Date
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetTime to : java.lang.String,java.lang.Long,java.sql.Time
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Period to : java.lang.String,int[]
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Year to : java.lang.String,java.lang.Integer
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.YearMonth to : java.lang.String,java.util.Date,java.sql.Date,int[]
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZonedDateTime to : java.lang.String,java.sql.Timestamp
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneId to : java.lang.String
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneOffset to : java.lang.String
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,java.sql.Timestamp,java.util.Date,[Ljava.lang.Object;
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.Long,java.lang.String
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+12:38:33,915 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+12:38:33,915 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery) mapping-name=mysql, JDO-listener=true
+12:38:33,915 (main) DEBUG [DataNucleus.MetaData] - Registering listener for metadata initialisation
+12:38:33,918 (main) DEBUG [DataNucleus.Persistence] - Started pool of ExecutionContext (maxPool=20, reaperThread=false)
+12:38:33,923 (main) DEBUG [DataNucleus.Persistence] - ================= NucleusContext ===============
+12:38:33,923 (main) DEBUG [DataNucleus.Persistence] - DataNucleus Context : Versión: "5.2.6" con JRE "1.8.0_281" en "Windows 10"
+12:38:33,923 (main) DEBUG [DataNucleus.Persistence] - Persistence API : JDO
+12:38:33,923 (main) DEBUG [DataNucleus.Persistence] - Plugin Registry : org.datanucleus.plugin.NonManagedPluginRegistry
+12:38:33,923 (main) DEBUG [DataNucleus.Persistence] - ClassLoading : default
+12:38:33,923 (main) DEBUG [DataNucleus.Persistence] - Persistence : pm-singlethreaded, nontransactional-read, nontransactional-write, reachability-at-commit, copy-on-attach, managed-relations(checked), deletion-policy=JDO2, serverTimeZone=Europe/Paris
+12:38:33,923 (main) DEBUG [DataNucleus.Persistence] - Transactions : type=RESOURCE_LOCAL, mode=datastore, isolation=read-committed
+12:38:33,923 (main) DEBUG [DataNucleus.Persistence] - ValueGeneration : txn-isolation=read-committed connection=New
+12:38:33,923 (main) DEBUG [DataNucleus.Persistence] - Cache : Level1 (soft), Level2 (soft, mode=UNSPECIFIED), QueryResults (soft), Collections/Maps 
+12:38:33,923 (main) DEBUG [DataNucleus.Persistence] - ================================================
+12:38:33,923 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Propiedades para persistencia
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.autostartmechanism=None
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.connectiondrivername=com.mysql.cj.jdbc.Driver
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.connectionurl=jdbc:mysql://localhost/cine?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.connectionusername=spq
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.mapping=mysql
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.metadata.validate=false
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.rdbms.checkexisttablesorviews=true
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.readonlydatastore=false
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.schema.autocreatecolumns=true
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.schema.autocreateconstraints=true
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.schema.autocreatetables=true
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.validateconstraints=false
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.validatetables=false
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Ficheros
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\Billboard.class
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\Cinema.class
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\Film.class
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\Inventory.class
+12:38:33,924 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\Product.class
+12:38:33,925 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\Ticket.class
+12:38:33,925 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\User.class
+12:38:33,925 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\util\PreparedData.class
+12:38:33,925 (main) DEBUG [DataNucleus.SchemaTool] - Leyendo 8 ficheros (metadata/class) ...
+12:38:33,931 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata de los archivos de metadata "[]" ...
+12:38:33,931 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+12:38:33,931 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata de las clases "[es.deusto.spq.Billboard, es.deusto.spq.util.PreparedData, es.deusto.spq.Inventory, es.deusto.spq.Cinema, es.deusto.spq.Film, es.deusto.spq.User, es.deusto.spq.Ticket, es.deusto.spq.Product]" ...
+12:38:33,953 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Billboard" tiene anotaciones de JDO y vamos a usarlas.
+12:38:33,954 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /META-INF/package.jdo
+12:38:33,954 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /WEB-INF/package.jdo
+12:38:33,955 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /package.jdo
+12:38:33,955 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /es/package.jdo
+12:38:33,955 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /es/deusto/package.jdo
+12:38:33,955 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /es/deusto/spq/package.jdo
+12:38:33,955 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /es/deusto/spq/util/package.jdo
+12:38:33,955 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /es/deusto/spq/util/PreparedData.jdo
+12:38:33,955 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData"
+12:38:33,955 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.spq.util.PreparedData" no tener Meta-Data
+12:38:33,955 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.spq.util.PreparedData" no tiene MetaData o annotaciones.
+12:38:33,956 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Inventory" tiene anotaciones de JDO y vamos a usarlas.
+12:38:33,961 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Cinema" tiene anotaciones de JDO y vamos a usarlas.
+12:38:33,967 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Film" tiene anotaciones de JDO y vamos a usarlas.
+12:38:33,967 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" tiene anotaciones de JDO y vamos a usarlas.
+12:38:33,968 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" tiene anotaciones de JDO y vamos a usarlas.
+12:38:33,969 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Product" tiene anotaciones de JDO y vamos a usarlas.
+12:38:33,970 (main) DEBUG [DataNucleus.MetaData] - Populación del MetaData ...
+12:38:33,970 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Billboard" : Populando Meta-Data
+12:38:33,971 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /META-INF/package-mysql.orm
+12:38:33,971 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /WEB-INF/package-mysql.orm
+12:38:33,972 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /package-mysql.orm
+12:38:33,972 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /es/package-mysql.orm
+12:38:33,972 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /es/deusto/package-mysql.orm
+12:38:33,972 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /es/deusto/spq/package-mysql.orm
+12:38:33,972 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /es/deusto/spq/Billboard-mysql.orm
+12:38:33,972 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard"
+12:38:33,972 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Billboard" campo "films" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,976 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Inventory" : Populando Meta-Data
+12:38:33,976 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /META-INF/package-mysql.orm
+12:38:33,976 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /WEB-INF/package-mysql.orm
+12:38:33,976 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /package-mysql.orm
+12:38:33,976 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /es/package-mysql.orm
+12:38:33,977 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /es/deusto/package-mysql.orm
+12:38:33,977 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /es/deusto/spq/package-mysql.orm
+12:38:33,977 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /es/deusto/spq/Inventory-mysql.orm
+12:38:33,977 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory"
+12:38:33,977 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Inventory" campo "products" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,978 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Cinema" : Populando Meta-Data
+12:38:33,978 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /META-INF/package-mysql.orm
+12:38:33,978 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /WEB-INF/package-mysql.orm
+12:38:33,978 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /package-mysql.orm
+12:38:33,978 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /es/package-mysql.orm
+12:38:33,979 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /es/deusto/package-mysql.orm
+12:38:33,979 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /es/deusto/spq/package-mysql.orm
+12:38:33,979 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /es/deusto/spq/Cinema-mysql.orm
+12:38:33,979 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema"
+12:38:33,979 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Cinema" campo "name" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,979 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Cinema" campo "city" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,979 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Cinema" campo "address" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,979 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Cinema" campo "phoneNumber" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,979 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Film" : Populando Meta-Data
+12:38:33,979 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /META-INF/package-mysql.orm
+12:38:33,979 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /WEB-INF/package-mysql.orm
+12:38:33,980 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /package-mysql.orm
+12:38:33,980 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /es/package-mysql.orm
+12:38:33,980 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /es/deusto/package-mysql.orm
+12:38:33,980 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /es/deusto/spq/package-mysql.orm
+12:38:33,980 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /es/deusto/spq/Film-mysql.orm
+12:38:33,980 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.Film"
+12:38:33,980 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Film" campo "director" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,980 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Film" campo "name" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,980 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Film" campo "description" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,980 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Film" campo "ageRestriction" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,981 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" : Populando Meta-Data
+12:38:33,981 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /META-INF/package-mysql.orm
+12:38:33,981 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /WEB-INF/package-mysql.orm
+12:38:33,981 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /package-mysql.orm
+12:38:33,981 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /es/package-mysql.orm
+12:38:33,981 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /es/deusto/package-mysql.orm
+12:38:33,981 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /es/deusto/spq/package-mysql.orm
+12:38:33,982 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /es/deusto/spq/User-mysql.orm
+12:38:33,982 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.User"
+12:38:33,982 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" campo "name" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,982 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" campo "nickname" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,982 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" campo "email" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,982 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" campo "password" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,982 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" campo "phoneNumber" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,982 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" : Populando Meta-Data
+12:38:33,982 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /META-INF/package-mysql.orm
+12:38:33,982 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /WEB-INF/package-mysql.orm
+12:38:33,982 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /package-mysql.orm
+12:38:33,983 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /es/package-mysql.orm
+12:38:33,983 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /es/deusto/package-mysql.orm
+12:38:33,983 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /es/deusto/spq/package-mysql.orm
+12:38:33,983 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /es/deusto/spq/Ticket-mysql.orm
+12:38:33,983 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket"
+12:38:33,983 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "cinema" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,983 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "film" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,984 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "room" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,984 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "row" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,984 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "seat" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,984 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "price" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,984 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "session" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,984 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Product" : Populando Meta-Data
+12:38:33,985 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /META-INF/package-mysql.orm
+12:38:33,985 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /WEB-INF/package-mysql.orm
+12:38:33,985 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /package-mysql.orm
+12:38:33,985 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /es/package-mysql.orm
+12:38:33,985 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /es/deusto/package-mysql.orm
+12:38:33,986 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /es/deusto/spq/package-mysql.orm
+12:38:33,986 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /es/deusto/spq/Product-mysql.orm
+12:38:33,986 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.Product"
+12:38:33,986 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Product" campo "name" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,986 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Product" campo "description" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,986 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Product" campo "price" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:38:33,986 (main) DEBUG [DataNucleus.MetaData] - Inicialisación del MetaData ...
+12:38:33,987 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.Billboard pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Billboard pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:38:33,987 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.Inventory pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Inventory pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:38:33,987 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.Cinema pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Cinema pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:38:33,987 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.Film pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Film pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:38:33,987 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.User pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.User pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:38:33,987 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.Ticket pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Ticket pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:38:33,987 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.Product pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Product pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:38:33,988 (main) ERROR [DataNucleus.MetaData] - Habia un error leyendo los ficheros. Por favor lee el LOG para obtener mas información. Lo siguiente puede ayudar : Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+org.datanucleus.exceptions.NucleusUserException: Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1378)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Caused by: org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Ticket pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	... 3 more
+Nested Throwables StackTrace:
+Encontro el Meta-Data de la clase es.deusto.spq.Ticket pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Ticket pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Encontro el Meta-Data de la clase es.deusto.spq.Inventory pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Inventory pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Encontro el Meta-Data de la clase es.deusto.spq.Cinema pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Cinema pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Encontro el Meta-Data de la clase es.deusto.spq.Product pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Product pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Encontro el Meta-Data de la clase es.deusto.spq.Film pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Film pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Encontro el Meta-Data de la clase es.deusto.spq.User pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.User pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Encontro el Meta-Data de la clase es.deusto.spq.Billboard pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Billboard pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+12:39:24,243 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Eliminación del esquema para clases
+12:39:24,243 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Classpath
+12:39:24,243 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-maven-plugin\5.0.2\datanucleus-maven-plugin-5.0.2.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+12:39:24,244 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+12:39:24,245 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+12:39:24,245 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+12:39:24,245 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes
+12:39:24,245 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-core\5.2.6\datanucleus-core-5.2.6.jar
+12:39:24,245 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-api-jdo\5.2.5\datanucleus-api-jdo-5.2.5.jar
+12:39:24,245 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\datanucleus-rdbms\5.2.6\datanucleus-rdbms-5.2.6.jar
+12:39:24,245 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\org\datanucleus\javax.jdo\3.2.0-m13\javax.jdo-3.2.0-m13.jar
+12:39:24,245 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+12:39:24,245 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\mysql\mysql-connector-java\8.0.23\mysql-connector-java-8.0.23.jar
+12:39:24,245 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar
+12:39:24,245 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+12:39:24,264 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+12:39:24,285 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/Joel98/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+12:39:24,294 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+12:39:24,297 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.2.6 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-core/5.2.6/datanucleus-core-5.2.6.jar.
+12:39:24,301 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-core/5.2.6/datanucleus-core-5.2.6.jar!/plugin.xml.
+12:39:24,306 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.2.5 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.2.5/datanucleus-api-jdo-5.2.5.jar.
+12:39:24,315 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.2.5/datanucleus-api-jdo-5.2.5.jar!/plugin.xml.
+12:39:24,318 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.2.6 at URL file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-rdbms/5.2.6/datanucleus-rdbms-5.2.6.jar.
+12:39:24,323 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/Joel98/.m2/repository/org/datanucleus/datanucleus-rdbms/5.2.6/datanucleus-rdbms-5.2.6.jar!/plugin.xml.
+12:39:24,345 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validateconstraints desconocida - vamos a ignorarla
+12:39:24,345 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+12:39:24,346 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validatetables desconocida - vamos a ignorarla
+12:39:24,346 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+12:39:24,498 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+12:39:24,498 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+12:39:24,498 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+12:39:24,512 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+12:39:24,739 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@35fc6dc4 [conn=null, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx"
+12:39:24,781 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Integer, jdbc-type=NUMERIC
+12:39:24,781 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.math.BigDecimal, jdbc-type=NUMERIC
+12:39:24,781 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Long, jdbc-type=NUMERIC
+12:39:24,781 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.math.BigInteger, jdbc-type=NUMERIC
+12:39:24,782 (main) WARN  [DataNucleus.Datastore] - Default type for java type of java.math.BigInteger was previously jdbc-type=NUMERIC but this is not provided by the JDBC driver! Please report this to the DataNucleus developers
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java org.datanucleus.identity.DatastoreId, jdbc-type=NUMERIC
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Float, jdbc-type=REAL
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.String, jdbc-type=NVARCHAR
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.String, jdbc-type=NCHAR
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "[B" con jdbc-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY], sql-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.File" con jdbc-types=[LONGVARBINARY], sql-types=[LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.Serializable" con jdbc-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY], sql-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Boolean" con jdbc-types=[SMALLINT, CHAR, BIT, BOOLEAN, TINYINT], sql-types=[SMALLINT, CHAR, BIT, BOOLEAN, TINYINT] y defecto (jdbc-type=BIT, sql-type=BIT)
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Byte" con jdbc-types=[SMALLINT, TINYINT], sql-types=[SMALLINT, TINYINT] y defecto (jdbc-type=TINYINT, sql-type=TINYINT)
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Character" con jdbc-types=[CHAR, INTEGER], sql-types=[CHAR, INTEGER] y defecto (jdbc-type=CHAR, sql-type=CHAR)
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Double" con jdbc-types=[DECIMAL, DOUBLE], sql-types=[DECIMAL, DOUBLE] y defecto (jdbc-type=DOUBLE, sql-type=DOUBLE)
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Float" con jdbc-types=[FLOAT, DECIMAL, DOUBLE], sql-types=[FLOAT, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Integer" con jdbc-types=[SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[SMALLINT, BIGINT, TINYINT, INTEGER] y defecto (jdbc-type=INTEGER, sql-type=INTEGER)
+12:39:24,782 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Long" con jdbc-types=[SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[SMALLINT, BIGINT, INT, TINYINT] y defecto (jdbc-type=BIGINT, sql-type=BIGINT)
+12:39:24,783 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Short" con jdbc-types=[SMALLINT, TINYINT, INTEGER], sql-types=[SMALLINT, TINYINT, INTEGER] y defecto (jdbc-type=SMALLINT, sql-type=SMALLINT)
+12:39:24,783 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.String" con jdbc-types=[BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT], sql-types=[BLOB, LONGVARCHAR, CLOB, LONGTEXT, CHAR, BIGINT, TEXT, MEDIUMTEXT, MEDIUMBLOB, VARCHAR, LONGBLOB] y defecto (jdbc-type=VARCHAR, sql-type=VARCHAR)
+12:39:24,783 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigDecimal" con jdbc-types=[DECIMAL], sql-types=[DECIMAL] y defecto (jdbc-type=DECIMAL, sql-type=DECIMAL)
+12:39:24,783 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigInteger" con jdbc-types=[<none>], sql-types=[<none>] y defecto (jdbc-type=, sql-type=)
+12:39:24,783 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT] y defecto (jdbc-type=DATE, sql-type=DATE)
+12:39:24,783 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Time" con jdbc-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIME, sql-type=TIME)
+12:39:24,783 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Timestamp" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+12:39:24,783 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.util.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+12:39:24,783 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "org.datanucleus.identity.DatastoreId" con jdbc-types=[VARCHAR, CHAR, BIGINT, INTEGER], sql-types=[VARCHAR, CHAR, BIGINT, INTEGER] y defecto (jdbc-type=BIGINT, sql-type=BIGINT)
+12:39:24,788 (main) DEBUG [DataNucleus.Datastore.Schema] - Vamos a añadir/drop una tabla para determinar el catalogo/esquema para el datasource. Pon "datanucleus.mapping.Catalog"/"datanucleus.mapping.Schema" para evitarlo
+12:39:24,814 (main) DEBUG [DataNucleus.Datastore.Schema] - CREATE TABLE `DELETEME1617791964793`
+(
+    `UNUSED` INTEGER NOT NULL
+) ENGINE=INNODB
+12:39:24,830 (main) DEBUG [DataNucleus.Datastore.Schema] - SQL Tiempo de cumplir = 16 ms
+12:39:24,847 (main) DEBUG [DataNucleus.Datastore.Schema] - No era posible determinar el nombre del esquema por este DataStore
+12:39:24,848 (main) DEBUG [DataNucleus.Datastore.Schema] - DROP TABLE `DELETEME1617791964793` CASCADE
+12:39:24,853 (main) DEBUG [DataNucleus.Datastore.Schema] - SQL Tiempo de cumplir = 5 ms
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - ======================= Datastore =========================
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - StoreManager : "rdbms" (org.datanucleus.store.rdbms.RDBMSStoreManager)
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - Datastore : read-write
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - Schema Control : AutoCreate(Tables,Columns,Constraints), Validate(None)
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - Schema : NamingFactory=datanucleus2 identifierCase=null
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - Query Languages : JDOQL, JPQL, STOREDPROC, SQL
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - Queries : Timeout=0
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - Datastore Adapter : org.datanucleus.store.rdbms.adapter.MySQLAdapter
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - Datastore : name="MySQL" version="5.5.5-10.4.18-MariaDB"
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - Datastore Driver : name="MySQL Connector/J" version="mysql-connector-java-8.0.23 (Revision: 18bbd5e68195d0da083cbd5bd0d05d76320df7cd)"
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - Primary Connection Factory : URL[jdbc:mysql://localhost/cine?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC]
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - Secondary Connection Factory : URL[jdbc:mysql://localhost/cine?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC]
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - Datastore Identifiers : factory="datanucleus2" case="UPPERCASE" catalog=cine
+12:39:24,854 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Cases : lowercase "lowercase" "UPPERCASE" 
+12:39:24,855 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Lengths (max) : Table=64 Column=64 Constraint=64 Index=64 Delimiter=`
+12:39:24,855 (main) DEBUG [DataNucleus.Datastore] - Support for Identifiers in DDL : catalog=true schema=false
+12:39:24,855 (main) DEBUG [DataNucleus.Datastore] - Datastore : rdbmsConstraintCreateMode=DataNucleus, initialiseColumnInfo=ALL, checkTableViewExistence
+12:39:24,855 (main) DEBUG [DataNucleus.Datastore] - Support Statement Batching : yes (max-batch-size=50)
+12:39:24,855 (main) DEBUG [DataNucleus.Datastore] - Queries : Results direction=forward, type=forward-only, concurrency=read-only
+12:39:24,855 (main) DEBUG [DataNucleus.Datastore] - Java-Types : string-default-length=255
+12:39:24,855 (main) DEBUG [DataNucleus.Datastore] - JDBC-Types : VARCHAR, LONGVARCHAR, BOOLEAN, BINARY, VARBINARY, LONGVARBINARY, BIGINT, TINYINT, BIT, CHAR, DECIMAL, INTEGER, CLOB, SMALLINT, BLOB, FLOAT, DOUBLE, DATE, TIME, TIMESTAMP
+12:39:24,855 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+12:39:24,855 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@35fc6dc4 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@7f552bd3, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+12:39:24,856 (main) DEBUG [DataNucleus.Datastore] - StoreManager now created
+12:39:24,867 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+12:39:24,904 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+12:39:24,904 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigDecimal; to : java.nio.ByteBuffer
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigInteger; to : java.nio.ByteBuffer
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.image.BufferedImage to : byte[],java.nio.ByteBuffer
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,byte[],java.nio.ByteBuffer
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Character,java.lang.Integer
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+12:39:24,935 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.Double,java.lang.String
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.Long,java.lang.String,java.util.Date
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.Long,java.lang.String,java.util.Date
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.Long,java.lang.String,java.util.Date
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Duration to : java.lang.Double,java.lang.String,java.lang.Long
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Instant to : java.lang.String,java.lang.Long,java.sql.Timestamp,java.util.Date
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDate to : java.lang.String,java.util.Date,java.sql.Date
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDateTime to : java.lang.String,java.sql.Timestamp,java.util.Date
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalTime to : java.lang.String,java.lang.Long,java.util.Date,java.sql.Time
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.MonthDay to : java.lang.String,java.util.Date,java.sql.Date,int[]
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetDateTime to : java.lang.String,java.sql.Timestamp,java.util.Date
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetTime to : java.lang.String,java.lang.Long,java.sql.Time
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Period to : java.lang.String,int[]
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Year to : java.lang.String,java.lang.Integer
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.YearMonth to : java.lang.String,java.util.Date,java.sql.Date,int[]
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZonedDateTime to : java.lang.String,java.sql.Timestamp
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneId to : java.lang.String
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneOffset to : java.lang.String
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,java.sql.Timestamp,java.util.Date,[Ljava.lang.Object;
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.Long,java.lang.String
+12:39:24,936 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+12:39:24,937 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+12:39:24,937 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+12:39:24,937 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery) mapping-name=mysql, JDO-listener=true
+12:39:24,937 (main) DEBUG [DataNucleus.MetaData] - Registering listener for metadata initialisation
+12:39:24,939 (main) DEBUG [DataNucleus.Persistence] - Started pool of ExecutionContext (maxPool=20, reaperThread=false)
+12:39:24,942 (main) DEBUG [DataNucleus.Persistence] - ================= NucleusContext ===============
+12:39:24,942 (main) DEBUG [DataNucleus.Persistence] - DataNucleus Context : Versión: "5.2.6" con JRE "1.8.0_281" en "Windows 10"
+12:39:24,942 (main) DEBUG [DataNucleus.Persistence] - Persistence API : JDO
+12:39:24,942 (main) DEBUG [DataNucleus.Persistence] - Plugin Registry : org.datanucleus.plugin.NonManagedPluginRegistry
+12:39:24,942 (main) DEBUG [DataNucleus.Persistence] - ClassLoading : default
+12:39:24,942 (main) DEBUG [DataNucleus.Persistence] - Persistence : pm-singlethreaded, nontransactional-read, nontransactional-write, reachability-at-commit, copy-on-attach, managed-relations(checked), deletion-policy=JDO2, serverTimeZone=Europe/Paris
+12:39:24,942 (main) DEBUG [DataNucleus.Persistence] - Transactions : type=RESOURCE_LOCAL, mode=datastore, isolation=read-committed
+12:39:24,943 (main) DEBUG [DataNucleus.Persistence] - ValueGeneration : txn-isolation=read-committed connection=New
+12:39:24,943 (main) DEBUG [DataNucleus.Persistence] - Cache : Level1 (soft), Level2 (soft, mode=UNSPECIFIED), QueryResults (soft), Collections/Maps 
+12:39:24,943 (main) DEBUG [DataNucleus.Persistence] - ================================================
+12:39:24,943 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Propiedades para persistencia
+12:39:24,943 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.autostartmechanism=None
+12:39:24,943 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.connectiondrivername=com.mysql.cj.jdbc.Driver
+12:39:24,943 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.connectionurl=jdbc:mysql://localhost/cine?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+12:39:24,943 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.connectionusername=spq
+12:39:24,943 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.mapping=mysql
+12:39:24,943 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.metadata.validate=false
+12:39:24,943 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.readonlydatastore=false
+12:39:24,943 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.schema.autocreateall=true
+12:39:24,943 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.validateconstraints=false
+12:39:24,944 (main) INFO  [DataNucleus.SchemaTool] - >>  datanucleus.validatetables=false
+12:39:24,944 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool : Ficheros
+12:39:24,944 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\Billboard.class
+12:39:24,944 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\Cinema.class
+12:39:24,944 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\Film.class
+12:39:24,944 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\Inventory.class
+12:39:24,944 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\Product.class
+12:39:24,944 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\Ticket.class
+12:39:24,944 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\User.class
+12:39:24,944 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Joel98\git\UDCIne\target\classes\es\deusto\spq\util\PreparedData.class
+12:39:24,944 (main) DEBUG [DataNucleus.SchemaTool] - Leyendo 8 ficheros (metadata/class) ...
+12:39:24,950 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata de los archivos de metadata "[]" ...
+12:39:24,950 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+12:39:24,951 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata de las clases "[es.deusto.spq.Billboard, es.deusto.spq.util.PreparedData, es.deusto.spq.Inventory, es.deusto.spq.Cinema, es.deusto.spq.Film, es.deusto.spq.User, es.deusto.spq.Ticket, es.deusto.spq.Product]" ...
+12:39:24,972 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Billboard" tiene anotaciones de JDO y vamos a usarlas.
+12:39:24,972 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /META-INF/package.jdo
+12:39:24,973 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /WEB-INF/package.jdo
+12:39:24,973 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /package.jdo
+12:39:24,973 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /es/package.jdo
+12:39:24,973 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /es/deusto/package.jdo
+12:39:24,973 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /es/deusto/spq/package.jdo
+12:39:24,973 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /es/deusto/spq/util/package.jdo
+12:39:24,973 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData" en /es/deusto/spq/util/PreparedData.jdo
+12:39:24,973 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.spq.util.PreparedData"
+12:39:24,973 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.spq.util.PreparedData" no tener Meta-Data
+12:39:24,974 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.spq.util.PreparedData" no tiene MetaData o annotaciones.
+12:39:24,974 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Inventory" tiene anotaciones de JDO y vamos a usarlas.
+12:39:24,978 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Cinema" tiene anotaciones de JDO y vamos a usarlas.
+12:39:24,984 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Film" tiene anotaciones de JDO y vamos a usarlas.
+12:39:24,985 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" tiene anotaciones de JDO y vamos a usarlas.
+12:39:24,986 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" tiene anotaciones de JDO y vamos a usarlas.
+12:39:24,987 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Product" tiene anotaciones de JDO y vamos a usarlas.
+12:39:24,987 (main) DEBUG [DataNucleus.MetaData] - Populación del MetaData ...
+12:39:24,988 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Billboard" : Populando Meta-Data
+12:39:24,988 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /META-INF/package-mysql.orm
+12:39:24,988 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /WEB-INF/package-mysql.orm
+12:39:24,988 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /package-mysql.orm
+12:39:24,989 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /es/package-mysql.orm
+12:39:24,989 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /es/deusto/package-mysql.orm
+12:39:24,989 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /es/deusto/spq/package-mysql.orm
+12:39:24,989 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard" en /es/deusto/spq/Billboard-mysql.orm
+12:39:24,989 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.Billboard"
+12:39:24,989 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Billboard" campo "films" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:24,994 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Inventory" : Populando Meta-Data
+12:39:24,994 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /META-INF/package-mysql.orm
+12:39:24,994 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /WEB-INF/package-mysql.orm
+12:39:24,995 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /package-mysql.orm
+12:39:24,995 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /es/package-mysql.orm
+12:39:24,995 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /es/deusto/package-mysql.orm
+12:39:24,995 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /es/deusto/spq/package-mysql.orm
+12:39:24,995 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory" en /es/deusto/spq/Inventory-mysql.orm
+12:39:24,995 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.Inventory"
+12:39:24,995 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Inventory" campo "products" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:24,996 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Cinema" : Populando Meta-Data
+12:39:24,996 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /META-INF/package-mysql.orm
+12:39:24,996 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /WEB-INF/package-mysql.orm
+12:39:24,997 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /package-mysql.orm
+12:39:24,997 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /es/package-mysql.orm
+12:39:24,997 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /es/deusto/package-mysql.orm
+12:39:24,997 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /es/deusto/spq/package-mysql.orm
+12:39:24,997 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema" en /es/deusto/spq/Cinema-mysql.orm
+12:39:24,997 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.Cinema"
+12:39:24,997 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Cinema" campo "name" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:24,997 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Cinema" campo "city" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:24,997 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Cinema" campo "address" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:24,997 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Cinema" campo "phoneNumber" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:24,997 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Film" : Populando Meta-Data
+12:39:24,997 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /META-INF/package-mysql.orm
+12:39:24,998 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /WEB-INF/package-mysql.orm
+12:39:24,998 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /package-mysql.orm
+12:39:24,998 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /es/package-mysql.orm
+12:39:24,998 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /es/deusto/package-mysql.orm
+12:39:24,998 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /es/deusto/spq/package-mysql.orm
+12:39:24,998 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Film" en /es/deusto/spq/Film-mysql.orm
+12:39:24,998 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.Film"
+12:39:24,998 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Film" campo "director" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:24,998 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Film" campo "name" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:24,998 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Film" campo "description" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:24,998 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Film" campo "ageRestriction" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:24,999 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" : Populando Meta-Data
+12:39:24,999 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /META-INF/package-mysql.orm
+12:39:24,999 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /WEB-INF/package-mysql.orm
+12:39:24,999 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /package-mysql.orm
+12:39:24,999 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /es/package-mysql.orm
+12:39:24,999 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /es/deusto/package-mysql.orm
+12:39:24,999 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /es/deusto/spq/package-mysql.orm
+12:39:25,000 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.User" en /es/deusto/spq/User-mysql.orm
+12:39:25,000 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.User"
+12:39:25,000 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" campo "name" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,000 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" campo "nickname" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,000 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" campo "email" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,000 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" campo "password" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,000 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.User" campo "phoneNumber" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,000 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" : Populando Meta-Data
+12:39:25,000 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /META-INF/package-mysql.orm
+12:39:25,000 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /WEB-INF/package-mysql.orm
+12:39:25,000 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /package-mysql.orm
+12:39:25,001 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /es/package-mysql.orm
+12:39:25,001 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /es/deusto/package-mysql.orm
+12:39:25,001 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /es/deusto/spq/package-mysql.orm
+12:39:25,001 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket" en /es/deusto/spq/Ticket-mysql.orm
+12:39:25,001 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.Ticket"
+12:39:25,001 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "cinema" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,001 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "film" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,001 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "room" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,001 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "row" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,001 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "seat" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,001 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "price" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,001 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Ticket" campo "session" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,002 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Product" : Populando Meta-Data
+12:39:25,002 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /META-INF/package-mysql.orm
+12:39:25,002 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /WEB-INF/package-mysql.orm
+12:39:25,002 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /package-mysql.orm
+12:39:25,002 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /es/package-mysql.orm
+12:39:25,002 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /es/deusto/package-mysql.orm
+12:39:25,003 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /es/deusto/spq/package-mysql.orm
+12:39:25,003 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.spq.Product" en /es/deusto/spq/Product-mysql.orm
+12:39:25,003 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.spq.Product"
+12:39:25,003 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Product" campo "name" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,003 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Product" campo "description" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,003 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.spq.Product" campo "price" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:39:25,003 (main) DEBUG [DataNucleus.MetaData] - Inicialisación del MetaData ...
+12:39:25,003 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.Billboard pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Billboard pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:39:25,004 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.Inventory pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Inventory pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:39:25,004 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.Cinema pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Cinema pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:39:25,004 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.Film pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Film pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:39:25,004 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.User pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.User pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:39:25,004 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.Ticket pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Ticket pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:39:25,004 (main) ERROR [DataNucleus.MetaData] - Encontro el Meta-Data de la clase es.deusto.spq.Product pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Product pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+
+12:39:25,005 (main) ERROR [DataNucleus.MetaData] - Habia un error leyendo los ficheros. Por favor lee el LOG para obtener mas información. Lo siguiente puede ayudar : Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+org.datanucleus.exceptions.NucleusUserException: Hemos encontrado errores durante la inicialisación de MetaData. Compruebe por favor, las excepciones adjuntados
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1378)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Caused by: org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Ticket pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	... 3 more
+Nested Throwables StackTrace:
+Encontro el Meta-Data de la clase es.deusto.spq.Ticket pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Ticket pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Encontro el Meta-Data de la clase es.deusto.spq.Inventory pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Inventory pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Encontro el Meta-Data de la clase es.deusto.spq.Cinema pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Cinema pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Encontro el Meta-Data de la clase es.deusto.spq.Product pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Product pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Encontro el Meta-Data de la clase es.deusto.spq.Film pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Film pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Encontro el Meta-Data de la clase es.deusto.spq.User pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.User pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
+Encontro el Meta-Data de la clase es.deusto.spq.Billboard pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+org.datanucleus.exceptions.NucleusUserException: Encontro el Meta-Data de la clase es.deusto.spq.Billboard pero la clase no esta analizado! Por favor, debes analizar la clase antes de usar DataNucleus.
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseClassMetaData(MetaDataManagerImpl.java:2758)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaData(MetaDataManagerImpl.java:2693)
+	at org.datanucleus.metadata.MetaDataManagerImpl.initialiseFileMetaDataForUse(MetaDataManagerImpl.java:1367)
+	at org.datanucleus.metadata.MetaDataManagerImpl.loadClasses(MetaDataManagerImpl.java:643)
+	at org.datanucleus.metadata.MetaDataUtils.getFileMetaDataForInputFiles(MetaDataUtils.java:767)
+	at org.datanucleus.store.schema.SchemaTool.main(SchemaTool.java:367)
