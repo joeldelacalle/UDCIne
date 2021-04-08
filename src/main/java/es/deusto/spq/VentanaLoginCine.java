@@ -26,6 +26,7 @@ public class VentanaLoginCine extends JFrame {
     private JPasswordField txtPassword1;
     private JLabel lblLoginMessage1 = new JLabel("");
 
+    
     public VentanaLoginCine() {
 
         setUndecorated(true);
