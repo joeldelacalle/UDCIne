@@ -1,10 +1,12 @@
 package es.deusto.spq;
 
+
+
+import java.awt.EventQueue;
+
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
-
-import java.awt.EventQueue;
 
 /**
  * Hello world!
