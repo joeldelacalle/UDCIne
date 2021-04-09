@@ -90,7 +90,7 @@ public class VentanaValoraciones extends JFrame {
 		String cine3 = "Urbil";
 		
 		JComboBox<String> comboBox_1 = new JComboBox<String>();
-		comboBox_1.setBounds(395, 206, 103, 22);
+		comboBox_1.setBounds(350, 206, 103, 22);
 		contentPane.add(comboBox_1);
 		comboBox_1.addItem(cine1);
 		comboBox_1.addItem(cine2);
@@ -103,26 +103,26 @@ public class VentanaValoraciones extends JFrame {
 		
 		JLabel lblNewLabel_4 = new JLabel("Cines");
 		lblNewLabel_4.setFont(new Font("Arial", Font.BOLD, 16));
-		lblNewLabel_4.setBounds(395, 181, 46, 14);
+		lblNewLabel_4.setBounds(350, 181, 46, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		final DefaultListModel<String> listmodelpelis = new DefaultListModel<String>();
 		JList<String> list = new JList<String>(listmodelpelis);
-		list.setBounds(29, 270, 305, 227);
+		list.setBounds(29, 270, 275, 227);
 		contentPane.add(list);
 		
 		final DefaultListModel<String> listmodelcines = new DefaultListModel<String>();
 		JList<String> list_1 = new JList<String>(listmodelcines);
-		list_1.setBounds(395, 270, 317, 227);
+		list_1.setBounds(350, 270, 288, 227);
 		contentPane.add(list_1);
 		
 		textField = new JTextField();
-		textField.setBounds(29, 239, 211, 20);
+		textField.setBounds(29, 239, 181, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(395, 239, 218, 20);
+		textField_1.setBounds(350, 239, 191, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
@@ -135,7 +135,7 @@ public class VentanaValoraciones extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Arial", Font.BOLD, 16));
-		btnNewButton_1.setBounds(250, 236, 84, 23);
+		btnNewButton_1.setBounds(220, 236, 84, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("A\u00F1adir");
@@ -146,7 +146,7 @@ public class VentanaValoraciones extends JFrame {
 			}
 		});
 		btnNewButton_2.setFont(new Font("Arial", Font.BOLD, 16));
-		btnNewButton_2.setBounds(623, 236, 89, 23);
+		btnNewButton_2.setBounds(551, 236, 87, 23);
 		contentPane.add(btnNewButton_2);
 		
 		Border border = BorderFactory.createLineBorder(Color.black, 2);
@@ -154,14 +154,19 @@ public class VentanaValoraciones extends JFrame {
 		lblNewLabel_1_1.setBorder(border);
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1.setFont(new Font("Cooper Black", Font.BOLD, 20));
-		lblNewLabel_1_1.setBounds(88, 128, 191, 42);
+		lblNewLabel_1_1.setBounds(67, 128, 191, 42);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Valorar cine");
 		lblNewLabel_1_2.setBorder(border);
 		lblNewLabel_1_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_2.setFont(new Font("Cooper Black", Font.BOLD, 20));
-		lblNewLabel_1_2.setBounds(451, 128, 191, 42);
+		lblNewLabel_1_2.setBounds(401, 128, 191, 42);
 		contentPane.add(lblNewLabel_1_2);
+		
+		JButton btnNewButton = new JButton("Exit");
+		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 16));
+		btnNewButton.setBounds(658, 448, 70, 49);
+		contentPane.add(btnNewButton);
 	}
 }
