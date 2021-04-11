@@ -80,6 +80,32 @@ public class VentanaAlimentosCine extends JFrame {
 		lblX.setForeground(new Color(255, 255, 255));
 		lblX.setBounds(707, 10, 19, 31);
 		contentPane.add(lblX);
+		
+		final JLabel lblFlecha = new JLabel("<-");
+		lblFlecha.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				VentanaPrincipal vp = new VentanaPrincipal();
+				vp.setVisible(true);
+				dispose();		
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblFlecha.setForeground(Color.RED);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblFlecha.setForeground(Color.WHITE);
+			}
+		});
+		lblFlecha.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFlecha.setHorizontalTextPosition(SwingConstants.CENTER);
+		lblFlecha.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblFlecha.setForeground(new Color(255, 255, 255));
+		lblFlecha.setBounds(50, 10, 25, 31);
+		contentPane.add(lblFlecha);
 
 		JLabel lblPopcornImage = new JLabel("New label");
 		lblPopcornImage.setBounds(47, 76, 161, 179);
@@ -93,9 +119,9 @@ public class VentanaAlimentosCine extends JFrame {
 			image = myImg.getImage();
 
 			int width = myImg.getIconWidth() / 4;
-			System.out.println(width);
+			//System.out.println(width);
 			int height = myImg.getIconHeight() / 4;
-			System.out.println(height);
+			//System.out.println(height);
 
 			Image newImg = image.getScaledInstance(width, height, Image.SCALE_REPLICATE);
 			ImageIcon resizeImg = new ImageIcon(newImg);
@@ -115,9 +141,9 @@ public class VentanaAlimentosCine extends JFrame {
 			image = myImg.getImage();
 
 			int width = myImg.getIconWidth() / 7;
-			System.out.println(width);
+			//System.out.println(width);
 			int height = myImg.getIconHeight() / 7;
-			System.out.println(height);
+			//System.out.println(height);
 
 			Image newImg = image.getScaledInstance(width, height, Image.SCALE_REPLICATE);
 			ImageIcon resizeImg = new ImageIcon(newImg);
@@ -136,9 +162,9 @@ public class VentanaAlimentosCine extends JFrame {
 			image = myImg.getImage();
 
 			int width = myImg.getIconWidth() / 3;
-			System.out.println(width);
+			//System.out.println(width);
 			int height = myImg.getIconHeight() / 3;
-			System.out.println(height);
+			//System.out.println(height);
 
 			Image newImg = image.getScaledInstance(width, height, Image.SCALE_REPLICATE);
 			ImageIcon resizeImg = new ImageIcon(newImg);

@@ -144,10 +144,10 @@ public class VentanaValoraciones extends JFrame {
 		lblNewLabel_1_2.setBounds(401, 128, 191, 42);
 		contentPane.add(lblNewLabel_1_2);
 
-		JButton btnNewButton = new JButton("Exit");
+		/*JButton btnNewButton = new JButton("Exit");
 		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 16));
 		btnNewButton.setBounds(658, 448, 70, 49);
-		contentPane.add(btnNewButton);
+		contentPane.add(btnNewButton);*/
 
 		final JLabel lblX = new JLabel("X");
 		lblX.addMouseListener(new MouseAdapter() {
@@ -174,6 +174,32 @@ public class VentanaValoraciones extends JFrame {
 		lblX.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblX.setForeground(new Color(255, 255, 255));
 		lblX.setBounds(707, 10, 19, 31);
+		
+		final JLabel lblFlecha = new JLabel("<-");
+		lblFlecha.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				VentanaPrincipal vp = new VentanaPrincipal();
+				vp.setVisible(true);
+				dispose();		
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblFlecha.setForeground(Color.RED);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblFlecha.setForeground(Color.WHITE);
+			}
+		});
+		lblFlecha.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFlecha.setHorizontalTextPosition(SwingConstants.CENTER);
+		lblFlecha.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblFlecha.setForeground(new Color(255, 255, 255));
+		lblFlecha.setBounds(50, 10, 25, 31);
+		contentPane.add(lblFlecha);
 
 		contentPane.add(lblX);
 		JLabel lblBackGround = new JLabel("");

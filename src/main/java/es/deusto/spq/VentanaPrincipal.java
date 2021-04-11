@@ -119,6 +119,7 @@ public class VentanaPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				VentanaNuevosEstrenos vne = new VentanaNuevosEstrenos();
 				vne.setVisible(true);
+				dispose();
 			}
 		});
 		btnFutureFilms.setBounds(389, 441, 205, 49);
@@ -130,6 +131,7 @@ public class VentanaPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				VentanaAlimentosCine vac = new VentanaAlimentosCine();
 				vac.setVisible(true);
+				dispose();
 			}
 		});
 		btnFood.setBounds(10, 441, 164, 49);
@@ -183,9 +185,11 @@ public class VentanaPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				VentanaValoraciones vv = new VentanaValoraciones();
 				vv.setVisible(true);
+				dispose();
 			}
 		});
 		btnAsessment.setBounds(604, 441, 136, 49);
+		btnAsessment.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnAsessment);
 		
 		JLabel lblBackGround = new JLabel("");

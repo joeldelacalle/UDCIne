@@ -62,6 +62,32 @@ public class VentanaNuevosEstrenos extends JFrame {
 		lblX.setForeground(new Color(255, 255, 255));
 		lblX.setBounds(707, 10, 19, 31);
 		contentPane.add(lblX);
+		
+		final JLabel lblFlecha = new JLabel("<-");
+		lblFlecha.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				VentanaPrincipal vp = new VentanaPrincipal();
+				vp.setVisible(true);
+				dispose();		
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblFlecha.setForeground(Color.RED);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblFlecha.setForeground(Color.WHITE);
+			}
+		});
+		lblFlecha.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFlecha.setHorizontalTextPosition(SwingConstants.CENTER);
+		lblFlecha.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblFlecha.setForeground(new Color(255, 255, 255));
+		lblFlecha.setBounds(50, 10, 25, 31);
+		contentPane.add(lblFlecha);
 
 		JLabel lblNuevosEstrenos = new JLabel("NUEVOS ESTRENOS");
 		lblNuevosEstrenos.setHorizontalAlignment(SwingConstants.CENTER);
