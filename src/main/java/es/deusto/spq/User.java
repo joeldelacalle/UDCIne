@@ -18,9 +18,8 @@ public class User {
 	protected String password;
 	protected int phoneNumber;
 	
-	public User(long id, String name, String nickname, String email, String password, int phoneNumber) {
+	public User(String name, String nickname, String email, String password, int phoneNumber) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.nickname = nickname;
 		this.email = email;

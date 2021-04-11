@@ -21,9 +21,8 @@ public class Ticket {
 	protected int seat=-1;
 	protected long price=-1;
 	protected Date session=null;
-	public Ticket(long id, Cinema cinema, Film film, int room, int row, int seat, long price, Date session) {
+	public Ticket(Cinema cinema, Film film, int room, int row, int seat, long price, Date session) {
 		super();
-		this.id = id;
 		this.cinema = cinema;
 		this.film = film;
 		this.room = room;

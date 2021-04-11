@@ -17,11 +17,11 @@ public class PreparedData {
 		
 		try {
 			tx.begin();
-			Film filmA = new Film(0, "Jon", "Iron Man", "hombre de hierro", 13);
+			Film filmA = new Film("Jon", "Iron Man", "hombre de hierro", 13);
 			pm.makePersistent(filmA);
-			Film filmB = new Film(0, "Jon", "Iron Man 2", "hombre de hierro 2", 13);
+			Film filmB = new Film("Jon", "Iron Man 2", "hombre de hierro 2", 13);
 			pm.makePersistent(filmB);
-			Film filmC = new Film(0, "Jon", "Iron Man 3", "hombre de hierro 3", 13);
+			Film filmC = new Film("Jon", "Iron Man 3", "hombre de hierro 3", 13);
 			pm.makePersistent(filmC);
 			
 			tx.commit();

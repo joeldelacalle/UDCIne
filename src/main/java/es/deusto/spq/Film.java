@@ -20,9 +20,8 @@ public class Film {
     
     protected int ageRestriction=-1;
 
-	public Film(long id, String director, String name, String description, int ageRestriction) {
+	public Film(String director, String name, String description, int ageRestriction) {
 		super();
-		this.id = id;
 		this.director = director;
 		this.name = name;
 		this.description = description;
