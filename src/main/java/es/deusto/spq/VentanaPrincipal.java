@@ -105,7 +105,7 @@ public class VentanaPrincipal extends JFrame {
 
 			}
 		});
-		btnAdd.setBounds(225, 441, 205, 49);
+		btnAdd.setBounds(184, 441, 195, 49);
 		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnAdd);
 
@@ -121,7 +121,7 @@ public class VentanaPrincipal extends JFrame {
 				vne.setVisible(true);
 			}
 		});
-		btnFutureFilms.setBounds(440, 441, 205, 49);
+		btnFutureFilms.setBounds(389, 441, 205, 49);
 		btnFutureFilms.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnFutureFilms);
 
@@ -132,7 +132,7 @@ public class VentanaPrincipal extends JFrame {
 				vac.setVisible(true);
 			}
 		});
-		btnFood.setBounds(10, 441, 205, 49);
+		btnFood.setBounds(10, 441, 164, 49);
 		btnFood.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnFood);
 
@@ -178,10 +178,23 @@ public class VentanaPrincipal extends JFrame {
 		lblX.setBounds(707, 10, 19, 31);
 		contentPane.add(lblX);
 
+		JButton btnAsessment = new JButton("Valorar");
+		btnAsessment.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				VentanaValoraciones vv = new VentanaValoraciones();
+				vv.setVisible(true);
+			}
+		});
+		btnAsessment.setBounds(604, 441, 136, 49);
+		contentPane.add(btnAsessment);
+		
 		JLabel lblBackGround = new JLabel("");
+		lblBackGround.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/Images/fondoFin.jpg")));
 		lblBackGround.setBounds(0, 0, 750, 501);
 		contentPane.add(lblBackGround);
-		lblBackGround.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/Images/fondoFin.jpg")));
+		
+		
+		
 
 	}
 }

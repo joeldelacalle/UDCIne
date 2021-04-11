@@ -179,6 +179,6 @@ public class VentanaValoraciones extends JFrame {
 		JLabel lblBackGround = new JLabel("");
 		lblBackGround.setBounds(0, 0, 754, 562);
 		contentPane.add(lblBackGround);
-		lblBackGround.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/Images/fondoFin.jpg")));
+		lblBackGround.setIcon(new ImageIcon(VentanaValoraciones.class.getResource("/Images/fondoFin.jpg")));
 	}
 }

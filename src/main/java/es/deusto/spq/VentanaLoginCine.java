@@ -231,10 +231,10 @@ public class VentanaLoginCine extends JFrame {
         contentPane.add(lblGest);
 
         JLabel lblBackGround = new JLabel("");
-        lblBackGround.setBounds(0, 0, 600, 400);
-        contentPane.add(lblBackGround);
-        lblBackGround.setIcon(new ImageIcon(VentanaLoginCine.class.getResource("/Images/fondoFin.jpg")));
-
+		lblBackGround.setIcon(new ImageIcon(VentanaLoginCine.class.getResource("/Images/fondoFin.jpg")));
+		lblBackGround.setBounds(0, 0, 750, 501);
+		contentPane.add(lblBackGround);
+        
     }
 
 }

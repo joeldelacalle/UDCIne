@@ -210,6 +210,6 @@ public class VentanaAlimentosCine extends JFrame {
 		JLabel lblBackGround = new JLabel("");
 		lblBackGround.setBounds(0, 0, 750, 501);
 		contentPane.add(lblBackGround);
-		lblBackGround.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/Images/fondoFin.jpg")));
+		lblBackGround.setIcon(new ImageIcon(VentanaAlimentosCine.class.getResource("/Images/fondoFin.jpg")));
 	}
 }
