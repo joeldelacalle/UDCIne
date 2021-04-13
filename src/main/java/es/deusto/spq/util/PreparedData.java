@@ -5,7 +5,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
-import es.deusto.spq.FilmWindow;
+import es.deusto.spq.Film;
 
 public class PreparedData {
 
@@ -17,11 +17,11 @@ public class PreparedData {
 		
 		try {
 			tx.begin();
-			FilmWindow filmA = new FilmWindow("Jon", "Iron Man", "hombre de hierro", 13);
+			Film filmA = new Film("Jon", "Iron Man", "hombre de hierro", 13);
 			pm.makePersistent(filmA);
-			FilmWindow filmB = new FilmWindow("Jon", "Iron Man 2", "hombre de hierro 2", 13);
+			Film filmB = new Film("Jon", "Iron Man 2", "hombre de hierro 2", 13);
 			pm.makePersistent(filmB);
-			FilmWindow filmC = new FilmWindow("Jon", "Iron Man 3", "hombre de hierro 3", 13);
+			Film filmC = new Film("Jon", "Iron Man 3", "hombre de hierro 3", 13);
 			pm.makePersistent(filmC);
 			
 			tx.commit();
