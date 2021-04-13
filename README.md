@@ -28,7 +28,7 @@ El servidor REST de la aplicación se lanza utilizando el comando
 
     mvn exec::java
 
-Si el servidor ha sido iniciado correctamente se pueden obtener los datos de prueba accediendo con el navegador a la URL http://localhost:8080/myapp/users.
+Si el servidor ha sido iniciado correctamente se pueden obtener los datos de prueba accediendo con el navegador a la URL http://localhost:8080/myapp/films.
 
 
 Inicio de la aplicación cliente
