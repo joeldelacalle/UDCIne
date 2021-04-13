@@ -45,8 +45,8 @@ public class ClientApp extends JFrame {
 		buttonsPanel.add(deleteFilmButton);
 		add(buttonsPanel, BorderLayout.SOUTH);
 
-		final DefaultListModel<FilmWindow> filmListModel = new DefaultListModel<>();
-		JList<FilmWindow> filmList = new JList<>(filmListModel);
+		final DefaultListModel<Film> filmListModel = new DefaultListModel<>();
+		JList<Film> filmList = new JList<Film>(filmListModel);
 
 		JScrollPane listScrollPane = new JScrollPane(filmList);
 		add(listScrollPane, BorderLayout.WEST);
@@ -55,11 +55,11 @@ public class ClientApp extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				GenericType<List<FilmWindow>> genericType = new GenericType<List<FilmWindow>>() {};
-				List<FilmWindow> films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+				GenericType<List<Film>> genericType = new GenericType<List<Film>>() {};
+				List<Film> films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 
 				filmListModel.clear();
-				for (FilmWindow film : films) {
+				for (Film film : films) {
 					filmListModel.addElement(film);
 				}
 
