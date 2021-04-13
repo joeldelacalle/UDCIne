@@ -192,10 +192,6 @@ public class VentanaPrincipal extends JFrame {
 		btnAsessment.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnAsessment);
 		
-		JLabel lblBackGround = new JLabel("");
-		lblBackGround.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/Images/fondoFin.jpg")));
-		lblBackGround.setBounds(0, 0, 750, 501);
-		contentPane.add(lblBackGround);
 		
 		
 		

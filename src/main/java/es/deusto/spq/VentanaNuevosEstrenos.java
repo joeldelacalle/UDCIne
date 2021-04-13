@@ -176,11 +176,6 @@ public class VentanaNuevosEstrenos extends JFrame {
 			lblNewLabel.setBounds(541, 326, 141, 14);
 			contentPane.add(lblNewLabel);
 
-			JLabel lblBackGround = new JLabel("");
-			lblBackGround.setBounds(0, 0, 750, 501);
-			contentPane.add(lblBackGround);
-			lblBackGround.setIcon(new ImageIcon(VentanaNuevosEstrenos.class.getResource("/Images/fondoFin.jpg")));
-
 		} catch (IOException e) {
 		}
 	}
