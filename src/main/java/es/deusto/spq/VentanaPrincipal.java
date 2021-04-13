@@ -192,6 +192,15 @@ public class VentanaPrincipal extends JFrame {
 		btnAsessment.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnAsessment);
 		
+		JButton ClientApp = new JButton("ClientApp");
+		ClientApp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ClientApp ca = new ClientApp();
+			}
+		});
+		ClientApp.setBounds(408, 10, 89, 23);
+		contentPane.add(ClientApp);
+		
 		
 		
 		
