@@ -151,7 +151,7 @@
 							</execution>
 						</executions>
 						<configuration>
-							<mainClass>es.deusto.spq.ClientApp</mainClass>
+							<mainClass>es.deusto.spq.VentanaLoginCine</mainClass>
 						</configuration>
 					</plugin>
 				</plugins>

@@ -18,9 +18,17 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
+
 public class VentanaLoginCine extends JFrame {
 
     private static final long serialVersionUID = 1L;
+    Client client = ClientBuilder.newClient();
+
+	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
+	final WebTarget FilmsTarget = appTarget.path("films");
     private JPanel contentPane;
     private JTextField txtUsername1;
     private JPasswordField txtPassword1;
