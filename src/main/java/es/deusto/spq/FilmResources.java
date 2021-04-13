@@ -15,14 +15,14 @@ public class FilmResources {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Film> getFilms() {
+	public List<FilmWindow> getFilms() {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 
-		Query<Film> q = pm.newQuery(Film.class);
+		Query<FilmWindow> q = pm.newQuery(FilmWindow.class);
 		q.setOrdering("name desc");
 
-		List<Film> films = q.executeList();
+		List<FilmWindow> films = q.executeList();
 
 		pm.close();
 

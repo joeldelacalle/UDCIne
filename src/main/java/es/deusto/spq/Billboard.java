@@ -8,9 +8,9 @@ import javax.jdo.annotations.PersistenceCapable;
 @PersistenceCapable
 public class Billboard {
 	
-	protected Set<Film> films= new HashSet<Film>();
+	protected Set<FilmWindow> films= new HashSet<FilmWindow>();
 	
-	  public Set<Film> getFilms()
+	  public Set<FilmWindow> getFilms()
 	    {
 	        return films;
 	    }
