@@ -1,4 +1,4 @@
-package es.deusto.spq;
+package es.deusto.spq.gui;
 
 
 import java.awt.Color;

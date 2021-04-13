@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javax.jdo.annotations.PersistenceCapable;
 
+import es.deusto.spq.gui.FilmWindow;
+
 @PersistenceCapable
 public class Billboard {
 	
