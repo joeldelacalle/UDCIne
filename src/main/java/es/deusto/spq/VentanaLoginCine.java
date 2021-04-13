@@ -1,12 +1,14 @@
 package es.deusto.spq;
 
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -23,6 +25,20 @@ public class VentanaLoginCine extends JFrame {
     private JTextField txtUsername1;
     private JPasswordField txtPassword1;
     private JLabel lblLoginMessage1 = new JLabel("");
+    private JLabel lblGest ;
+    
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    VentanaLoginCine frame = new VentanaLoginCine();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
     
     public VentanaLoginCine() {
@@ -31,6 +47,14 @@ public class VentanaLoginCine extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 600, 400);
         contentPane = new JPanel();
+        contentPane.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent e) {
+        		VentanaPrincipal vp = new VentanaPrincipal();
+        		vp.setVisible(true);
+        		dispose();
+        	}
+        });
         contentPane.setBackground(new Color(72, 209, 204));
         contentPane.setBorder(new LineBorder(new Color(85, 107, 47), 2));
         setContentPane(contentPane);
@@ -184,7 +208,33 @@ public class VentanaLoginCine extends JFrame {
         lblCineDeusto.setToolTipText("");
         lblCineDeusto.setBounds(175, 68, 299, 34);
         contentPane.add(lblCineDeusto);
+        
+        lblGest = new JLabel("Entrar como invitado");
+        lblGest.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseEntered(MouseEvent e) {
+        		 lblGest.setForeground(Color.RED);
+        	}
+        	@Override
+        	public void mouseExited(MouseEvent e) {
+        		lblGest.setForeground(Color.BLUE);
+        	}
+        	@Override
+        	public void mouseClicked(MouseEvent e) {
+        		VentanaPrincipal vp = new VentanaPrincipal ();
+        		vp.setVisible(true);
+        		dispose();
+        	}
+        });
+        lblGest.setForeground(Color.BLUE);
+        lblGest.setBounds(237, 362, 151, 14);
+        contentPane.add(lblGest);
 
+        JLabel lblBackGround = new JLabel("");
+		lblBackGround.setIcon(new ImageIcon(VentanaLoginCine.class.getResource("/Images/fondoFin.jpg")));
+		lblBackGround.setBounds(0, 0, 750, 501);
+		contentPane.add(lblBackGround);
+        
     }
 
 }
