@@ -1,14 +1,22 @@
 package es.deusto.spq;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
+
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
+import jakarta.ws.rs.core.MediaType;
 
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
@@ -20,6 +28,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 import java.awt.event.ActionEvent;
 
 public class VentanaPrincipal extends JFrame {
@@ -28,8 +37,14 @@ public class VentanaPrincipal extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 6673510127789501132L;
+	
+	Client client = ClientBuilder.newClient();
+
+	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
+	final WebTarget FilmsTarget = appTarget.path("films");
+	
 	private JPanel contentPane;
-	private JList<String> listBillboard;
+	private JList<Film> listBillboard;
 	private JList<String> listShoppingCart;
 	private DefaultListModel<String> shoppingCart;
 	private JSpinner spNumberTickets;
@@ -58,20 +73,27 @@ public class VentanaPrincipal extends JFrame {
 		lblCinema.setBounds(405, 56, 92, 18);
 		contentPane.add(lblCinema);
 
-		final DefaultListModel<String> billboard = new DefaultListModel<String>();
+		
+		
+		
+		final DefaultListModel<Film> billboard = new DefaultListModel<>();
 
+		GenericType<List<Film>> genericType = new GenericType<List<Film>>() {};
+		List<Film> films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+
+		billboard.clear();
+		for (Film film : films) {
+			billboard.addElement(film);
+		}
+		
+		
 		/*
 		 * habra que cambiar de string a pelicula y hacer un metodo que recorra y copie
 		 * los parametros de la lista de peliculas al DefaultListModel
 		 */
 
-		billboard.add(0, "Pelicula1");
-		billboard.add(1, "Pelicula2");
-		billboard.add(2, "Pelicula3");
-		billboard.add(3, "Pelicula4");
-		billboard.add(4, "Pelicula5");
-
-		listBillboard = new JList<String>(billboard);
+		
+		listBillboard = new JList<Film>(billboard);
 		listBillboard.setBounds(10, 60, 385, 367);
 		listBillboard.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(listBillboard);
@@ -84,7 +106,7 @@ public class VentanaPrincipal extends JFrame {
 		JButton btnAdd = new JButton("añadir al carrito");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String a;
+				Film a;
 				int cinema = cbCinema.getSelectedIndex();
 				if (cinema == 0) {
 					JOptionPane.showMessageDialog(null, "Seleccione el cine");
@@ -96,7 +118,7 @@ public class VentanaPrincipal extends JFrame {
 						for (int j = 0; j < numberTickets; j++) {
 							int i = 0;
 							a = listBillboard.getSelectedValue();
-							shoppingCart.add(i, a);
+							shoppingCart.add(i, a.getName());
 							i++;
 						}
 
@@ -200,6 +222,10 @@ public class VentanaPrincipal extends JFrame {
 		});
 		ClientApp.setBounds(408, 10, 89, 23);
 		contentPane.add(ClientApp);
+		
+		JScrollPane scrollPane = new JScrollPane(listBillboard);
+		scrollPane.setBounds(10, 60, 385, 367);
+		contentPane.add(scrollPane);
 		
 		
 		
