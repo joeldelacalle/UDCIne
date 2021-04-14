@@ -1,7 +1,7 @@
 # UDCIne
 Base de datos
 
-Crear una base de datos llamada jersey y dar permisos al usuario por defecto
+Crear una base de datos llamada cine y dar permisos al usuario por defecto
 
     CREATE DATABASE cine;
     CREATE USER IF NOT EXISTS 'spq'@'localhost' IDENTIFIED BY 'spq';
