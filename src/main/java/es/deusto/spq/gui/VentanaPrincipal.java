@@ -31,6 +31,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseWheelListener;
+import java.awt.event.MouseWheelEvent;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -60,18 +62,18 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.setBackground(new Color(64, 224, 208));
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 139), 2));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 
 		cbCinema = new JComboBox<String>();
 		cbCinema.setBounds(555, 54, 164, 22);
 		cbCinema.addItem("");
 		cbCinema.addItem("Cine 1");
+		contentPane.setLayout(null);
 		cbCinema.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(cbCinema);
 
 		JLabel lblCinema = new JLabel("Cine:");
-		lblCinema.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblCinema.setBounds(405, 56, 92, 18);
+		lblCinema.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(lblCinema);
 
 		
@@ -84,6 +86,7 @@ public class VentanaPrincipal extends JFrame {
 
 		billboard.clear();
 		for (Film film : films) {
+			System.out.println(film.getName());
 			billboard.addElement(film);
 		}
 		
@@ -95,7 +98,14 @@ public class VentanaPrincipal extends JFrame {
 
 		
 		listBillboard = new JList<Film>(billboard);
-		listBillboard.setBounds(10, 60, 385, 367);
+		listBillboard.addMouseWheelListener(new MouseWheelListener() {
+			public void mouseWheelMoved(MouseWheelEvent e) {
+				FilmWindow fw = new FilmWindow();
+        		fw.setVisible(true);
+        		dispose();
+			}
+		});
+		listBillboard.setBounds(1, 1, 383, 365);
 		listBillboard.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(listBillboard);
 
@@ -105,6 +115,7 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.add(lblBillboard);
 
 		JButton btnAdd = new JButton("añadir al carrito");
+		btnAdd.setBounds(184, 441, 195, 49);
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Film a;
@@ -128,7 +139,6 @@ public class VentanaPrincipal extends JFrame {
 
 			}
 		});
-		btnAdd.setBounds(184, 441, 195, 49);
 		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnAdd);
 
@@ -138,6 +148,7 @@ public class VentanaPrincipal extends JFrame {
 		lblNumberTickets.setFont(new Font("Tahoma", Font.BOLD, 15));
 
 		JButton btnFutureFilms = new JButton("Futuros estrenos");
+		btnFutureFilms.setBounds(389, 441, 205, 49);
 		btnFutureFilms.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				VentanaNuevosEstrenos vne = new VentanaNuevosEstrenos();
@@ -145,11 +156,11 @@ public class VentanaPrincipal extends JFrame {
 				dispose();
 			}
 		});
-		btnFutureFilms.setBounds(389, 441, 205, 49);
 		btnFutureFilms.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnFutureFilms);
 
 		JButton btnFood = new JButton("Comida");
+		btnFood.setBounds(10, 441, 164, 49);
 		btnFood.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				VentanaAlimentosCine vac = new VentanaAlimentosCine();
@@ -157,26 +168,26 @@ public class VentanaPrincipal extends JFrame {
 				dispose();
 			}
 		});
-		btnFood.setBounds(10, 441, 164, 49);
 		btnFood.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnFood);
 
 		spNumberTickets = new JSpinner();
+		spNumberTickets.setBounds(598, 99, 121, 31);
 
 		spNumberTickets.setModel(new SpinnerNumberModel(0, 0, 15, 1));
-		spNumberTickets.setBounds(598, 99, 121, 31);
 		spNumberTickets.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(spNumberTickets);
 
 		shoppingCart = new DefaultListModel<String>();
 
 		listShoppingCart = new JList<String>(shoppingCart);
-		listShoppingCart.setFont(new Font("Tahoma", Font.BOLD, 20));
 		listShoppingCart.setBounds(404, 143, 315, 248);
+		listShoppingCart.setFont(new Font("Tahoma", Font.BOLD, 20));
 
 		contentPane.add(listShoppingCart);
 
 		final JLabel lblX = new JLabel("X");
+		lblX.setBounds(707, 10, 19, 31);
 		lblX.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -200,10 +211,10 @@ public class VentanaPrincipal extends JFrame {
 		lblX.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblX.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblX.setForeground(new Color(255, 255, 255));
-		lblX.setBounds(707, 10, 19, 31);
 		contentPane.add(lblX);
 
 		JButton btnAsessment = new JButton("Valorar");
+		btnAsessment.setBounds(604, 441, 136, 49);
 		btnAsessment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				VentanaValoraciones vv = new VentanaValoraciones();
@@ -211,18 +222,9 @@ public class VentanaPrincipal extends JFrame {
 				dispose();
 			}
 		});
-		btnAsessment.setBounds(604, 441, 136, 49);
 		btnAsessment.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnAsessment);
-		
-		JButton ClientApp = new JButton("ClientApp");
-		ClientApp.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				ClientApp ca = new ClientApp();
-			}
-		});
-		ClientApp.setBounds(408, 10, 89, 23);
-		contentPane.add(ClientApp);
+	
 		
 		JScrollPane scrollPane = new JScrollPane(listBillboard);
 		scrollPane.setBounds(10, 60, 385, 367);

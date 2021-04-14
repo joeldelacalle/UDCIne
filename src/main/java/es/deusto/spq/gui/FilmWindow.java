@@ -71,9 +71,9 @@ public class FilmWindow extends JFrame {
             image = myImg.getImage();
             
             int width = myImg.getIconWidth() / 3;
-            System.out.println(width);
+            //System.out.println(width);
             int height = myImg.getIconHeight() / 3;
-            System.out.println(height);
+            //System.out.println(height);
             
             Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
             ImageIcon resizeImg = new ImageIcon(newImg);
@@ -87,8 +87,9 @@ public class FilmWindow extends JFrame {
         JButton btnExit = new JButton("Exit");
         btnExit.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		setVisible(false); //you can't see me!
-        		dispose(); //Destroy the JFrame object
+        		VentanaPrincipal vp = new VentanaPrincipal();
+        		vp.setVisible(true);
+        		dispose();
         	}
         });
         
@@ -105,9 +106,9 @@ public class FilmWindow extends JFrame {
             image = myImg.getImage();
             
             int width = myImg.getIconWidth() / 6;
-            System.out.println(width);
+            //System.out.println(width);
             int height = myImg.getIconHeight() / 6;
-            System.out.println(height);
+            //System.out.println(height);
             
             Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
             ImageIcon resizeImg = new ImageIcon(newImg);
