@@ -40,8 +40,7 @@ public class AssessmentTest {
 
 	@Test
 	public void testToString() {
-		assertEquals("Assessment: [id=0" + ", user=user" + ", name=name" + ", text=text" + "]",
-				a.toString());
+		assertEquals("Assessment: [id=0" + ", user=user" + ", name=name" + ", text=text" + "]", a.toString());
 	}
 
 }

@@ -10,27 +10,27 @@ import javax.jdo.annotations.PrimaryKey;
 public class Inventory {
 
 	@PrimaryKey
-    protected String name=null;
+	protected String name = null;
 
-    protected Set<Product> products = new HashSet<Product>();
+	protected Set<Product> products = new HashSet<Product>();
 
-    public Inventory(String name)
-    {
-        this.name = name;
-    }
+	public Inventory(String name) {
+		this.name = name;
+	}
 
-    public String getName()
-    {
-        return name;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public Set<Product> getProducts()
-    {
-        return products;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String toString()
-    {
-        return "Inventory : " + name;
-    }
+	public Set<Product> getProducts() {
+		return products;
+	}
+
+	public String toString() {
+		return "Inventory : " + name;
+	}
 }
