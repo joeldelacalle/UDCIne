@@ -17,11 +17,11 @@ public class PreparedData {
 		
 		try {
 			tx.begin();
-			Film filmA = new Film("Jon", "Iron Man", "hombre de hierro", 13);
+			Film filmA = new Film("Jon", "Iron Man", "hombre de hierro", 13 , "https://pics.filmaffinity.com/iron_man-108960873-mmed.jpg");
 			pm.makePersistent(filmA);
-			Film filmB = new Film("Jon", "Iron Man 2", "hombre de hierro 2", 13);
+			Film filmB = new Film("Jon", "Iron Man 2", "hombre de hierro 2", 13, "https://pics.filmaffinity.com/iron_man_2-466103197-mmed.jpg");
 			pm.makePersistent(filmB);
-			Film filmC = new Film("Jon", "Iron Man 3", "hombre de hierro 3", 13);
+			Film filmC = new Film("Jon", "Iron Man 3", "hombre de hierro 3", 13, "https://pics.filmaffinity.com/iron_man_3_aka_ironman_3-972235216-mmed.jpg");
 			pm.makePersistent(filmC);
 			
 			tx.commit();

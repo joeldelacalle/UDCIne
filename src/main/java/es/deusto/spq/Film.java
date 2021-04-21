@@ -18,13 +18,24 @@ public class Film {
     protected String description=null;
     
     protected int ageRestriction=-1;
+    
+    protected String url = null;
 
-	public Film(String director, String name, String description, int ageRestriction) {
+	public Film(String director, String name, String description, int ageRestriction, String url) {
 		super();
 		this.director = director;
 		this.name = name;
 		this.description = description;
 		this.ageRestriction = ageRestriction;
+		this.url = url;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public long getId() {

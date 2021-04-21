@@ -11,7 +11,7 @@ public class FilmTest {
 
 	@Before
 	public void setup() {
-		f = new Film("director", "name", "description", 13);
+		f = new Film("director", "name", "description", 13,"");
 	}
 
 	@Test
