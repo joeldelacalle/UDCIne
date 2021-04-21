@@ -17,14 +17,14 @@ public class Ticket {
 	protected long id;
 
 	protected Cinema cinema = null;
-	protected FilmWindow film = null;
+	protected Film film = null;
 	protected int room = -1;
 	protected int row = -1;
 	protected int seat = -1;
 	protected long price = -1;
 	protected Date session = null;
 
-	public Ticket(Cinema cinema, FilmWindow film, int room, int row, int seat, long price, Date session) {
+	public Ticket(Cinema cinema, Film film, int room, int row, int seat, long price, Date session) {
 		super();
 		this.cinema = cinema;
 		this.film = film;
@@ -51,11 +51,11 @@ public class Ticket {
 		this.cinema = cinema;
 	}
 
-	public FilmWindow getFilm() {
+	public Film getFilm() {
 		return film;
 	}
 
-	public void setFilm(FilmWindow film) {
+	public void setFilm(Film film) {
 		this.film = film;
 	}
 
