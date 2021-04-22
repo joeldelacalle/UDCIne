@@ -10,8 +10,6 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 
-import es.deusto.spq.Film;
-
 @Path("cinemas")
 public class CinemaResources {
 	
