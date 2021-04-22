@@ -17,11 +17,14 @@ public class PreparedData {
 		
 		try {
 			tx.begin();
-			Film filmA = new Film("Jon", "Iron Man", "hombre de hierro", 13 , "https://pics.filmaffinity.com/iron_man-108960873-mmed.jpg");
+			Film filmA = new Film("Jon", "Iron Man", "El acto principal es Tony Stark, un magnate multimillonario y hábil ingeniero con abundantes vicios que construye un exoesqueleto mecánico y se convierte en el superhéroe Iron Man."
+								, 13 , "https://pics.filmaffinity.com/iron_man-108960873-large.jpg");
 			pm.makePersistent(filmA);
-			Film filmB = new Film("Jon", "Iron Man 2", "hombre de hierro 2", 13, "https://pics.filmaffinity.com/iron_man_2-466103197-mmed.jpg");
+			Film filmB = new Film("Jon", "Iron Man 2", "El mundo sabe que el multimillonario Tony Stark es Iron Man, el superhéroe enmascarado, el cual forja alianzas nuevas y se enfrenta a nuevas y poderosas fuerzas."
+								, 13, "https://pics.filmaffinity.com/iron_man_2-466103197-large.jpg");
 			pm.makePersistent(filmB);
-			Film filmC = new Film("Jon", "Iron Man 3", "hombre de hierro 3", 13, "https://pics.filmaffinity.com/iron_man_3_aka_ironman_3-972235216-mmed.jpg");
+			Film filmC = new Film("Jon", "Iron Man 3", "Tony Stark tendrá que enfrentarse a un enemigo cuyo alcance no conoce límites. Cuando Stark encuentre su vida personal destruida a manos de su enemigo, se embarca en una difícil aventura para encontrar al responsable."
+								, 13, "https://pics.filmaffinity.com/iron_man_3_aka_ironman_3-972235216-large.jpg");
 			pm.makePersistent(filmC);
 			
 			tx.commit();

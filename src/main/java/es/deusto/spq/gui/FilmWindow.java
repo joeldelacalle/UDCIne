@@ -33,6 +33,7 @@ import jakarta.ws.rs.core.MediaType;
 
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
 public class FilmWindow extends JFrame {
 
@@ -55,7 +56,26 @@ public class FilmWindow extends JFrame {
 	private int ageFilm = -1;
 	private String filmName = "-1";
 	private String urlFilm = "-1";
+	private String descFilm = "-1";
+	private JTextPane textPaneDescription = new JTextPane();
 
+	
+	private void ageFilmIconResize(URL url) throws IOException {
+		Image image;
+		image = ImageIO.read(url);
+		ImageIcon myImg = new ImageIcon(url);
+		image = myImg.getImage();
+		
+		int width = myImg.getIconWidth() / 5;
+		//System.out.println(width);
+		int height = myImg.getIconHeight() / 5;
+		//System.out.println(height);
+		
+		Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+		ImageIcon resizeImg = new ImageIcon(newImg);
+		lblRecommendedAge.setIcon(resizeImg);
+	}
+	
 	/**
 	 * Launch the application.
 	 */
@@ -105,7 +125,7 @@ public class FilmWindow extends JFrame {
         */
       
         
-        JButton btnExit = new JButton("Exit");
+        JButton btnExit = new JButton("SALIR");
         btnExit.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		VentanaPrincipal vp = new VentanaPrincipal();
@@ -114,10 +134,10 @@ public class FilmWindow extends JFrame {
         	}
         });
         
-        JButton btnShowCinemas = new JButton("Show Cinemas");
+        JButton btnShowCinemas = new JButton("MOSTRAR CINES");
         
-        JLabel lblDescription = new JLabel("Description:");
-        lblDescription.setHorizontalAlignment(SwingConstants.CENTER);
+        JLabel lblDsc = new JLabel("Descripción:");
+        lblDsc.setHorizontalAlignment(SwingConstants.CENTER);
         
       /*  try {
             URL url = new URL("https://www.kindpng.com/picc/m/27-275692_pg-13-png-rated-pg-transparent-png.png");
@@ -138,14 +158,12 @@ public class FilmWindow extends JFrame {
         }
         */
         final JComboBox<String> comboBoxFilm = new JComboBox<String>();
-
-		
 		
 		for (Film film : films) {
 			filmName = film.getName();
 			comboBoxFilm.addItem(filmName);
-			
 		}
+		
         comboBoxFilm.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		
@@ -157,9 +175,10 @@ public class FilmWindow extends JFrame {
         				ageFilm = film.getAgeRestriction();
         				filmName =film.getName();
         				urlFilm = film.getUrl();
+        				descFilm = film.getDescription();
         			}
         		}
-        		System.out.println(filmName);
+        		//System.out.println(filmName);
         			if(filmName.equals(selectedFilm)) {
         				try {
         		            URL url = new URL(urlFilm);
@@ -167,19 +186,20 @@ public class FilmWindow extends JFrame {
         		            ImageIcon myImg = new ImageIcon(url);
         		            image = myImg.getImage();
         		            
-        		            int width = myImg.getIconWidth() / 3;
+        		            int width = myImg.getIconWidth() / 7 * 2;
         		            //System.out.println(width);
-        		            int height = myImg.getIconHeight() / 3;
+        		            int height = myImg.getIconHeight() / 7 * 2;
         		            //System.out.println(height);
         		            
         		            Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
         		            ImageIcon resizeImg = new ImageIcon(newImg);
         		            lblFilmImage.setIcon(resizeImg);
+        		            textPaneDescription.setText(descFilm);
         		        } 
         		        catch (IOException e7) {
         		        }
         			}
-        			System.out.println(ageFilm);
+        			//System.out.println(ageFilm);
         			
         			int ageAll = 0; //apta para todos los publicos
         			int age7 = 7;
@@ -189,36 +209,14 @@ public class FilmWindow extends JFrame {
         			if(ageAll == ageFilm) {
         				try {
         		            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/6/68/Edad_TP.png");
-        		            image = ImageIO.read(url);
-        		            ImageIcon myImg = new ImageIcon(url);
-        		            image = myImg.getImage();
-        		            
-        		            int width = myImg.getIconWidth() / 5;
-        		            //System.out.println(width);
-        		            int height = myImg.getIconHeight() / 5;
-        		            //System.out.println(height);
-        		            
-        		            Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-        		            ImageIcon resizeImg = new ImageIcon(newImg);
-        		            lblRecommendedAge.setIcon(resizeImg);
+        		            ageFilmIconResize(url);
         		        } 
         		        catch (IOException e7) {
         		        }
         			}else if(age7 == ageFilm) {
         				try {
         		            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/5/55/Edad_7.png");
-        		            image = ImageIO.read(url);
-        		            ImageIcon myImg = new ImageIcon(url);
-        		            image = myImg.getImage();
-        		            
-        		            int width = myImg.getIconWidth() / 5;
-        		            //System.out.println(width);
-        		            int height = myImg.getIconHeight() / 5;
-        		            //System.out.println(height);
-        		            
-        		            Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-        		            ImageIcon resizeImg = new ImageIcon(newImg);
-        		            lblRecommendedAge.setIcon(resizeImg);
+        		            ageFilmIconResize(url);
         		        } 
         		        catch (IOException e7) {
         		        }
@@ -226,18 +224,7 @@ public class FilmWindow extends JFrame {
         			}else if(age13 == ageFilm) {
         				try {
         		            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/b/bd/Edad_13.png");
-        		            image = ImageIO.read(url);
-        		            ImageIcon myImg = new ImageIcon(url);
-        		            image = myImg.getImage();
-        		            
-        		            int width = myImg.getIconWidth() / 5;
-        		            //System.out.println(width);
-        		            int height = myImg.getIconHeight() / 5;
-        		            //System.out.println(height);
-        		            
-        		            Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-        		            ImageIcon resizeImg = new ImageIcon(newImg);
-        		            lblRecommendedAge.setIcon(resizeImg);
+        		            ageFilmIconResize(url);
         		        } 
         		        catch (IOException e7) {
         		        }
@@ -245,18 +232,7 @@ public class FilmWindow extends JFrame {
         			}else if(age16 == ageFilm) {
         				try {
         		            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/4/4b/Edad_16.png");
-        		            image = ImageIO.read(url);
-        		            ImageIcon myImg = new ImageIcon(url);
-        		            image = myImg.getImage();
-        		            
-        		            int width = myImg.getIconWidth() / 5;
-        		            //System.out.println(width);
-        		            int height = myImg.getIconHeight() / 5;
-        		            //System.out.println(height);
-        		            
-        		            Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-        		            ImageIcon resizeImg = new ImageIcon(newImg);
-        		            lblRecommendedAge.setIcon(resizeImg);
+        		            ageFilmIconResize(url);
         		        } 
         		        catch (IOException e7) {
         		        }
@@ -264,18 +240,7 @@ public class FilmWindow extends JFrame {
         			}else{
         				try {
         		            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/c/ca/Edad_18.png");
-        		            image = ImageIO.read(url);
-        		            ImageIcon myImg = new ImageIcon(url);
-        		            image = myImg.getImage();
-        		            
-        		            int width = myImg.getIconWidth() / 5;
-        		            //System.out.println(width);
-        		            int height = myImg.getIconHeight() / 5;
-        		            //System.out.println(height);
-        		            
-        		            Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-        		            ImageIcon resizeImg = new ImageIcon(newImg);
-        		            lblRecommendedAge.setIcon(resizeImg);
+        		            ageFilmIconResize(url);
         		        } 
         		        catch (IOException e7) {
         		        }
@@ -290,23 +255,12 @@ public class FilmWindow extends JFrame {
         textFieldFilmName.setFont(new Font("Imprint MT Shadow", Font.PLAIN, 52));
         textFieldFilmName.setColumns(10);
         
+       
+        textPaneDescription.setBackground(new Color(64, 224, 208));
+        
         GroupLayout gl_contentPane = new GroupLayout(contentPane);
         gl_contentPane.setHorizontalGroup(
         	gl_contentPane.createParallelGroup(Alignment.LEADING)
-        		.addGroup(gl_contentPane.createSequentialGroup()
-        			.addGap(175)
-        			.addComponent(btnExit, GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-        			.addGap(53)
-        			.addComponent(btnShowCinemas)
-        			.addGap(196))
-        		.addGroup(gl_contentPane.createSequentialGroup()
-        			.addGap(55)
-        			.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-        				.addComponent(comboBoxFilm, GroupLayout.PREFERRED_SIZE, 269, GroupLayout.PREFERRED_SIZE)
-        				.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-        					.addComponent(lblRecommendedAge, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE)
-        					.addComponent(lblDescription, GroupLayout.PREFERRED_SIZE, 508, GroupLayout.PREFERRED_SIZE)))
-        			.addContainerGap(61, Short.MAX_VALUE))
         		.addGroup(gl_contentPane.createSequentialGroup()
         			.addGap(65)
         			.addComponent(textFieldFilmName, GroupLayout.PREFERRED_SIZE, 302, GroupLayout.PREFERRED_SIZE)
@@ -315,9 +269,28 @@ public class FilmWindow extends JFrame {
         			.addGap(168)
         			.addComponent(lblFilmImage)
         			.addContainerGap(456, Short.MAX_VALUE))
+        		.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+        			.addGap(187)
+        			.addComponent(btnExit, GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+        			.addGap(42)
+        			.addComponent(btnShowCinemas)
+        			.addGap(195))
+        		.addGroup(gl_contentPane.createSequentialGroup()
+        			.addGap(55)
+        			.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+        				.addComponent(comboBoxFilm, GroupLayout.PREFERRED_SIZE, 269, GroupLayout.PREFERRED_SIZE)
+        				.addGroup(gl_contentPane.createSequentialGroup()
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(lblDsc, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(textPaneDescription, GroupLayout.PREFERRED_SIZE, 392, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(gl_contentPane.createSequentialGroup()
+        					.addGap(360)
+        					.addComponent(lblRecommendedAge, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap(61, Short.MAX_VALUE))
         );
         gl_contentPane.setVerticalGroup(
-        	gl_contentPane.createParallelGroup(Alignment.LEADING)
+        	gl_contentPane.createParallelGroup(Alignment.TRAILING)
         		.addGroup(gl_contentPane.createSequentialGroup()
         			.addContainerGap()
         			.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
@@ -328,13 +301,17 @@ public class FilmWindow extends JFrame {
         				.addComponent(lblRecommendedAge, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addComponent(lblFilmImage, GroupLayout.PREFERRED_SIZE, 325, GroupLayout.PREFERRED_SIZE)
-        			.addGap(26)
-        			.addComponent(lblDescription, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+        				.addComponent(lblDsc, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(textPaneDescription, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap(35, Short.MAX_VALUE))
+        		.addGroup(gl_contentPane.createSequentialGroup()
+        			.addGap(510)
         			.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(btnShowCinemas)
-        				.addComponent(btnExit))
-        			.addGap(21))
+        				.addComponent(btnShowCinemas, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(btnExit, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        			.addContainerGap())
         );
         contentPane.setLayout(gl_contentPane);
 	}
