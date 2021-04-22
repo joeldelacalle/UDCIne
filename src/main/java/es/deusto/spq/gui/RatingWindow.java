@@ -28,6 +28,7 @@ public class RatingWindow extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JTextField textField_2;
 
 	public RatingWindow() {
 		setUndecorated(true);
@@ -49,11 +50,6 @@ public class RatingWindow extends JFrame {
 		lblNewLabel_1.setFont(new Font("Arial", Font.BOLD, 20));
 		lblNewLabel_1.setBounds(210, 82, 191, 27);
 		contentPane.add(lblNewLabel_1);
-
-		JLabel lblNewLabel_2 = new JLabel("...");
-		lblNewLabel_2.setFont(new Font("Arial", Font.BOLD, 20));
-		lblNewLabel_2.setBounds(419, 82, 97, 27);
-		contentPane.add(lblNewLabel_2);
 
 		String pelicula1 = "2 dias en Paris";
 		String pelicula2 = "76 days";
@@ -200,6 +196,38 @@ public class RatingWindow extends JFrame {
 		lblFlecha.setForeground(new Color(255, 255, 255));
 		lblFlecha.setBounds(50, 10, 25, 31);
 		contentPane.add(lblFlecha);
+		
+		JLabel lblX1 = new JLabel("X");
+		lblX1.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblX1.setForeground(Color.WHITE);
+		lblX1.setBounds(698, 35, 46, 14);
+		contentPane.add(lblX1);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(401, 82, 151, 26);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+		
+		final JLabel lbl = new JLabel("X");
+		lblX1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (JOptionPane.showConfirmDialog(null, "¿Seguro que quieres cerrar la aplicacion?", "Confirmacion",
+						JOptionPane.YES_NO_OPTION) == 0) {
+					dispose();
+				}
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lbl.setForeground(Color.RED);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lbl.setForeground(Color.WHITE);
+			}
+		});
 
 		
 	}
