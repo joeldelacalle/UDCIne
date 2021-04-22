@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
-public class VentanaNuevosEstrenos extends JFrame {
+public class LastReleasesWindow extends JFrame {
 
 	/**
 	 * 
@@ -26,7 +26,7 @@ public class VentanaNuevosEstrenos extends JFrame {
 
 	private JPanel contentPane;
 
-	public VentanaNuevosEstrenos() {
+	public LastReleasesWindow() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 501);
@@ -42,7 +42,7 @@ public class VentanaNuevosEstrenos extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				if (JOptionPane.showConfirmDialog(null, "¿Seguro que quieres cerrar la aplicacion?", "Confirmacion",
 						JOptionPane.YES_NO_OPTION) == 0) {
-					VentanaNuevosEstrenos.this.dispose();
+					LastReleasesWindow.this.dispose();
 				}
 			}
 
@@ -67,7 +67,7 @@ public class VentanaNuevosEstrenos extends JFrame {
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				VentanaPrincipal vp = new VentanaPrincipal();
+				MainWindow vp = new MainWindow();
 				vp.setVisible(true);
 				dispose();		
 			}

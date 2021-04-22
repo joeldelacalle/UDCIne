@@ -126,15 +126,17 @@ public class FilmWindow extends JFrame {
       
         
         JButton btnExit = new JButton("SALIR");
+        btnExit.setFont(new Font("Tahoma", Font.BOLD, 10));
         btnExit.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		VentanaPrincipal vp = new VentanaPrincipal();
+        		MainWindow vp = new MainWindow();
         		vp.setVisible(true);
         		dispose();
         	}
         });
         
         JButton btnShowCinemas = new JButton("MOSTRAR CINES");
+        btnShowCinemas.setFont(new Font("Tahoma", Font.BOLD, 10));
         
         JLabel lblDsc = new JLabel("Descripción:");
         lblDsc.setHorizontalAlignment(SwingConstants.CENTER);

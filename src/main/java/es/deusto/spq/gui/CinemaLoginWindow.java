@@ -21,8 +21,11 @@ import javax.swing.border.LineBorder;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class VentanaLoginCine extends JFrame {
+public class CinemaLoginWindow extends JFrame {
 
     private static final long serialVersionUID = 1L;
     Client client = ClientBuilder.newClient();
@@ -39,7 +42,7 @@ public class VentanaLoginCine extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    VentanaLoginCine frame = new VentanaLoginCine();
+                    CinemaLoginWindow frame = new CinemaLoginWindow();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -49,7 +52,7 @@ public class VentanaLoginCine extends JFrame {
     }
 
     
-    public VentanaLoginCine() {
+    public CinemaLoginWindow() {
 
         setUndecorated(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,7 +61,7 @@ public class VentanaLoginCine extends JFrame {
         contentPane.addMouseListener(new MouseAdapter() {
         	@Override
         	public void mouseClicked(MouseEvent e) {
-        		VentanaPrincipal vp = new VentanaPrincipal();
+        		MainWindow vp = new MainWindow();
         		vp.setVisible(true);
         		dispose();
         	}
@@ -93,7 +96,7 @@ public class VentanaLoginCine extends JFrame {
         });
         txtUsername1.setBorder(null);
         txtUsername1.setFont(new Font("Arial", Font.BOLD, 14));
-        txtUsername1.setText("Username");
+        txtUsername1.setText("Usuario");
         txtUsername1.setBounds(10, 10, 170, 20);
         panel.add(txtUsername1);
         txtUsername1.setColumns(10);
@@ -129,7 +132,7 @@ public class VentanaLoginCine extends JFrame {
         txtPassword1.setBorder(null);
         txtPassword1.setEchoChar((char) 0);
         txtPassword1.setFont(new Font("Arial", Font.BOLD, 14));
-        txtPassword1.setText("Password");
+        txtPassword1.setText("Contraseña");
         txtPassword1.setBounds(10, 10, 170, 20);
         lblIconPassword1.add(txtPassword1);
 
@@ -170,14 +173,14 @@ public class VentanaLoginCine extends JFrame {
             }
         });
         pnlBtnLogin1.setBackground(new Color(47, 79, 79));
-        pnlBtnLogin1.setBounds(173, 290, 250, 51);
+        pnlBtnLogin1.setBounds(327, 292, 198, 51);
         contentPane.add(pnlBtnLogin1);
         pnlBtnLogin1.setLayout(null);
 
-        final JLabel lblLogIn = new JLabel("LOG IN");
+        final JLabel lblLogIn = new JLabel("INICIAR SESIÓN");
         lblLogIn.setForeground(Color.WHITE);
         lblLogIn.setFont(new Font("Arial", Font.BOLD, 14));
-        lblLogIn.setBounds(103, 10, 69, 31);
+        lblLogIn.setBounds(47, 10, 125, 31);
         pnlBtnLogin1.add(lblLogIn);
 
         final JLabel lblX = new JLabel("X");
@@ -186,7 +189,7 @@ public class VentanaLoginCine extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 if (JOptionPane.showConfirmDialog(null, "Seguro que quieres salir de la aplicacion?", "Confirmar",
                         JOptionPane.YES_NO_OPTION) == 0) {
-                    VentanaLoginCine.this.dispose();
+                    CinemaLoginWindow.this.dispose();
                 }
             }
 
@@ -229,7 +232,7 @@ public class VentanaLoginCine extends JFrame {
         	}
         	@Override
         	public void mouseClicked(MouseEvent e) {
-        		VentanaPrincipal vp = new VentanaPrincipal ();
+        		MainWindow vp = new MainWindow ();
         		vp.setVisible(true);
         		dispose();
         	}
@@ -237,7 +240,20 @@ public class VentanaLoginCine extends JFrame {
         lblGest.setForeground(Color.BLUE);
         lblGest.setBounds(237, 362, 151, 14);
         contentPane.add(lblGest);
+        
+        JButton btnRegister = new JButton("REGISTRARSE");
+        btnRegister.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		RegisterWindow rw = new RegisterWindow();
+        		rw.setVisible(true);
+        		dispose();
+        	}
+        });
+        btnRegister.setFont(new Font("Tahoma", Font.BOLD, 15));
+        btnRegister.setForeground(Color.WHITE);
+        btnRegister.setBackground(new Color(47, 79, 79));
+        btnRegister.setBounds(59, 292, 176, 51);
+        contentPane.add(btnRegister);
 
     }
-
 }

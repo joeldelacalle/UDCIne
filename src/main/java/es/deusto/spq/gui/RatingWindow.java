@@ -22,14 +22,14 @@ import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
-public class VentanaValoraciones extends JFrame {
+public class RatingWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
 
-	public VentanaValoraciones() {
+	public RatingWindow() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 754, 562);
@@ -179,7 +179,7 @@ public class VentanaValoraciones extends JFrame {
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				VentanaPrincipal vp = new VentanaPrincipal();
+				MainWindow vp = new MainWindow();
 				vp.setVisible(true);
 				dispose();		
 			}

@@ -34,7 +34,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.event.MouseWheelEvent;
 
-public class VentanaPrincipal extends JFrame {
+public class MainWindow extends JFrame {
 
 	/**
 	 * 
@@ -53,7 +53,7 @@ public class VentanaPrincipal extends JFrame {
 	private JSpinner spNumberTickets;
 	private JComboBox<String> cbCinema;
 
-	public VentanaPrincipal() {
+	public MainWindow() {
 		
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -151,7 +151,7 @@ public class VentanaPrincipal extends JFrame {
 		btnFutureFilms.setBounds(389, 441, 205, 49);
 		btnFutureFilms.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				VentanaNuevosEstrenos vne = new VentanaNuevosEstrenos();
+				LastReleasesWindow vne = new LastReleasesWindow();
 				vne.setVisible(true);
 				dispose();
 			}
@@ -163,7 +163,7 @@ public class VentanaPrincipal extends JFrame {
 		btnFood.setBounds(10, 441, 164, 49);
 		btnFood.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				VentanaAlimentosCine vac = new VentanaAlimentosCine();
+				CinemaFoodWindow vac = new CinemaFoodWindow();
 				vac.setVisible(true);
 				dispose();
 			}
@@ -217,7 +217,7 @@ public class VentanaPrincipal extends JFrame {
 		btnAsessment.setBounds(604, 441, 136, 49);
 		btnAsessment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				VentanaValoraciones vv = new VentanaValoraciones();
+				RatingWindow vv = new RatingWindow();
 				vv.setVisible(true);
 				dispose();
 			}

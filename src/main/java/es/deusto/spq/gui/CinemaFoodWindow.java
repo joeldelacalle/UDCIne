@@ -24,13 +24,13 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
-public class VentanaAlimentosCine extends JFrame {
+public class CinemaFoodWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 
-	public VentanaAlimentosCine() {
+	public CinemaFoodWindow() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 501);
@@ -85,7 +85,7 @@ public class VentanaAlimentosCine extends JFrame {
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				VentanaPrincipal vp = new VentanaPrincipal();
+				MainWindow vp = new MainWindow();
 				vp.setVisible(true);
 				dispose();		
 			}
