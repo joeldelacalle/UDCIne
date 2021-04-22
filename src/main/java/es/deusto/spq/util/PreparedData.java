@@ -5,6 +5,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
+import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
 
 public class PreparedData {
@@ -26,6 +27,12 @@ public class PreparedData {
 			Film filmC = new Film("Jon", "Iron Man 3", "Tony Stark tendrá que enfrentarse a un enemigo cuyo alcance no conoce límites. Cuando Stark encuentre su vida personal destruida a manos de su enemigo, se embarca en una difícil aventura para encontrar al responsable."
 								, 13, "https://pics.filmaffinity.com/iron_man_3_aka_ironman_3-972235216-large.jpg");
 			pm.makePersistent(filmC);
+			Cinema cinema1 = new Cinema("Cine Deusto Zubiarte","Bilbao","Centro Comercial Zubiarte",123456789);
+			pm.makePersistent(cinema1);
+			Cinema cinema2 = new Cinema("Cine Deusto Santander","Santander","Corte Ingles nueva monta�a",345345345);
+			pm.makePersistent(cinema1);
+			Cinema cinema3 = new Cinema("Cine Deusto Bakacaldo","bakacaldo","Max Center",458345345);
+			pm.makePersistent(cinema1);
 			
 			tx.commit();
 			

@@ -16,9 +16,8 @@ public class Cinema {
 	protected String address;
 	protected int phoneNumber;
 	
-	public Cinema(long id, String name, String city, String address, int phoneNumber) {
+	public Cinema(String name, String city, String address, int phoneNumber) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.city = city;
 		this.address = address;
