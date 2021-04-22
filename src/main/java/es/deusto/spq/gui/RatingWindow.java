@@ -202,13 +202,13 @@ public class RatingWindow extends JFrame {
 		lblX1.setForeground(Color.WHITE);
 		lblX1.setBounds(698, 35, 46, 14);
 		contentPane.add(lblX1);
+		lblX1.setVisible(true);
 		
 		textField_2 = new JTextField();
 		textField_2.setBounds(401, 82, 151, 26);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
-		final JLabel lbl = new JLabel("X");
 		lblX1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -220,12 +220,12 @@ public class RatingWindow extends JFrame {
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				lbl.setForeground(Color.RED);
+				lblX1.setForeground(Color.RED);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				lbl.setForeground(Color.WHITE);
+				lblX1.setForeground(Color.WHITE);
 			}
 		});
 
