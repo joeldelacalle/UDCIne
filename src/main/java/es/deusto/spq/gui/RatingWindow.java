@@ -29,6 +29,7 @@ public class RatingWindow extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	JLabel lblX1 = new JLabel("X");
 
 	public RatingWindow() {
 		setUndecorated(true);
@@ -197,7 +198,7 @@ public class RatingWindow extends JFrame {
 		lblFlecha.setBounds(50, 10, 25, 31);
 		contentPane.add(lblFlecha);
 		
-		JLabel lblX1 = new JLabel("X");
+		
 		lblX1.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblX1.setForeground(Color.WHITE);
 		lblX1.setBounds(698, 35, 46, 14);

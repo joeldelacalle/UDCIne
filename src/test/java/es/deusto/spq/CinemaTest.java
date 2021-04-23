@@ -11,7 +11,7 @@ public class CinemaTest {
 
 	@Before
 	public void setUp() {
-		c = new Cinema(1, "name", "city", "address", 99);
+		c = new Cinema("name", "city", "address", 99);
 	}
 
 	@Test
