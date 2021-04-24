@@ -143,7 +143,10 @@ public class CinemaLoginWindow extends JFrame {
                 if (txtUsername1.getText().equals("admin") && txtPassword1.getText().equals("admin")) {
                     // los datos son correctos
                     lblLoginMessage1.setText("");
-                    JOptionPane.showMessageDialog(null, "Sesion Iniciada Correctamente");
+                    AdminWindow aw = new AdminWindow ();
+            		aw.setVisible(true);
+            		dispose();
+                    
                 } else if (txtUsername1.getText().equals("") || txtUsername1.getText().equals("Username")
                         || txtPassword1.getText().equals("") || txtPassword1.getText().equals("Password")) {
                     lblLoginMessage1.setText("Por favor rellena los campos!");
