@@ -208,7 +208,7 @@ public class AdminFilmsWindow extends JFrame {
         txtFoto.setBorder(null);
         txtFoto.setFont(new Font("Arial", Font.BOLD, 14));
         txtFoto.setText("Url Cartel");
-        txtFoto.setBounds(500, 90, 170, 20);
+        txtFoto.setBounds(500, 170, 170, 20);
         txtFoto.setColumns(10);
         contentPane.add(txtFoto);
         
@@ -275,7 +275,7 @@ public class AdminFilmsWindow extends JFrame {
         
         JScrollPane areaScrollPane = new JScrollPane(txtDescription);
         areaScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        areaScrollPane.setBounds(500, 170, 170, 230);
+        areaScrollPane.setBounds(500, 210, 170, 190);
         contentPane.add(areaScrollPane);
 	}
 
