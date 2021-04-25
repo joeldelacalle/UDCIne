@@ -3,6 +3,7 @@ package es.deusto.spq.gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,6 +20,7 @@ import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
+import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
@@ -32,6 +34,9 @@ import java.awt.event.MouseEvent;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseWheelListener;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.awt.event.MouseWheelEvent;
 
 public class MainWindow extends JFrame {
@@ -40,21 +45,17 @@ public class MainWindow extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 6673510127789501132L;
-	
+
 	Client client = ClientBuilder.newClient();
 
 	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
 	final WebTarget FilmsTarget = appTarget.path("films");
-	
+
 	private JPanel contentPane;
-	private JList<Film> listBillboard;
-	private JList<String> listShoppingCart;
 	private DefaultListModel<String> shoppingCart;
-	private JSpinner spNumberTickets;
-	private JComboBox<String> cbCinema;
 
 	public MainWindow() {
-		
+
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 501);
@@ -62,26 +63,12 @@ public class MainWindow extends JFrame {
 		contentPane.setBackground(new Color(64, 224, 208));
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 139), 2));
 		setContentPane(contentPane);
-
-		cbCinema = new JComboBox<String>();
-		cbCinema.setBounds(555, 54, 164, 22);
-		cbCinema.addItem("");
-		cbCinema.addItem("Cine 1");
 		contentPane.setLayout(null);
-		cbCinema.setFont(new Font("Tahoma", Font.BOLD, 20));
-		contentPane.add(cbCinema);
 
-		JLabel lblCinema = new JLabel("Cine:");
-		lblCinema.setBounds(405, 56, 92, 18);
-		lblCinema.setFont(new Font("Tahoma", Font.BOLD, 20));
-		contentPane.add(lblCinema);
-
-		
-		
-		
 		final DefaultListModel<Film> billboard = new DefaultListModel<>();
 
-		GenericType<List<Film>> genericType = new GenericType<List<Film>>() {};
+		GenericType<List<Film>> genericType = new GenericType<List<Film>>() {
+		};
 		List<Film> films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 
 		billboard.clear();
@@ -89,66 +76,14 @@ public class MainWindow extends JFrame {
 			System.out.println(film.getName());
 			billboard.addElement(film);
 		}
-		
-		
-		/*
-		 * habra que cambiar de string a pelicula y hacer un metodo que recorra y copie
-		 * los parametros de la lista de peliculas al DefaultListModel
-		 */
-
-		
-		listBillboard = new JList<Film>(billboard);
-		listBillboard.addMouseWheelListener(new MouseWheelListener() {
-			public void mouseWheelMoved(MouseWheelEvent e) {
-				FilmWindow fw = new FilmWindow();
-        		fw.setVisible(true);
-        		dispose();
-			}
-		});
-		listBillboard.setBounds(1, 1, 383, 365);
-		listBillboard.setFont(new Font("Tahoma", Font.BOLD, 20));
-		contentPane.add(listBillboard);
 
 		JLabel lblBillboard = new JLabel("CARTELERA");
 		lblBillboard.setBounds(10, 10, 337, 39);
 		lblBillboard.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(lblBillboard);
 
-		JButton btnAdd = new JButton("añadir al carrito");
-		btnAdd.setBounds(184, 441, 195, 49);
-		btnAdd.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Film a;
-				int cinema = cbCinema.getSelectedIndex();
-				if (cinema == 0) {
-					JOptionPane.showMessageDialog(null, "Seleccione el cine");
-				} else {
-					int numberTickets = (int) spNumberTickets.getValue();
-					if (numberTickets == 0) {
-						JOptionPane.showMessageDialog(null, "Seleccione número de entradas");
-					} else {
-						for (int j = 0; j < numberTickets; j++) {
-							int i = 0;
-							a = listBillboard.getSelectedValue();
-							shoppingCart.add(i, a.getName());
-							i++;
-						}
-
-					}
-				}
-
-			}
-		});
-		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 20));
-		contentPane.add(btnAdd);
-
-		JLabel lblNumberTickets = new JLabel("Número de entradas:");
-		lblNumberTickets.setBounds(404, 101, 184, 31);
-		contentPane.add(lblNumberTickets);
-		lblNumberTickets.setFont(new Font("Tahoma", Font.BOLD, 15));
-
 		JButton btnFutureFilms = new JButton("Futuros estrenos");
-		btnFutureFilms.setBounds(389, 441, 205, 49);
+		btnFutureFilms.setBounds(184, 441, 205, 49);
 		btnFutureFilms.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				LastReleasesWindow vne = new LastReleasesWindow();
@@ -171,20 +106,7 @@ public class MainWindow extends JFrame {
 		btnFood.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnFood);
 
-		spNumberTickets = new JSpinner();
-		spNumberTickets.setBounds(598, 99, 121, 31);
-
-		spNumberTickets.setModel(new SpinnerNumberModel(0, 0, 15, 1));
-		spNumberTickets.setFont(new Font("Tahoma", Font.BOLD, 20));
-		contentPane.add(spNumberTickets);
-
 		shoppingCart = new DefaultListModel<String>();
-
-		listShoppingCart = new JList<String>(shoppingCart);
-		listShoppingCart.setBounds(404, 143, 315, 248);
-		listShoppingCart.setFont(new Font("Tahoma", Font.BOLD, 20));
-
-		contentPane.add(listShoppingCart);
 
 		final JLabel lblX = new JLabel("X");
 		lblX.setBounds(707, 10, 19, 31);
@@ -224,15 +146,82 @@ public class MainWindow extends JFrame {
 		});
 		btnAsessment.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnAsessment);
-	
-		
-		JScrollPane scrollPane = new JScrollPane(listBillboard);
-		scrollPane.setBounds(10, 60, 385, 367);
-		contentPane.add(scrollPane);
-		
-		
-		
-		
 
+		JButton btnFilm1 = new JButton();
+		btnFilm1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				FilmWindow fw = new FilmWindow(0);
+				fw.setVisible(true);
+			}
+		});
+		btnFilm1.setBounds(36, 105, 130, 180);
+		try {
+			btnSetImageIcon(films.get(0).getUrl(), btnFilm1);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		contentPane.add(btnFilm1);
+
+		JButton btnFilm2 = new JButton("");
+		btnFilm2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				FilmWindow fw = new FilmWindow(1);
+				fw.setVisible(true);
+			}
+		});
+		btnFilm2.setBounds(176, 105, 130, 180);
+		try {
+			btnSetImageIcon(films.get(1).getUrl(), btnFilm2);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		contentPane.add(btnFilm2);
+
+		JButton btnFilm3 = new JButton("");
+		btnFilm3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				FilmWindow fw = new FilmWindow(2);
+				fw.setVisible(true);
+			}
+		});
+		btnFilm3.setBounds(316, 105, 130, 180);
+		try {
+			btnSetImageIcon(films.get(2).getUrl(), btnFilm3);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		contentPane.add(btnFilm3);
+
+		JButton btnFilm4 = new JButton("");
+		btnFilm4.setBounds(456, 105, 130, 180);
+
+		// todavia no hay suficientes peliculas
+		/*
+		 * try { btnSetImageIcon(films.get(0).getUrl(),btnFilm1); } catch (IOException
+		 * e1) { // TODO Auto-generated catch block e1.printStackTrace(); }
+		 */
+		contentPane.add(btnFilm4);
+
+	}
+
+	private void btnSetImageIcon(String urlS, JButton jb) throws IOException {
+		URL url = new URL(urlS);
+
+		Image image;
+		image = ImageIO.read(url);
+		ImageIcon myImg = new ImageIcon(url);
+		image = myImg.getImage();
+
+		int width = myImg.getIconWidth() / 5;
+		// System.out.println(width);
+		int height = myImg.getIconHeight() / 5;
+		// System.out.println(height);
+
+		Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+		ImageIcon resizeImg = new ImageIcon(newImg);
+		jb.setIcon(resizeImg);
 	}
 }

@@ -46,7 +46,7 @@ public class CinemaTest {
 
 	@Test
 	public void testToString() {
-		assertEquals("Cinema [id=1" + ", name=name" + ", city=city" + ", address=address" + ", phoneNumber=99" + "]",
+		assertEquals("Cinema [id=0" + ", name=name" + ", city=city" + ", address=address" + ", phoneNumber=99" + "]",
 				c.toString());
 	}
 
