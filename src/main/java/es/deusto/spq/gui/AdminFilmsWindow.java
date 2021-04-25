@@ -2,6 +2,10 @@ package es.deusto.spq.gui;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
@@ -14,6 +18,8 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
@@ -31,13 +37,6 @@ public class AdminFilmsWindow extends JFrame {
 	
 	private JPanel contentPane;
 	private JList<Film> listBillboard;
-	private JTextField txtDirector;
-	private JTextField txtName;
-	private JTextField txtDescription;
-	private JComboBox<Integer> cbAge;
-	private JTextField txtDay;
-	private JTextField txtMonth;
-	private JTextField txtYear;
 	
 	Client client = ClientBuilder.newClient();
 
@@ -131,7 +130,7 @@ public class AdminFilmsWindow extends JFrame {
 		contentPane.add(lblFlecha);
 		
 		JButton btnAdd = new JButton("Añadir");
-		btnAdd.setBounds(500, 430, 200, 30);
+		btnAdd.setBounds(480, 430, 200, 30);
 		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnAdd);
 		
@@ -140,6 +139,144 @@ public class AdminFilmsWindow extends JFrame {
 		btnDelete.setBounds(115, 430, 200, 30);
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnDelete);
+		
+		final JTextField txtName = new JTextField();
+		txtName.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txtName.getText().equals("Título")) {
+                	txtName.setText("");
+                } else {
+                	txtName.selectAll();
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txtName.getText().equals(""))
+                	txtName.setText("Título");
+            }
+        });
+		txtName.setBorder(null);
+		txtName.setFont(new Font("Arial", Font.BOLD, 14));
+		txtName.setText("Título");
+		txtName.setBounds(500, 50, 170, 20);
+        txtName.setColumns(10);
+        contentPane.add(txtName);
+        
+        final JTextField txtDirector = new JTextField();
+        txtDirector.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txtDirector.getText().equals("Director")) {
+                	txtDirector.setText("");
+                } else {
+                	txtDirector.selectAll();
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txtDirector.getText().equals(""))
+                	txtDirector.setText("Director");
+            }
+        });
+        txtDirector.setBorder(null);
+        txtDirector.setFont(new Font("Arial", Font.BOLD, 14));
+        txtDirector.setText("Director");
+        txtDirector.setBounds(500, 90, 170, 20);
+        txtDirector.setColumns(10);
+        contentPane.add(txtDirector);
+        
+        final JTextField txtFoto = new JTextField();
+        txtFoto.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txtFoto.getText().equals("Url Cartel")) {
+                	txtFoto.setText("");
+                } else {
+                	txtFoto.selectAll();
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txtFoto.getText().equals(""))
+                	txtFoto.setText("Url Cartel");
+            }
+        });
+        txtFoto.setBorder(null);
+        txtFoto.setFont(new Font("Arial", Font.BOLD, 14));
+        txtFoto.setText("Url Cartel");
+        txtFoto.setBounds(500, 90, 170, 20);
+        txtFoto.setColumns(10);
+        contentPane.add(txtFoto);
+        
+        final JComboBox<Integer> cbAge = new JComboBox<>();
+        cbAge.addItem(0);
+        cbAge.addItem(7);
+        cbAge.addItem(13);
+        cbAge.addItem(16);
+        cbAge.addItem(18);
+        cbAge.setBounds(500, 130, 170, 20);
+        cbAge.setFont(new Font("Arial", Font.BOLD, 14));
+        contentPane.add(cbAge);
+        
+        final JTextArea txtDescription = new JTextArea();
+        txtDescription.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				int max = 255;
+			    if(txtDescription.getText().length() > max+1) {
+			        e.consume();
+			        String shortened = txtDescription.getText().substring(0, max);
+			        txtDescription.setText(shortened);
+			    }else if(txtDescription.getText().length() > max) {
+			        e.consume();
+			    }
+			}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+        
+        txtDescription.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (txtDescription.getText().equals("Descripción (max 255)")) {
+                	txtDescription.setText("");
+                } else {
+                	txtDescription.selectAll();
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (txtDescription.getText().equals(""))
+                	txtDescription.setText("Descripción (max 255)");
+            }
+        });
+        txtDescription.setLineWrap(true);
+        txtDescription.setWrapStyleWord(true);
+        txtDescription.setBorder(null);
+        txtDescription.setFont(new Font("Arial", Font.BOLD, 14));
+        txtDescription.setText("Descripción (max 255)");
+        txtDescription.setColumns(10);
+        
+        JScrollPane areaScrollPane = new JScrollPane(txtDescription);
+        areaScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        areaScrollPane.setBounds(500, 170, 170, 230);
+        contentPane.add(areaScrollPane);
 	}
 
 }
