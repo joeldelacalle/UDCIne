@@ -76,13 +76,6 @@ public class AdminFilmsWindow extends JFrame {
 		}
 		
 		listBillboard = new JList<Film>(billboard);
-		/*listBillboard.addMouseWheelListener(new MouseWheelListener() {
-			public void mouseWheelMoved(MouseWheelEvent e) {
-				FilmWindow fw = new FilmWindow();
-        		fw.setVisible(true);
-        		dispose();
-			}
-		});*/
 		listBillboard.setBounds(50, 50, 380, 350);
 		listBillboard.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(listBillboard);
@@ -279,34 +272,6 @@ public class AdminFilmsWindow extends JFrame {
         contentPane.add(areaScrollPane);
         
         JButton btnAdd = new JButton("Añadir");
-		/*btnAdd.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-				
-					PersistenceManager pm = pmf.getPersistenceManager();
-					Transaction tx = pm.currentTransaction();
-					int age = Integer.parseInt(cbAge.getSelectedItem().toString());
-					System.out.println("Añadiendo película en la BD");
-					try {
-						tx.begin();
-						Film film = new Film(txtDirector.getText().toString(), txtName.getText().toString(), txtDescription.getText().toString(), age, txtFoto.getText().toString());
-						pm.makePersistent(film);
-						
-						tx.commit();
-						System.out.println("Añadido una nueva película a la Base de Datos");
-						
-					}finally {
-						if (tx.isActive()) {
-							tx.rollback();
-						}
-						pm.close();
-					}
-			
-				}
-		});*/
 		btnAdd.addMouseListener(new MouseListener() {
 			
 			@Override
