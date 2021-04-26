@@ -8,6 +8,7 @@ import javax.jdo.Transaction;
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
 import es.deusto.spq.Release;
+import es.deusto.spq.User;
 
 public class PreparedData {
 
@@ -50,6 +51,12 @@ public class PreparedData {
 					"Historia real que gira en torno a un delincuente y al que, tras ser detenido, el FBI le propone la absolución de sus delitos si coopera con ellos.",
 					16, "https://pics.filmaffinity.com/judas_and_the_black_messiah-912646266-large.jpg");
 			pm.makePersistent(release3);
+			User user1 = new User("Jaime", "jaimesanta", "jaimesantamazo@opendeusto.es", "jaimesanta", 435345);
+			pm.makePersistent(user1);
+			User user2 = new User("Jaime", "jaimesanta", "jaimesantamazo@opendeusto.es", "jaimesanta", 435345);
+			pm.makePersistent(user2);
+			User user3 = new User("Jaime", "jaimesanta", "jaimesantamazo@opendeusto.es", "jaimesanta", 435345);
+			pm.makePersistent(user3);
 
 			tx.commit();
 
