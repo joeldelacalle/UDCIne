@@ -17,7 +17,7 @@ import jakarta.ws.rs.core.MediaType;
 public class UsuarioResource {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<User> getReleases() {
+	public List<User> getUsers() {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 
