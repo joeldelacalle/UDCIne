@@ -4,13 +4,32 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
+import javax.jdo.JDOHelper;
+import javax.jdo.PersistenceManager;
+import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Transaction;
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
+
+import es.deusto.spq.Film;
+import es.deusto.spq.User;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
+import jakarta.ws.rs.core.MediaType;
+
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class AdminUsersWindow extends JFrame {
 
@@ -20,6 +39,12 @@ public class AdminUsersWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
+	private JList<User> lista;
+	
+	Client client = ClientBuilder.newClient();
+
+	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
+	final WebTarget UsersTarget = appTarget.path("users");
 	
 	public AdminUsersWindow() {
 		setUndecorated(true);
@@ -30,6 +55,20 @@ public class AdminUsersWindow extends JFrame {
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 139), 2));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		final DefaultListModel<User> listausuarios = new DefaultListModel<User>();
+		lista = new JList<User>(listausuarios);
+		lista.setBounds(50, 63, 467, 343);
+		contentPane.add(lista);
+		
+		GenericType<List<User>> genericType = new GenericType<List<User>>() {};
+		List<User> Users = UsersTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+		
+		listausuarios.clear();
+		for (User user : Users) {
+			System.out.println(user.getName());
+			listausuarios.addElement(user);
+		}
 		
 		final JLabel lblX = new JLabel("X");
 		lblX.setBounds(707, 10, 19, 31);
@@ -83,6 +122,42 @@ public class AdminUsersWindow extends JFrame {
 		lblFlecha.setForeground(new Color(255, 255, 255));
 		lblFlecha.setBounds(50, 10, 25, 31);
 		contentPane.add(lblFlecha);
+		
+		
+		JButton btnNewButton = new JButton("Eliminar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+				PersistenceManager pm = pmf.getPersistenceManager();
+				Transaction tx = pm.currentTransaction();
+				System.out.println("Eliminando usuario de la BD");
+				
+				try {
+					tx.begin();
+					User user = lista.getSelectedValue();
+					System.out.println(user.toString());
+					User u = pm.getObjectById(User.class, user.getId());
+					pm.deletePersistent(u);
+					
+					tx.commit();
+					System.out.println("Eliminada usuario de la Base de Datos");
+					
+					
+				}finally {
+					if (tx.isActive()) {
+						tx.rollback();
+					}
+					pm.close();
+					
+					AdminUsersWindow auw = new AdminUsersWindow();
+					auw.setVisible(true);
+					dispose();
+				}
+			}
+		});
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnNewButton.setBounds(50, 433, 129, 23);
+		contentPane.add(btnNewButton);
 	}
 
 }
