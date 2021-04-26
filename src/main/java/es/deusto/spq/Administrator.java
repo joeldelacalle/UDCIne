@@ -37,5 +37,6 @@ public class Administrator extends User{
 	public String toString() {
 		return "Administrator [id=" + id + ", nivel=" + nivel + ", name=" + name + ", nickname=" + nickname + ", email="
 				+ email + ", password=" + password + ", phoneNumber=" + phoneNumber + "]";
+		
 	}
 }
