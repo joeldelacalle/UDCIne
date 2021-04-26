@@ -1,15 +1,13 @@
 package es.deusto.spq;
 
-import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.Inheritance;
+import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.Persistent;
-import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
+@Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
 public class Administrator extends User{
 	
-	@PrimaryKey
-    @Persistent(valueStrategy=IdGeneratorStrategy.NATIVE)
 	protected long id;
 	protected int nivel;
 	

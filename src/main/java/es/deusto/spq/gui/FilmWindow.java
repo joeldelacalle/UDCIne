@@ -166,7 +166,7 @@ public class FilmWindow extends JFrame {
 			ImageIcon resizeImg = new ImageIcon(newImg);
 			lblFilmImage.setIcon(resizeImg);
 			textPaneDescription.setText(descFilm);
-			// textFieldFilmName.setText(filmName); NOSE PORQUE NO FUNCIONA
+			//textFieldFilmName.setText(filmName); //NOSE PORQUE NO FUNCIONA
 		} catch (IOException e7) {
 		}
 		int ageAll = 0; // apta para todos los publicos
