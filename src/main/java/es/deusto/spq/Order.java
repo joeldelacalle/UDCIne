@@ -1,24 +1,34 @@
 package es.deusto.spq;
 
-import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable
 public class Order {
+	@PrimaryKey
+	@Persistent(valueStrategy = IdGeneratorStrategy.NATIVE)
+	protected long id;
 
 	private String mail;
 	private Date date;
-	private Ticket[] tickets;
-	private Product[] product;
+	private List<Ticket> tickets;
+	private List<Product> products;
 	private String paymentMethod;
 	private long price = -1;
 
-	public Order(String mail, Date date, Ticket[] tickets, Product[] product, String paymentMethod, long price) {
+	public Order(String mail, Date date, List<Ticket> tickets, List<Product> product, String paymentMethod,
+			long price) {
 		super();
 		this.mail = mail;
 		this.date = date;
 		this.tickets = tickets;
-		this.product = product;
-		this.paymentMethod= paymentMethod;
+		this.products = product;
+		this.paymentMethod = paymentMethod;
 		this.price = price;
 	}
 
@@ -38,20 +48,20 @@ public class Order {
 		this.date = date;
 	}
 
-	public Ticket[] getTickets() {
+	public List<Ticket> getTickets() {
 		return tickets;
 	}
 
-	public void setTickets(Ticket[] tickets) {
+	public void setTickets(List<Ticket> tickets) {
 		this.tickets = tickets;
 	}
 
-	public Product[] getProduct() {
-		return product;
+	public List<Product> getProducts() {
+		return products;
 	}
 
-	public void setProduct(Product[] product) {
-		this.product = product;
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 
 	public String getPaymentMethod() {
@@ -72,8 +82,8 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [mail=" + mail + ", date=" + date + ", tickets=" + Arrays.toString(tickets) + ", product="
-				+ Arrays.toString(product) + ", price=" + price + "]";
+		return "Order [id=" + id + ", mail=" + mail + ", date=" + date + ", tickets=" + tickets + ", products="
+				+ products + ", paymentMethod=" + paymentMethod + ", price=" + price + "]";
 	}
 
 }

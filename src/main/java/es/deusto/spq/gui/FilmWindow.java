@@ -58,6 +58,7 @@ public class FilmWindow extends JFrame {
 	private String urlFilm = "-1";
 	private String descFilm = "-1";
 	private JTextPane textPaneDescription = new JTextPane();
+	private Film film;
 
 	private void ageFilmIconResize(URL url) throws IOException {
 		Image image;
@@ -145,7 +146,7 @@ public class FilmWindow extends JFrame {
 		// ANTERIOR VENTANA
 		comboBoxFilm.setSelectedItem(films.get(selectedFilm));
 
-		Film film = films.get(selectedFilm);
+		film = films.get(selectedFilm);
 		ageFilm = film.getAgeRestriction();
 		filmName = film.getName();
 		urlFilm = film.getUrl();
@@ -296,58 +297,73 @@ public class FilmWindow extends JFrame {
 		textFieldFilmName.setColumns(10);
 
 		textPaneDescription.setBackground(new Color(64, 224, 208));
+		
+		JButton btnBuyTickets = new JButton("comprar entradas");
+		btnBuyTickets.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				OrderWindow ow = new OrderWindow(film);
+				ow.setVisible(true);
+			}
+		});
 
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane
-				.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(65)
-								.addComponent(textFieldFilmName, GroupLayout.PREFERRED_SIZE, 302,
-										GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(257, Short.MAX_VALUE))
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(168).addComponent(lblFilmImage)
-								.addContainerGap(456, Short.MAX_VALUE))
-						.addGroup(
-								Alignment.TRAILING,
-								gl_contentPane
-										.createSequentialGroup().addGap(187).addComponent(btnExit,
-												GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-										.addGap(42).addComponent(btnShowCinemas).addGap(195))
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(55).addGroup(gl_contentPane
-								.createParallelGroup(Alignment.LEADING)
-								.addComponent(comboBoxFilm, GroupLayout.PREFERRED_SIZE, 269, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(lblDsc, GroupLayout.PREFERRED_SIZE, 102,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED).addComponent(textPaneDescription,
-												GroupLayout.PREFERRED_SIZE, 392, GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_contentPane.createSequentialGroup().addGap(360).addComponent(
-										lblRecommendedAge, GroupLayout.PREFERRED_SIZE, 148,
-										GroupLayout.PREFERRED_SIZE)))
-								.addContainerGap(61, Short.MAX_VALUE)));
-		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING).addGroup(gl_contentPane
-				.createSequentialGroup().addContainerGap()
-				.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(65)
+					.addComponent(textFieldFilmName, GroupLayout.PREFERRED_SIZE, 302, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(255, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(168)
+					.addComponent(lblFilmImage)
+					.addContainerGap(454, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(187)
+					.addComponent(btnExit, GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+					.addGap(42)
+					.addComponent(btnShowCinemas)
+					.addGap(18)
+					.addComponent(btnBuyTickets)
+					.addGap(88))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(55)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(comboBoxFilm, GroupLayout.PREFERRED_SIZE, 269, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_contentPane.createSequentialGroup()
-								.addComponent(comboBoxFilm, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(textFieldFilmName, GroupLayout.PREFERRED_SIZE, 59,
-										GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblDsc, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(textPaneDescription, GroupLayout.PREFERRED_SIZE, 392, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(360)
+							.addComponent(lblRecommendedAge, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(59, Short.MAX_VALUE))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(comboBoxFilm, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(textFieldFilmName, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE))
 						.addComponent(lblRecommendedAge, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
-				.addPreferredGap(ComponentPlacement.RELATED)
-				.addComponent(lblFilmImage, GroupLayout.PREFERRED_SIZE, 325, GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(ComponentPlacement.RELATED)
-				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblFilmImage, GroupLayout.PREFERRED_SIZE, 325, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblDsc, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textPaneDescription, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE))
-				.addContainerGap(35, Short.MAX_VALUE))
-				.addGroup(gl_contentPane.createSequentialGroup().addGap(510)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnShowCinemas, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(btnExit, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE))
-						.addContainerGap()));
+					.addContainerGap(32, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(510)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnShowCinemas, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnExit, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnBuyTickets))
+					.addContainerGap())
+		);
 		contentPane.setLayout(gl_contentPane);
 	}
 }
