@@ -391,15 +391,11 @@ public class AdminFilmsWindow extends JFrame {
 					tx.begin();
 					Film film = listBillboard.getSelectedValue();
 					System.out.println(film.toString());
-					Film f = pm.getObjectById(Film.class, listBillboard.getSelectedValue());
-					
-					//String keyString = film.getName();
-					//film = (Film) pm.getObjectById(film.getId());
+					Film f = pm.getObjectById(Film.class, film.getId());
 					pm.deletePersistent(f);
 					
 					tx.commit();
 					System.out.println("Eliminada película de la Base de Datos");
-					
 					
 					
 				}finally {
@@ -407,6 +403,10 @@ public class AdminFilmsWindow extends JFrame {
 						tx.rollback();
 					}
 					pm.close();
+					
+					AdminFilmsWindow afw = new AdminFilmsWindow();
+					afw.setVisible(true);
+					dispose();
 				}
 			}
 		});
