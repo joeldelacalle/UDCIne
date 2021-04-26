@@ -60,7 +60,7 @@ public class AdminFilmsWindow extends JFrame {
 
 		billboard.clear();
 		for (Film film : films) {
-			System.out.println(film.getName());
+			//System.out.println(film.getName());
 			billboard.addElement(film);
 		}
 		
