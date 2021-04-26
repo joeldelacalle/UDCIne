@@ -2,14 +2,23 @@ package es.deusto.spq.gui;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.security.Key;
+import java.security.KeyFactory;
 import java.util.List;
 
+import javax.jdo.JDOHelper;
+import javax.jdo.PersistenceManager;
+import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Transaction;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -25,6 +34,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import es.deusto.spq.Film;
+import es.deusto.spq.User;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -37,6 +47,7 @@ public class AdminFilmsWindow extends JFrame {
 	
 	private JPanel contentPane;
 	private JList<Film> listBillboard;
+	private JLabel lblMessage = new JLabel("");
 	
 	Client client = ClientBuilder.newClient();
 
@@ -60,7 +71,7 @@ public class AdminFilmsWindow extends JFrame {
 
 		billboard.clear();
 		for (Film film : films) {
-			//System.out.println(film.getName());
+			System.out.println(film.getName());
 			billboard.addElement(film);
 		}
 		
@@ -128,17 +139,6 @@ public class AdminFilmsWindow extends JFrame {
 		lblFlecha.setForeground(new Color(255, 255, 255));
 		lblFlecha.setBounds(50, 10, 25, 31);
 		contentPane.add(lblFlecha);
-		
-		JButton btnAdd = new JButton("Añadir");
-		btnAdd.setBounds(480, 430, 200, 30);
-		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 20));
-		contentPane.add(btnAdd);
-		
-		
-		JButton btnDelete = new JButton("Eliminar");
-		btnDelete.setBounds(115, 430, 200, 30);
-		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 20));
-		contentPane.add(btnDelete);
 		
 		final JTextField txtName = new JTextField();
 		txtName.addFocusListener(new FocusAdapter() {
@@ -277,6 +277,147 @@ public class AdminFilmsWindow extends JFrame {
         areaScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         areaScrollPane.setBounds(500, 210, 170, 190);
         contentPane.add(areaScrollPane);
+        
+        JButton btnAdd = new JButton("Añadir");
+		/*btnAdd.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+				
+					PersistenceManager pm = pmf.getPersistenceManager();
+					Transaction tx = pm.currentTransaction();
+					int age = Integer.parseInt(cbAge.getSelectedItem().toString());
+					System.out.println("Añadiendo película en la BD");
+					try {
+						tx.begin();
+						Film film = new Film(txtDirector.getText().toString(), txtName.getText().toString(), txtDescription.getText().toString(), age, txtFoto.getText().toString());
+						pm.makePersistent(film);
+						
+						tx.commit();
+						System.out.println("Añadido una nueva película a la Base de Datos");
+						
+					}finally {
+						if (tx.isActive()) {
+							tx.rollback();
+						}
+						pm.close();
+					}
+			
+				}
+		});*/
+		btnAdd.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(txtName.getText().equals("")||txtName.getText().equals("Título")||
+						txtDirector.getText().equals("")||txtDirector.getText().equals("Director")||
+						txtDescription.getText().equals("")||txtDescription.getText().equals("Descripción (max 255)")||
+						txtFoto.getText().equals("")||txtFoto.getText().equals("Url Cartel")){
+					
+					lblMessage.setText("Por favor rellena los campos!");
+					
+				}else {
+					PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+					
+					PersistenceManager pm = pmf.getPersistenceManager();
+					Transaction tx = pm.currentTransaction();
+					int age = Integer.parseInt(cbAge.getSelectedItem().toString());
+					System.out.println("Añadiendo película en la BD");
+					
+					try {
+						tx.begin();
+						Film film = new Film(txtDirector.getText().toString(), txtName.getText().toString(), txtDescription.getText().toString(), age, txtFoto.getText().toString());
+						pm.makePersistent(film);
+						
+						tx.commit();
+						System.out.println("Añadido una nueva película a la Base de Datos");
+						
+					}finally {
+						if (tx.isActive()) {
+							tx.rollback();
+						}
+						pm.close();
+						
+						AdminFilmsWindow afw = new AdminFilmsWindow();
+						afw.setVisible(true);
+						dispose();
+					
+					}
+				}
+				
+			}
+		});
+		btnAdd.setBounds(480, 430, 200, 30);
+		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 20));
+		contentPane.add(btnAdd);
+
+		JButton btnDelete = new JButton("Eliminar");
+		btnDelete.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+				PersistenceManager pm = pmf.getPersistenceManager();
+				Transaction tx = pm.currentTransaction();
+				System.out.println("Eliminando película de la BD");
+				
+				try {
+					tx.begin();
+					Film film = listBillboard.getSelectedValue();
+					System.out.println(film.toString());
+					Film f = pm.getObjectById(Film.class, listBillboard.getSelectedValue());
+					
+					//String keyString = film.getName();
+					//film = (Film) pm.getObjectById(film.getId());
+					pm.deletePersistent(f);
+					
+					tx.commit();
+					System.out.println("Eliminada película de la Base de Datos");
+					
+					
+					
+				}finally {
+					if (tx.isActive()) {
+						tx.rollback();
+					}
+					pm.close();
+				}
+			}
+		});
+		btnDelete.setBounds(115, 430, 200, 30);
+		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 20));
+		contentPane.add(btnDelete);
+		
+		lblMessage.setForeground(new Color(128, 0, 0));
+        lblMessage.setFont(new Font("Arial", Font.PLAIN, 12));
+        lblMessage.setBounds(500, 410, 250, 19);
+        contentPane.add(lblMessage);
 	}
 
 }
