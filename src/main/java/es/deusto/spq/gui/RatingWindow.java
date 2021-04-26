@@ -6,7 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
+import javax.jdo.JDOHelper;
+import javax.jdo.PersistenceManager;
+import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Transaction;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
@@ -22,6 +27,15 @@ import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
+import es.deusto.spq.Assessment;
+import es.deusto.spq.Cinema;
+import es.deusto.spq.Film;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
+import jakarta.ws.rs.core.MediaType;
+
 public class RatingWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -30,6 +44,12 @@ public class RatingWindow extends JFrame {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	JLabel lblX1 = new JLabel("X");
+	
+	Client client = ClientBuilder.newClient();
+
+	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
+	final WebTarget FilmsTarget = appTarget.path("films");
+	final WebTarget CinemasTarget = appTarget.path("cinemas");
 
 	public RatingWindow() {
 		setUndecorated(true);
@@ -52,28 +72,30 @@ public class RatingWindow extends JFrame {
 		lblNewLabel_1.setBounds(210, 82, 191, 27);
 		contentPane.add(lblNewLabel_1);
 
-		String pelicula1 = "2 dias en Paris";
-		String pelicula2 = "76 days";
-		String pelicula3 = "A balance";
-
-		JComboBox<String> comboBox = new JComboBox<String>();
+		final JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setBounds(29, 206, 97, 22);
 		contentPane.add(comboBox);
-		comboBox.addItem(pelicula1);
-		comboBox.addItem(pelicula2);
-		comboBox.addItem(pelicula3);
-
-		String cine1 = "Max ocio";
-		String cine2 = "Zubiarte";
-		String cine3 = "Urbil";
-
-		JComboBox<String> comboBox_1 = new JComboBox<String>();
+		
+		GenericType<List<Film>> genericType = new GenericType<List<Film>>() {};
+		List<Film> films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+		
+		for (Film film : films) {
+			System.out.println(film.getName());
+			comboBox.addItem(film.getName());
+		}
+		
+		final JComboBox<String> comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(350, 206, 103, 22);
 		contentPane.add(comboBox_1);
-		comboBox_1.addItem(cine1);
-		comboBox_1.addItem(cine2);
-		comboBox_1.addItem(cine3);
-
+		
+		GenericType<List<Cinema>> genericType2 = new GenericType<List<Cinema>>() {};
+		List<Cinema> cinemas = CinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType2);
+		
+		for (Cinema cinema : cinemas) {
+			System.out.println(cinema.getName());
+			comboBox_1.addItem(cinema.getName());
+		}
+		
 		final JLabel lblNewLabel_3 = new JLabel("Peliculas");
 		lblNewLabel_3.setFont(new Font("Arial", Font.BOLD, 16));
 		lblNewLabel_3.setBounds(29, 181, 70, 14);
@@ -103,12 +125,45 @@ public class RatingWindow extends JFrame {
 		textField_1.setBounds(350, 239, 191, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(401, 82, 151, 26);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
 
 		JButton btnNewButton_1 = new JButton("A\u00F1adir");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String valoracionpeli = textField.getText();
-				listmodelpelis.addElement(valoracionpeli);
+				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+				
+				PersistenceManager pm = pmf.getPersistenceManager();
+				Transaction tx = pm.currentTransaction();
+				String user = textField_2.getText();
+				String name = comboBox.getSelectedItem().toString();
+				String text = textField.getText();
+				System.out.println("Añadiendo Valoracion en la BD");
+				if(user.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Porfavor, escribe tu usuario","ERROR", JOptionPane.ERROR_MESSAGE);
+				}else if(text.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Porfavor, escribe tu valoracion","ERROR", JOptionPane.ERROR_MESSAGE);
+				}else {
+				try {
+					String valoracionpeli = textField.getText();
+					listmodelpelis.addElement(valoracionpeli);
+					tx.begin();
+					Assessment assessment = new Assessment(user, name, text);
+					pm.makePersistent(assessment);
+					
+					tx.commit();
+					System.out.println("Añadido una nueva valoracion a la Base de Datos");
+					
+				}finally {
+					if (tx.isActive()) {
+						tx.rollback();
+					}
+					pm.close();
+				}
+			}
 			}
 		});
 		btnNewButton_1.setFont(new Font("Arial", Font.BOLD, 16));
@@ -118,8 +173,36 @@ public class RatingWindow extends JFrame {
 		JButton btnNewButton_2 = new JButton("A\u00F1adir");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String valoracioncine = textField_1.getText();
-				listmodelcines.addElement(valoracioncine);
+				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+				
+				PersistenceManager pm = pmf.getPersistenceManager();
+				Transaction tx = pm.currentTransaction();
+				String user = textField_2.getText();
+				String name = comboBox_1.getSelectedItem().toString();
+				String text = textField_1.getText();
+				System.out.println("Añadiendo Valoracion en la BD");
+				if(user.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Porfavor, escribe tu usuario","ERROR", JOptionPane.ERROR_MESSAGE);
+				}else if(text.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Porfavor, escribe tu valoracion","ERROR", JOptionPane.ERROR_MESSAGE);
+				}else {
+				try {
+					String valoracioncine = textField_1.getText();
+					listmodelcines.addElement(valoracioncine);
+					tx.begin();
+					Assessment assessment = new Assessment(user, name, text);
+					pm.makePersistent(assessment);
+					
+					tx.commit();
+					System.out.println("Añadido una nueva valoracion a la Base de Datos");
+					
+				}finally {
+					if (tx.isActive()) {
+						tx.rollback();
+					}
+					pm.close();
+				}
+				}
 			}
 		});
 		btnNewButton_2.setFont(new Font("Arial", Font.BOLD, 16));
@@ -204,11 +287,6 @@ public class RatingWindow extends JFrame {
 		lblX1.setBounds(698, 35, 46, 14);
 		contentPane.add(lblX1);
 		lblX1.setVisible(true);
-		
-		textField_2 = new JTextField();
-		textField_2.setBounds(401, 82, 151, 26);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
 		
 		lblX1.addMouseListener(new MouseAdapter() {
 			@Override
