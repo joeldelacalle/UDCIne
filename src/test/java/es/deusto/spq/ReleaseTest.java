@@ -46,7 +46,7 @@ public class ReleaseTest {
 
 	@Test
 	public void testToString() {
-		assertEquals("name " + "+" + "13", r.toString());
+		assertEquals("name " + "", r.toString());
 	}
 
 }
