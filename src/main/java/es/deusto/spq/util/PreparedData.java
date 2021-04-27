@@ -1,5 +1,7 @@
 package es.deusto.spq.util;
 
+import java.util.Calendar;
+
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
@@ -8,6 +10,7 @@ import javax.jdo.Transaction;
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
 import es.deusto.spq.Release;
+import es.deusto.spq.Room;
 import es.deusto.spq.User;
 
 public class PreparedData {
@@ -57,7 +60,26 @@ public class PreparedData {
 			pm.makePersistent(user2);
 			User user3 = new User("Jaime", "jaimesanta", "jaimesantamazo@opendeusto.es", "jaimesanta", 435345);
 			pm.makePersistent(user3);
-
+			
+			Room room1 = new Room(cinema1, filmA, "ZUBIARTE SALA 1", Calendar.getInstance().getTime(), 100);
+			pm.makePersistent(room1);
+			Room room2 = new Room(cinema1, filmB, "ZUBIARTE SALA 2", Calendar.getInstance().getTime(), 100);
+			pm.makePersistent(room2);
+			Room room3 = new Room(cinema1, filmC, "ZUBIARTE SALA 3", Calendar.getInstance().getTime(), 100);
+			pm.makePersistent(room3);
+			Room room4 = new Room(cinema2, filmA, "SANTANDER SALA 1", Calendar.getInstance().getTime(), 100);
+			pm.makePersistent(room4);
+			Room room5 = new Room(cinema2, filmB, "SANTANDER SALA 2", Calendar.getInstance().getTime(), 100);
+			pm.makePersistent(room5);
+			Room room6 = new Room(cinema2, filmC, "SANTANDER SALA 3", Calendar.getInstance().getTime(), 100);
+			pm.makePersistent(room6);
+			Room room7 = new Room(cinema3, filmA, "BARAKALDO SALA 1", Calendar.getInstance().getTime(), 100);
+			pm.makePersistent(room7);
+			Room room8 = new Room(cinema3, filmB, "BARAKALDO SALA 2", Calendar.getInstance().getTime(), 100);
+			pm.makePersistent(room8);
+			Room room9 = new Room(cinema3, filmC, "BARAKALDO SALA 3", Calendar.getInstance().getTime(), 100);
+			pm.makePersistent(room9);
+			
 			tx.commit();
 
 		} finally {

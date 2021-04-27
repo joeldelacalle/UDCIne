@@ -91,7 +91,7 @@ public class AdminWindow extends JFrame{
 		JLabel lblAdmin = new JLabel("ADMINISTRACIÓN");
 		lblAdmin.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAdmin.setFont(new Font("Cooper Black", Font.BOLD, 33));
-		lblAdmin.setBounds(230, 20, 300, 54);
+		lblAdmin.setBounds(199, 20, 338, 54);
 		contentPane.add(lblAdmin);
 		
 		JButton btnPelis = new JButton("Administrar Películas");
