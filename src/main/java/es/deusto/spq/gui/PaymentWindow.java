@@ -93,6 +93,27 @@ public class PaymentWindow extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("Saltar pago");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String[] opciones = {"Aceptar","Cancelar"};
+				String confirmacion = "¿Estas seguro de que quieres pagar en la caja?";
+				int respuesta = JOptionPane.showOptionDialog( null, confirmacion, "¿Estas seguro?", JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+				switch(respuesta) {
+				case 0:
+					JOptionPane.showMessageDialog(null, "Se ha llevado a cabo la reserva, pendiente de pago");
+					dispose();
+					MainWindow mw = new MainWindow();
+					mw.setVisible(true);
+					break;
+				case 1:
+					JOptionPane.showMessageDialog(null, "Se ha cancelado la operacion");
+					break;
+				default:
+					break;
+				}
+			}
+		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnNewButton.setBounds(440, 322, 127, 23);
 		contentPane.add(btnNewButton);
