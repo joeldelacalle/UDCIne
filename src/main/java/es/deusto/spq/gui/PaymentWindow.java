@@ -52,7 +52,7 @@ public class PaymentWindow extends JFrame {
 
 	/**
 	 * Create the frame.
-	 */
+	 */	
 	public PaymentWindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 689, 480);
