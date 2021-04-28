@@ -9,6 +9,7 @@ import javax.jdo.Transaction;
 
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
+import es.deusto.spq.Product;
 import es.deusto.spq.Release;
 import es.deusto.spq.Room;
 import es.deusto.spq.User;
@@ -79,6 +80,13 @@ public class PreparedData {
 			pm.makePersistent(room8);
 			Room room9 = new Room(cinema3, filmC, "BARAKALDO SALA 3", Calendar.getInstance().getTime(), 100);
 			pm.makePersistent(room9);
+			
+			Product product1 = new Product("Palomitas Medianas", "Paquete de palomitas", 3.50);
+			pm.makePersistent(product1);
+			Product product2 = new Product("Palomitas Grandes", "Cubo de palomitas", 5.00);
+			pm.makePersistent(product2);
+			Product product3 = new Product("Menú", "Cubo de palomitas + Bebida", 8.90);
+			pm.makePersistent(product3);
 			
 			tx.commit();
 
