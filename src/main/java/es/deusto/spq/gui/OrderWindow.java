@@ -118,7 +118,7 @@ public class OrderWindow extends JFrame {
 		JButton btnAdd = new JButton("Añadir al carrito");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				for (int i = 0; i < spinner.getComponentCount(); i++)
+				for (int i = 0; i < (Integer) spinner.getValue(); i++)
 					listModelShoppingCart.addElement(selectedFilm);
 			}
 		});
