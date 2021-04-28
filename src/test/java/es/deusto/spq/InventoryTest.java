@@ -28,7 +28,10 @@ public class InventoryTest {
 		assertEquals("testName", i.getName());
 	}
 
-	// Falta probar el get products (problema con el Set)
+	@Test
+	public void testGetProducts() {
+		assertEquals(products.size(), 1);
+	}
 
 	@Test
 	public void testToString() {
