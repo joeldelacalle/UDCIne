@@ -164,10 +164,26 @@ public class PaymentWindow extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				String email = textField.getText();
 				String contraseña = String.valueOf(passwordField.getPassword());
-				if(!email.matches(EMAIL_PATTERN)) {
-					JOptionPane.showMessageDialog(null, "Email no valido", "ERROR", JOptionPane.ERROR_MESSAGE);
-				}else {
-					
+				String[] opciones = {"Aceptar","Cancelar"};
+				String confirmacion = "¿Estas seguro de que quieres pagar con PayPal?";
+				int respuesta = JOptionPane.showOptionDialog( null, confirmacion, "¿Estas seguro?", JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+				switch(respuesta) {
+				case 0:
+					if(!email.matches(EMAIL_PATTERN)) {
+						JOptionPane.showMessageDialog(null, "Email no valido", "ERROR", JOptionPane.ERROR_MESSAGE);
+					}else {
+						JOptionPane.showMessageDialog(null, "Se ha llevado a cabo la reserva, pagada");
+						dispose();
+						MainWindow mw = new MainWindow();
+						mw.setVisible(true);
+					}
+					break;
+				case 1:
+					JOptionPane.showMessageDialog(null, "Se ha cancelado la operacion");
+					break;
+				default:
+					break;
 				}
 			}
 		});
