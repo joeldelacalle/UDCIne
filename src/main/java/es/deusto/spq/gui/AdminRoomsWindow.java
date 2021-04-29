@@ -69,7 +69,9 @@ public class AdminRoomsWindow extends JFrame {
 	private final JComboBox<String> comboRoom = new JComboBox<String>();
 	
 	private JDateChooser calendar = new JDateChooser("yyyy/MM/dd","####/##/##",'_');
-	private Cinema cinemaSelected;
+	private long cinemaId;
+	private long roomCinemaId;
+	private Room r;
 	
 	private void addFilmtoRoom() {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -158,22 +160,15 @@ public class AdminRoomsWindow extends JFrame {
 		contentPane.add(lblFlecha);
 		
 		for (Cinema cinema : cinemas) {
-			cinemaSelected = cinema;
 			comboCinema.addItem(cinema);
 		}
 		for (Film film : films) {
 			comboFilm.addItem(film);
 		}
-		
-		
-		
 		for (Room room : rooms) {
-			//if(room.getCinema().equals(cinemaSelected)) {
-				comboRoom.addItem(room.getName());	
-			/*}else {
-				JOptionPane.showMessageDialog(contentPane, "Seleccione un cine para que se le muestren las salas.");
-			}*/
-			
+			r = room;
+			//roomCinema = room.getCinema();
+			comboRoom.addItem(room.getName());	
 		}
 		
 		
@@ -184,7 +179,30 @@ public class AdminRoomsWindow extends JFrame {
 		
 		comboCinema.setBounds(50, 161, 265, 57);
 		contentPane.add(comboCinema);
-		
+		/*comboRoom.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				for (int i=0;i<cinemas.size();i++) {
+					 cinemaId = cinemas.get(i).getId();			
+				 }
+				 for (int i=0;i<rooms.size();i++) {
+					 roomCinemaId = rooms.get(i).getId();			
+				 }
+				 if(cinemaId == roomCinemaId) {
+						System.out.println(cinemaId);
+						System.out.println(roomCinemaId);
+						JOptionPane.showMessageDialog(contentPane, "Sala y cine coinciden.");
+					}else {
+						System.out.println("No coincide");
+					}
+					 /*else if(!comboCinema.getSelectedItem().equals(roomCinema)) {
+						System.out.println(roomCinema);
+						comboRoom.removeItem(r);
+						JOptionPane.showMessageDialog(contentPane, "Sala y cine no coinciden. Borrar sala");
+				}
+			}
+		});
+		*/
 		comboRoom.setBounds(50, 247, 265, 57);
 		contentPane.add(comboRoom);
 		
