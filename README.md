@@ -37,9 +37,8 @@ La aplicación cliente puede iniciarse usando el comando
 
     mvn exec::java -Pcliente
     
-     ------------------------------------------------------------------------------   
+ -------------------------------------------------------------------------------   
  Test
- 
 	A la hora de hacer los test dentro del "pom.xml"
 	Dentro de "<phase>compile</phase>"
 	Hay que eliminar "<goal>enhance</goal>"
