@@ -20,8 +20,9 @@ import org.junit.Test;
 
 public class CinemaLoginWindowTest {
 
-	private JFrame f;
-	private JPanel cp;
+	CinemaLoginWindow clw;
+	/*private JFrame f;
+	*/private JPanel cp;
 	private JTextField txtUsername1;
 	private JPasswordField txtPassword1;
 	private JLabel lblLoginMessage1;
@@ -36,25 +37,30 @@ public class CinemaLoginWindowTest {
 
 	@Before
 	public void setUp() throws Exception {
-		f = new JFrame();
+		clw = new CinemaLoginWindow();
+		clw.setVisible(true);
+		clw.setBounds(100, 100, 600, 400);
+	/*  f = new JFrame();
 		f.setVisible(true);
 		f.setBounds(100, 100, 600, 400);
-		
+		*/
 		 cp = new JPanel();
 		 cp.setBounds(173, 146, 250, 40);
 		 cp.setBackground(new Color(72, 209, 204));
+		 clw.setContentPane(cp);
 	     		 
 		 txtUsername1 = new JTextField();
 		 txtUsername1.setBounds(10, 10, 170, 20);
 		 txtUsername1.setText("Usuario");
 		 txtUsername1.setColumns(10);
 		 txtUsername1.setFont(new Font("Arial", Font.BOLD, 14));
+		 clw.add(txtUsername1);
 		 
 		 txtPassword1 = new JPasswordField();
 		 txtPassword1.setFont(new Font("Arial", Font.BOLD, 14));
 	        txtPassword1.setText("Contraseña");
 	        txtPassword1.setBounds(10, 10, 170, 20);
-	        
+	        clw.add(txtPassword1);   
 		 lblLoginMessage1 = new JLabel();
 		 
 		 lblGest = new JLabel();
@@ -62,32 +68,38 @@ public class CinemaLoginWindowTest {
 		 panel = new JPanel();
 		 panel.setBackground(Color.WHITE);
 	     panel.setBounds(173, 146, 250, 40);
+	     clw.add(panel);
 		 
 		 lblIconPassword1 = new JPanel();
 		 lblIconPassword1.setBackground(Color.WHITE);
 		 lblIconPassword1.add(txtPassword1);
+		 clw.add(lblIconPassword1);
 		 
 		 pnlBtnLogin1 = new JPanel();
 		 pnlBtnLogin1.setBackground(new Color(47, 79, 79));
 	        pnlBtnLogin1.setBounds(327, 292, 198, 51);
+	        clw.add(pnlBtnLogin1);
 		 
 		 lblLogIn = new JLabel();
 		 lblLogIn.setForeground(Color.WHITE);
 		 lblLogIn.setText("INICIAR SESIÓN");
 	        lblLogIn.setFont(new Font("Arial", Font.BOLD, 14));
 	        lblLogIn.setBounds(47, 10, 125, 31);
+	        clw.add(lblLogIn);
 		 
 		 lblX = new JLabel();
+		 clw.add(lblX);
 		 
 		 lblCineDeusto = new JLabel();
+		 clw.add(lblCineDeusto);
 		 
 		 btnRegister = new JButton();
-		 
+		 clw.add(btnRegister);
 	}
 
 	@Test
 	public void testFrame() {
-		int xframe = f.getX();
+		int xframe = clw.getX();
 		assertEquals(100, xframe);
 		
 	}
