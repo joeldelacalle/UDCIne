@@ -43,6 +43,11 @@ public class OrderTest {
 		o = new Order("perro@gmail.com", dfd1, tickets, products, "En caja", 1);
 
 	}
+	@Test
+	public void testSetGetId() {
+		o.setId(5);
+		assertEquals(5, o.getId());
+	}
 
 	@Test
 	public void testSetGetMail() {
