@@ -11,7 +11,7 @@ public class ReleaseTest {
 
 	@Before
 	public void setup() {
-		r = new Release("director", "name", "description", 13,"");
+		r = new Release("director", "name", "description", 13,"url");
 	}
 
 	@Test
@@ -42,6 +42,11 @@ public class ReleaseTest {
 	public void testSetGetAgeRestriction() {
 		r.setAgeRestriction(18);
 		assertEquals(18, r.getAgeRestriction());
+	}
+	@Test
+	public void testSetGetUrl() {
+		r.setUrl("url");
+		assertEquals("url", r.getUrl());
 	}
 
 	@Test

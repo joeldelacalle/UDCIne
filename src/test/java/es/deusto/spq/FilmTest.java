@@ -45,7 +45,7 @@ public class FilmTest {
 	}
 	@Test
 	public void testSetGetUrl() {
-		f.setAgeRestriction(18);
+		f.setUrl("url");
 		assertEquals("url", f.getUrl());
 	}
 

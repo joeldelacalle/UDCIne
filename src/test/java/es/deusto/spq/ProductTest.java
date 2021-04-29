@@ -35,8 +35,12 @@ public class ProductTest {
 	public void testGetId() {
 		assertEquals(0, p.getId());
 	}
+	@Test
+	public void testSetGetUrl() {
+		p.setUrl("url");
+		assertEquals("url", p.getUrl());
+	}
 
-	
 	@Test
 	public void testToString() {
 		assertEquals("Product [id=0" + ", name=name" + ", description=description"+ ", price=0.1"+ ", url=null"+ "]", p.toString());
