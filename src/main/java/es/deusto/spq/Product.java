@@ -17,17 +17,20 @@ public class Product {
 	protected String description = null;
 
 	protected double price = 0.0;
+	
+	protected String url = null;
 
-	public Product(String name, String description, double price) {
+	
+	public Product(String name, String description, double price, String url) {
+		super();
+		
 		this.name = name;
 		this.description = description;
 		this.price = price;
+		this.url = url;
 	}
 
-	public long getId() {
-		return id;
-	}
-
+	
 	public String getName() {
 		return name;
 	}
@@ -52,7 +55,21 @@ public class Product {
 		this.price = price;
 	}
 
-	public String toString() {
-		return "Product : " + id + " name=" + name + " [" + description + "]";
+	public String getUrl() {
+		return url;
 	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", url="
+				+ url + "]";
+	}
+
+	
 }

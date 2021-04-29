@@ -81,13 +81,12 @@ public class PreparedData {
 			Room room9 = new Room(cinema3, filmC, "BARAKALDO SALA 3", Calendar.getInstance().getTime(), 100);
 			pm.makePersistent(room9);
 			
-			Product product1 = new Product("Palomitas Medianas", "Paquete de palomitas", 3.50);
-			pm.makePersistent(product1);
-			Product product2 = new Product("Palomitas Grandes", "Cubo de palomitas", 5.00);
-			pm.makePersistent(product2);
-			Product product3 = new Product("Menú", "Cubo de palomitas + Bebida", 8.90);
-			pm.makePersistent(product3);
-			
+			Product p1 = new Product("Palomitas Medianas", "500g", 4, "https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg");
+			pm.makePersistent(p1);
+			Product p2 = new Product("Palomitas Grandes", "1000g", 6, "https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg");
+			pm.makePersistent(p2);
+			Product p3 = new Product("Palomitas Grandes + Coca Cola", "Unas palomitas grandes y coca cola", 8, "https://previews.123rf.com/images/imagestore/imagestore1606/imagestore160601787/58756143-palomitas-en-rect%C3%A1ngulo-con-el-color-en-la-copa-para-llevar-aislado-en-el-fondo-blanco.jpg");
+			pm.makePersistent(p3);
 			tx.commit();
 
 		} finally {

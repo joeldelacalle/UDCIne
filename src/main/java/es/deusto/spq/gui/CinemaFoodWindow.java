@@ -9,6 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
@@ -24,13 +25,35 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+import es.deusto.spq.Film;
+import es.deusto.spq.Product;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
+import jakarta.ws.rs.core.MediaType;
+
 public class CinemaFoodWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
+	
+	private JList<Product> list;
+	private DefaultListModel<Product> listmodelAlimentos;
+	private List<Product> products;
+	
+	Client client = ClientBuilder.newClient();
 
+	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
+	final WebTarget ProductTarget = appTarget.path("products");
 	public CinemaFoodWindow() {
+		
+		GenericType<List<Product>> genericType = new GenericType<List<Product>>() {
+		};
+		products = ProductTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+		
+		
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 501);
@@ -108,25 +131,18 @@ public class CinemaFoodWindow extends JFrame {
 		contentPane.add(lblFlecha);
 
 		JLabel lblPopcornImage = new JLabel("New label");
+		lblPopcornImage.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				//
+				listmodelAlimentos.addElement(products.get(0));
+			}
+		});
 		lblPopcornImage.setBounds(47, 76, 161, 179);
 		contentPane.add(lblPopcornImage);
 		Image image = null;
 		try {
-			URL url = new URL(
-					"https://png.pngtree.com/png-vector/20201115/ourlarge/pngtree-striped-paper-box-for-popcorn-in-cinema-illustration-vector-png-image_2439043.jpg");
-			image = ImageIO.read(url);
-			ImageIcon myImg = new ImageIcon(url);
-			image = myImg.getImage();
-
-			int width = myImg.getIconWidth() / 4;
-			//System.out.println(width);
-			int height = myImg.getIconHeight() / 4;
-			//System.out.println(height);
-
-			Image newImg = image.getScaledInstance(width, height, Image.SCALE_REPLICATE);
-			ImageIcon resizeImg = new ImageIcon(newImg);
-			lblPopcornImage.setIcon(resizeImg);
-
+			btnSetImageIcon(products.get(0).getUrl(), lblPopcornImage);
 		} catch (IOException e) {
 		}
 		JLabel lblPopcornCola = new JLabel("");
@@ -134,21 +150,7 @@ public class CinemaFoodWindow extends JFrame {
 		contentPane.add(lblPopcornCola);
 
 		try {
-			URL url = new URL(
-					"https://previews.123rf.com/images/imagestore/imagestore1606/imagestore160601787/58756143-palomitas-en-rect%C3%A1ngulo-con-el-color-en-la-copa-para-llevar-aislado-en-el-fondo-blanco.jpg");
-			image = ImageIO.read(url);
-			ImageIcon myImg = new ImageIcon(url);
-			image = myImg.getImage();
-
-			int width = myImg.getIconWidth() / 7;
-			//System.out.println(width);
-			int height = myImg.getIconHeight() / 7;
-			//System.out.println(height);
-
-			Image newImg = image.getScaledInstance(width, height, Image.SCALE_REPLICATE);
-			ImageIcon resizeImg = new ImageIcon(newImg);
-			lblPopcornCola.setIcon(resizeImg);
-
+			btnSetImageIcon(products.get(1).getUrl(), lblPopcornCola);
 		} catch (IOException e) {
 		}
 
@@ -156,29 +158,11 @@ public class CinemaFoodWindow extends JFrame {
 		lblPopcornBig.setBounds(245, 85, 192, 157);
 		contentPane.add(lblPopcornBig);
 		try {
-			URL url = new URL("https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg");
-			image = ImageIO.read(url);
-			ImageIcon myImg = new ImageIcon(url);
-			image = myImg.getImage();
-
-			int width = myImg.getIconWidth() / 3;
-			//System.out.println(width);
-			int height = myImg.getIconHeight() / 3;
-			//System.out.println(height);
-
-			Image newImg = image.getScaledInstance(width, height, Image.SCALE_REPLICATE);
-			ImageIcon resizeImg = new ImageIcon(newImg);
-			lblPopcornBig.setIcon(resizeImg);
-
-			JLabel lblCompraDeAlimentos = new JLabel("COMPRA DE ALIMENTOS");
-			lblCompraDeAlimentos.setFont(new Font("Cooper Black", Font.BOLD, 33));
-			lblCompraDeAlimentos.setBounds(144, 10, 455, 54);
-			contentPane.add(lblCompraDeAlimentos);
-
+			btnSetImageIcon(products.get(2).getUrl(), lblPopcornBig);
 		} catch (IOException e) {
 		}
-		final DefaultListModel<String> listmodelAlimentos = new DefaultListModel<String>();
-		JList<String> list = new JList<String>(listmodelAlimentos);
+		listmodelAlimentos = new DefaultListModel<Product>();
+		list = new JList<Product>(listmodelAlimentos);
 		list.setBounds(47, 405, 243, 41);
 		contentPane.add(list);
 
@@ -205,7 +189,7 @@ public class CinemaFoodWindow extends JFrame {
 				String a;
 				textField.setText((String) comboBox.getSelectedItem());
 				a = textField.getText();
-				listmodelAlimentos.addElement(a);
+				//listmodelAlimentos.addElement(a);
 
 			}
 		});
@@ -234,5 +218,22 @@ public class CinemaFoodWindow extends JFrame {
 		contentPane.add(lblListaDeCompra);
 
 		
+	}
+	private void btnSetImageIcon(String urlS, JLabel jb) throws IOException {
+		URL url = new URL(urlS);
+
+		Image image;
+		image = ImageIO.read(url);
+		ImageIcon myImg = new ImageIcon(url);
+		image = myImg.getImage();
+
+		int width = myImg.getIconWidth() / 3;
+		// System.out.println(width);
+		int height = myImg.getIconHeight() / 3;
+		// System.out.println(height);
+
+		Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+		ImageIcon resizeImg = new ImageIcon(newImg);
+		jb.setIcon(resizeImg);
 	}
 }
