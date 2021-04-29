@@ -81,7 +81,7 @@ public class TicketTest {
 
 	@Test
 	public void testToString() {
-		assertEquals("Ticket [id=0" + ", cinema=" + c + ", film=null" + ", room=1" + ", row=1" + ", seat=1"
+		assertEquals("Ticket [id=0" + ", cinema=" + c + ", film="+ f + ", room=1" + ", row=1" + ", seat=1"
 				+ ", price=1" + ", session=null" + "]", t.toString());
 	}
 
