@@ -33,13 +33,13 @@ public class ProductTest {
 	}
 	@Test
 	public void testGetId() {
-		assertEquals(0, p.getUrl());
+		assertEquals(0, p.getId());
 	}
 
 	
 	@Test
 	public void testToString() {
-		assertEquals("Product : 0" + " name=name" + " [description]"+ "Url: ", p.toString());
+		assertEquals("Product [id=0" + ", name=name" + ", description=description"+ ", price=0.1"+ ", url=null"+ "]", p.toString());
 	}
 
 }
