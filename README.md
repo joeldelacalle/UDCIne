@@ -44,3 +44,4 @@ La aplicación cliente puede iniciarse usando el comando
 	Dentro de "<phase>compile</phase>"
 	Hay que eliminar "<goal>enhance</goal>"
 	Para que los test se ejecuten correctamente
+ 
