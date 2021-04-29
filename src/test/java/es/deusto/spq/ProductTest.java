@@ -11,12 +11,7 @@ public class ProductTest {
 
 	@Before
 	public void setup() {
-		p = new Product("name", "description", 0.1);
-	}
-
-	@Test
-	public void testGetId() {
-		assertEquals(0, p.getId());
+		p = new Product("name", "description", 0.1, null);
 	}
 
 	@Test
@@ -36,10 +31,15 @@ public class ProductTest {
 		p.setPrice(2);
 		assertEquals(2, p.getPrice(), 0.1);
 	}
+	@Test
+	public void testGetId() {
+		assertEquals(0, p.getUrl());
+	}
 
+	
 	@Test
 	public void testToString() {
-		assertEquals("Product : 0" + " name=name" + " [description]", p.toString());
+		assertEquals("Product : 0" + " name=name" + " [description]"+ "Url: ", p.toString());
 	}
 
 }
