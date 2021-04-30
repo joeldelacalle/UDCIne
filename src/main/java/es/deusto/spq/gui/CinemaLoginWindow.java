@@ -140,7 +140,11 @@ public class CinemaLoginWindow extends JFrame {
         pnlBtnLogin1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (txtUsername1.getText().equals("admin") && txtPassword1.getText().equals("admin")) {
+                Login();
+            }
+
+			private void Login() {
+				if (txtUsername1.getText().equals("admin") && txtPassword1.getText().equals("admin")) {
                     // los datos son correctos
                     lblLoginMessage1.setText("");
                     AdminWindow aw = new AdminWindow ();
@@ -153,7 +157,7 @@ public class CinemaLoginWindow extends JFrame {
                 } else {
                     lblLoginMessage1.setText("Usuario y contraseña no coinciden");
                 }
-            }
+			}
 
             @Override
             public void mouseEntered(MouseEvent e) {

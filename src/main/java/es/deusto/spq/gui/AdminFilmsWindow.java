@@ -300,6 +300,12 @@ public class AdminFilmsWindow extends JFrame {
 			
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				AñadirPeliculaBd(txtName, txtDirector, txtFoto, cbAge, txtDescription);
+				
+			}
+
+			private void AñadirPeliculaBd(final JTextField txtName, final JTextField txtDirector,
+					final JTextField txtFoto, final JComboBox<Integer> cbAge, final JTextArea txtDescription) {
 				if(txtName.getText().equals("")||txtName.getText().equals("Título")||
 						txtDirector.getText().equals("")||txtDirector.getText().equals("Director")||
 						txtDescription.getText().equals("")||txtDescription.getText().equals("Descripción (max 255)")||
@@ -335,7 +341,6 @@ public class AdminFilmsWindow extends JFrame {
 					
 					}
 				}
-				
 			}
 		});
 		btnAdd.setBounds(480, 430, 200, 30);
@@ -347,6 +352,10 @@ public class AdminFilmsWindow extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				EliminarPeliculaBd();
+			}
+
+			private void EliminarPeliculaBd() {
 				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 				PersistenceManager pm = pmf.getPersistenceManager();
 				Transaction tx = pm.currentTransaction();

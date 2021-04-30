@@ -120,27 +120,31 @@ public class RegisterWindow extends JFrame {
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-			PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-			
-				PersistenceManager pm = pmf.getPersistenceManager();
-				Transaction tx = pm.currentTransaction();
-				phone = Integer.parseInt(textFieldPhoneNumber.getText().toString());
-				System.out.println("Añadiendo usuario en la BD");
-				try {
-					tx.begin();
-					User user = new User(textFieldName.getText().toString(), textFieldNickname.getText().toString(), textFieldEmail.getText().toString(), passwordField.getPassword().toString(), phone);
-					pm.makePersistent(user);
-					
-					tx.commit();
-					System.out.println("Añadido un nuevo usuario a la Base de Datos");
-					
-				}finally {
-					if (tx.isActive()) {
-						tx.rollback();
-					}
-					pm.close();
-				}
+			Registro();
 		
+			}
+
+			private void Registro() {
+				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+				
+					PersistenceManager pm = pmf.getPersistenceManager();
+					Transaction tx = pm.currentTransaction();
+					phone = Integer.parseInt(textFieldPhoneNumber.getText().toString());
+					System.out.println("Añadiendo usuario en la BD");
+					try {
+						tx.begin();
+						User user = new User(textFieldName.getText().toString(), textFieldNickname.getText().toString(), textFieldEmail.getText().toString(), passwordField.getPassword().toString(), phone);
+						pm.makePersistent(user);
+						
+						tx.commit();
+						System.out.println("Añadido un nuevo usuario a la Base de Datos");
+						
+					}finally {
+						if (tx.isActive()) {
+							tx.rollback();
+						}
+						pm.close();
+					}
 			}
 		});
 		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 15));

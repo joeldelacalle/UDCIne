@@ -129,6 +129,11 @@ public class OrderWindow extends JFrame {
 		btnBuy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
+				ComprarPedido(listModelShoppingCart);
+
+			}
+
+			private void ComprarPedido(final DefaultListModel<Film> listModelShoppingCart) {
 				List<Ticket> tickets = new ArrayList<Ticket>();
 
 				for (int i = 0; i < listModelShoppingCart.size(); i++) {
@@ -159,7 +164,6 @@ public class OrderWindow extends JFrame {
 					}
 					pm.close();
 				}
-
 			}
 		});
 		btnBuy.setBounds(409, 452, 276, 38);

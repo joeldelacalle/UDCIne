@@ -126,6 +126,10 @@ public class AdminUsersWindow extends JFrame {
 		JButton btnNewButton = new JButton("Eliminar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				EliminarUsuarioBd();
+			}
+
+			private void EliminarUsuarioBd() {
 				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 				PersistenceManager pm = pmf.getPersistenceManager();
 				Transaction tx = pm.currentTransaction();

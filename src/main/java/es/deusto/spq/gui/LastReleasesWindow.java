@@ -161,6 +161,10 @@ public class LastReleasesWindow extends JFrame {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
 				
+				NuevosLanzamientos(); 
+			}
+
+			private void NuevosLanzamientos() {
 				Image image = null;
 				textFieldReleaseTitle.setText(listReleases.getSelectedValue().getName());
 				String selectedRelease = textFieldReleaseTitle.getText();
@@ -231,7 +235,7 @@ public class LastReleasesWindow extends JFrame {
     		        } 
     		        catch (IOException e7) {
     		        }
-    			} 
+    			}
 			}
 		});
 		

@@ -214,6 +214,10 @@ public class FilmWindow extends JFrame {
 		comboBoxFilm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
+				NuevasPeliculas(comboBoxFilm);
+			}
+
+			private void NuevasPeliculas(final JComboBox<String> comboBoxFilm) {
 				textFieldFilmName.setText(comboBoxFilm.getSelectedItem().toString());
 				String selectedFilm = textFieldFilmName.getText();
 				Image image = null;

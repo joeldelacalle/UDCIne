@@ -134,6 +134,11 @@ public class RatingWindow extends JFrame {
 		JButton btnNewButton_1 = new JButton("A\u00F1adir");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				AñadirValoracionPeli(comboBox, listmodelpelis);
+			}
+
+			private void AñadirValoracionPeli(final JComboBox<String> comboBox,
+					final DefaultListModel<String> listmodelpelis) {
 				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 				
 				PersistenceManager pm = pmf.getPersistenceManager();
@@ -173,6 +178,11 @@ public class RatingWindow extends JFrame {
 		JButton btnNewButton_2 = new JButton("A\u00F1adir");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				AñadirValoracionCine(comboBox_1, listmodelcines);
+			}
+
+			private void AñadirValoracionCine(final JComboBox<String> comboBox_1,
+					final DefaultListModel<String> listmodelcines) {
 				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 				
 				PersistenceManager pm = pmf.getPersistenceManager();
