@@ -34,7 +34,6 @@ public class CinemaLoginWindowTest {
 	@Before
 	public void setUp() throws Exception {
 		clw = new CinemaLoginWindow();
-		clw.setVisible(true);
 		clw.setBounds(100, 100, 600, 400);
 		/*
 		 * f = new JFrame(); f.setVisible(true); f.setBounds(100, 100, 600, 400);
