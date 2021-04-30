@@ -6,15 +6,10 @@ import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
-import javax.swing.text.StyledEditorKit.ForegroundAction;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -99,13 +94,13 @@ public class CinemaLoginWindowTest {
 		clw.add(btnRegister);
 	}
 
-	/*@Test
+	@Test
 	public void testFrame() {
 		int xframe = clw.getX();
 		assertEquals(100, xframe);
 
-	}*/
-
+	}
+/*
 	@Test
 	public void testContentPane() {
 		int xcp = cp.getX();
@@ -206,6 +201,6 @@ public class CinemaLoginWindowTest {
 
 		Color clblLogIn = lblLogIn.getForeground();
 		assertEquals(Color.WHITE, clblLogIn);
-	}
+	}*/
 
 }

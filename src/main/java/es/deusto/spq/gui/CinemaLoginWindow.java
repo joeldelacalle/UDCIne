@@ -42,6 +42,7 @@ public class CinemaLoginWindow extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
+                	
                     CinemaLoginWindow frame = new CinemaLoginWindow();
                     frame.setVisible(true);
                 } catch (Exception e) {
