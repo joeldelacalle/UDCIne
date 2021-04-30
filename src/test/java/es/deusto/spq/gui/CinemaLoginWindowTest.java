@@ -99,7 +99,7 @@ public class CinemaLoginWindowTest {
 		assertEquals(100, xframe);
 
 	}
-/*
+
 	@Test
 	public void testContentPane() {
 		int xcp = cp.getX();
@@ -200,6 +200,6 @@ public class CinemaLoginWindowTest {
 
 		Color clblLogIn = lblLogIn.getForeground();
 		assertEquals(Color.WHITE, clblLogIn);
-	}*/
+	}
 
 }
