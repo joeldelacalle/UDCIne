@@ -12,12 +12,14 @@ public class TicketTest {
 
 	private Ticket t;
 	private Cinema c;
+	private Film f;
 	private Calendar dfd;
 	private Date dfd1;
 
 	@Before
 	public void Setup() {
 		c = new Cinema("name", "city", "address", 99);
+		f = new Film("director", "name", "description", 13,"url");
 		dfd = Calendar.getInstance();
 		dfd.set(Calendar.YEAR, 2020);
 		dfd.set(Calendar.MONTH, Calendar.NOVEMBER);
@@ -41,8 +43,11 @@ public class TicketTest {
 		t.setCinema(c);
 		assertEquals(c, t.getCinema());
 	}
-
-	// Falta por hacer el test de film que nose proque es filmWindow
+	@Test
+	public void testSetGetFilm() {
+		t.setFilm(f);
+		assertEquals(f, t.getFilm());
+	}
 
 	@Test
 	public void testSetGetRoom() {
@@ -76,7 +81,7 @@ public class TicketTest {
 
 	@Test
 	public void testToString() {
-		assertEquals("Ticket [id=0" + ", cinema=" + c + ", film=null" + ", room=1" + ", row=1" + ", seat=1"
+		assertEquals("Ticket [id=0" + ", cinema=" + c + ", film="+ f + ", room=1" + ", row=1" + ", seat=1"
 				+ ", price=1" + ", session=null" + "]", t.toString());
 	}
 

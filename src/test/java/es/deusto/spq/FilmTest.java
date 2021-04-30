@@ -11,7 +11,7 @@ public class FilmTest {
 
 	@Before
 	public void setup() {
-		f = new Film("director", "name", "description", 13,"");
+		f = new Film("director", "name", "description", 13,"url");
 	}
 
 	@Test
@@ -42,6 +42,11 @@ public class FilmTest {
 	public void testSetGetAgeRestriction() {
 		f.setAgeRestriction(18);
 		assertEquals(18, f.getAgeRestriction());
+	}
+	@Test
+	public void testSetGetUrl() {
+		f.setUrl("url");
+		assertEquals("url", f.getUrl());
 	}
 
 	@Test

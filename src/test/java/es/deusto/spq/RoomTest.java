@@ -12,6 +12,7 @@ public class RoomTest {
 	
 	private Room r;
 	private Cinema c;
+	private Film f;
 	private Calendar dfd;
 	private Date dfd1;
 	
@@ -19,6 +20,7 @@ public class RoomTest {
 	@Before
 	public void SetUp() {
 		c = new Cinema("name","city","address",99);
+		f = new Film("director", "name", "description", 13,"url");
 		dfd = Calendar.getInstance();
 		dfd.set(Calendar.YEAR, 2020);
 		dfd.set(Calendar.MONTH, Calendar.NOVEMBER);
@@ -28,7 +30,7 @@ public class RoomTest {
 		dfd.set(Calendar.SECOND, 00);
 		dfd1 = dfd.getTime();
 		
-		r = new Room(c,null,"name",null,100);
+		r = new Room(c,f,"name",null,100);
 	}
 	@Test
 	public void testSetGetId() {
@@ -39,6 +41,11 @@ public class RoomTest {
 	public void testSetGetCinema() {
 		r.setCinema(c);
 		assertEquals(c, r.getCinema());
+	}
+	@Test
+	public void testSetGetFilm() {
+		r.setFilm(f);
+		assertEquals(f, r.getFilm());
 	}
 	@Test
 	public void testSetGetName() {
@@ -56,7 +63,7 @@ public class RoomTest {
 	}
 	@Test
 	public void testToString() {
-		assertEquals("Room [id=0" + ", cinema=" + c + ", film=null" + ", name=name" + ", date=null" + ", seats=100"
+		assertEquals("Room [id=0" + ", cinema=" + c + ", film="+ f + ", name=name" + ", date=null" + ", seats=100"
 				 + "]", r.toString());
 	}
 }
