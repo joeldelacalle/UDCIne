@@ -1,12 +1,6 @@
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-image: gitpod/workspace-full-vnc 
-
-ports:
-  - port: 6080
-    onOpen: open-preview
-
 name: Java CI with Maven
 
 on:
