@@ -19,7 +19,7 @@ public class TicketTest {
 	@Before
 	public void Setup() {
 		c = new Cinema("name", "city", "address", 99);
-		f = new Film("director", "name", "description", 13,"url");
+		f = new Film("director", "name", "description", 0,"url");
 		dfd = Calendar.getInstance();
 		dfd.set(Calendar.YEAR, 2020);
 		dfd.set(Calendar.MONTH, Calendar.NOVEMBER);
@@ -29,7 +29,7 @@ public class TicketTest {
 		dfd.set(Calendar.SECOND, 00);
 		dfd1 = dfd.getTime();
 
-		t = new Ticket(c, null, 1, 1, 1, 1, null);
+		t = new Ticket(c, f, 1, 1, 1, 1, null);
 	}
 
 	@Test
@@ -81,8 +81,8 @@ public class TicketTest {
 
 	@Test
 	public void testToString() {
-		assertEquals("Ticket [id=0" + ", cinema=" + c + ", film="+ f + ", room=1" + ", row=1" + ", seat=1"
-				+ ", price=1" + ", session=null" + "]", t.toString());
+		assertEquals("Ticket [id=0" + ", cinema=" + c + ", film="+ f + ", room=" + 1 + ", row=" + 1 + ", seat=" + 1
+				+ ", price=" + 1 + ", session=" + null + "]", t.toString());
 	}
 
 }
