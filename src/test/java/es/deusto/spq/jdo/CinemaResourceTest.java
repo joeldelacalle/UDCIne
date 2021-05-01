@@ -40,12 +40,12 @@ public class CinemaResourceTest {
     
 	@Test
 	public void test() {
-	    WebTarget productTarget = appTarget.path("cinemas");
+	    WebTarget cinemasTarget = appTarget.path("cinemas");
 	    	
 	    List<Cinema> listacines = Arrays.asList(new Cinema("Cine Deusto Zubiarte", "Bilbao", "Centro Comercial Zubiarte", 123456789),new Cinema("Cine Deusto Santander", "Santander", "Corte Ingles nueva montaña", 345345345),new Cinema("Cine Deusto Bakacaldo", "bakacaldo", "Max Center", 458345345));
 
 	    GenericType<List<Cinema>> genericType = new GenericType<List<Cinema>>() {};
-	    List<Cinema> cines = productTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+	    List<Cinema> cines = cinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 	    	
 	    assertEquals(listacines.get(0).getName(), cines.get(0).getName());
 	    assertEquals(listacines.get(1).getName(), cines.get(1).getName());
