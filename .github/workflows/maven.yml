@@ -46,8 +46,8 @@ jobs:
           mvn --batch-mode --update-snapshots exec:java -P datos
     - name: Test Unitarios
       run: mvn --batch-mode --update-snapshots test 
-- name: Test Integracion
-        run: |
+    - name: Test Integracion
+      run: |
           sudo /etc/init.d/mysql start
           mysql -uroot -proot < src/main/resources/database.sql
           mvn --batch-mode --update-snapshots exec:java -P datos
