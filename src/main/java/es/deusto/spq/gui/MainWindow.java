@@ -1,43 +1,29 @@
 package es.deusto.spq.gui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerNumberModel;
-import javax.swing.SwingConstants;
-import javax.swing.border.LineBorder;
-
-import es.deusto.spq.Film;
-import jakarta.ws.rs.client.Client;
-import jakarta.ws.rs.client.ClientBuilder;
-import jakarta.ws.rs.client.WebTarget;
-import jakarta.ws.rs.core.GenericType;
-import jakarta.ws.rs.core.MediaType;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.net.URL;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.List;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseWheelListener;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.awt.event.MouseWheelEvent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
+
+import es.deusto.spq.Film;
+import es.deusto.spq.jdo.FilmResources;
 
 public class MainWindow extends JFrame {
 
@@ -45,14 +31,9 @@ public class MainWindow extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 6673510127789501132L;
-
-	Client client = ClientBuilder.newClient();
-
-	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
-	final WebTarget FilmsTarget = appTarget.path("films");
-
 	private JPanel contentPane;
-	private DefaultListModel<String> shoppingCart;
+	private List<Film> films;
+	FilmResources fr = new FilmResources();
 
 	public MainWindow() {
 
@@ -66,10 +47,7 @@ public class MainWindow extends JFrame {
 		contentPane.setLayout(null);
 
 		final DefaultListModel<Film> billboard = new DefaultListModel<>();
-
-		GenericType<List<Film>> genericType = new GenericType<List<Film>>() {
-		};
-		List<Film> films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+		films = fr.getFilms();
 
 		billboard.clear();
 		for (Film film : films) {
@@ -105,8 +83,6 @@ public class MainWindow extends JFrame {
 		});
 		btnFood.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnFood);
-
-		shoppingCart = new DefaultListModel<String>();
 
 		final JLabel lblX = new JLabel("X");
 		lblX.setBounds(707, 10, 19, 31);
@@ -158,7 +134,7 @@ public class MainWindow extends JFrame {
 		try {
 			btnSetImageIcon(films.get(0).getUrl(), btnFilm1);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
+
 			e1.printStackTrace();
 		}
 		contentPane.add(btnFilm1);
@@ -174,7 +150,7 @@ public class MainWindow extends JFrame {
 		try {
 			btnSetImageIcon(films.get(1).getUrl(), btnFilm2);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
+
 			e1.printStackTrace();
 		}
 		contentPane.add(btnFilm2);
@@ -190,7 +166,7 @@ public class MainWindow extends JFrame {
 		try {
 			btnSetImageIcon(films.get(2).getUrl(), btnFilm3);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
+
 			e1.printStackTrace();
 		}
 		contentPane.add(btnFilm3);
@@ -201,13 +177,13 @@ public class MainWindow extends JFrame {
 		// todavia no hay suficientes peliculas
 		/*
 		 * try { btnSetImageIcon(films.get(0).getUrl(),btnFilm1); } catch (IOException
-		 * e1) { // TODO Auto-generated catch block e1.printStackTrace(); }
+		 * e1) {
 		 */
 		contentPane.add(btnFilm4);
 
 	}
 
-	private void btnSetImageIcon(String urlS, JButton jb) throws IOException {
+	public void btnSetImageIcon(String urlS, JButton jb) throws IOException {
 		URL url = new URL(urlS);
 
 		Image image;
