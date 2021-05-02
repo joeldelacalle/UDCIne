@@ -27,6 +27,7 @@ import javax.swing.border.LineBorder;
 
 import es.deusto.spq.Film;
 import es.deusto.spq.Product;
+import es.deusto.spq.jdo.ProductResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -38,22 +39,14 @@ public class CinemaFoodWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
-	
+
 	private JList<Product> list;
 	private DefaultListModel<Product> listmodelAlimentos;
-	private List<Product> products;
-	
-	Client client = ClientBuilder.newClient();
+	private ProductResource pr = new ProductResource();
+	private List<Product> products = pr.getProducts();
 
-	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
-	final WebTarget ProductTarget = appTarget.path("products");
 	public CinemaFoodWindow() {
-		
-		GenericType<List<Product>> genericType = new GenericType<List<Product>>() {
-		};
-		products = ProductTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-		
-		
+
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 501);
@@ -103,14 +96,14 @@ public class CinemaFoodWindow extends JFrame {
 		lblX.setForeground(new Color(255, 255, 255));
 		lblX.setBounds(707, 10, 19, 31);
 		contentPane.add(lblX);
-		
+
 		final JLabel lblFlecha = new JLabel("<-");
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				MainWindow vp = new MainWindow();
 				vp.setVisible(true);
-				dispose();		
+				dispose();
 			}
 
 			@Override
@@ -189,7 +182,7 @@ public class CinemaFoodWindow extends JFrame {
 				String a;
 				textField.setText((String) comboBox.getSelectedItem());
 				a = textField.getText();
-				//listmodelAlimentos.addElement(a);
+				// listmodelAlimentos.addElement(a);
 
 			}
 		});
@@ -217,8 +210,8 @@ public class CinemaFoodWindow extends JFrame {
 		lblListaDeCompra.setBounds(47, 386, 173, 19);
 		contentPane.add(lblListaDeCompra);
 
-		
 	}
+
 	private void btnSetImageIcon(String urlS, JLabel jb) throws IOException {
 		URL url = new URL(urlS);
 

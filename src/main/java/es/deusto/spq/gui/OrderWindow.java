@@ -28,6 +28,9 @@ import es.deusto.spq.Film;
 import es.deusto.spq.Order;
 import es.deusto.spq.Room;
 import es.deusto.spq.Ticket;
+import es.deusto.spq.User;
+import es.deusto.spq.jdo.CinemaResource;
+import es.deusto.spq.jdo.RoomResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -48,16 +51,12 @@ public class OrderWindow extends JFrame {
 	private JSpinner spinner;
 	Client client = ClientBuilder.newClient();
 
-	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
-	final WebTarget CinemasTarget = appTarget.path("cinemas");
-	private GenericType<List<Cinema>> genericTypeC = new GenericType<List<Cinema>>() {
-	};
-	private List<Cinema> cinemas = CinemasTarget.request(MediaType.APPLICATION_JSON).get(genericTypeC);
+	
+	private CinemaResource cr = new CinemaResource();
+	private List<Cinema> cinemas = cr.getReleases();
 	private JComboBox<Cinema> cbCinema;
-	final WebTarget RoomsTarget = appTarget.path("cinemas");
-	private GenericType<List<Room>> genericTypeR = new GenericType<List<Room>>() {
-	};
-	private List<Room> rooms = CinemasTarget.request(MediaType.APPLICATION_JSON).get(genericTypeR);
+	private RoomResource rr = new RoomResource();
+	private List<Room> rooms = rr.getReleases();
 	private JComboBox<Room> cbSession;
 
 	private long totalPrice;
@@ -201,7 +200,7 @@ public class OrderWindow extends JFrame {
 			pm.makePersistent(o);
 
 			tx.commit();
-			System.out.println("Añadido una nueva pedido a la Base de Datos");
+			System.out.println("Añadido una nuevo pedido a la Base de Datos");
 
 		} finally {
 			if (tx.isActive()) {
