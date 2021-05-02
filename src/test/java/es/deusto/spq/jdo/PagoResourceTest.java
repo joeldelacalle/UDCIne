@@ -43,12 +43,13 @@ public class PagoResourceTest {
     @Test
     public void testPaypal() {
     	WebTarget pagosTarget = appTarget.path("paypal");
+    	WebTarget pagosPaypaliTarget = pagosTarget.path("getemail").queryParam("email", "jaimesantamazo@hotmail.com");
     	List<PayPal> listapaypal = Arrays.asList(new PayPal("jaimesantamazo@hotmail.com", "123"));
     	 
     	GenericType<PayPal> genericType = new GenericType<PayPal>() {};
-		PayPal paypal = pagosTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+		PayPal paypal = pagosPaypaliTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 		 
-		 assertEquals(listapaypal.get(0).getEmail(), paypal.getEmail());
+		assertEquals(listapaypal.get(0).getEmail(), paypal.getEmail());
     }
 
 }

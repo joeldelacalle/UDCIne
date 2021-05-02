@@ -17,6 +17,7 @@ import jakarta.ws.rs.core.MediaType;
 @Path("paypal")
 public class PagoResource {
 	@GET
+	@Path("getemail")
 	@Produces(MediaType.APPLICATION_JSON)
 	public static PayPal getPaypal(@QueryParam("email") String email) {
 	PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -24,7 +25,7 @@ public class PagoResource {
 
 	PayPal paypal = new PayPal();
 		
-	try (Query<PayPal> q = pm.newQuery("SELECT FROM " + PayPal.class.getName() + " WHERE correo== '" + email + "'")) {
+	try (Query<PayPal> q = pm.newQuery("SELECT FROM " + PayPal.class.getName() + " WHERE email== '" + email + "'")) {
 		List<PayPal> paypallista = q.executeList();
 			
 		paypal = paypallista.get(0);
