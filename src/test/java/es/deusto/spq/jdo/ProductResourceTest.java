@@ -1,7 +1,6 @@
 package es.deusto.spq.jdo;
 
-import static org.junit.Assert.*;
-
+import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,13 +9,12 @@ import org.databene.contiperf.junit.ContiPerfRule;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import es.deusto.spq.Cinema;
 import es.deusto.spq.Main;
+import es.deusto.spq.Product;
 import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
@@ -25,8 +23,7 @@ import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
 @Category(IntegrationTest.class)
-public class CinemaResourceTest {
-	
+public class ProductResourceTest {
 	@Rule public ContiPerfRule rule = new ContiPerfRule();
 	private HttpServer server;
     private WebTarget appTarget;
@@ -45,20 +42,20 @@ public class CinemaResourceTest {
     public void tearDown() throws Exception {
         server.stop();
     }
-    
+
 	@Test
 	@PerfTest(invocations = 100, threads = 40)
 	public void testgetReleases() {
-	    WebTarget cinemasTarget = appTarget.path("cinemas");
-	    	
-	    List<Cinema> listacines = Arrays.asList(new Cinema("Cine Deusto Zubiarte", "Bilbao", "Centro Comercial Zubiarte", 123456789),new Cinema("Cine Deusto Santander", "Santander", "Corte Ingles nueva montaña", 345345345),new Cinema("Cine Deusto Bakacaldo", "bakacaldo", "Max Center", 458345345));
+		WebTarget productTarget = appTarget.path("products");
+    	
+	    List<Product> listaproducts = Arrays.asList(new Product("Palomitas Medianas", "500g", 4, "https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg"),new Product("Palomitas Grandes", "1000g", 6, "https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg"),new Product("Palomitas Grandes + Coca Cola", "Unas palomitas grandes y coca cola", 8, "https://previews.123rf.com/images/imagestore/imagestore1606/imagestore160601787/58756143-palomitas-en-rect%C3%A1ngulo-con-el-color-en-la-copa-para-llevar-aislado-en-el-fondo-blanco.jpg"));
 
-	    GenericType<List<Cinema>> genericType = new GenericType<List<Cinema>>() {};
-	    List<Cinema> cines = cinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+	    GenericType<List<Product>> genericType = new GenericType<List<Product>>() {};
+	    List<Product> releases = productTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 	    	
-	    assertEquals(listacines.get(0).getName(), cines.get(0).getName());
-	    assertEquals(listacines.get(1).getName(), cines.get(1).getName());
-	    assertEquals(listacines.get(2).getName(), cines.get(2).getName());
+	    assertEquals(listaproducts.get(0).getName(), releases.get(0).getName());
+	    assertEquals(listaproducts.get(1).getName(), releases.get(2).getName());
+	    assertEquals(listaproducts.get(2).getName(), releases.get(1).getName());
 	}
-
+	
 }

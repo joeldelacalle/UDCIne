@@ -5,23 +5,30 @@ import static org.junit.Assert.*;
 import java.util.Arrays;
 import java.util.List;
 
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.junit.ContiPerfRule;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
 import es.deusto.spq.Main;
+import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
+@Category(IntegrationTest.class)
 public class FilmResourceTest {
 	
+	@Rule public ContiPerfRule rule = new ContiPerfRule();
 	private HttpServer server;
     private WebTarget appTarget;
     private Client c;
@@ -41,7 +48,8 @@ public class FilmResourceTest {
     }
 
 	@Test
-	public void test() {
+	@PerfTest(invocations = 100, threads = 40)
+	public void testgetFilms() {
 		WebTarget peliculasTarget = appTarget.path("films");
     	
 	    List<Film> listapelis = Arrays.asList(new Film("Jon", "Iron Man",

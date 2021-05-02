@@ -10,9 +10,11 @@ import javax.jdo.Query;
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Product;
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
+@Path("products")
 public class ProductResource {
 
 	@GET
