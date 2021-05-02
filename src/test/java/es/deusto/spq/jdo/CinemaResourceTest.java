@@ -8,6 +8,7 @@ import java.util.List;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import es.deusto.spq.Cinema;
@@ -17,7 +18,7 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-
+@Ignore
 public class CinemaResourceTest {
 	
 	private HttpServer server;
