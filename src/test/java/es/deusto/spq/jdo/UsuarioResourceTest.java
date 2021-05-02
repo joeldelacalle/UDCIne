@@ -19,7 +19,7 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-@Ignore
+
 public class UsuarioResourceTest {
 	
 	private HttpServer server;
