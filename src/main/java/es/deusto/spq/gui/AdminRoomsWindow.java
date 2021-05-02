@@ -47,15 +47,30 @@ public class AdminRoomsWindow extends JFrame {
 	
 	Client client = ClientBuilder.newClient();
 
-	private CinemaResource cr;
-	private List<Cinema> cinemas = cr.getReleases();
-
-	private RoomResource rr;
-	private List<Room> rooms = rr.getReleases();
-
-	private FilmResources fr;
-	private List<Film> films = fr.getFilms();
+	private final WebTarget appTarget = client.target("http://localhost:8080/myapp");
+	private final WebTarget CinemasTarget = appTarget.path("cinemas");
 	
+	//private CinemaResource cr;
+	//private List<Cinema> cinemas = cr.getReleases();
+
+	GenericType<List<Cinema >> genericType0 = new GenericType<List<Cinema>>() {};
+	 List<Cinema > cinemas = CinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType0);
+
+	private final WebTarget RoomsTarget = appTarget.path("rooms");
+
+	private GenericType<List<Room>> genericType1 = new GenericType<List<Room>>() {};
+	private List<Room> rooms = RoomsTarget.request(MediaType.APPLICATION_JSON).get(genericType1);
+	//private RoomResource rr;
+	//private List<Room> rooms = rr.getReleases();
+
+	//private FilmResources fr;
+	//private List<Film> films = fr.getFilms();
+
+
+	private final WebTarget FilmsTarget = appTarget.path("films");
+
+	private GenericType<List<Film>> genericType2 = new GenericType<List<Film>>() {};
+	private List<Film> films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType2);
 
 	private JPanel contentPane;
 	private Date date = null;
@@ -64,9 +79,9 @@ public class AdminRoomsWindow extends JFrame {
 	private final JComboBox<String> comboRoom = new JComboBox<String>();
 	
 	private JDateChooser calendar = new JDateChooser("yyyy/MM/dd","####/##/##",'_');
-	private long cinemaId;
+	private String roomName;
 	private long roomCinemaId;
-	private Room r;
+
 	
 	private void addFilmtoRoom() {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -160,44 +175,75 @@ public class AdminRoomsWindow extends JFrame {
 		for (Film film : films) {
 			comboFilm.addItem(film);
 		}
+		/*
 		for (Room room : rooms) {
-			r = room;
+			//r = room;
 			//roomCinema = room.getCinema();
 			comboRoom.addItem(room.getName());	
 		}
-		
-		
-		
+		 */		
 		comboFilm.setBounds(51, 68, 265, 57);
 		contentPane.add(comboFilm);
-		
+		comboCinema.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println(comboCinema.getSelectedIndex());
+				 if(comboCinema.getSelectedIndex() == 0) {
+					 if(comboRoom.getItemCount()>=1) {
+							comboRoom.removeItemAt(2);
+							comboRoom.removeItemAt(1);
+							comboRoom.removeItemAt(0);
+						}
+						
+					 for (int i=0;i<rooms.size();i++) {
+						 roomCinemaId = rooms.get(i).getId();
+						 if(roomCinemaId == 1) {
+									comboRoom.addItem(rooms.get(0).getName());
+									comboRoom.addItem(rooms.get(1).getName());
+									comboRoom.addItem(rooms.get(2).getName());
+						}
+					 }
+						 
+				} if(comboCinema.getSelectedIndex() == 1) {
+					if(comboRoom.getItemCount()>=1) {
+						comboRoom.removeItemAt(2);
+						comboRoom.removeItemAt(1);
+						comboRoom.removeItemAt(0);
+					}
+					
+					 for (int i=0;i<rooms.size();i++) {
+						 roomCinemaId = rooms.get(i).getId();
+						 if(roomCinemaId == 2) {
+									comboRoom.addItem(rooms.get(3).getName());
+									comboRoom.addItem(rooms.get(4).getName());
+									comboRoom.addItem(rooms.get(5).getName());
+						}
+					 }
+						 
+				} if(comboCinema.getSelectedIndex() == 2) {
+					if(comboRoom.getItemCount()>=1) {
+						comboRoom.removeItemAt(2);
+						comboRoom.removeItemAt(1);
+						comboRoom.removeItemAt(0);
+					}
+					
+					 for (int i=0;i<rooms.size();i++) {
+						 roomCinemaId = rooms.get(i).getId();
+						 if(roomCinemaId == 3) {
+									comboRoom.addItem(rooms.get(6).getName());
+									comboRoom.addItem(rooms.get(7).getName());
+									comboRoom.addItem(rooms.get(8).getName());
+						}
+					 }
+						 
+				}
+				 System.out.println(comboCinema.getSelectedItem().toString());
+			}
+			
+		});
 		
 		comboCinema.setBounds(50, 161, 265, 57);
 		contentPane.add(comboCinema);
-		/*comboRoom.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				for (int i=0;i<cinemas.size();i++) {
-					 cinemaId = cinemas.get(i).getId();			
-				 }
-				 for (int i=0;i<rooms.size();i++) {
-					 roomCinemaId = rooms.get(i).getId();			
-				 }
-				 if(cinemaId == roomCinemaId) {
-						System.out.println(cinemaId);
-						System.out.println(roomCinemaId);
-						JOptionPane.showMessageDialog(contentPane, "Sala y cine coinciden.");
-					}else {
-						System.out.println("No coincide");
-					}
-					 /*else if(!comboCinema.getSelectedItem().equals(roomCinema)) {
-						System.out.println(roomCinema);
-						comboRoom.removeItem(r);
-						JOptionPane.showMessageDialog(contentPane, "Sala y cine no coinciden. Borrar sala");
-				}
-			}
-		});
-		*/
+		
 		comboRoom.setBounds(50, 247, 265, 57);
 		contentPane.add(comboRoom);
 		

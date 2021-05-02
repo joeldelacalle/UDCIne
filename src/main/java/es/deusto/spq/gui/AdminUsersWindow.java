@@ -44,9 +44,10 @@ public class AdminUsersWindow extends JFrame {
 	private JList<User> lista;
 	
 	Client client = ClientBuilder.newClient();
-
-	private UserResource ur;
-	private List<User> users = ur.getUsers();
+	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
+	final WebTarget UsersTarget = appTarget.path("users");
+	//private UserResource ur;
+	//private List<User> users = ur.getUsers();
 	
 	public AdminUsersWindow() {
 		setUndecorated(true);
@@ -59,6 +60,8 @@ public class AdminUsersWindow extends JFrame {
 		contentPane.setLayout(null);
 		
 		final DefaultListModel<User> listausuarios = new DefaultListModel<User>();
+		GenericType<List<User>> genericType = new GenericType<List<User>>() {};
+		List<User> users = UsersTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 		lista = new JList<User>(listausuarios);
 		lista.setBounds(50, 63, 467, 343);
 		contentPane.add(lista);
