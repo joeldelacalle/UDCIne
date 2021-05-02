@@ -33,8 +33,11 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
 import es.deusto.spq.User;
+import es.deusto.spq.jdo.CinemaResource;
+import es.deusto.spq.jdo.FilmResources;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -50,9 +53,9 @@ public class AdminFilmsWindow extends JFrame {
 	private JLabel lblMessage = new JLabel("");
 	
 	Client client = ClientBuilder.newClient();
-
-	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
-	final WebTarget FilmsTarget = appTarget.path("films");
+	
+	private FilmResources fr;
+	private List<Film> films = fr.getFilms();
 	
 	public AdminFilmsWindow() {
 		setUndecorated(true);
@@ -66,9 +69,6 @@ public class AdminFilmsWindow extends JFrame {
 		
 		final DefaultListModel<Film> billboard = new DefaultListModel<>();
 		
-		GenericType<List<Film>> genericType = new GenericType<List<Film>>() {};
-		List<Film> films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-
 		billboard.clear();
 		for (Film film : films) {
 			System.out.println(film.getName());

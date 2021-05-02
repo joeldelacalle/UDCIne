@@ -19,7 +19,10 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+import es.deusto.spq.Cinema;
 import es.deusto.spq.User;
+import es.deusto.spq.jdo.CinemaResource;
+import es.deusto.spq.jdo.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -42,8 +45,8 @@ public class AdminUsersWindow extends JFrame {
 	
 	Client client = ClientBuilder.newClient();
 
-	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
-	final WebTarget UsersTarget = appTarget.path("users");
+	private UserResource ur;
+	private List<User> users = ur.getUsers();
 	
 	public AdminUsersWindow() {
 		setUndecorated(true);
@@ -60,11 +63,9 @@ public class AdminUsersWindow extends JFrame {
 		lista.setBounds(50, 63, 467, 343);
 		contentPane.add(lista);
 		
-		GenericType<List<User>> genericType = new GenericType<List<User>>() {};
-		List<User> Users = UsersTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 		
 		listausuarios.clear();
-		for (User user : Users) {
+		for (User user : users) {
 			System.out.println(user.getName());
 			listausuarios.addElement(user);
 		}

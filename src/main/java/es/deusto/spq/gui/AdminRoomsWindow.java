@@ -17,6 +17,9 @@ import javax.swing.border.LineBorder;
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
 import es.deusto.spq.Room;
+import es.deusto.spq.jdo.CinemaResource;
+import es.deusto.spq.jdo.FilmResources;
+import es.deusto.spq.jdo.RoomResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -44,23 +47,15 @@ public class AdminRoomsWindow extends JFrame {
 	
 	Client client = ClientBuilder.newClient();
 
-	private final WebTarget appTarget = client.target("http://localhost:8080/myapp");
-	private final WebTarget CinemasTarget = appTarget.path("cinemas");
+	private CinemaResource cr;
+	private List<Cinema> cinemas = cr.getReleases();
 
-	 GenericType<List<Cinema >> genericType0 = new GenericType<List<Cinema>>() {};
-	 List<Cinema > cinemas = CinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType0);
-	 
-	private final WebTarget RoomsTarget = appTarget.path("rooms");
+	private RoomResource rr;
+	private List<Room> rooms = rr.getReleases();
 
-	private GenericType<List<Room>> genericType1 = new GenericType<List<Room>>() {};
-	private List<Room> rooms = RoomsTarget.request(MediaType.APPLICATION_JSON).get(genericType1);
-
+	private FilmResources fr;
+	private List<Film> films = fr.getFilms();
 	
-
-	private final WebTarget FilmsTarget = appTarget.path("films");
-
-	private GenericType<List<Film>> genericType2 = new GenericType<List<Film>>() {};
-	private List<Film> films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType2);
 
 	private JPanel contentPane;
 	private Date date = null;

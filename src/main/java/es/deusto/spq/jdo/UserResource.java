@@ -14,7 +14,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("users")
-public class UsuarioResource {
+public class UserResource {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<User> getUsers() {
