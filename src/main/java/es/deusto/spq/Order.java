@@ -16,21 +16,24 @@ public class Order {
 
 	private String mail;
 	private Date date;
-	private List<Ticket> tickets;
-	private List<Product> products;
+	private int numberTickets;
+	private String tickets;
+	private String products;
 	private String paymentMethod;
 	private long price = -1;
 
-	public Order(String mail, Date date, List<Ticket> tickets, List<Product> product, String paymentMethod,
+	public Order(String mail, Date date, int numberTickets, String tickets, String product, String paymentMethod,
 			long price) {
 		super();
 		this.mail = mail;
 		this.date = date;
+		this.numberTickets = numberTickets;
 		this.tickets = tickets;
 		this.products = product;
 		this.paymentMethod = paymentMethod;
 		this.price = price;
 	}
+
 	public long getId() {
 		return id;
 	}
@@ -55,19 +58,27 @@ public class Order {
 		this.date = date;
 	}
 
-	public List<Ticket> getTickets() {
+	public int getNumberTickets() {
+		return numberTickets;
+	}
+
+	public void setNumberTickets(int numberTickets) {
+		this.numberTickets = numberTickets;
+	}
+
+	public String getTickets() {
 		return tickets;
 	}
 
-	public void setTickets(List<Ticket> tickets) {
+	public void setTickets(String tickets) {
 		this.tickets = tickets;
 	}
 
-	public List<Product> getProducts() {
+	public String getProducts() {
 		return products;
 	}
 
-	public void setProducts(List<Product> products) {
+	public void setProducts(String products) {
 		this.products = products;
 	}
 

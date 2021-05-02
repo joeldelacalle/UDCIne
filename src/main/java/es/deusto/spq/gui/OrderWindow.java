@@ -26,6 +26,7 @@ import javax.swing.border.LineBorder;
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
 import es.deusto.spq.Order;
+import es.deusto.spq.Room;
 import es.deusto.spq.Ticket;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
@@ -53,6 +54,13 @@ public class OrderWindow extends JFrame {
 	};
 	private List<Cinema> cinemas = CinemasTarget.request(MediaType.APPLICATION_JSON).get(genericTypeC);
 	private JComboBox<Cinema> cbCinema;
+	final WebTarget RoomsTarget = appTarget.path("cinemas");
+	private GenericType<List<Room>> genericTypeR = new GenericType<List<Room>>() {
+	};
+	private List<Room> rooms = CinemasTarget.request(MediaType.APPLICATION_JSON).get(genericTypeR);
+	private JComboBox<Room> cbSession;
+
+	private long totalPrice;
 
 	public OrderWindow(final Film selectedFilm) {
 		setUndecorated(true);
@@ -102,8 +110,11 @@ public class OrderWindow extends JFrame {
 		lblNumTickets.setBounds(10, 95, 139, 51);
 		contentPane.add(lblNumTickets);
 
-		JComboBox cbSession = new JComboBox();
+		cbSession = new JComboBox<Room>();
 		cbSession.setBounds(164, 235, 190, 62);
+		for (Room room : rooms) {
+			cbSession.addItem(room);
+		}
 		contentPane.add(cbSession);
 
 		JLabel lblSession = new JLabel("Sesión");
@@ -129,42 +140,10 @@ public class OrderWindow extends JFrame {
 		btnBuy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				ComprarPedido(listModelShoppingCart);
+				ComprarPedido(listModelShoppingCart, selectedFilm);
 
 			}
 
-			private void ComprarPedido(final DefaultListModel<Film> listModelShoppingCart) {
-				List<Ticket> tickets = new ArrayList<Ticket>();
-
-				for (int i = 0; i < listModelShoppingCart.size(); i++) {
-					Ticket ticketf = new Ticket((Cinema) cbCinema.getSelectedItem(),
-							listModelShoppingCart.getElementAt(i), 1, 1, 1, 0, null);
-					tickets.add(ticketf);
-				}
-
-				Order o = new Order("ejemplo", Calendar.getInstance().getTime(), tickets, null, "En caja", 0);
-				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-
-				PersistenceManager pm = pmf.getPersistenceManager();
-				Transaction tx = pm.currentTransaction();
-
-				System.out.println("Añadiendo pedido en la BD");
-
-				try {
-					tx.begin();
-
-					pm.makePersistent(o);
-
-					tx.commit();
-					System.out.println("Añadido una nueva pedido a la Base de Datos");
-
-				} finally {
-					if (tx.isActive()) {
-						tx.rollback();
-					}
-					pm.close();
-				}
-			}
 		});
 		btnBuy.setBounds(409, 452, 276, 38);
 		contentPane.add(btnBuy);
@@ -182,5 +161,53 @@ public class OrderWindow extends JFrame {
 
 		contentPane.add(cbCinema);
 
+	}
+
+	private void ComprarPedido(final DefaultListModel<Film> listModelShoppingCart, Film selectedFilm) {
+		List<Ticket> tickets = new ArrayList<Ticket>();
+
+		Order o = new Order("ejemplo", Calendar.getInstance().getTime(), 0, "", null, "En caja", 0);
+		StringBuilder sb = new StringBuilder();
+
+		for (int i = 0; i < listModelShoppingCart.size(); i++) {
+
+			Ticket ticketf = new Ticket((Cinema) cbCinema.getSelectedItem(), listModelShoppingCart.getElementAt(i),
+					i + 1, i + 1, i + 1, 8, null);
+			tickets.add(ticketf);
+
+			int ticketNum = i + 1;
+			sb.append(" Entrada:" + ticketNum);
+			sb.append(" fila:" + tickets.get(i).getRow());
+			sb.append(" asiento:" + tickets.get(i).getSeat());
+
+			o.setNumberTickets(i);
+
+			totalPrice = totalPrice + ticketf.getPrice();
+
+		}
+		o.setTickets("pelicula:" + selectedFilm.getName() + sb.toString());
+		o.setPrice(totalPrice);
+
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		System.out.println("Añadiendo pedido en la BD");
+
+		try {
+			tx.begin();
+
+			pm.makePersistent(o);
+
+			tx.commit();
+			System.out.println("Añadido una nueva pedido a la Base de Datos");
+
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
 	}
 }

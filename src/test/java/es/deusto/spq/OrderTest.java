@@ -40,7 +40,7 @@ public class OrderTest {
 		tickets.add(ticket);
 		product = new Product("palomitas", "palomitas Grandes", 3,null);
 		products.add(product);
-		o = new Order("perro@gmail.com", dfd1, tickets, products, "En caja", 1);
+		o = new Order("perro@gmail.com", dfd1,1, tickets.toString(), products.toString(), "En caja", 1);
 
 	}
 	@Test
@@ -69,14 +69,14 @@ public class OrderTest {
 
 	@Test
 	public void testSetGetTickets() {
-		o.setTickets(tickets);
-		assertEquals(tickets, o.getTickets());
+		o.setTickets(tickets.toString());
+		assertEquals(tickets.toString(), o.getTickets().toString());
 	}
 
 	@Test
 	public void testSetGetProducts() {
-		o.setProducts(products);
-		assertEquals(products, o.getProducts());
+		o.setProducts(products.toString());
+		assertEquals(products.toString(), o.getProducts());
 	}
 
 	@Test
