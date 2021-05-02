@@ -83,7 +83,7 @@ public class MainWindow extends JFrame {
 		contentPane.add(lblBillboard);
 
 		JButton btnFutureFilms = new JButton("Futuros estrenos");
-		btnFutureFilms.setBounds(184, 441, 205, 49);
+		btnFutureFilms.setBounds(55, 429, 224, 61);
 		btnFutureFilms.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				LastReleasesWindow vne = new LastReleasesWindow();
@@ -94,17 +94,7 @@ public class MainWindow extends JFrame {
 		btnFutureFilms.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnFutureFilms);
 
-		JButton btnFood = new JButton("Comida");
-		btnFood.setBounds(10, 441, 164, 49);
-		btnFood.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				CinemaFoodWindow vac = new CinemaFoodWindow();
-				vac.setVisible(true);
-				dispose();
-			}
-		});
-		btnFood.setFont(new Font("Tahoma", Font.BOLD, 20));
-		contentPane.add(btnFood);
+		
 
 		shoppingCart = new DefaultListModel<String>();
 
@@ -136,7 +126,7 @@ public class MainWindow extends JFrame {
 		contentPane.add(lblX);
 
 		JButton btnAsessment = new JButton("Valorar");
-		btnAsessment.setBounds(604, 441, 136, 49);
+		btnAsessment.setBounds(587, 429, 153, 61);
 		btnAsessment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				RatingWindow vv = new RatingWindow();

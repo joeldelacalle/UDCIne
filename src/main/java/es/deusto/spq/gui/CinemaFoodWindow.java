@@ -56,20 +56,6 @@ public class CinemaFoodWindow extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JPanel pnlBtnAnyadir = new JPanel();
-		pnlBtnAnyadir.addMouseListener(new MouseAdapter() {
-		});
-		pnlBtnAnyadir.setBackground(new Color(47, 79, 79));
-		pnlBtnAnyadir.setBounds(455, 392, 271, 54);
-		contentPane.add(pnlBtnAnyadir);
-		pnlBtnAnyadir.setLayout(null);
-
-		JLabel lblAnyadir = new JLabel("A\u00D1ADIR");
-		lblAnyadir.setFont(new Font("Arial", Font.BOLD, 28));
-		lblAnyadir.setForeground(new Color(245, 255, 250));
-		lblAnyadir.setBounds(86, 10, 111, 34);
-		pnlBtnAnyadir.add(lblAnyadir);
-
 		final JLabel lblX = new JLabel("X");
 		lblX.addMouseListener(new MouseAdapter() {
 			@Override
@@ -209,6 +195,21 @@ public class CinemaFoodWindow extends JFrame {
 		lblListaDeCompra.setFont(new Font("Cooper Black", Font.PLAIN, 15));
 		lblListaDeCompra.setBounds(47, 386, 173, 19);
 		contentPane.add(lblListaDeCompra);
+		
+		JButton btnAadir = new JButton("AÑADIR");
+		btnAadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				OrderWindow ow = new OrderWindow(null);
+				ow.setVisible(true);
+				dispose();
+						
+			}
+		});
+		btnAadir.setBackground(new Color(0, 153, 153));
+		btnAadir.setForeground(new Color(0, 0, 0));
+		btnAadir.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnAadir.setBounds(529, 386, 173, 60);
+		contentPane.add(btnAadir);
 
 	}
 

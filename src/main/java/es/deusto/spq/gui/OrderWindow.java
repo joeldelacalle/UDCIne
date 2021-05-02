@@ -132,7 +132,7 @@ public class OrderWindow extends JFrame {
 					listModelShoppingCart.addElement(selectedFilm);
 			}
 		});
-		btnAdd.setBounds(38, 452, 139, 38);
+		btnAdd.setBounds(38, 439, 158, 51);
 		contentPane.add(btnAdd);
 
 		JButton btnBuy = new JButton("Comprar");
@@ -159,6 +159,17 @@ public class OrderWindow extends JFrame {
 		}
 
 		contentPane.add(cbCinema);
+		
+		JButton btnComida = new JButton("Comida");
+		btnComida.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {	
+				CinemaFoodWindow vac = new CinemaFoodWindow();
+				vac.setVisible(true);
+				dispose();
+			}
+		});
+		btnComida.setBounds(222, 439, 158, 51);
+		contentPane.add(btnComida);
 
 	}
 
