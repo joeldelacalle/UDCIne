@@ -14,6 +14,7 @@ import javax.jdo.Transaction;
 import es.deusto.spq.Billboard;
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
+import es.deusto.spq.PayPal;
 import es.deusto.spq.Product;
 import es.deusto.spq.Release;
 import es.deusto.spq.Room;
@@ -105,6 +106,8 @@ public class PreparedData {
 			pm.makePersistent(p2);
 			Product p3 = new Product("Palomitas Grandes + Coca Cola", "Unas palomitas grandes y coca cola", 8, "https://previews.123rf.com/images/imagestore/imagestore1606/imagestore160601787/58756143-palomitas-en-rect%C3%A1ngulo-con-el-color-en-la-copa-para-llevar-aislado-en-el-fondo-blanco.jpg");
 			pm.makePersistent(p3);
+			PayPal pp1 = new PayPal("jaimesantamazo@hotmail.com", "123");
+			pm.makePersistent(pp1);
 			tx.commit();
 
 		} finally {

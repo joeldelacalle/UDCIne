@@ -31,6 +31,7 @@ public class PayPal {
 		this.email = email;
 		this.password = password;
 	}
+	public PayPal() {}
 
 	@Override
 	public String toString() {
