@@ -9,6 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -22,7 +23,9 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+import es.deusto.spq.Billboard;
 import es.deusto.spq.Film;
+import es.deusto.spq.jdo.BillboardResource;
 import es.deusto.spq.jdo.FilmResources;
 
 public class MainWindow extends JFrame {
@@ -51,7 +54,7 @@ public class MainWindow extends JFrame {
 
 		billboard.clear();
 		for (Film film : films) {
-			System.out.println(film.getName());
+			
 			billboard.addElement(film);
 		}
 
@@ -71,8 +74,6 @@ public class MainWindow extends JFrame {
 		});
 		btnFutureFilms.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnFutureFilms);
-
-		
 
 		final JLabel lblX = new JLabel("X");
 		lblX.setBounds(707, 10, 19, 31);
@@ -170,6 +171,15 @@ public class MainWindow extends JFrame {
 		 * e1) {
 		 */
 		contentPane.add(btnFilm4);
+
+	}
+
+	public Film getBillboardFilm(int i) {
+
+		BillboardResource br = new BillboardResource();
+		List<Billboard> bl = br.getBillboardFilms();
+		Film billboardFilm = bl.get(i).getFilmBillboard();
+		return billboardFilm; 
 
 	}
 

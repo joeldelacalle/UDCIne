@@ -213,7 +213,5 @@ public class AdminRoomsWindow extends JFrame {
 		
         calendar.setBounds(123,329,110,31);
         getContentPane().add(calendar);
-		
-
 	}
 }

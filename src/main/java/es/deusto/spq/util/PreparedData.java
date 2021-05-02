@@ -1,12 +1,17 @@
 package es.deusto.spq.util;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
+import es.deusto.spq.Billboard;
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
 import es.deusto.spq.Product;
@@ -35,6 +40,19 @@ public class PreparedData {
 			Film filmC = new Film("Jon", "Iron Man 3",
 					"Tony Stark tendrÃ¡ que enfrentarse a un enemigo cuyo alcance no conoce lÃ­mites. Cuando Stark encuentre su vida personal destruida a manos de su enemigo, se embarca en una difÃ­cil aventura para encontrar al responsable.",
 					13, "https://pics.filmaffinity.com/iron_man_3_aka_ironman_3-972235216-large.jpg");
+			
+			Billboard b1 = new Billboard();
+			b1.setFilmBillboard(filmA);
+			pm.makePersistent(b1);
+			
+			Billboard b2 = new Billboard();
+			b2.setFilmBillboard(filmB);
+			pm.makePersistent(b2);
+			
+			Billboard b3 = new Billboard();
+			b3.setFilmBillboard(filmC);
+			pm.makePersistent(b3);
+			
 			pm.makePersistent(filmC);
 			Cinema cinema1 = new Cinema("Cine Deusto Zubiarte", "Bilbao", "Centro Comercial Zubiarte", 123456789);
 			pm.makePersistent(cinema1);

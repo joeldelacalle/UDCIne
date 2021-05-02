@@ -1,19 +1,21 @@
 package es.deusto.spq;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.jdo.annotations.PersistenceCapable;
-
-import es.deusto.spq.gui.FilmWindow;
 
 @PersistenceCapable
 public class Billboard {
 	
-	protected Set<FilmWindow> films= new HashSet<FilmWindow>();
+
+	private Film filmBillboard;
+
 	
-	  public Set<FilmWindow> getFilms()
-	    {
-	        return films;
-	    }
+	public Film getFilmBillboard() {
+		return filmBillboard;
+	}
+
+	public void setFilmBillboard(Film filmBillboard) {
+		this.filmBillboard = filmBillboard;
+	}
+	
+	
 }
