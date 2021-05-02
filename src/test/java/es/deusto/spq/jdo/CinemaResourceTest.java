@@ -12,6 +12,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
 
 import es.deusto.spq.Cinema;
@@ -22,9 +25,10 @@ import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
-
+@RunWith(MockitoJUnitRunner.class)
 public class CinemaResourceTest {
 
+	@Mock
 	CinemaResource cr = mock(CinemaResource.class);
 	List<Cinema> listacinesResources;
 
