@@ -48,3 +48,9 @@ jobs:
       run: mvn --batch-mode --update-snapshots test 
     - name: Test Integracion
       run: mvn --batch-mode --update-snapshots verify -Pintegration
+    - name: Test Ventanas
+      run: |
+          mvn --batch-mode --update-snapshots exec:java -P datos
+          mvn --batch-mode --update-snapshots verify -P gui  
+      env:
+          DISPLAY: ':99'
