@@ -41,6 +41,10 @@ Para comprobar los teses de integracion
 
     mvn verify -P integration
     
+Para comprobar los teses de la ventana
+
+    mvn verify -P integration
+    
  -------------------------------------------------------------------------------   
  Test
 	A la hora de hacer los test dentro del "pom.xml"
