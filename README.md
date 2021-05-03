@@ -43,7 +43,7 @@ Para comprobar los teses de integracion
     
 Para comprobar los teses de la ventana
 
-    mvn verify -P integration
+    mvn verify -P gui
     
  -------------------------------------------------------------------------------   
  Test
