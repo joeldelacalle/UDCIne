@@ -37,6 +37,10 @@ La aplicación cliente puede iniciarse usando el comando
 
     mvn exec::java -Pcliente
     
+Para comprobar los teses de integracion
+
+    mvn verify -P integration
+    
  -------------------------------------------------------------------------------   
  Test
 	A la hora de hacer los test dentro del "pom.xml"
