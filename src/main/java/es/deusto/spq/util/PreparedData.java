@@ -41,20 +41,24 @@ public class PreparedData {
 			Film filmC = new Film("Jon", "Iron Man 3",
 					"Tony Stark tendrÃ¡ que enfrentarse a un enemigo cuyo alcance no conoce lÃ­mites. Cuando Stark encuentre su vida personal destruida a manos de su enemigo, se embarca en una difÃ­cil aventura para encontrar al responsable.",
 					13, "https://pics.filmaffinity.com/iron_man_3_aka_ironman_3-972235216-large.jpg");
-			
+			pm.makePersistent(filmC);
+			Film filmD = new Film("Jon", "Infinity war",
+					"El todopoderoso Thanos ha despertado con la promesa de arrasar con todo a su paso, portando el Guantelete del Infinito. Los únicos capaces de pararle los pies son los Vengadores y el resto de superhéroes de la galaxia",
+					13, "https://pics.filmaffinity.com/avengers_infinity_war-181539353-large.jpg");
+			pm.makePersistent(filmD);
+
 			Billboard b1 = new Billboard();
 			b1.setFilmBillboard(filmA);
 			pm.makePersistent(b1);
-			
+
 			Billboard b2 = new Billboard();
 			b2.setFilmBillboard(filmB);
 			pm.makePersistent(b2);
-			
+
 			Billboard b3 = new Billboard();
 			b3.setFilmBillboard(filmC);
 			pm.makePersistent(b3);
-			
-			pm.makePersistent(filmC);
+
 			Cinema cinema1 = new Cinema("Cine Deusto Zubiarte", "Bilbao", "Centro Comercial Zubiarte", 123456789);
 			pm.makePersistent(cinema1);
 			Cinema cinema2 = new Cinema("Cine Deusto Santander", "Santander", "Corte Ingles nueva montaña", 345345345);
@@ -80,7 +84,7 @@ public class PreparedData {
 			pm.makePersistent(user2);
 			User user3 = new User("Jaime", "jaimesanta", "jaimesantamazo@opendeusto.es", "jaimesanta", 435345);
 			pm.makePersistent(user3);
-			
+
 			Room room1 = new Room(cinema1, filmA, "ZUBIARTE SALA 1", Calendar.getInstance().getTime(), 100);
 			pm.makePersistent(room1);
 			Room room2 = new Room(cinema1, filmB, "ZUBIARTE SALA 2", Calendar.getInstance().getTime(), 100);
@@ -99,12 +103,15 @@ public class PreparedData {
 			pm.makePersistent(room8);
 			Room room9 = new Room(cinema3, filmC, "BARAKALDO SALA 3", Calendar.getInstance().getTime(), 100);
 			pm.makePersistent(room9);
-			
-			Product p1 = new Product("Palomitas Medianas", "500g", 4, "https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg");
+
+			Product p1 = new Product("Palomitas Medianas", "500g", 4,
+					"https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg");
 			pm.makePersistent(p1);
-			Product p2 = new Product("Palomitas Grandes", "1000g", 6, "https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg");
+			Product p2 = new Product("Palomitas Grandes", "1000g", 6,
+					"https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg");
 			pm.makePersistent(p2);
-			Product p3 = new Product("Palomitas Grandes + Coca Cola", "Unas palomitas grandes y coca cola", 8, "https://previews.123rf.com/images/imagestore/imagestore1606/imagestore160601787/58756143-palomitas-en-rect%C3%A1ngulo-con-el-color-en-la-copa-para-llevar-aislado-en-el-fondo-blanco.jpg");
+			Product p3 = new Product("Palomitas Grandes + Coca Cola", "Unas palomitas grandes y coca cola", 8,
+					"https://previews.123rf.com/images/imagestore/imagestore1606/imagestore160601787/58756143-palomitas-en-rect%C3%A1ngulo-con-el-color-en-la-copa-para-llevar-aislado-en-el-fondo-blanco.jpg");
 			pm.makePersistent(p3);
 			PayPal pp1 = new PayPal("jaimesantamazo@hotmail.com", "123");
 			pm.makePersistent(pp1);

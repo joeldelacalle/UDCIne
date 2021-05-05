@@ -27,7 +27,6 @@ import es.deusto.spq.Film;
 import es.deusto.spq.jdo.BillboardResource;
 import es.deusto.spq.jdo.FilmResources;
 
-
 public class MainWindow extends JFrame {
 
 	/**
@@ -54,7 +53,7 @@ public class MainWindow extends JFrame {
 
 		billboard.clear();
 		for (Film film : films) {
-			
+
 			billboard.addElement(film);
 		}
 
@@ -163,13 +162,20 @@ public class MainWindow extends JFrame {
 		contentPane.add(btnFilm3);
 
 		JButton btnFilm4 = new JButton("");
+		btnFilm4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				FilmWindow fw = new FilmWindow(3);
+				fw.setVisible(true);
+			}
+		});
 		btnFilm4.setBounds(456, 105, 130, 180);
 
-		// todavia no hay suficientes peliculas
-		/*
-		 * try { btnSetImageIcon(films.get(0).getUrl(),btnFilm1); } catch (IOException
-		 * e1) {
-		 */
+		try {
+			btnSetImageIcon(films.get(3).getUrl(), btnFilm4);
+		} catch (IOException e1) {
+
+		}
+
 		contentPane.add(btnFilm4);
 
 	}
@@ -179,7 +185,7 @@ public class MainWindow extends JFrame {
 		BillboardResource br = new BillboardResource();
 		List<Billboard> bl = br.getBillboardFilms();
 		Film billboardFilm = bl.get(i).getFilmBillboard();
-		return billboardFilm; 
+		return billboardFilm;
 
 	}
 
