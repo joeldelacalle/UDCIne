@@ -9,7 +9,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -27,6 +26,7 @@ import es.deusto.spq.Billboard;
 import es.deusto.spq.Film;
 import es.deusto.spq.jdo.BillboardResource;
 import es.deusto.spq.jdo.FilmResources;
+
 
 public class MainWindow extends JFrame {
 
