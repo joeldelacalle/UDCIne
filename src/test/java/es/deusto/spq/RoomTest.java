@@ -20,7 +20,7 @@ public class RoomTest {
 	@Before
 	public void SetUp() {
 		c = new Cinema("name","city","address",99);
-		f = new Film("director", "name", "description", 13,"url");
+		f = new Film("director", "name", "description", 13,"url","");
 		dfd = Calendar.getInstance();
 		dfd.set(Calendar.YEAR, 2020);
 		dfd.set(Calendar.MONTH, Calendar.NOVEMBER);

@@ -50,6 +50,7 @@ public class AdminFilmsWindow extends JFrame {
 	Client client = ClientBuilder.newClient();
 	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
 	final WebTarget FilmsTarget = appTarget.path("films");
+	private JTextField textFieldTrailer = new JTextField();
 	
 	//private FilmResources fr;
 	//private List<Film> films = fr.getFilms();
@@ -267,7 +268,7 @@ public class AdminFilmsWindow extends JFrame {
         
         JScrollPane areaScrollPane = new JScrollPane(txtDescription);
         areaScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        areaScrollPane.setBounds(500, 210, 170, 190);
+        areaScrollPane.setBounds(500, 247, 170, 190);
         contentPane.add(areaScrollPane);
         
         JButton btnAdd = new JButton("Añadir");
@@ -322,7 +323,7 @@ public class AdminFilmsWindow extends JFrame {
 					
 					try {
 						tx.begin();
-						Film film = new Film(txtDirector.getText().toString(), txtName.getText().toString(), txtDescription.getText().toString(), age, txtFoto.getText().toString());
+						Film film = new Film(txtDirector.getText().toString(), txtName.getText().toString(), txtDescription.getText().toString(), age, txtFoto.getText().toString(),textFieldTrailer.getText().toString());
 						pm.makePersistent(film);
 						
 						tx.commit();
@@ -342,7 +343,7 @@ public class AdminFilmsWindow extends JFrame {
 				}
 			}
 		});
-		btnAdd.setBounds(480, 430, 200, 30);
+		btnAdd.setBounds(481, 447, 200, 30);
 		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnAdd);
 
@@ -391,6 +392,12 @@ public class AdminFilmsWindow extends JFrame {
         lblMessage.setFont(new Font("Arial", Font.PLAIN, 12));
         lblMessage.setBounds(500, 410, 250, 19);
         contentPane.add(lblMessage);
+        
+        textFieldTrailer.setText("Url Trailer");
+        textFieldTrailer.setFont(new Font("Arial", Font.BOLD, 14));
+        textFieldTrailer.setColumns(10);
+        textFieldTrailer.setBorder(null);
+        textFieldTrailer.setBounds(500, 210, 170, 20);
+        contentPane.add(textFieldTrailer);
 	}
-
 }

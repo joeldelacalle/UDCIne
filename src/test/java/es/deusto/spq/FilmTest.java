@@ -11,7 +11,7 @@ public class FilmTest {
 
 	@Before
 	public void setup() {
-		f = new Film("director", "name", "description", 13,"url");
+		f = new Film("director", "name", "description", 13,"url","trailer");
 	}
 
 	@Test
@@ -47,6 +47,11 @@ public class FilmTest {
 	public void testSetGetUrl() {
 		f.setUrl("url");
 		assertEquals("url", f.getUrl());
+	}
+	@Test
+	public void testSetGetTrailer() {
+		f.setTrailer("trailer");
+		assertEquals("trailer", f.getTrailer());
 	}
 
 	@Test

@@ -35,7 +35,7 @@ public class OrderTest {
 		dfd.set(Calendar.SECOND, 00);
 		dfd1 = dfd.getTime();
 		cinema = new Cinema("artea", "bilbao", "landabarri", 99);
-		film = new Film("john", "iron man", "el hombre de hierro", 13, null);
+		film = new Film("john", "iron man", "el hombre de hierro", 13, null, null);
 		ticket = new Ticket(cinema, film, 1, 2, 3, 4, dfd1);
 		tickets.add(ticket);
 		product = new Product("palomitas", "palomitas Grandes", 3,null);

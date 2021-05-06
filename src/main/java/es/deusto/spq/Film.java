@@ -20,15 +20,29 @@ public class Film {
     protected int ageRestriction=-1;
     
     protected String url = null;
+    
+    protected String trailer = null;
 
-	public Film(String director, String name, String description, int ageRestriction, String url) {
+	public Film(String director, String name, String description, int ageRestriction, String url, String trailer) {
 		super();
 		this.director = director;
 		this.name = name;
 		this.description = description;
 		this.ageRestriction = ageRestriction;
 		this.url = url;
+		this.trailer = trailer;
 	}
+	
+
+	public String getTrailer() {
+		return trailer;
+	}
+
+
+	public void setTrailer(String trailer) {
+		this.trailer = trailer;
+	}
+
 
 	public String getUrl() {
 		return url;

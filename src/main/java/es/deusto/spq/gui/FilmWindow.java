@@ -1,6 +1,7 @@
 package es.deusto.spq.gui;
 
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
@@ -8,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
 
@@ -57,6 +59,7 @@ public class FilmWindow extends JFrame {
 	private String filmName = "-1";
 	private String urlFilm = "-1";
 	private String descFilm = "-1";
+	private String trailerFilm = "-1";
 	private JTextPane textPaneDescription = new JTextPane();
 	private Film film;
 
@@ -151,6 +154,7 @@ public class FilmWindow extends JFrame {
 		filmName = film.getName();
 		urlFilm = film.getUrl();
 		descFilm = film.getDescription();
+		trailerFilm = film.getTrailer();
 		Image image = null;
 		try {
 			URL url = new URL(urlFilm);
@@ -227,6 +231,7 @@ public class FilmWindow extends JFrame {
 						filmName = film.getName();
 						urlFilm = film.getUrl();
 						descFilm = film.getDescription();
+						trailerFilm = film.getTrailer();
 					}
 				}
 				// System.out.println(filmName);
@@ -302,11 +307,26 @@ public class FilmWindow extends JFrame {
 
 		textPaneDescription.setBackground(new Color(64, 224, 208));
 		
-		JButton btnBuyTickets = new JButton("comprar entradas");
+		JButton btnBuyTickets = new JButton("COMPRAR ENTRADAS");
 		btnBuyTickets.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				OrderWindow ow = new OrderWindow(film);
 				ow.setVisible(true);
+			}
+		});
+		
+		JButton btnTrailer = new JButton("TRAILER");
+		btnTrailer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println(trailerFilm);
+				//TrailerPlayer tp = new TrailerPlayer(trailerFilm);
+				//tp.setVisible(true);
+				try {
+					Desktop.getDesktop().browse(new URL(trailerFilm).toURI());
+				} catch (IOException | URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 
@@ -314,34 +334,35 @@ public class FilmWindow extends JFrame {
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(65)
-					.addComponent(textFieldFilmName, GroupLayout.PREFERRED_SIZE, 302, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(255, Short.MAX_VALUE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(168)
-					.addComponent(lblFilmImage)
-					.addContainerGap(454, Short.MAX_VALUE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(187)
-					.addComponent(btnExit, GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
-					.addGap(42)
-					.addComponent(btnShowCinemas)
-					.addGap(18)
-					.addComponent(btnBuyTickets)
-					.addGap(88))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(55)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(comboBoxFilm, GroupLayout.PREFERRED_SIZE, 269, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblDsc, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textPaneDescription, GroupLayout.PREFERRED_SIZE, 392, GroupLayout.PREFERRED_SIZE))
+							.addGap(65)
+							.addComponent(textFieldFilmName, GroupLayout.PREFERRED_SIZE, 302, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(360)
-							.addComponent(lblRecommendedAge, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(59, Short.MAX_VALUE))
+							.addGap(168)
+							.addComponent(lblFilmImage))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(55)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(comboBoxFilm, GroupLayout.PREFERRED_SIZE, 269, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(360)
+									.addComponent(lblRecommendedAge, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(lblDsc, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addComponent(btnExit, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addGap(42)
+											.addComponent(btnShowCinemas)
+											.addGap(18)
+											.addComponent(btnBuyTickets)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(btnTrailer, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE))
+										.addComponent(textPaneDescription, GroupLayout.PREFERRED_SIZE, 392, GroupLayout.PREFERRED_SIZE))))))
+					.addGap(11))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
@@ -350,7 +371,7 @@ public class FilmWindow extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(comboBoxFilm, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
 							.addComponent(textFieldFilmName, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE))
 						.addComponent(lblRecommendedAge, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
@@ -359,13 +380,12 @@ public class FilmWindow extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblDsc, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textPaneDescription, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(32, Short.MAX_VALUE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(510)
+					.addGap(2)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnShowCinemas, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(btnExit, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnBuyTickets))
+						.addComponent(btnBuyTickets)
+						.addComponent(btnTrailer, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap())
 		);
 		contentPane.setLayout(gl_contentPane);

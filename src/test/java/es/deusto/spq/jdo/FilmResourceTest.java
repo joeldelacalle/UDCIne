@@ -54,11 +54,11 @@ public class FilmResourceTest {
     	
 	    List<Film> listapelis = Arrays.asList(new Film("Jon", "Iron Man",
 				"El acto principal es Tony Stark, un magnate multimillonario y hÃ¡bil ingeniero con abundantes vicios que construye un exoesqueleto mecÃ¡nico y se convierte en el superhÃ©roe Iron Man.",
-				13, "https://pics.filmaffinity.com/iron_man-108960873-large.jpg"),new Film("Jon", "Iron Man 2",
+				13, "https://pics.filmaffinity.com/iron_man-108960873-large.jpg", "https://www.youtube.com/watch?v=RLiO7pt8MbU"),new Film("Jon", "Iron Man 2",
 						"El mundo sabe que el multimillonario Tony Stark es Iron Man, el superhÃ©roe enmascarado, el cual forja alianzas nuevas y se enfrenta a nuevas y poderosas fuerzas.",
-						13, "https://pics.filmaffinity.com/iron_man_2-466103197-large.jpg"),new Film("Jon", "Iron Man 3",
+						13, "https://pics.filmaffinity.com/iron_man_2-466103197-large.jpg", "youtube.com/watch?v=Ab_mvS68xng"),new Film("Jon", "Iron Man 3",
 								"Tony Stark tendrÃ¡ que enfrentarse a un enemigo cuyo alcance no conoce lÃ­mites. Cuando Stark encuentre su vida personal destruida a manos de su enemigo, se embarca en una difÃ­cil aventura para encontrar al responsable.",
-								13, "https://pics.filmaffinity.com/iron_man_3_aka_ironman_3-972235216-large.jpg"));
+								13, "https://pics.filmaffinity.com/iron_man_3_aka_ironman_3-972235216-large.jpg", "https://www.youtube.com/watch?v=6dhCPF_Jsco"));
 
 	    GenericType<List<Film>> genericType = new GenericType<List<Film>>() {};
 	    List<Film> pelis = peliculasTarget.request(MediaType.APPLICATION_JSON).get(genericType);

@@ -149,8 +149,8 @@
 					<execution>
 						<phase>compile</phase>
 						<goals>
-								<goal>enhance</goal>
-							</goals>
+							<goal>enhance</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
