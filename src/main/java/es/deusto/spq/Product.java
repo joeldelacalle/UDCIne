@@ -16,12 +16,12 @@ public class Product {
 
 	protected String description = null;
 
-	protected double price = 0.0;
+	protected long price = 0;
 	
 	protected String url = null;
 
 	
-	public Product(String name, String description, double price, String url) {
+	public Product(String name, String description, long price, String url) {
 		super();
 		
 		this.name = name;
@@ -44,7 +44,7 @@ public class Product {
 		return description;
 	}
 
-	public double getPrice() {
+	public long getPrice() {
 		return price;
 	}
 
@@ -56,7 +56,7 @@ public class Product {
 		this.description = description;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(long price) {
 		this.price = price;
 	}
 

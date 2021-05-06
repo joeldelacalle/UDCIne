@@ -26,6 +26,7 @@ import javax.swing.border.LineBorder;
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
 import es.deusto.spq.Order;
+import es.deusto.spq.Product;
 import es.deusto.spq.Room;
 import es.deusto.spq.Ticket;
 import es.deusto.spq.User;
@@ -58,6 +59,15 @@ public class OrderWindow extends JFrame {
 	private RoomResource rr = new RoomResource();
 	private List<Room> rooms = rr.getReleases();
 	private JComboBox<Room> cbSession;
+	private List<Product> products;
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
 
 	private long totalPrice;
 
@@ -163,7 +173,7 @@ public class OrderWindow extends JFrame {
 		JButton btnComida = new JButton("Comida");
 		btnComida.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	
-				CinemaFoodWindow vac = new CinemaFoodWindow();
+				CinemaFoodWindow vac = new CinemaFoodWindow(selectedFilm);
 				vac.setVisible(true);
 				dispose();
 			}
@@ -178,6 +188,7 @@ public class OrderWindow extends JFrame {
 
 		Order o = new Order("ejemplo", Calendar.getInstance().getTime(), 0, "", null, "En caja", 0);
 		StringBuilder sb = new StringBuilder();
+		StringBuilder sb2 = new StringBuilder();
 
 		for (int i = 0; i < listModelShoppingCart.size(); i++) {
 
@@ -195,7 +206,23 @@ public class OrderWindow extends JFrame {
 			totalPrice = totalPrice + ticketf.getPrice();
 
 		}
+		
+		for (int i = 0; i < products.size(); i++) {
+
+		
+			int productNum = i + 1;
+			sb2.append(" Producto:" + productNum);
+			sb2.append(" Nombre:" + products.get(i).getName());
+		
+
+			o.setNumberTickets(i);
+
+			totalPrice = totalPrice + products.get(i).getPrice();
+
+		}
+		
 		o.setTickets("pelicula:" + selectedFilm.getName() + sb.toString());
+		o.setProducts("Productos"+sb2.toString());
 		o.setPrice(totalPrice);
 
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");

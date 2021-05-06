@@ -9,6 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -38,14 +39,13 @@ public class CinemaFoodWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
 
 	private JList<Product> list;
 	private DefaultListModel<Product> listmodelAlimentos;
 	private ProductResource pr = new ProductResource();
 	private List<Product> products = pr.getProducts();
 
-	public CinemaFoodWindow() {
+	public CinemaFoodWindow(final Film selectedFilm) {
 
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -109,7 +109,7 @@ public class CinemaFoodWindow extends JFrame {
 		lblFlecha.setBounds(50, 10, 25, 31);
 		contentPane.add(lblFlecha);
 
-		JLabel lblPopcornImage = new JLabel("New label");
+		JLabel lblPopcornImage = new JLabel("");
 		lblPopcornImage.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -124,7 +124,14 @@ public class CinemaFoodWindow extends JFrame {
 			btnSetImageIcon(products.get(0).getUrl(), lblPopcornImage);
 		} catch (IOException e) {
 		}
+		
 		JLabel lblPopcornCola = new JLabel("");
+		lblPopcornCola.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				listmodelAlimentos.addElement(products.get(1));
+			}
+		});
 		lblPopcornCola.setBounds(480, 85, 166, 157);
 		contentPane.add(lblPopcornCola);
 
@@ -134,6 +141,12 @@ public class CinemaFoodWindow extends JFrame {
 		}
 
 		JLabel lblPopcornBig = new JLabel("");
+		lblPopcornBig.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				listmodelAlimentos.addElement(products.get(1));
+			}
+		});
 		lblPopcornBig.setBounds(245, 85, 192, 157);
 		contentPane.add(lblPopcornBig);
 		try {
@@ -142,38 +155,12 @@ public class CinemaFoodWindow extends JFrame {
 		}
 		listmodelAlimentos = new DefaultListModel<Product>();
 		list = new JList<Product>(listmodelAlimentos);
-		list.setBounds(47, 405, 243, 41);
+		list.setBounds(47, 332, 390, 158);
 		contentPane.add(list);
 
 		String Popcorn = "Palomitas Medianas";
 		String PopcornBig = "Palomitas Grandes";
 		String PopcornCola = "Palomitas Grandes + Coca Cola";
-
-		final JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.setBounds(194, 314, 155, 41);
-		contentPane.add(comboBox);
-		comboBox.addItem(Popcorn);
-		comboBox.addItem(PopcornBig);
-		comboBox.addItem(PopcornCola);
-
-		textField = new JTextField();
-		textField.setBounds(194, 427, 96, 19);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		textField.setVisible(false);
-
-		JButton btnCompraAlimentos = new JButton("SELECCIONAR");
-		btnCompraAlimentos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String a;
-				textField.setText((String) comboBox.getSelectedItem());
-				a = textField.getText();
-				// listmodelAlimentos.addElement(a);
-
-			}
-		});
-		btnCompraAlimentos.setBounds(383, 314, 101, 41);
-		contentPane.add(btnCompraAlimentos);
 
 		JLabel lblNewLabel = new JLabel("PALOMITAS MEDIANAS");
 		lblNewLabel.setFont(new Font("Cooper Black", Font.PLAIN, 12));
@@ -193,13 +180,21 @@ public class CinemaFoodWindow extends JFrame {
 
 		JLabel lblListaDeCompra = new JLabel("LISTA DE COMPRA");
 		lblListaDeCompra.setFont(new Font("Cooper Black", Font.PLAIN, 15));
-		lblListaDeCompra.setBounds(47, 386, 173, 19);
+		lblListaDeCompra.setBounds(50, 302, 173, 19);
 		contentPane.add(lblListaDeCompra);
 		
-		JButton btnAadir = new JButton("AÑADIR");
+		JButton btnAadir = new JButton("AÑADIR AL CARRITO");
 		btnAadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				OrderWindow ow = new OrderWindow(null);
+				OrderWindow ow = new OrderWindow(selectedFilm);
+				List <Product> listProducts = new ArrayList<Product>() ;
+				
+				for (int i = 0; i<listmodelAlimentos.size(); i++) {
+				listProducts.add(listmodelAlimentos.get(i));
+				}
+				
+				ow.setProducts(listProducts);
+				System.out.println(listProducts.toString());
 				ow.setVisible(true);
 				dispose();
 						
@@ -208,7 +203,7 @@ public class CinemaFoodWindow extends JFrame {
 		btnAadir.setBackground(new Color(0, 153, 153));
 		btnAadir.setForeground(new Color(0, 0, 0));
 		btnAadir.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnAadir.setBounds(529, 386, 173, 60);
+		btnAadir.setBounds(468, 386, 234, 60);
 		contentPane.add(btnAadir);
 
 	}

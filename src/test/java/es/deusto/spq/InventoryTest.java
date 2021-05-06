@@ -18,7 +18,7 @@ public class InventoryTest {
 	public void setup() {
 		i = new Inventory("name");
 		products = new HashSet<Product>();
-		p = new Product("TestName", "TestDescription", 0.1, null);
+		p = new Product("TestName", "TestDescription", 1, null);
 		products.add(p);
 	}
 

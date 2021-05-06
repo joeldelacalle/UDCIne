@@ -11,7 +11,7 @@ public class ProductTest {
 
 	@Before
 	public void setup() {
-		p = new Product("name", "description", 0.1, null);
+		p = new Product("name", "description", 1, null);
 	}
 
 	@Test
@@ -43,7 +43,7 @@ public class ProductTest {
 
 	@Test
 	public void testToString() {
-		assertEquals("Product [id=0" + ", name=name" + ", description=description"+ ", price=0.1"+ ", url=null"+ "]", p.toString());
+		assertEquals("Product [id=0" + ", name=name" + ", description=description"+ ", price=1"+ ", url=null"+ "]", p.toString());
 	}
 
 }
