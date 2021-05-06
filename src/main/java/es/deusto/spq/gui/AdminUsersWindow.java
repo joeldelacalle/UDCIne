@@ -46,6 +46,7 @@ public class AdminUsersWindow extends JFrame {
 	Client client = ClientBuilder.newClient();
 	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
 	final WebTarget UsersTarget = appTarget.path("users");
+	final WebTarget UsersallTarget = UsersTarget.path("allusers");
 	//private UserResource ur;
 	//private List<User> users = ur.getUsers();
 	
@@ -61,7 +62,7 @@ public class AdminUsersWindow extends JFrame {
 		
 		final DefaultListModel<User> listausuarios = new DefaultListModel<User>();
 		GenericType<List<User>> genericType = new GenericType<List<User>>() {};
-		List<User> users = UsersTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+		List<User> users = UsersallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 		lista = new JList<User>(listausuarios);
 		lista.setBounds(50, 63, 467, 343);
 		contentPane.add(lista);
