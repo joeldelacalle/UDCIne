@@ -54,3 +54,16 @@ jobs:
           mvn --batch-mode --update-snapshots verify -P gui  
       env:
           DISPLAY: ':99'
+    - name: Install doxygen
+      run: sudo apt-get install -y doxygen
+    - name: Install graphviz
+      run: sudo apt-get install -y graphviz
+    - name: Generate documentation
+      run: mvn doxygen:report
+    - name: Publish on Github Pages
+      uses: crazy-max/ghaction-github-pages@v2.3.0
+      with:
+        build_dir: target/doxygen/html
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
