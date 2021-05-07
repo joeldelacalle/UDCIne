@@ -15,6 +15,9 @@ Para la creación de las tablas se debe ejecutar el comando de maven
 
     mvn compile datanucleus:schema-create
 
+Enhance del proyecto
+
+    mvn datanucleus:enhance
 
 Datos de prueba
 
@@ -46,9 +49,3 @@ Para comprobar los teses de la ventana
     mvn verify -P gui
     
  -------------------------------------------------------------------------------   
- Test
-	A la hora de hacer los test dentro del "pom.xml"
-	Dentro de "<phase>compile</phase>"
-	Hay que eliminar "<goal>enhance</goal>"
-	Para que los test se ejecuten correctamente
- 
