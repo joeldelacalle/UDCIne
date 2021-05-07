@@ -133,7 +133,7 @@ public class RegisterWindow extends JFrame {
 					System.out.println("Añadiendo usuario en la BD");
 					try {
 						tx.begin();
-						User user = new User(textFieldName.getText().toString(), textFieldNickname.getText().toString(), textFieldEmail.getText().toString(), passwordField.getPassword().toString(), phone);
+						User user = new User(textFieldName.getText().toString(), textFieldNickname.getText().toString(), textFieldEmail.getText().toString(), passwordField.getText().toString(), phone);
 						pm.makePersistent(user);
 						
 						tx.commit();

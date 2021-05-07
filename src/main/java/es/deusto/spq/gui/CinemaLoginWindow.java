@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+import es.deusto.spq.jdo.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -144,17 +145,24 @@ public class CinemaLoginWindow extends JFrame {
             }
 
 			private void Login() {
+				System.out.println(txtPassword1.getPassword().toString());
+				UserResource ur = new UserResource();
 				if (txtUsername1.getText().equals("admin") && txtPassword1.getText().equals("admin")) {
                     // los datos son correctos
                     lblLoginMessage1.setText("");
                     AdminWindow aw = new AdminWindow ();
             		aw.setVisible(true);
             		dispose();
-                    
+				}else if(ur.CheckUser(txtUsername1.getText(), txtPassword1.getText().toString())){
+					lblLoginMessage1.setText("te has loggeado correctamente!");
+					MainWindow vp = new MainWindow ();
+	        		vp.setVisible(true);
+	        		dispose();
+					
                 } else if (txtUsername1.getText().equals("") || txtUsername1.getText().equals("Username")
                         || txtPassword1.getText().equals("") || txtPassword1.getText().equals("Password")) {
                     lblLoginMessage1.setText("Por favor rellena los campos!");
-                } else {
+                } else  {
                     lblLoginMessage1.setText("Usuario y contraseña no coinciden");
                 }
 			}

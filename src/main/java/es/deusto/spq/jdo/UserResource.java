@@ -33,24 +33,51 @@ public class UserResource {
 
 		return users;
 	}
+
 	@GET
 	@Path("getuser")
 	@Produces(MediaType.APPLICATION_JSON)
 	public static User getUser(@QueryParam("nickname") String nickname) {
-	PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-	PersistenceManager pm = pmf.getPersistenceManager();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
 
-	User user = new User();
-		
-	try (Query<User> u = pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE nickname== '" + nickname + "'")) {
-		List<User> userlista = u.executeList();
-			
-		user = userlista.get(0);
-	} catch (Exception e) {
-		e.printStackTrace();
+		User user = new User();
+
+		try (Query<User> u = pm
+				.newQuery("SELECT FROM " + User.class.getName() + " WHERE nickname== '" + nickname + "'")) {
+			List<User> userlista = u.executeList();
+
+			user = userlista.get(0);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		pm.close();
+		return user;
 	}
-	pm.close();
-	return user;
+
+	public boolean CheckUser(String email, String password) {
+
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
+
+		User user = new User();
+
+		try (Query<User> q = pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE email== '" + email
+				+ "' && password== '" + password + "'")) {
+			List<User> users = q.executeList();
+
+			user = users.get(0);
+			System.out.println(user.toString());
+
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+		pm.close();
+
+		return false;
+
 	}
 
 }
