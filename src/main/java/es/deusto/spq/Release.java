@@ -21,15 +21,26 @@ public class Release {
     
     protected String url = null;
     
+    protected String trailer = null;
     
 
-	public Release(String director, String name, String description, int ageRestriction, String url) {
+	public Release(String director, String name, String description, int ageRestriction, String url, String trailer) {
 		super();
 		this.director = director;
 		this.name = name;
 		this.description = description;
 		this.ageRestriction = ageRestriction;
 		this.url = url;
+		this.trailer = trailer;
+	}
+	
+	public String getTrailer() {
+		return trailer;
+	}
+
+
+	public void setTrailer(String trailer) {
+		this.trailer = trailer;
 	}
 
 	public long getId() {

@@ -11,7 +11,12 @@ public class ReleaseTest {
 
 	@Before
 	public void setup() {
-		r = new Release("director", "name", "description", 13,"url");
+		r = new Release("director", "name", "description", 13,"url", "");
+	}
+	@Test
+	public void testSetGetTrailer() {
+		r.setTrailer("trailer");
+		assertEquals("trailer", r.getTrailer());
 	}
 
 	@Test

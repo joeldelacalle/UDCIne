@@ -43,7 +43,7 @@ public class LastRealeasesTest {
 
 		releases.addElement(new Release("Anthony y Joe Russo", "Cherry",
 				"Basada en la historia real de Nico Walker, cuenta la historia de un joven que lidia con un trastorno de estrés postraumático tras volver de la guerra de Iraq.",
-				18, "https://pics.filmaffinity.com/cherry-952736388-large.jpg"));
+				18, "https://pics.filmaffinity.com/cherry-952736388-large.jpg", "https://www.youtube.com/watch?v=H5bH6O0bErk"));
 		
 		Mockito.when(film.getName()).thenReturn("Cherry");
 		String nombrePeli = film.getName();

@@ -1,11 +1,13 @@
 package es.deusto.spq.gui;
 
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
 
@@ -32,6 +34,9 @@ import javax.swing.JList;
 import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class LastReleasesWindow extends JFrame {
 
@@ -55,6 +60,7 @@ public class LastReleasesWindow extends JFrame {
 	private String urlRelease = "-1";
 	private String descRelease= "-1";
 	private String releaseName ="-1";
+	private String trailer ="-1";
 	
 	private void ageReleaseIconResize(URL url) throws IOException {
 		Image image;
@@ -147,7 +153,7 @@ public class LastReleasesWindow extends JFrame {
 		List<Release> lastReleases = ReleaseTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 		
 		listReleases = new JList<Release>(releases);
-		listReleases.setBounds(50, 70, 280, 410);
+		listReleases.setBounds(20, 75, 280, 410);
 		listReleases.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(listReleases);
 		
@@ -172,6 +178,7 @@ public class LastReleasesWindow extends JFrame {
 				urlRelease = listReleases.getSelectedValue().getUrl();
 				releaseName = listReleases.getSelectedValue().getName();
 				descRelease= listReleases.getSelectedValue().getDescription();
+				trailer = listReleases.getSelectedValue().getTrailer();
 				
 				if(releaseName.equals(selectedRelease)) {
     				try {
@@ -240,14 +247,14 @@ public class LastReleasesWindow extends JFrame {
 		});
 		
 		JScrollBar scrollBar = new JScrollBar();
-		scrollBar.setBounds(308, 74, 17, 37);
+		scrollBar.setBounds(283, 88, 17, 37);
 		contentPane.add(scrollBar);
 		
-		lblFilmImage.setBounds(400, 121, 281, 298);
+		lblFilmImage.setBounds(320, 121, 281, 298);
 		contentPane.add(lblFilmImage);
 		
 		textDescription.setBackground(new Color(64, 224, 208));
-		textDescription.setBounds(345, 429, 395, 62);
+		textDescription.setBounds(310, 429, 395, 62);
 		contentPane.add(textDescription);
 		
 		lblAgeRestriction.setBounds(647, 57, 60, 54);
@@ -257,9 +264,24 @@ public class LastReleasesWindow extends JFrame {
 		textFieldReleaseTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		textFieldReleaseTitle.setEditable(false);
 		textFieldReleaseTitle.setBackground(new Color(64, 224, 208));
-		textFieldReleaseTitle.setBounds(345, 72, 281, 37);
+		textFieldReleaseTitle.setBounds(331, 74, 281, 37);
 		contentPane.add(textFieldReleaseTitle);
 		textFieldReleaseTitle.setColumns(10);
+		
+		JButton btnNewButton = new JButton("TRAILER");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Desktop.getDesktop().browse(new URL(trailer).toURI());
+				} catch (IOException | URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		btnNewButton.setBounds(611, 353, 115, 31);
+		contentPane.add(btnNewButton);
 	
 	}
 }

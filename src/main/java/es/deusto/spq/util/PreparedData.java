@@ -68,15 +68,15 @@ public class PreparedData {
 
 			Release release1 = new Release("Anthony y Joe Russo", "Cherry",
 					"Basada en la historia real de Nico Walker, cuenta la historia de un joven que lidia con un trastorno de estrés postraumático tras volver de la guerra de Iraq.",
-					18, "https://pics.filmaffinity.com/cherry-952736388-large.jpg");
+					18, "https://pics.filmaffinity.com/cherry-952736388-large.jpg", "https://www.youtube.com/watch?v=H5bH6O0bErk");
 			pm.makePersistent(release1);
 			Release release2 = new Release("Ramin Bahrani", "Tigre blanco",
 					"Narra el ascenso épico de Balram Halwai (Adarsh Gourav) desde una aldea pobre hasta el estrellato del mundo empresarial en la cara más moderna de La India.",
-					16, "https://pics.filmaffinity.com/the_white_tiger-462037700-large.jpg");
+					16, "https://pics.filmaffinity.com/the_white_tiger-462037700-large.jpg","https://www.youtube.com/watch?v=rX7xv4G9wnI");
 			pm.makePersistent(release2);
 			Release release3 = new Release("Shaka King", "Judas y el Mesías negro",
 					"Historia real que gira en torno a un delincuente y al que, tras ser detenido, el FBI le propone la absolución de sus delitos si coopera con ellos.",
-					16, "https://pics.filmaffinity.com/judas_and_the_black_messiah-912646266-large.jpg");
+					16, "https://pics.filmaffinity.com/judas_and_the_black_messiah-912646266-large.jpg", "https://www.youtube.com/watch?v=iaibc6LI1_g");
 			pm.makePersistent(release3);
 			User user1 = new User("Jaime", "jaimesanta", "jaimesantamazo@opendeusto.es", "jaimesanta", 435345);
 			pm.makePersistent(user1);

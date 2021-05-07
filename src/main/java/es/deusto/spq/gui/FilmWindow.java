@@ -318,7 +318,7 @@ public class FilmWindow extends JFrame {
 		JButton btnTrailer = new JButton("TRAILER");
 		btnTrailer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(trailerFilm);
+				//System.out.println(trailerFilm);
 				//TrailerPlayer tp = new TrailerPlayer(trailerFilm);
 				//tp.setVisible(true);
 				try {
