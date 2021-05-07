@@ -8,6 +8,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import es.deusto.spq.PayPal;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
+import jakarta.ws.rs.core.MediaType;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -31,6 +38,9 @@ public class PaymentWindow extends JFrame {
 	private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
 			+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 	private JPasswordField passwordField;
+	Client cliente = ClientBuilder.newClient();
+	final WebTarget appTarget = cliente.target("http://localhost:8080/myapp");
+	final WebTarget pagoTarget = appTarget.path("paypal");
 
 	/**
 	 * Launch the application.
@@ -85,7 +95,6 @@ public class PaymentWindow extends JFrame {
 			public void mouseExited(MouseEvent e) {
 				lblNewLabel_1.setForeground(Color.WHITE);
 			}
-
 		});
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -183,10 +192,17 @@ public class PaymentWindow extends JFrame {
 					if (!email.matches(EMAIL_PATTERN)) {
 						JOptionPane.showMessageDialog(null, "Email no valido", "ERROR", JOptionPane.ERROR_MESSAGE);
 					} else {
-						JOptionPane.showMessageDialog(null, "Se ha llevado a cabo la reserva, pagada");
-						dispose();
-						MainWindow mw = new MainWindow();
-						mw.setVisible(true);
+						WebTarget PaypalTarget = pagoTarget.path("getemail").queryParam("email", email);
+						GenericType<PayPal> genericType = new GenericType<PayPal>() {};
+						PayPal paypal = PaypalTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+						if(paypal.getPassword().equals(contraseña) || !paypal.equals(null)) {
+							JOptionPane.showMessageDialog(null, "Usuario correcto, se ha llevado a cabo la reserva, pagada");
+							dispose();
+							MainWindow mw = new MainWindow();
+							mw.setVisible(true);
+						}else {
+							JOptionPane.showMessageDialog(null, "Usuario incorrecto");
+						}
 					}
 					break;
 				case 1:
