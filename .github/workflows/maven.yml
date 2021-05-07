@@ -63,7 +63,7 @@ jobs:
     - name: Publish on Github Pages
       uses: crazy-max/ghaction-github-pages@v2.3.0
       with:
-        build_dir: target/doxygen/html
+        build_dir: docs/html
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
