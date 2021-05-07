@@ -62,7 +62,7 @@ public class UserResource {
 
 		User user = new User();
 
-		try (Query<User> q = pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE email== '" + email
+		try (Query<User> q = pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE nickname== '" + email
 				+ "' && password== '" + password + "'")) {
 			List<User> users = q.executeList();
 
