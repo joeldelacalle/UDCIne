@@ -62,6 +62,83 @@ public class FilmWindow extends JFrame {
 	private String trailerFilm = "-1";
 	private JTextPane textPaneDescription = new JTextPane();
 	private Film film;
+	private int ageAll = 0; // apta para todos los publicos
+	private int age7 = 7;
+	private int age13 = 13;
+	private int age16 = 16;
+
+	private void nuevasPeliculas(final JComboBox<String> comboBoxFilm) {
+		textFieldFilmName.setText(comboBoxFilm.getSelectedItem().toString());
+		String selectedFilm = textFieldFilmName.getText();
+		Image image = null;
+		for (Film film : films) {
+			if (film.getName().equals(selectedFilm)) {
+				ageFilm = film.getAgeRestriction();
+				filmName = film.getName();
+				urlFilm = film.getUrl();
+				descFilm = film.getDescription();
+				trailerFilm = film.getTrailer();
+			}
+		}
+		// System.out.println(filmName);
+		if (filmName.equals(selectedFilm)) {
+			try {
+				URL url = new URL(urlFilm);
+				image = ImageIO.read(url);
+				ImageIcon myImg = new ImageIcon(url);
+				image = myImg.getImage();
+
+				int width = myImg.getIconWidth() / 7 * 2;
+				// System.out.println(width);
+				int height = myImg.getIconHeight() / 7 * 2;
+				// System.out.println(height);
+
+				Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+				ImageIcon resizeImg = new ImageIcon(newImg);
+				lblFilmImage.setIcon(resizeImg);
+				textPaneDescription.setText(descFilm);
+			} catch (IOException e7) {
+			}
+		}
+		filmAgeRestImage();
+	}
+
+	private void filmAgeRestImage() {
+		if (ageAll == ageFilm) {
+			try {
+				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/6/68/Edad_TP.png");
+				ageFilmIconResize(url);
+			} catch (IOException e7) {
+			}
+		} else if (age7 == ageFilm) {
+			try {
+				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/5/55/Edad_7.png");
+				ageFilmIconResize(url);
+			} catch (IOException e7) {
+			}
+
+		} else if (age13 == ageFilm) {
+			try {
+				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/b/bd/Edad_13.png");
+				ageFilmIconResize(url);
+			} catch (IOException e7) {
+			}
+
+		} else if (age16 == ageFilm) {
+			try {
+				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/4/4b/Edad_16.png");
+				ageFilmIconResize(url);
+			} catch (IOException e7) {
+			}
+
+		} else {
+			try {
+				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/c/ca/Edad_18.png");
+				ageFilmIconResize(url);
+			} catch (IOException e7) {
+			}
+		}
+	}
 
 	private void ageFilmIconResize(URL url) throws IOException {
 		Image image;
@@ -77,6 +154,7 @@ public class FilmWindow extends JFrame {
 		Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		ImageIcon resizeImg = new ImageIcon(newImg);
 		lblRecommendedAge.setIcon(resizeImg);
+
 	}
 
 	/**
@@ -113,8 +191,9 @@ public class FilmWindow extends JFrame {
 		btnExit.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*MainWindow vp = new MainWindow();
-				vp.setVisible(true);*/
+				/*
+				 * MainWindow vp = new MainWindow(); vp.setVisible(true);
+				 */
 				dispose();
 			}
 		});
@@ -171,130 +250,17 @@ public class FilmWindow extends JFrame {
 			ImageIcon resizeImg = new ImageIcon(newImg);
 			lblFilmImage.setIcon(resizeImg);
 			textPaneDescription.setText(descFilm);
-			//textFieldFilmName.setText(filmName); //NOSE PORQUE NO FUNCIONA
+			// textFieldFilmName.setText(filmName); //NOSE PORQUE NO FUNCIONA
 		} catch (IOException e7) {
 		}
-		int ageAll = 0; // apta para todos los publicos
-		int age7 = 7;
-		int age13 = 13;
-		int age16 = 16;
 
-		if (ageAll == ageFilm) {
-			try {
-				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/6/68/Edad_TP.png");
-				ageFilmIconResize(url);
-			} catch (IOException e7) {
-			}
-		} else if (age7 == ageFilm) {
-			try {
-				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/5/55/Edad_7.png");
-				ageFilmIconResize(url);
-			} catch (IOException e7) {
-			}
-
-		} else if (age13 == ageFilm) {
-			try {
-				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/b/bd/Edad_13.png");
-				ageFilmIconResize(url);
-			} catch (IOException e7) {
-			}
-
-		} else if (age16 == ageFilm) {
-			try {
-				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/4/4b/Edad_16.png");
-				ageFilmIconResize(url);
-			} catch (IOException e7) {
-			}
-
-		} else {
-			try {
-				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/c/ca/Edad_18.png");
-				ageFilmIconResize(url);
-			} catch (IOException e7) {
-			}
-		}
-		//AQUI TERMINA EL METODO Y EMPIEZA EL DEL COMBOBOX
+		filmAgeRestImage();
+		// AQUI TERMINA EL METODO Y EMPIEZA EL DEL COMBOBOX
 
 		comboBoxFilm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				NuevasPeliculas(comboBoxFilm);
-			}
-
-			private void NuevasPeliculas(final JComboBox<String> comboBoxFilm) {
-				textFieldFilmName.setText(comboBoxFilm.getSelectedItem().toString());
-				String selectedFilm = textFieldFilmName.getText();
-				Image image = null;
-				for (Film film : films) {
-					if (film.getName().equals(selectedFilm)) {
-						ageFilm = film.getAgeRestriction();
-						filmName = film.getName();
-						urlFilm = film.getUrl();
-						descFilm = film.getDescription();
-						trailerFilm = film.getTrailer();
-					}
-				}
-				// System.out.println(filmName);
-				if (filmName.equals(selectedFilm)) {
-					try {
-						URL url = new URL(urlFilm);
-						image = ImageIO.read(url);
-						ImageIcon myImg = new ImageIcon(url);
-						image = myImg.getImage();
-
-						int width = myImg.getIconWidth() / 7 * 2;
-						// System.out.println(width);
-						int height = myImg.getIconHeight() / 7 * 2;
-						// System.out.println(height);
-
-						Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-						ImageIcon resizeImg = new ImageIcon(newImg);
-						lblFilmImage.setIcon(resizeImg);
-						textPaneDescription.setText(descFilm);
-					} catch (IOException e7) {
-					}
-				}
-				// System.out.println(ageFilm);
-
-				int ageAll = 0; // apta para todos los publicos
-				int age7 = 7;
-				int age13 = 13;
-				int age16 = 16;
-
-				if (ageAll == ageFilm) {
-					try {
-						URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/6/68/Edad_TP.png");
-						ageFilmIconResize(url);
-					} catch (IOException e7) {
-					}
-				} else if (age7 == ageFilm) {
-					try {
-						URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/5/55/Edad_7.png");
-						ageFilmIconResize(url);
-					} catch (IOException e7) {
-					}
-
-				} else if (age13 == ageFilm) {
-					try {
-						URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/b/bd/Edad_13.png");
-						ageFilmIconResize(url);
-					} catch (IOException e7) {
-					}
-
-				} else if (age16 == ageFilm) {
-					try {
-						URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/4/4b/Edad_16.png");
-						ageFilmIconResize(url);
-					} catch (IOException e7) {
-					}
-
-				} else {
-					try {
-						URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/c/ca/Edad_18.png");
-						ageFilmIconResize(url);
-					} catch (IOException e7) {
-					}
-				}
+				nuevasPeliculas(comboBoxFilm);
 			}
 		});
 
@@ -306,7 +272,7 @@ public class FilmWindow extends JFrame {
 		textFieldFilmName.setColumns(10);
 
 		textPaneDescription.setBackground(new Color(64, 224, 208));
-		
+
 		JButton btnBuyTickets = new JButton("COMPRAR ENTRADAS");
 		btnBuyTickets.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -314,13 +280,13 @@ public class FilmWindow extends JFrame {
 				ow.setVisible(true);
 			}
 		});
-		
+
 		JButton btnTrailer = new JButton("TRAILER");
 		btnTrailer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//System.out.println(trailerFilm);
-				//TrailerPlayer tp = new TrailerPlayer(trailerFilm);
-				//tp.setVisible(true);
+				// System.out.println(trailerFilm);
+				// TrailerPlayer tp = new TrailerPlayer(trailerFilm);
+				// tp.setVisible(true);
 				try {
 					Desktop.getDesktop().browse(new URL(trailerFilm).toURI());
 				} catch (IOException | URISyntaxException e1) {
@@ -331,63 +297,56 @@ public class FilmWindow extends JFrame {
 		});
 
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(65)
-							.addComponent(textFieldFilmName, GroupLayout.PREFERRED_SIZE, 302, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(168)
-							.addComponent(lblFilmImage))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(55)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING).addGroup(gl_contentPane
+				.createSequentialGroup()
+				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup().addGap(65).addComponent(textFieldFilmName,
+								GroupLayout.PREFERRED_SIZE, 302, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup().addGap(168).addComponent(lblFilmImage))
+						.addGroup(gl_contentPane.createSequentialGroup().addGap(55).addGroup(gl_contentPane
+								.createParallelGroup(Alignment.LEADING)
 								.addComponent(comboBoxFilm, GroupLayout.PREFERRED_SIZE, 269, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(360).addComponent(
+										lblRecommendedAge, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(360)
-									.addComponent(lblRecommendedAge, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(lblDsc, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-										.addGroup(gl_contentPane.createSequentialGroup()
-											.addComponent(btnExit, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-											.addGap(42)
-											.addComponent(btnShowCinemas)
-											.addGap(18)
-											.addComponent(btnBuyTickets)
-											.addPreferredGap(ComponentPlacement.UNRELATED)
-											.addComponent(btnTrailer, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE))
-										.addComponent(textPaneDescription, GroupLayout.PREFERRED_SIZE, 392, GroupLayout.PREFERRED_SIZE))))))
-					.addGap(11))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(
+												lblDsc, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+												.addGroup(gl_contentPane.createSequentialGroup()
+														.addComponent(btnExit, GroupLayout.DEFAULT_SIZE,
+																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+														.addGap(42).addComponent(btnShowCinemas).addGap(18)
+														.addComponent(btnBuyTickets)
+														.addPreferredGap(ComponentPlacement.UNRELATED)
+														.addComponent(btnTrailer, GroupLayout.PREFERRED_SIZE, 71,
+																GroupLayout.PREFERRED_SIZE))
+												.addComponent(textPaneDescription, GroupLayout.PREFERRED_SIZE, 392,
+														GroupLayout.PREFERRED_SIZE))))))
+				.addGap(11)));
+		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING).addGroup(gl_contentPane
+				.createSequentialGroup().addContainerGap()
+				.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(comboBoxFilm, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-							.addComponent(textFieldFilmName, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE))
+								.addComponent(comboBoxFilm, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED, 8, Short.MAX_VALUE).addComponent(
+										textFieldFilmName, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE))
 						.addComponent(lblRecommendedAge, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblFilmImage, GroupLayout.PREFERRED_SIZE, 325, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addComponent(lblFilmImage, GroupLayout.PREFERRED_SIZE, 325, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblDsc, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textPaneDescription, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE))
-					.addGap(2)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnShowCinemas, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addGap(2)
+				.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnShowCinemas, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+								Short.MAX_VALUE)
 						.addComponent(btnExit, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(btnBuyTickets)
 						.addComponent(btnTrailer, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap())
-		);
+				.addContainerGap()));
 		contentPane.setLayout(gl_contentPane);
 	}
 }
