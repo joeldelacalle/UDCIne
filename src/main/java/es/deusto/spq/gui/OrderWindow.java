@@ -52,14 +52,14 @@ public class OrderWindow extends JFrame {
 	private JSpinner spinner;
 	Client client = ClientBuilder.newClient();
 
-	
 	private CinemaResource cr = new CinemaResource();
 	private List<Cinema> cinemas = cr.getReleases();
 	private JComboBox<Cinema> cbCinema;
 	private RoomResource rr = new RoomResource();
 	private List<Room> rooms = rr.getReleases();
 	private JComboBox<Room> cbSession;
-	private List<Product> products;
+	private List<Product> products = null;
+	private int numberTickets = 0;
 
 	public List<Product> getProducts() {
 		return products;
@@ -138,9 +138,13 @@ public class OrderWindow extends JFrame {
 		JButton btnAdd = new JButton("Añadir al carrito");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				for (int i = 0; i < (Integer) spinner.getValue(); i++)
+				for (int i = 0; i < (Integer) spinner.getValue(); i++) {
 					listModelShoppingCart.addElement(selectedFilm);
+				}
+				 numberTickets = numberTickets + (int)spinner.getValue();
+				
 			}
+			
 		});
 		btnAdd.setBounds(38, 439, 158, 51);
 		contentPane.add(btnAdd);
@@ -169,10 +173,10 @@ public class OrderWindow extends JFrame {
 		}
 
 		contentPane.add(cbCinema);
-		
+
 		JButton btnComida = new JButton("Comida");
 		btnComida.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {	
+			public void actionPerformed(ActionEvent e) {
 				CinemaFoodWindow vac = new CinemaFoodWindow(selectedFilm);
 				vac.setVisible(true);
 				dispose();
@@ -186,7 +190,7 @@ public class OrderWindow extends JFrame {
 	private void CrearPedido(final DefaultListModel<Film> listModelShoppingCart, Film selectedFilm) {
 		List<Ticket> tickets = new ArrayList<Ticket>();
 
-		Order o = new Order("ejemplo", Calendar.getInstance().getTime(), 0, "", null, "En caja", 0);
+		Order o = new Order("ejemplo", Calendar.getInstance().getTime(), numberTickets, "", null, "En caja", 0);
 		StringBuilder sb = new StringBuilder();
 		StringBuilder sb2 = new StringBuilder();
 
@@ -201,28 +205,31 @@ public class OrderWindow extends JFrame {
 			sb.append(" fila:" + tickets.get(i).getRow());
 			sb.append(" asiento:" + tickets.get(i).getSeat());
 
-			o.setNumberTickets(i);
+			
 
 			totalPrice = totalPrice + ticketf.getPrice();
 
 		}
-		
-		for (int i = 0; i < products.size(); i++) {
 
-		
-			int productNum = i + 1;
-			sb2.append(" Producto:" + productNum);
-			sb2.append(" Nombre:" + products.get(i).getName());
-		
+		if (products == null) {
+			o.setProducts("");
+		} else {
 
-			o.setNumberTickets(i);
+			for (int i = 0; i < products.size(); i++) {
 
-			totalPrice = totalPrice + products.get(i).getPrice();
+				int productNum = i + 1;
+				sb2.append(" Producto:" + productNum);
+				sb2.append(" Nombre:" + products.get(i).getName());
 
+				o.setNumberTickets(i);
+
+				totalPrice = totalPrice + products.get(i).getPrice();
+				o.setProducts("Productos" + sb2.toString());
+			}
 		}
-		
+
 		o.setTickets("pelicula:" + selectedFilm.getName() + sb.toString());
-		o.setProducts("Productos"+sb2.toString());
+
 		o.setPrice(totalPrice);
 		PaymentWindow pw = new PaymentWindow(o);
 		pw.setVisible(true);
