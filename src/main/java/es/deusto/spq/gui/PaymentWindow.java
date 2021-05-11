@@ -3,11 +3,16 @@ package es.deusto.spq.gui;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.jdo.JDOHelper;
+import javax.jdo.PersistenceManager;
+import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Transaction;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import es.deusto.spq.Order;
 import es.deusto.spq.PayPal;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
@@ -42,26 +47,8 @@ public class PaymentWindow extends JFrame {
 	final WebTarget appTarget = cliente.target("http://localhost:8080/myapp");
 	final WebTarget pagoTarget = appTarget.path("paypal");
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PaymentWindow frame = new PaymentWindow();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public PaymentWindow() {
+	
+	public PaymentWindow(final Order o) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 689, 480);
 		contentPane = new JPanel();
@@ -115,6 +102,28 @@ public class PaymentWindow extends JFrame {
 				switch (respuesta) {
 				case 0:
 					JOptionPane.showMessageDialog(null, "Se ha llevado a cabo la reserva, pendiente de pago");
+					o.setPaymentMethod("Pendiente de pago");
+					PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+
+					PersistenceManager pm = pmf.getPersistenceManager();
+					Transaction tx = pm.currentTransaction();
+
+					System.out.println("Añadiendo pedido en la BD");
+
+					try {
+						tx.begin();
+
+						pm.makePersistent(o);
+
+						tx.commit();
+						System.out.println("Añadido una nuevo pedido a la Base de Datos");
+
+					} finally {
+						if (tx.isActive()) {
+							tx.rollback();
+						}
+						pm.close();
+					}
 					dispose();
 					MainWindow mw = new MainWindow();
 					mw.setVisible(true);
@@ -177,10 +186,10 @@ public class PaymentWindow extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				PagarPaypal();
+				PagarPaypal(o);
 			}
 
-			private void PagarPaypal() {
+			private void PagarPaypal(Order o) {
 				String email = textField.getText();
 				String contraseña = String.valueOf(passwordField.getPassword());
 				String[] opciones = { "Aceptar", "Cancelar" };
@@ -197,6 +206,28 @@ public class PaymentWindow extends JFrame {
 						PayPal paypal = PaypalTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 						if(paypal.getPassword().equals(contraseña) || !paypal.equals(null)) {
 							JOptionPane.showMessageDialog(null, "Usuario correcto, se ha llevado a cabo la reserva, pagada");
+							o.setPaymentMethod("Pagado con Paypal");
+							PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+
+							PersistenceManager pm = pmf.getPersistenceManager();
+							Transaction tx = pm.currentTransaction();
+
+							System.out.println("Añadiendo pedido en la BD");
+
+							try {
+								tx.begin();
+
+								pm.makePersistent(o);
+
+								tx.commit();
+								System.out.println("Añadido una nuevo pedido a la Base de Datos");
+
+							} finally {
+								if (tx.isActive()) {
+									tx.rollback();
+								}
+								pm.close();
+							}
 							dispose();
 							MainWindow mw = new MainWindow();
 							mw.setVisible(true);

@@ -145,11 +145,11 @@ public class OrderWindow extends JFrame {
 		btnAdd.setBounds(38, 439, 158, 51);
 		contentPane.add(btnAdd);
 
-		JButton btnBuy = new JButton("Comprar");
+		JButton btnBuy = new JButton("Ir al pago");
 		btnBuy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				ComprarPedido(listModelShoppingCart, selectedFilm);
+				CrearPedido(listModelShoppingCart, selectedFilm);
 
 			}
 
@@ -183,7 +183,7 @@ public class OrderWindow extends JFrame {
 
 	}
 
-	private void ComprarPedido(final DefaultListModel<Film> listModelShoppingCart, Film selectedFilm) {
+	private void CrearPedido(final DefaultListModel<Film> listModelShoppingCart, Film selectedFilm) {
 		List<Ticket> tickets = new ArrayList<Ticket>();
 
 		Order o = new Order("ejemplo", Calendar.getInstance().getTime(), 0, "", null, "En caja", 0);
@@ -224,27 +224,7 @@ public class OrderWindow extends JFrame {
 		o.setTickets("pelicula:" + selectedFilm.getName() + sb.toString());
 		o.setProducts("Productos"+sb2.toString());
 		o.setPrice(totalPrice);
-
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-
-		System.out.println("Añadiendo pedido en la BD");
-
-		try {
-			tx.begin();
-
-			pm.makePersistent(o);
-
-			tx.commit();
-			System.out.println("Añadido una nuevo pedido a la Base de Datos");
-
-		} finally {
-			if (tx.isActive()) {
-				tx.rollback();
-			}
-			pm.close();
-		}
+		PaymentWindow pw = new PaymentWindow(o);
+		pw.setVisible(true);
 	}
 }
