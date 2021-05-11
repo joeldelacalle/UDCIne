@@ -56,6 +56,10 @@ public class LastReleasesWindow extends JFrame {
 	private JTextField textFieldReleaseTitle = new JTextField();
 	private JList <Release> listReleases;
 	
+	private int ageAll = 0; // apta para todos los publicos
+	private int age7 = 7;
+	private int age13 = 13;
+	private int age16 = 16;
 	private int ageRelease = -1;
 	private String urlRelease = "-1";
 	private String descRelease= "-1";
@@ -76,6 +80,81 @@ public class LastReleasesWindow extends JFrame {
 		Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		ImageIcon resizeImg = new ImageIcon(newImg);
 		lblAgeRestriction.setIcon(resizeImg);
+	}
+	
+	private void ReleaseAgeRestImage() {
+		if(ageAll == ageRelease) {
+			try {
+	            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/6/68/Edad_TP.png");
+	            ageReleaseIconResize(url);
+	        } 
+	        catch (IOException e7) {
+	        }
+		}else if(age7 == ageRelease) {
+			try {
+	            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/5/55/Edad_7.png");
+	            ageReleaseIconResize(url);
+	        } 
+	        catch (IOException e7) {
+	        }
+        
+		}else if(age13 == ageRelease) {
+			try {
+	            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/b/bd/Edad_13.png");
+	            ageReleaseIconResize(url);
+	        } 
+	        catch (IOException e7) {
+	        }
+			
+		}else if(age16 == ageRelease) {
+			try {
+	            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/4/4b/Edad_16.png");
+	            ageReleaseIconResize(url);
+	        } 
+	        catch (IOException e7) {
+	        }
+        
+		}else{
+			try {
+	            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/c/ca/Edad_18.png");
+	            ageReleaseIconResize(url);
+	        } 
+	        catch (IOException e7) {
+	        }
+		}
+	}
+	
+	private void NuevosLanzamientos() {
+		Image image = null;
+		textFieldReleaseTitle.setText(listReleases.getSelectedValue().getName());
+		String selectedRelease = textFieldReleaseTitle.getText();
+		ageRelease = listReleases.getSelectedValue().getAgeRestriction();
+		urlRelease = listReleases.getSelectedValue().getUrl();
+		releaseName = listReleases.getSelectedValue().getName();
+		descRelease= listReleases.getSelectedValue().getDescription();
+		trailer = listReleases.getSelectedValue().getTrailer();
+		
+		if(releaseName.equals(selectedRelease)) {
+			try {
+	            URL url = new URL(urlRelease);
+	            image = ImageIO.read(url);
+	            ImageIcon myImg = new ImageIcon(url);
+	            image = myImg.getImage();
+	            
+	            int width = myImg.getIconWidth() / 9 * 2;
+	            int height = myImg.getIconHeight() / 9 * 2;
+	            
+	            Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+	            ImageIcon resizeImg = new ImageIcon(newImg);
+	            lblFilmImage.setIcon(resizeImg);
+	            textDescription.setText(descRelease);
+	        } 
+	        catch (IOException e7) {
+	        }
+		}
+		
+		ReleaseAgeRestImage();
+		
 	}
 	
 	public LastReleasesWindow() {
@@ -170,80 +249,6 @@ public class LastReleasesWindow extends JFrame {
 				NuevosLanzamientos(); 
 			}
 
-			private void NuevosLanzamientos() {
-				Image image = null;
-				textFieldReleaseTitle.setText(listReleases.getSelectedValue().getName());
-				String selectedRelease = textFieldReleaseTitle.getText();
-				ageRelease = listReleases.getSelectedValue().getAgeRestriction();
-				urlRelease = listReleases.getSelectedValue().getUrl();
-				releaseName = listReleases.getSelectedValue().getName();
-				descRelease= listReleases.getSelectedValue().getDescription();
-				trailer = listReleases.getSelectedValue().getTrailer();
-				
-				if(releaseName.equals(selectedRelease)) {
-    				try {
-    		            URL url = new URL(urlRelease);
-    		            image = ImageIO.read(url);
-    		            ImageIcon myImg = new ImageIcon(url);
-    		            image = myImg.getImage();
-    		            
-    		            int width = myImg.getIconWidth() / 9 * 2;
-    		            int height = myImg.getIconHeight() / 9 * 2;
-    		            
-    		            Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-    		            ImageIcon resizeImg = new ImageIcon(newImg);
-    		            lblFilmImage.setIcon(resizeImg);
-    		            textDescription.setText(descRelease);
-    		        } 
-    		        catch (IOException e7) {
-    		        }
-				}
-				
-				int ageAll = 0; //apta para todos los publicos
-    			int age7 = 7;
-    			int age13 = 13;
-    			int age16 = 16;
-    			
-    			if(ageAll == ageRelease) {
-    				try {
-    		            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/6/68/Edad_TP.png");
-    		            ageReleaseIconResize(url);
-    		        } 
-    		        catch (IOException e7) {
-    		        }
-    			}else if(age7 == ageRelease) {
-    				try {
-    		            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/5/55/Edad_7.png");
-    		            ageReleaseIconResize(url);
-    		        } 
-    		        catch (IOException e7) {
-    		        }
-    	        
-    			}else if(age13 == ageRelease) {
-    				try {
-    		            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/b/bd/Edad_13.png");
-    		            ageReleaseIconResize(url);
-    		        } 
-    		        catch (IOException e7) {
-    		        }
-    				
-    			}else if(age16 == ageRelease) {
-    				try {
-    		            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/4/4b/Edad_16.png");
-    		            ageReleaseIconResize(url);
-    		        } 
-    		        catch (IOException e7) {
-    		        }
-    	        
-    			}else{
-    				try {
-    		            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/c/ca/Edad_18.png");
-    		            ageReleaseIconResize(url);
-    		        } 
-    		        catch (IOException e7) {
-    		        }
-    			}
-			}
 		});
 		
 		JScrollBar scrollBar = new JScrollBar();
