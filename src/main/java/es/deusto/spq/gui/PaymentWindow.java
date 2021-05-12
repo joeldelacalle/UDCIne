@@ -111,6 +111,25 @@ public class PaymentWindow extends JFrame {
 				case 0:
 					JOptionPane.showMessageDialog(null, "Se ha llevado a cabo la reserva, pendiente de pago");
 					o.setPaymentMethod("Pendiente de pago");
+					String Email = o.getMail();
+					String Paymentmethod = o.getPaymentMethod();
+					String Products = o.getProducts();
+					String Tickets = o.getTickets();
+					long Price = o.getPrice();
+					Date Fecha = o.getDate();
+					
+					try{
+						FileWriter archivo = new FileWriter("Facturas/"+Email+".txt", true);
+			
+						PrintWriter escribir = new PrintWriter(archivo);
+			
+						String cadena = " -----------------" + "\r\n" + "|-Fecha de compra: " + Fecha + "\r\n" +"|-Email: " + Email + "\r\n" +"|-Tickets: " + Tickets + "\r\n" + "|-Products: " + Products +"\r\n" + "|-Paymentmethod: " + Paymentmethod + "\r\n" + "|-Price: " + Price + "\r\n" + " -----------------";
+						escribir.print(cadena);
+			
+						archivo.close();
+					}catch(IOException e6) {
+						e6.printStackTrace();
+					}
 					PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 					PersistenceManager pm = pmf.getPersistenceManager();
