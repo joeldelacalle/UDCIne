@@ -28,6 +28,14 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+import java.util.logging.Level;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.FocusAdapter;
@@ -137,7 +145,7 @@ public class PaymentWindow extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnNewButton.setBounds(440, 322, 127, 23);
+		btnNewButton.setBounds(440, 322, 136, 23);
 		contentPane.add(btnNewButton);
 
 		JLabel lblNewLabel = new JLabel("Paypal");
@@ -200,13 +208,33 @@ public class PaymentWindow extends JFrame {
 				case 0:
 					if (!email.matches(EMAIL_PATTERN)) {
 						JOptionPane.showMessageDialog(null, "Email no valido", "ERROR", JOptionPane.ERROR_MESSAGE);
-					} else {
+					}else{
 						WebTarget PaypalTarget = pagoTarget.path("getemail").queryParam("email", email);
 						GenericType<PayPal> genericType = new GenericType<PayPal>() {};
 						PayPal paypal = PaypalTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-						if(paypal.getPassword().equals(contraseña) || !paypal.equals(null)) {
+						if(paypal.getPassword().equals(contraseña)) {
 							JOptionPane.showMessageDialog(null, "Usuario correcto, se ha llevado a cabo la reserva, pagada");
 							o.setPaymentMethod("Pagado con Paypal");
+							String Email = o.getMail();
+							String Paymentmethod = o.getPaymentMethod();
+							String Products = o.getProducts();
+							String Tickets = o.getTickets();
+							long Price = o.getPrice();
+							Date Fecha = o.getDate();
+							
+							try{
+								FileWriter archivo = new FileWriter("Facturas/"+Email+".txt", true);
+					
+								PrintWriter escribir = new PrintWriter(archivo);
+					
+								String cadena = " -----------------" + "\r\n" + "|-Fecha de compra: " + Fecha + "\r\n" +"|-Email: " + Email + "\r\n" +"|-Tickets: " + Tickets + "\r\n" + "|-Products: " + Products +"\r\n" + "|-Paymentmethod: " + Paymentmethod + "\r\n" + "|-Price: " + Price + "\r\n" + " -----------------";
+								escribir.print(cadena);
+					
+								archivo.close();
+							}catch(IOException e6) {
+								e6.printStackTrace();
+							}
+							
 							PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 							PersistenceManager pm = pmf.getPersistenceManager();

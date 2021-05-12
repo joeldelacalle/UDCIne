@@ -212,7 +212,7 @@ public class OrderWindow extends JFrame {
 		}
 
 		if (products == null) {
-			o.setProducts("");
+			o.setProducts("Vacio");
 		} else {
 
 			for (int i = 0; i < products.size(); i++) {
