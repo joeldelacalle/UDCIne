@@ -44,32 +44,34 @@ public class AdminRoomsWindow extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	Client client = ClientBuilder.newClient();
 
 	private final WebTarget appTarget = client.target("http://localhost:8080/myapp");
 	private final WebTarget CinemasTarget = appTarget.path("cinemas");
-	
-	//private CinemaResource cr;
-	//private List<Cinema> cinemas = cr.getReleases();
 
-	GenericType<List<Cinema >> genericType0 = new GenericType<List<Cinema>>() {};
-	 List<Cinema > cinemas = CinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType0);
+	// private CinemaResource cr;
+	// private List<Cinema> cinemas = cr.getReleases();
+
+	GenericType<List<Cinema>> genericType0 = new GenericType<List<Cinema>>() {
+	};
+	List<Cinema> cinemas = CinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType0);
 
 	private final WebTarget RoomsTarget = appTarget.path("rooms");
 
-	private GenericType<List<Room>> genericType1 = new GenericType<List<Room>>() {};
+	private GenericType<List<Room>> genericType1 = new GenericType<List<Room>>() {
+	};
 	private List<Room> rooms = RoomsTarget.request(MediaType.APPLICATION_JSON).get(genericType1);
-	//private RoomResource rr;
-	//private List<Room> rooms = rr.getReleases();
+	// private RoomResource rr;
+	// private List<Room> rooms = rr.getReleases();
 
-	//private FilmResources fr;
-	//private List<Film> films = fr.getFilms();
-
+	// private FilmResources fr;
+	// private List<Film> films = fr.getFilms();
 
 	private final WebTarget FilmsTarget = appTarget.path("films");
 
-	private GenericType<List<Film>> genericType2 = new GenericType<List<Film>>() {};
+	private GenericType<List<Film>> genericType2 = new GenericType<List<Film>>() {
+	};
 	private List<Film> films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType2);
 
 	private JPanel contentPane;
@@ -77,35 +79,88 @@ public class AdminRoomsWindow extends JFrame {
 	private final JComboBox<Film> comboFilm = new JComboBox<Film>();
 	private final JComboBox<Cinema> comboCinema = new JComboBox<Cinema>();
 	private final JComboBox<String> comboRoom = new JComboBox<String>();
-	
-	private JDateChooser calendar = new JDateChooser("yyyy/MM/dd","####/##/##",'_');
-	private String roomName;
+
+	private JDateChooser calendar = new JDateChooser("yyyy/MM/dd", "####/##/##", '_');
 	private long roomCinemaId;
 
-	
 	private void addFilmtoRoom() {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-		
+
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		date = calendar.getDate();
 		System.out.println("Añadiendo pelicula a la sala");
 		try {
 			tx.begin();
-			Room room = new Room((Cinema)comboCinema.getSelectedItem(),(Film)comboFilm.getSelectedItem(),comboRoom.getSelectedItem().toString(),date,100);
+			Room room = new Room((Cinema) comboCinema.getSelectedItem(), (Film) comboFilm.getSelectedItem(),
+					comboRoom.getSelectedItem().toString(), date, 100);
 			pm.makePersistent(room);
-			
+
 			tx.commit();
 			System.out.println("Añadida pelicula a la sala");
-			
-		}finally {
+
+		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
 			}
 			pm.close();
 		}
 	}
-	
+
+	private void getCineYSalas() {
+		if (comboCinema.getSelectedIndex() == 0) {
+			if (comboRoom.getItemCount() >= 1) {
+				comboRoom.removeItemAt(2);
+				comboRoom.removeItemAt(1);
+				comboRoom.removeItemAt(0);
+			}
+
+			for (int i = 0; i < rooms.size(); i++) {
+				roomCinemaId = rooms.get(i).getId();
+				if (roomCinemaId == 1) {
+					comboRoom.addItem(rooms.get(0).getName());
+					comboRoom.addItem(rooms.get(1).getName());
+					comboRoom.addItem(rooms.get(2).getName());
+				}
+			}
+
+		}
+		if (comboCinema.getSelectedIndex() == 1) {
+			if (comboRoom.getItemCount() >= 1) {
+				comboRoom.removeItemAt(2);
+				comboRoom.removeItemAt(1);
+				comboRoom.removeItemAt(0);
+			}
+
+			for (int i = 0; i < rooms.size(); i++) {
+				roomCinemaId = rooms.get(i).getId();
+				if (roomCinemaId == 2) {
+					comboRoom.addItem(rooms.get(3).getName());
+					comboRoom.addItem(rooms.get(4).getName());
+					comboRoom.addItem(rooms.get(5).getName());
+				}
+			}
+
+		}
+		if (comboCinema.getSelectedIndex() == 2) {
+			if (comboRoom.getItemCount() >= 1) {
+				comboRoom.removeItemAt(2);
+				comboRoom.removeItemAt(1);
+				comboRoom.removeItemAt(0);
+			}
+
+			for (int i = 0; i < rooms.size(); i++) {
+				roomCinemaId = rooms.get(i).getId();
+				if (roomCinemaId == 3) {
+					comboRoom.addItem(rooms.get(6).getName());
+					comboRoom.addItem(rooms.get(7).getName());
+					comboRoom.addItem(rooms.get(8).getName());
+				}
+			}
+
+		}
+	}
+
 	public AdminRoomsWindow() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -115,7 +170,7 @@ public class AdminRoomsWindow extends JFrame {
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 139), 2));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		final JLabel lblX = new JLabel("X");
 		lblX.setBounds(707, 10, 19, 31);
 		lblX.addMouseListener(new MouseAdapter() {
@@ -142,14 +197,14 @@ public class AdminRoomsWindow extends JFrame {
 		lblX.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblX.setForeground(new Color(255, 255, 255));
 		contentPane.add(lblX);
-		
+
 		final JLabel lblFlecha = new JLabel("<-");
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				AdminWindow aw = new AdminWindow();
 				aw.setVisible(true);
-				dispose();		
+				dispose();
 			}
 
 			@Override
@@ -168,7 +223,7 @@ public class AdminRoomsWindow extends JFrame {
 		lblFlecha.setForeground(new Color(255, 255, 255));
 		lblFlecha.setBounds(50, 10, 25, 31);
 		contentPane.add(lblFlecha);
-		
+
 		for (Cinema cinema : cinemas) {
 			comboCinema.addItem(cinema);
 		}
@@ -176,77 +231,26 @@ public class AdminRoomsWindow extends JFrame {
 			comboFilm.addItem(film);
 		}
 		/*
-		for (Room room : rooms) {
-			//r = room;
-			//roomCinema = room.getCinema();
-			comboRoom.addItem(room.getName());	
-		}
-		 */		
+		 * for (Room room : rooms) { //r = room; //roomCinema = room.getCinema();
+		 * comboRoom.addItem(room.getName()); }
+		 */
 		comboFilm.setBounds(51, 68, 265, 57);
 		contentPane.add(comboFilm);
 		comboCinema.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(comboCinema.getSelectedIndex());
-				 if(comboCinema.getSelectedIndex() == 0) {
-					 if(comboRoom.getItemCount()>=1) {
-							comboRoom.removeItemAt(2);
-							comboRoom.removeItemAt(1);
-							comboRoom.removeItemAt(0);
-						}
-						
-					 for (int i=0;i<rooms.size();i++) {
-						 roomCinemaId = rooms.get(i).getId();
-						 if(roomCinemaId == 1) {
-									comboRoom.addItem(rooms.get(0).getName());
-									comboRoom.addItem(rooms.get(1).getName());
-									comboRoom.addItem(rooms.get(2).getName());
-						}
-					 }
-						 
-				} if(comboCinema.getSelectedIndex() == 1) {
-					if(comboRoom.getItemCount()>=1) {
-						comboRoom.removeItemAt(2);
-						comboRoom.removeItemAt(1);
-						comboRoom.removeItemAt(0);
-					}
-					
-					 for (int i=0;i<rooms.size();i++) {
-						 roomCinemaId = rooms.get(i).getId();
-						 if(roomCinemaId == 2) {
-									comboRoom.addItem(rooms.get(3).getName());
-									comboRoom.addItem(rooms.get(4).getName());
-									comboRoom.addItem(rooms.get(5).getName());
-						}
-					 }
-						 
-				} if(comboCinema.getSelectedIndex() == 2) {
-					if(comboRoom.getItemCount()>=1) {
-						comboRoom.removeItemAt(2);
-						comboRoom.removeItemAt(1);
-						comboRoom.removeItemAt(0);
-					}
-					
-					 for (int i=0;i<rooms.size();i++) {
-						 roomCinemaId = rooms.get(i).getId();
-						 if(roomCinemaId == 3) {
-									comboRoom.addItem(rooms.get(6).getName());
-									comboRoom.addItem(rooms.get(7).getName());
-									comboRoom.addItem(rooms.get(8).getName());
-						}
-					 }
-						 
-				}
-				 System.out.println(comboCinema.getSelectedItem().toString());
+				//System.out.println(comboCinema.getSelectedIndex());
+				getCineYSalas();
+				//System.out.println(comboCinema.getSelectedItem().toString());
 			}
-			
+
 		});
-		
+
 		comboCinema.setBounds(50, 161, 265, 57);
 		contentPane.add(comboCinema);
-		
+
 		comboRoom.setBounds(50, 247, 265, 57);
 		contentPane.add(comboRoom);
-		
+
 		JButton btnAddFilmtoRoom = new JButton("ASIGNAR");
 		btnAddFilmtoRoom.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -256,8 +260,8 @@ public class AdminRoomsWindow extends JFrame {
 		btnAddFilmtoRoom.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnAddFilmtoRoom.setBounds(50, 387, 266, 41);
 		contentPane.add(btnAddFilmtoRoom);
-		
-        calendar.setBounds(123,329,110,31);
-        getContentPane().add(calendar);
+
+		calendar.setBounds(123, 329, 110, 31);
+		getContentPane().add(calendar);
 	}
 }

@@ -82,7 +82,7 @@ public class LastReleasesWindow extends JFrame {
 		lblAgeRestriction.setIcon(resizeImg);
 	}
 	
-	private void ReleaseAgeRestImage() {
+	private void releaseAgeRestImage() {
 		if(ageAll == ageRelease) {
 			try {
 	            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/6/68/Edad_TP.png");
@@ -124,7 +124,7 @@ public class LastReleasesWindow extends JFrame {
 		}
 	}
 	
-	private void NuevosLanzamientos() {
+	private void nuevosLanzamientos() {
 		Image image = null;
 		textFieldReleaseTitle.setText(listReleases.getSelectedValue().getName());
 		String selectedRelease = textFieldReleaseTitle.getText();
@@ -153,7 +153,7 @@ public class LastReleasesWindow extends JFrame {
 	        }
 		}
 		
-		ReleaseAgeRestImage();
+		releaseAgeRestImage();
 		
 	}
 	
@@ -246,7 +246,7 @@ public class LastReleasesWindow extends JFrame {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
 				
-				NuevosLanzamientos(); 
+				nuevosLanzamientos(); 
 			}
 
 		});
