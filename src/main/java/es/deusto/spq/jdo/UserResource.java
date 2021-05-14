@@ -37,7 +37,7 @@ public class UserResource {
 	@GET
 	@Path("getuser")
 	@Produces(MediaType.APPLICATION_JSON)
-	public static User getUser(@QueryParam("nickname") String nickname) {
+	public User getUser(@QueryParam("nickname") String nickname) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 

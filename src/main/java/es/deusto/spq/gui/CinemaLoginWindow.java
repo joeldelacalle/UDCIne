@@ -37,6 +37,7 @@ public class CinemaLoginWindow extends JFrame {
     private JPasswordField txtPassword1;
     private JLabel lblLoginMessage1 = new JLabel("");
     private JLabel lblGest ;
+    private JLabel lblUserName = new JLabel("");
     
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -156,6 +157,7 @@ public class CinemaLoginWindow extends JFrame {
 				}else if(ur.CheckUser(txtUsername1.getText(), txtPassword1.getText().toString())){
 					lblLoginMessage1.setText("te has loggeado correctamente!");
 					MainWindow vp = new MainWindow ();
+					vp.SetUserName(ur.getUser(txtUsername1.getText()), lblUserName);
 	        		vp.setVisible(true);
 	        		dispose();
 					

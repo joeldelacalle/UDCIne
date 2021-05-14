@@ -24,8 +24,10 @@ import javax.swing.border.LineBorder;
 
 import es.deusto.spq.Billboard;
 import es.deusto.spq.Film;
+import es.deusto.spq.User;
 import es.deusto.spq.jdo.BillboardResource;
 import es.deusto.spq.jdo.FilmResources;
+import es.deusto.spq.jdo.UserResource;
 
 public class MainWindow extends JFrame {
 
@@ -36,6 +38,7 @@ public class MainWindow extends JFrame {
 	private JPanel contentPane;
 	private List<Film> films;
 	FilmResources fr = new FilmResources();
+	private JLabel lblUserName = new JLabel("");
 
 	public MainWindow() {
 
@@ -47,6 +50,7 @@ public class MainWindow extends JFrame {
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 139), 2));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
 
 		final DefaultListModel<Film> billboard = new DefaultListModel<>();
 		films = fr.getFilms();
@@ -177,6 +181,18 @@ public class MainWindow extends JFrame {
 		}
 
 		contentPane.add(btnFilm4);
+		
+		JButton btnVip = new JButton("VIP");
+		btnVip.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				VipWindow vw = new VipWindow();
+				UserResource ur = new UserResource();
+				vw.SetUserName(ur.getUser(lblUserName.getText()), lblUserName);
+				vw.setVisible(true);
+			}
+		});
+		btnVip.setBounds(289, 429, 288, 61);
+		contentPane.add(btnVip);
 
 	}
 
@@ -187,6 +203,12 @@ public class MainWindow extends JFrame {
 		Film billboardFilm = bl.get(i).getFilmBillboard();
 		return billboardFilm;
 
+	}
+	
+	public void SetUserName (User u, JLabel lblUserName) {
+		this.lblUserName.setBounds(131, 24, 202, 26);
+		this.lblUserName.setText(u.getNickname());
+		this.contentPane.add(lblUserName);
 	}
 
 	public void btnSetImageIcon(String urlS, JButton jb) throws IOException {
