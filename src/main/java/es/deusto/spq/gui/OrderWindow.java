@@ -2,17 +2,16 @@ package es.deusto.spq.gui;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import javax.jdo.JDOHelper;
-import javax.jdo.PersistenceManager;
-import javax.jdo.PersistenceManagerFactory;
-import javax.jdo.Transaction;
 import javax.swing.DefaultListModel;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -32,15 +31,9 @@ import es.deusto.spq.Ticket;
 import es.deusto.spq.User;
 import es.deusto.spq.jdo.CinemaResource;
 import es.deusto.spq.jdo.RoomResource;
+import es.deusto.spq.jdo.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
-import jakarta.ws.rs.client.WebTarget;
-import jakarta.ws.rs.core.GenericType;
-import jakarta.ws.rs.core.MediaType;
-
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class OrderWindow extends JFrame {
 
@@ -60,6 +53,8 @@ public class OrderWindow extends JFrame {
 	private JComboBox<Room> cbSession;
 	private List<Product> products = null;
 	private int numberTickets = 0;
+	private JLabel lblUserName = new JLabel("");
+	
 
 	public List<Product> getProducts() {
 		return products;
@@ -153,7 +148,7 @@ public class OrderWindow extends JFrame {
 		btnBuy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				CrearPedido(listModelShoppingCart, selectedFilm);
+				CrearPedido(listModelShoppingCart, selectedFilm, lblUserName.getText());
 
 			}
 
@@ -186,11 +181,22 @@ public class OrderWindow extends JFrame {
 		contentPane.add(btnComida);
 
 	}
+	
+	public void SetUserName(User u) {
+		this.lblUserName.setBounds(131, 24, 202, 26);
+		this.lblUserName.setText(u.getNickname());
+		this.contentPane.add(this.lblUserName);
+	}
 
-	private void CrearPedido(final DefaultListModel<Film> listModelShoppingCart, Film selectedFilm) {
+	private void CrearPedido(final DefaultListModel<Film> listModelShoppingCart, Film selectedFilm, String nickName) {
 		List<Ticket> tickets = new ArrayList<Ticket>();
+		
+		UserResource ur = new UserResource();
 
-		Order o = new Order("ejemplo", Calendar.getInstance().getTime(), numberTickets, "", null, "En caja", 0);
+		User u = ur.getUser(nickName);
+		
+
+		Order o = new Order(u.getEmail(), Calendar.getInstance().getTime(), numberTickets, "", null, "En caja", 0);
 		StringBuilder sb = new StringBuilder();
 		StringBuilder sb2 = new StringBuilder();
 

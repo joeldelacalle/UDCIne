@@ -26,6 +26,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.spq.Film;
+import es.deusto.spq.User;
+import es.deusto.spq.jdo.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -66,6 +68,7 @@ public class FilmWindow extends JFrame {
 	private int age7 = 7;
 	private int age13 = 13;
 	private int age16 = 16;
+	private JLabel lblUserName = new JLabel("");
 
 	private void nuevasPeliculas(final JComboBox<String> comboBoxFilm) {
 		textFieldFilmName.setText(comboBoxFilm.getSelectedItem().toString());
@@ -277,6 +280,8 @@ public class FilmWindow extends JFrame {
 		btnBuyTickets.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				OrderWindow ow = new OrderWindow(film);
+				UserResource ur = new UserResource();
+				ow.SetUserName(ur.getUser(lblUserName.getText()));
 				ow.setVisible(true);
 			}
 		});
@@ -349,4 +354,11 @@ public class FilmWindow extends JFrame {
 				.addContainerGap()));
 		contentPane.setLayout(gl_contentPane);
 	}
+	
+	public void SetUserName(User u) {
+		this.lblUserName.setBounds(525, 28, 46, 14);
+		this.lblUserName.setText(u.getNickname());
+		this.contentPane.add(this.lblUserName);
+	}
+	
 }

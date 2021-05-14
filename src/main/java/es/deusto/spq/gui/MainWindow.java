@@ -121,6 +121,8 @@ public class MainWindow extends JFrame {
 		btnFilm1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				FilmWindow fw = new FilmWindow(0);
+				UserResource ur = new UserResource();
+				fw.SetUserName(ur.getUser(lblUserName.getText()));
 				fw.setVisible(true);
 			}
 		});
@@ -137,6 +139,8 @@ public class MainWindow extends JFrame {
 		btnFilm2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				FilmWindow fw = new FilmWindow(1);
+				UserResource ur = new UserResource();
+				fw.SetUserName(ur.getUser(lblUserName.getText()));
 				fw.setVisible(true);
 			}
 		});
@@ -153,6 +157,8 @@ public class MainWindow extends JFrame {
 		btnFilm3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				FilmWindow fw = new FilmWindow(2);
+				UserResource ur = new UserResource();
+				fw.SetUserName(ur.getUser(lblUserName.getText()));
 				fw.setVisible(true);
 			}
 		});
@@ -169,6 +175,8 @@ public class MainWindow extends JFrame {
 		btnFilm4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				FilmWindow fw = new FilmWindow(3);
+				UserResource ur = new UserResource();
+				fw.SetUserName(ur.getUser(lblUserName.getText()));
 				fw.setVisible(true);
 			}
 		});
@@ -187,7 +195,7 @@ public class MainWindow extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				VipWindow vw = new VipWindow();
 				UserResource ur = new UserResource();
-				vw.SetUserName(ur.getUser(lblUserName.getText()), lblUserName);
+				vw.SetUserName(ur.getUser(lblUserName.getText()));
 				vw.setVisible(true);
 			}
 		});
@@ -205,10 +213,10 @@ public class MainWindow extends JFrame {
 
 	}
 	
-	public void SetUserName (User u, JLabel lblUserName) {
+	public void SetUserName (User u) {
 		this.lblUserName.setBounds(131, 24, 202, 26);
 		this.lblUserName.setText(u.getNickname());
-		this.contentPane.add(lblUserName);
+		this.contentPane.add(this.lblUserName);
 	}
 
 	public void btnSetImageIcon(String urlS, JButton jb) throws IOException {

@@ -3,11 +3,14 @@ package es.deusto.spq.gui;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -21,9 +24,6 @@ import es.deusto.spq.jdo.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class CinemaLoginWindow extends JFrame {
 
@@ -60,14 +60,7 @@ public class CinemaLoginWindow extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 600, 400);
         contentPane = new JPanel();
-        contentPane.addMouseListener(new MouseAdapter() {
-        	@Override
-        	public void mouseClicked(MouseEvent e) {
-        		MainWindow vp = new MainWindow();
-        		vp.setVisible(true);
-        		dispose();
-        	}
-        });
+        
         contentPane.setBackground(new Color(72, 209, 204));
         contentPane.setBorder(new LineBorder(new Color(85, 107, 47), 2));
         setContentPane(contentPane);
@@ -157,7 +150,7 @@ public class CinemaLoginWindow extends JFrame {
 				}else if(ur.CheckUser(txtUsername1.getText(), txtPassword1.getText().toString())){
 					lblLoginMessage1.setText("te has loggeado correctamente!");
 					MainWindow vp = new MainWindow ();
-					vp.SetUserName(ur.getUser(txtUsername1.getText()), lblUserName);
+					vp.SetUserName(ur.getUser(txtUsername1.getText()));
 	        		vp.setVisible(true);
 	        		dispose();
 					
