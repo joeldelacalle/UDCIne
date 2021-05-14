@@ -1,31 +1,26 @@
 package es.deusto.spq.gui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import es.deusto.spq.Film;
 import es.deusto.spq.Order;
 import es.deusto.spq.User;
 import es.deusto.spq.jdo.OrderResource;
 import es.deusto.spq.jdo.UserResource;
-
-import javax.swing.JList;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class VipWindow extends JFrame {
 
@@ -107,6 +102,12 @@ public class VipWindow extends JFrame {
 		OrderResource or = new OrderResource();
 
 		List<Order> oList = or.getOrders(u.getEmail());
+		
+		/*for (int i = 0; i <  oList.size(); i++) {
+			if ( oList.get(i).getMail() != u.getEmail()) {
+				 oList.remove(i);
+			}
+		}*/
 
 		return oList;
 

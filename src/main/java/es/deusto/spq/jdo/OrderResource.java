@@ -8,21 +8,28 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 
 import es.deusto.spq.Order;
+import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.core.MediaType;
 
+@Path("order")
 public class OrderResource {
 
-	public List<Order> getOrders(String mail) {
+	@GET
+	@Path("getorders")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Order> getOrders(@QueryParam("mail") String mail) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		List<Order> orderlist = null;
 
-		try (Query<Order> o = pm.newQuery("SELECT FROM " + Order.class.getName() + " WHERE mail== '" + mail + "'")) {
+		Query <Order> o = pm.newQuery(Order.class);
+		//o.setFilter("mail == " + mail);
 			orderlist = o.executeList();
+			
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		pm.close();
 		return orderlist;
 	}

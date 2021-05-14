@@ -1,10 +1,6 @@
 package es.deusto.spq.util;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
@@ -14,6 +10,7 @@ import javax.jdo.Transaction;
 import es.deusto.spq.Billboard;
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
+import es.deusto.spq.Order;
 import es.deusto.spq.PayPal;
 import es.deusto.spq.Product;
 import es.deusto.spq.Release;
@@ -32,19 +29,23 @@ public class PreparedData {
 			tx.begin();
 			Film filmA = new Film("Jon", "Iron Man",
 					"El acto principal es Tony Stark, un magnate multimillonario y hÃ¡bil ingeniero con abundantes vicios que construye un exoesqueleto mecÃ¡nico y se convierte en el superhÃ©roe Iron Man.",
-					13, "https://pics.filmaffinity.com/iron_man-108960873-large.jpg", "https://www.youtube.com/watch?v=RLiO7pt8MbU");
+					13, "https://pics.filmaffinity.com/iron_man-108960873-large.jpg",
+					"https://www.youtube.com/watch?v=RLiO7pt8MbU");
 			pm.makePersistent(filmA);
 			Film filmB = new Film("Jon", "Iron Man 2",
 					"El mundo sabe que el multimillonario Tony Stark es Iron Man, el superhÃ©roe enmascarado, el cual forja alianzas nuevas y se enfrenta a nuevas y poderosas fuerzas.",
-					13, "https://pics.filmaffinity.com/iron_man_2-466103197-large.jpg", "https://www.youtube.com/watch?v=BoohRoVA9WQ");
+					13, "https://pics.filmaffinity.com/iron_man_2-466103197-large.jpg",
+					"https://www.youtube.com/watch?v=BoohRoVA9WQ");
 			pm.makePersistent(filmB);
 			Film filmC = new Film("Jon", "Iron Man 3",
 					"Tony Stark tendrÃ¡ que enfrentarse a un enemigo cuyo alcance no conoce lÃ­mites. Cuando Stark encuentre su vida personal destruida a manos de su enemigo, se embarca en una difÃ­cil aventura para encontrar al responsable.",
-					13, "https://pics.filmaffinity.com/iron_man_3_aka_ironman_3-972235216-large.jpg", "https://www.youtube.com/watch?v=6dhCPF_Jsco");
+					13, "https://pics.filmaffinity.com/iron_man_3_aka_ironman_3-972235216-large.jpg",
+					"https://www.youtube.com/watch?v=6dhCPF_Jsco");
 			pm.makePersistent(filmC);
 			Film filmD = new Film("Jon", "Infinity war",
 					"El todopoderoso Thanos ha despertado con la promesa de arrasar con todo a su paso, portando el Guantelete del Infinito. Los únicos capaces de pararle los pies son los Vengadores y el resto de superhéroes de la galaxia",
-					13, "https://pics.filmaffinity.com/avengers_infinity_war-181539353-large.jpg", "https://www.youtube.com/watch?v=6ZfuNTqbHE8");
+					13, "https://pics.filmaffinity.com/avengers_infinity_war-181539353-large.jpg",
+					"https://www.youtube.com/watch?v=6ZfuNTqbHE8");
 			pm.makePersistent(filmD);
 
 			Billboard b1 = new Billboard();
@@ -68,15 +69,18 @@ public class PreparedData {
 
 			Release release1 = new Release("Anthony y Joe Russo", "Cherry",
 					"Basada en la historia real de Nico Walker, cuenta la historia de un joven que lidia con un trastorno de estrés postraumático tras volver de la guerra de Iraq.",
-					18, "https://pics.filmaffinity.com/cherry-952736388-large.jpg", "https://www.youtube.com/watch?v=H5bH6O0bErk");
+					18, "https://pics.filmaffinity.com/cherry-952736388-large.jpg",
+					"https://www.youtube.com/watch?v=H5bH6O0bErk");
 			pm.makePersistent(release1);
 			Release release2 = new Release("Ramin Bahrani", "Tigre blanco",
 					"Narra el ascenso épico de Balram Halwai (Adarsh Gourav) desde una aldea pobre hasta el estrellato del mundo empresarial en la cara más moderna de La India.",
-					16, "https://pics.filmaffinity.com/the_white_tiger-462037700-large.jpg","https://www.youtube.com/watch?v=rX7xv4G9wnI");
+					16, "https://pics.filmaffinity.com/the_white_tiger-462037700-large.jpg",
+					"https://www.youtube.com/watch?v=rX7xv4G9wnI");
 			pm.makePersistent(release2);
 			Release release3 = new Release("Shaka King", "Judas y el Mesías negro",
 					"Historia real que gira en torno a un delincuente y al que, tras ser detenido, el FBI le propone la absolución de sus delitos si coopera con ellos.",
-					16, "https://pics.filmaffinity.com/judas_and_the_black_messiah-912646266-large.jpg", "https://www.youtube.com/watch?v=iaibc6LI1_g");
+					16, "https://pics.filmaffinity.com/judas_and_the_black_messiah-912646266-large.jpg",
+					"https://www.youtube.com/watch?v=iaibc6LI1_g");
 			pm.makePersistent(release3);
 			User user1 = new User("Jaime", "jaimesanta", "jaimesantamazo@opendeusto.es", "jaimesanta", 435345);
 			pm.makePersistent(user1);
@@ -115,6 +119,18 @@ public class PreparedData {
 			pm.makePersistent(p3);
 			PayPal pp1 = new PayPal("jaimesantamazo@hotmail.com", "123");
 			pm.makePersistent(pp1);
+
+			Order o1 = new Order("jaimesantamazo@opendeusto.es", null, 3, "Pendiente de pago", "Vacio",
+					"pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2 Entrada:3 fila:3 asiento:3",
+					24);
+			pm.makePersistent(o1);
+			Order o2 = new Order("jaimesantamazo@opendeusto.es", null, 1, "Pendiente de pago", "Vacio",
+					"pelicula:Infinity war Entrada:1 fila:1 asiento:1", 8);
+			pm.makePersistent(o2);
+			Order o3 = new Order("jaimesantamazo@opendeusto.es", null, 2, "Pendiente de pago", "Vacio",
+					"pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2", 16);
+			pm.makePersistent(o3);
+
 			tx.commit();
 
 		} finally {

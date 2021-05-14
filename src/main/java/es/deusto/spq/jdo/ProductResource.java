@@ -7,7 +7,6 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 
-import es.deusto.spq.Cinema;
 import es.deusto.spq.Product;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
