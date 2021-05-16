@@ -82,7 +82,7 @@ public class AdminRoomsWindowTest {
 		
 		room1 = new Room(cinema1, filmA, "ZUBIARTE SALA 1", Calendar.getInstance().getTime(), 100);
 		//System.out.println(rooms.get(2).getName());
-		assertEquals(room1.getName(), rooms.get(1).getName());
+		assertEquals(room1.getName(), rooms.get(2).getName());
 	}
 	@Test
 	public void getCineYSalas() {
