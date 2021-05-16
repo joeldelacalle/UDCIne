@@ -110,6 +110,8 @@ public class MainWindow extends JFrame {
 		btnAsessment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				RatingWindow vv = new RatingWindow();
+				UserResource ur = new UserResource();
+				vv.SetUserName(ur.getUser(lblUserName.getText()));
 				vv.setVisible(true);
 				dispose();
 			}

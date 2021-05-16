@@ -30,6 +30,7 @@ import javax.swing.border.LineBorder;
 import es.deusto.spq.Assessment;
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
+import es.deusto.spq.User;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -42,8 +43,8 @@ public class RatingWindow extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
-	private JTextField textField_2;
 	JLabel lblX1 = new JLabel("X");
+	private JLabel labeluser = new JLabel("");
 	
 	Client client = ClientBuilder.newClient();
 
@@ -125,11 +126,6 @@ public class RatingWindow extends JFrame {
 		textField_1.setBounds(350, 239, 191, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
-		
-		textField_2 = new JTextField();
-		textField_2.setBounds(401, 82, 151, 26);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
 
 		JButton btnNewButton_1 = new JButton("A\u00F1adir");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -143,7 +139,7 @@ public class RatingWindow extends JFrame {
 				
 				PersistenceManager pm = pmf.getPersistenceManager();
 				Transaction tx = pm.currentTransaction();
-				String user = textField_2.getText();
+				String user = labeluser.getText();
 				String name = comboBox.getSelectedItem().toString();
 				String text = textField.getText();
 				System.out.println("Añadiendo Valoracion en la BD");
@@ -187,7 +183,7 @@ public class RatingWindow extends JFrame {
 				
 				PersistenceManager pm = pmf.getPersistenceManager();
 				Transaction tx = pm.currentTransaction();
-				String user = textField_2.getText();
+				String user = labeluser.getText();
 				String name = comboBox_1.getSelectedItem().toString();
 				String text = textField_1.getText();
 				System.out.println("Añadiendo Valoracion en la BD");
@@ -317,7 +313,12 @@ public class RatingWindow extends JFrame {
 				lblX1.setForeground(Color.WHITE);
 			}
 		});
-
 		
+	}
+	public void SetUserName(User u) {
+		this.labeluser.setBounds(401, 82, 151, 26);
+		labeluser.setFont(new Font("Arial", Font.PLAIN, 20));
+		this.labeluser.setText(u.getNickname());
+		this.contentPane.add(this.labeluser);
 	}
 }
