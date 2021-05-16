@@ -73,4 +73,5 @@ public class ReceiptTest {
 		assertEquals("Receipt [id=0" + ", mail=perro@gmail.com" + ", date=" + dfd1 + ", order=" + o + ", price=1" + "]", r.toString());
 	}
 
+	
 }
