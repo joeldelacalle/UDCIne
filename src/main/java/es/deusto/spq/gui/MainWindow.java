@@ -193,6 +193,7 @@ public class MainWindow extends JFrame {
 		contentPane.add(btnFilm4);
 		
 		JButton btnVip = new JButton("VIP");
+		btnVip.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnVip.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				VipWindow vw = new VipWindow();
