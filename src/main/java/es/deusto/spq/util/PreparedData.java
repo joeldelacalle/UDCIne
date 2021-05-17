@@ -13,6 +13,7 @@ import es.deusto.spq.Film;
 import es.deusto.spq.Order;
 import es.deusto.spq.PayPal;
 import es.deusto.spq.Product;
+import es.deusto.spq.Receipt;
 import es.deusto.spq.Release;
 import es.deusto.spq.Room;
 import es.deusto.spq.User;
@@ -130,6 +131,8 @@ public class PreparedData {
 			Order o3 = new Order("jaimesantamazo@opendeusto.es", null, 2, "Pendiente de pago", "Vacio",
 					"pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2", 16);
 			pm.makePersistent(o3);
+			Receipt r1 = new Receipt("jaimesantamazo@hotmail.com",null,o1,99);
+			pm.makePersistent(r1);
 
 			tx.commit();
 

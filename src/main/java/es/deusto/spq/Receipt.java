@@ -2,19 +2,24 @@ package es.deusto.spq;
 
 import java.util.Date;
 
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Receipt {
+	@PrimaryKey
+    @Persistent(valueStrategy=IdGeneratorStrategy.NATIVE)
 	protected long id;
 
-	private String mail;
+	protected String mail;
 	
-	private Date date;
+	protected Date date;
 	
 	protected Order order = null;
 	
-	private long price = -1;
+	protected long price = -1;
 	
 	public Receipt() {
 		super();
