@@ -1,6 +1,5 @@
 language: java
 jobs:
-  build:
     services:
       mysql:
         image: mysql:5.7
@@ -20,3 +19,9 @@ jobs:
           mysql -e "CREATE USER 'spq'@'localhost' IDENTIFIED BY 'spq';" -uroot -proot
           mysql -e "GRANT ALL ON cine.* TO 'spq'@'localhost';" -uroot -proot
           mysql -e "SHOW DATABASES;" -uroot -proot
+- name: Build with Maven        
+      run: |
+          mvn --batch-mode --update-snapshots compile 
+          mvn --batch-mode --update-snapshots datanucleus:enhance
+          mvn --batch-mode --update-snapshots datanucleus:schema-create
+          mvn --batch-mode --update-snapshots exec:java -Pdatos
