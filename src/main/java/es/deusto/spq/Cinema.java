@@ -22,7 +22,9 @@ public class Cinema {
 	protected String city;
 	protected String address;
 	protected int phoneNumber;
-	
+	/**
+	 * Construir objeto Pelicula con sus atributos correspondientes.
+	 */
 	public Cinema(String name, String city, String address, int phoneNumber) {
 		super();
 		this.name = name;
