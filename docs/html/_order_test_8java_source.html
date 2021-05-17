@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/test/java/es/deusto/spq/OrderTest.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_120ed4da3e3217b1e7fc0b4f48568e79.html">test</a></li><li class="navelem"><a class="el" href="dir_97debbc39e3b917fca663601bb2b0709.html">java</a></li><li class="navelem"><a class="el" href="dir_4b96a8b33d1f8ef41fbe8cb4eb39245a.html">es</a></li><li class="navelem"><a class="el" href="dir_25b06560d1af80143ff1acfc9209093d.html">deusto</a></li><li class="navelem"><a class="el" href="dir_ed5d40ea3cf05e796193518606629533.html">spq</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">OrderTest.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_order_test_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>es.deusto.spq;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.*;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> java.util.ArrayList;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> java.util.Calendar;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> java.util.Date;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> org.junit.Before;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_order_test.html">   13</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classes_1_1deusto_1_1spq_1_1_order_test.html">OrderTest</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html">Order</a> o;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">private</span> List&lt;Product&gt; products;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">private</span> List&lt;Ticket&gt; tickets;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">private</span> Calendar dfd;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">private</span> Date dfd1;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_ticket.html">Ticket</a> ticket;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a> product;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_cinema.html">Cinema</a> cinema;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a> film;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    @Before</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_order_test.html#a534b4fe789f1c1da0b2990598286d21d">   26</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order_test.html#a534b4fe789f1c1da0b2990598286d21d">setUp</a>() {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        products = <span class="keyword">new</span> ArrayList&lt;Product&gt;();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        tickets = <span class="keyword">new</span> ArrayList&lt;Ticket&gt;();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        dfd = Calendar.getInstance();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        dfd.set(Calendar.YEAR, 2020);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        dfd.set(Calendar.MONTH, Calendar.NOVEMBER);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        dfd.set(Calendar.DAY_OF_MONTH, 20);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        dfd.set(Calendar.HOUR, 12);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        dfd.set(Calendar.MINUTE, 00);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        dfd.set(Calendar.SECOND, 00);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        dfd1 = dfd.getTime();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        cinema = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_cinema.html">Cinema</a>(<span class="stringliteral">&quot;artea&quot;</span>, <span class="stringliteral">&quot;bilbao&quot;</span>, <span class="stringliteral">&quot;landabarri&quot;</span>, 99);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        film = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a>(<span class="stringliteral">&quot;john&quot;</span>, <span class="stringliteral">&quot;iron man&quot;</span>, <span class="stringliteral">&quot;el hombre de hierro&quot;</span>, 13, <span class="keyword">null</span>, <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        ticket = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_ticket.html">Ticket</a>(cinema, film, 1, 2, 3, 4, dfd1);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        tickets.add(ticket);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        product = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a>(<span class="stringliteral">&quot;palomitas&quot;</span>, <span class="stringliteral">&quot;palomitas Grandes&quot;</span>, 3,<span class="keyword">null</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        products.add(product);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        o = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html">Order</a>(<span class="stringliteral">&quot;perro@gmail.com&quot;</span>, dfd1,1, tickets.toString(), products.toString(), <span class="stringliteral">&quot;En caja&quot;</span>, 1);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    @Test</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_order_test.html#ab0ae29b7042bade7af5b67d8492bc6f1">   47</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order_test.html#ab0ae29b7042bade7af5b67d8492bc6f1">testSetGetId</a>() {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#a4327253c4fd604ec1a0d52c076382306">setId</a>(5);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        assertEquals(5, o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#ac1a9c51ef0a55aae7d26e5d6c5d0a7f4">getId</a>());</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    @Test</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_order_test.html#ac5ab6d879439646ac43ede519a3999c7">   53</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order_test.html#ac5ab6d879439646ac43ede519a3999c7">testSetGetMail</a>() {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#ac4146c4b845dd3b72dd185dcb5283876">setMail</a>(<span class="stringliteral">&quot;perrosanxe@yahoo.com&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        assertEquals(<span class="stringliteral">&quot;perrosanxe@yahoo.com&quot;</span>, o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#a8b3af03c25ec845836c5fce3b8c9ca25">getMail</a>());</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    @Test</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_order_test.html#ab5dd35e3ab947b512a9e84931b54edfb">   59</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order_test.html#ab5dd35e3ab947b512a9e84931b54edfb">testSetGetDate</a>() {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#a68c69c2902a0a72b31d4e54a7fa556c4">setDate</a>(dfd1);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        assertEquals(dfd1, o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#a547748c9a199276f05f884a411388f9a">getDate</a>());</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    @Test</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_order_test.html#ad77a1cb61c5590b5ae8fa5ce5b13a7e2">   65</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order_test.html#ad77a1cb61c5590b5ae8fa5ce5b13a7e2">testSetGetPrice</a>() {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#a80da2ea447640e03a3eccc63f2f6a513">setPrice</a>(7);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        assertEquals(7, o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#adb7ddb64df1e4d2161f3a5cd0e716b91">getPrice</a>());</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    @Test</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_order_test.html#a7549f9245166573d2888b3f8e9076261">   71</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order_test.html#a7549f9245166573d2888b3f8e9076261">testSetGetTickets</a>() {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#af3003edb76e354802c371a813e0e185d">setTickets</a>(tickets.toString());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        assertEquals(tickets.toString(), o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#a590edfdbc96c739f134e2791098277ca">getTickets</a>().toString());</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    @Test</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_order_test.html#a27615b0886f58842bc8921bc8f7197e9">   77</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order_test.html#a27615b0886f58842bc8921bc8f7197e9">testSetGetProducts</a>() {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#a68850ed788f0c956407968e6427858c5">setProducts</a>(products.toString());</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        assertEquals(products.toString(), o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#a955989f3ed98c0a61e6b16f4dd9e0853">getProducts</a>());</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    @Test</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_order_test.html#aea47f790fd37f968a7d32a0c531fc158">   83</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order_test.html#aea47f790fd37f968a7d32a0c531fc158">testSetGetPaymentMethod</a>() {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#abe4b32c856c8b5c0fca97cc8e398e850">setPaymentMethod</a>(<span class="stringliteral">&quot;paypal&quot;</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        assertEquals(<span class="stringliteral">&quot;paypal&quot;</span>, o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#a49c13852fd8c957198db55d818c43def">getPaymentMethod</a>());</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    @Test </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_order_test.html#a8f2f016702ed9bd28ebb4324096595b0">   89</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order_test.html#a8f2f016702ed9bd28ebb4324096595b0">testToString</a>() {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        assertEquals(<span class="stringliteral">&quot;Order [id=0&quot;</span> + <span class="stringliteral">&quot;, mail=perro@gmail.com&quot;</span> + <span class="stringliteral">&quot;, date=&quot;</span> + dfd1 + <span class="stringliteral">&quot;, tickets=&quot;</span> + tickets + <span class="stringliteral">&quot;, products=&quot;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                + products + <span class="stringliteral">&quot;, paymentMethod=En caja&quot;</span>  + <span class="stringliteral">&quot;, price=1&quot;</span> + <span class="stringliteral">&quot;]&quot;</span>, o.<a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html#ab0d60ffd39afe777061b1f4ae2709a2c">toString</a>());</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_cinema_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_cinema.html">es.deusto.spq.Cinema</a></div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00009">Cinema.java:9</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html">es.deusto.spq.Film</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00010">Film.java:10</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html">es.deusto.spq.Order</a></div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00012">Order.java:12</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_a4327253c4fd604ec1a0d52c076382306"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#a4327253c4fd604ec1a0d52c076382306">es.deusto.spq.Order.setId</a></div><div class="ttdeci">void setId(long id)</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00041">Order.java:41</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_a49c13852fd8c957198db55d818c43def"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#a49c13852fd8c957198db55d818c43def">es.deusto.spq.Order.getPaymentMethod</a></div><div class="ttdeci">String getPaymentMethod()</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00085">Order.java:85</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_a547748c9a199276f05f884a411388f9a"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#a547748c9a199276f05f884a411388f9a">es.deusto.spq.Order.getDate</a></div><div class="ttdeci">Date getDate()</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00053">Order.java:53</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_a590edfdbc96c739f134e2791098277ca"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#a590edfdbc96c739f134e2791098277ca">es.deusto.spq.Order.getTickets</a></div><div class="ttdeci">String getTickets()</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00069">Order.java:69</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_a68850ed788f0c956407968e6427858c5"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#a68850ed788f0c956407968e6427858c5">es.deusto.spq.Order.setProducts</a></div><div class="ttdeci">void setProducts(String products)</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00081">Order.java:81</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_a68c69c2902a0a72b31d4e54a7fa556c4"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#a68c69c2902a0a72b31d4e54a7fa556c4">es.deusto.spq.Order.setDate</a></div><div class="ttdeci">void setDate(Date date)</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00057">Order.java:57</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_a80da2ea447640e03a3eccc63f2f6a513"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#a80da2ea447640e03a3eccc63f2f6a513">es.deusto.spq.Order.setPrice</a></div><div class="ttdeci">void setPrice(long price)</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00097">Order.java:97</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_a8b3af03c25ec845836c5fce3b8c9ca25"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#a8b3af03c25ec845836c5fce3b8c9ca25">es.deusto.spq.Order.getMail</a></div><div class="ttdeci">String getMail()</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00045">Order.java:45</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_a955989f3ed98c0a61e6b16f4dd9e0853"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#a955989f3ed98c0a61e6b16f4dd9e0853">es.deusto.spq.Order.getProducts</a></div><div class="ttdeci">String getProducts()</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00077">Order.java:77</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_ab0d60ffd39afe777061b1f4ae2709a2c"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#ab0d60ffd39afe777061b1f4ae2709a2c">es.deusto.spq.Order.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00102">Order.java:102</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_abe4b32c856c8b5c0fca97cc8e398e850"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#abe4b32c856c8b5c0fca97cc8e398e850">es.deusto.spq.Order.setPaymentMethod</a></div><div class="ttdeci">void setPaymentMethod(String paymentMethod)</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00089">Order.java:89</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_ac1a9c51ef0a55aae7d26e5d6c5d0a7f4"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#ac1a9c51ef0a55aae7d26e5d6c5d0a7f4">es.deusto.spq.Order.getId</a></div><div class="ttdeci">long getId()</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00037">Order.java:37</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_ac4146c4b845dd3b72dd185dcb5283876"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#ac4146c4b845dd3b72dd185dcb5283876">es.deusto.spq.Order.setMail</a></div><div class="ttdeci">void setMail(String mail)</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00049">Order.java:49</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_adb7ddb64df1e4d2161f3a5cd0e716b91"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#adb7ddb64df1e4d2161f3a5cd0e716b91">es.deusto.spq.Order.getPrice</a></div><div class="ttdeci">long getPrice()</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00093">Order.java:93</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html_af3003edb76e354802c371a813e0e185d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html#af3003edb76e354802c371a813e0e185d">es.deusto.spq.Order.setTickets</a></div><div class="ttdeci">void setTickets(String tickets)</div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00073">Order.java:73</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order_test.html">es.deusto.spq.OrderTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_order_test_8java_source.html#l00013">OrderTest.java:13</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_test_html_a27615b0886f58842bc8921bc8f7197e9"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order_test.html#a27615b0886f58842bc8921bc8f7197e9">es.deusto.spq.OrderTest.testSetGetProducts</a></div><div class="ttdeci">void testSetGetProducts()</div><div class="ttdef"><b>Definition:</b> <a href="_order_test_8java_source.html#l00077">OrderTest.java:77</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_test_html_a534b4fe789f1c1da0b2990598286d21d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order_test.html#a534b4fe789f1c1da0b2990598286d21d">es.deusto.spq.OrderTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_order_test_8java_source.html#l00026">OrderTest.java:26</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_test_html_a7549f9245166573d2888b3f8e9076261"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order_test.html#a7549f9245166573d2888b3f8e9076261">es.deusto.spq.OrderTest.testSetGetTickets</a></div><div class="ttdeci">void testSetGetTickets()</div><div class="ttdef"><b>Definition:</b> <a href="_order_test_8java_source.html#l00071">OrderTest.java:71</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_test_html_a8f2f016702ed9bd28ebb4324096595b0"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order_test.html#a8f2f016702ed9bd28ebb4324096595b0">es.deusto.spq.OrderTest.testToString</a></div><div class="ttdeci">void testToString()</div><div class="ttdef"><b>Definition:</b> <a href="_order_test_8java_source.html#l00089">OrderTest.java:89</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_test_html_ab0ae29b7042bade7af5b67d8492bc6f1"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order_test.html#ab0ae29b7042bade7af5b67d8492bc6f1">es.deusto.spq.OrderTest.testSetGetId</a></div><div class="ttdeci">void testSetGetId()</div><div class="ttdef"><b>Definition:</b> <a href="_order_test_8java_source.html#l00047">OrderTest.java:47</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_test_html_ab5dd35e3ab947b512a9e84931b54edfb"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order_test.html#ab5dd35e3ab947b512a9e84931b54edfb">es.deusto.spq.OrderTest.testSetGetDate</a></div><div class="ttdeci">void testSetGetDate()</div><div class="ttdef"><b>Definition:</b> <a href="_order_test_8java_source.html#l00059">OrderTest.java:59</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_test_html_ac5ab6d879439646ac43ede519a3999c7"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order_test.html#ac5ab6d879439646ac43ede519a3999c7">es.deusto.spq.OrderTest.testSetGetMail</a></div><div class="ttdeci">void testSetGetMail()</div><div class="ttdef"><b>Definition:</b> <a href="_order_test_8java_source.html#l00053">OrderTest.java:53</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_test_html_ad77a1cb61c5590b5ae8fa5ce5b13a7e2"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order_test.html#ad77a1cb61c5590b5ae8fa5ce5b13a7e2">es.deusto.spq.OrderTest.testSetGetPrice</a></div><div class="ttdeci">void testSetGetPrice()</div><div class="ttdef"><b>Definition:</b> <a href="_order_test_8java_source.html#l00065">OrderTest.java:65</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_test_html_aea47f790fd37f968a7d32a0c531fc158"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order_test.html#aea47f790fd37f968a7d32a0c531fc158">es.deusto.spq.OrderTest.testSetGetPaymentMethod</a></div><div class="ttdeci">void testSetGetPaymentMethod()</div><div class="ttdef"><b>Definition:</b> <a href="_order_test_8java_source.html#l00083">OrderTest.java:83</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_product_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_product.html">es.deusto.spq.Product</a></div><div class="ttdef"><b>Definition:</b> <a href="_product_8java_source.html#l00009">Product.java:9</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_ticket_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_ticket.html">es.deusto.spq.Ticket</a></div><div class="ttdef"><b>Definition:</b> <a href="_ticket_8java_source.html#l00013">Ticket.java:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

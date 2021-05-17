@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/main/java/es/deusto/spq/Film.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_f9b1e2a59d62d001356ff527358589e3.html">es</a></li><li class="navelem"><a class="el" href="dir_218602b84a76f1dba535b3f8d119ec0a.html">deusto</a></li><li class="navelem"><a class="el" href="dir_7df73947654fe6d5c668d5365112078e.html">spq</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Film.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_film_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>es.deusto.spq;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> javax.jdo.annotations.IdGeneratorStrategy;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> javax.jdo.annotations.PersistenceCapable;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> javax.jdo.annotations.Persistent;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> javax.jdo.annotations.PrimaryKey;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;@PersistenceCapable</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html">   10</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    @PrimaryKey</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    @Persistent(valueStrategy=IdGeneratorStrategy.NATIVE)</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#ab011774bbd41b934effd1f5b413d3cd1">   18</a></span>&#160;    protected <span class="keywordtype">long</span> <span class="keywordtype">id</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a52dd0d40b8106ea050521561bf209078">   20</a></span>&#160;    protected String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a52dd0d40b8106ea050521561bf209078">director</a>=null;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a7e132b6a34b16a1c542fbbc5ff447419">   22</a></span>&#160;    protected String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a7e132b6a34b16a1c542fbbc5ff447419">name</a>=null;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a19a291b2ca22635571482f02a9e3c85b">   24</a></span>&#160;    protected String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a19a291b2ca22635571482f02a9e3c85b">description</a>=null;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#ab5b0c538a8f33e120f0fb93c0743830b">   26</a></span>&#160;    protected <span class="keywordtype">int</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#ab5b0c538a8f33e120f0fb93c0743830b">ageRestriction</a>=-1;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a98171074e204a60dcc560cb69d4f1437">   28</a></span>&#160;    protected String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a98171074e204a60dcc560cb69d4f1437">url</a> = null;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a437a152dd599cbd543f940d09a47ee47">   30</a></span>&#160;    protected String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a437a152dd599cbd543f940d09a47ee47">trailer</a> = null;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a80e4ae475194f81b712d913aab9de5d6">   35</a></span>&#160;    public <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a52dd0d40b8106ea050521561bf209078">director</a>, String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a7e132b6a34b16a1c542fbbc5ff447419">name</a>, String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a19a291b2ca22635571482f02a9e3c85b">description</a>, <span class="keywordtype">int</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#ab5b0c538a8f33e120f0fb93c0743830b">ageRestriction</a>, String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a98171074e204a60dcc560cb69d4f1437">url</a>, String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a437a152dd599cbd543f940d09a47ee47">trailer</a>) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        super();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        this.director = <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a52dd0d40b8106ea050521561bf209078">director</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        this.name = <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a7e132b6a34b16a1c542fbbc5ff447419">name</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        this.description = <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a19a291b2ca22635571482f02a9e3c85b">description</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        this.ageRestriction = <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#ab5b0c538a8f33e120f0fb93c0743830b">ageRestriction</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        this.url = <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a98171074e204a60dcc560cb69d4f1437">url</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        this.trailer = <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a437a152dd599cbd543f940d09a47ee47">trailer</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a4bf506a1d319bdbab7fc203ab6ecc8e5">   48</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a4bf506a1d319bdbab7fc203ab6ecc8e5">getTrailer</a>() {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a437a152dd599cbd543f940d09a47ee47">trailer</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a13cdb127456679cc923b296445823b9e">   55</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a13cdb127456679cc923b296445823b9e">setTrailer</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a437a152dd599cbd543f940d09a47ee47">trailer</a>) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        this.trailer = <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a437a152dd599cbd543f940d09a47ee47">trailer</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a34562009632bafdddc1bbe4ab29b5d32">   62</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a34562009632bafdddc1bbe4ab29b5d32">getUrl</a>() {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a98171074e204a60dcc560cb69d4f1437">url</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#af713c7c61e53014a39fa4ef6fbb572f0">   68</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#af713c7c61e53014a39fa4ef6fbb572f0">setUrl</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a98171074e204a60dcc560cb69d4f1437">url</a>) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        this.url = <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a98171074e204a60dcc560cb69d4f1437">url</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a08859f9d8a16825692a6cdbdc95c43d0">   76</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a08859f9d8a16825692a6cdbdc95c43d0">getId</a>() {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#ab011774bbd41b934effd1f5b413d3cd1">id</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a39afa4e74dfc2cf887788a345d6b037f">   82</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a39afa4e74dfc2cf887788a345d6b037f">setId</a>(<span class="keywordtype">long</span> <span class="keywordtype">id</span>) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        this.<span class="keywordtype">id</span> = <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#ab011774bbd41b934effd1f5b413d3cd1">id</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a9ed66fd9a1327319ef14644204d4c034">   88</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a9ed66fd9a1327319ef14644204d4c034">getDirector</a>() {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a52dd0d40b8106ea050521561bf209078">director</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#ae9fb79d9830786d895b6b4ea5001f409">   94</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#ae9fb79d9830786d895b6b4ea5001f409">setDirector</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a52dd0d40b8106ea050521561bf209078">director</a>) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        this.director = <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a52dd0d40b8106ea050521561bf209078">director</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a6a1c03b0547193477cabe9f7ac1c8303">  100</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a6a1c03b0547193477cabe9f7ac1c8303">getName</a>() {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a7e132b6a34b16a1c542fbbc5ff447419">name</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a47f7e03f607499d2ae893d08f6cb7a23">  106</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a47f7e03f607499d2ae893d08f6cb7a23">setName</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a7e132b6a34b16a1c542fbbc5ff447419">name</a>) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        this.name = <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a7e132b6a34b16a1c542fbbc5ff447419">name</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a724e3d5bcb547fd0233dbe083d0bd39d">  112</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a724e3d5bcb547fd0233dbe083d0bd39d">getDescription</a>() {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a19a291b2ca22635571482f02a9e3c85b">description</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#adabe7a83cd8ef6848f121f009eb01088">  118</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#adabe7a83cd8ef6848f121f009eb01088">setDescription</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a19a291b2ca22635571482f02a9e3c85b">description</a>) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        this.description = <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a19a291b2ca22635571482f02a9e3c85b">description</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a4f008d9e5c77c1e7f1a443dd377cf0c5">  124</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a4f008d9e5c77c1e7f1a443dd377cf0c5">getAgeRestriction</a>() {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#ab5b0c538a8f33e120f0fb93c0743830b">ageRestriction</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#a736b00cca3e323a5230cf6c98cc045a2">  130</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a736b00cca3e323a5230cf6c98cc045a2">setAgeRestriction</a>(<span class="keywordtype">int</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#ab5b0c538a8f33e120f0fb93c0743830b">ageRestriction</a>) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        this.ageRestriction = <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#ab5b0c538a8f33e120f0fb93c0743830b">ageRestriction</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    @Override</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_film.html#aaebc9ca1f64e372d99025fb9dd019f0d">  137</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#aaebc9ca1f64e372d99025fb9dd019f0d">toString</a>() {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a7e132b6a34b16a1c542fbbc5ff447419">name</a> + <span class="stringliteral">&quot; &quot;</span> + <span class="stringliteral">&quot;+&quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#ab5b0c538a8f33e120f0fb93c0743830b">ageRestriction</a> + <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html">es.deusto.spq.Film</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00010">Film.java:10</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a08859f9d8a16825692a6cdbdc95c43d0"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a08859f9d8a16825692a6cdbdc95c43d0">es.deusto.spq.Film.getId</a></div><div class="ttdeci">long getId()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00076">Film.java:76</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a13cdb127456679cc923b296445823b9e"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a13cdb127456679cc923b296445823b9e">es.deusto.spq.Film.setTrailer</a></div><div class="ttdeci">void setTrailer(String trailer)</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00055">Film.java:55</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a19a291b2ca22635571482f02a9e3c85b"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a19a291b2ca22635571482f02a9e3c85b">es.deusto.spq.Film.description</a></div><div class="ttdeci">String description</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00024">Film.java:24</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a34562009632bafdddc1bbe4ab29b5d32"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a34562009632bafdddc1bbe4ab29b5d32">es.deusto.spq.Film.getUrl</a></div><div class="ttdeci">String getUrl()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00062">Film.java:62</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a39afa4e74dfc2cf887788a345d6b037f"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a39afa4e74dfc2cf887788a345d6b037f">es.deusto.spq.Film.setId</a></div><div class="ttdeci">void setId(long id)</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00082">Film.java:82</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a437a152dd599cbd543f940d09a47ee47"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a437a152dd599cbd543f940d09a47ee47">es.deusto.spq.Film.trailer</a></div><div class="ttdeci">String trailer</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00030">Film.java:30</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a47f7e03f607499d2ae893d08f6cb7a23"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a47f7e03f607499d2ae893d08f6cb7a23">es.deusto.spq.Film.setName</a></div><div class="ttdeci">void setName(String name)</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00106">Film.java:106</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a4bf506a1d319bdbab7fc203ab6ecc8e5"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a4bf506a1d319bdbab7fc203ab6ecc8e5">es.deusto.spq.Film.getTrailer</a></div><div class="ttdeci">String getTrailer()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00048">Film.java:48</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a4f008d9e5c77c1e7f1a443dd377cf0c5"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a4f008d9e5c77c1e7f1a443dd377cf0c5">es.deusto.spq.Film.getAgeRestriction</a></div><div class="ttdeci">int getAgeRestriction()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00124">Film.java:124</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a52dd0d40b8106ea050521561bf209078"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a52dd0d40b8106ea050521561bf209078">es.deusto.spq.Film.director</a></div><div class="ttdeci">String director</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00020">Film.java:20</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a6a1c03b0547193477cabe9f7ac1c8303"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a6a1c03b0547193477cabe9f7ac1c8303">es.deusto.spq.Film.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00100">Film.java:100</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a724e3d5bcb547fd0233dbe083d0bd39d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a724e3d5bcb547fd0233dbe083d0bd39d">es.deusto.spq.Film.getDescription</a></div><div class="ttdeci">String getDescription()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00112">Film.java:112</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a736b00cca3e323a5230cf6c98cc045a2"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a736b00cca3e323a5230cf6c98cc045a2">es.deusto.spq.Film.setAgeRestriction</a></div><div class="ttdeci">void setAgeRestriction(int ageRestriction)</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00130">Film.java:130</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a7e132b6a34b16a1c542fbbc5ff447419"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a7e132b6a34b16a1c542fbbc5ff447419">es.deusto.spq.Film.name</a></div><div class="ttdeci">String name</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00022">Film.java:22</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a98171074e204a60dcc560cb69d4f1437"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a98171074e204a60dcc560cb69d4f1437">es.deusto.spq.Film.url</a></div><div class="ttdeci">String url</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00028">Film.java:28</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a9ed66fd9a1327319ef14644204d4c034"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a9ed66fd9a1327319ef14644204d4c034">es.deusto.spq.Film.getDirector</a></div><div class="ttdeci">String getDirector()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00088">Film.java:88</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_aaebc9ca1f64e372d99025fb9dd019f0d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#aaebc9ca1f64e372d99025fb9dd019f0d">es.deusto.spq.Film.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00137">Film.java:137</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_ab011774bbd41b934effd1f5b413d3cd1"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#ab011774bbd41b934effd1f5b413d3cd1">es.deusto.spq.Film.id</a></div><div class="ttdeci">long id</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00018">Film.java:18</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_ab5b0c538a8f33e120f0fb93c0743830b"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#ab5b0c538a8f33e120f0fb93c0743830b">es.deusto.spq.Film.ageRestriction</a></div><div class="ttdeci">int ageRestriction</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00026">Film.java:26</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_adabe7a83cd8ef6848f121f009eb01088"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#adabe7a83cd8ef6848f121f009eb01088">es.deusto.spq.Film.setDescription</a></div><div class="ttdeci">void setDescription(String description)</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00118">Film.java:118</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_ae9fb79d9830786d895b6b4ea5001f409"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#ae9fb79d9830786d895b6b4ea5001f409">es.deusto.spq.Film.setDirector</a></div><div class="ttdeci">void setDirector(String director)</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00094">Film.java:94</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_af713c7c61e53014a39fa4ef6fbb572f0"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#af713c7c61e53014a39fa4ef6fbb572f0">es.deusto.spq.Film.setUrl</a></div><div class="ttdeci">void setUrl(String url)</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00068">Film.java:68</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

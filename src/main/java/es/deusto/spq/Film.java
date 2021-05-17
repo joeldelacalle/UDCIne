@@ -3,7 +3,9 @@ import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
-
+/** \file 
+ * Breve descripción de es.deusto.spq Film.java. May 17, 2021
+ */
 @PersistenceCapable
 public class Film {
 	/**
