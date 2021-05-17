@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/main/java/es/deusto/spq/util/PreparedData.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_f9b1e2a59d62d001356ff527358589e3.html">es</a></li><li class="navelem"><a class="el" href="dir_218602b84a76f1dba535b3f8d119ec0a.html">deusto</a></li><li class="navelem"><a class="el" href="dir_7df73947654fe6d5c668d5365112078e.html">spq</a></li><li class="navelem"><a class="el" href="dir_48b69c8b50f762b78cd99d6459519fb8.html">util</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PreparedData.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_prepared_data_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacees_1_1deusto_1_1spq_1_1util.html">    1</a></span>&#160;<span class="keyword">package </span>es.deusto.spq.util;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> java.util.Calendar;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> javax.jdo.JDOHelper;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> javax.jdo.PersistenceManager;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> javax.jdo.PersistenceManagerFactory;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> javax.jdo.Transaction;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> es.deusto.spq.Billboard;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> es.deusto.spq.Cinema;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> es.deusto.spq.Film;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> es.deusto.spq.Order;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> es.deusto.spq.PayPal;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> es.deusto.spq.Product;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> es.deusto.spq.Release;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> es.deusto.spq.Room;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> es.deusto.spq.User;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1util_1_1_prepared_data.html">   20</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classes_1_1deusto_1_1spq_1_1util_1_1_prepared_data.html">PreparedData</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1util_1_1_prepared_data.html#af81584db142b678a9eba52d031a4bcba">   22</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1util_1_1_prepared_data.html#af81584db142b678a9eba52d031a4bcba">main</a>(String[] args) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory(<span class="stringliteral">&quot;datanucleus.properties&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        PersistenceManager pm = pmf.getPersistenceManager();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        Transaction tx = pm.currentTransaction();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            tx.begin();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a> filmA = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a>(<span class="stringliteral">&quot;Jon&quot;</span>, <span class="stringliteral">&quot;Iron Man&quot;</span>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    <span class="stringliteral">&quot;El acto principal es Tony Stark, un magnate multimillonario y hÃ¡bil ingeniero con abundantes vicios que construye un exoesqueleto mecÃ¡nico y se convierte en el superhÃ©roe Iron Man.&quot;</span>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    13, <span class="stringliteral">&quot;https://pics.filmaffinity.com/iron_man-108960873-large.jpg&quot;</span>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    <span class="stringliteral">&quot;https://www.youtube.com/watch?v=RLiO7pt8MbU&quot;</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            pm.makePersistent(filmA);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a> filmB = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a>(<span class="stringliteral">&quot;Jon&quot;</span>, <span class="stringliteral">&quot;Iron Man 2&quot;</span>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <span class="stringliteral">&quot;El mundo sabe que el multimillonario Tony Stark es Iron Man, el superhÃ©roe enmascarado, el cual forja alianzas nuevas y se enfrenta a nuevas y poderosas fuerzas.&quot;</span>,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    13, <span class="stringliteral">&quot;https://pics.filmaffinity.com/iron_man_2-466103197-large.jpg&quot;</span>,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    <span class="stringliteral">&quot;https://www.youtube.com/watch?v=BoohRoVA9WQ&quot;</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            pm.makePersistent(filmB);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a> filmC = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a>(<span class="stringliteral">&quot;Jon&quot;</span>, <span class="stringliteral">&quot;Iron Man 3&quot;</span>,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    <span class="stringliteral">&quot;Tony Stark tendrÃ¡ que enfrentarse a un enemigo cuyo alcance no conoce lÃ­mites. Cuando Stark encuentre su vida personal destruida a manos de su enemigo, se embarca en una difÃ­cil aventura para encontrar al responsable.&quot;</span>,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    13, <span class="stringliteral">&quot;https://pics.filmaffinity.com/iron_man_3_aka_ironman_3-972235216-large.jpg&quot;</span>,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <span class="stringliteral">&quot;https://www.youtube.com/watch?v=6dhCPF_Jsco&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            pm.makePersistent(filmC);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a> filmD = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a>(<span class="stringliteral">&quot;Jon&quot;</span>, <span class="stringliteral">&quot;Infinity war&quot;</span>,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="stringliteral">&quot;El todopoderoso Thanos ha despertado con la promesa de arrasar con todo a su paso, portando el Guantelete del Infinito. Los únicos capaces de pararle los pies son los Vengadores y el resto de superhéroes de la galaxia&quot;</span>,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    13, <span class="stringliteral">&quot;https://pics.filmaffinity.com/avengers_infinity_war-181539353-large.jpg&quot;</span>,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    <span class="stringliteral">&quot;https://www.youtube.com/watch?v=6ZfuNTqbHE8&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            pm.makePersistent(filmD);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html">Billboard</a> b1 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html">Billboard</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            b1.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a77f04c3b1d8e655846273ac7e6847d63">setFilmBillboard</a>(filmA);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            pm.makePersistent(b1);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html">Billboard</a> b2 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html">Billboard</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            b2.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a77f04c3b1d8e655846273ac7e6847d63">setFilmBillboard</a>(filmB);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            pm.makePersistent(b2);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html">Billboard</a> b3 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html">Billboard</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            b3.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a77f04c3b1d8e655846273ac7e6847d63">setFilmBillboard</a>(filmC);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            pm.makePersistent(b3);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_cinema.html">Cinema</a> cinema1 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_cinema.html">Cinema</a>(<span class="stringliteral">&quot;Cine Deusto Zubiarte&quot;</span>, <span class="stringliteral">&quot;Bilbao&quot;</span>, <span class="stringliteral">&quot;Centro Comercial Zubiarte&quot;</span>, 123456789);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            pm.makePersistent(cinema1);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_cinema.html">Cinema</a> cinema2 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_cinema.html">Cinema</a>(<span class="stringliteral">&quot;Cine Deusto Santander&quot;</span>, <span class="stringliteral">&quot;Santander&quot;</span>, <span class="stringliteral">&quot;Corte Ingles nueva montaña&quot;</span>, 345345345);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            pm.makePersistent(cinema2);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_cinema.html">Cinema</a> cinema3 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_cinema.html">Cinema</a>(<span class="stringliteral">&quot;Cine Deusto Bakacaldo&quot;</span>, <span class="stringliteral">&quot;bakacaldo&quot;</span>, <span class="stringliteral">&quot;Max Center&quot;</span>, 458345345);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            pm.makePersistent(cinema3);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_release.html">Release</a> release1 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_release.html">Release</a>(<span class="stringliteral">&quot;Anthony y Joe Russo&quot;</span>, <span class="stringliteral">&quot;Cherry&quot;</span>,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <span class="stringliteral">&quot;Basada en la historia real de Nico Walker, cuenta la historia de un joven que lidia con un trastorno de estrés postraumático tras volver de la guerra de Iraq.&quot;</span>,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    18, <span class="stringliteral">&quot;https://pics.filmaffinity.com/cherry-952736388-large.jpg&quot;</span>,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="stringliteral">&quot;https://www.youtube.com/watch?v=H5bH6O0bErk&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            pm.makePersistent(release1);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_release.html">Release</a> release2 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_release.html">Release</a>(<span class="stringliteral">&quot;Ramin Bahrani&quot;</span>, <span class="stringliteral">&quot;Tigre blanco&quot;</span>,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    <span class="stringliteral">&quot;Narra el ascenso épico de Balram Halwai (Adarsh Gourav) desde una aldea pobre hasta el estrellato del mundo empresarial en la cara más moderna de La India.&quot;</span>,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    16, <span class="stringliteral">&quot;https://pics.filmaffinity.com/the_white_tiger-462037700-large.jpg&quot;</span>,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    <span class="stringliteral">&quot;https://www.youtube.com/watch?v=rX7xv4G9wnI&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            pm.makePersistent(release2);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_release.html">Release</a> release3 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_release.html">Release</a>(<span class="stringliteral">&quot;Shaka King&quot;</span>, <span class="stringliteral">&quot;Judas y el Mesías negro&quot;</span>,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    <span class="stringliteral">&quot;Historia real que gira en torno a un delincuente y al que, tras ser detenido, el FBI le propone la absolución de sus delitos si coopera con ellos.&quot;</span>,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    16, <span class="stringliteral">&quot;https://pics.filmaffinity.com/judas_and_the_black_messiah-912646266-large.jpg&quot;</span>,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    <span class="stringliteral">&quot;https://www.youtube.com/watch?v=iaibc6LI1_g&quot;</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            pm.makePersistent(release3);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html">User</a> user1 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html">User</a>(<span class="stringliteral">&quot;Jaime&quot;</span>, <span class="stringliteral">&quot;jaimesanta&quot;</span>, <span class="stringliteral">&quot;jaimesantamazo@opendeusto.es&quot;</span>, <span class="stringliteral">&quot;jaimesanta&quot;</span>, 435345);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            pm.makePersistent(user1);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html">User</a> user2 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html">User</a>(<span class="stringliteral">&quot;Jaime&quot;</span>, <span class="stringliteral">&quot;jaimesanta&quot;</span>, <span class="stringliteral">&quot;jaimesantamazo@opendeusto.es&quot;</span>, <span class="stringliteral">&quot;jaimesanta&quot;</span>, 435345);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            pm.makePersistent(user2);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html">User</a> user3 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html">User</a>(<span class="stringliteral">&quot;Jaime&quot;</span>, <span class="stringliteral">&quot;jaimesanta&quot;</span>, <span class="stringliteral">&quot;jaimesantamazo@opendeusto.es&quot;</span>, <span class="stringliteral">&quot;jaimesanta&quot;</span>, 435345);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            pm.makePersistent(user3);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a> room1 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>(cinema1, filmA, <span class="stringliteral">&quot;ZUBIARTE SALA 1&quot;</span>, Calendar.getInstance().getTime(), 100);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            pm.makePersistent(room1);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a> room2 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>(cinema1, filmB, <span class="stringliteral">&quot;ZUBIARTE SALA 2&quot;</span>, Calendar.getInstance().getTime(), 100);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            pm.makePersistent(room2);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a> room3 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>(cinema1, filmC, <span class="stringliteral">&quot;ZUBIARTE SALA 3&quot;</span>, Calendar.getInstance().getTime(), 100);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            pm.makePersistent(room3);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a> room4 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>(cinema2, filmA, <span class="stringliteral">&quot;SANTANDER SALA 1&quot;</span>, Calendar.getInstance().getTime(), 100);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            pm.makePersistent(room4);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a> room5 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>(cinema2, filmB, <span class="stringliteral">&quot;SANTANDER SALA 2&quot;</span>, Calendar.getInstance().getTime(), 100);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            pm.makePersistent(room5);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a> room6 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>(cinema2, filmC, <span class="stringliteral">&quot;SANTANDER SALA 3&quot;</span>, Calendar.getInstance().getTime(), 100);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            pm.makePersistent(room6);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a> room7 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>(cinema3, filmA, <span class="stringliteral">&quot;BARAKALDO SALA 1&quot;</span>, Calendar.getInstance().getTime(), 100);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            pm.makePersistent(room7);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a> room8 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>(cinema3, filmB, <span class="stringliteral">&quot;BARAKALDO SALA 2&quot;</span>, Calendar.getInstance().getTime(), 100);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            pm.makePersistent(room8);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a> room9 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>(cinema3, filmC, <span class="stringliteral">&quot;BARAKALDO SALA 3&quot;</span>, Calendar.getInstance().getTime(), 100);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            pm.makePersistent(room9);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a> p1 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a>(<span class="stringliteral">&quot;Palomitas Medianas&quot;</span>, <span class="stringliteral">&quot;500g&quot;</span>, 4,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    <span class="stringliteral">&quot;https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg&quot;</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            pm.makePersistent(p1);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a> p2 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a>(<span class="stringliteral">&quot;Palomitas Grandes&quot;</span>, <span class="stringliteral">&quot;1000g&quot;</span>, 6,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    <span class="stringliteral">&quot;https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg&quot;</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            pm.makePersistent(p2);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a> p3 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a>(<span class="stringliteral">&quot;Palomitas Grandes + Coca Cola&quot;</span>, <span class="stringliteral">&quot;Unas palomitas grandes y coca cola&quot;</span>, 8,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    <span class="stringliteral">&quot;https://previews.123rf.com/images/imagestore/imagestore1606/imagestore160601787/58756143-palomitas-en-rect%C3%A1ngulo-con-el-color-en-la-copa-para-llevar-aislado-en-el-fondo-blanco.jpg&quot;</span>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            pm.makePersistent(p3);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_pay_pal.html">PayPal</a> pp1 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_pay_pal.html">PayPal</a>(<span class="stringliteral">&quot;jaimesantamazo@hotmail.com&quot;</span>, <span class="stringliteral">&quot;123&quot;</span>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            pm.makePersistent(pp1);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html">Order</a> o1 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html">Order</a>(<span class="stringliteral">&quot;jaimesantamazo@opendeusto.es&quot;</span>, <span class="keyword">null</span>, 3, <span class="stringliteral">&quot;Pendiente de pago&quot;</span>, <span class="stringliteral">&quot;Vacio&quot;</span>,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    <span class="stringliteral">&quot;pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2 Entrada:3 fila:3 asiento:3&quot;</span>,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    24);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            pm.makePersistent(o1);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html">Order</a> o2 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html">Order</a>(<span class="stringliteral">&quot;jaimesantamazo@opendeusto.es&quot;</span>, <span class="keyword">null</span>, 1, <span class="stringliteral">&quot;Pendiente de pago&quot;</span>, <span class="stringliteral">&quot;Vacio&quot;</span>,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    <span class="stringliteral">&quot;pelicula:Infinity war Entrada:1 fila:1 asiento:1&quot;</span>, 8);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            pm.makePersistent(o2);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html">Order</a> o3 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_order.html">Order</a>(<span class="stringliteral">&quot;jaimesantamazo@opendeusto.es&quot;</span>, <span class="keyword">null</span>, 2, <span class="stringliteral">&quot;Pendiente de pago&quot;</span>, <span class="stringliteral">&quot;Vacio&quot;</span>,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                    <span class="stringliteral">&quot;pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2&quot;</span>, 16);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            pm.makePersistent(o3);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            tx.commit();</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        } <span class="keywordflow">finally</span> {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">if</span> (tx.isActive()) {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                tx.rollback();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            pm.close();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html">es.deusto.spq.Billboard</a></div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00006">Billboard.java:6</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_a77f04c3b1d8e655846273ac7e6847d63"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#a77f04c3b1d8e655846273ac7e6847d63">es.deusto.spq.Billboard.setFilmBillboard</a></div><div class="ttdeci">void setFilmBillboard(Film filmBillboard)</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00016">Billboard.java:16</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_cinema_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_cinema.html">es.deusto.spq.Cinema</a></div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00009">Cinema.java:9</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html">es.deusto.spq.Film</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00010">Film.java:10</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_order_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_order.html">es.deusto.spq.Order</a></div><div class="ttdef"><b>Definition:</b> <a href="_order_8java_source.html#l00012">Order.java:12</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_pay_pal_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_pay_pal.html">es.deusto.spq.PayPal</a></div><div class="ttdef"><b>Definition:</b> <a href="_pay_pal_8java_source.html#l00007">PayPal.java:7</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_product_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_product.html">es.deusto.spq.Product</a></div><div class="ttdef"><b>Definition:</b> <a href="_product_8java_source.html#l00009">Product.java:9</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_release_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_release.html">es.deusto.spq.Release</a></div><div class="ttdef"><b>Definition:</b> <a href="_release_8java_source.html#l00009">Release.java:9</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_room_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_room.html">es.deusto.spq.Room</a></div><div class="ttdef"><b>Definition:</b> <a href="_room_8java_source.html#l00010">Room.java:10</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_user_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_user.html">es.deusto.spq.User</a></div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00009">User.java:9</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1util_1_1_prepared_data_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1util_1_1_prepared_data.html">es.deusto.spq.util.PreparedData</a></div><div class="ttdef"><b>Definition:</b> <a href="_prepared_data_8java_source.html#l00020">PreparedData.java:20</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1util_1_1_prepared_data_html_af81584db142b678a9eba52d031a4bcba"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1util_1_1_prepared_data.html#af81584db142b678a9eba52d031a4bcba">es.deusto.spq.util.PreparedData.main</a></div><div class="ttdeci">static void main(String[] args)</div><div class="ttdef"><b>Definition:</b> <a href="_prepared_data_8java_source.html#l00022">PreparedData.java:22</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
