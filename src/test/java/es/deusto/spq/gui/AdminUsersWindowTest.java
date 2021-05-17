@@ -50,32 +50,8 @@ public class AdminUsersWindowTest {
 		int size = users.size();
 		double selectedNumber = Math.floor(Math.random()*size);
 		int selectedUser = (int) Math.round(selectedNumber);
-		//System.out.println(selectedUser);
-		//System.out.println(users.get(selectedUser).getId());
 		if(selectedNumber+1==users.get(selectedUser).getId()) {
 			users.remove(selectedUser);
-			//System.out.println(users);
-			/*PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-			PersistenceManager pm = pmf.getPersistenceManager();
-			Transaction tx = pm.currentTransaction();
-			System.out.println("Eliminando usuario de la BD");
-			
-			try {
-				tx.begin();
-				User user = users.get(selectedUser);
-				System.out.println(user.toString());
-				User u = pm.getObjectById(User.class, user.getId());
-				pm.deletePersistent(u);
-				
-				tx.commit();
-				System.out.println("Eliminada usuario de la Base de Datos");
-				
-				
-			}finally {
-				if (tx.isActive()) {
-					tx.rollback();
-				}
-			}*/
 			assertEquals(users.size(), size-1);
 			
 		}
