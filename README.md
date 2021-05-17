@@ -47,5 +47,9 @@ Para comprobar los teses de integracion
 Para comprobar los teses de la ventana
 
     mvn verify -P gui
+
+Para generar la documentación mediante Doxyfile
+    
+    mvn doxygen:report
     
  -------------------------------------------------------------------------------   
