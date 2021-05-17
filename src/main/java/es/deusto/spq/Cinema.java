@@ -1,3 +1,6 @@
+/** \file 
+ * Breve descripción de es.deusto.spq Cinema.java. May 17, 2021
+ */
 package es.deusto.spq;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
@@ -7,6 +10,10 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Cinema {
+	/**
+	 * Clase base Cine.
+	 *
+	 */
 	@PrimaryKey
     @Persistent(valueStrategy=IdGeneratorStrategy.NATIVE)
     protected long id;
