@@ -15,3 +15,7 @@ buildNumber.properties
 /bin1/
 bin/
 datanucleus.log
+html/
+latex/
+docs/html/
+docs/latex/
