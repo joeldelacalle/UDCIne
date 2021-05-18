@@ -75,7 +75,7 @@ public class OrderWindow extends JFrame {
 	}
 
 	private long totalPrice;
-	
+
 	/**
 	 * Construir la ventana Order con sus atributos correspondientes
 	 */
@@ -205,9 +205,17 @@ public class OrderWindow extends JFrame {
 	}
 
 	/**
+	 * Obtener el nickname de usuario en un JLabel
+	 */
+
+	public JLabel getLblUserName() {
+		return lblUserName;
+	}
+
+	/**
 	 * Creación de un pedido con los parámetros obtenidos dentro de esta ventana
 	 */
-	private void CrearPedido(final DefaultListModel<Film> listModelShoppingCart, Film selectedFilm, String nickName) {
+	public void CrearPedido(final DefaultListModel<Film> listModelShoppingCart, Film selectedFilm, String nickName) {
 		List<Ticket> tickets = new ArrayList<Ticket>();
 
 		UserResource ur = new UserResource();
@@ -253,6 +261,8 @@ public class OrderWindow extends JFrame {
 		o.setTickets("pelicula:" + selectedFilm.getName() + sb.toString());
 
 		o.setPrice(totalPrice);
+
+		System.out.println(o.toString());
 		PaymentWindow pw = new PaymentWindow(o);
 		pw.setVisible(true);
 	}
