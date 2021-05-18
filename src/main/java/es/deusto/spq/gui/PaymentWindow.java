@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import es.deusto.spq.Order;
 import es.deusto.spq.PayPal;
+import es.deusto.spq.Receipt;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -204,7 +205,7 @@ public class PaymentWindow extends JFrame {
 					String Tickets = o.getTickets();
 					long Price = o.getPrice();
 					Date Fecha = o.getDate();
-
+					Receipt r = new Receipt(Email,Fecha,o,Price);
 					try {
 						FileWriter archivo = new FileWriter("Facturas/" + Email + ".txt", true);
 
@@ -230,7 +231,7 @@ public class PaymentWindow extends JFrame {
 
 					try {
 						tx.begin();
-
+						pm.makePersistent(r);
 						pm.makePersistent(o);
 
 						tx.commit();
