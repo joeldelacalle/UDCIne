@@ -1,7 +1,10 @@
 <map id="es.deusto.spq.Film.getName" name="es.deusto.spq.Film.getName">
-<area shape="rect" id="node1" title=" " alt="" coords="264,111,453,138"/>
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_film_window.html#a00193148270a70a68356dd4a7877b7b1" title=" " alt="" coords="9,5,213,47"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_film_window_test.html#a1d860182cf6d36b2048e1bba6ba67386" title=" " alt="" coords="11,71,211,112"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a2075c92d4271165408bb84085c7e1b6f" title=" " alt="" coords="5,136,216,177"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1_film_test.html#a342ef1559590eb6aca571da0afe85baa" title=" " alt="" coords="19,201,203,243"/>
+<area shape="rect" id="node1" title=" " alt="" coords="535,163,724,190"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_test.html#a1144e9bfb3a7465065547256e0e0c7a2" title=" " alt="" coords="264,5,487,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a013277d533e0cff51814f54a57a536f6" title=" " alt="" coords="270,123,481,164"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a2075c92d4271165408bb84085c7e1b6f" title=" " alt="" coords="5,64,216,105"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_film_window.html#a00193148270a70a68356dd4a7877b7b1" title=" " alt="" coords="273,188,477,229"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_film_window_test.html#a1d860182cf6d36b2048e1bba6ba67386" title=" " alt="" coords="275,253,475,295"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1_film_test.html#a342ef1559590eb6aca571da0afe85baa" title=" " alt="" coords="283,319,467,360"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a4461cdb5aabdd68f5daee16fedb02ee9" title=" " alt="" coords="7,129,214,171"/>
 </map>

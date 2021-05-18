@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lastrealeasestest_350',['LastRealeasesTest',['../classes_1_1deusto_1_1spq_1_1gui_1_1_last_realeases_test.html',1,'es::deusto::spq::gui']]],
-  ['lastreleaseswindow_351',['LastReleasesWindow',['../classes_1_1deusto_1_1spq_1_1gui_1_1_last_releases_window.html',1,'es::deusto::spq::gui']]]
+  ['lastrealeasestest_363',['LastRealeasesTest',['../classes_1_1deusto_1_1spq_1_1gui_1_1_last_realeases_test.html',1,'es::deusto::spq::gui']]],
+  ['lastreleaseswindow_364',['LastReleasesWindow',['../classes_1_1deusto_1_1spq_1_1gui_1_1_last_releases_window.html',1,'es::deusto::spq::gui']]]
 ];

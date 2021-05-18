@@ -1,9 +1,12 @@
 <map id="es.deusto.spq.User.getEmail" name="es.deusto.spq.User.getEmail">
-<area shape="rect" id="node1" title=" " alt="" coords="507,143,697,170"/>
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_register_window_test.html#ad56d40151899083310cb42b6456a8b24" title=" " alt="" coords="267,5,444,47"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a149c572246c26da41c67a5608292bd62" title=" " alt="" coords="252,71,459,112"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#a258a01c7a016b2569af199215cd24387" title=" " alt="" coords="269,136,442,177"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#abe8f0a4139d589824484f3225a886daa" title=" " alt="" coords="256,201,455,243"/>
-<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1_user_test.html#a54477ad8f61337b796f12ce4712b199c" title=" " alt="" coords="262,267,449,308"/>
-<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#ad21c9f04b42b2bef0e734666ae750de8" title=" " alt="" coords="5,201,204,243"/>
+<area shape="rect" id="node1" title=" " alt="" coords="523,175,713,202"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a013277d533e0cff51814f54a57a536f6" title=" " alt="" coords="264,37,475,79"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a149c572246c26da41c67a5608292bd62" title=" " alt="" coords="266,103,473,144"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#a258a01c7a016b2569af199215cd24387" title=" " alt="" coords="283,168,456,209"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#abe8f0a4139d589824484f3225a886daa" title=" " alt="" coords="270,233,469,275"/>
+<area shape="rect" id="node10" href="$classes_1_1deusto_1_1spq_1_1_user_test.html#a54477ad8f61337b796f12ce4712b199c" title=" " alt="" coords="276,299,463,340"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a2075c92d4271165408bb84085c7e1b6f" title=" " alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a4461cdb5aabdd68f5daee16fedb02ee9" title=" " alt="" coords="7,71,214,112"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a3db1ebf258b30134fe0aa0178c444940" title=" " alt="" coords="7,168,214,209"/>
+<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#ad21c9f04b42b2bef0e734666ae750de8" title=" " alt="" coords="11,233,210,275"/>
 </map>

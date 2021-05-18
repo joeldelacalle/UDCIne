@@ -1,4 +1,6 @@
 <map id="es.deusto.spq.gui.OrderWindow.setProducts" name="es.deusto.spq.gui.OrderWindow.setProducts">
-<area shape="rect" id="node1" title=" " alt="" coords="273,5,503,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="273,71,503,112"/>
 <area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_cinema_food_window.html#ac9232fabcc48069ad2d5aaec8bfde5bd" title=" " alt="" coords="5,5,225,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a4461cdb5aabdd68f5daee16fedb02ee9" title=" " alt="" coords="12,71,219,112"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a59aace6531cb8f49d8e53e53e2a6a85b" title=" " alt="" coords="12,136,219,177"/>
 </map>

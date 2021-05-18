@@ -1,4 +1,7 @@
 <map id="es.deusto.spq.Order.setTickets" name="es.deusto.spq.Order.setTickets">
-<area shape="rect" id="node1" title=" " alt="" coords="244,13,448,39"/>
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1_order_test.html#a7549f9245166573d2888b3f8e9076261" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="523,78,727,105"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a013277d533e0cff51814f54a57a536f6" title=" " alt="" coords="264,37,475,79"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1_order_test.html#a7549f9245166573d2888b3f8e9076261" title=" " alt="" coords="274,103,465,144"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a2075c92d4271165408bb84085c7e1b6f" title=" " alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a4461cdb5aabdd68f5daee16fedb02ee9" title=" " alt="" coords="7,71,214,112"/>
 </map>
