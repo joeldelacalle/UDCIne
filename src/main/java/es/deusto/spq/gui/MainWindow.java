@@ -209,7 +209,10 @@ public class MainWindow extends JFrame {
 		JButton btnNewButton = new JButton("Facturas");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				ReceiptWindow rw = new ReceiptWindow();
 				UserResource ur = new UserResource();
+				rw.SetUserName(ur.getUser(lblUserName.getText()));
+				rw.setVisible(true);
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 20));

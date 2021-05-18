@@ -284,7 +284,7 @@ public class RatingWindow extends JFrame {
 		lblFlecha.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblFlecha.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblFlecha.setForeground(new Color(255, 255, 255));
-		lblFlecha.setBounds(50, 10, 25, 31);
+		lblFlecha.setBounds(29, 27, 25, 31);
 		contentPane.add(lblFlecha);
 		
 		
