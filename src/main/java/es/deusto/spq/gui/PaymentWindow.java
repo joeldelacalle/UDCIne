@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la Ventana PaymentWindow es.deusto.spq.gui PaymentWindow.java. May 18, 2021
+ */
 package es.deusto.spq.gui;
 
 import java.awt.BorderLayout;
@@ -46,6 +49,10 @@ import java.awt.event.ActionEvent;
 
 public class PaymentWindow extends JFrame {
 
+	/**
+	 * Ventana de Pago.
+	 *
+	 */
 	private JPanel contentPane;
 	private JTextField textField;
 	private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
@@ -55,7 +62,9 @@ public class PaymentWindow extends JFrame {
 	final WebTarget appTarget = cliente.target("http://localhost:8080/myapp");
 	final WebTarget pagoTarget = appTarget.path("paypal");
 
-	
+	/**
+	 * Construir la ventana de Pago con sus atributos correspondientes
+	 */
 	public PaymentWindow(final Order o) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 689, 480);
@@ -99,69 +108,9 @@ public class PaymentWindow extends JFrame {
 		JButton btnNewButton = new JButton("Saltar pago");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				PagarCaja();
+				PagarCaja(o);
 			}
 
-			private void PagarCaja() {
-				String[] opciones = { "Aceptar", "Cancelar" };
-				String confirmacion = "¿Estas seguro de que quieres pagar en la caja?";
-				int respuesta = JOptionPane.showOptionDialog(null, confirmacion, "¿Estas seguro?",
-						JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				switch (respuesta) {
-				case 0:
-					JOptionPane.showMessageDialog(null, "Se ha llevado a cabo la reserva, pendiente de pago");
-					o.setPaymentMethod("Pendiente de pago");
-					String Email = o.getMail();
-					String Paymentmethod = o.getPaymentMethod();
-					String Products = o.getProducts();
-					String Tickets = o.getTickets();
-					long Price = o.getPrice();
-					Date Fecha = o.getDate();
-					
-					try{
-						FileWriter archivo = new FileWriter("Facturas/"+Email+".txt", true);
-			
-						PrintWriter escribir = new PrintWriter(archivo);
-			
-						String cadena = " -----------------" + "\r\n" + "|-Fecha de compra: " + Fecha + "\r\n" +"|-Email: " + Email + "\r\n" +"|-Tickets: " + Tickets + "\r\n" + "|-Products: " + Products +"\r\n" + "|-Paymentmethod: " + Paymentmethod + "\r\n" + "|-Price: " + Price + "\r\n" + " -----------------";
-						escribir.print(cadena);
-			
-						archivo.close();
-					}catch(IOException e6) {
-						e6.printStackTrace();
-					}
-					PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-
-					PersistenceManager pm = pmf.getPersistenceManager();
-					Transaction tx = pm.currentTransaction();
-
-					System.out.println("Añadiendo pedido en la BD");
-
-					try {
-						tx.begin();
-
-						pm.makePersistent(o);
-
-						tx.commit();
-						System.out.println("Añadido una nuevo pedido a la Base de Datos");
-
-					} finally {
-						if (tx.isActive()) {
-							tx.rollback();
-						}
-						pm.close();
-					}
-					dispose();
-					MainWindow mw = new MainWindow();
-					mw.setVisible(true);
-					break;
-				case 1:
-					JOptionPane.showMessageDialog(null, "Se ha cancelado la operacion");
-					break;
-				default:
-					break;
-				}
-			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnNewButton.setBounds(440, 322, 136, 23);
@@ -216,80 +165,6 @@ public class PaymentWindow extends JFrame {
 				PagarPaypal(o);
 			}
 
-			private void PagarPaypal(Order o) {
-				String email = textField.getText();
-				String contraseña = String.valueOf(passwordField.getPassword());
-				String[] opciones = { "Aceptar", "Cancelar" };
-				String confirmacion = "¿Estas seguro de que quieres pagar con PayPal?";
-				int respuesta = JOptionPane.showOptionDialog(null, confirmacion, "¿Estas seguro?",
-						JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-				switch (respuesta) {
-				case 0:
-					if (!email.matches(EMAIL_PATTERN)) {
-						JOptionPane.showMessageDialog(null, "Email no valido", "ERROR", JOptionPane.ERROR_MESSAGE);
-					}else{
-						WebTarget PaypalTarget = pagoTarget.path("getemail").queryParam("email", email);
-						GenericType<PayPal> genericType = new GenericType<PayPal>() {};
-						PayPal paypal = PaypalTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-						if(paypal.getPassword().equals(contraseña)) {
-							JOptionPane.showMessageDialog(null, "Usuario correcto, se ha llevado a cabo la reserva, pagada");
-							o.setPaymentMethod("Pagado con Paypal");
-							String Email = o.getMail();
-							String Paymentmethod = o.getPaymentMethod();
-							String Products = o.getProducts();
-							String Tickets = o.getTickets();
-							long Price = o.getPrice();
-							Date Fecha = o.getDate();
-							
-							try{
-								FileWriter archivo = new FileWriter("Facturas/"+Email+".txt", true);
-					
-								PrintWriter escribir = new PrintWriter(archivo);
-					
-								String cadena = " -----------------" + "\r\n" + "|-Fecha de compra: " + Fecha + "\r\n" +"|-Email: " + Email + "\r\n" +"|-Tickets: " + Tickets + "\r\n" + "|-Products: " + Products +"\r\n" + "|-Paymentmethod: " + Paymentmethod + "\r\n" + "|-Price: " + Price + "\r\n" + " -----------------";
-								escribir.print(cadena);
-					
-								archivo.close();
-							}catch(IOException e6) {
-								e6.printStackTrace();
-							}
-							
-							PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-
-							PersistenceManager pm = pmf.getPersistenceManager();
-							Transaction tx = pm.currentTransaction();
-
-							System.out.println("Añadiendo pedido en la BD");
-
-							try {
-								tx.begin();
-
-								pm.makePersistent(o);
-
-								tx.commit();
-								System.out.println("Añadido una nuevo pedido a la Base de Datos");
-
-							} finally {
-								if (tx.isActive()) {
-									tx.rollback();
-								}
-								pm.close();
-							}
-							dispose();
-							MainWindow mw = new MainWindow();
-							mw.setVisible(true);
-						}else {
-							JOptionPane.showMessageDialog(null, "Usuario incorrecto");
-						}
-					}
-					break;
-				case 1:
-					JOptionPane.showMessageDialog(null, "Se ha cancelado la operacion");
-					break;
-				default:
-					break;
-				}
-			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnNewButton_1.setBounds(464, 201, 89, 23);
@@ -300,4 +175,154 @@ public class PaymentWindow extends JFrame {
 		lblNewLabel_4.setBounds(440, 272, 136, 23);
 		contentPane.add(lblNewLabel_4);
 	}
+
+	/**
+	 * Metodo para pagar con PayPal
+	 */
+	private void PagarPaypal(Order o) {
+		String email = textField.getText();
+		String contraseña = String.valueOf(passwordField.getPassword());
+		String[] opciones = { "Aceptar", "Cancelar" };
+		String confirmacion = "¿Estas seguro de que quieres pagar con PayPal?";
+		int respuesta = JOptionPane.showOptionDialog(null, confirmacion, "¿Estas seguro?",
+				JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+		switch (respuesta) {
+		case 0:
+			if (!email.matches(EMAIL_PATTERN)) {
+				JOptionPane.showMessageDialog(null, "Email no valido", "ERROR", JOptionPane.ERROR_MESSAGE);
+			} else {
+				WebTarget PaypalTarget = pagoTarget.path("getemail").queryParam("email", email);
+				GenericType<PayPal> genericType = new GenericType<PayPal>() {
+				};
+				PayPal paypal = PaypalTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+				if (paypal.getPassword().equals(contraseña)) {
+					JOptionPane.showMessageDialog(null, "Usuario correcto, se ha llevado a cabo la reserva, pagada");
+					o.setPaymentMethod("Pagado con Paypal");
+					String Email = o.getMail();
+					String Paymentmethod = o.getPaymentMethod();
+					String Products = o.getProducts();
+					String Tickets = o.getTickets();
+					long Price = o.getPrice();
+					Date Fecha = o.getDate();
+
+					try {
+						FileWriter archivo = new FileWriter("Facturas/" + Email + ".txt", true);
+
+						PrintWriter escribir = new PrintWriter(archivo);
+
+						String cadena = " -----------------" + "\r\n" + "|-Fecha de compra: " + Fecha + "\r\n"
+								+ "|-Email: " + Email + "\r\n" + "|-Tickets: " + Tickets + "\r\n" + "|-Products: "
+								+ Products + "\r\n" + "|-Paymentmethod: " + Paymentmethod + "\r\n" + "|-Price: " + Price
+								+ "\r\n" + " -----------------";
+						escribir.print(cadena);
+
+						archivo.close();
+					} catch (IOException e6) {
+						e6.printStackTrace();
+					}
+
+					PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+
+					PersistenceManager pm = pmf.getPersistenceManager();
+					Transaction tx = pm.currentTransaction();
+
+					System.out.println("Añadiendo pedido en la BD");
+
+					try {
+						tx.begin();
+
+						pm.makePersistent(o);
+
+						tx.commit();
+						System.out.println("Añadido una nuevo pedido a la Base de Datos");
+
+					} finally {
+						if (tx.isActive()) {
+							tx.rollback();
+						}
+						pm.close();
+					}
+					dispose();
+					MainWindow mw = new MainWindow();
+					mw.setVisible(true);
+				} else {
+					JOptionPane.showMessageDialog(null, "Usuario incorrecto");
+				}
+			}
+			break;
+		case 1:
+			JOptionPane.showMessageDialog(null, "Se ha cancelado la operacion");
+			break;
+		default:
+			break;
+		}
+	}
+
+	/**
+	 * Metodo para pagar En caja
+	 */
+	private void PagarCaja(Order o) {
+		String[] opciones = { "Aceptar", "Cancelar" };
+		String confirmacion = "¿Estas seguro de que quieres pagar en la caja?";
+		int respuesta = JOptionPane.showOptionDialog(null, confirmacion, "¿Estas seguro?",
+				JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+		switch (respuesta) {
+		case 0:
+			JOptionPane.showMessageDialog(null, "Se ha llevado a cabo la reserva, pendiente de pago");
+			o.setPaymentMethod("Pendiente de pago");
+			String Email = o.getMail();
+			String Paymentmethod = o.getPaymentMethod();
+			String Products = o.getProducts();
+			String Tickets = o.getTickets();
+			long Price = o.getPrice();
+			Date Fecha = o.getDate();
+
+			try {
+				FileWriter archivo = new FileWriter("Facturas/" + Email + ".txt", true);
+
+				PrintWriter escribir = new PrintWriter(archivo);
+
+				String cadena = " -----------------" + "\r\n" + "|-Fecha de compra: " + Fecha + "\r\n" + "|-Email: "
+						+ Email + "\r\n" + "|-Tickets: " + Tickets + "\r\n" + "|-Products: " + Products + "\r\n"
+						+ "|-Paymentmethod: " + Paymentmethod + "\r\n" + "|-Price: " + Price + "\r\n"
+						+ " -----------------";
+				escribir.print(cadena);
+
+				archivo.close();
+			} catch (IOException e6) {
+				e6.printStackTrace();
+			}
+			PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+
+			PersistenceManager pm = pmf.getPersistenceManager();
+			Transaction tx = pm.currentTransaction();
+
+			System.out.println("Añadiendo pedido en la BD");
+
+			try {
+				tx.begin();
+
+				pm.makePersistent(o);
+
+				tx.commit();
+				System.out.println("Añadido una nuevo pedido a la Base de Datos");
+
+			} finally {
+				if (tx.isActive()) {
+					tx.rollback();
+				}
+				pm.close();
+			}
+			dispose();
+			MainWindow mw = new MainWindow();
+			mw.setVisible(true);
+			break;
+		case 1:
+			JOptionPane.showMessageDialog(null, "Se ha cancelado la operacion");
+			break;
+		default:
+			break;
+		}
+	}
+
 }

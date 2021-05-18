@@ -1,5 +1,4 @@
 <map id="es.deusto.spq.Order.getPaymentMethod" name="es.deusto.spq.Order.getPaymentMethod">
-<area shape="rect" id="node1" title=" " alt="" coords="244,39,459,80"/>
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window.html#a89994d68d5bd652f2333741e737d2dcf" title=" " alt="" coords="10,5,191,47"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1_order_test.html#aea47f790fd37f968a7d32a0c531fc158" title=" " alt="" coords="5,71,196,112"/>
+<area shape="rect" id="node1" title=" " alt="" coords="244,5,459,47"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1_order_test.html#aea47f790fd37f968a7d32a0c531fc158" title=" " alt="" coords="5,5,196,47"/>
 </map>

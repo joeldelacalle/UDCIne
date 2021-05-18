@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la Ventana VipWindow es.deusto.spq.gui VipWindow.java. May 18, 2021
+ */
 package es.deusto.spq.gui;
 
 import java.awt.Color;
@@ -25,11 +28,19 @@ import es.deusto.spq.jdo.UserResource;
 
 public class VipWindow extends JFrame {
 
+	/**
+	 * Ventana de Usuarios vip.
+	 *
+	 */
+
 	private JPanel contentPane;
 	private JLabel lblUserName = new JLabel("");
 	private DefaultListModel<Order> listModelOrders = new DefaultListModel<Order>();
 	private JList<Order> listOrders;
 
+	/**
+	 * Construir la ventana vip con sus atributos correspondientes
+	 */
 	public VipWindow() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,6 +79,10 @@ public class VipWindow extends JFrame {
 		lblName.setBounds(36, 21, 85, 29);
 		contentPane.add(lblName);
 
+		/**
+		 * Boton para obtener la lista de pedidos de un Usuario concreto
+		 */
+
 		JButton btnViewOrders = new JButton("Ver Mis Pedidos");
 		btnViewOrders.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -88,11 +103,18 @@ public class VipWindow extends JFrame {
 
 	}
 
+	/**
+	 * Obtener el nombre del usuario actualmente activo
+	 */
 	public void SetUserName(User u) {
 		this.lblUserName.setBounds(131, 24, 202, 26);
 		this.lblUserName.setText(u.getNickname());
 		this.contentPane.add(lblUserName);
 	}
+
+	/**
+	 * Obtener la lista de pedidos de un usuario concreto
+	 */
 
 	public List<Order> SetOrderRecord(String userName) {
 
@@ -104,14 +126,12 @@ public class VipWindow extends JFrame {
 
 		List<Order> oList = or.getOrders(u.getEmail());
 		List<Order> oList2 = new ArrayList<Order>();
-		for (int i = 0; i <  oList.size(); i++) {
-			
-			
-			
-			if ( oList.get(i).getMail().equals(u.getEmail())) {
-				
+		for (int i = 0; i < oList.size(); i++) {
+
+			if (oList.get(i).getMail().equals(u.getEmail())) {
+
 				oList2.add(oList.get(i));
-				// oList.remove(i);
+
 			}
 		}
 

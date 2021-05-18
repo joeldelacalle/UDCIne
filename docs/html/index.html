@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>UD Cine: Página principal</title>
+<title>UD Cine: UDCIne</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -60,11 +60,31 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">UD Cine Documentación</div>  </div>
+<div class="title">UDCIne </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a>Base de datos</p>
+<p>Crear una base de datos llamada cine y dar permisos al usuario por defecto </p><pre class="fragment">CREATE DATABASE cine;
+CREATE USER IF NOT EXISTS 'spq'@'localhost' IDENTIFIED BY 'spq';
+GRANT ALL ON cine.* TO 'spq'@'localhost';
+</pre><p> La configuración por defecto para la base de datos y los usuarios puede ser actualizada en el fichero resources/datanucleus.properties.</p>
+<p>Creación de las tablas</p>
+<p>Para la creación de las tablas se debe ejecutar el comando de maven </p><pre class="fragment">mvn compile datanucleus:schema-create
+</pre><p> Enhance del proyecto </p><pre class="fragment">mvn datanucleus:enhance
+</pre><p> Datos de prueba</p>
+<p>Se pueden introducir datos de prueba en la aplicación utilizando el comando de maven </p><pre class="fragment">mvn exec::java -Pdatos
+</pre><p> Inicio del servidor</p>
+<p>El servidor REST de la aplicación se lanza utilizando el comando </p><pre class="fragment">mvn exec::java
+</pre><p> Si el servidor ha sido iniciado correctamente se pueden obtener los datos de prueba accediendo con el navegador a la URL <a href="http://localhost:8080/myapp/films">http://localhost:8080/myapp/films</a>.</p>
+<p>Inicio de la aplicación cliente</p>
+<p>La aplicación cliente puede iniciarse usando el comando </p><pre class="fragment">mvn exec::java -Pcliente
+</pre><p> Para comprobar los teses de integracion </p><pre class="fragment">mvn verify -P integration
+</pre><p> Para comprobar los teses de la ventana </p><pre class="fragment">mvn verify -P gui
+</pre><p> Para generar la documentación mediante Doxyfile </p><pre class="fragment">mvn doxygen:report
+</pre> <hr  />
+ </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la Ventana RatingWindow es.deusto.spq.gui RatingWindow.java. May 18, 2021
+ */
 package es.deusto.spq.gui;
 
 import java.awt.Color;
@@ -38,6 +41,10 @@ import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
 public class RatingWindow extends JFrame {
+	/**
+	 * Ventana de valoraciones.
+	 *
+	 */
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -45,13 +52,16 @@ public class RatingWindow extends JFrame {
 	private JTextField textField_1;
 	JLabel lblX1 = new JLabel("X");
 	private JLabel labeluser = new JLabel("");
-	
+
 	Client client = ClientBuilder.newClient();
 
 	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
 	final WebTarget FilmsTarget = appTarget.path("films");
 	final WebTarget CinemasTarget = appTarget.path("cinemas");
 
+	/**
+	 * Construir la ventana de Valoraciones con sus atributos correspondientes
+	 */
 	public RatingWindow() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,27 +86,29 @@ public class RatingWindow extends JFrame {
 		final JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setBounds(29, 206, 97, 22);
 		contentPane.add(comboBox);
-		
-		GenericType<List<Film>> genericType = new GenericType<List<Film>>() {};
+
+		GenericType<List<Film>> genericType = new GenericType<List<Film>>() {
+		};
 		List<Film> films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-		
+
 		for (Film film : films) {
 			System.out.println(film.getName());
 			comboBox.addItem(film.getName());
 		}
-		
+
 		final JComboBox<String> comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(350, 206, 103, 22);
 		contentPane.add(comboBox_1);
-		
-		GenericType<List<Cinema>> genericType2 = new GenericType<List<Cinema>>() {};
+
+		GenericType<List<Cinema>> genericType2 = new GenericType<List<Cinema>>() {
+		};
 		List<Cinema> cinemas = CinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType2);
-		
+
 		for (Cinema cinema : cinemas) {
 			System.out.println(cinema.getName());
 			comboBox_1.addItem(cinema.getName());
 		}
-		
+
 		final JLabel lblNewLabel_3 = new JLabel("Peliculas");
 		lblNewLabel_3.setFont(new Font("Arial", Font.BOLD, 16));
 		lblNewLabel_3.setBounds(29, 181, 70, 14);
@@ -133,39 +145,6 @@ public class RatingWindow extends JFrame {
 				AñadirValoracionPeli(comboBox, listmodelpelis);
 			}
 
-			private void AñadirValoracionPeli(final JComboBox<String> comboBox,
-					final DefaultListModel<String> listmodelpelis) {
-				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-				
-				PersistenceManager pm = pmf.getPersistenceManager();
-				Transaction tx = pm.currentTransaction();
-				String user = labeluser.getText();
-				String name = comboBox.getSelectedItem().toString();
-				String text = textField.getText();
-				System.out.println("Añadiendo Valoracion en la BD");
-				if(user.isEmpty()) {
-					JOptionPane.showMessageDialog(null, "Porfavor, escribe tu usuario","ERROR", JOptionPane.ERROR_MESSAGE);
-				}else if(text.isEmpty()) {
-					JOptionPane.showMessageDialog(null, "Porfavor, escribe tu valoracion","ERROR", JOptionPane.ERROR_MESSAGE);
-				}else {
-				try {
-					String valoracionpeli = textField.getText();
-					listmodelpelis.addElement(valoracionpeli);
-					tx.begin();
-					Assessment assessment = new Assessment(user, name, text);
-					pm.makePersistent(assessment);
-					
-					tx.commit();
-					System.out.println("Añadido una nueva valoracion a la Base de Datos");
-					
-				}finally {
-					if (tx.isActive()) {
-						tx.rollback();
-					}
-					pm.close();
-				}
-			}
-			}
 		});
 		btnNewButton_1.setFont(new Font("Arial", Font.BOLD, 16));
 		btnNewButton_1.setBounds(220, 236, 84, 23);
@@ -177,39 +156,6 @@ public class RatingWindow extends JFrame {
 				AñadirValoracionCine(comboBox_1, listmodelcines);
 			}
 
-			private void AñadirValoracionCine(final JComboBox<String> comboBox_1,
-					final DefaultListModel<String> listmodelcines) {
-				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-				
-				PersistenceManager pm = pmf.getPersistenceManager();
-				Transaction tx = pm.currentTransaction();
-				String user = labeluser.getText();
-				String name = comboBox_1.getSelectedItem().toString();
-				String text = textField_1.getText();
-				System.out.println("Añadiendo Valoracion en la BD");
-				if(user.isEmpty()) {
-					JOptionPane.showMessageDialog(null, "Porfavor, escribe tu usuario","ERROR", JOptionPane.ERROR_MESSAGE);
-				}else if(text.isEmpty()) {
-					JOptionPane.showMessageDialog(null, "Porfavor, escribe tu valoracion","ERROR", JOptionPane.ERROR_MESSAGE);
-				}else {
-				try {
-					String valoracioncine = textField_1.getText();
-					listmodelcines.addElement(valoracioncine);
-					tx.begin();
-					Assessment assessment = new Assessment(user, name, text);
-					pm.makePersistent(assessment);
-					
-					tx.commit();
-					System.out.println("Añadido una nueva valoracion a la Base de Datos");
-					
-				}finally {
-					if (tx.isActive()) {
-						tx.rollback();
-					}
-					pm.close();
-				}
-				}
-			}
 		});
 		btnNewButton_2.setFont(new Font("Arial", Font.BOLD, 16));
 		btnNewButton_2.setBounds(551, 236, 87, 23);
@@ -230,10 +176,11 @@ public class RatingWindow extends JFrame {
 		lblNewLabel_1_2.setBounds(401, 128, 191, 42);
 		contentPane.add(lblNewLabel_1_2);
 
-		/*JButton btnNewButton = new JButton("Exit");
-		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 16));
-		btnNewButton.setBounds(658, 448, 70, 49);
-		contentPane.add(btnNewButton);*/
+		/*
+		 * JButton btnNewButton = new JButton("Exit"); btnNewButton.setFont(new
+		 * Font("Cooper Black", Font.PLAIN, 16)); btnNewButton.setBounds(658, 448, 70,
+		 * 49); contentPane.add(btnNewButton);
+		 */
 
 		final JLabel lblX = new JLabel("X");
 		lblX.addMouseListener(new MouseAdapter() {
@@ -260,14 +207,14 @@ public class RatingWindow extends JFrame {
 		lblX.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblX.setForeground(new Color(255, 255, 255));
 		lblX.setBounds(707, 10, 19, 31);
-		
+
 		final JLabel lblFlecha = new JLabel("<-");
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				MainWindow vp = new MainWindow();
 				vp.setVisible(true);
-				dispose();		
+				dispose();
 			}
 
 			@Override
@@ -286,14 +233,13 @@ public class RatingWindow extends JFrame {
 		lblFlecha.setForeground(new Color(255, 255, 255));
 		lblFlecha.setBounds(29, 27, 25, 31);
 		contentPane.add(lblFlecha);
-		
-		
+
 		lblX1.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblX1.setForeground(Color.WHITE);
 		lblX1.setBounds(698, 35, 46, 14);
 		contentPane.add(lblX1);
 		lblX1.setVisible(true);
-		
+
 		lblX1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -313,12 +259,89 @@ public class RatingWindow extends JFrame {
 				lblX1.setForeground(Color.WHITE);
 			}
 		});
-		
+
 	}
+
+	/**
+	 * Establece el nickname de usuario en un JLabel
+	 */
 	public void SetUserName(User u) {
 		this.labeluser.setBounds(401, 82, 151, 26);
 		labeluser.setFont(new Font("Arial", Font.PLAIN, 20));
 		this.labeluser.setText(u.getNickname());
 		this.contentPane.add(this.labeluser);
+	}
+
+	/**
+	 * Metodo para añadir una valoracion sobre una pelicula
+	 */
+	private void AñadirValoracionPeli(final JComboBox<String> comboBox, final DefaultListModel<String> listmodelpelis) {
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		String user = labeluser.getText();
+		String name = comboBox.getSelectedItem().toString();
+		String text = textField.getText();
+		System.out.println("Añadiendo Valoracion en la BD");
+		if (user.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Porfavor, escribe tu usuario", "ERROR", JOptionPane.ERROR_MESSAGE);
+		} else if (text.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Porfavor, escribe tu valoracion", "ERROR", JOptionPane.ERROR_MESSAGE);
+		} else {
+			try {
+				String valoracionpeli = textField.getText();
+				listmodelpelis.addElement(valoracionpeli);
+				tx.begin();
+				Assessment assessment = new Assessment(user, name, text);
+				pm.makePersistent(assessment);
+
+				tx.commit();
+				System.out.println("Añadido una nueva valoracion a la Base de Datos");
+
+			} finally {
+				if (tx.isActive()) {
+					tx.rollback();
+				}
+				pm.close();
+			}
+		}
+	}
+
+	/**
+	 * Metodo para añadir una valoracion sobre un cine
+	 */
+	private void AñadirValoracionCine(final JComboBox<String> comboBox_1,
+			final DefaultListModel<String> listmodelcines) {
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		String user = labeluser.getText();
+		String name = comboBox_1.getSelectedItem().toString();
+		String text = textField_1.getText();
+		System.out.println("Añadiendo Valoracion en la BD");
+		if (user.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Porfavor, escribe tu usuario", "ERROR", JOptionPane.ERROR_MESSAGE);
+		} else if (text.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Porfavor, escribe tu valoracion", "ERROR", JOptionPane.ERROR_MESSAGE);
+		} else {
+			try {
+				String valoracioncine = textField_1.getText();
+				listmodelcines.addElement(valoracioncine);
+				tx.begin();
+				Assessment assessment = new Assessment(user, name, text);
+				pm.makePersistent(assessment);
+
+				tx.commit();
+				System.out.println("Añadido una nueva valoracion a la Base de Datos");
+
+			} finally {
+				if (tx.isActive()) {
+					tx.rollback();
+				}
+				pm.close();
+			}
+		}
 	}
 }

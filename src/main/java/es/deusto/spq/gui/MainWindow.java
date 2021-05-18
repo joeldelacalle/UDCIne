@@ -1,3 +1,7 @@
+/** \file 
+ * Descripción de la Ventana MainWindow es.deusto.spq.gui MainWindow.java. May 18, 2021
+ */
+
 package es.deusto.spq.gui;
 
 import java.awt.Color;
@@ -32,7 +36,7 @@ import es.deusto.spq.jdo.UserResource;
 public class MainWindow extends JFrame {
 
 	/**
-	 * 
+	 * Esta es la ventana principal de nuestra aplicacion
 	 */
 	private static final long serialVersionUID = 6673510127789501132L;
 	private JPanel contentPane;
@@ -41,6 +45,9 @@ public class MainWindow extends JFrame {
 	private JLabel lblUserName = new JLabel("");
 	private JLabel lblEmail = new JLabel("");
 
+	/**
+	 * Construir la ventana main con sus atributos correspondientes
+	 */
 	public MainWindow() {
 
 		setUndecorated(true);
@@ -67,6 +74,10 @@ public class MainWindow extends JFrame {
 		lblBillboard.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(lblBillboard);
 
+		/**
+		 * Botón que ejecuta la ventana de futuros estrenos pasandole los datos necesarios
+		 */
+		
 		JButton btnFutureFilms = new JButton("Futuros estrenos");
 		btnFutureFilms.setBounds(10, 429, 224, 61);
 		btnFutureFilms.addActionListener(new ActionListener() {
@@ -106,6 +117,9 @@ public class MainWindow extends JFrame {
 		lblX.setForeground(new Color(255, 255, 255));
 		contentPane.add(lblX);
 
+		/**
+		 * Botón que ejecuta la ventana de valoraciones pasandole los datos necesarios
+		 */
 		JButton btnAsessment = new JButton("Valorar");
 		btnAsessment.setBounds(587, 429, 153, 61);
 		btnAsessment.addActionListener(new ActionListener() {
@@ -193,6 +207,10 @@ public class MainWindow extends JFrame {
 
 		contentPane.add(btnFilm4);
 		
+		/**
+		 * Botón que ejecuta la ventana Vip pasandole los datos necesarios
+		 */
+		
 		JButton btnVip = new JButton("VIP");
 		btnVip.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnVip.addActionListener(new ActionListener() {
@@ -206,6 +224,9 @@ public class MainWindow extends JFrame {
 		btnVip.setBounds(412, 429, 165, 61);
 		contentPane.add(btnVip);
 		
+		/**
+		 * Botón que ejecuta la ventana de facturas pasandole los datos necesarios
+		 */
 		JButton btnNewButton = new JButton("Facturas");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -220,6 +241,10 @@ public class MainWindow extends JFrame {
 		contentPane.add(btnNewButton);
 
 	}
+	
+	/**
+	 * obtiene una pelicula de la cartelera en base a la posicion que le des
+	 */
 
 	public Film getBillboardFilm(int i) {
 
@@ -230,17 +255,28 @@ public class MainWindow extends JFrame {
 
 	}
 	
+	/**
+	 * Establece el nickname de usuario en un JLabel
+	 */
 	public void SetUserName (User u) {
 		this.lblUserName.setBounds(131, 24, 202, 26);
 		this.lblUserName.setText(u.getNickname());
 		this.contentPane.add(this.lblUserName);
 	}
 	
+	/**
+	 * Establece el mail en un JLabel
+	 */
+	
 	public void SetEmail (User u) {
 		this.lblUserName.setText(u.getEmail());
 		this.contentPane.add(this.lblEmail);
 		this.lblEmail.setVisible(false);
 	}
+	
+	/**
+	 * Establece el icono de cada boton 
+	 */
 
 	public void btnSetImageIcon(String urlS, JButton jb) throws IOException {
 		URL url = new URL(urlS);

@@ -1,3 +1,7 @@
+/** \file 
+ * Descripción de la Ventana OrderWindow es.deusto.spq.gui OrderWindow.java. May 18, 2021
+ */
+
 package es.deusto.spq.gui;
 
 import java.awt.Color;
@@ -38,7 +42,7 @@ import jakarta.ws.rs.client.ClientBuilder;
 public class OrderWindow extends JFrame {
 
 	/**
-	 * 
+	 * Ventana de pedidos
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -54,18 +58,27 @@ public class OrderWindow extends JFrame {
 	private List<Product> products = null;
 	private int numberTickets = 0;
 	private JLabel lblUserName = new JLabel("");
-	
 
+	/**
+	 * Obtener los productos Para la posterior generación del pedido
+	 */
 	public List<Product> getProducts() {
 		return products;
 	}
+
+	/**
+	 * Establecer los productos Para la posterior generación del pedido
+	 */
 
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
 
 	private long totalPrice;
-
+	
+	/**
+	 * Construir la ventana Order con sus atributos correspondientes
+	 */
 	public OrderWindow(final Film selectedFilm) {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -136,10 +149,10 @@ public class OrderWindow extends JFrame {
 				for (int i = 0; i < (Integer) spinner.getValue(); i++) {
 					listModelShoppingCart.addElement(selectedFilm);
 				}
-				 numberTickets = numberTickets + (int)spinner.getValue();
-				
+				numberTickets = numberTickets + (int) spinner.getValue();
+
 			}
-			
+
 		});
 		btnAdd.setBounds(38, 439, 158, 51);
 		contentPane.add(btnAdd);
@@ -181,20 +194,25 @@ public class OrderWindow extends JFrame {
 		contentPane.add(btnComida);
 
 	}
-	
+
+	/**
+	 * Establece el nickname de usuario en un JLabel
+	 */
 	public void SetUserName(User u) {
 		this.lblUserName.setBounds(131, 24, 202, 26);
 		this.lblUserName.setText(u.getNickname());
 		this.contentPane.add(this.lblUserName);
 	}
 
+	/**
+	 * Creación de un pedido con los parámetros obtenidos dentro de esta ventana
+	 */
 	private void CrearPedido(final DefaultListModel<Film> listModelShoppingCart, Film selectedFilm, String nickName) {
 		List<Ticket> tickets = new ArrayList<Ticket>();
-		
+
 		UserResource ur = new UserResource();
 
 		User u = ur.getUser(nickName);
-		
 
 		Order o = new Order(u.getEmail(), Calendar.getInstance().getTime(), numberTickets, "", null, "En caja", 0);
 		StringBuilder sb = new StringBuilder();
@@ -210,8 +228,6 @@ public class OrderWindow extends JFrame {
 			sb.append(" Entrada:" + ticketNum);
 			sb.append(" fila:" + tickets.get(i).getRow());
 			sb.append(" asiento:" + tickets.get(i).getSeat());
-
-			
 
 			totalPrice = totalPrice + ticketf.getPrice();
 

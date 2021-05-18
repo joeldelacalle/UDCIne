@@ -1,8 +1,9 @@
 <map id="es.deusto.spq.User.getEmail" name="es.deusto.spq.User.getEmail">
-<area shape="rect" id="node1" title=" " alt="" coords="507,111,697,138"/>
+<area shape="rect" id="node1" title=" " alt="" coords="507,143,697,170"/>
 <area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_register_window_test.html#ad56d40151899083310cb42b6456a8b24" title=" " alt="" coords="267,5,444,47"/>
 <area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a149c572246c26da41c67a5608292bd62" title=" " alt="" coords="252,71,459,112"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#abe8f0a4139d589824484f3225a886daa" title=" " alt="" coords="256,136,455,177"/>
-<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1_user_test.html#a54477ad8f61337b796f12ce4712b199c" title=" " alt="" coords="262,201,449,243"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#ad21c9f04b42b2bef0e734666ae750de8" title=" " alt="" coords="5,136,204,177"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#a258a01c7a016b2569af199215cd24387" title=" " alt="" coords="269,136,442,177"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#abe8f0a4139d589824484f3225a886daa" title=" " alt="" coords="256,201,455,243"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1_user_test.html#a54477ad8f61337b796f12ce4712b199c" title=" " alt="" coords="262,267,449,308"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#ad21c9f04b42b2bef0e734666ae750de8" title=" " alt="" coords="5,201,204,243"/>
 </map>

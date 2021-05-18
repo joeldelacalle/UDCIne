@@ -1,11 +1,12 @@
 <map id="es.deusto.spq.gui.MainWindow.MainWindow" name="es.deusto.spq.gui.MainWindow.MainWindow">
-<area shape="rect" id="node1" title=" " alt="" coords="5,159,212,200"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,188,212,229"/>
 <area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a78db5d7c1dc3ef5ed85f1a116eb6de4e" title=" " alt="" coords="277,5,503,47"/>
 <area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resources.html#a6ca398f7447f9e6d85598e2e8e8619bf" title=" " alt="" coords="271,71,509,112"/>
 <area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user_resource.html#a12039924e28a6029df559f3175041f5f" title=" " alt="" coords="260,137,520,163"/>
 <area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_film_window.html#a2ae90c241115f55f0c8b1b0ec36c00b4" title=" " alt="" coords="288,188,492,229"/>
 <area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_rating_window.html#adce1356b186f359e60664098e3b4efe1" title=" " alt="" coords="307,253,473,295"/>
-<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#a0b73da3725fdda41e642e2d65798aabb" title=" " alt="" coords="291,319,489,360"/>
+<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#ae58806798448b463c4e3bdb6c2441369" title=" " alt="" coords="303,319,477,360"/>
+<area shape="rect" id="node10" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#a0b73da3725fdda41e642e2d65798aabb" title=" " alt="" coords="291,384,489,425"/>
 <area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1_user.html#a4dbdafcb1847a0b029d2cbd8d21a8b83" title=" " alt="" coords="580,137,771,163"/>
-<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1_user.html#a6df6b0c745cb9da58600e97caa5df29f" title=" " alt="" coords="568,261,783,287"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1_user.html#a6df6b0c745cb9da58600e97caa5df29f" title=" " alt="" coords="568,293,783,319"/>
 </map>
