@@ -23,12 +23,13 @@ public class RegisterWindowTest {
 	@Before
 	public void setUp() throws Exception {
 		u = new User();
-		textFieldName = new JTextField("Nico");
-		textFieldNickname = new JTextField("nico");
-		textFieldEmail = new JTextField("nico@gmail.com");
+		textFieldName = new JTextField("Jaime");
+		textFieldNickname = new JTextField("jaimesanta");
+		textFieldEmail = new JTextField("jaimesantamazo@hotmail.com");
 		passwordField = new JPasswordField("1234");
-		textFieldPhoneNumber = new JTextField("672098761");
+		textFieldPhoneNumber = new JTextField("99");
 		rw = new RegisterWindow();
+		
 
 	}
 
