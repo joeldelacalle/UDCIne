@@ -61,6 +61,10 @@ public class AdminFilmsWindow extends JFrame {
 	//private FilmResources fr;
 	//private List<Film> films = fr.getFilms();
 	
+	/**
+	 * Crea la ventana de Administración de películas
+	 */
+	
 	public AdminFilmsWindow() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -221,6 +225,9 @@ public class AdminFilmsWindow extends JFrame {
         cbAge.setFont(new Font("Arial", Font.BOLD, 14));
         contentPane.add(cbAge);
         
+        /**
+    	 * La text area contiene un método para que no se pueda escribir más de 255 caracteres, incluso si se pega un texto más largo
+    	 */
         final JTextArea txtDescription = new JTextArea();
         txtDescription.addKeyListener(new KeyListener() {
 			
@@ -340,6 +347,9 @@ public class AdminFilmsWindow extends JFrame {
        
 	}
 	
+	/**
+	 * Añade una nueva película a la BD
+	 */
 	public void AñadirPeliculaBd(JTextField txtName,JTextField txtDirector,
 			 JTextField txtFoto, JComboBox<Integer> cbAge,JTextArea txtDescription) {
 		if(txtName.getText().equals("")||txtName.getText().equals("Título")||
@@ -379,6 +389,9 @@ public class AdminFilmsWindow extends JFrame {
 		}
 	}
 	
+	/**
+	 * Elimina la película seleccionada de la lista de la BD
+	 */
 	public void EliminarPeliculaBd() {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
