@@ -12,6 +12,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+          DISPLAY: ':99'
     services:
       mysql:
         image: mysql:5.7
@@ -57,8 +59,7 @@ jobs:
       run: |
           mvn --batch-mode --update-snapshots exec:java -P datos
           mvn --batch-mode --update-snapshots verify -P gui  
-      env:
-          DISPLAY: ':99'
+      
     - name: Install doxygen
       run: sudo apt-get install -y doxygen
     - name: Install graphviz
