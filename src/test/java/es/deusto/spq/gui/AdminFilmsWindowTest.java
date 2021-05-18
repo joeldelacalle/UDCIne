@@ -86,7 +86,6 @@ public class AdminFilmsWindowTest {
 	public void EliminarPeliculaBDTest() {
 		double selectedNumber = Math.floor(Math.random()*size);
 		int selectedFilm = (int) Math.round(selectedNumber);
-		films.add(f);
 		if(selectedNumber+1==films.get(selectedFilm).getId()) {
 			films.remove(selectedFilm);
 			assertEquals(films.size(), size-1);
