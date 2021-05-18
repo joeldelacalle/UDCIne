@@ -1,3 +1,6 @@
+/** \file 
+ * Breve descripción de es.deusto.spq Room.java. May 18, 2021
+ */
 package es.deusto.spq;
 
 import java.util.Date;
@@ -8,6 +11,10 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Room {
+	/**
+	 * Clase base Salas.
+	 *
+	 */
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.NATIVE)
 	protected long id;
@@ -18,6 +25,9 @@ public class Room {
 	protected Date date = null;
 	protected int seats = 100;
 
+	/**
+	 * Construir objeto Sala con sus atributos correspondientes.
+	 */
 	public Room(Cinema cinema, Film film, String name, Date date, int seats) {
 		super();
 		this.cinema = cinema;
@@ -27,53 +37,102 @@ public class Room {
 		this.seats = seats;
 	}
 
+	/**
+	 * Obtener el Id de una Sala
+	 */
+
 	public long getId() {
 		return id;
 	}
 
+	/**
+	 * Establecer el Id de una Sala
+	 */
 	public void setId(long id) {
 		this.id = id;
 	}
 
+	/**
+	 * Obtener el Cine de una Sala
+	 */
 	public Cinema getCinema() {
 		return cinema;
 	}
 
+	/**
+	 * Establecer el Cine de una Sala
+	 */
 	public void setCinema(Cinema cinema) {
 		this.cinema = cinema;
 	}
+
+	/**
+	 * Obtener la Pelicula de una Sala
+	 */
 
 	public Film getFilm() {
 		return film;
 	}
 
+	/**
+	 * Establecer la Pelicula de una Sala
+	 */
 	public void setFilm(Film film) {
 		this.film = film;
 	}
+
+	/**
+	 * Obtener el Nombre de una Sala
+	 */
 
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * Establecer el Nombre de una Sala
+	 */
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	/**
+	 * Obtener la fecha de una Sala
+	 */
 
 	public Date getDate() {
 		return date;
 	}
 
+	/**
+	 * Establecer la fecha de una Sala
+	 */
+
 	public void setDate(Date date) {
 		this.date = date;
 	}
+
+	/**
+	 * Obtener los asientos de una Sala
+	 */
 
 	public int getSeats() {
 		return seats;
 	}
 
+	/**
+	 * Establecer los asientos de una Sala
+	 */
+
 	public void setSeats(int seats) {
 		this.seats = seats;
 	}
+
+	/**
+	 * ToString de la Sala, saca un string con la estructura definida en el propio
+	 * método.
+	 */
 
 	@Override
 	public String toString() {
@@ -82,4 +141,3 @@ public class Room {
 	}
 
 }
-
