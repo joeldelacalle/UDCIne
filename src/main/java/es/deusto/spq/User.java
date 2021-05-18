@@ -39,7 +39,6 @@ public class User {
 	/**
 	 * Obtener el id de un Usuario
 	 */
-
 	public long getId() {
 		return id;
 	}
