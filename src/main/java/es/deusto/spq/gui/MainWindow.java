@@ -39,6 +39,7 @@ public class MainWindow extends JFrame {
 	private List<Film> films;
 	FilmResources fr = new FilmResources();
 	private JLabel lblUserName = new JLabel("");
+	private JLabel lblEmail = new JLabel("");
 
 	public MainWindow() {
 
@@ -67,7 +68,7 @@ public class MainWindow extends JFrame {
 		contentPane.add(lblBillboard);
 
 		JButton btnFutureFilms = new JButton("Futuros estrenos");
-		btnFutureFilms.setBounds(55, 429, 224, 61);
+		btnFutureFilms.setBounds(10, 429, 224, 61);
 		btnFutureFilms.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				LastReleasesWindow vne = new LastReleasesWindow();
@@ -202,8 +203,18 @@ public class MainWindow extends JFrame {
 				vw.setVisible(true);
 			}
 		});
-		btnVip.setBounds(289, 429, 288, 61);
+		btnVip.setBounds(412, 429, 165, 61);
 		contentPane.add(btnVip);
+		
+		JButton btnNewButton = new JButton("Facturas");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				UserResource ur = new UserResource();
+			}
+		});
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnNewButton.setBounds(244, 429, 158, 61);
+		contentPane.add(btnNewButton);
 
 	}
 
@@ -220,6 +231,12 @@ public class MainWindow extends JFrame {
 		this.lblUserName.setBounds(131, 24, 202, 26);
 		this.lblUserName.setText(u.getNickname());
 		this.contentPane.add(this.lblUserName);
+	}
+	
+	public void SetEmail (User u) {
+		this.lblUserName.setText(u.getEmail());
+		this.contentPane.add(this.lblEmail);
+		this.lblEmail.setVisible(false);
 	}
 
 	public void btnSetImageIcon(String urlS, JButton jb) throws IOException {
