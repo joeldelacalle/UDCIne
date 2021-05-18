@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.DefaultListModel;
@@ -102,14 +103,19 @@ public class VipWindow extends JFrame {
 		OrderResource or = new OrderResource();
 
 		List<Order> oList = or.getOrders(u.getEmail());
-		
-		/*for (int i = 0; i <  oList.size(); i++) {
-			if ( oList.get(i).getMail() != u.getEmail()) {
-				 oList.remove(i);
+		List<Order> oList2 = new ArrayList<Order>();
+		for (int i = 0; i <  oList.size(); i++) {
+			
+			
+			
+			if ( oList.get(i).getMail().equals(u.getEmail())) {
+				
+				oList2.add(oList.get(i));
+				// oList.remove(i);
 			}
-		}*/
+		}
 
-		return oList;
+		return oList2;
 
 	}
 }
