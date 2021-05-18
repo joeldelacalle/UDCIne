@@ -309,45 +309,6 @@ public class AdminFilmsWindow extends JFrame {
 				AñadirPeliculaBd(txtName, txtDirector, txtFoto, cbAge, txtDescription);
 				
 			}
-
-			private void AñadirPeliculaBd(final JTextField txtName, final JTextField txtDirector,
-					final JTextField txtFoto, final JComboBox<Integer> cbAge, final JTextArea txtDescription) {
-				if(txtName.getText().equals("")||txtName.getText().equals("Título")||
-						txtDirector.getText().equals("")||txtDirector.getText().equals("Director")||
-						txtDescription.getText().equals("")||txtDescription.getText().equals("Descripción (max 255)")||
-						txtFoto.getText().equals("")||txtFoto.getText().equals("Url Cartel")){
-					
-					lblMessage.setText("Por favor rellena los campos!");
-					
-				}else {
-					PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-					
-					PersistenceManager pm = pmf.getPersistenceManager();
-					Transaction tx = pm.currentTransaction();
-					int age = Integer.parseInt(cbAge.getSelectedItem().toString());
-					System.out.println("Añadiendo película en la BD");
-					
-					try {
-						tx.begin();
-						Film film = new Film(txtDirector.getText().toString(), txtName.getText().toString(), txtDescription.getText().toString(), age, txtFoto.getText().toString(),textFieldTrailer.getText().toString());
-						pm.makePersistent(film);
-						
-						tx.commit();
-						System.out.println("Añadido una nueva película a la Base de Datos");
-						
-					}finally {
-						if (tx.isActive()) {
-							tx.rollback();
-						}
-						pm.close();
-						
-						AdminFilmsWindow afw = new AdminFilmsWindow();
-						afw.setVisible(true);
-						dispose();
-					
-					}
-				}
-			}
 		});
 		btnAdd.setBounds(481, 447, 200, 30);
 		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -359,35 +320,6 @@ public class AdminFilmsWindow extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				EliminarPeliculaBd();
-			}
-
-			private void EliminarPeliculaBd() {
-				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-				PersistenceManager pm = pmf.getPersistenceManager();
-				Transaction tx = pm.currentTransaction();
-				System.out.println("Eliminando película de la BD");
-				
-				try {
-					tx.begin();
-					Film film = listBillboard.getSelectedValue();
-					System.out.println(film.toString());
-					Film f = pm.getObjectById(Film.class, film.getId());
-					pm.deletePersistent(f);
-					
-					tx.commit();
-					System.out.println("Eliminada película de la Base de Datos");
-					
-					
-				}finally {
-					if (tx.isActive()) {
-						tx.rollback();
-					}
-					pm.close();
-					
-					AdminFilmsWindow afw = new AdminFilmsWindow();
-					afw.setVisible(true);
-					dispose();
-				}
 			}
 		});
 		btnDelete.setBounds(115, 430, 200, 30);
@@ -405,5 +337,74 @@ public class AdminFilmsWindow extends JFrame {
         textFieldTrailer.setBorder(null);
         textFieldTrailer.setBounds(500, 210, 170, 20);
         contentPane.add(textFieldTrailer);
+       
+	}
+	
+	public void AñadirPeliculaBd(JTextField txtName,JTextField txtDirector,
+			 JTextField txtFoto, JComboBox<Integer> cbAge,JTextArea txtDescription) {
+		if(txtName.getText().equals("")||txtName.getText().equals("Título")||
+				txtDirector.getText().equals("")||txtDirector.getText().equals("Director")||
+				txtDescription.getText().equals("")||txtDescription.getText().equals("Descripción (max 255)")||
+				txtFoto.getText().equals("")||txtFoto.getText().equals("Url Cartel")){
+			
+			lblMessage.setText("Por favor rellena los campos!");
+			
+		}else {
+			PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+			
+			PersistenceManager pm = pmf.getPersistenceManager();
+			Transaction tx = pm.currentTransaction();
+			int age = Integer.parseInt(cbAge.getSelectedItem().toString());
+			System.out.println("Añadiendo película en la BD");
+			
+			try {
+				tx.begin();
+				Film film = new Film(txtDirector.getText().toString(), txtName.getText().toString(), txtDescription.getText().toString(), age, txtFoto.getText().toString(),textFieldTrailer.getText().toString());
+				pm.makePersistent(film);
+				
+				tx.commit();
+				System.out.println("Añadido una nueva película a la Base de Datos");
+				
+			}finally {
+				if (tx.isActive()) {
+					tx.rollback();
+				}
+				pm.close();
+				
+				AdminFilmsWindow afw = new AdminFilmsWindow();
+				afw.setVisible(true);
+				dispose();
+			
+			}
+		}
+	}
+	
+	public void EliminarPeliculaBd() {
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		System.out.println("Eliminando película de la BD");
+		
+		try {
+			tx.begin();
+			Film film = listBillboard.getSelectedValue();
+			System.out.println(film.toString());
+			Film f = pm.getObjectById(Film.class, film.getId());
+			pm.deletePersistent(f);
+			
+			tx.commit();
+			System.out.println("Eliminada película de la Base de Datos");
+			
+			
+		}finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+			
+			AdminFilmsWindow afw = new AdminFilmsWindow();
+			afw.setVisible(true);
+			dispose();
+		}
 	}
 }
