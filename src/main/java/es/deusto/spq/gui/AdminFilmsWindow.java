@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la Ventana AdminFilmsWindow es.deusto.spq.gui AdminFilmsWindow.java. May 18, 2021
+ */
 package es.deusto.spq.gui;
 
 import java.awt.Color;
@@ -40,7 +43,10 @@ import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
 public class AdminFilmsWindow extends JFrame {
-	
+	/**
+	 * Ventana Administrador para Películas.
+	 *
+	 */
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
