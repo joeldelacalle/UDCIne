@@ -33,6 +33,8 @@ public class AdminFilmsWindowTest {
 	private List<Film> films;
 	int size;
 	
+	private AdminFilmsWindow afw;
+	
 	@Before
 	public void setUp() throws Exception {
 		f = new Film("","","",-1,"","");
@@ -53,6 +55,8 @@ public class AdminFilmsWindowTest {
 		GenericType<List<Film>> genericType = new GenericType<List<Film>>() {};
 		films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 		size = films.size();
+		
+		afw = new AdminFilmsWindow();
 	}
 	
 	@After
@@ -80,6 +84,8 @@ public class AdminFilmsWindowTest {
 		assertEquals("Descripcion 1", f.getDescription());
 		assertEquals("Trailer 1", f.getTrailer());
 		assertEquals(size+1, films.size());
+		
+		afw.AñadirPeliculaBd(txtName, txtDirector, txtFoto, cbAge, txtDescription);
 	}
 	
 	@Test
