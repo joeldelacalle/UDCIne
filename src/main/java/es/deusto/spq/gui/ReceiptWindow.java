@@ -12,7 +12,13 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import es.deusto.spq.Receipt;
 import es.deusto.spq.User;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
+import jakarta.ws.rs.core.MediaType;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -22,6 +28,7 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 public class ReceiptWindow extends JFrame {
 	/**
@@ -32,6 +39,9 @@ public class ReceiptWindow extends JFrame {
 	private JPanel contentPane;
 	private JLabel labeluser = new JLabel("");
 	private JLabel labelmail = new JLabel("");
+	Client cliente = ClientBuilder.newClient();
+	final WebTarget appTarget = cliente.target("http://localhost:8080/myapp");
+	final WebTarget receiptTarget = appTarget.path("receipts");
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -68,11 +78,6 @@ public class ReceiptWindow extends JFrame {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblNewLabel_1.setBounds(20, 88, 218, 25);
 		contentPane.add(lblNewLabel_1);
-
-		final DefaultListModel<String> listamodelreceipt = new DefaultListModel<String>();
-		JList<String> list = new JList<String>(listamodelreceipt);
-		list.setBounds(42, 141, 326, 299);
-		contentPane.add(list);
 
 		final JLabel lblFlecha = new JLabel("<-");
 		lblFlecha.addMouseListener(new MouseAdapter() {
@@ -133,7 +138,7 @@ public class ReceiptWindow extends JFrame {
 	 * Establece el nickname de usuario en un JLabel
 	 */
 	public void SetUserName(User u) {
-		this.labeluser.setBounds(140, 82, 151, 26);
+		this.labeluser.setBounds(250, 88, 151, 26);
 		labeluser.setFont(new Font("Arial", Font.PLAIN, 20));
 		this.labeluser.setText(u.getNickname());
 		this.contentPane.add(this.labeluser);
@@ -143,8 +148,20 @@ public class ReceiptWindow extends JFrame {
 	 * Establece el mail de usuario en un JLabel
 	 */
 	public void SetEmail(User u) {
+		this.labelmail.setBounds(200, 82, 151, 26);
+		labelmail.setFont(new Font("Arial", Font.PLAIN, 20));
 		this.labelmail.setText(u.getEmail());
 		this.contentPane.add(this.labelmail);
 		this.labelmail.setVisible(false);
+		final DefaultListModel<Receipt> listamodelreceipt = new DefaultListModel<Receipt>();
+		JList<Receipt> list = new JList<Receipt>(listamodelreceipt);
+		list.setBounds(42, 141, 326, 299);
+		contentPane.add(list);
+		WebTarget ReceiptTarget = receiptTarget.path("getreceipt").queryParam("mail", labelmail.getText());
+		GenericType<List<Receipt>> genericType = new GenericType<List<Receipt>>() {};
+		List<Receipt> r = ReceiptTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+		for(Receipt receipt : r) {
+			listamodelreceipt.addElement(receipt);
+		}
 	}
 }

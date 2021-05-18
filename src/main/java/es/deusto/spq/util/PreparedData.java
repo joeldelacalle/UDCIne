@@ -83,12 +83,8 @@ public class PreparedData {
 					16, "https://pics.filmaffinity.com/judas_and_the_black_messiah-912646266-large.jpg",
 					"https://www.youtube.com/watch?v=iaibc6LI1_g");
 			pm.makePersistent(release3);
-			User user1 = new User("Jaime", "jaimesanta", "jaimesantamazo@opendeusto.es", "jaimesanta", 435345);
+			User user1 = new User("Jaime", "jaimesanta", "jaimesantamazo@hotmail.com", "jaimesanta", 435345);
 			pm.makePersistent(user1);
-			User user2 = new User("Jaime", "jaimesanta", "jaimesantamazo@opendeusto.es", "jaimesanta", 435345);
-			pm.makePersistent(user2);
-			User user3 = new User("Jaime", "jaimesanta", "jaimesantamazo@opendeusto.es", "jaimesanta", 435345);
-			pm.makePersistent(user3);
 
 			Room room1 = new Room(cinema1, filmA, "ZUBIARTE SALA 1", Calendar.getInstance().getTime(), 100);
 			pm.makePersistent(room1);

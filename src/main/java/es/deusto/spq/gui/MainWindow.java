@@ -233,6 +233,7 @@ public class MainWindow extends JFrame {
 				ReceiptWindow rw = new ReceiptWindow();
 				UserResource ur = new UserResource();
 				rw.SetUserName(ur.getUser(lblUserName.getText()));
+				rw.SetEmail(ur.getUser(lblUserName.getText()));
 				rw.setVisible(true);
 			}
 		});
@@ -269,9 +270,9 @@ public class MainWindow extends JFrame {
 	 */
 	
 	public void SetEmail (User u) {
-		this.lblUserName.setText(u.getEmail());
+		this.lblEmail.setBounds(131, 24, 202, 26);
+		this.lblEmail.setText(u.getEmail());
 		this.contentPane.add(this.lblEmail);
-		this.lblEmail.setVisible(false);
 	}
 	
 	/**

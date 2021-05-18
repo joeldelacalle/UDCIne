@@ -86,11 +86,11 @@ public class ReceiptResourceTest {
 		WebTarget receiptsTarget = appTarget.path("receipts");
 		WebTarget getreceiptsallTarget = receiptsTarget.path("getreceipt").queryParam("mail", "jaimesantamazo@hotmail.com");
     	
-		List<Receipt> listareceipts = Arrays.asList(new Receipt("jaimesantamazo@hotmail.com", dfd1,o,99));
+		List<Receipt> listareceipts = Arrays.asList(new Receipt("jaimesantamazo@hotmail.com", dfd1,o,99),new Receipt("jaimesantamazo@gmail.com", dfd1,o,99));
    	 
-	    GenericType<Receipt> genericType = new GenericType<Receipt>() {};
-		Receipt r = getreceiptsallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+	    GenericType<List<Receipt>> genericType = new GenericType<List<Receipt>>() {};
+		List<Receipt> r = getreceiptsallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 			 
-		assertEquals(listareceipts.get(0).getMail(), r.getMail());
+		assertEquals(listareceipts.get(0).getMail(), r.get(0).getMail());
 	}
 }

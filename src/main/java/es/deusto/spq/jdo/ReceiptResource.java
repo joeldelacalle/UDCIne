@@ -19,20 +19,15 @@ public class ReceiptResource {
 	@GET
 	@Path("getreceipt")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Receipt getReceipt(@QueryParam("mail") String mail) {
+	public List<Receipt> getReceipt(@QueryParam("mail") String mail) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 
-		Receipt r = new Receipt();
 
-		try (Query<Receipt> u = pm.newQuery("SELECT FROM " + Receipt.class.getName() + " WHERE mail== '" + mail + "'")) {
-			List<Receipt> receiptlista = u.executeList();
+		Query<Receipt> u = pm.newQuery("SELECT FROM " + Receipt.class.getName() + " WHERE mail== '" + mail + "'");
+		List<Receipt> receiptlista = u.executeList();
 
-			r = receiptlista.get(0);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		pm.close();
-		return r;
+		return receiptlista;
 	}
 }
