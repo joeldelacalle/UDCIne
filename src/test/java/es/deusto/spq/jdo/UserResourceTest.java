@@ -58,7 +58,7 @@ public class UserResourceTest {
 	    GenericType<List<User>> genericType = new GenericType<List<User>>() {};
 	    List<User> users = usersallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 	    	
-	    assertEquals(listausers.get(1).getName(), users.get(1).getName());
+	    assertEquals(listausers.get(0).getName(), users.get(1).getName());
 	}
 	
 	@Test
