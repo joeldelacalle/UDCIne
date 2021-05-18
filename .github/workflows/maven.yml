@@ -12,6 +12,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+          DISPLAY: ':99'
     services:
       mysql:
         image: mysql:5.7
@@ -54,8 +56,6 @@ jobs:
     - name: Test Integracion
       run: mvn --batch-mode --update-snapshots verify -Pintegration
     - name: Test Ventanas
-      env:
-          DISPLAY: ':99'
       run: |
           mvn --batch-mode --update-snapshots exec:java -P datos
           mvn --batch-mode --update-snapshots verify -P gui  
