@@ -53,15 +53,14 @@ public class UserResourceTest {
 		WebTarget usersTarget = appTarget.path("users");
 		WebTarget usersallTarget = usersTarget.path("allusers");
     	
-	    List<User> listausers = Arrays.asList(new User("Jaime", "jaimesanta", "jaimesantamazo@opendeusto.es", "jaimesanta", 435345),new User("Jaime", "jaimesanta", "jaimesantamazo@opendeusto.es", "jaimesanta", 435345),new User("Jaime", "jaimesanta", "jaimesantamazo@opendeusto.es", "jaimesanta", 435345));
+	    List<User> listausers = Arrays.asList(new User("Jaime", "jaimesanta", "jaimesantamazo@hotmail.com", "jaimesanta", 435345));
 
 	    GenericType<List<User>> genericType = new GenericType<List<User>>() {};
 	    List<User> users = usersallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 	    	
 	    assertEquals(listausers.get(0).getName(), users.get(0).getName());
-	    assertEquals(listausers.get(1).getName(), users.get(1).getName());
-	    assertEquals(listausers.get(2).getName(), users.get(2).getName());
 	}
+	
 	@Test
 	@PerfTest(invocations = 100, threads = 40)
 	public void testGetUser() {
