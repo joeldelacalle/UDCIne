@@ -54,11 +54,12 @@ jobs:
     - name: Test Integracion
       run: mvn --batch-mode --update-snapshots verify -Pintegration
     - name: Test Ventanas
+      env:
+          DISPLAY: ':99'
       run: |
           mvn --batch-mode --update-snapshots exec:java -P datos
           mvn --batch-mode --update-snapshots verify -P gui  
-      env:
-          DISPLAY: ':99'
+      
     - name: Install doxygen
       run: sudo apt-get install -y doxygen
     - name: Install graphviz
