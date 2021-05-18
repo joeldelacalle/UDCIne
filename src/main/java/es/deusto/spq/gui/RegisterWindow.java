@@ -123,7 +123,7 @@ public class RegisterWindow extends JFrame {
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Registro();
+				Registro(textFieldPhoneNumber, textFieldName, textFieldNickname, textFieldEmail, passwordField);
 
 			}
 
@@ -137,7 +137,8 @@ public class RegisterWindow extends JFrame {
 	/**
 	 * Crea en la base de datos un usuario
 	 */
-	private void Registro() {
+	public void Registro(JTextField textFieldPhoneNumber, JTextField textFieldName, JTextField textFieldNickname,
+			JTextField textFieldEmail, JPasswordField passwordField) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 		PersistenceManager pm = pmf.getPersistenceManager();
