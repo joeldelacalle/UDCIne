@@ -45,7 +45,7 @@ public class ProductResourceTest {
 
 	@Test
 	@PerfTest(invocations = 100, threads = 40)
-	public void testgetReleases() {
+	public void testgetProducts() {
 		WebTarget productTarget = appTarget.path("products");
     	
 	    List<Product> listaproducts = Arrays.asList(new Product("Palomitas Medianas", "500g", 4, "https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg"),new Product("Palomitas Grandes", "1000g", 6, "https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg"),new Product("Palomitas Grandes + Coca Cola", "Unas palomitas grandes y coca cola", 8, "https://previews.123rf.com/images/imagestore/imagestore1606/imagestore160601787/58756143-palomitas-en-rect%C3%A1ngulo-con-el-color-en-la-copa-para-llevar-aislado-en-el-fondo-blanco.jpg"));

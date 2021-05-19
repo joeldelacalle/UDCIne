@@ -47,7 +47,7 @@ public class CinemaResourceTest {
     
 	@Test
 	@PerfTest(invocations = 100, threads = 40)
-	public void testgetReleases() {
+	public void testgetCinemas() {
 	    WebTarget cinemasTarget = appTarget.path("cinemas");
 	    	
 	    List<Cinema> listacines = Arrays.asList(new Cinema("Cine Deusto Zubiarte", "Bilbao", "Centro Comercial Zubiarte", 123456789),new Cinema("Cine Deusto Santander", "Santander", "Corte Ingles nueva montaña", 345345345),new Cinema("Cine Deusto Bakacaldo", "bakacaldo", "Max Center", 458345345));

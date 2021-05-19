@@ -50,7 +50,7 @@ public class RoomResourceTest {
 
 	@Test
 	@PerfTest(invocations = 100, threads = 40)
-	public void testgetReleases() {
+	public void testgetRooms() {
 		WebTarget roomTarget = appTarget.path("rooms");
 		
 		Film filmA = new Film("Jon", "Iron Man",
