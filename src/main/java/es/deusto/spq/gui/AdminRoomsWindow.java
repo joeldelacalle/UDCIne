@@ -83,7 +83,7 @@ public class AdminRoomsWindow extends JFrame {
 	private JDateChooser calendar = new JDateChooser("yyyy/MM/dd", "####/##/##", '_');
 	private long roomCinemaId;
 
-	private void addFilmtoRoom() {
+	public void addFilmtoRoom(JComboBox<Cinema> comboCinema, JComboBox<Film> comboFilm, JComboBox<String> comboRoom, Date date, int i) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -107,7 +107,7 @@ public class AdminRoomsWindow extends JFrame {
 		}
 	}
 
-	private void getCineYSalas() {
+	public void getCineYSalas(JComboBox<Cinema> comboCinema, JComboBox<String> comboRoom) {
 		if (comboCinema.getSelectedIndex() == 0) {
 			if (comboRoom.getItemCount() >= 1) {
 				comboRoom.removeItemAt(2);
@@ -239,7 +239,7 @@ public class AdminRoomsWindow extends JFrame {
 		comboCinema.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//System.out.println(comboCinema.getSelectedIndex());
-				getCineYSalas();
+				getCineYSalas(comboCinema, comboRoom);
 				//System.out.println(comboCinema.getSelectedItem().toString());
 			}
 
@@ -254,7 +254,7 @@ public class AdminRoomsWindow extends JFrame {
 		JButton btnAddFilmtoRoom = new JButton("ASIGNAR");
 		btnAddFilmtoRoom.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				addFilmtoRoom();
+				addFilmtoRoom(comboCinema, comboFilm, comboRoom, date, 100);
 			}
 		});
 		btnAddFilmtoRoom.setFont(new Font("Tahoma", Font.BOLD, 15));

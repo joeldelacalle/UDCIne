@@ -3,6 +3,7 @@ package es.deusto.spq.gui;
 import static org.junit.Assert.*;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.swing.DefaultListModel;
@@ -12,6 +13,8 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.toedter.calendar.JDateChooser;
 
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
@@ -28,11 +31,13 @@ public class AdminRoomsWindowTest {
 	private HttpServer server;
 	private WebTarget cinemasTarget;
 	private WebTarget roomsTarget;
-	//private WebTarget FilmsTarget;
+	private WebTarget FilmsTarget;
 	private GenericType<List<Cinema>> genericType0;
 	private List<Cinema> cinemas;
 	private GenericType<List<Room>> genericType1;
 	private List<Room> rooms;
+	private GenericType<List<Film>> genericType2;
+	private List<Film> films;
 	
 	
 	private Room room1;
@@ -40,9 +45,13 @@ public class AdminRoomsWindowTest {
 	private Film filmA;
 	private long roomCinemaId;
 	
+	private Date date = null;	
+	private final JComboBox<Film> comboFilm = new JComboBox<Film>();
+	private final JComboBox<Cinema> comboCinema = new JComboBox<Cinema>();
 	private final JComboBox<String> comboRoom = new JComboBox<String>();
-
+	private JDateChooser calendar = new JDateChooser("yyyy/MM/dd", "####/##/##", '_');
 	
+	private AdminRoomsWindow arw;
 
 
 	@Before
@@ -51,7 +60,7 @@ public class AdminRoomsWindowTest {
 		Client c = ClientBuilder.newClient();
 
 		appTarget = c.target("http://localhost:8080/myapp");
-		//FilmsTarget = appTarget.path("films");
+		FilmsTarget = appTarget.path("films");
 		roomsTarget = appTarget.path("rooms");
 		cinemasTarget = appTarget.path("cinemas");
 		
@@ -64,6 +73,18 @@ public class AdminRoomsWindowTest {
 		genericType1 = new GenericType<List<Room>>() {
 		};
 		rooms = roomsTarget.request(MediaType.APPLICATION_JSON).get(genericType1);
+		genericType2 = new GenericType<List<Film>>() {
+		};
+		films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType2);
+		for (Cinema cinema : cinemas) {
+			comboCinema.addItem(cinema);
+		}
+		for (Film film : films) {
+			comboFilm.addItem(film);
+		}
+		
+		arw = new AdminRoomsWindow();
+		
 	}
 	
 	@After
@@ -73,84 +94,12 @@ public class AdminRoomsWindowTest {
 
 	@Test
 	public void addFilmtoRoom() {
-		GenericType<List<Room>> genericType1 = new GenericType<List<Room>>() {};
-		List<Room> rooms = roomsTarget.request(MediaType.APPLICATION_JSON).get(genericType1);
-		filmA = new Film("Jon", "Iron Man",
-				"El acto principal es Tony Stark, un magnate multimillonario y hÃ¡bil ingeniero con abundantes vicios que construye un exoesqueleto mecÃ¡nico y se convierte en el superhÃ©roe Iron Man.",
-				13, "https://pics.filmaffinity.com/iron_man-108960873-large.jpg", "https://www.youtube.com/watch?v=RLiO7pt8MbU");
-		cinema1 = new Cinema("Cine Deusto Zubiarte", "Bilbao", "Centro Comercial Zubiarte", 123456789);
-		
-		room1 = new Room(cinema1, filmA, "ZUBIARTE SALA 1", Calendar.getInstance().getTime(), 100);
-		//System.out.println(rooms.get(2).getName());
-		assertEquals(room1.getName(), "ZUBIARTE SALA 1");
+		arw.getCineYSalas(comboCinema, comboRoom);
+		arw.addFilmtoRoom(comboCinema,comboFilm,comboRoom, date, 100);
 	}
 	@Test
 	public void getCineYSalas() {
-		
-		//System.out.println(cinemas);
-		if (cinemas.get(0).getName().equals("Cine Deusto Zubiarte")) {
-			if (comboRoom.getItemCount() >= 1) {
-				comboRoom.removeItemAt(2);
-				comboRoom.removeItemAt(1);
-				comboRoom.removeItemAt(0);
-				assertEquals(comboRoom.getItemCount(), 0);
-			}
-
-			for (int i = 0; i < rooms.size(); i++) {
-				roomCinemaId = rooms.get(i).getId();
-				if (roomCinemaId == 1) {
-					comboRoom.addItem(rooms.get(0).getName());
-					comboRoom.addItem(rooms.get(1).getName());
-					comboRoom.addItem(rooms.get(2).getName());
-					assertEquals(comboRoom.getItemAt(0).toString(), rooms.get(0).getName());
-					assertEquals(comboRoom.getItemAt(1).toString(), rooms.get(1).getName());
-					assertEquals(comboRoom.getItemAt(2).toString(), rooms.get(2).getName());
-				}
-			}
-
-		}
-		if (cinemas.get(1).getName().equals("Cine Deusto Santander")) {
-			if (comboRoom.getItemCount() >= 1) {
-				comboRoom.removeItemAt(2);
-				comboRoom.removeItemAt(1);
-				comboRoom.removeItemAt(0);
-				assertEquals(comboRoom.getItemCount(), 0);
-			}
-
-			for (int i = 0; i < rooms.size(); i++) {
-				roomCinemaId = rooms.get(i).getId();
-				if (roomCinemaId == 2) {
-					comboRoom.addItem(rooms.get(3).getName());
-					comboRoom.addItem(rooms.get(4).getName());
-					comboRoom.addItem(rooms.get(5).getName());
-					assertEquals(comboRoom.getItemAt(0).toString(), rooms.get(3).getName());
-					assertEquals(comboRoom.getItemAt(1).toString(), rooms.get(4).getName());
-					assertEquals(comboRoom.getItemAt(2).toString(), rooms.get(5).getName());
-				}
-			}
-
-		}
-		if (cinemas.get(2).getName().equals("Cine Deusto Santander")) {
-			if (comboRoom.getItemCount() >= 1) {
-				comboRoom.removeItemAt(2);
-				comboRoom.removeItemAt(1);
-				comboRoom.removeItemAt(0);
-				assertEquals(comboRoom.getItemCount(), 0);
-			}
-
-			for (int i = 0; i < rooms.size(); i++) {
-				roomCinemaId = rooms.get(i).getId();
-				if (roomCinemaId == 3) {
-					comboRoom.addItem(rooms.get(6).getName());
-					comboRoom.addItem(rooms.get(7).getName());
-					comboRoom.addItem(rooms.get(8).getName());
-					assertEquals(comboRoom.getItemAt(0).toString(), rooms.get(6).getName());
-					assertEquals(comboRoom.getItemAt(1).toString(), rooms.get(7).getName());
-					assertEquals(comboRoom.getItemAt(2).toString(), rooms.get(8).getName());
-				}
-			}
-
-		}
+		arw.getCineYSalas(comboCinema, comboRoom);
 	}
 
 }
