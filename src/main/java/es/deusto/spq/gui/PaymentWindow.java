@@ -39,6 +39,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -62,11 +63,13 @@ public class PaymentWindow extends JFrame {
 	Client cliente = ClientBuilder.newClient();
 	final WebTarget appTarget = cliente.target("http://localhost:8080/myapp");
 	final WebTarget pagoTarget = appTarget.path("paypal");
+	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	/**
 	 * Construir la ventana de Pago con sus atributos correspondientes
 	 */
 	public PaymentWindow(final Order o) {
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 689, 480);
 		contentPane = new JPanel();
@@ -205,7 +208,7 @@ public class PaymentWindow extends JFrame {
 					String Tickets = o.getTickets();
 					long Price = o.getPrice();
 					Date Fecha = o.getDate();
-					Receipt r = new Receipt(Email,Fecha,o,Price);
+					Receipt r = new Receipt(Email, Fecha, o, Price);
 					try {
 						FileWriter archivo = new FileWriter("Facturas/" + Email + ".txt", true);
 
@@ -219,7 +222,8 @@ public class PaymentWindow extends JFrame {
 
 						archivo.close();
 					} catch (IOException e6) {
-						e6.printStackTrace();
+						logger.log(Level.WARNING, "ERROR", e6);
+						// e6.printStackTrace();
 					}
 
 					PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -291,7 +295,8 @@ public class PaymentWindow extends JFrame {
 
 				archivo.close();
 			} catch (IOException e6) {
-				e6.printStackTrace();
+				logger.log(Level.WARNING, "ERROR", e6);
+				// e6.printStackTrace();
 			}
 			PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 

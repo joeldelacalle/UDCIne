@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
@@ -65,6 +67,8 @@ public class LastReleasesWindow extends JFrame {
 	private String descRelease= "-1";
 	private String releaseName ="-1";
 	private String trailer ="-1";
+	
+    public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
 	private void ageReleaseIconResize(URL url) throws IOException {
 		Image image;
@@ -280,7 +284,8 @@ public class LastReleasesWindow extends JFrame {
 					Desktop.getDesktop().browse(new URL(trailer).toURI());
 				} catch (IOException | URISyntaxException e1) {
 					// TODO Auto-generated catch block
-					e1.printStackTrace();
+					logger.log(Level.WARNING, "ERROR",e1);
+					//e1.printStackTrace();
 				}
 			}
 		});

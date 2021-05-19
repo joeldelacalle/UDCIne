@@ -1,6 +1,8 @@
 package es.deusto.spq.jdo;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
@@ -16,24 +18,28 @@ import jakarta.ws.rs.core.MediaType;
 
 @Path("paypal")
 public class PagoResource {
+	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
 	@GET
 	@Path("getemail")
 	@Produces(MediaType.APPLICATION_JSON)
 	public static PayPal getPaypal(@QueryParam("email") String email) {
-	PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-	PersistenceManager pm = pmf.getPersistenceManager();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
 
-	PayPal paypal = new PayPal();
-		
-	try (Query<PayPal> q = pm.newQuery("SELECT FROM " + PayPal.class.getName() + " WHERE email== '" + email + "'")) {
-		List<PayPal> paypallista = q.executeList();
-			
-		paypal = paypallista.get(0);
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-	pm.close();
-	return paypal;
+		PayPal paypal = new PayPal();
+
+		try (Query<PayPal> q = pm
+				.newQuery("SELECT FROM " + PayPal.class.getName() + " WHERE email== '" + email + "'")) {
+			List<PayPal> paypallista = q.executeList();
+
+			paypal = paypallista.get(0);
+		} catch (Exception e) {
+			logger.log(Level.WARNING, "ERROR",e);
+			// e.printStackTrace();
+		}
+		pm.close();
+		return paypal;
 	}
 
 }

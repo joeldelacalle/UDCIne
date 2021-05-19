@@ -14,6 +14,8 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
@@ -44,6 +46,7 @@ public class MainWindow extends JFrame {
 	FilmResources fr = new FilmResources();
 	private JLabel lblUserName = new JLabel("");
 	private JLabel lblEmail = new JLabel("");
+	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	/**
 	 * Construir la ventana main con sus atributos correspondientes
@@ -58,7 +61,6 @@ public class MainWindow extends JFrame {
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 139), 2));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
 
 		final DefaultListModel<Film> billboard = new DefaultListModel<>();
 		films = fr.getFilms();
@@ -75,9 +77,10 @@ public class MainWindow extends JFrame {
 		contentPane.add(lblBillboard);
 
 		/**
-		 * Botón que ejecuta la ventana de futuros estrenos pasandole los datos necesarios
+		 * Botón que ejecuta la ventana de futuros estrenos pasandole los datos
+		 * necesarios
 		 */
-		
+
 		JButton btnFutureFilms = new JButton("Futuros estrenos");
 		btnFutureFilms.setBounds(10, 429, 224, 61);
 		btnFutureFilms.addActionListener(new ActionListener() {
@@ -147,8 +150,8 @@ public class MainWindow extends JFrame {
 		try {
 			btnSetImageIcon(films.get(0).getUrl(), btnFilm1);
 		} catch (IOException e1) {
-
-			e1.printStackTrace();
+			logger.log(Level.WARNING, "ERROR", e1);
+			// e1.printStackTrace();
 		}
 		contentPane.add(btnFilm1);
 
@@ -165,8 +168,8 @@ public class MainWindow extends JFrame {
 		try {
 			btnSetImageIcon(films.get(1).getUrl(), btnFilm2);
 		} catch (IOException e1) {
-
-			e1.printStackTrace();
+			logger.log(Level.WARNING, "ERROR", e1);
+			// e1.printStackTrace();
 		}
 		contentPane.add(btnFilm2);
 
@@ -183,8 +186,8 @@ public class MainWindow extends JFrame {
 		try {
 			btnSetImageIcon(films.get(2).getUrl(), btnFilm3);
 		} catch (IOException e1) {
-
-			e1.printStackTrace();
+			logger.log(Level.WARNING, "ERROR", e1);
+			// e1.printStackTrace();
 		}
 		contentPane.add(btnFilm3);
 
@@ -206,11 +209,11 @@ public class MainWindow extends JFrame {
 		}
 
 		contentPane.add(btnFilm4);
-		
+
 		/**
 		 * Botón que ejecuta la ventana Vip pasandole los datos necesarios
 		 */
-		
+
 		JButton btnVip = new JButton("VIP");
 		btnVip.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnVip.addActionListener(new ActionListener() {
@@ -223,7 +226,7 @@ public class MainWindow extends JFrame {
 		});
 		btnVip.setBounds(412, 429, 165, 61);
 		contentPane.add(btnVip);
-		
+
 		/**
 		 * Botón que ejecuta la ventana de facturas pasandole los datos necesarios
 		 */
@@ -242,7 +245,7 @@ public class MainWindow extends JFrame {
 		contentPane.add(btnNewButton);
 
 	}
-	
+
 	/**
 	 * obtiene una pelicula de la cartelera en base a la posicion que le des
 	 */
@@ -255,28 +258,28 @@ public class MainWindow extends JFrame {
 		return billboardFilm;
 
 	}
-	
+
 	/**
 	 * Establece el nickname de usuario en un JLabel
 	 */
-	public void SetUserName (User u) {
+	public void SetUserName(User u) {
 		this.lblUserName.setBounds(131, 24, 202, 26);
 		this.lblUserName.setText(u.getNickname());
 		this.contentPane.add(this.lblUserName);
 	}
-	
+
 	/**
 	 * Establece el mail en un JLabel
 	 */
-	
-	public void SetEmail (User u) {
+
+	public void SetEmail(User u) {
 		this.lblEmail.setBounds(131, 24, 202, 26);
 		this.lblEmail.setText(u.getEmail());
 		this.contentPane.add(this.lblEmail);
 	}
-	
+
 	/**
-	 * Establece el icono de cada boton 
+	 * Establece el icono de cada boton
 	 */
 
 	public void btnSetImageIcon(String urlS, JButton jb) throws IOException {

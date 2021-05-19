@@ -29,6 +29,8 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ReceiptWindow extends JFrame {
 	/**
@@ -42,6 +44,7 @@ public class ReceiptWindow extends JFrame {
 	Client cliente = ClientBuilder.newClient();
 	final WebTarget appTarget = cliente.target("http://localhost:8080/myapp");
 	final WebTarget receiptTarget = appTarget.path("receipts");
+	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -50,7 +53,8 @@ public class ReceiptWindow extends JFrame {
 					ReceiptWindow frame = new ReceiptWindow();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					logger.log(Level.WARNING, "ERROR", e);
+					// e.printStackTrace();
 				}
 			}
 		});
@@ -158,9 +162,10 @@ public class ReceiptWindow extends JFrame {
 		list.setBounds(42, 141, 326, 299);
 		contentPane.add(list);
 		WebTarget ReceiptTarget = receiptTarget.path("getreceipt").queryParam("mail", labelmail.getText());
-		GenericType<List<Receipt>> genericType = new GenericType<List<Receipt>>() {};
+		GenericType<List<Receipt>> genericType = new GenericType<List<Receipt>>() {
+		};
 		List<Receipt> r = ReceiptTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-		for(Receipt receipt : r) {
+		for (Receipt receipt : r) {
 			listamodelreceipt.addElement(receipt);
 		}
 	}

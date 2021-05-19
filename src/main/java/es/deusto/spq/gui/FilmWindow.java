@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 import javax.swing.GroupLayout;
@@ -70,6 +72,8 @@ public class FilmWindow extends JFrame {
 	private int age16 = 16;
 	private JLabel lblUserName = new JLabel("");
 
+    public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	
 	private void nuevasPeliculas(final JComboBox<String> comboBoxFilm) {
 		textFieldFilmName.setText(comboBoxFilm.getSelectedItem().toString());
 		String selectedFilm = textFieldFilmName.getText();
@@ -296,7 +300,8 @@ public class FilmWindow extends JFrame {
 					Desktop.getDesktop().browse(new URL(trailerFilm).toURI());
 				} catch (IOException | URISyntaxException e1) {
 					// TODO Auto-generated catch block
-					e1.printStackTrace();
+					logger.log(Level.WARNING, "ERROR", e1);
+					//e1.printStackTrace();
 				}
 			}
 		});

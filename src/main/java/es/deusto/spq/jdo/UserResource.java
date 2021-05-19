@@ -1,6 +1,8 @@
 package es.deusto.spq.jdo;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
@@ -15,8 +17,11 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 
+
+
 @Path("users")
 public class UserResource {
+	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	@GET
 	@Path("allusers")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -50,7 +55,8 @@ public class UserResource {
 
 			user = userlista.get(0);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.log(Level.WARNING, "ERROR",e);
+			//e.printStackTrace();
 		}
 		pm.close();
 		return user;
@@ -72,7 +78,8 @@ public class UserResource {
 
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.log(Level.WARNING, "ERROR",e);
+			//e.printStackTrace();
 
 		}
 		pm.close();

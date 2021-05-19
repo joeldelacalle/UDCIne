@@ -9,6 +9,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
@@ -33,6 +35,7 @@ public class RegisterWindow extends JFrame {
 	private JTextField textFieldEmail = new JTextField();
 	private JPasswordField passwordField = new JPasswordField();
 	private int phone;
+	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	/**
 	 * Construir la ventana de Registro con sus atributos correspondientes
@@ -44,7 +47,8 @@ public class RegisterWindow extends JFrame {
 					RegisterWindow frame = new RegisterWindow();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					logger.log(Level.WARNING, "ERROR", e);
+					// e.printStackTrace();
 				}
 			}
 		});
