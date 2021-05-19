@@ -16,6 +16,9 @@ import jakarta.ws.rs.core.MediaType;
 
 @Path("cinemas")
 public class CinemaResource {
+	/**
+	 * Metodo para obtener toda la lista de cines de la base de datos
+	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Cinema> getReleases() {

@@ -11,6 +11,9 @@ import es.deusto.spq.Billboard;
 
 public class BillboardResource {
 
+	/**
+	 * Metodo para obtener toda la lista de BillBoards de la base de datos
+	 */
 	public List<Billboard> getBillboardFilms() {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();

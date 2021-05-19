@@ -18,8 +18,14 @@ import jakarta.ws.rs.core.MediaType;
 
 @Path("paypal")
 public class PagoResource {
+	/**
+	 * Clase para obtener datos de paypal de la base de datos
+	 */
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-
+	
+	/**
+	 * Metodo para obtener una cuenta paypal de la base de datos de un email en especifico
+	 */
 	@GET
 	@Path("getemail")
 	@Produces(MediaType.APPLICATION_JSON)

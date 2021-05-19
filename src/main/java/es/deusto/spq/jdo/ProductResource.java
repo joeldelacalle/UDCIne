@@ -15,7 +15,10 @@ import jakarta.ws.rs.core.MediaType;
 
 @Path("products")
 public class ProductResource {
-
+	
+	/**
+	 * Metodo para obtener toda la lista de los productos de la base de datos
+	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Product> getProducts() {

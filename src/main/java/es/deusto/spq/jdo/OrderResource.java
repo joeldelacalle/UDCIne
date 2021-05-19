@@ -16,7 +16,10 @@ import jakarta.ws.rs.core.MediaType;
 
 @Path("order")
 public class OrderResource {
-
+	
+	/**
+	 * Metodo para obtener toda la lista de pedidos de la base de datos
+	 */
 	@GET
 	@Path("getorders")
 	@Produces(MediaType.APPLICATION_JSON)

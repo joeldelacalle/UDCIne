@@ -15,6 +15,9 @@ import jakarta.ws.rs.core.MediaType;
 @Path("release")
 public class ReleaseResource {
 
+	/**
+	 * Metodo para obtener toda la lista de los nuevos estrenos de la base de datos
+	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Release> getReleases() {

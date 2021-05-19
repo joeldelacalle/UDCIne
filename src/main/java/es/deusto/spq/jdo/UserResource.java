@@ -17,11 +17,16 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 
-
-
 @Path("users")
 public class UserResource {
+	/**
+	 * Clase para obtener datos de los usuarios de la base de datos
+	 */
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	
+	/**
+	 * Metodo para obtener toda la lista de los usuarios de la base de datos
+	 */
 	@GET
 	@Path("allusers")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -38,7 +43,10 @@ public class UserResource {
 
 		return users;
 	}
-
+	
+	/**
+	 * Metodo para obtener un usuario de la base de datos de un nombre de usuario en especifico
+	 */
 	@GET
 	@Path("getuser")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -61,7 +69,10 @@ public class UserResource {
 		pm.close();
 		return user;
 	}
-
+	
+	/**
+	 * Metodo para obtener un usuario de la base de datos de un email y contraseña en especifico
+	 */
 	public boolean CheckUser(String email, String password) {
 
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");

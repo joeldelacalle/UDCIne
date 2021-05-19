@@ -14,7 +14,10 @@ import jakarta.ws.rs.core.MediaType;
 
 @Path("films")
 public class FilmResources {
-
+	
+	/**
+	 * Metodo para obtener toda la lista de peliculas de la base de datos
+	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Film> getFilms() {

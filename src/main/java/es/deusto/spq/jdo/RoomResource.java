@@ -14,6 +14,10 @@ import jakarta.ws.rs.core.MediaType;
 
 @Path("rooms")
 public class RoomResource {
+	
+	/**
+	 * Metodo para obtener toda la lista de las salas de un cine de la base de datos
+	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Room> getReleases() {

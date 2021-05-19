@@ -16,6 +16,10 @@ import jakarta.ws.rs.core.MediaType;
 
 @Path("receipts")
 public class ReceiptResource {
+	
+	/**
+	 * Metodo para obtener una lista de facturas de la base de datos de un email en especifico
+	 */
 	@GET
 	@Path("getreceipt")
 	@Produces(MediaType.APPLICATION_JSON)
