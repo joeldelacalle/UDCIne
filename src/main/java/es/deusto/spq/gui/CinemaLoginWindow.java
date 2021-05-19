@@ -9,6 +9,8 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,6 +21,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
+
+
 
 import es.deusto.spq.jdo.UserResource;
 import jakarta.ws.rs.client.Client;
@@ -39,6 +43,7 @@ public class CinemaLoginWindow extends JFrame {
     private JLabel lblGest ;
     private JLabel lblUserName = new JLabel("");
     
+    public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -47,7 +52,8 @@ public class CinemaLoginWindow extends JFrame {
                     CinemaLoginWindow frame = new CinemaLoginWindow();
                     frame.setVisible(true);
                 } catch (Exception e) {
-                    e.printStackTrace();
+                	logger.log(Level.WARNING, "ERROR",e);
+                    //e.printStackTrace();
                 }
             }
         });

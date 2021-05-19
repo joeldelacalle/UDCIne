@@ -83,7 +83,7 @@ public class AdminRoomsWindow extends JFrame {
 	private JDateChooser calendar = new JDateChooser("yyyy/MM/dd", "####/##/##", '_');
 	private long roomCinemaId;
 
-	public void addFilmtoRoom(JComboBox<Cinema> comboCinema, JComboBox<Film> comboFilm, JComboBox<String> comboRoom, Date date, int i) {
+	public void addFilmtoRoom(JComboBox<Cinema> comboCinema, JComboBox<Film> comboFilm, JComboBox<String> comboRoom, Date d, int i) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 		PersistenceManager pm = pmf.getPersistenceManager();

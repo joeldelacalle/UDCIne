@@ -42,6 +42,7 @@ public class UserResource {
 		PersistenceManager pm = pmf.getPersistenceManager();
 
 		User user = new User();
+		
 
 		try (Query<User> u = pm
 				.newQuery("SELECT FROM " + User.class.getName() + " WHERE nickname== '" + nickname + "'")) {
