@@ -64,7 +64,7 @@ public class AdminRoomsWindowTest {
 		roomsTarget = appTarget.path("rooms");
 		cinemasTarget = appTarget.path("cinemas");
 		
-		room1=new Room(cinema1, filmA, "ZUBIARTE SALA 1", Calendar.getInstance().getTime(), 100);
+		room1=new Room(cinema1, filmA, "SANTANDER SALA 1", Calendar.getInstance().getTime(), 100);
 		
 		genericType0 = new GenericType<List<Cinema>>() {
 		};
