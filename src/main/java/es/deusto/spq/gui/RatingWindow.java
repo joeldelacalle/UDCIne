@@ -275,7 +275,7 @@ public class RatingWindow extends JFrame {
 	/**
 	 * Metodo para añadir una valoracion sobre una pelicula
 	 */
-	private void AñadirValoracionPeli(final JComboBox<String> comboBox, final DefaultListModel<String> listmodelpelis) {
+	public void AñadirValoracionPeli(final JComboBox<String> comboBox, final DefaultListModel<String> listmodelpelis) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -311,7 +311,7 @@ public class RatingWindow extends JFrame {
 	/**
 	 * Metodo para añadir una valoracion sobre un cine
 	 */
-	private void AñadirValoracionCine(final JComboBox<String> comboBox_1,
+	public void AñadirValoracionCine(final JComboBox<String> comboBox_1,
 			final DefaultListModel<String> listmodelcines) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
