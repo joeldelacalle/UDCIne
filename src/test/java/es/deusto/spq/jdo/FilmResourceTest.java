@@ -2,6 +2,7 @@ package es.deusto.spq.jdo;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.Film;
 import es.deusto.spq.Main;
+import es.deusto.spq.Room;
 import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
@@ -60,6 +62,16 @@ public class FilmResourceTest {
 
 	    GenericType<List<Film>> genericType = new GenericType<List<Film>>() {};
 	    List<Film> pelis = peliculasTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+	    List<Film> pelis2 = new ArrayList<Film>();
+		for (int i = 0; i < pelis.size(); i++) {
+
+			if (pelis.get(i).getName().equals(listapelis.get(0).getName())) {
+
+				pelis2.add(pelis.get(i));
+				assertEquals(listapelis.get(0).getName(), pelis2.get(0).getName());
+			}
+			
+		}
 	    	
 	    assertEquals(listapelis.get(0).getAgeRestriction(), pelis.get(0).getAgeRestriction());
 	    assertEquals(listapelis.get(1).getAgeRestriction(), pelis.get(1).getAgeRestriction());

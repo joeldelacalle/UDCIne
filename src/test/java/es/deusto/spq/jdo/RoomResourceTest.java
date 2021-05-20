@@ -2,6 +2,7 @@ package es.deusto.spq.jdo;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
@@ -71,10 +72,21 @@ public class RoomResourceTest {
 
 	    GenericType<List<Room>> genericType = new GenericType<List<Room>>() {};
 	    List<Room> rooms = roomTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+	    
+	    List<Room> rooms2 = new ArrayList<Room>();
+		for (int i = 0; i < rooms.size(); i++) {
+
+			if (rooms.get(i).getName().equals(listarooms.get(0).getName())) {
+
+				rooms2.add(rooms.get(i));
+				assertEquals(listarooms.get(0).getName(), rooms2.get(0).getName());
+			}
+			
+		}
 	    	
-	    assertEquals(listarooms.get(0).getName(), rooms.get(2).getName());
-	    assertEquals(listarooms.get(1).getName(), rooms.get(1).getName());
-	    assertEquals(listarooms.get(2).getName(), rooms.get(0).getName());
+	    //assertEquals(listarooms.get(0).getName(), rooms.get(2).getName());
+	    //assertEquals(listarooms.get(1).getName(), rooms.get(1).getName());
+	    //assertEquals(listarooms.get(2).getName(), rooms.get(0).getName());
 	}
 
 }

@@ -2,6 +2,7 @@ package es.deusto.spq.jdo;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.Main;
+import es.deusto.spq.Order;
 import es.deusto.spq.PayPal;
 import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;
@@ -26,35 +28,37 @@ import jakarta.ws.rs.core.MediaType;
 @Category(IntegrationTest.class)
 public class PagoResourceTest {
 
-	@Rule public ContiPerfRule rule = new ContiPerfRule();
+	@Rule
+	public ContiPerfRule rule = new ContiPerfRule();
 	private HttpServer server;
-    private WebTarget appTarget;
-    private Client c;
+	private WebTarget appTarget;
+	private Client c;
 
-    
-    @Before
-    public void setUp() throws Exception {
-    	server = Main.startServer();
-        c = ClientBuilder.newClient();
-        appTarget = c.target(Main.BASE_URI);
-    }
-    
-    @SuppressWarnings("deprecation")
+	@Before
+	public void setUp() throws Exception {
+		server = Main.startServer();
+		c = ClientBuilder.newClient();
+		appTarget = c.target(Main.BASE_URI);
+	}
+
+	@SuppressWarnings("deprecation")
 	@After
-    public void tearDown() throws Exception {
-        server.stop();
-    }
-    @Test
-    @PerfTest(invocations = 100, threads = 40)
-    public void testPaypal() {
-    	WebTarget pagosTarget = appTarget.path("paypal");
-    	WebTarget paypalTarget = pagosTarget.path("getemail").queryParam("email", "jaimesantamazo@hotmail.com");
-    	List<PayPal> listapaypal = Arrays.asList(new PayPal("jaimesantamazo@hotmail.com", "123"));
-    	 
-    	GenericType<PayPal> genericType = new GenericType<PayPal>() {};
+	public void tearDown() throws Exception {
+		server.stop();
+	}
+
+	@Test
+	@PerfTest(invocations = 100, threads = 40)
+	public void testPaypal() {
+		WebTarget pagosTarget = appTarget.path("paypal");
+		WebTarget paypalTarget = pagosTarget.path("getemail").queryParam("email", "jaimesantamazo@hotmail.com");
+		List<PayPal> listapaypal = Arrays.asList(new PayPal("jaimesantamazo@hotmail.com", "123"));
+
+		GenericType<PayPal> genericType = new GenericType<PayPal>() {
+		};
 		PayPal paypal = paypalTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-		 
+
 		assertEquals(listapaypal.get(0).getEmail(), paypal.getEmail());
-    }
+	}
 
 }

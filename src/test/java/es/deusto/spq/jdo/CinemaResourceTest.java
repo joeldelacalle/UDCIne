@@ -2,6 +2,7 @@ package es.deusto.spq.jdo;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Main;
+import es.deusto.spq.Order;
 import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
@@ -63,9 +65,21 @@ public class CinemaResourceTest {
 		// System.out.println(cines.get(2).getName());
 		// System.out.println(listacines.get(2).getName());
 		// System.out.println(cines.get(3).getName());
-		assertEquals(listacines.get(0).getName(), cines.get(0).getName());
-		assertEquals(listacines.get(1).getName(), cines.get(2).getName());
-		assertEquals(listacines.get(2).getName(), cines.get(3).getName());
+	
+		List<Cinema> cines2 = new ArrayList<Cinema>();
+		for (int i = 0; i < cines.size(); i++) {
+
+			if (cines.get(i).getName().equals(listacines.get(0).getName())) {
+
+				cines2.add(cines.get(i));
+				assertEquals(listacines.get(0).getName(), cines2.get(0).getName());
+			}
+			
+		}
+		
+		
+		//assertEquals(listacines.get(1).getName(), cines.get(2).getName());
+		//assertEquals(listacines.get(2).getName(), cines.get(3).getName());
 	}
 
 }

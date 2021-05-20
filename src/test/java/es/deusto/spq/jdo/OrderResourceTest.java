@@ -2,6 +2,7 @@ package es.deusto.spq.jdo;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.Main;
 import es.deusto.spq.Order;
+import es.deusto.spq.Room;
 import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
@@ -62,6 +64,17 @@ public class OrderResourceTest {
 		GenericType<List<Order>> genericType = new GenericType<List<Order>>() {
 		};
 		List<Order> orders = getOrdersTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+		
+		List<Order> orders2 = new ArrayList<Order>();
+		for (int i = 0; i < orders.size(); i++) {
+
+			if (orders.get(i).getMail().equals(listOrders.get(0).getMail())) {
+
+				orders2.add(orders.get(i));
+				assertEquals(listOrders.get(0).getMail(), orders2.get(0).getMail());
+			}
+			
+		}
 
 		assertEquals(listOrders.get(0).getMail(), orders.get(0).getMail());
 		assertEquals(listOrders.get(1).getMail(), orders.get(1).getMail());
