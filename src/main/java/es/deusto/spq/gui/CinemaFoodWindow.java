@@ -124,7 +124,7 @@ public class CinemaFoodWindow extends JFrame {
 			btnSetImageIcon(products.get(0).getUrl(), lblPopcornImage);
 		} catch (IOException e) {
 		}
-		
+
 		JLabel lblPopcornCola = new JLabel("");
 		lblPopcornCola.addMouseListener(new MouseAdapter() {
 			@Override
@@ -182,15 +182,15 @@ public class CinemaFoodWindow extends JFrame {
 		lblListaDeCompra.setFont(new Font("Cooper Black", Font.PLAIN, 15));
 		lblListaDeCompra.setBounds(50, 302, 173, 19);
 		contentPane.add(lblListaDeCompra);
-		
+
 		JButton btnAadir = new JButton("AÑADIR AL CARRITO");
 		btnAadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				OrderWindow ow = new OrderWindow(selectedFilm);
-				addProducts(ow);
+				addProducts(ow, listmodelAlimentos);
 				ow.setVisible(true);
 				dispose();
-						
+
 			}
 		});
 		btnAadir.setBackground(new Color(0, 153, 153));
@@ -200,13 +200,14 @@ public class CinemaFoodWindow extends JFrame {
 		contentPane.add(btnAadir);
 
 	}
-	public void addProducts(OrderWindow ow) {
-		List <Product> listProducts = new ArrayList<Product>() ;
-		
-		for (int i = 0; i<listmodelAlimentos.size(); i++) {
-		listProducts.add(listmodelAlimentos.get(i));
+
+	public void addProducts(OrderWindow ow, DefaultListModel<Product> listmodelAlimentos) {
+		List<Product> listProducts = new ArrayList<Product>();
+
+		for (int i = 0; i < listmodelAlimentos.size(); i++) {
+			listProducts.add(listmodelAlimentos.get(i));
 		}
-		
+
 		ow.setProducts(listProducts);
 		System.out.println(listProducts.toString());
 	}

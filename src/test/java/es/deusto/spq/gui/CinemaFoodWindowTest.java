@@ -4,21 +4,26 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import es.deusto.spq.Film;
+import es.deusto.spq.Product;
 
 public class CinemaFoodWindowTest {
 	private Film selectedFilm = new Film("Jon", "Infinity war",
 			"El todopoderoso Thanos ha despertado con la promesa de arrasar con todo a su paso, portando el Guantelete del Infinito. Los únicos capaces de pararle los pies son los Vengadores y el resto de superhéroes de la galaxia",
 			13, "https://pics.filmaffinity.com/avengers_infinity_war-181539353-large.jpg",
 			"https://www.youtube.com/watch?v=6ZfuNTqbHE8");
+	private Product p = new Product("Palomitas Medianas", "500g", 4,
+			"https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg"); 
 
 	private String urlS = "https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg";
 	private JLabel jb = new JLabel();
+	private DefaultListModel<Product> listmodelAlimentos = new DefaultListModel<Product>();
 
 	private CinemaFoodWindow cfw;
 	private OrderWindow ow;
@@ -44,7 +49,8 @@ public class CinemaFoodWindowTest {
 
 	@Test
 	public void addProducts() {
-		cfw.addProducts(ow);
+		listmodelAlimentos.addElement(p);
+		cfw.addProducts(ow,listmodelAlimentos);
 
 	}
 
