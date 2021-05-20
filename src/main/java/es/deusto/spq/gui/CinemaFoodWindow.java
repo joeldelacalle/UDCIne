@@ -187,14 +187,7 @@ public class CinemaFoodWindow extends JFrame {
 		btnAadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				OrderWindow ow = new OrderWindow(selectedFilm);
-				List <Product> listProducts = new ArrayList<Product>() ;
-				
-				for (int i = 0; i<listmodelAlimentos.size(); i++) {
-				listProducts.add(listmodelAlimentos.get(i));
-				}
-				
-				ow.setProducts(listProducts);
-				System.out.println(listProducts.toString());
+				addProducts(ow);
 				ow.setVisible(true);
 				dispose();
 						
@@ -207,8 +200,18 @@ public class CinemaFoodWindow extends JFrame {
 		contentPane.add(btnAadir);
 
 	}
+	public void addProducts(OrderWindow ow) {
+		List <Product> listProducts = new ArrayList<Product>() ;
+		
+		for (int i = 0; i<listmodelAlimentos.size(); i++) {
+		listProducts.add(listmodelAlimentos.get(i));
+		}
+		
+		ow.setProducts(listProducts);
+		System.out.println(listProducts.toString());
+	}
 
-	private void btnSetImageIcon(String urlS, JLabel jb) throws IOException {
+	public void btnSetImageIcon(String urlS, JLabel jb) throws IOException {
 		URL url = new URL(urlS);
 
 		Image image;
