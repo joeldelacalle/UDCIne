@@ -10,6 +10,7 @@ import org.junit.*;
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
 import es.deusto.spq.Main;
+import es.deusto.spq.User;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -27,6 +28,7 @@ public class RatingWindowTest {
 
 	private Film film;
 	private Cinema cinema;
+	private User user;
 
 	private RatingWindow rw;
 	private JLabel labeluser = new JLabel("jaimesanta");
@@ -58,6 +60,8 @@ public class RatingWindowTest {
 		cinema = new Cinema("Cine Deusto Bakacaldo", "bakacaldo", "Max Center", 458345345);
 		comboBox_1 = new JComboBox<String>();
 		comboBox_1.addItem(cinema.getName());
+		
+		user = new User();
 
 		rw = new RatingWindow();
 	}
@@ -76,6 +80,11 @@ public class RatingWindowTest {
 	public void AñadirValoracionesCineTest() {
 		rw.AñadirValoracionCine(comboBox_1, listModelCines, labeluser,
 				textField_1);
+	}
+	
+	@Test
+	public void SetUserNameTest() {
+		rw.SetUserName(user);
 	}
 
 }
