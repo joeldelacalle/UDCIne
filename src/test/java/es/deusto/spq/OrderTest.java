@@ -11,7 +11,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class OrderTest {
-
+	/**
+	 * Clase test Pedido
+	 *
+	 */
 	private Order o;
 	private List<Product> products;
 	private List<Ticket> tickets;
@@ -23,6 +26,10 @@ public class OrderTest {
 	private Film film;
 
 	@Before
+	/**
+	 * Metodo para construir objeto:Ticket, Cine, Pelicula, Producto, Pedido con sus atributos correspondientes
+	 *
+	 */
 	public void setUp() {
 		products = new ArrayList<Product>();
 		tickets = new ArrayList<Ticket>();
@@ -44,48 +51,80 @@ public class OrderTest {
 
 	}
 	@Test
+	/**
+	 * Test para obtener el id de un Pedido
+	 *
+	 */
 	public void testSetGetId() {
 		o.setId(5);
 		assertEquals(5, o.getId());
 	}
 
 	@Test
+	/**
+	 * Test para obtener el email de un Pedido
+	 *
+	 */
 	public void testSetGetMail() {
 		o.setMail("perrosanxe@yahoo.com");
 		assertEquals("perrosanxe@yahoo.com", o.getMail());
 	}
 
 	@Test
+	/**
+	 * Test para obtener la fecha de un Pedido
+	 *
+	 */
 	public void testSetGetDate() {
 		o.setDate(dfd1);
 		assertEquals(dfd1, o.getDate());
 	}
 
 	@Test
+	/**
+	 * Test para obtener el precio de un Pedido
+	 *
+	 */
 	public void testSetGetPrice() {
 		o.setPrice(7);
 		assertEquals(7, o.getPrice());
 	}
 
 	@Test
+	/**
+	 * Test para obtener los tickets de un Pedido
+	 *
+	 */
 	public void testSetGetTickets() {
 		o.setTickets(tickets.toString());
 		assertEquals(tickets.toString(), o.getTickets().toString());
 	}
 
 	@Test
+	/**
+	 * Test para obtener los productos de un Pedido
+	 *
+	 */
 	public void testSetGetProducts() {
 		o.setProducts(products.toString());
 		assertEquals(products.toString(), o.getProducts());
 	}
 
 	@Test
+	/**
+	 * Test para obtener el metodo de pago de un Pedido
+	 *
+	 */
 	public void testSetGetPaymentMethod() {
 		o.setPaymentMethod("paypal");
 		assertEquals("paypal", o.getPaymentMethod());
 	}
 
 	@Test 
+	/**
+	 * Test para obtener el ToString del Pedido, saca un string con la estructura definida en el propio método.
+	 *
+	 */
 	public void testToString() {
 		assertEquals("Order [id=0" + ", mail=perro@gmail.com" + ", date=" + dfd1 + ", tickets=" + tickets + ", products="
 				+ products + ", paymentMethod=En caja"  + ", price=1" + "]", o.toString());
