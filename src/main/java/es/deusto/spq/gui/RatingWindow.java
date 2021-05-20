@@ -142,7 +142,7 @@ public class RatingWindow extends JFrame {
 		JButton btnNewButton_1 = new JButton("A\u00F1adir");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AñadirValoracionPeli(comboBox, listmodelpelis);
+				AñadirValoracionPeli(comboBox, listmodelpelis, labeluser, textField);
 			}
 
 		});
@@ -153,7 +153,7 @@ public class RatingWindow extends JFrame {
 		JButton btnNewButton_2 = new JButton("A\u00F1adir");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AñadirValoracionCine(comboBox_1, listmodelcines);
+				AñadirValoracionCine(comboBox_1, listmodelcines, labeluser, textField_1);
 			}
 
 		});
@@ -275,7 +275,8 @@ public class RatingWindow extends JFrame {
 	/**
 	 * Metodo para añadir una valoracion sobre una pelicula
 	 */
-	public void AñadirValoracionPeli(final JComboBox<String> comboBox, final DefaultListModel<String> listmodelpelis) {
+	public void AñadirValoracionPeli(final JComboBox<String> comboBox, final DefaultListModel<String> listmodelpelis,
+			JLabel labeluser, JTextField textField) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -311,8 +312,8 @@ public class RatingWindow extends JFrame {
 	/**
 	 * Metodo para añadir una valoracion sobre un cine
 	 */
-	public void AñadirValoracionCine(final JComboBox<String> comboBox_1,
-			final DefaultListModel<String> listmodelcines) {
+	public void AñadirValoracionCine(final JComboBox<String> comboBox_1, final DefaultListModel<String> listmodelcines,
+			JLabel labeluser, JTextField textField_1) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 		PersistenceManager pm = pmf.getPersistenceManager();
