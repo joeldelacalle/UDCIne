@@ -20,6 +20,9 @@ import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
 import es.deusto.spq.Main;
 import es.deusto.spq.Room;
+import es.deusto.spq.jdo.CinemaResource;
+import es.deusto.spq.jdo.RoomResource;
+import es.deusto.spq.jdo.RoomResourceTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -38,21 +41,19 @@ public class AdminRoomsWindowTest {
 	private List<Room> rooms;
 	private GenericType<List<Film>> genericType2;
 	private List<Film> films;
-	
-	
+
 	private Room room1;
 	private Cinema cinema1;
 	private Film filmA;
 	private long roomCinemaId;
-	
-	private Date date = null;	
+
+	private Date date = null;
 	private final JComboBox<Film> comboFilm = new JComboBox<Film>();
 	private final JComboBox<Cinema> comboCinema = new JComboBox<Cinema>();
 	private final JComboBox<String> comboRoom = new JComboBox<String>();
 	private JDateChooser calendar = new JDateChooser("yyyy/MM/dd", "####/##/##", '_');
-	
-	private AdminRoomsWindow arw;
 
+	private AdminRoomsWindow arw;
 
 	@Before
 	public void setUp() throws Exception {
@@ -63,13 +64,13 @@ public class AdminRoomsWindowTest {
 		FilmsTarget = appTarget.path("films");
 		roomsTarget = appTarget.path("rooms");
 		cinemasTarget = appTarget.path("cinemas");
-		
-		room1=new Room(cinema1, filmA, "SANTANDER SALA 1", Calendar.getInstance().getTime(), 100);
-		
+
+		room1 = new Room(cinema1, filmA, "SANTANDER SALA 1", Calendar.getInstance().getTime(), 100);
+
 		genericType0 = new GenericType<List<Cinema>>() {
 		};
 		cinemas = cinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType0);
-		
+
 		genericType1 = new GenericType<List<Room>>() {
 		};
 		rooms = roomsTarget.request(MediaType.APPLICATION_JSON).get(genericType1);
@@ -82,11 +83,11 @@ public class AdminRoomsWindowTest {
 		for (Film film : films) {
 			comboFilm.addItem(film);
 		}
-		
+
 		arw = new AdminRoomsWindow();
-		
+
 	}
-	
+
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
@@ -95,8 +96,9 @@ public class AdminRoomsWindowTest {
 	@Test
 	public void addFilmtoRoom() {
 		arw.getCineYSalas(comboCinema, comboRoom);
-		arw.addFilmtoRoom(comboCinema,comboFilm,comboRoom, date, 100);
+		arw.addFilmtoRoom(comboCinema, comboFilm, comboRoom, date, 100);
 	}
+
 	@Test
 	public void getCineYSalas() {
 		arw.getCineYSalas(comboCinema, comboRoom);

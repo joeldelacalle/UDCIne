@@ -19,45 +19,53 @@ import es.deusto.spq.Main;
 import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.Entity;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
 @Category(IntegrationTest.class)
 public class CinemaResourceTest {
-	
-	@Rule public ContiPerfRule rule = new ContiPerfRule();
-	private HttpServer server;
-    private WebTarget appTarget;
-    private Client c;
 
-    
-    @Before
-    public void setUp() throws Exception {
-    	server = Main.startServer();
-        c = ClientBuilder.newClient();
-        appTarget = c.target(Main.BASE_URI);
-    }
-    
-    @SuppressWarnings("deprecation")
+	@Rule
+	public ContiPerfRule rule = new ContiPerfRule();
+	private HttpServer server;
+	private WebTarget appTarget;
+	private Client c;
+	private List<Cinema> listacines;
+
+	@Before
+	public void setUp() throws Exception {
+		server = Main.startServer();
+		c = ClientBuilder.newClient();
+		appTarget = c.target(Main.BASE_URI);
+		listacines = Arrays.asList(new Cinema("Cine Deusto Zubiarte", "Bilbao", "Centro Comercial Zubiarte", 123456789),
+				new Cinema("Cine Deusto Santander", "Santander", "Corte Ingles nueva montaña", 345345345),
+				new Cinema("Cine Deusto Barakaldo", "Barakaldo", "Max Center", 458345345));
+	}
+
+	@SuppressWarnings("deprecation")
 	@After
-    public void tearDown() throws Exception {
-        server.stop();
-    }
-    
+	public void tearDown() throws Exception {
+		server.stop();
+	}
+
 	@Test
 	@PerfTest(invocations = 100, threads = 40)
 	public void testgetCinemas() {
-	    WebTarget cinemasTarget = appTarget.path("cinemas");
-	    	
-	    List<Cinema> listacines = Arrays.asList(new Cinema("Cine Deusto Zubiarte", "Bilbao", "Centro Comercial Zubiarte", 123456789),new Cinema("Cine Deusto Santander", "Santander", "Corte Ingles nueva montaña", 345345345),new Cinema("Cine Deusto Bakacaldo", "bakacaldo", "Max Center", 458345345));
-
-	    GenericType<List<Cinema>> genericType = new GenericType<List<Cinema>>() {};
-	    List<Cinema> cines = cinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-	    	
-	    assertEquals(listacines.get(0).getName(), cines.get(0).getName());
-	    assertEquals(listacines.get(1).getName(), cines.get(1).getName());
-	    assertEquals(listacines.get(2).getName(), cines.get(2).getName());
+		WebTarget cinemasTarget = appTarget.path("cinemas");
+		GenericType<List<Cinema>> genericType = new GenericType<List<Cinema>>() {
+		};
+		List<Cinema> cines = cinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+		// System.out.println(listacines.get(0).getName());
+		// System.out.println(cines.get(2).getName());
+		// System.out.println(listacines.get(1).getName());
+		// System.out.println(cines.get(2).getName());
+		// System.out.println(listacines.get(2).getName());
+		// System.out.println(cines.get(3).getName());
+		assertEquals(listacines.get(0).getName(), cines.get(0).getName());
+		assertEquals(listacines.get(1).getName(), cines.get(2).getName());
+		assertEquals(listacines.get(2).getName(), cines.get(3).getName());
 	}
 
 }

@@ -65,7 +65,7 @@ public class PreparedData {
 			pm.makePersistent(cinema1);
 			Cinema cinema2 = new Cinema("Cine Deusto Santander", "Santander", "Corte Ingles nueva montaña", 345345345);
 			pm.makePersistent(cinema2);
-			Cinema cinema3 = new Cinema("Cine Deusto Bakacaldo", "bakacaldo", "Max Center", 458345345);
+			Cinema cinema3 = new Cinema("Cine Deusto Barakaldo", "Barakaldo", "Max Center", 458345345);
 			pm.makePersistent(cinema3);
 
 			Release release1 = new Release("Anthony y Joe Russo", "Cherry",

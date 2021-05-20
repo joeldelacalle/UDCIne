@@ -6,8 +6,12 @@ import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
+
+import es.deusto.spq.Cinema;
+import es.deusto.spq.Release;
 import es.deusto.spq.Room;
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
@@ -33,5 +37,6 @@ public class RoomResource {
 
 		return room;
 	}
+	
 }
 
