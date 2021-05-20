@@ -3,37 +3,14 @@
  */
 package es.deusto.spq.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.jdo.JDOHelper;
-import javax.jdo.PersistenceManager;
-import javax.jdo.PersistenceManagerFactory;
-import javax.jdo.Transaction;
-import javax.swing.DefaultListModel;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import es.deusto.spq.Order;
-import es.deusto.spq.PayPal;
-import es.deusto.spq.Receipt;
-import jakarta.ws.rs.client.Client;
-import jakarta.ws.rs.client.ClientBuilder;
-import jakarta.ws.rs.client.WebTarget;
-import jakarta.ws.rs.core.GenericType;
-import jakarta.ws.rs.core.MediaType;
-
 import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
-
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -41,16 +18,32 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.jdo.JDOHelper;
+import javax.jdo.PersistenceManager;
+import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Transaction;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-import javax.swing.JTextField;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import es.deusto.spq.Order;
+import es.deusto.spq.PayPal;
+import es.deusto.spq.Receipt;
+import es.deusto.spq.jdo.PagoResource;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
 
 public class PaymentWindow extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	/**
 	 * Ventana de Pago.
 	 *
@@ -166,7 +159,7 @@ public class PaymentWindow extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				PagarPaypal(o);
+				PagarPaypal(o, textField, passwordField);
 			}
 
 		});
@@ -183,152 +176,156 @@ public class PaymentWindow extends JFrame {
 	/**
 	 * Metodo para pagar con PayPal
 	 */
-	private void PagarPaypal(Order o) {
+	public void PagarPaypal(Order o, JTextField textField, JPasswordField passwordField) {
 		String email = textField.getText();
 		String contraseña = String.valueOf(passwordField.getPassword());
-		String[] opciones = { "Aceptar", "Cancelar" };
-		String confirmacion = "¿Estas seguro de que quieres pagar con PayPal?";
-		int respuesta = JOptionPane.showOptionDialog(null, confirmacion, "¿Estas seguro?",
-				JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-		switch (respuesta) {
-		case 0:
-			if (!email.matches(EMAIL_PATTERN)) {
-				JOptionPane.showMessageDialog(null, "Email no valido", "ERROR", JOptionPane.ERROR_MESSAGE);
-			} else {
-				WebTarget PaypalTarget = pagoTarget.path("getemail").queryParam("email", email);
-				GenericType<PayPal> genericType = new GenericType<PayPal>() {
-				};
-				PayPal paypal = PaypalTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-				if (paypal.getPassword().equals(contraseña)) {
-					JOptionPane.showMessageDialog(null, "Usuario correcto, se ha llevado a cabo la reserva, pagada");
-					o.setPaymentMethod("Pagado con Paypal");
-					String Email = o.getMail();
-					String Paymentmethod = o.getPaymentMethod();
-					String Products = o.getProducts();
-					String Tickets = o.getTickets();
-					long Price = o.getPrice();
-					Date Fecha = o.getDate();
-					Receipt r = new Receipt(Email, Fecha, o, Price);
-					try {
-						FileWriter archivo = new FileWriter("Facturas/" + Email + ".txt", true);
+		// String[] opciones = { "Aceptar", "Cancelar" };
+		// String confirmacion = "¿Estas seguro de que quieres pagar con PayPal?";
+		// int respuesta = JOptionPane.showOptionDialog(null, confirmacion, "¿Estas
+		// seguro?",
+		// JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+		// opciones, opciones[0]);
+		// switch (respuesta) {
+		// case 0:
+		if (!email.matches(EMAIL_PATTERN)) {
+			JOptionPane.showMessageDialog(null, "Email no valido", "ERROR", JOptionPane.ERROR_MESSAGE);
+		} else {
 
-						PrintWriter escribir = new PrintWriter(archivo);
+			PagoResource pr = new PagoResource();
+			PayPal paypal = pr.getPaypal(email);
 
-						String cadena = " -----------------" + "\r\n" + "|-Fecha de compra: " + Fecha + "\r\n"
-								+ "|-Email: " + Email + "\r\n" + "|-Tickets: " + Tickets + "\r\n" + "|-Products: "
-								+ Products + "\r\n" + "|-Paymentmethod: " + Paymentmethod + "\r\n" + "|-Price: " + Price
-								+ "\r\n" + " -----------------";
-						escribir.print(cadena);
+			if (paypal.getPassword().equals(contraseña)) {
+				//JOptionPane.showMessageDialog(null, "Usuario correcto, se ha llevado a cabo la reserva, pagada");
+				o.setPaymentMethod("Pagado con Paypal");
+				String Email = o.getMail();
+				String Paymentmethod = o.getPaymentMethod();
+				String Products = o.getProducts();
+				String Tickets = o.getTickets();
+				long Price = o.getPrice();
+				Date Fecha = o.getDate();
+				Receipt r = new Receipt(Email, Fecha, o, Price);
+				try {
+					FileWriter archivo = new FileWriter("Facturas/" + Email + ".txt", true);
 
-						archivo.close();
-					} catch (IOException e6) {
-						logger.log(Level.WARNING, "ERROR", e6);
-						// e6.printStackTrace();
-					}
+					PrintWriter escribir = new PrintWriter(archivo);
 
-					PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+					String cadena = " -----------------" + "\r\n" + "|-Fecha de compra: " + Fecha + "\r\n" + "|-Email: "
+							+ Email + "\r\n" + "|-Tickets: " + Tickets + "\r\n" + "|-Products: " + Products + "\r\n"
+							+ "|-Paymentmethod: " + Paymentmethod + "\r\n" + "|-Price: " + Price + "\r\n"
+							+ " -----------------";
+					escribir.print(cadena);
 
-					PersistenceManager pm = pmf.getPersistenceManager();
-					Transaction tx = pm.currentTransaction();
-
-					System.out.println("Añadiendo pedido en la BD");
-
-					try {
-						tx.begin();
-						pm.makePersistent(r);
-						pm.makePersistent(o);
-
-						tx.commit();
-						System.out.println("Añadido una nuevo pedido a la Base de Datos");
-
-					} finally {
-						if (tx.isActive()) {
-							tx.rollback();
-						}
-						pm.close();
-					}
-					dispose();
-					MainWindow mw = new MainWindow();
-					mw.setVisible(true);
-				} else {
-					JOptionPane.showMessageDialog(null, "Usuario incorrecto");
+					archivo.close();
+				} catch (IOException e6) {
+					logger.log(Level.WARNING, "ERROR", e6);
+					// e6.printStackTrace();
 				}
+
+				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+
+				PersistenceManager pm = pmf.getPersistenceManager();
+				Transaction tx = pm.currentTransaction();
+
+				System.out.println("Añadiendo pedido en la BD");
+
+				try {
+					tx.begin();
+					pm.makePersistent(r);
+					pm.makePersistent(o);
+
+					tx.commit();
+					System.out.println("Añadido una nuevo pedido a la Base de Datos");
+
+				} finally {
+					if (tx.isActive()) {
+						tx.rollback();
+					}
+					pm.close();
+				}
+				dispose();
+				MainWindow mw = new MainWindow();
+				mw.setVisible(true);
+			} else {
+				JOptionPane.showMessageDialog(null, "Usuario incorrecto");
 			}
-			break;
-		case 1:
-			JOptionPane.showMessageDialog(null, "Se ha cancelado la operacion");
-			break;
-		default:
-			break;
 		}
+		// break;
+		// case 1:
+		// JOptionPane.showMessageDialog(null, "Se ha cancelado la operacion");
+		// break;
+		// default:
+		// break;
+		// }
 	}
 
 	/**
 	 * Metodo para pagar En caja
 	 */
-	private void PagarCaja(Order o) {
-		String[] opciones = { "Aceptar", "Cancelar" };
-		String confirmacion = "¿Estas seguro de que quieres pagar en la caja?";
-		int respuesta = JOptionPane.showOptionDialog(null, confirmacion, "¿Estas seguro?",
-				JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-		switch (respuesta) {
-		case 0:
-			JOptionPane.showMessageDialog(null, "Se ha llevado a cabo la reserva, pendiente de pago");
-			o.setPaymentMethod("Pendiente de pago");
-			String Email = o.getMail();
-			String Paymentmethod = o.getPaymentMethod();
-			String Products = o.getProducts();
-			String Tickets = o.getTickets();
-			long Price = o.getPrice();
-			Date Fecha = o.getDate();
+	public void PagarCaja(Order o) {
+		// String[] opciones = { "Aceptar", "Cancelar" };
+		// String confirmacion = "¿Estas seguro de que quieres pagar en la caja?";
+		// int respuesta = JOptionPane.showOptionDialog(null, confirmacion, "¿Estas
+		// seguro?",
+		// JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+		// opciones, opciones[0]);
+		// switch (respuesta) {
+		// case 0:
+		//JOptionPane.showMessageDialog(null, "Se ha llevado a cabo la reserva, pendiente de pago");
+		o.setPaymentMethod("Pendiente de pago");
+		String Email = o.getMail();
+		String Paymentmethod = o.getPaymentMethod();
+		String Products = o.getProducts();
+		String Tickets = o.getTickets();
+		long Price = o.getPrice();
+		Date Fecha = o.getDate();
 
-			try {
-				FileWriter archivo = new FileWriter("Facturas/" + Email + ".txt", true);
+		try {
+			FileWriter archivo = new FileWriter("Facturas/" + Email + ".txt", true);
 
-				PrintWriter escribir = new PrintWriter(archivo);
+			PrintWriter escribir = new PrintWriter(archivo);
 
-				String cadena = " -----------------" + "\r\n" + "|-Fecha de compra: " + Fecha + "\r\n" + "|-Email: "
-						+ Email + "\r\n" + "|-Tickets: " + Tickets + "\r\n" + "|-Products: " + Products + "\r\n"
-						+ "|-Paymentmethod: " + Paymentmethod + "\r\n" + "|-Price: " + Price + "\r\n"
-						+ " -----------------";
-				escribir.print(cadena);
+			String cadena = " -----------------" + "\r\n" + "|-Fecha de compra: " + Fecha + "\r\n" + "|-Email: " + Email
+					+ "\r\n" + "|-Tickets: " + Tickets + "\r\n" + "|-Products: " + Products + "\r\n"
+					+ "|-Paymentmethod: " + Paymentmethod + "\r\n" + "|-Price: " + Price + "\r\n"
+					+ " -----------------";
+			escribir.print(cadena);
 
-				archivo.close();
-			} catch (IOException e6) {
-				logger.log(Level.WARNING, "ERROR", e6);
-				// e6.printStackTrace();
-			}
-			PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-
-			PersistenceManager pm = pmf.getPersistenceManager();
-			Transaction tx = pm.currentTransaction();
-
-			System.out.println("Añadiendo pedido en la BD");
-
-			try {
-				tx.begin();
-
-				pm.makePersistent(o);
-
-				tx.commit();
-				System.out.println("Añadido una nuevo pedido a la Base de Datos");
-
-			} finally {
-				if (tx.isActive()) {
-					tx.rollback();
-				}
-				pm.close();
-			}
-			dispose();
-			MainWindow mw = new MainWindow();
-			mw.setVisible(true);
-			break;
-		case 1:
-			JOptionPane.showMessageDialog(null, "Se ha cancelado la operacion");
-			break;
-		default:
-			break;
+			archivo.close();
+		} catch (IOException e6) {
+			logger.log(Level.WARNING, "ERROR", e6);
+			// e6.printStackTrace();
 		}
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		System.out.println("Añadiendo pedido en la BD");
+
+		try {
+			tx.begin();
+
+			pm.makePersistent(o);
+
+			tx.commit();
+			System.out.println("Añadido una nuevo pedido a la Base de Datos");
+
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+		dispose();
+		MainWindow mw = new MainWindow();
+		mw.setVisible(true);
+		// break;
+		// case 1:
+		// JOptionPane.showMessageDialog(null, "Se ha cancelado la operacion");
+		// break;
+		// default:
+		// break;
+		// }
 	}
 
 }
