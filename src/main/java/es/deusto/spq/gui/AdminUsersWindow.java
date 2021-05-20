@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la Ventana AdminUsersWindow es.deusto.spq.gui AdminUsersWindow.java. May 20, 2021
+ */
 package es.deusto.spq.gui;
 
 import java.awt.Color;

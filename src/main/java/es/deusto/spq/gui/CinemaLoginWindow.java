@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la Ventana CinemaLoginWindow es.deusto.spq.gui CinemaLoginWindow.java. May 20, 2021
+ */
 package es.deusto.spq.gui;
 
 import java.awt.Color;

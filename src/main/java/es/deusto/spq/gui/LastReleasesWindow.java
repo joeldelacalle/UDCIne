@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la Ventana LastReleasesWindow es.deusto.spq.gui LastReleasesWindow.java. May 20, 2021
+ */
 package es.deusto.spq.gui;
 
 import java.awt.Color;

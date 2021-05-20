@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la Ventana AdminRoomsWindow es.deusto.spq.gui AdminRoomsWindow.java. May 20, 2021
+ */
 package es.deusto.spq.gui;
 
 import java.awt.Color;
