@@ -36,7 +36,7 @@ import java.awt.event.ActionEvent;
 public class AdminUsersWindow extends JFrame {
 
 	/**
-	 * 
+	 * Ventana Administrador para usuarios
 	 */
 	private static final long serialVersionUID = 1L;
 	
@@ -49,7 +49,9 @@ public class AdminUsersWindow extends JFrame {
 	final WebTarget UsersallTarget = UsersTarget.path("allusers");
 	//private UserResource ur;
 	//private List<User> users = ur.getUsers();
-	
+	/**
+	 * Crea la ventana de Administracion de usuarios
+	 */
 	public AdminUsersWindow() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -133,7 +135,9 @@ public class AdminUsersWindow extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				EliminarUsuarioBd();
 			}
-
+			/**
+			 * Metodo que elimina usuarios de la Base de datos
+			 */
 			private void EliminarUsuarioBd() {
 				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 				PersistenceManager pm = pmf.getPersistenceManager();

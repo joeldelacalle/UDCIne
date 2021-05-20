@@ -55,7 +55,7 @@ public class RegisterWindow extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Crea la ventana de registro
 	 */
 	public RegisterWindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

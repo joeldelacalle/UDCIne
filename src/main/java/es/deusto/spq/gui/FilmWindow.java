@@ -43,7 +43,7 @@ import javax.swing.JTextPane;
 public class FilmWindow extends JFrame {
 
 	/**
-	 * 
+	 * Ventana Pelicula
 	 */
 	private static final long serialVersionUID = 1L;
 	Client client = ClientBuilder.newClient();
@@ -73,7 +73,9 @@ public class FilmWindow extends JFrame {
 	private JLabel lblUserName = new JLabel("");
 
     public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-	
+    /**
+	 * Metodo para crear nuevas Peliculas
+	 */
 	private void nuevasPeliculas(final JComboBox<String> comboBoxFilm) {
 		textFieldFilmName.setText(comboBoxFilm.getSelectedItem().toString());
 		String selectedFilm = textFieldFilmName.getText();
@@ -109,7 +111,9 @@ public class FilmWindow extends JFrame {
 		}
 		filmAgeRestImage();
 	}
-
+	/**
+	 * Metodo para asignar una imagen para cada edad
+	 */
 	private void filmAgeRestImage() {
 		if (ageAll == ageFilm) {
 			try {
@@ -146,7 +150,9 @@ public class FilmWindow extends JFrame {
 			}
 		}
 	}
-
+	/**
+	 * Metodo para modificar la imagen asociada a cada edad
+	 */
 	private void ageFilmIconResize(URL url) throws IOException {
 		Image image;
 		image = ImageIO.read(url);
@@ -165,11 +171,7 @@ public class FilmWindow extends JFrame {
 	}
 
 	/**
-	 * Launch the application.
-	 */
-
-	/**
-	 * Create the frame.
+	 * Crea la ventana Pelicula
 	 */
 	public FilmWindow(int selectedFilm) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

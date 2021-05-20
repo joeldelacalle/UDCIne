@@ -41,7 +41,7 @@ import java.awt.event.MouseMotionAdapter;
 public class AdminRoomsWindow extends JFrame {
 
 	/**
-	 * 
+	 * Ventana Administrador para salas
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -82,7 +82,9 @@ public class AdminRoomsWindow extends JFrame {
 
 	private JDateChooser calendar = new JDateChooser("yyyy/MM/dd", "####/##/##", '_');
 	private long roomCinemaId;
-
+	/**
+	 * 	Metodo que añade una pelicula a una sala 
+	 */
 	public void addFilmtoRoom(JComboBox<Cinema> comboCinema, JComboBox<Film> comboFilm, JComboBox<String> comboRoom, Date d, int i) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
@@ -106,7 +108,9 @@ public class AdminRoomsWindow extends JFrame {
 			pm.close();
 		}
 	}
-
+	/**
+	 * Metodo para obtener el cine y las salas
+	 */
 	public void getCineYSalas(JComboBox<Cinema> comboCinema, JComboBox<String> comboRoom) {
 		if (comboCinema.getSelectedIndex() == 0) {
 			if (comboRoom.getItemCount() >= 1) {
@@ -160,7 +164,9 @@ public class AdminRoomsWindow extends JFrame {
 
 		}
 	}
-
+	/**
+	 * Crea la ventana de administracion de salas
+	 */
 	public AdminRoomsWindow() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

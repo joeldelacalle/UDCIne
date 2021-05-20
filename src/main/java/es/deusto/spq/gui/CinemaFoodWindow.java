@@ -36,7 +36,10 @@ import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
 public class CinemaFoodWindow extends JFrame {
-
+	/**
+	 * Ventana de alimentos
+	 *
+	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
@@ -44,7 +47,10 @@ public class CinemaFoodWindow extends JFrame {
 	private DefaultListModel<Product> listmodelAlimentos;
 	private ProductResource pr = new ProductResource();
 	private List<Product> products = pr.getProducts();
-
+	/**
+	 * Crea la ventana de alimentos
+	 *
+	 */
 	public CinemaFoodWindow(final Film selectedFilm) {
 
 		setUndecorated(true);
@@ -200,7 +206,10 @@ public class CinemaFoodWindow extends JFrame {
 		contentPane.add(btnAadir);
 
 	}
-
+	/**
+	 * Metodo para añadir productos
+	 *
+	 */
 	public void addProducts(OrderWindow ow, DefaultListModel<Product> listmodelAlimentos) {
 		List<Product> listProducts = new ArrayList<Product>();
 
@@ -211,7 +220,10 @@ public class CinemaFoodWindow extends JFrame {
 		ow.setProducts(listProducts);
 		System.out.println(listProducts.toString());
 	}
-
+	/**
+	 * Metodo para establecer la imagen. Ajusta la altura y anchura de la imagen.
+	 *	
+	 */
 	public void btnSetImageIcon(String urlS, JLabel jb) throws IOException {
 		URL url = new URL(urlS);
 

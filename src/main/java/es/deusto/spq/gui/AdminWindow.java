@@ -18,12 +18,14 @@ import javax.swing.border.LineBorder;
 public class AdminWindow extends JFrame{
 
 	/**
-	 * 
+	 * Ventana Administrador
 	 */
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
-	
+	/**
+	 * Crea la ventana de Administracion
+	 */
 	public AdminWindow() {
 		
 		setUndecorated(true);
@@ -93,7 +95,9 @@ public class AdminWindow extends JFrame{
 		lblAdmin.setFont(new Font("Cooper Black", Font.BOLD, 33));
 		lblAdmin.setBounds(199, 20, 338, 54);
 		contentPane.add(lblAdmin);
-		
+		/**
+    	 * Boton que contiene un metodo para acceder a la ventana administrador para peliculas
+    	 */
 		JButton btnPelis = new JButton("Administrar Películas");
 		btnPelis.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -107,7 +111,9 @@ public class AdminWindow extends JFrame{
 		btnPelis.setBackground(new Color(47, 79, 79));
 		btnPelis.setBounds(240, 170, 250, 50);
         contentPane.add(btnPelis);
-        
+        /**
+    	 * Boton que contiene un metodo para acceder a la ventana administrador para salas
+    	 */
         JButton btnSalas = new JButton("Administrar Salas");
         btnSalas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -121,7 +127,9 @@ public class AdminWindow extends JFrame{
         btnSalas.setBackground(new Color(47, 79, 79));
         btnSalas.setBounds(240, 250, 250, 50);
         contentPane.add(btnSalas);
-        
+        /**
+    	 * Boton que contiene un metodo para acceder a la ventana administrador para usuarios
+    	 */
         JButton btnUsuarios = new JButton("Administrar Usuarios");
         btnUsuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

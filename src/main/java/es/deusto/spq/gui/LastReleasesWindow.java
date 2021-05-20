@@ -43,7 +43,7 @@ import java.awt.event.ActionEvent;
 public class LastReleasesWindow extends JFrame {
 
 	/**
-	 * 
+	 * Ventana ultimos estrenos 
 	 */
 	private static final long serialVersionUID = 1L;
 	Client client = ClientBuilder.newClient();
@@ -69,7 +69,9 @@ public class LastReleasesWindow extends JFrame {
 	private String trailer ="-1";
 	
     public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-	
+    /**
+	 * Metodo para modificar la imagen asociada a cada edad
+	 */
 	private void ageReleaseIconResize(URL url) throws IOException {
 		Image image;
 		image = ImageIO.read(url);
@@ -85,7 +87,9 @@ public class LastReleasesWindow extends JFrame {
 		ImageIcon resizeImg = new ImageIcon(newImg);
 		lblAgeRestriction.setIcon(resizeImg);
 	}
-	
+	/**
+	 * Metodo para asignar una imagen para cada edad
+	 */
 	private void releaseAgeRestImage() {
 		if(ageAll == ageRelease) {
 			try {
@@ -127,7 +131,9 @@ public class LastReleasesWindow extends JFrame {
 	        }
 		}
 	}
-	
+	/**
+	 * Metodo para los nuevos lanzamientos
+	 */
 	private void nuevosLanzamientos() {
 		Image image = null;
 		textFieldReleaseTitle.setText(listReleases.getSelectedValue().getName());
@@ -160,7 +166,9 @@ public class LastReleasesWindow extends JFrame {
 		releaseAgeRestImage();
 		
 	}
-	
+	/**
+	 * Crea la ventana de ultimos estrenos
+	 */
 	public LastReleasesWindow() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

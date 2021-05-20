@@ -28,7 +28,10 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 
 public class CinemaLoginWindow extends JFrame {
-
+	/**
+	 * Ventana de login
+	 *
+	 */
 	private static final long serialVersionUID = 1L;
 	Client client = ClientBuilder.newClient();
 
@@ -42,7 +45,10 @@ public class CinemaLoginWindow extends JFrame {
 	
 
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-
+	/**
+	 * Metodo main. Crea la ventana de login
+	 *
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -57,7 +63,10 @@ public class CinemaLoginWindow extends JFrame {
 			}
 		});
 	}
-
+	/**
+	 * Crea la ventana de login.
+	 *
+	 */
 	public CinemaLoginWindow() {
 
 		setUndecorated(true);
@@ -248,7 +257,10 @@ public class CinemaLoginWindow extends JFrame {
 		contentPane.add(btnRegister);
 
 	}
-
+	/**
+	 * Metodo que para hacer login. Hay varias comprobaciones para que no se permita añadir un campo vacio y para que el usuario y contraseña sean correctos
+	 *
+	 */
 	public void Login(JPasswordField txtPassword1, JTextField txtUsername1) {
 		System.out.println(txtPassword1.getPassword().toString());
 		UserResource ur = new UserResource();
