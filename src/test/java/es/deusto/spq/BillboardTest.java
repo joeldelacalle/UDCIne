@@ -1,3 +1,6 @@
+/** \file 
+ * Breve descripción de es.deusto.spq BillboardTest.java. May 20, 2021
+ */
 package es.deusto.spq;
 
 import static org.junit.Assert.assertEquals;

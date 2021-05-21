@@ -1,3 +1,6 @@
+/** \file 
+ * Breve descripción de es.deusto.spq.gui ReceiptWindowTest.java. May 21, 2021
+ */
 package es.deusto.spq.gui;
 
 import static org.junit.Assert.*;
