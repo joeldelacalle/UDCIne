@@ -10,13 +10,13 @@ import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
-
+/**
+ * Clase base Pedido.
+ *
+ */
 @PersistenceCapable
 public class Order {
-	/**
-	 * Clase base Pedido.
-	 *
-	 */
+	
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.NATIVE)
 	protected long id;

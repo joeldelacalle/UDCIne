@@ -7,13 +7,13 @@ import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
-
+/**
+ * Clase base Cine.
+ *
+ */
 @PersistenceCapable
 public class Cinema {
-	/**
-	 * Clase base Cine.
-	 *
-	 */
+
 	@PrimaryKey
     @Persistent(valueStrategy=IdGeneratorStrategy.NATIVE)
     protected long id;

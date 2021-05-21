@@ -8,13 +8,13 @@ import java.util.Set;
 
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
-
+/**
+ * Clase base Inventario.
+ *
+ */
 @PersistenceCapable
 public class Inventory {
-	/**
-	 * Clase base Inventario.
-	 *
-	 */
+	
 	@PrimaryKey
 	protected String name = null;
 

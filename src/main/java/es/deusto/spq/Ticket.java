@@ -11,13 +11,13 @@ import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 import es.deusto.spq.gui.FilmWindow;
-
+/**
+ * Clase base Ticket.
+ *
+ */
 @PersistenceCapable
 public class Ticket {
-	/**
-	 * Clase base Ticket.
-	 *
-	 */
+	
 
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.NATIVE)

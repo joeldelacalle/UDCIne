@@ -7,13 +7,13 @@ import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
-
+/**
+ * Clase base Assessment.
+ *
+ */
 @PersistenceCapable
 public class Assessment {
-	/**
-	 * Clase base Assessment.
-	 *
-	 */
+	
 	@PrimaryKey
     @Persistent(valueStrategy=IdGeneratorStrategy.NATIVE)
     protected long id;
