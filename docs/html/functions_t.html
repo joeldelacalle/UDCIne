@@ -70,6 +70,8 @@ $(function() {
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a2561d9a52a9ae90ec99b03e13e323a24">es.deusto.spq.gui.AdminUsersWindowTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_film_window_test.html#ac8d627305f05a9c808a06b242272d38d">es.deusto.spq.gui.FilmWindowTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_last_realeases_test.html#a46961a20355f0540bc0ea69e61d89de1">es.deusto.spq.gui.LastRealeasesTest</a>
+, <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_rating_window_test.html#afc8ccf6fe36b4bafaaae29cbe325b464">es.deusto.spq.gui.RatingWindowTest</a>
+, <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window_test.html#a1ab32e0719526ccd35fc99c6b3b61e19">es.deusto.spq.gui.ReceiptWindowTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_resource_test.html#addf1c98a025586a50f9de64d6312fe2b">es.deusto.spq.jdo.CinemaResourceTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#a82b25acb91ee243c538e634ce2ccd932">es.deusto.spq.jdo.FilmResourceTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_order_resource_test.html#a3198b871860c50fe777c565d5fca833c">es.deusto.spq.jdo.OrderResourceTest</a>
@@ -83,6 +85,9 @@ $(function() {
 <li>testCrearPedido()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a4461cdb5aabdd68f5daee16fedb02ee9">es.deusto.spq.gui.OrderWindowTest</a>
 </li>
+<li>testgetCinemas()
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_resource_test.html#a4fab2fd5cf55e208626a7091db0badb6">es.deusto.spq.jdo.CinemaResourceTest</a>
+</li>
 <li>testgetFilms()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#a25f8f6ed17c2d8cf75681f94c4085176">es.deusto.spq.jdo.FilmResourceTest</a>
 </li>
@@ -95,14 +100,17 @@ $(function() {
 <li>testGetProducts()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1_inventory_test.html#aea3c8a6d510beea6451b28ef05c6f2d6">es.deusto.spq.InventoryTest</a>
 </li>
+<li>testgetProducts()
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#a0fbd7a682d59cf735f38ec0ba1abd245">es.deusto.spq.jdo.ProductResourceTest</a>
+</li>
 <li>testgetReceipts()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_receipt_resource_test.html#ace24d459ae5c10c7bce4815e4576a7e8">es.deusto.spq.jdo.ReceiptResourceTest</a>
 </li>
 <li>testgetReleases()
-: <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_resource_test.html#a760ffce5935b324a84669244206084e2">es.deusto.spq.jdo.CinemaResourceTest</a>
-, <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#a9ce876ea4fd6a7faaecb122f3686d04d">es.deusto.spq.jdo.ProductResourceTest</a>
-, <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_release_resource_test.html#aca49da4883889832e8743c7e917ec9d5">es.deusto.spq.jdo.ReleaseResourceTest</a>
-, <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room_resource_test.html#a287b46aafea58209c25b192af3697cd0">es.deusto.spq.jdo.RoomResourceTest</a>
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_release_resource_test.html#aca49da4883889832e8743c7e917ec9d5">es.deusto.spq.jdo.ReleaseResourceTest</a>
+</li>
+<li>testgetRooms()
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room_resource_test.html#a9ea938bf7408dc9ac7afd4e0dab74adb">es.deusto.spq.jdo.RoomResourceTest</a>
 </li>
 <li>testGetSetDate()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1_room_test.html#a8487865ac0c1089cf331381be7cca9bf">es.deusto.spq.RoomTest</a>
@@ -124,6 +132,15 @@ $(function() {
 </li>
 <li>testgetUsers()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user_resource_test.html#a50f670fa89ee6213ff4a67c5ad5fbd92">es.deusto.spq.jdo.UserResourceTest</a>
+</li>
+<li>testLogin()
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_cinema_login_window_test.html#ab0d086f230920055187a3a3b4b699c19">es.deusto.spq.gui.CinemaLoginWindowTest</a>
+</li>
+<li>testPagarCaja()
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window_test.html#a51fd3d8c7d6c6ba44b8f4f8e1296209e">es.deusto.spq.gui.PaymentWindowTest</a>
+</li>
+<li>testPagarPaypal()
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window_test.html#af321b25e134f141ca311cb065754d812">es.deusto.spq.gui.PaymentWindowTest</a>
 </li>
 <li>testPaypal()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_pago_resource_test.html#a4ff1247fe07e18e0cdcace34dc84680c">es.deusto.spq.jdo.PagoResourceTest</a>
@@ -246,7 +263,8 @@ $(function() {
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1_assessment_test.html#a88e19a645f0b269896a31859f699580e">es.deusto.spq.AssessmentTest</a>
 </li>
 <li>testSetUserName()
-: <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a8e84b0158d173f6222d2cda80cdb5ae1">es.deusto.spq.gui.OrderWindowTest</a>
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a8b8071a0228e83882b4cd0539177e874">es.deusto.spq.gui.MainWindowTest</a>
+, <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a8e84b0158d173f6222d2cda80cdb5ae1">es.deusto.spq.gui.OrderWindowTest</a>
 </li>
 <li>testToString()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1_administrator_test.html#a238741378638a3a890ab1827fce1f0d0">es.deusto.spq.AdministratorTest</a>

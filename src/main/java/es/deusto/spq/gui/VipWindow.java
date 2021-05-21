@@ -19,6 +19,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.ListModel;
 import javax.swing.border.LineBorder;
 
 import es.deusto.spq.Order;
@@ -87,10 +88,7 @@ public class VipWindow extends JFrame {
 		btnViewOrders.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				List<Order> oList = SetOrderRecord(lblUserName.getText());
-				for (int i = 0; i < oList.size(); i++) {
-					listModelOrders.addElement(oList.get(i));
-				}
+				
 
 			}
 		});
@@ -137,5 +135,12 @@ public class VipWindow extends JFrame {
 
 		return oList2;
 
+	}
+	
+	public void displayOrders(JLabel lblUserName,ListModel<Order>listModelOrders){
+		List<Order> oList = SetOrderRecord(lblUserName.getText());
+		for (int i = 0; i < oList.size(); i++) {
+			((DefaultListModel<Order>) listModelOrders).addElement(oList.get(i));
+		}
 	}
 }

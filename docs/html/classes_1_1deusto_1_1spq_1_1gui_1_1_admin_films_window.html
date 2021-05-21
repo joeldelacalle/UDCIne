@@ -97,6 +97,10 @@ Diagrama de colaboración para es.deusto.spq.gui.AdminFilmsWindow:</div>
 Métodos públicos</h2></td></tr>
 <tr class="memitem:af97f69f822e297413f84b41cd256deb1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#af97f69f822e297413f84b41cd256deb1">AdminFilmsWindow</a> ()</td></tr>
 <tr class="separator:af97f69f822e297413f84b41cd256deb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ada5b157bd55054be34aa51fbd20af9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#a6ada5b157bd55054be34aa51fbd20af9">AñadirPeliculaBd</a> (JTextField txtName, JTextField txtDirector, JTextField txtFoto, JComboBox&lt; Integer &gt; cbAge, JTextArea txtDescription)</td></tr>
+<tr class="separator:a6ada5b157bd55054be34aa51fbd20af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac001073c773cccd6ad96676bdb1d4e80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#ac001073c773cccd6ad96676bdb1d4e80">EliminarPeliculaBd</a> ()</td></tr>
+<tr class="separator:ac001073c773cccd6ad96676bdb1d4e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock">
@@ -116,8 +120,10 @@ Métodos públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Crea la ventana de Administración de películas </p>
+<p>La text area contiene un método para que no se pueda escribir más de 255 caracteres, incluso si se pega un texto más largo</p>
 
-<p class="definition">Definición en la línea <a class="el" href="_admin_films_window_8java_source.html#l00064">64</a> del archivo <a class="el" href="_admin_films_window_8java_source.html">AdminFilmsWindow.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_admin_films_window_8java_source.html#l00068">68</a> del archivo <a class="el" href="_admin_films_window_8java_source.html">AdminFilmsWindow.java</a>.</p>
 <div class="dynheader">
 Gráfico de llamadas para esta función:</div>
 <div class="dyncontent">
@@ -127,6 +133,101 @@ Gráfico de llamadas para esta función:</div>
 <area shape="rect" href="classes_1_1deusto_1_1spq_1_1_film.html#a08859f9d8a16825692a6cdbdc95c43d0" title=" " alt="" coords="261,5,426,32"/>
 <area shape="rect" href="classes_1_1deusto_1_1spq_1_1_film.html#aaebc9ca1f64e372d99025fb9dd019f0d" title=" " alt="" coords="252,56,435,83"/>
 </map>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_af97f69f822e297413f84b41cd256deb1_icgraph.png" border="0" usemap="#aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_af97f69f822e297413f84b41cd256deb1_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a id="a6ada5b157bd55054be34aa51fbd20af9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ada5b157bd55054be34aa51fbd20af9">&#9670;&nbsp;</a></span>AñadirPeliculaBd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void es.deusto.spq.gui.AdminFilmsWindow.AñadirPeliculaBd </td>
+          <td>(</td>
+          <td class="paramtype">JTextField&#160;</td>
+          <td class="paramname"><em>txtName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JTextField&#160;</td>
+          <td class="paramname"><em>txtDirector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JTextField&#160;</td>
+          <td class="paramname"><em>txtFoto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JComboBox&lt; Integer &gt;&#160;</td>
+          <td class="paramname"><em>cbAge</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JTextArea&#160;</td>
+          <td class="paramname"><em>txtDescription</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Añade una nueva película a la BD </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_admin_films_window_8java_source.html#l00353">353</a> del archivo <a class="el" href="_admin_films_window_8java_source.html">AdminFilmsWindow.java</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_a6ada5b157bd55054be34aa51fbd20af9_cgraph.png" border="0" usemap="#aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_a6ada5b157bd55054be34aa51fbd20af9_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_a6ada5b157bd55054be34aa51fbd20af9_icgraph.png" border="0" usemap="#aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_a6ada5b157bd55054be34aa51fbd20af9_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ac001073c773cccd6ad96676bdb1d4e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac001073c773cccd6ad96676bdb1d4e80">&#9670;&nbsp;</a></span>EliminarPeliculaBd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void es.deusto.spq.gui.AdminFilmsWindow.EliminarPeliculaBd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Elimina la película seleccionada de la lista de la BD </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_admin_films_window_8java_source.html#l00395">395</a> del archivo <a class="el" href="_admin_films_window_8java_source.html">AdminFilmsWindow.java</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_ac001073c773cccd6ad96676bdb1d4e80_cgraph.png" border="0" usemap="#aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_ac001073c773cccd6ad96676bdb1d4e80_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_ac001073c773cccd6ad96676bdb1d4e80_icgraph.png" border="0" usemap="#aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_ac001073c773cccd6ad96676bdb1d4e80_icgraph" alt=""/></div>
 </div>
 
 </div>
