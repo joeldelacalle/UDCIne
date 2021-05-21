@@ -85,7 +85,7 @@ public class FilmWindow extends JFrame {
 	/**
 	 * Metodo para crear nuevas Peliculas
 	 */
-	private void nuevasPeliculas(final JComboBox<String> comboBoxFilm) {
+	public void nuevasPeliculas(final JComboBox<String> comboBoxFilm) {
 		textFieldFilmName.setText(comboBoxFilm.getSelectedItem().toString());
 		String selectedFilm = textFieldFilmName.getText();
 		Image image = null;
@@ -126,7 +126,7 @@ public class FilmWindow extends JFrame {
 	/**
 	 * Metodo para asignar una imagen para cada edad
 	 */
-	private void filmAgeRestImage() {
+	public void filmAgeRestImage() {
 		if (ageAll == ageFilm) {
 			try {
 				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/6/68/Edad_TP.png");
@@ -166,7 +166,7 @@ public class FilmWindow extends JFrame {
 	/**
 	 * Metodo para modificar la imagen asociada a cada edad
 	 */
-	private void ageFilmIconResize(URL url) throws IOException {
+	public void ageFilmIconResize(URL url) throws IOException {
 		Image image;
 		image = ImageIO.read(url);
 		ImageIcon myImg = new ImageIcon(url);
