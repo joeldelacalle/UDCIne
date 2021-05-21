@@ -1,19 +1,31 @@
+/** \file 
+ * Breve descripción de es.deusto.spq.util PreparedDataTest.java. May 21, 2021
+ */
 package es.deusto.spq.util;
 
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ * Clase Test PreparedData
+ *
+ */
 public class PreparedDataTest {
 	
 	private static PreparedData pd;
-	
+	/**
+	 * Metodo para iniciar PreparedData
+	 *
+	 */
 	@Before
 	public void setUp() throws Exception{
 		
 		pd = new PreparedData();
 		
 	}
-	
+	/**
+	 * Test para crear Peliculas
+	 *
+	 */
 	@SuppressWarnings("static-access")
 	@Test
 	public void crearPeliculasTest() {
@@ -25,7 +37,10 @@ public class PreparedDataTest {
 		pd.pm.deletePersistent(pd.filmD);
 		
 	}
-	
+	/**
+	 * Test para crear Billboard
+	 *
+	 */
 	@SuppressWarnings("static-access")
 	@Test
 	public void crearBillboardTest() {
@@ -37,7 +52,10 @@ public class PreparedDataTest {
 		pd.pm.deletePersistent(pd.b4);
 		
 	}
-	
+	/**
+	 * Test para crear Cines
+	 *
+	 */
 	@SuppressWarnings("static-access")
 	@Test
 	public void crearCinesTest() {
@@ -48,7 +66,10 @@ public class PreparedDataTest {
 		pd.pm.deletePersistent(pd.cinema3);
 		
 	}
-	
+	/**
+	 * Test para crear nuevos Estrenos
+	 *
+	 */
 	@SuppressWarnings("static-access")
 	@Test
 	public void crearReleasesTest() {
@@ -59,7 +80,10 @@ public class PreparedDataTest {
 		pd.pm.deletePersistent(pd.release3);
 		
 	}
-	
+	/**
+	 * Test para crear Usuarios
+	 *
+	 */
 	@SuppressWarnings("static-access")
 	@Test
 	public void crearUsersTest() {
@@ -70,6 +94,7 @@ public class PreparedDataTest {
 	}
 	
 	/*
+	 * 
 	@SuppressWarnings("static-access")
 	@Test
 	public void crearSalasTest() {
@@ -86,7 +111,10 @@ public class PreparedDataTest {
 		pd.pm.deletePersistent(pd.room9);
 		
 	}*/
-	
+	/**
+	 * Test para crear Productos
+	 *
+	 */
 	@SuppressWarnings("static-access")
 	@Test
 	public void crearProductosTest() {
@@ -97,7 +125,10 @@ public class PreparedDataTest {
 		pd.pm.deletePersistent(pd.p3);
 		
 	}
-	
+	/**
+	 * Test para pagar con Paypal
+	 *
+	 */
 	@SuppressWarnings("static-access")
 	@Test
 	public void PayPalTest() {
@@ -106,7 +137,10 @@ public class PreparedDataTest {
 		pd.pm.deletePersistent(pd.pp1);
 		
 	}
-	
+	/**
+	 * Test para crear Pedidos
+	 *
+	 */
 	@SuppressWarnings("static-access")
 	@Test
 	public void crearOrdersTest() {
@@ -117,7 +151,10 @@ public class PreparedDataTest {
 		pd.pm.deletePersistent(pd.o3);
 		
 	}
-	
+	/**
+	 * Test para crear Recibos
+	 *
+	 */
 	@SuppressWarnings("static-access")
 	@Test
 	public void crearRecibosTest() {
