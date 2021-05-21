@@ -8,6 +8,8 @@ import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
@@ -23,41 +25,57 @@ import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
 public class AdminUsersWindowTest {
-	
+
 	private HttpServer server;
 	private WebTarget appTarget;
 	private WebTarget UsersTarget;
 	private WebTarget UsersallTarget;
+
+	private DefaultListModel<User> uList;
+	private GenericType<List<User>> genericType;
+	private List<User> users;
+
+	private JList<User> lista = new JList<User>();
+	private User u;
+	private int selectedUser;
+	private AdminUsersWindow auw;
+
 	@Before
 	public void setUp() throws Exception {
+
 		server = Main.startServer();
 		Client client = ClientBuilder.newClient();
 		appTarget = client.target("http://localhost:8080/myapp");
 		UsersTarget = appTarget.path("users");
 		UsersallTarget = UsersTarget.path("allusers");
-		
-		
+
+		uList = new DefaultListModel<User>();
+		genericType = new GenericType<List<User>>() {
+		};
+		users = UsersallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+
+		u = new User("Jaime", "jaimesanta", "jaimesanta@hotmail.com", "jaimesanta", 435345);
+		auw = new AdminUsersWindow();
+
 	}
-	
+
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
 	}
+
 	@Test
-	public void EliminarUsuarioBd() {
-		GenericType<List<User>> genericType = new GenericType<List<User>>() {};
-		List<User> users = UsersallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-		int size = users.size();
-		double selectedNumber = Math.floor(Math.random()*size);
-		int selectedUser = (int) Math.round(selectedNumber);
-		if(selectedNumber+1==users.get(selectedUser).getId()) {
-			users.remove(selectedUser);
-			assertEquals(users.size(), size-1);
-			
+	public void eliminarUsuarioBd() {
+
+		for (User user : users) {
+			//System.out.println(user.getName());
+			uList.addElement(user);
 		}
-		
-		
-		
+		//System.out.println(uList);
+		uList.addElement(u);
+		selectedUser = 1;
+		lista = new JList<User>(uList);
+		auw.eliminarUsuarioBd(lista, selectedUser);
 	}
 
 }
