@@ -103,10 +103,9 @@ public class AdminRoomsWindowTest {
 	@Test
 	public void addFilmtoRoom() {
 		selectedCinema0 = 0;
-		for (int i = 3; selectedCinema0 <= i; selectedCinema0++) {
+		//for (int i = 3; selectedCinema0 <= i; selectedCinema0++) {
 			arw.getCineYSalas(comboCinema, comboRoom, selectedCinema0);
 			arw.addFilmtoRoom(comboCinema, comboFilm, comboRoom, date, 100);
-		}
 
 	}
 
