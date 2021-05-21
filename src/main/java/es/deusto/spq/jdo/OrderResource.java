@@ -13,7 +13,9 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase para obtener datos de los pedidos de la base de datos
+ */
 @Path("order")
 public class OrderResource {
 	

@@ -16,12 +16,11 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase para obtener datos de los usuarios de la base de datos
+ */
 @Path("users")
 public class UserResource {
-	/**
-	 * Clase para obtener datos de los usuarios de la base de datos
-	 */
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
 	/**

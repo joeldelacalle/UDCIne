@@ -17,12 +17,11 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase para obtener datos de paypal de la base de datos
+ */
 @Path("paypal")
 public class PagoResource {
-	/**
-	 * Clase para obtener datos de paypal de la base de datos
-	 */
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	/**

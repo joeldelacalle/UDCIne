@@ -11,7 +11,9 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase para obtener datos de las peliculas de la base de datos
+ */
 @Path("films")
 public class FilmResources {
 	

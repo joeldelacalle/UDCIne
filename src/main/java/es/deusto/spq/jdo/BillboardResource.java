@@ -9,7 +9,9 @@ import javax.jdo.Query;
 
 import es.deusto.spq.Billboard;
 import jakarta.ws.rs.Path;
-
+/**
+ * Clase para obtener datos de BillBoard de la base de datos
+ */
 @Path("billboards")
 public class BillboardResource {
 

@@ -15,7 +15,9 @@ import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase para obtener datos de las salas de los cines de la base de datos
+ */
 @Path("rooms")
 public class RoomResource {
 	
