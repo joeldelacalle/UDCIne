@@ -40,7 +40,7 @@ public class AdminFilmsWindowTest {
 	private List<Film> films;
 	private Film filmA;
 	private int size;
-	private int selectedCinema;
+	private int selectedFilm;
 	private DefaultListModel<Film> fList;
 	private JList<Film> lista = new JList<Film>();
 
@@ -106,20 +106,22 @@ public class AdminFilmsWindowTest {
 
 		afw.añadirPeliculaBd(txtName, txtDirector, txtFoto, cbAge, txtDescription);
 	}
-	/**
-	 * Test para eliminar una pelicula a la BD
-	 *
-	 */
+
+
+	@Ignore
 	@Test
 	public void eliminarPeliculaBD() {
-		System.out.println(films);
+		// System.out.println(films);
 		for (Film film : films) {
 			fList.addElement(film);
 		}
-		fList.addElement(filmA);
-		selectedCinema = 0;
+		// fList.addElement(filmA);
+		System.out.println(fList);
+		selectedFilm = fList.size() - 1;
+		System.out.println(selectedFilm);
 		lista = new JList<Film>(fList);
-		afw.eliminarPeliculaBd(lista, selectedCinema);
+		System.out.println(lista.getModel().toString());
+		afw.eliminarPeliculaBd(lista, selectedFilm);
 
 	}
 
