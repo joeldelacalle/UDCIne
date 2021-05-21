@@ -34,7 +34,10 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase test ReceiptResource
+ *
+ */
 @Category(IntegrationTest.class)
 public class ReceiptResourceTest {
 	
@@ -52,7 +55,11 @@ public class ReceiptResourceTest {
 	private List<Product> products;
 	private List<Ticket> tickets;
 
-    
+	/**
+	 * Metodo para: iniciar el servidor Grizzly, crear un nuevo cliente,
+	 *	arraylist de Productos, arraylist de Tickets,
+	 *	y Construir objetos: Pelicula, Cine, Ticket, Producto, Pedido con sus atributos correspondientes.
+	 */
     @Before
     public void setUp() throws Exception {
     	server = Main.startServer();
@@ -76,13 +83,19 @@ public class ReceiptResourceTest {
 		products.add(product);
 		o = new Order("perro@gmail.com", dfd1,1, tickets.toString(), products.toString(), "En caja", 1);
     }
-    
+    /**
+	 * TearDown Test
+	 *
+	 */
     @SuppressWarnings("deprecation")
 	@After
     public void tearDown() throws Exception {
         server.stop();
     }
-    
+    /**
+	 * Test para obtener Recibos
+	 *
+	 */
     @Test
     @PerfTest(invocations = 100, threads = 40)
 	public void testgetReceipts() {

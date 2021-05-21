@@ -31,14 +31,24 @@ import jakarta.ws.rs.core.MediaType;
 
 @Category(IntegrationTest.class)
 public class CinemaResourceTest {
-
+	/**
+	 * Clase test CinemaResource
+	 *
+	 */
+	/**
+	 * Rule test
+	 *
+	 */
 	@Rule
 	public ContiPerfRule rule = new ContiPerfRule();
 	private HttpServer server;
 	private WebTarget appTarget;
 	private Client c;
 	private List<Cinema> listacines;
-
+	/**
+	 * Metodo para: iniciar el servidor Grizzly, crear un nuevo cliente
+	 *	y construir objeto Pelicula con sus atributos correspondientes.
+	 */
 	@Before
 	public void setUp() throws Exception {
 		server = Main.startServer();
@@ -48,13 +58,19 @@ public class CinemaResourceTest {
 				new Cinema("Cine Deusto Santander", "Santander", "Corte Ingles nueva montaña", 345345345),
 				new Cinema("Cine Deusto Barakaldo", "Barakaldo", "Max Center", 458345345));
 	}
-
+	/**
+	 * TearDown Test
+	 *
+	 */
 	@SuppressWarnings("deprecation")
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
 	}
-
+	/**
+	 * Test para obtener el Cine
+	 *
+	 */
 	@Test
 	@PerfTest(invocations = 100, threads = 40)
 	public void testgetCinemas() {

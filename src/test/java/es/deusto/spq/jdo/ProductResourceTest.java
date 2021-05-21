@@ -26,28 +26,44 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase test ProductResource
+ *
+ */
 @Category(IntegrationTest.class)
 public class ProductResourceTest {
+	/**
+	 * Rule test
+	 *
+	 */
 	@Rule
 	public ContiPerfRule rule = new ContiPerfRule();
 	private HttpServer server;
 	private WebTarget appTarget;
 	private Client c;
-
+	/**
+	 * Metodo para: iniciar el servidor Grizzly, crear un nuevo cliente
+	 *
+	 */
 	@Before
 	public void setUp() throws Exception {
 		server = Main.startServer();
 		c = ClientBuilder.newClient();
 		appTarget = c.target(Main.BASE_URI);
 	}
-
+	/**
+	 * TearDown Test
+	 *
+	 */
 	@SuppressWarnings("deprecation")
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
 	}
-
+	/**
+	 * Test para obtener Productos
+	 *
+	 */
 	@Test
 	@PerfTest(invocations = 100, threads = 40)
 	public void testgetProducts() {

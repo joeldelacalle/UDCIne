@@ -28,15 +28,26 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase test UserResource
+ *
+ */
 @Category(IntegrationTest.class)
 public class UserResourceTest {
-	@Rule public ContiPerfRule rule = new ContiPerfRule();
+	/**
+	 * Rule test
+	 *
+	 */
+	@Rule 
+	public ContiPerfRule rule = new ContiPerfRule();
 	private HttpServer server;
     private WebTarget appTarget;
     private Client c;
 
-    
+    /**
+	 * Metodo para: iniciar el servidor Grizzly, crear un nuevo cliente
+	 *
+	 */
     @Before
     public void setUp() throws Exception {
     	server = Main.startServer();
@@ -49,7 +60,10 @@ public class UserResourceTest {
     public void tearDown() throws Exception {
         server.stop();
     }
-
+    /**
+	 * TearDown Test
+	 *
+	 */
 	@Test
 	@PerfTest(invocations = 100, threads = 40)
 	public void testgetUsers() {
@@ -63,7 +77,10 @@ public class UserResourceTest {
 	    	
 	    assertEquals(listausers.get(0).getName(), users.get(0).getName());
 	}
-	
+	/**
+	 * Test para obtener Usuarios
+	 *
+	 */
 	@Test
 	@PerfTest(invocations = 100, threads = 40)
 	public void testGetUser() {
