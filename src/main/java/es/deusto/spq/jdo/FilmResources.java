@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la clase FilmResources es.deusto.spq.jdo FilmResources.java. May 21, 2021
+ */
 package es.deusto.spq.jdo;
 
 import java.util.List;

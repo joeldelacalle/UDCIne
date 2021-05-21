@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la clase UserResource es.deusto.spq.jdo UserResource.java. May 21, 2021
+ */
 package es.deusto.spq.jdo;
 
 import java.util.List;

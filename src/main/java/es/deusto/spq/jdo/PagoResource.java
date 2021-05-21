@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la clase PagoResource es.deusto.spq.jdo PagoResource.java. May 21, 2021
+ */
 package es.deusto.spq.jdo;
 
 import java.util.ArrayList;

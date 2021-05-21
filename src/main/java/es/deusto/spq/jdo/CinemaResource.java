@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la clase CinemResource es.deusto.spq.jdo CinemaResource.java. May 21, 2021
+ */
 package es.deusto.spq.jdo;
 
 import java.util.List;
