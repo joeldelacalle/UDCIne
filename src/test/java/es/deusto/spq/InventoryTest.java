@@ -1,3 +1,6 @@
+/** \file 
+ * Breve descripción de es.deusto.spq InventoryTest.java. May 21, 2021
+ */
 package es.deusto.spq;
 
 import static org.junit.Assert.*;

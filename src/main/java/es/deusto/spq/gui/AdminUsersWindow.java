@@ -42,16 +42,17 @@ public class AdminUsersWindow extends JFrame {
 	 * Ventana Administrador para usuarios
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private JPanel contentPane;
 	private JList<User> lista;
-	
+
 	Client client = ClientBuilder.newClient();
 	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
 	final WebTarget UsersTarget = appTarget.path("users");
 	final WebTarget UsersallTarget = UsersTarget.path("allusers");
-	//private UserResource ur;
-	//private List<User> users = ur.getUsers();
+
+	// private UserResource ur;
+	// private List<User> users = ur.getUsers();
 	/**
 	 * Crea la ventana de Administracion de usuarios
 	 */
@@ -64,21 +65,21 @@ public class AdminUsersWindow extends JFrame {
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 139), 2));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		final DefaultListModel<User> listausuarios = new DefaultListModel<User>();
-		GenericType<List<User>> genericType = new GenericType<List<User>>() {};
+		GenericType<List<User>> genericType = new GenericType<List<User>>() {
+		};
 		List<User> users = UsersallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 		lista = new JList<User>(listausuarios);
 		lista.setBounds(50, 63, 467, 343);
 		contentPane.add(lista);
-		
-		
+
 		listausuarios.clear();
 		for (User user : users) {
 			System.out.println(user.getName());
 			listausuarios.addElement(user);
 		}
-		
+
 		final JLabel lblX = new JLabel("X");
 		lblX.setBounds(707, 10, 19, 31);
 		lblX.addMouseListener(new MouseAdapter() {
@@ -105,14 +106,14 @@ public class AdminUsersWindow extends JFrame {
 		lblX.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblX.setForeground(new Color(255, 255, 255));
 		contentPane.add(lblX);
-		
+
 		final JLabel lblFlecha = new JLabel("<-");
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				AdminWindow aw = new AdminWindow();
 				aw.setVisible(true);
-				dispose();		
+				dispose();
 			}
 
 			@Override
@@ -131,48 +132,46 @@ public class AdminUsersWindow extends JFrame {
 		lblFlecha.setForeground(new Color(255, 255, 255));
 		lblFlecha.setBounds(50, 10, 25, 31);
 		contentPane.add(lblFlecha);
-		
-		
+
 		JButton btnNewButton = new JButton("Eliminar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				EliminarUsuarioBd();
-			}
-			/**
-			 * Metodo que elimina usuarios de la Base de datos
-			 */
-			private void EliminarUsuarioBd() {
-				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-				PersistenceManager pm = pmf.getPersistenceManager();
-				Transaction tx = pm.currentTransaction();
-				System.out.println("Eliminando usuario de la BD");
-				
-				try {
-					tx.begin();
-					User user = lista.getSelectedValue();
-					System.out.println(user.toString());
-					User u = pm.getObjectById(User.class, user.getId());
-					pm.deletePersistent(u);
-					
-					tx.commit();
-					System.out.println("Eliminada usuario de la Base de Datos");
-					
-					
-				}finally {
-					if (tx.isActive()) {
-						tx.rollback();
-					}
-					pm.close();
-					
-					AdminUsersWindow auw = new AdminUsersWindow();
-					auw.setVisible(true);
-					dispose();
-				}
+				eliminarUsuarioBd(lista,lista.getSelectedIndex());
+				AdminUsersWindow auw = new AdminUsersWindow();
+				auw.setVisible(true);
+				dispose();
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnNewButton.setBounds(50, 433, 129, 23);
 		contentPane.add(btnNewButton);
+	}
+
+	/**
+	 * Metodo que elimina usuarios de la Base de datos
+	 */
+	public void eliminarUsuarioBd(JList<User> lUser, int selectedUser) {
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		System.out.println("Eliminando usuario de la BD");
+
+		try {
+			tx.begin();
+			User user = lUser.getModel().getElementAt(selectedUser);
+			//System.out.println(user.toString());
+			User u = pm.getObjectById(User.class, user.getId());
+			pm.deletePersistent(u);
+
+			tx.commit();
+			System.out.println("Eliminada usuario de la Base de Datos");
+
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
 	}
 
 }
