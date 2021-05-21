@@ -12,7 +12,10 @@ import org.junit.Test;
 import es.deusto.spq.User;
 
 public class RegisterWindowTest {
-
+	/**
+	 * Clase test Ventana de Registro
+	 *
+	 */
 	private JTextField textFieldPhoneNumber = new JTextField();
 	private JTextField textFieldName = new JTextField();
 	private JTextField textFieldNickname = new JTextField();
@@ -22,7 +25,10 @@ public class RegisterWindowTest {
 	private User u;
 
 	private RegisterWindow rw;
-
+	/**
+	 * Metodo para construir objeto Usuario con sus atributos correspondientes.
+	 *	y clase test ventana de registro y crea la ventana de registro
+	 */
 	@Before
 	public void setUp() throws Exception {
 		u = new User();
@@ -35,7 +41,10 @@ public class RegisterWindowTest {
 		
 
 	}
-
+	/**
+	 * Test para el registro
+	 *
+	 */
 	@Test
 	public void RegistroTest() {
 

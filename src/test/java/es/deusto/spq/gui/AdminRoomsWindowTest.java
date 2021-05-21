@@ -33,6 +33,10 @@ import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
 public class AdminRoomsWindowTest {
+	/**
+	 * Clase test Ventana Administrador para salas
+	 *
+	 */
 	private WebTarget appTarget;
 	private HttpServer server;
 	private WebTarget cinemasTarget;
@@ -61,7 +65,10 @@ public class AdminRoomsWindowTest {
 	private int selectedCinema2;
 
 	private AdminRoomsWindow arw;
-
+	/**
+	 * Metodo para construir objeto Sala con sus atributos correspondientes.
+	 *
+	 */
 	@Before
 	public void setUp() throws Exception {
 		server = Main.startServer();
@@ -94,12 +101,18 @@ public class AdminRoomsWindowTest {
 		arw = new AdminRoomsWindow();
 
 	}
-
+	/**
+	 * TearDown Test
+	 *
+	 */
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
 	}
-
+	/**
+	 * Test para añadir Pelicula a Sala
+	 *
+	 */
 	@Test
 	public void addFilmtoRoom() {
 		selectedCinema0 = 0;
@@ -109,7 +122,10 @@ public class AdminRoomsWindowTest {
 		}
 
 	}
-
+	/**
+	 * Test para obtener el Cine y Sala
+	 *
+	 */
 	@Test
 	public void getCineYSalas() {
 		selectedCinema0 = 0;

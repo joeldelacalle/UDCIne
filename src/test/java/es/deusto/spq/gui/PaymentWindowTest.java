@@ -14,12 +14,18 @@ import org.junit.Test;
 import es.deusto.spq.Order;
 
 public class PaymentWindowTest {
-
+	/**
+	 * Clase test Ventana de Pago
+	 *
+	 */
 	private Order o;
 	private PaymentWindow pw;
 	private JPasswordField passwordField;
 	private JTextField textField;
-	
+	/**
+	 * 	Metodo para construir objeto Pedido con sus atributos correspondientes
+	 *	y Construir la ventana de Pago con sus atributos correspondientes
+	 */
 	@Before 
 	public void setUp() {
 		o = new Order("jaimesantamazo@opendeusto.es", null, 3, "Pendiente de pago", "Vacio",
@@ -29,14 +35,20 @@ public class PaymentWindowTest {
 		passwordField= new JPasswordField();
 		textField = new JTextField();
 	}
-	
+	/**
+	 * Test para pagar con Paypal
+	 *
+	 */
 	@Test
 	public void testPagarPaypal() {
 		textField.setText("jaimesantamazo@hotmail.com");
 		passwordField.setText("123");
 		pw.PagarPaypal(o, textField, passwordField);
 	}
-	
+	/**
+	 * Test para pagar en caja
+	 *
+	 */
 	@Test 
 	public void testPagarCaja() {
 		pw.PagarCaja(o);

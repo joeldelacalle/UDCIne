@@ -20,7 +20,10 @@ import es.deusto.spq.User;
 import es.deusto.spq.jdo.OrderResource;
 
 public class VipWindowTest {
-
+	/**
+	 * Clase test Ventana de Usuarios VIP
+	 *
+	 */
 	private VipWindow vw;
 	private User user;
 	private List<Order> listExpected;
@@ -30,7 +33,10 @@ public class VipWindowTest {
 	private Order o3;
 	private ListModel<Order> listModelOrders;
 	private JLabel lblUserName;
-
+	/**
+	 * Metodo para construir: la ventana vip, usuario, Pedido con sus atributos correspondientes.
+	 *
+	 */
 	@Before
 	public void setUp() throws Exception {
 
@@ -54,20 +60,29 @@ public class VipWindowTest {
 		listModelOrders = new DefaultListModel<Order>();
 		lblUserName = new JLabel();
 	}
-
+	/**
+	 * Test para añadir nombre de usuario
+	 *
+	 */
 	@Test
 	public void SetUserNameTest() {
 
 		vw.SetUserName(user);
 	}
-
+	/**
+	 * Test para establecer registro de pedidos
+	 *
+	 */
 	@Test
 	public void SetOrderRecordTest() {
 
 		vw.SetOrderRecord(user.getNickname());
 
 	}
-
+	/**
+	 * Test para mostrar pedidos
+	 *
+	 */
 	@Test
 	public void testDisplayOrders() {
 

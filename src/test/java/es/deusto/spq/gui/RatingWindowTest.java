@@ -21,7 +21,10 @@ import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
 public class RatingWindowTest {
-
+	/**
+	 * Clase test Ventana de Valoraciones
+	 *
+	 */
 	private JTextField textField;
 	private JTextField textField_1;
 	private JComboBox<String> comboBox_1;
@@ -42,7 +45,10 @@ public class RatingWindowTest {
 	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
 	final WebTarget FilmsTarget = appTarget.path("films");
 	final WebTarget CinemasTarget = appTarget.path("cinemas");
-
+	/**
+	 * Metodo para construir objetos Pelicula y usuario con sus atributos correspondientes.
+	 *
+	 */
 	@Before
 	public void setUp() throws Exception {
 		server = Main.startServer();
@@ -68,23 +74,35 @@ public class RatingWindowTest {
 
 		rw = new RatingWindow();
 	}
-
+	/**
+	 * TearDown Test
+	 *
+	 */
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
 	}
-
+	/**
+	 * Test para añadir valoraciones a peliculas
+	 *
+	 */
 	@Test
 	public void AñadirValoracionesPeliTest() {
 		rw.AñadirValoracionPeli(comboBox, listModelPelis, labeluser, textField);
 	}
-
+	/**
+	 * Test para añadir valoraciones a cine
+	 *
+	 */
 	@Test
 	public void AñadirValoracionesCineTest() {
 		rw.AñadirValoracionCine(comboBox_1, listModelCines, labeluser,
 				textField_1);
 	}
-	
+	/**
+	 * Test para añadir nombre de usuario
+	 *
+	 */
 	@Test
 	public void SetUserNameTest() {
 		rw.SetUserName(user);

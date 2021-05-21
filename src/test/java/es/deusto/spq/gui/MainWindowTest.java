@@ -14,13 +14,19 @@ import org.junit.Test;
 import es.deusto.spq.User;
 
 public class MainWindowTest {
-
+	/**
+	 * Clase test Ventana Principal
+	 *
+	 */
 	
 	private MainWindow mw;
 	private User u;
 	private String urlS;
 	private JButton jbutton;
-	
+	/**
+	 * Metodo para construir la ventana main y un usuario con sus atributos correspondientes
+	 *
+	 */
 	@Before
 	public void setUp() {
 		
@@ -30,18 +36,28 @@ public class MainWindowTest {
 		jbutton = new JButton();
 		
 	}
+	/**
+	 * Test para añadir nombre de usuario
+	 *
+	 */
 	@Test
 	public void testSetUserName() {
 		
 		mw.SetUserName(u);
 	}
-	
+	/**
+	 * Test para añadir email
+	 *
+	 */
 	@Test
 	public void SetEmail() {
 	
 		mw.SetEmail(u);
 	}
-	
+	/**
+	 * Test para imagen a un boton
+	 *
+	 */
 	@Test
 	public void btnSetImageIcon() throws IOException {
 		

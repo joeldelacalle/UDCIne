@@ -12,6 +12,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class CinemaLoginWindowTest {
+	/**
+	 * Clase test Ventana Login
+	 *
+	 */
 
 	private JTextField txtUsername1;
 	private JPasswordField txtPassword1;
@@ -24,6 +28,10 @@ public class CinemaLoginWindowTest {
 	private CinemaLoginWindow lw;
 	private CinemaLoginWindow lw2;
 	private CinemaLoginWindow lw3;
+	/**
+	 * Metodo para crear la ventana Login, tener Usuarios y contraseñas
+	 *
+	 */
 	@Before
 	public void setUp() {
 		txtUsername1 = new JTextField();
@@ -39,6 +47,10 @@ public class CinemaLoginWindowTest {
 		lw2 = new CinemaLoginWindow();
 		lw3 = new CinemaLoginWindow();
 	}
+	/**
+	 * Test Login. Añade usuario y contraseña
+	 *
+	 */
 	@Test
 	public void testLogin() {
 		txtUsername1.setText("jaimesanta");

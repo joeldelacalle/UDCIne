@@ -33,7 +33,10 @@ import jakarta.ws.rs.core.MediaType;
 
 @Category(GuiTest.class)
 public class LastRealeasesTest {
-
+	/**
+	 * Clase test Ventana ultimos estrenos
+	 *
+	 */
 	private HttpServer server;
 	private WebTarget appTarget;
 	private WebTarget releaseTarget;
@@ -61,7 +64,10 @@ public class LastRealeasesTest {
 	private int selectedUser;
 
 	private LastReleasesWindow lrw;
-
+	/**
+	 * Metodo para crear la ventana de ultimos estrenos
+	 *
+	 */
 	@Before
 	public void setUp() throws Exception {
 
@@ -80,12 +86,18 @@ public class LastRealeasesTest {
 
 		lrw = new LastReleasesWindow();
 	}
-
+	/**
+	 * TearDown Test
+	 *
+	 */
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
 	}
-
+	/**
+	 * Test para el tamaño de la imagen de la edad en un Ultimo estreno
+	 *
+	 */
 	@Test
 	public void ageReleaseIconResize() {
 		try {
@@ -94,7 +106,10 @@ public class LastRealeasesTest {
 			logger.log(Level.WARNING, "ERROR", e);
 		}
 	}
-
+	/**
+	 * Test para nuevos lanzamientos
+	 *
+	 */
 	@Test
 	public void nuevosLanzamientos() {
 		selectedUser = 0;
@@ -106,7 +121,10 @@ public class LastRealeasesTest {
 				releaseName, trailer);
 
 	}
-
+	/**
+	 * Test para el tamaño de la imagen de la edad en un ultimo estreno
+	 *
+	 */
 	@Test
 	public void releaseAgeRestImage() {
 		lrw.releaseAgeRestImage();

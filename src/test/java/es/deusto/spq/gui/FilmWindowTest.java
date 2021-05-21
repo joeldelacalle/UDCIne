@@ -34,7 +34,10 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 
 public class FilmWindowTest {
-
+	/**
+	 * Clase test Ventana Pelicula
+	 *
+	 */
 	private URL url;
 
 	private Film f;
@@ -52,7 +55,10 @@ public class FilmWindowTest {
 	private WebTarget appTarget;
 
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-
+	/**
+	 * Metodo para construir objeto Usuario y Pelicula con sus atributos correspondientes.
+	 *
+	 */
 	@Before
 	public void setUp() throws Exception {
 
@@ -81,12 +87,18 @@ public class FilmWindowTest {
 		
 		fw = new FilmWindow(selectedFilm);
 	}
-
+	/**
+	 * TearDown Test
+	 *
+	 */
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
 	}
-
+	/**
+	 * Test para el tamaño de la imagen de la edad en una Pelicula
+	 *
+	 */
 	@Test
 	public void ageFilmIconResizeTest() {
 
@@ -96,26 +108,38 @@ public class FilmWindowTest {
 			logger.log(Level.WARNING, "ERROR", e);
 		}
 	}
-
+	/**
+	 * Test para nuevas Peliculas
+	 *
+	 */
 	@Test
 	public void nuevasPeliculasTest() {
 
 		fw.nuevasPeliculas(comboBox);
 
 	}
-
+	/**
+	 * Test para el tamaño de la imagen de la edad en una Pelicula
+	 *
+	 */
 	@Test
 	public void filmAgeRestImageTest() {
 
 		fw.filmAgeRestImage();
 
 	}
-
+	/**
+	 * Test para añadir nombre de usuario
+	 *
+	 */
 	@Test
 	public void SetUserNameTest() {
 		fw.SetUserName(u);
 	}
-	
+	/**
+	 * Test para transformar Peliculas
+	 *
+	 */
 	@Test
 	public void transformFilmsTest() {
 		fw.transformFilms(billList, filmList);

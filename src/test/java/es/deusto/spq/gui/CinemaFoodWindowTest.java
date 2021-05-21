@@ -17,6 +17,10 @@ import es.deusto.spq.Film;
 import es.deusto.spq.Product;
 
 public class CinemaFoodWindowTest {
+	/**
+	 * Clase test Ventana Alimentos
+	 *
+	 */
 	private Film selectedFilm = new Film("Jon", "Infinity war",
 			"El todopoderoso Thanos ha despertado con la promesa de arrasar con todo a su paso, portando el Guantelete del Infinito. Los únicos capaces de pararle los pies son los Vengadores y el resto de superhéroes de la galaxia",
 			13, "https://pics.filmaffinity.com/avengers_infinity_war-181539353-large.jpg",
@@ -32,14 +36,20 @@ public class CinemaFoodWindowTest {
 	private OrderWindow ow;
 
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-
+	/**
+	 * Metodo para crear la ventana alimentos y construir la ventana Order con sus atributos correspondientes
+	 *
+	 */
 	@Before
 	public void setUp() throws Exception {
 		cfw = new CinemaFoodWindow(selectedFilm);
 		ow = new OrderWindow(selectedFilm);
 
 	}
-
+	/**
+	 * Test para añadir una imagen a la ventana alimentos
+	 *
+	 */
 	@Test
 	public void btnSetImageIcon() {
 		try {
@@ -49,7 +59,10 @@ public class CinemaFoodWindowTest {
 			// e.printStackTrace();
 		}
 	}
-
+	/**
+	 * Test para añadir productos a la ventana alimentos
+	 *
+	 */
 	@Test
 	public void addProducts() {
 		listmodelAlimentos.addElement(p);

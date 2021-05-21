@@ -19,7 +19,10 @@ import es.deusto.spq.Product;
 import es.deusto.spq.User;
 
 public class OrderWindowTest {
-
+	/**
+	 * Clase test Ventana de Pedidos
+	 *
+	 */
 	private List<Product> products = null;
 	private int numberTickets = 0;
 
@@ -27,7 +30,10 @@ public class OrderWindowTest {
 	private User u = new User();
 
 	private Product p;
-
+	/**
+	 * Metodo para establecer el apodo de un Usuario y construir objeto Producto con sus atributos correspondientes.
+	 *
+	 */
 	@Before
 	public void setUp() throws Exception {
 
@@ -35,7 +41,10 @@ public class OrderWindowTest {
 		p = new Product("palomitas", "descripcion", numberTickets, "");
 
 	}
-
+	/**
+	 * Test para obetener Productos
+	 *
+	 */
 	@Test
 	public void testSetGetProducts() {
 		OrderWindow ow = new OrderWindow(f);
@@ -43,7 +52,10 @@ public class OrderWindowTest {
 		assertEquals(products, ow.getProducts());
 
 	}
-
+	/**
+	 * Test para añadir nombre de usuario
+	 *
+	 */
 	@Test
 	public void testSetUserName() {
 		OrderWindow ow = new OrderWindow(f);
@@ -51,7 +63,10 @@ public class OrderWindowTest {
 		assertEquals(u.getNickname(), ow.getLblUserName().getText());
 
 	}
-
+	/**
+	 * Test para crear un pedido
+	 *
+	 */
 	@Test
 	public void testCrearPedido() {
 

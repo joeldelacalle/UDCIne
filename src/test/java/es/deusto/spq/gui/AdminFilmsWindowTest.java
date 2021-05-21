@@ -22,7 +22,10 @@ import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
 public class AdminFilmsWindowTest {
-
+	/**
+	 * Clase test Ventana Administrador para Peliculas
+	 *
+	 */
 	private JTextField txtName;
 	private JTextField txtDirector;
 	private JTextField txtFoto;
@@ -42,7 +45,10 @@ public class AdminFilmsWindowTest {
 	private JList<Film> lista = new JList<Film>();
 
 	private AdminFilmsWindow afw;
-
+	/**
+	 * Metodo para construir objeto Pelicula con sus atributos correspondientes.
+	 *
+	 */
 	@Before
 	public void setUp() throws Exception {
 		f = new Film("", "", "", -1, "", "");
@@ -72,12 +78,19 @@ public class AdminFilmsWindowTest {
 		fList = new DefaultListModel<Film>();
 		afw = new AdminFilmsWindow();
 	}
-
+	/**
+	 * TearDown Test
+	 *
+	 */
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
 	}
-
+	
+	/**
+	 * Test para añadir una pelicula a la BD
+	 *
+	 */
 	@Test
 	public void añadirPeliculaBD() {
 
@@ -93,7 +106,10 @@ public class AdminFilmsWindowTest {
 
 		afw.añadirPeliculaBd(txtName, txtDirector, txtFoto, cbAge, txtDescription);
 	}
-
+	/**
+	 * Test para eliminar una pelicula a la BD
+	 *
+	 */
 	@Test
 	public void eliminarPeliculaBD() {
 		System.out.println(films);

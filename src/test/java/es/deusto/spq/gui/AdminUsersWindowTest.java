@@ -28,7 +28,10 @@ import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
 public class AdminUsersWindowTest {
-
+	/**
+	 * Clase test Ventana Administrador para usuarios
+	 *
+	 */
 	private HttpServer server;
 	private WebTarget appTarget;
 	private WebTarget UsersTarget;
@@ -42,7 +45,10 @@ public class AdminUsersWindowTest {
 	private User u;
 	private int selectedUser;
 	private AdminUsersWindow auw;
-
+	/**
+	 * Metodo para construir objeto Usuario con sus atributos correspondientes.
+	 *
+	 */
 	@Before
 	public void setUp() throws Exception {
 
@@ -61,12 +67,18 @@ public class AdminUsersWindowTest {
 		auw = new AdminUsersWindow();
 
 	}
-
+	/**
+	 * TearDown Test
+	 *
+	 */
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
 	}
-
+	/**
+	 * Test para eliminar Usuario de BD
+	 *
+	 */
 	@Test
 	public void eliminarUsuarioBd() {
 

@@ -21,7 +21,10 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 
 public class ReceiptWindowTest {
-	
+	/**
+	 * Clase test Ventana de Recibos
+	 *
+	 */
 	private JTextField textFieldPhoneNumber = new JTextField();
 	private JTextField textFieldName = new JTextField();
 	private JTextField textFieldNickname = new JTextField();
@@ -35,7 +38,10 @@ public class ReceiptWindowTest {
 
 	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
 	final WebTarget receiptTarget = appTarget.path("receipts");
-	
+	/**
+	 * 	Metodo para construir objeto Usuario con sus atributos correspondientes.
+	 *	y la clase test ventana de recibos
+	 */
 	@Before
 	public void setUp() throws Exception {
 		server = Main.startServer();
@@ -53,11 +59,19 @@ public class ReceiptWindowTest {
 		u.setPassword(passwordField.getText());
 		u.setPhoneNumber(phone);
 	}
+	/**
+	 * Test para los recibos
+	 *
+	 */
 	@Test
 	public void ReceiptTest() {
 		rw.SetUserName(u);
 		rw.SetEmail(u);
 	}
+	/**
+	 * TearDown Test
+	 *
+	 */
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
