@@ -53,6 +53,10 @@ public class AdminRoomsWindowTest {
 	private final JComboBox<String> comboRoom = new JComboBox<String>();
 	private JDateChooser calendar = new JDateChooser("yyyy/MM/dd", "####/##/##", '_');
 
+	private int selectedCinema0;
+	private int selectedCinema1;
+	private int selectedCinema2;
+
 	private AdminRoomsWindow arw;
 
 	@Before
@@ -95,13 +99,17 @@ public class AdminRoomsWindowTest {
 
 	@Test
 	public void addFilmtoRoom() {
-		arw.getCineYSalas(comboCinema, comboRoom);
-		arw.addFilmtoRoom(comboCinema, comboFilm, comboRoom, date, 100);
+		selectedCinema0 = 0;
+		for (int i = 3; selectedCinema0 <= i; selectedCinema0++) {
+			arw.getCineYSalas(comboCinema, comboRoom, selectedCinema0);
+			arw.addFilmtoRoom(comboCinema, comboFilm, comboRoom, date, 100);
+		}
+
 	}
 
 	@Test
 	public void getCineYSalas() {
-		arw.getCineYSalas(comboCinema, comboRoom);
-	}
+		selectedCinema0 = 0;
 
+	}
 }

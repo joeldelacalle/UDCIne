@@ -85,10 +85,12 @@ public class AdminRoomsWindow extends JFrame {
 
 	private JDateChooser calendar = new JDateChooser("yyyy/MM/dd", "####/##/##", '_');
 	private long roomCinemaId;
+
 	/**
-	 * 	Metodo que añade una pelicula a una sala 
+	 * Metodo que añade una pelicula a una sala
 	 */
-	public void addFilmtoRoom(JComboBox<Cinema> comboCinema, JComboBox<Film> comboFilm, JComboBox<String> comboRoom, Date d, int i) {
+	public void addFilmtoRoom(JComboBox<Cinema> comboCinema, JComboBox<Film> comboFilm, JComboBox<String> comboRoom,
+			Date d, int i) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -111,11 +113,12 @@ public class AdminRoomsWindow extends JFrame {
 			pm.close();
 		}
 	}
+
 	/**
 	 * Metodo para obtener el cine y las salas
 	 */
-	public void getCineYSalas(JComboBox<Cinema> comboCinema, JComboBox<String> comboRoom) {
-		if (comboCinema.getSelectedIndex() == 0) {
+	public void getCineYSalas(JComboBox<Cinema> comboCinema, JComboBox<String> comboRoom, int selCinema) {
+		if (comboCinema.getModel().getElementAt(selCinema).getId() == 0) {
 			if (comboRoom.getItemCount() >= 1) {
 				comboRoom.removeItemAt(2);
 				comboRoom.removeItemAt(1);
@@ -132,7 +135,7 @@ public class AdminRoomsWindow extends JFrame {
 			}
 
 		}
-		if (comboCinema.getSelectedIndex() == 1) {
+		if (comboCinema.getModel().getElementAt(selCinema).getId() == 1) {
 			if (comboRoom.getItemCount() >= 1) {
 				comboRoom.removeItemAt(2);
 				comboRoom.removeItemAt(1);
@@ -149,7 +152,7 @@ public class AdminRoomsWindow extends JFrame {
 			}
 
 		}
-		if (comboCinema.getSelectedIndex() == 2) {
+		if (comboCinema.getModel().getElementAt(selCinema).getId() == 2) {
 			if (comboRoom.getItemCount() >= 1) {
 				comboRoom.removeItemAt(2);
 				comboRoom.removeItemAt(1);
@@ -167,6 +170,7 @@ public class AdminRoomsWindow extends JFrame {
 
 		}
 	}
+
 	/**
 	 * Crea la ventana de administracion de salas
 	 */
@@ -247,9 +251,9 @@ public class AdminRoomsWindow extends JFrame {
 		contentPane.add(comboFilm);
 		comboCinema.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//System.out.println(comboCinema.getSelectedIndex());
-				getCineYSalas(comboCinema, comboRoom);
-				//System.out.println(comboCinema.getSelectedItem().toString());
+				// System.out.println(comboCinema.getSelectedIndex());
+				getCineYSalas(comboCinema, comboRoom,comboCinema.getSelectedIndex());
+				// System.out.println(comboCinema.getSelectedItem().toString());
 			}
 
 		});

@@ -73,8 +73,8 @@ public class AdminUsersWindowTest {
 		}
 		// System.out.println(uList);
 		uList.addElement(u);
-		System.out.println(uList.toString());
-		selectedUser = 1;
+		//System.out.println(uList.toString());
+		selectedUser = 0;
 		lista = new JList<User>(uList);
 		auw.eliminarUsuarioBd(lista, selectedUser);
 	}
