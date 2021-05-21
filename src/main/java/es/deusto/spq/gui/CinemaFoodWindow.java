@@ -37,12 +37,12 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Ventana de alimentos
+ *
+ */
 public class CinemaFoodWindow extends JFrame {
-	/**
-	 * Ventana de alimentos
-	 *
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 

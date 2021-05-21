@@ -38,12 +38,12 @@ import es.deusto.spq.jdo.RoomResource;
 import es.deusto.spq.jdo.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
-
+/**
+ * Ventana de pedidos
+ */
 public class OrderWindow extends JFrame {
 
-	/**
-	 * Ventana de pedidos
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JSpinner spinner;

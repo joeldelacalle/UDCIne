@@ -29,12 +29,12 @@ import es.deusto.spq.jdo.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
-
+/**
+ * Ventana de login
+ *
+ */
 public class CinemaLoginWindow extends JFrame {
-	/**
-	 * Ventana de login
-	 *
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	Client client = ClientBuilder.newClient();
 

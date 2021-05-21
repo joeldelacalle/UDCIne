@@ -27,6 +27,10 @@ import es.deusto.spq.User;
 import es.deusto.spq.jdo.OrderResource;
 import es.deusto.spq.jdo.UserResource;
 
+/**
+ * Ventana de Usuarios vip.
+ *
+ */
 public class VipWindow extends JFrame {
 
 	/**

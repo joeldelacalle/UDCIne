@@ -42,12 +42,12 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Ventana Administrador para Películas.
+ *
+ */
 public class AdminFilmsWindow extends JFrame {
-	/**
-	 * Ventana Administrador para Películas.
-	 *
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;

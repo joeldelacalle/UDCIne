@@ -40,14 +40,14 @@ import es.deusto.spq.jdo.PagoResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
-
+/**
+ * Ventana de Pago.
+ *
+ */
 public class PaymentWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	/**
-	 * Ventana de Pago.
-	 *
-	 */
+	
 	private JPanel contentPane;
 	private JTextField textField;
 	private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"

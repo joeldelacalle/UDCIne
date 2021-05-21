@@ -45,12 +45,11 @@ import jakarta.ws.rs.core.MediaType;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
-
+/**
+ * Ventana Pelicula
+ */
 public class FilmWindow extends JFrame {
 
-	/**
-	 * Ventana Pelicula
-	 */
 	private static final long serialVersionUID = 1L;
 	Client client = ClientBuilder.newClient();
 

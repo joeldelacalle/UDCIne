@@ -42,12 +42,12 @@ import javax.swing.JTextPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * Ventana ultimos estrenos
+ */
 public class LastReleasesWindow extends JFrame {
 
-	/**
-	 * Ventana ultimos estrenos
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	Client client = ClientBuilder.newClient();
 

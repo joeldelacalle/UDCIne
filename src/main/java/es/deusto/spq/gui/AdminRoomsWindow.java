@@ -40,12 +40,12 @@ import java.awt.event.ActionEvent;
 
 import com.toedter.calendar.JDateChooser;
 import java.awt.event.MouseMotionAdapter;
-
+/**
+ * Ventana Administrador para salas
+ */
 public class AdminRoomsWindow extends JFrame {
 
-	/**
-	 * Ventana Administrador para salas
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
 	Client client = ClientBuilder.newClient();

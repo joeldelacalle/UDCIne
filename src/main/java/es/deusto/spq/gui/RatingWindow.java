@@ -39,12 +39,12 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Ventana de valoraciones.
+ *
+ */
 public class RatingWindow extends JFrame {
-	/**
-	 * Ventana de valoraciones.
-	 *
-	 */
+
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;

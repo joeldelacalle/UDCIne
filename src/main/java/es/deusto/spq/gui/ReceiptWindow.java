@@ -31,12 +31,12 @@ import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+/**
+ * Ventana de recibos.
+ *
+ */
 public class ReceiptWindow extends JFrame {
-	/**
-	 * Ventana de recibos.
-	 *
-	 */
+	
 
 	private JPanel contentPane;
 	private JLabel labeluser = new JLabel("");

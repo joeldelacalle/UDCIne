@@ -17,12 +17,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
-
+/**
+ * Ventana Administrador
+ */
 public class AdminWindow extends JFrame{
 
-	/**
-	 * Ventana Administrador
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;

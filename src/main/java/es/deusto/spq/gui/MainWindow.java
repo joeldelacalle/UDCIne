@@ -34,12 +34,12 @@ import es.deusto.spq.User;
 import es.deusto.spq.jdo.BillboardResource;
 import es.deusto.spq.jdo.FilmResources;
 import es.deusto.spq.jdo.UserResource;
-
+/**
+ * Esta es la ventana principal de nuestra aplicacion
+ */
 public class MainWindow extends JFrame {
 
-	/**
-	 * Esta es la ventana principal de nuestra aplicacion
-	 */
+	
 	private static final long serialVersionUID = 6673510127789501132L;
 	private JPanel contentPane;
 	private List<Film> films;

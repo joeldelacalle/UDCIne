@@ -21,13 +21,13 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.spq.User;
-
+/**
+ * Ventana de registro.
+ *
+ */
 public class RegisterWindow extends JFrame {
 
-	/**
-	 * Ventana de registro.
-	 *
-	 */
+	
 	private JPanel contentPane;
 	private JTextField textFieldPhoneNumber = new JTextField();
 	private JTextField textFieldName = new JTextField();

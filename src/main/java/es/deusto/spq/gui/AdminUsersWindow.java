@@ -35,12 +35,12 @@ import jakarta.ws.rs.core.MediaType;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * Ventana Administrador para usuarios
+ */
 public class AdminUsersWindow extends JFrame {
 
-	/**
-	 * Ventana Administrador para usuarios
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
