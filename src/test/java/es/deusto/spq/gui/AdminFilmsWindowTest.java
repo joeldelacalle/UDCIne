@@ -94,13 +94,14 @@ public class AdminFilmsWindowTest {
 		afw.añadirPeliculaBd(txtName, txtDirector, txtFoto, cbAge, txtDescription);
 	}
 
+	@Ignore
 	@Test
 	public void eliminarPeliculaBD() {
 		// System.out.println(films);
 		for (Film film : films) {
 			fList.addElement(film);
 		}
-		//fList.addElement(filmA);
+		// fList.addElement(filmA);
 		System.out.println(fList);
 		selectedFilm = fList.size() - 1;
 		System.out.println(selectedFilm);
