@@ -88,7 +88,7 @@ public class VipWindow extends JFrame {
 		btnViewOrders.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				
+				displayOrders(lblUserName, listModelOrders);
 
 			}
 		});
@@ -136,8 +136,8 @@ public class VipWindow extends JFrame {
 		return oList2;
 
 	}
-	
-	public void displayOrders(JLabel lblUserName,ListModel<Order>listModelOrders){
+
+	public void displayOrders(JLabel lblUserName, ListModel<Order> listModelOrders) {
 		List<Order> oList = SetOrderRecord(lblUserName.getText());
 		for (int i = 0; i < oList.size(); i++) {
 			((DefaultListModel<Order>) listModelOrders).addElement(oList.get(i));
