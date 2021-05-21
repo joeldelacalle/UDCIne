@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['film_556',['Film',['../classes_1_1deusto_1_1spq_1_1_film.html#a80e4ae475194f81b712d913aab9de5d6',1,'es::deusto::spq::Film']]],
-  ['filmagerestimage_557',['filmAgeRestImage',['../classes_1_1deusto_1_1spq_1_1gui_1_1_film_window_test.html#a9230ec478abe6260f2c3e3cac06602b5',1,'es::deusto::spq::gui::FilmWindowTest']]],
-  ['filmwindow_558',['FilmWindow',['../classes_1_1deusto_1_1spq_1_1gui_1_1_film_window.html#a00193148270a70a68356dd4a7877b7b1',1,'es::deusto::spq::gui::FilmWindow']]]
+  ['eliminarpeliculabd_566',['EliminarPeliculaBd',['../classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#ac001073c773cccd6ad96676bdb1d4e80',1,'es::deusto::spq::gui::AdminFilmsWindow']]],
+  ['eliminarpeliculabdtest_567',['EliminarPeliculaBDTest',['../classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_test.html#aa2def2a97220bdd6e5628e1527a4d651',1,'es::deusto::spq::gui::AdminFilmsWindowTest']]],
+  ['eliminarusuariobd_568',['EliminarUsuarioBd',['../classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a3eccec7237e8f1ce7feeca856a72cd6e',1,'es::deusto::spq::gui::AdminUsersWindowTest']]]
 ];

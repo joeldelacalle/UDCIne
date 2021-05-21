@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/test/java/es/deusto/spq/BillboardTest.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_120ed4da3e3217b1e7fc0b4f48568e79.html">test</a></li><li class="navelem"><a class="el" href="dir_97debbc39e3b917fca663601bb2b0709.html">java</a></li><li class="navelem"><a class="el" href="dir_4b96a8b33d1f8ef41fbe8cb4eb39245a.html">es</a></li><li class="navelem"><a class="el" href="dir_25b06560d1af80143ff1acfc9209093d.html">deusto</a></li><li class="navelem"><a class="el" href="dir_ed5d40ea3cf05e796193518606629533.html">spq</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">BillboardTest.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_billboard_test_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>es.deusto.spq;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> org.junit.Before;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html">    8</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html">BillboardTest</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html">Billboard</a> f;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a> f2;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    @Before</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a47087cf7065623b0916ee76c84c4a033">   23</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a47087cf7065623b0916ee76c84c4a033">setup</a>() {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        f = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html">Billboard</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, 13, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        f2 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a>(<span class="stringliteral">&quot;director&quot;</span>, <span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;description&quot;</span>, 13, <span class="stringliteral">&quot;url&quot;</span>, <span class="stringliteral">&quot;trailer&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        f = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html">Billboard</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    @Test</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a94cc9d2c1b16d6cffa4c586ab2b4b994">   34</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a94cc9d2c1b16d6cffa4c586ab2b4b994">testSetGetId</a>() {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a946a3d93f381de900432f0dced8939a2">setId</a>(5);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        assertEquals(5, f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a45f0f5e8b400cb3820373668219b91f8">getId</a>());</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    @Test</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a10deee1957aba9d3e0f3ef8e41affed6">   44</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a10deee1957aba9d3e0f3ef8e41affed6">testSetGetDirector</a>() {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a8b055187fcc29974c8c98f35f1a05eae">setDirector</a>(<span class="stringliteral">&quot;testDirector&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        assertEquals(<span class="stringliteral">&quot;testDirector&quot;</span>, f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a4a18b92532d70321781dbfe710d68c75">getDirector</a>());</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    @Test</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#ae24696d62dc15ac1e9c25338fc5981ab">   54</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#ae24696d62dc15ac1e9c25338fc5981ab">testSetGetName</a>() {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a9d16cec2e1d4eeb8b4aba240ba429141">setName</a>(<span class="stringliteral">&quot;testName&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        assertEquals(<span class="stringliteral">&quot;testName&quot;</span>, f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#aaa30e04ff3cc9be24c3cf3ff62b14beb">getName</a>());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    @Test</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a2b5c3a7127d4f61d201fecf9d049927f">   64</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a2b5c3a7127d4f61d201fecf9d049927f">testSetGetDescription</a>() {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a954f361b534bbdb644f3a9ad4dbee8f5">setDescription</a>(<span class="stringliteral">&quot;testDescription&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        assertEquals(<span class="stringliteral">&quot;testDescription&quot;</span>, f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a2457174fb62d55f64fa0c0a14e1fa91a">getDescription</a>());</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    @Test</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a5d381ccefafffe92994ed460b9587c76">   74</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a5d381ccefafffe92994ed460b9587c76">testSetGetAgeRestriction</a>() {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a103c9ea4cca5821849e8e1e54b0c4639">setAgeRestriction</a>(18);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        assertEquals(18, f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#ae24b388dacef63b9ea2a28a494ce96e2">getAgeRestriction</a>());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    @Test</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a3c84a1dbdb756299719a19359d2440f5">   84</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a3c84a1dbdb756299719a19359d2440f5">testSetGetUrl</a>() {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#adfc5a182637b69f209088f33990277d7">setUrl</a>(<span class="stringliteral">&quot;url&quot;</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        assertEquals(<span class="stringliteral">&quot;url&quot;</span>, f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#ae96a58169e452d62b4e100a83a2472cb">getUrl</a>());</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    @Test</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a1a383fd83676512dba75aa861dd8b57d">   94</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a1a383fd83676512dba75aa861dd8b57d">testSetGetTrailer</a>() {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#ac9e9197ccbed71d333280639da39cddc">setTrailer</a>(<span class="stringliteral">&quot;trailer&quot;</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        assertEquals(<span class="stringliteral">&quot;trailer&quot;</span>, f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#afaf697faba393a86f89c43e36d341fc9">getTrailer</a>());</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    @Test</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#ae57be52386af28dd347bc886d9f563e3">  100</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#ae57be52386af28dd347bc886d9f563e3">testSetFilmBillboard</a>() {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a77f04c3b1d8e655846273ac7e6847d63">setFilmBillboard</a>(f2);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        assertEquals(f2.<a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a4f008d9e5c77c1e7f1a443dd377cf0c5">getAgeRestriction</a>(), f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#ae24b388dacef63b9ea2a28a494ce96e2">getAgeRestriction</a>());</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        assertEquals(f2.<a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a4bf506a1d319bdbab7fc203ab6ecc8e5">getTrailer</a>(), f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#afaf697faba393a86f89c43e36d341fc9">getTrailer</a>());</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        assertEquals(f2.<a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a34562009632bafdddc1bbe4ab29b5d32">getUrl</a>(), f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#ae96a58169e452d62b4e100a83a2472cb">getUrl</a>());</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        assertEquals(f2.<a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a724e3d5bcb547fd0233dbe083d0bd39d">getDescription</a>(), f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a2457174fb62d55f64fa0c0a14e1fa91a">getDescription</a>());</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        assertEquals(f2.<a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a6a1c03b0547193477cabe9f7ac1c8303">getName</a>(), f.<a class="code" href="classes_1_1deusto_1_1spq_1_1_billboard.html#aaa30e04ff3cc9be24c3cf3ff62b14beb">getName</a>());</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html">es.deusto.spq.Billboard</a></div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00012">Billboard.java:12</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_a103c9ea4cca5821849e8e1e54b0c4639"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#a103c9ea4cca5821849e8e1e54b0c4639">es.deusto.spq.Billboard.setAgeRestriction</a></div><div class="ttdeci">void setAgeRestriction(int ageRestriction)</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00140">Billboard.java:140</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_a2457174fb62d55f64fa0c0a14e1fa91a"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#a2457174fb62d55f64fa0c0a14e1fa91a">es.deusto.spq.Billboard.getDescription</a></div><div class="ttdeci">String getDescription()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00119">Billboard.java:119</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_a45f0f5e8b400cb3820373668219b91f8"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#a45f0f5e8b400cb3820373668219b91f8">es.deusto.spq.Billboard.getId</a></div><div class="ttdeci">long getId()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00072">Billboard.java:72</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_a4a18b92532d70321781dbfe710d68c75"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#a4a18b92532d70321781dbfe710d68c75">es.deusto.spq.Billboard.getDirector</a></div><div class="ttdeci">String getDirector()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00088">Billboard.java:88</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_a77f04c3b1d8e655846273ac7e6847d63"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#a77f04c3b1d8e655846273ac7e6847d63">es.deusto.spq.Billboard.setFilmBillboard</a></div><div class="ttdeci">void setFilmBillboard(Film filmBillboard)</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00059">Billboard.java:59</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_a8b055187fcc29974c8c98f35f1a05eae"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#a8b055187fcc29974c8c98f35f1a05eae">es.deusto.spq.Billboard.setDirector</a></div><div class="ttdeci">void setDirector(String director)</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00096">Billboard.java:96</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_a946a3d93f381de900432f0dced8939a2"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#a946a3d93f381de900432f0dced8939a2">es.deusto.spq.Billboard.setId</a></div><div class="ttdeci">void setId(long id)</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00080">Billboard.java:80</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_a954f361b534bbdb644f3a9ad4dbee8f5"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#a954f361b534bbdb644f3a9ad4dbee8f5">es.deusto.spq.Billboard.setDescription</a></div><div class="ttdeci">void setDescription(String description)</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00126">Billboard.java:126</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_a9d16cec2e1d4eeb8b4aba240ba429141"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#a9d16cec2e1d4eeb8b4aba240ba429141">es.deusto.spq.Billboard.setName</a></div><div class="ttdeci">void setName(String name)</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00112">Billboard.java:112</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_aaa30e04ff3cc9be24c3cf3ff62b14beb"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#aaa30e04ff3cc9be24c3cf3ff62b14beb">es.deusto.spq.Billboard.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00104">Billboard.java:104</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_ac9e9197ccbed71d333280639da39cddc"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#ac9e9197ccbed71d333280639da39cddc">es.deusto.spq.Billboard.setTrailer</a></div><div class="ttdeci">void setTrailer(String trailer)</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00168">Billboard.java:168</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_adfc5a182637b69f209088f33990277d7"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#adfc5a182637b69f209088f33990277d7">es.deusto.spq.Billboard.setUrl</a></div><div class="ttdeci">void setUrl(String url)</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00154">Billboard.java:154</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_ae24b388dacef63b9ea2a28a494ce96e2"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#ae24b388dacef63b9ea2a28a494ce96e2">es.deusto.spq.Billboard.getAgeRestriction</a></div><div class="ttdeci">int getAgeRestriction()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00133">Billboard.java:133</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_ae96a58169e452d62b4e100a83a2472cb"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#ae96a58169e452d62b4e100a83a2472cb">es.deusto.spq.Billboard.getUrl</a></div><div class="ttdeci">String getUrl()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00147">Billboard.java:147</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_html_afaf697faba393a86f89c43e36d341fc9"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard.html#afaf697faba393a86f89c43e36d341fc9">es.deusto.spq.Billboard.getTrailer</a></div><div class="ttdeci">String getTrailer()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_8java_source.html#l00161">Billboard.java:161</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard_test.html">es.deusto.spq.BillboardTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_billboard_test_8java_source.html#l00008">BillboardTest.java:8</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_test_html_a10deee1957aba9d3e0f3ef8e41affed6"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a10deee1957aba9d3e0f3ef8e41affed6">es.deusto.spq.BillboardTest.testSetGetDirector</a></div><div class="ttdeci">void testSetGetDirector()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_test_8java_source.html#l00044">BillboardTest.java:44</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_test_html_a1a383fd83676512dba75aa861dd8b57d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a1a383fd83676512dba75aa861dd8b57d">es.deusto.spq.BillboardTest.testSetGetTrailer</a></div><div class="ttdeci">void testSetGetTrailer()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_test_8java_source.html#l00094">BillboardTest.java:94</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_test_html_a2b5c3a7127d4f61d201fecf9d049927f"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a2b5c3a7127d4f61d201fecf9d049927f">es.deusto.spq.BillboardTest.testSetGetDescription</a></div><div class="ttdeci">void testSetGetDescription()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_test_8java_source.html#l00064">BillboardTest.java:64</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_test_html_a3c84a1dbdb756299719a19359d2440f5"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a3c84a1dbdb756299719a19359d2440f5">es.deusto.spq.BillboardTest.testSetGetUrl</a></div><div class="ttdeci">void testSetGetUrl()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_test_8java_source.html#l00084">BillboardTest.java:84</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_test_html_a47087cf7065623b0916ee76c84c4a033"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a47087cf7065623b0916ee76c84c4a033">es.deusto.spq.BillboardTest.setup</a></div><div class="ttdeci">void setup()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_test_8java_source.html#l00023">BillboardTest.java:23</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_test_html_a5d381ccefafffe92994ed460b9587c76"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a5d381ccefafffe92994ed460b9587c76">es.deusto.spq.BillboardTest.testSetGetAgeRestriction</a></div><div class="ttdeci">void testSetGetAgeRestriction()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_test_8java_source.html#l00074">BillboardTest.java:74</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_test_html_a94cc9d2c1b16d6cffa4c586ab2b4b994"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a94cc9d2c1b16d6cffa4c586ab2b4b994">es.deusto.spq.BillboardTest.testSetGetId</a></div><div class="ttdeci">void testSetGetId()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_test_8java_source.html#l00034">BillboardTest.java:34</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_test_html_ae24696d62dc15ac1e9c25338fc5981ab"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#ae24696d62dc15ac1e9c25338fc5981ab">es.deusto.spq.BillboardTest.testSetGetName</a></div><div class="ttdeci">void testSetGetName()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_test_8java_source.html#l00054">BillboardTest.java:54</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_billboard_test_html_ae57be52386af28dd347bc886d9f563e3"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#ae57be52386af28dd347bc886d9f563e3">es.deusto.spq.BillboardTest.testSetFilmBillboard</a></div><div class="ttdeci">void testSetFilmBillboard()</div><div class="ttdef"><b>Definition:</b> <a href="_billboard_test_8java_source.html#l00100">BillboardTest.java:100</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html">es.deusto.spq.Film</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00012">Film.java:12</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a34562009632bafdddc1bbe4ab29b5d32"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a34562009632bafdddc1bbe4ab29b5d32">es.deusto.spq.Film.getUrl</a></div><div class="ttdeci">String getUrl()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00087">Film.java:87</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a4bf506a1d319bdbab7fc203ab6ecc8e5"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a4bf506a1d319bdbab7fc203ab6ecc8e5">es.deusto.spq.Film.getTrailer</a></div><div class="ttdeci">String getTrailer()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00073">Film.java:73</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a4f008d9e5c77c1e7f1a443dd377cf0c5"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a4f008d9e5c77c1e7f1a443dd377cf0c5">es.deusto.spq.Film.getAgeRestriction</a></div><div class="ttdeci">int getAgeRestriction()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00158">Film.java:158</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a6a1c03b0547193477cabe9f7ac1c8303"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a6a1c03b0547193477cabe9f7ac1c8303">es.deusto.spq.Film.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00130">Film.java:130</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a724e3d5bcb547fd0233dbe083d0bd39d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a724e3d5bcb547fd0233dbe083d0bd39d">es.deusto.spq.Film.getDescription</a></div><div class="ttdeci">String getDescription()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00144">Film.java:144</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

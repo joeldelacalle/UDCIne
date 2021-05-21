@@ -4,5 +4,5 @@ digraph "Representación gráfica de la clase"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="es.deusto.spq.types.IntegrationTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interfacees_1_1deusto_1_1spq_1_1types_1_1_integration_test.html",tooltip=" "];
+  Node0 [label="es.deusto.spq.TicketTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1_ticket_test.html",tooltip=" "];
 }

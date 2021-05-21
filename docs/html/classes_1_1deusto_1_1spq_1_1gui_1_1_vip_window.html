@@ -99,10 +99,12 @@ Métodos públicos</h2></td></tr>
 <tr class="separator:a0b73da3725fdda41e642e2d65798aabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe8f0a4139d589824484f3225a886daa"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classes_1_1deusto_1_1spq_1_1_order.html">Order</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#abe8f0a4139d589824484f3225a886daa">SetOrderRecord</a> (String userName)</td></tr>
 <tr class="separator:abe8f0a4139d589824484f3225a886daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af82ea18bc0460dd2faa8799b831e2c62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#af82ea18bc0460dd2faa8799b831e2c62">displayOrders</a> (JLabel lblUserName, ListModel&lt; <a class="el" href="classes_1_1deusto_1_1spq_1_1_order.html">Order</a> &gt;listModelOrders)</td></tr>
+<tr class="separator:af82ea18bc0460dd2faa8799b831e2c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock">
-<p class="definition">Definición en la línea <a class="el" href="_vip_window_8java_source.html#l00029">29</a> del archivo <a class="el" href="_vip_window_8java_source.html">VipWindow.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_vip_window_8java_source.html#l00030">30</a> del archivo <a class="el" href="_vip_window_8java_source.html">VipWindow.java</a>.</p>
 </div><h2 class="groupheader">Documentación del constructor y destructor</h2>
 <a id="ad21c9f04b42b2bef0e734666ae750de8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad21c9f04b42b2bef0e734666ae750de8">&#9670;&nbsp;</a></span>VipWindow()</h2>
@@ -121,24 +123,51 @@ Métodos públicos</h2></td></tr>
 <p>Construir la ventana vip con sus atributos correspondientes </p>
 <p>Boton para obtener la lista de pedidos de un Usuario concreto</p>
 
-<p class="definition">Definición en la línea <a class="el" href="_vip_window_8java_source.html#l00044">44</a> del archivo <a class="el" href="_vip_window_8java_source.html">VipWindow.java</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas para esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window_ad21c9f04b42b2bef0e734666ae750de8_cgraph.png" border="0" usemap="#aclasses_1_1deusto_1_1spq_1_1gui_1_1_vip_window_ad21c9f04b42b2bef0e734666ae750de8_cgraph" alt=""/></div>
-<map name="aclasses_1_1deusto_1_1spq_1_1gui_1_1_vip_window_ad21c9f04b42b2bef0e734666ae750de8_cgraph" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_vip_window_ad21c9f04b42b2bef0e734666ae750de8_cgraph">
-<area shape="rect" title=" " alt="" coords="5,57,204,98"/>
-<area shape="rect" href="classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#abe8f0a4139d589824484f3225a886daa" title=" " alt="" coords="252,57,451,98"/>
-<area shape="rect" href="classes_1_1deusto_1_1spq_1_1_user.html#a8eb958f1263ff4eab882c5b414154316" title=" " alt="" coords="533,5,724,32"/>
-<area shape="rect" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_order_resource.html#ac4fcabd3b05d3e956352a2e66f004f71" title=" " alt="" coords="509,57,748,98"/>
-<area shape="rect" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user_resource.html#a12039924e28a6029df559f3175041f5f" title=" " alt="" coords="499,123,759,149"/>
-<area shape="rect" href="classes_1_1deusto_1_1spq_1_1_user.html#a4dbdafcb1847a0b029d2cbd8d21a8b83" title=" " alt="" coords="807,123,997,149"/>
-</map>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="_vip_window_8java_source.html#l00045">45</a> del archivo <a class="el" href="_vip_window_8java_source.html">VipWindow.java</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a id="af82ea18bc0460dd2faa8799b831e2c62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af82ea18bc0460dd2faa8799b831e2c62">&#9670;&nbsp;</a></span>displayOrders()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void es.deusto.spq.gui.VipWindow.displayOrders </td>
+          <td>(</td>
+          <td class="paramtype">JLabel&#160;</td>
+          <td class="paramname"><em>lblUserName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ListModel&lt; <a class="el" href="classes_1_1deusto_1_1spq_1_1_order.html">Order</a> &gt;&#160;</td>
+          <td class="paramname"><em>listModelOrders</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_vip_window_8java_source.html#l00140">140</a> del archivo <a class="el" href="_vip_window_8java_source.html">VipWindow.java</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window_af82ea18bc0460dd2faa8799b831e2c62_cgraph.png" border="0" usemap="#aclasses_1_1deusto_1_1spq_1_1gui_1_1_vip_window_af82ea18bc0460dd2faa8799b831e2c62_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window_af82ea18bc0460dd2faa8799b831e2c62_icgraph.png" border="0" usemap="#aclasses_1_1deusto_1_1spq_1_1gui_1_1_vip_window_af82ea18bc0460dd2faa8799b831e2c62_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <a id="abe8f0a4139d589824484f3225a886daa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe8f0a4139d589824484f3225a886daa">&#9670;&nbsp;</a></span>SetOrderRecord()</h2>
 
@@ -156,7 +185,7 @@ Gráfico de llamadas para esta función:</div>
 </div><div class="memdoc">
 <p>Obtener la lista de pedidos de un usuario concreto </p>
 
-<p class="definition">Definición en la línea <a class="el" href="_vip_window_8java_source.html#l00119">119</a> del archivo <a class="el" href="_vip_window_8java_source.html">VipWindow.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_vip_window_8java_source.html#l00117">117</a> del archivo <a class="el" href="_vip_window_8java_source.html">VipWindow.java</a>.</p>
 <div class="dynheader">
 Gráfico de llamadas para esta función:</div>
 <div class="dyncontent">
@@ -198,7 +227,7 @@ Gráfico de llamadas a esta función:</div>
 </div><div class="memdoc">
 <p>Obtener el nombre del usuario actualmente activo </p>
 
-<p class="definition">Definición en la línea <a class="el" href="_vip_window_8java_source.html#l00109">109</a> del archivo <a class="el" href="_vip_window_8java_source.html">VipWindow.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_vip_window_8java_source.html#l00107">107</a> del archivo <a class="el" href="_vip_window_8java_source.html">VipWindow.java</a>.</p>
 <div class="dynheader">
 Gráfico de llamadas para esta función:</div>
 <div class="dyncontent">

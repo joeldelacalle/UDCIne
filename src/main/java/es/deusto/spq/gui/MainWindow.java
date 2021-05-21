@@ -148,7 +148,7 @@ public class MainWindow extends JFrame {
 		});
 		btnFilm1.setBounds(36, 105, 130, 180);
 		try {
-			btnSetImageIcon(films.get(0).getUrl(), btnFilm1);
+			btnSetImageIcon(getBillboardFilm(0).getUrl(), btnFilm1);
 		} catch (IOException e1) {
 			logger.log(Level.WARNING, "ERROR", e1);
 			// e1.printStackTrace();
@@ -166,7 +166,7 @@ public class MainWindow extends JFrame {
 		});
 		btnFilm2.setBounds(176, 105, 130, 180);
 		try {
-			btnSetImageIcon(films.get(1).getUrl(), btnFilm2);
+			btnSetImageIcon(getBillboardFilm(1).getUrl(), btnFilm2);
 		} catch (IOException e1) {
 			logger.log(Level.WARNING, "ERROR", e1);
 			// e1.printStackTrace();
@@ -184,7 +184,7 @@ public class MainWindow extends JFrame {
 		});
 		btnFilm3.setBounds(316, 105, 130, 180);
 		try {
-			btnSetImageIcon(films.get(2).getUrl(), btnFilm3);
+			btnSetImageIcon(getBillboardFilm(2).getUrl(), btnFilm3);
 		} catch (IOException e1) {
 			logger.log(Level.WARNING, "ERROR", e1);
 			// e1.printStackTrace();
@@ -203,7 +203,8 @@ public class MainWindow extends JFrame {
 		btnFilm4.setBounds(456, 105, 130, 180);
 
 		try {
-			btnSetImageIcon(films.get(3).getUrl(), btnFilm4);
+			btnSetImageIcon(getBillboardFilm(3).getUrl(), btnFilm4);
+
 		} catch (IOException e1) {
 
 		}
@@ -250,11 +251,12 @@ public class MainWindow extends JFrame {
 	 * obtiene una pelicula de la cartelera en base a la posicion que le des
 	 */
 
-	public Film getBillboardFilm(int i) {
+	public Billboard getBillboardFilm(int i) {
 
 		BillboardResource br = new BillboardResource();
 		List<Billboard> bl = br.getBillboardFilms();
-		Film billboardFilm = bl.get(i).getFilmBillboard();
+		System.out.println(bl.toString());
+		Billboard billboardFilm = bl.get(i);
 		return billboardFilm;
 
 	}

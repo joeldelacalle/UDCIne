@@ -8,7 +8,9 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 
 import es.deusto.spq.Billboard;
+import jakarta.ws.rs.Path;
 
+@Path("billboards")
 public class BillboardResource {
 
 	/**
@@ -19,7 +21,6 @@ public class BillboardResource {
 		PersistenceManager pm = pmf.getPersistenceManager();
 
 		Query<Billboard> q = pm.newQuery(Billboard.class);
-	
 
 		List<Billboard> billboardFilms = q.executeList();
 
@@ -27,5 +28,5 @@ public class BillboardResource {
 
 		return billboardFilms;
 	}
-	
+
 }

@@ -43,6 +43,28 @@ public class Film {
 		this.url = url;
 		this.trailer = trailer;
 	}
+	
+	public Film () {
+		super();
+		this.id = -1;
+		director = "";
+		name =  "";
+		description =  "";
+		ageRestriction = -1;
+		url =  "";
+		trailer =  "";
+	}
+	
+	public Film (Billboard b) {
+		
+		this.director = b.getDirector();
+		this.name = b.getName();
+		this.description = b.getDescription();
+		this.ageRestriction = b.getAgeRestriction();
+		this.url = b.getUrl();
+		this.trailer = b.getTrailer();
+		
+	}
 
 	/**
 	 * Obtener el trailer de una pelicula

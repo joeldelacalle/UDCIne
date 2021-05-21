@@ -72,6 +72,7 @@ $(function() {
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_last_realeases_test.html#a46961a20355f0540bc0ea69e61d89de1">es.deusto.spq.gui.LastRealeasesTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_rating_window_test.html#afc8ccf6fe36b4bafaaae29cbe325b464">es.deusto.spq.gui.RatingWindowTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window_test.html#a1ab32e0719526ccd35fc99c6b3b61e19">es.deusto.spq.gui.ReceiptWindowTest</a>
+, <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_billboard_resource_test.html#afc3a180ff76611a10218a9147ef1396b">es.deusto.spq.jdo.BillboardResourceTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_resource_test.html#addf1c98a025586a50f9de64d6312fe2b">es.deusto.spq.jdo.CinemaResourceTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#a82b25acb91ee243c538e634ce2ccd932">es.deusto.spq.jdo.FilmResourceTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_order_resource_test.html#a3198b871860c50fe777c565d5fca833c">es.deusto.spq.jdo.OrderResourceTest</a>
@@ -85,11 +86,15 @@ $(function() {
 <li>testCrearPedido()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a4461cdb5aabdd68f5daee16fedb02ee9">es.deusto.spq.gui.OrderWindowTest</a>
 </li>
+<li>testDisplayOrders()
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window_test.html#a6d0feab74391b914bb8f462af9ac56d4">es.deusto.spq.gui.VipWindowTest</a>
+</li>
 <li>testgetCinemas()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_resource_test.html#a4fab2fd5cf55e208626a7091db0badb6">es.deusto.spq.jdo.CinemaResourceTest</a>
 </li>
 <li>testgetFilms()
-: <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#a25f8f6ed17c2d8cf75681f94c4085176">es.deusto.spq.jdo.FilmResourceTest</a>
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_billboard_resource_test.html#aaffd1eea80fb797518fbfefe00eb7853">es.deusto.spq.jdo.BillboardResourceTest</a>
+, <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#a25f8f6ed17c2d8cf75681f94c4085176">es.deusto.spq.jdo.FilmResourceTest</a>
 </li>
 <li>testGetId()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1_product_test.html#af16ab493085a9508387b5c9f862419aa">es.deusto.spq.ProductTest</a>
@@ -145,11 +150,15 @@ $(function() {
 <li>testPaypal()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_pago_resource_test.html#a4ff1247fe07e18e0cdcace34dc84680c">es.deusto.spq.jdo.PagoResourceTest</a>
 </li>
+<li>testSetFilmBillboard()
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#ae57be52386af28dd347bc886d9f563e3">es.deusto.spq.BillboardTest</a>
+</li>
 <li>testSetGetAddress()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1_cinema_test.html#abfc6ffcdf6ec5dfb5ea63812cec040cf">es.deusto.spq.CinemaTest</a>
 </li>
 <li>testSetGetAgeRestriction()
-: <a class="el" href="classes_1_1deusto_1_1spq_1_1_film_test.html#ab7958101ad3e93079a6b39f9e42ca662">es.deusto.spq.FilmTest</a>
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a5d381ccefafffe92994ed460b9587c76">es.deusto.spq.BillboardTest</a>
+, <a class="el" href="classes_1_1deusto_1_1spq_1_1_film_test.html#ab7958101ad3e93079a6b39f9e42ca662">es.deusto.spq.FilmTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_release_test.html#a42420e96a95638d2a436673b89dfb213">es.deusto.spq.ReleaseTest</a>
 </li>
 <li>testSetGetCinema()
@@ -164,11 +173,13 @@ $(function() {
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_receipt_test.html#a5a7124f2d53caddf9105268fbb3dadfe">es.deusto.spq.ReceiptTest</a>
 </li>
 <li>testSetGetDescription()
-: <a class="el" href="classes_1_1deusto_1_1spq_1_1_film_test.html#ae49a7c02f19a083d41910bab8d73a443">es.deusto.spq.FilmTest</a>
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a2b5c3a7127d4f61d201fecf9d049927f">es.deusto.spq.BillboardTest</a>
+, <a class="el" href="classes_1_1deusto_1_1spq_1_1_film_test.html#ae49a7c02f19a083d41910bab8d73a443">es.deusto.spq.FilmTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_release_test.html#af8eb17168f0364e4594a2ea857a0f454">es.deusto.spq.ReleaseTest</a>
 </li>
 <li>testSetGetDirector()
-: <a class="el" href="classes_1_1deusto_1_1spq_1_1_film_test.html#acd32b240981d209346753dc4f1e8f0bc">es.deusto.spq.FilmTest</a>
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a10deee1957aba9d3e0f3ef8e41affed6">es.deusto.spq.BillboardTest</a>
+, <a class="el" href="classes_1_1deusto_1_1spq_1_1_film_test.html#acd32b240981d209346753dc4f1e8f0bc">es.deusto.spq.FilmTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_release_test.html#a0c896c94e5397b169b12ed4f9a596455">es.deusto.spq.ReleaseTest</a>
 </li>
 <li>testSetGetEmail()
@@ -182,6 +193,7 @@ $(function() {
 <li>testSetGetId()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1_administrator_test.html#a9a34300559820a9c7788419b67660f1b">es.deusto.spq.AdministratorTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_assessment_test.html#a119bedddedf1ac9e471db8595590c668">es.deusto.spq.AssessmentTest</a>
+, <a class="el" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a94cc9d2c1b16d6cffa4c586ab2b4b994">es.deusto.spq.BillboardTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_cinema_test.html#a83342cf102c839810ac5ddd0f3b4c55a">es.deusto.spq.CinemaTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_film_test.html#abeb165b85c9df56dfda87f84c3de0e62">es.deusto.spq.FilmTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_order_test.html#ab0ae29b7042bade7af5b67d8492bc6f1">es.deusto.spq.OrderTest</a>
@@ -197,6 +209,7 @@ $(function() {
 </li>
 <li>testSetGetName()
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1_assessment_test.html#a06e0e43a1ae2369cec132bfa8d19ac30">es.deusto.spq.AssessmentTest</a>
+, <a class="el" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#ae24696d62dc15ac1e9c25338fc5981ab">es.deusto.spq.BillboardTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_cinema_test.html#ac820de350b90fee658a9637f959e4ce7">es.deusto.spq.CinemaTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_film_test.html#a342ef1559590eb6aca571da0afe85baa">es.deusto.spq.FilmTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_inventory_test.html#afa192f450a0e634783fad823d8a54600">es.deusto.spq.InventoryTest</a>
@@ -251,11 +264,13 @@ $(function() {
 : <a class="el" href="classes_1_1deusto_1_1spq_1_1_order_test.html#a7549f9245166573d2888b3f8e9076261">es.deusto.spq.OrderTest</a>
 </li>
 <li>testSetGetTrailer()
-: <a class="el" href="classes_1_1deusto_1_1spq_1_1_film_test.html#a2d4dce98e2dbe58632c66376c91f715d">es.deusto.spq.FilmTest</a>
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a1a383fd83676512dba75aa861dd8b57d">es.deusto.spq.BillboardTest</a>
+, <a class="el" href="classes_1_1deusto_1_1spq_1_1_film_test.html#a2d4dce98e2dbe58632c66376c91f715d">es.deusto.spq.FilmTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_release_test.html#ae02b842a6dee50332083bb01c609e4e1">es.deusto.spq.ReleaseTest</a>
 </li>
 <li>testSetGetUrl()
-: <a class="el" href="classes_1_1deusto_1_1spq_1_1_film_test.html#ab25800729b5ecc6b8a90074da09b76de">es.deusto.spq.FilmTest</a>
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1_billboard_test.html#a3c84a1dbdb756299719a19359d2440f5">es.deusto.spq.BillboardTest</a>
+, <a class="el" href="classes_1_1deusto_1_1spq_1_1_film_test.html#ab25800729b5ecc6b8a90074da09b76de">es.deusto.spq.FilmTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_product_test.html#a12c64c88855c2fcf7421904fb79b8c18">es.deusto.spq.ProductTest</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_release_test.html#a4bc30a96144bcb66cfb4004180c5db9d">es.deusto.spq.ReleaseTest</a>
 </li>
@@ -303,8 +318,12 @@ $(function() {
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_user.html#a0f80e81ae23ac06b260f2ff518f0bfa0">es.deusto.spq.User</a>
 </li>
 <li>trailer
-: <a class="el" href="classes_1_1deusto_1_1spq_1_1_film.html#a437a152dd599cbd543f940d09a47ee47">es.deusto.spq.Film</a>
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1_billboard.html#a37741b7c1b9d768cf6c8dafcf23844b9">es.deusto.spq.Billboard</a>
+, <a class="el" href="classes_1_1deusto_1_1spq_1_1_film.html#a437a152dd599cbd543f940d09a47ee47">es.deusto.spq.Film</a>
 , <a class="el" href="classes_1_1deusto_1_1spq_1_1_release.html#ae01d1c0eac1f905d8f38e645cf9dfd2c">es.deusto.spq.Release</a>
+</li>
+<li>transformFilms()
+: <a class="el" href="classes_1_1deusto_1_1spq_1_1gui_1_1_film_window.html#a3330c3a029d56e274b739bfcf20df868">es.deusto.spq.gui.FilmWindow</a>
 </li>
 </ul>
 </div><!-- contents -->

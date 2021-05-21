@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['order_608',['Order',['../classes_1_1deusto_1_1spq_1_1_order.html#a97fb34f4665905f63bc440268e8cc569',1,'es::deusto::spq::Order']]],
-  ['orderwindow_609',['OrderWindow',['../classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a2075c92d4271165408bb84085c7e1b6f',1,'es::deusto::spq::gui::OrderWindow']]]
+  ['nuevaspeliculas_618',['nuevasPeliculas',['../classes_1_1deusto_1_1spq_1_1gui_1_1_film_window_test.html#a1d860182cf6d36b2048e1bba6ba67386',1,'es::deusto::spq::gui::FilmWindowTest']]],
+  ['nuevoslanzamientostest_619',['NuevosLanzamientosTest',['../classes_1_1deusto_1_1spq_1_1gui_1_1_last_realeases_test.html#af722d0af47000b537cf22f3c04af0212',1,'es::deusto::spq::gui::LastRealeasesTest']]]
 ];

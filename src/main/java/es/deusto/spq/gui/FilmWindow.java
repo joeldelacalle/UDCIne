@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,8 +31,10 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
+import es.deusto.spq.Billboard;
 import es.deusto.spq.Film;
 import es.deusto.spq.User;
+import es.deusto.spq.jdo.BillboardResource;
 import es.deusto.spq.jdo.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
@@ -56,7 +59,9 @@ public class FilmWindow extends JFrame {
 
 	private GenericType<List<Film>> genericType = new GenericType<List<Film>>() {
 	};
-	private List<Film> films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+	private BillboardResource br = new BillboardResource();
+	private List<Billboard> billFilms = br.getBillboardFilms();
+	private List<Film> films = new ArrayList<Film>();
 
 	private JPanel contentPane;
 	private JTextField textFieldFilmName;
@@ -75,14 +80,17 @@ public class FilmWindow extends JFrame {
 	private int age16 = 16;
 	private JLabel lblUserName = new JLabel("");
 
-    public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-    /**
+	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
+	/**
 	 * Metodo para crear nuevas Peliculas
 	 */
 	private void nuevasPeliculas(final JComboBox<String> comboBoxFilm) {
 		textFieldFilmName.setText(comboBoxFilm.getSelectedItem().toString());
 		String selectedFilm = textFieldFilmName.getText();
 		Image image = null;
+		transformFilms(billFilms, films);
+		
 		for (Film film : films) {
 			if (film.getName().equals(selectedFilm)) {
 				ageFilm = film.getAgeRestriction();
@@ -114,6 +122,7 @@ public class FilmWindow extends JFrame {
 		}
 		filmAgeRestImage();
 	}
+
 	/**
 	 * Metodo para asignar una imagen para cada edad
 	 */
@@ -153,6 +162,7 @@ public class FilmWindow extends JFrame {
 			}
 		}
 	}
+
 	/**
 	 * Metodo para modificar la imagen asociada a cada edad
 	 */
@@ -176,7 +186,7 @@ public class FilmWindow extends JFrame {
 	/**
 	 * Crea la ventana Pelicula
 	 */
-	public FilmWindow(int selectedFilm) {
+	public FilmWindow(int billboard) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 648, 588);
 		contentPane = new JPanel();
@@ -231,6 +241,7 @@ public class FilmWindow extends JFrame {
 		 */
 		final JComboBox<String> comboBoxFilm = new JComboBox<String>();
 
+		transformFilms(billFilms, films);
 		for (Film film : films) {
 			filmName = film.getName();
 			comboBoxFilm.addItem(filmName);
@@ -238,9 +249,9 @@ public class FilmWindow extends JFrame {
 
 		// ESTO ESTA PARA QUE LA PRIMERA PELI QUE SALGA SEA LA SELECCIONADA EN LA
 		// ANTERIOR VENTANA
-		comboBoxFilm.setSelectedItem(films.get(selectedFilm));
+		comboBoxFilm.setSelectedItem(films.get(billboard));
 
-		film = films.get(selectedFilm);
+		film = films.get(billboard);
 		ageFilm = film.getAgeRestriction();
 		filmName = film.getName();
 		urlFilm = film.getUrl();
@@ -306,7 +317,7 @@ public class FilmWindow extends JFrame {
 				} catch (IOException | URISyntaxException e1) {
 					// TODO Auto-generated catch block
 					logger.log(Level.WARNING, "ERROR", e1);
-					//e1.printStackTrace();
+					// e1.printStackTrace();
 				}
 			}
 		});
@@ -364,11 +375,25 @@ public class FilmWindow extends JFrame {
 				.addContainerGap()));
 		contentPane.setLayout(gl_contentPane);
 	}
-	
+
 	public void SetUserName(User u) {
 		this.lblUserName.setBounds(525, 28, 46, 14);
 		this.lblUserName.setText(u.getNickname());
 		this.contentPane.add(this.lblUserName);
 	}
-	
+
+	public List<Film> transformFilms(List<Billboard> billFilms, List<Film> films) {
+
+		for (int i = 0; i< billFilms.size();i++) {
+			
+			films.add(new Film(billFilms.get(i)));
+			
+		}
+		
+		
+		
+		return films;
+
+	}
+
 }

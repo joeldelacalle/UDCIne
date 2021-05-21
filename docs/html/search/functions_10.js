@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vipwindow_723',['VipWindow',['../classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#ad21c9f04b42b2bef0e734666ae750de8',1,'es::deusto::spq::gui::VipWindow']]]
+  ['user_738',['User',['../classes_1_1deusto_1_1spq_1_1_user.html#ae7874889eddeaa2a5ab18d7415e9fe39',1,'es.deusto.spq.User.User(String name, String nickname, String email, String password, int phoneNumber)'],['../classes_1_1deusto_1_1spq_1_1_user.html#a7a41f4a9545b0fb4f170141d08912046',1,'es.deusto.spq.User.User()']]]
 ];

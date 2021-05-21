@@ -1,0 +1,10 @@
+digraph "es.deusto.spq.gui.MainWindow.getBillboardFilm"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="es.deusto.spq.gui.MainWindow.get\lBillboardFilm",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="es.deusto.spq.gui.MainWindow.\lMainWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a3db1ebf258b30134fe0aa0178c444940",tooltip=" "];
+}

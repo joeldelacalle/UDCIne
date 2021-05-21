@@ -24,7 +24,11 @@ digraph "es.deusto.spq.User.getEmail"
   Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node10 [label="es.deusto.spq.gui.VipWindow.\lSetOrderRecord",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#abe8f0a4139d589824484f3225a886daa",tooltip=" "];
   Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node11 [label="es.deusto.spq.gui.VipWindow.\lVipWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#ad21c9f04b42b2bef0e734666ae750de8",tooltip=" "];
-  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node12 [label="es.deusto.spq.UserTest.test\lSetGetEmail",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1_user_test.html#a54477ad8f61337b796f12ce4712b199c",tooltip=" "];
+  Node11 [label="es.deusto.spq.gui.VipWindow.display\lOrders",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#af82ea18bc0460dd2faa8799b831e2c62",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="es.deusto.spq.gui.VipWindow\lTest.testDisplayOrders",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window_test.html#a6d0feab74391b914bb8f462af9ac56d4",tooltip=" "];
+  Node10 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="es.deusto.spq.gui.VipWindow\lTest.SetOrderRecordTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window_test.html#aedb75da7445978e22999f41a93afe1dd",tooltip=" "];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="es.deusto.spq.UserTest.test\lSetGetEmail",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1_user_test.html#a54477ad8f61337b796f12ce4712b199c",tooltip=" "];
 }

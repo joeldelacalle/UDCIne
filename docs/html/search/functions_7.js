@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['lastreleaseswindow_602',['LastReleasesWindow',['../classes_1_1deusto_1_1spq_1_1gui_1_1_last_releases_window.html#a50cdf041435cff0dbc59cccd3f890364',1,'es::deusto::spq::gui::LastReleasesWindow']]],
-  ['login_603',['Login',['../classes_1_1deusto_1_1spq_1_1gui_1_1_cinema_login_window.html#abef49b9bb15894d6085fd9b8506aa6cc',1,'es::deusto::spq::gui::CinemaLoginWindow']]]
+  ['inventory_613',['Inventory',['../classes_1_1deusto_1_1spq_1_1_inventory.html#a727793e5cefd67b79e9b22c7c6408d7f',1,'es::deusto::spq::Inventory']]]
 ];

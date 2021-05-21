@@ -61,6 +61,10 @@ public class PreparedData {
 			b3.setFilmBillboard(filmC);
 			pm.makePersistent(b3);
 
+			Billboard b4 = new Billboard();
+			b4.setFilmBillboard(filmD);
+			pm.makePersistent(b4);
+
 			Cinema cinema1 = new Cinema("Cine Deusto Zubiarte", "Bilbao", "Centro Comercial Zubiarte", 123456789);
 			pm.makePersistent(cinema1);
 			Cinema cinema2 = new Cinema("Cine Deusto Santander", "Santander", "Corte Ingles nueva montaña", 345345345);
@@ -127,7 +131,7 @@ public class PreparedData {
 			Order o3 = new Order("jaimesantamazo@opendeusto.es", null, 2, "Pendiente de pago", "Vacio",
 					"pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2", 16);
 			pm.makePersistent(o3);
-			Receipt r1 = new Receipt("jaimesantamazo@hotmail.com",null,o1,99);
+			Receipt r1 = new Receipt("jaimesantamazo@hotmail.com", null, o1, 99);
 			pm.makePersistent(r1);
 
 			tx.commit();

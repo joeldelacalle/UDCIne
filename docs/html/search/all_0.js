@@ -23,7 +23,7 @@ var searchData=
   ['adminwindow_2ejava_20',['AdminWindow.java',['../_admin_window_8java.html',1,'']]],
   ['agefilmiconresize_21',['ageFilmIconResize',['../classes_1_1deusto_1_1spq_1_1gui_1_1_film_window_test.html#a3cd17e02a58c1f56198914b3ad5d0c43',1,'es::deusto::spq::gui::FilmWindowTest']]],
   ['agereleaseiconresize_22',['ageReleaseIconResize',['../classes_1_1deusto_1_1spq_1_1gui_1_1_last_realeases_test.html#aa3ce65d57a956b5d446d8c07b16d9d37',1,'es::deusto::spq::gui::LastRealeasesTest']]],
-  ['agerestriction_23',['ageRestriction',['../classes_1_1deusto_1_1spq_1_1_film.html#ab5b0c538a8f33e120f0fb93c0743830b',1,'es.deusto.spq.Film.ageRestriction()'],['../classes_1_1deusto_1_1spq_1_1_release.html#a0425280ff51841fbebcba3706f7f8a37',1,'es.deusto.spq.Release.ageRestriction()']]],
+  ['agerestriction_23',['ageRestriction',['../classes_1_1deusto_1_1spq_1_1_billboard.html#aefe793df65f93f484c17eeb35a8d94b2',1,'es.deusto.spq.Billboard.ageRestriction()'],['../classes_1_1deusto_1_1spq_1_1_film.html#ab5b0c538a8f33e120f0fb93c0743830b',1,'es.deusto.spq.Film.ageRestriction()'],['../classes_1_1deusto_1_1spq_1_1_release.html#a0425280ff51841fbebcba3706f7f8a37',1,'es.deusto.spq.Release.ageRestriction()']]],
   ['apptest_24',['AppTest',['../classes_1_1deusto_1_1spq_1_1_app_test.html',1,'es::deusto::spq']]],
   ['apptest_2ejava_25',['AppTest.java',['../_app_test_8java.html',1,'']]],
   ['assessment_26',['Assessment',['../classes_1_1deusto_1_1spq_1_1_assessment.html#aa2712c040b69fabf9e2ab6da3558ff22',1,'es.deusto.spq.Assessment.Assessment()'],['../classes_1_1deusto_1_1spq_1_1_assessment.html',1,'es.deusto.spq.Assessment']]],
