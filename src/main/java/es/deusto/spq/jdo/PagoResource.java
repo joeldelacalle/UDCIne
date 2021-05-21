@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la clase PagoResource es.deusto.spq.jdo PagoResource.java. May 21, 2021
+ */
 package es.deusto.spq.jdo;
 
 import java.util.ArrayList;
@@ -17,12 +20,11 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase para obtener datos de paypal de la base de datos
+ */
 @Path("paypal")
 public class PagoResource {
-	/**
-	 * Clase para obtener datos de paypal de la base de datos
-	 */
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	/**

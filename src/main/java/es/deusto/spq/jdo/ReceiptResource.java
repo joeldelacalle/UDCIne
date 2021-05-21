@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la clase ReceiptResource es.deusto.spq.jdo ReceiptResource.java. May 21, 2021
+ */
 package es.deusto.spq.jdo;
 
 import java.util.List;
@@ -13,7 +16,9 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase para obtener datos de las facturas de la base de datos
+ */
 @Path("receipts")
 public class ReceiptResource {
 	

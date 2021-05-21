@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la clase CinemResource es.deusto.spq.jdo CinemaResource.java. May 21, 2021
+ */
 package es.deusto.spq.jdo;
 
 import java.util.List;
@@ -14,7 +17,9 @@ import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase para obtener datos de los cines de la base de datos
+ */
 @Path("cinemas")
 public class CinemaResource {
 	/**

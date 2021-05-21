@@ -1,3 +1,6 @@
+/** \file 
+ * Descripción de la clase ProductResource es.deusto.spq.jdo ProductResource.java. May 21, 2021
+ */
 package es.deusto.spq.jdo;
 
 import java.util.List;
@@ -12,7 +15,9 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase para obtener datos de los productos de la base de datos
+ */
 @Path("products")
 public class ProductResource {
 	
