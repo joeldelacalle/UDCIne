@@ -28,13 +28,13 @@ import jakarta.ws.rs.client.Entity;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase test CinemaResource
+ *
+ */
 @Category(IntegrationTest.class)
 public class CinemaResourceTest {
-	/**
-	 * Clase test CinemaResource
-	 *
-	 */
+
 	/**
 	 * Rule test
 	 *

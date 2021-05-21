@@ -18,12 +18,12 @@ import org.junit.Test;
 import es.deusto.spq.Order;
 import es.deusto.spq.User;
 import es.deusto.spq.jdo.OrderResource;
-
+/**
+ * Clase test Ventana de Usuarios VIP
+ *
+ */
 public class VipWindowTest {
-	/**
-	 * Clase test Ventana de Usuarios VIP
-	 *
-	 */
+	
 	private VipWindow vw;
 	private User user;
 	private List<Order> listExpected;

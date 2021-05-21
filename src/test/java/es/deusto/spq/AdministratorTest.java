@@ -7,45 +7,44 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ * Clase test Administrador
+ *
+ */
 public class AdministratorTest {
-	/**
-	 * Clase test Administrador
-	 *
-	 */
-	private Administrator a;
 	
-	@Before
+	private Administrator a;
 	/**
 	 * Metodo para construir objeto Administrador con sus atributos correspondientes.
 	 *
 	 */
+	@Before
 	public void setUp() {
 		a = new Administrator("name", "nickname", "email", "password", 99,1);
 	}
-	@Test
 	/**
 	 * Test para obtener el id de un Administrador
 	 *
 	 */
+	@Test
 	public void testSetGetId() {
 		a.setId(0);
 		assertEquals(0, a.getId());
 	}
-	@Test
 	/**
 	 * Test para obtener el nivel de un Administrador
 	 *
 	 */
+	@Test
 	public void testSetGetNivel() {
 		a.setNivel(0);
 		assertEquals(0, a.getNivel());
 	}
-	@Test
 	/**
 	 * Test para obtener el ToString del Administrador, saca un string con la estructura definida en el propio método.
 	 *
 	 */
+	@Test
 	public void testToString() {
 		assertEquals("Administrator [id=0" + ", nivel=1" + ", name=name" + ", nickname=nickname" + ", email=email" + ", password=password"
 				+ ", phoneNumber=99" + "]", a.toString());

@@ -12,12 +12,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import es.deusto.spq.User;
-
+/**
+ * Clase test Ventana Principal
+ *
+ */
 public class MainWindowTest {
-	/**
-	 * Clase test Ventana Principal
-	 *
-	 */
+	
 	
 	private MainWindow mw;
 	private User u;

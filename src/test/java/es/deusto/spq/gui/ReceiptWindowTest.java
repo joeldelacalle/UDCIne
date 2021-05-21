@@ -19,12 +19,12 @@ import es.deusto.spq.User;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
-
+/**
+ * Clase test Ventana de Recibos
+ *
+ */
 public class ReceiptWindowTest {
-	/**
-	 * Clase test Ventana de Recibos
-	 *
-	 */
+	
 	private JTextField textFieldPhoneNumber = new JTextField();
 	private JTextField textFieldName = new JTextField();
 	private JTextField textFieldNickname = new JTextField();

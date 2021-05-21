@@ -10,12 +10,12 @@ import javax.swing.JTextField;
 
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ * Clase test Ventana Login
+ *
+ */
 public class CinemaLoginWindowTest {
-	/**
-	 * Clase test Ventana Login
-	 *
-	 */
+
 
 	private JTextField txtUsername1;
 	private JPasswordField txtPassword1;

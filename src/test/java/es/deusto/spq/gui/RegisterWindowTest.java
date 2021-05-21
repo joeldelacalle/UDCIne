@@ -10,12 +10,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import es.deusto.spq.User;
-
+/**
+ * Clase test Ventana de Registro
+ *
+ */
 public class RegisterWindowTest {
-	/**
-	 * Clase test Ventana de Registro
-	 *
-	 */
+
 	private JTextField textFieldPhoneNumber = new JTextField();
 	private JTextField textFieldName = new JTextField();
 	private JTextField textFieldNickname = new JTextField();

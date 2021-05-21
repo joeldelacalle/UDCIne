@@ -19,12 +19,12 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase test Ventana de Valoraciones
+ *
+ */
 public class RatingWindowTest {
-	/**
-	 * Clase test Ventana de Valoraciones
-	 *
-	 */
+
 	private JTextField textField;
 	private JTextField textField_1;
 	private JComboBox<String> comboBox_1;

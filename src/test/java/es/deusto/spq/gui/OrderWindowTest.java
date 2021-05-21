@@ -17,12 +17,12 @@ import es.deusto.spq.Film;
 import es.deusto.spq.Order;
 import es.deusto.spq.Product;
 import es.deusto.spq.User;
-
+/**
+ * Clase test Ventana de Pedidos
+ *
+ */
 public class OrderWindowTest {
-	/**
-	 * Clase test Ventana de Pedidos
-	 *
-	 */
+	
 	private List<Product> products = null;
 	private int numberTickets = 0;
 

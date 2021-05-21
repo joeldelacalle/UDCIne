@@ -10,23 +10,21 @@ import java.util.Date;
 
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ * Clase test Ticket
+ *
+ */
 public class TicketTest {
-	/**
-	 * Clase test Ticket
-	 *
-	 */
 	private Ticket t;
 	private Cinema c;
 	private Film f;
 	private Calendar dfd;
 	private Date dfd1;
-
-	@Before
 	/**
 	 * Metodo para construir objeto Pelicula y Cine con sus atributos correspondientes.
 	 *
 	 */
+	@Before
 	public void Setup() {
 		c = new Cinema("name", "city", "address", 99);
 		f = new Film("director", "name", "description", 0,"url","");
@@ -41,91 +39,83 @@ public class TicketTest {
 
 		t = new Ticket(c, f, 1, 1, 1, 1, null);
 	}
-
-	@Test
 	/**
 	 * Test para obtener el id de un Ticket
 	 *
 	 */
+	@Test
 	public void testSetGetId() {
 		t.setId(0);
 		assertEquals(0, t.getId());
 	}
-
-	@Test
 	/**
 	 * Test para obtener el Cine de un Ticket
 	 *
 	 */
+	@Test
 	public void testSetGetCinema() {
 		t.setCinema(c);
 		assertEquals(c, t.getCinema());
 	}
-	@Test
 	/**
 	 * Test para obtener la Pelicula de un Ticket
 	 *
 	 */
+	@Test
 	public void testSetGetFilm() {
 		t.setFilm(f);
 		assertEquals(f, t.getFilm());
 	}
-
-	@Test
 	/**
 	 * Test para obtener la Sala de un Ticket
 	 *
 	 */
+	@Test
 	public void testSetGetRoom() {
 		t.setRoom(0);
 		assertEquals(0, t.getRoom());
 	}
-
-	@Test
 	/**
 	 * Test para obtener la Fila de un Ticket
 	 *
 	 */
+	@Test
 	public void testSetGetRow() {
 		t.setRow(0);
 		assertEquals(0, t.getRow());
 	}
-
-	@Test
 	/**
 	 * Test para obtener el asiento de un Ticket
 	 *
 	 */
+	@Test
 	public void testSetGetSeat() {
 		t.setSeat(0);
 		assertEquals(0, t.getSeat());
 	}
-
-	@Test
 	/**
 	 * Test para obtener el precio de un Ticket
 	 *
 	 */
+	@Test
 	public void testSetGetPrice() {
 		t.setPrice(0);
 		assertEquals(0, t.getPrice());
 	}
-
-	@Test
 	/**
 	 * Test para obtener la sesion de un Ticket
 	 *
 	 */
+	@Test
 	public void testGetSetSession() {
 		t.setSession(dfd1);
 		assertEquals(dfd1, t.getSession());
 	}
-
-	@Test
 	/**
 	 * Test para obtener el ToString de El Ticket, saca un string con la estructura definida en el propio método.
 	 *
 	 */
+	@Test
 	public void testToString() {
 		assertEquals("Ticket [id=0" + ", cinema=" + c + ", film="+ f + ", room=" + 1 + ", row=" + 1 + ", seat=" + 1
 				+ ", price=" + 1 + ", session=" + null + "]", t.toString());

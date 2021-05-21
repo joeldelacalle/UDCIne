@@ -31,12 +31,12 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase test Ventana Administrador para salas
+ *
+ */
 public class AdminRoomsWindowTest {
-	/**
-	 * Clase test Ventana Administrador para salas
-	 *
-	 */
+
 	private WebTarget appTarget;
 	private HttpServer server;
 	private WebTarget cinemasTarget;

@@ -26,12 +26,12 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase test Ventana Administrador para usuarios
+ *
+ */
 public class AdminUsersWindowTest {
-	/**
-	 * Clase test Ventana Administrador para usuarios
-	 *
-	 */
+
 	private HttpServer server;
 	private WebTarget appTarget;
 	private WebTarget UsersTarget;

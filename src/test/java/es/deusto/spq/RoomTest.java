@@ -10,24 +10,23 @@ import java.util.Date;
 
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ * Clase test Sala
+ *
+ */
 public class RoomTest {
-	/**
-	 * Clase test Sala
-	 *
-	 */
+	
 	private Room r;
 	private Cinema c;
 	private Film f;
 	private Calendar dfd;
 	private Date dfd1;
 	
-	
-	@Before
 	/**
 	 * Metodo para Construir objeto Pelicula y Cine con sus atributos correspondientes.
 	 *
 	 */
+	@Before
 	public void SetUp() {
 		c = new Cinema("name","city","address",99);
 		f = new Film("director", "name", "description", 13,"url","");
@@ -42,47 +41,47 @@ public class RoomTest {
 		
 		r = new Room(c,f,"name",null,100);
 	}
-	@Test
 	/**
 	 * Test para obtener el Id de una Sala
 	 *
 	 */
+	@Test
 	public void testSetGetId() {
 		r.setId(0);
 		assertEquals(0, r.getId());
 	}
-	@Test
 	/**
 	 * Test para obtener el cine de una Sala
 	 *
 	 */
+	@Test
 	public void testSetGetCinema() {
 		r.setCinema(c);
 		assertEquals(c, r.getCinema());
 	}
-	@Test
 	/**
 	 * Test para obtener la pelicula de una Sala
 	 *
 	 */
+	@Test
 	public void testSetGetFilm() {
 		r.setFilm(f);
 		assertEquals(f, r.getFilm());
 	}
-	@Test
 	/**
 	 * Test para obtener el Nombre de una Sala
 	 *
 	 */
+	@Test
 	public void testSetGetName() {
 		r.setName("testName");
 		assertEquals("testName", r.getName());
 	}
-	@Test
 	/**
 	 * Test para obtener la Fecha de una Sala
 	 *
 	 */
+	@Test
 	public void testGetSetDate() {
 		r.setDate(dfd1);
 		assertEquals(dfd1, r.getDate());
@@ -95,11 +94,11 @@ public class RoomTest {
 		r.setSeats(0);
 		assertEquals(0, r.getSeats());
 	}
-	@Test
 	/**
 	 * Test para obtener el ToString de la Sala, saca un string con la estructura definida en el propio método.
 	 *
 	 */
+	@Test
 	public void testToString() {
 		assertEquals("Room [id=0" + ", cinema=" + c + ", film="+ f + ", name=name" + ", date=null" + ", seats=100"
 				 + "]", r.toString());

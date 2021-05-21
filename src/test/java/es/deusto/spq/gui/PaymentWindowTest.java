@@ -12,12 +12,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import es.deusto.spq.Order;
-
+/**
+ * Clase test Ventana de Pago
+ *
+ */
 public class PaymentWindowTest {
-	/**
-	 * Clase test Ventana de Pago
-	 *
-	 */
+	
 	private Order o;
 	private PaymentWindow pw;
 	private JPasswordField passwordField;

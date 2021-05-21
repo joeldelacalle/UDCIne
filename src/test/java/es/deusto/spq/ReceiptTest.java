@@ -12,12 +12,12 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ * Clase test Recibo
+ *
+ */
 public class ReceiptTest {
-	/**
-	 * Clase test Recibo
-	 *
-	 */
+	
 	private Receipt r;
 	private Calendar dfd;
 	private Date dfd1;
@@ -29,12 +29,11 @@ public class ReceiptTest {
 	private List<Product> products;
 	private List<Ticket> tickets;
 	
-
-	@Before
 	/**
 	 * Metodo para construir objeto:Ticket, Cine, Pelicula, Producto, Pedido con sus atributos correspondientes
 	 *
 	 */
+	@Before
 	public void setup() {
 		products = new ArrayList<Product>();
 		tickets = new ArrayList<Ticket>();
@@ -55,50 +54,47 @@ public class ReceiptTest {
 		o = new Order("perro@gmail.com", dfd1,1, tickets.toString(), products.toString(), "En caja", 1);
 		r = new Receipt("perro@gmail.com",dfd1,o,1);
 	}
-
-	@Test
 	/**
 	 * Test para obtener el id de un Recibo
 	 *
 	 */
+	@Test
 	public void testSetGetId() {
 		r.setId(5);
 		assertEquals(5, r.getId());
 	}
-
-	@Test
 	/**
 	 * Test para obtener el mail de un Recibo
 	 *
 	 */
+	@Test
 	public void testSetGetMail() {
 		r.setMail("perro@gmail.com");
 		assertEquals("perro@gmail.com", r.getMail());
 	}
-
-	@Test
 	/**
 	 * Test para obtener la fecha de un Recibo
 	 *
 	 */
+	@Test
 	public void testSetGetDate() {
 		r.setDate(dfd1);
 		assertEquals(dfd1, r.getDate());
 	}
-	@Test
 	/**
 	 * Test para obtener el Pedido de un Recibo
 	 *
 	 */
+	@Test
 	public void testSetGetOrder() {
 		r.setOrder(o);
 		assertEquals(o, r.getOrder());
 	}
-	@Test 
 	/**
 	 * Test para obtener el ToString de el Recivo, saca un string con la estructura definida en el propio método.
 	 *
 	 */
+	@Test 
 	public void testToString() {
 		assertEquals("Receipt [id=0" + ", mail=perro@gmail.com" + ", date=" + dfd1 + ", order=" + o + ", price=1" + "]", r.toString());
 	}

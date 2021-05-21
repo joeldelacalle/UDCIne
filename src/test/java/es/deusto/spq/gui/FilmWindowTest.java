@@ -32,12 +32,12 @@ import es.deusto.spq.User;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
-
+/**
+ * Clase test Ventana Pelicula
+ *
+ */
 public class FilmWindowTest {
-	/**
-	 * Clase test Ventana Pelicula
-	 *
-	 */
+
 	private URL url;
 
 	private Film f;

@@ -20,12 +20,11 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase test Ventana Administrador para Peliculas
+ *
+ */
 public class AdminFilmsWindowTest {
-	/**
-	 * Clase test Ventana Administrador para Peliculas
-	 *
-	 */
 	private JTextField txtName;
 	private JTextField txtDirector;
 	private JTextField txtFoto;

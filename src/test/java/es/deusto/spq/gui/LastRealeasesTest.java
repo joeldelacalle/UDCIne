@@ -30,13 +30,13 @@ import es.deusto.spq.types.GuiTest;
 import jakarta.ws.rs.client.*;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
-
+/**
+ * Clase test Ventana ultimos estrenos
+ *
+ */
 @Category(GuiTest.class)
 public class LastRealeasesTest {
-	/**
-	 * Clase test Ventana ultimos estrenos
-	 *
-	 */
+	
 	private HttpServer server;
 	private WebTarget appTarget;
 	private WebTarget releaseTarget;
