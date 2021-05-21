@@ -1,3 +1,6 @@
+/** \file 
+ * Breve descripción de es.deusto.spq.gui PaymentWindowTest.java. May 21, 2021
+ */
 package es.deusto.spq.gui;
 
 import java.awt.event.KeyEvent;
