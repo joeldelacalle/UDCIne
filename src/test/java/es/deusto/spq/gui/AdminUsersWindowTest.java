@@ -68,11 +68,12 @@ public class AdminUsersWindowTest {
 	public void eliminarUsuarioBd() {
 
 		for (User user : users) {
-			//System.out.println(user.getName());
+			// System.out.println(user.getName());
 			uList.addElement(user);
 		}
-		//System.out.println(uList);
+		// System.out.println(uList);
 		uList.addElement(u);
+		System.out.println(uList.toString());
 		selectedUser = 1;
 		lista = new JList<User>(uList);
 		auw.eliminarUsuarioBd(lista, selectedUser);

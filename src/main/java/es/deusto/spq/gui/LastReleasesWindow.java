@@ -46,7 +46,7 @@ import java.awt.event.ActionEvent;
 public class LastReleasesWindow extends JFrame {
 
 	/**
-	 * Ventana ultimos estrenos 
+	 * Ventana ultimos estrenos
 	 */
 	private static final long serialVersionUID = 1L;
 	Client client = ClientBuilder.newClient();
@@ -59,116 +59,115 @@ public class LastReleasesWindow extends JFrame {
 	private JTextPane textDescription = new JTextPane();
 	private JLabel lblAgeRestriction = new JLabel("");
 	private JTextField textFieldReleaseTitle = new JTextField();
-	private JList <Release> listReleases;
-	
+	private JList<Release> listReleases;
+
 	private int ageAll = 0; // apta para todos los publicos
 	private int age7 = 7;
 	private int age13 = 13;
 	private int age16 = 16;
 	private int ageRelease = -1;
 	private String urlRelease = "-1";
-	private String descRelease= "-1";
-	private String releaseName ="-1";
-	private String trailer ="-1";
-	
-    public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-    /**
+	private String descRelease = "-1";
+	private String releaseName = "-1";
+	private String trailer = "-1";
+
+	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
+	/**
 	 * Metodo para modificar la imagen asociada a cada edad
 	 */
-	private void ageReleaseIconResize(URL url) throws IOException {
+	public void ageReleaseIconResize(URL url) throws IOException {
 		Image image;
 		image = ImageIO.read(url);
 		ImageIcon myImg = new ImageIcon(url);
 		image = myImg.getImage();
-		
+
 		int width = myImg.getIconWidth() / 7;
-		//System.out.println(width);
+		// System.out.println(width);
 		int height = myImg.getIconHeight() / 7;
-		//System.out.println(height);
-		
+		// System.out.println(height);
+
 		Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		ImageIcon resizeImg = new ImageIcon(newImg);
 		lblAgeRestriction.setIcon(resizeImg);
 	}
+
 	/**
 	 * Metodo para asignar una imagen para cada edad
 	 */
-	private void releaseAgeRestImage() {
-		if(ageAll == ageRelease) {
+	public void releaseAgeRestImage() {
+		if (ageAll == ageRelease) {
 			try {
-	            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/6/68/Edad_TP.png");
-	            ageReleaseIconResize(url);
-	        } 
-	        catch (IOException e7) {
-	        }
-		}else if(age7 == ageRelease) {
+				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/6/68/Edad_TP.png");
+				ageReleaseIconResize(url);
+			} catch (IOException e7) {
+			}
+		} else if (age7 == ageRelease) {
 			try {
-	            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/5/55/Edad_7.png");
-	            ageReleaseIconResize(url);
-	        } 
-	        catch (IOException e7) {
-	        }
-        
-		}else if(age13 == ageRelease) {
+				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/5/55/Edad_7.png");
+				ageReleaseIconResize(url);
+			} catch (IOException e7) {
+			}
+
+		} else if (age13 == ageRelease) {
 			try {
-	            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/b/bd/Edad_13.png");
-	            ageReleaseIconResize(url);
-	        } 
-	        catch (IOException e7) {
-	        }
-			
-		}else if(age16 == ageRelease) {
+				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/b/bd/Edad_13.png");
+				ageReleaseIconResize(url);
+			} catch (IOException e7) {
+			}
+
+		} else if (age16 == ageRelease) {
 			try {
-	            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/4/4b/Edad_16.png");
-	            ageReleaseIconResize(url);
-	        } 
-	        catch (IOException e7) {
-	        }
-        
-		}else{
+				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/4/4b/Edad_16.png");
+				ageReleaseIconResize(url);
+			} catch (IOException e7) {
+			}
+
+		} else {
 			try {
-	            URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/c/ca/Edad_18.png");
-	            ageReleaseIconResize(url);
-	        } 
-	        catch (IOException e7) {
-	        }
+				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/c/ca/Edad_18.png");
+				ageReleaseIconResize(url);
+			} catch (IOException e7) {
+			}
 		}
 	}
+
 	/**
 	 * Metodo para los nuevos lanzamientos
 	 */
-	private void nuevosLanzamientos() {
+	public void nuevosLanzamientos(JList<Release> lReleases, int selectedUser, JTextField tRelease, int aRelease,
+			String urRelease, String decRelease, String relName, String tra) {
 		Image image = null;
-		textFieldReleaseTitle.setText(listReleases.getSelectedValue().getName());
-		String selectedRelease = textFieldReleaseTitle.getText();
-		ageRelease = listReleases.getSelectedValue().getAgeRestriction();
-		urlRelease = listReleases.getSelectedValue().getUrl();
-		releaseName = listReleases.getSelectedValue().getName();
-		descRelease= listReleases.getSelectedValue().getDescription();
-		trailer = listReleases.getSelectedValue().getTrailer();
-		
-		if(releaseName.equals(selectedRelease)) {
+		tRelease.setText(lReleases.getModel().getElementAt(selectedUser).getName());
+		String selectedRelease = tRelease.getText();
+		aRelease = lReleases.getModel().getElementAt(selectedUser).getAgeRestriction();
+		urRelease = lReleases.getModel().getElementAt(selectedUser).getUrl();
+		relName = lReleases.getModel().getElementAt(selectedUser).getName();
+		decRelease = lReleases.getModel().getElementAt(selectedUser).getDescription();
+		tra = lReleases.getModel().getElementAt(selectedUser).getTrailer();
+
+		if (releaseName.equals(selectedRelease)) {
 			try {
-	            URL url = new URL(urlRelease);
-	            image = ImageIO.read(url);
-	            ImageIcon myImg = new ImageIcon(url);
-	            image = myImg.getImage();
-	            
-	            int width = myImg.getIconWidth() / 9 * 2;
-	            int height = myImg.getIconHeight() / 9 * 2;
-	            
-	            Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-	            ImageIcon resizeImg = new ImageIcon(newImg);
-	            lblFilmImage.setIcon(resizeImg);
-	            textDescription.setText(descRelease);
-	        } 
-	        catch (IOException e7) {
-	        }
+				URL url = new URL(urlRelease);
+				image = ImageIO.read(url);
+				ImageIcon myImg = new ImageIcon(url);
+				image = myImg.getImage();
+
+				int width = myImg.getIconWidth() / 9 * 2;
+				int height = myImg.getIconHeight() / 9 * 2;
+
+				Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+				ImageIcon resizeImg = new ImageIcon(newImg);
+				lblFilmImage.setIcon(resizeImg);
+				textDescription.setText(descRelease);
+			} catch (IOException e7) {
+			}
 		}
-		
+
 		releaseAgeRestImage();
-		
+
 	}
+
 	/**
 	 * Crea la ventana de ultimos estrenos
 	 */
@@ -208,14 +207,14 @@ public class LastReleasesWindow extends JFrame {
 		lblX.setForeground(new Color(255, 255, 255));
 		lblX.setBounds(707, 10, 19, 31);
 		contentPane.add(lblX);
-		
+
 		final JLabel lblFlecha = new JLabel("<-");
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				MainWindow vp = new MainWindow();
 				vp.setVisible(true);
-				dispose();		
+				dispose();
 			}
 
 			@Override
@@ -240,46 +239,48 @@ public class LastReleasesWindow extends JFrame {
 		lblNuevosEstrenos.setFont(new Font("Cooper Black", Font.BOLD, 33));
 		lblNuevosEstrenos.setBounds(144, 10, 455, 54);
 		contentPane.add(lblNuevosEstrenos);
-		
+
 		final DefaultListModel<Release> releases = new DefaultListModel<>();
-		
-		GenericType<List<Release>> genericType = new GenericType<List<Release>>() {};	
+
+		GenericType<List<Release>> genericType = new GenericType<List<Release>>() {
+		};
 		List<Release> lastReleases = ReleaseTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-		
+
 		listReleases = new JList<Release>(releases);
 		listReleases.setBounds(20, 75, 280, 410);
 		listReleases.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(listReleases);
-		
+
 		releases.clear();
 		for (Release release : lastReleases) {
 			releases.addElement(release);
 		}
-		
+
 		listReleases.addListSelectionListener(new ListSelectionListener() {
-			
+
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
-				
-				nuevosLanzamientos(); 
+
+				nuevosLanzamientos(listReleases, listReleases.getSelectedIndex(), textFieldReleaseTitle, ageRelease,
+						urlRelease, descRelease, releaseName, trailer);
 			}
 
 		});
-		
+
 		JScrollBar scrollBar = new JScrollBar();
 		scrollBar.setBounds(283, 88, 17, 37);
 		contentPane.add(scrollBar);
-		
+
 		lblFilmImage.setBounds(320, 121, 281, 298);
 		contentPane.add(lblFilmImage);
-		
+
 		textDescription.setBackground(new Color(64, 224, 208));
 		textDescription.setBounds(310, 429, 395, 62);
 		contentPane.add(textDescription);
-		
+
 		lblAgeRestriction.setBounds(647, 57, 60, 54);
 		contentPane.add(lblAgeRestriction);
-		
+
 		textFieldReleaseTitle.setFont(new Font("Tahoma", Font.BOLD, 15));
 		textFieldReleaseTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		textFieldReleaseTitle.setEditable(false);
@@ -287,7 +288,7 @@ public class LastReleasesWindow extends JFrame {
 		textFieldReleaseTitle.setBounds(331, 74, 281, 37);
 		contentPane.add(textFieldReleaseTitle);
 		textFieldReleaseTitle.setColumns(10);
-		
+
 		JButton btnNewButton = new JButton("TRAILER");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -295,14 +296,14 @@ public class LastReleasesWindow extends JFrame {
 					Desktop.getDesktop().browse(new URL(trailer).toURI());
 				} catch (IOException | URISyntaxException e1) {
 					// TODO Auto-generated catch block
-					logger.log(Level.WARNING, "ERROR",e1);
-					//e1.printStackTrace();
+
+					// e1.printStackTrace();
 				}
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		btnNewButton.setBounds(611, 353, 115, 31);
 		contentPane.add(btnNewButton);
-	
+
 	}
 }
