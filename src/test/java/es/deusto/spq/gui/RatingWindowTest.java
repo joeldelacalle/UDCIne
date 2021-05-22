@@ -3,12 +3,15 @@
  */
 package es.deusto.spq.gui;
 
-import java.util.List;
-
-import javax.swing.*;
+import javax.swing.DefaultListModel;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 import org.glassfish.grizzly.http.server.HttpServer;
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
@@ -17,8 +20,7 @@ import es.deusto.spq.User;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
-import jakarta.ws.rs.core.GenericType;
-import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase test Ventana de Valoraciones
  *
@@ -45,8 +47,10 @@ public class RatingWindowTest {
 	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
 	final WebTarget FilmsTarget = appTarget.path("films");
 	final WebTarget CinemasTarget = appTarget.path("cinemas");
+
 	/**
-	 * Metodo para construir objetos Pelicula y usuario con sus atributos correspondientes.
+	 * Metodo para construir objetos Pelicula y usuario con sus atributos
+	 * correspondientes.
 	 *
 	 */
 	@Before
@@ -69,11 +73,12 @@ public class RatingWindowTest {
 		cinema = new Cinema("Cine Deusto Bakacaldo", "bakacaldo", "Max Center", 458345345);
 		comboBox_1 = new JComboBox<String>();
 		comboBox_1.addItem(cinema.getName());
-		
+
 		user = new User();
 
 		rw = new RatingWindow();
 	}
+
 	/**
 	 * TearDown Test
 	 *
@@ -82,6 +87,7 @@ public class RatingWindowTest {
 	public void tearDown() throws Exception {
 		server.stop();
 	}
+
 	/**
 	 * Test para añadir valoraciones a peliculas
 	 *
@@ -90,15 +96,16 @@ public class RatingWindowTest {
 	public void AñadirValoracionesPeliTest() {
 		rw.AñadirValoracionPeli(comboBox, listModelPelis, labeluser, textField);
 	}
+
 	/**
 	 * Test para añadir valoraciones a cine
 	 *
 	 */
 	@Test
 	public void AñadirValoracionesCineTest() {
-		rw.AñadirValoracionCine(comboBox_1, listModelCines, labeluser,
-				textField_1);
+		rw.AñadirValoracionCine(comboBox_1, listModelCines, labeluser, textField_1);
 	}
+
 	/**
 	 * Test para añadir nombre de usuario
 	 *

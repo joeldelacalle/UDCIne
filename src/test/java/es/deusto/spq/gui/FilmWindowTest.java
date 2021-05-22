@@ -3,9 +3,6 @@
  */
 package es.deusto.spq.gui;
 
-import static org.junit.Assert.*;
-
-import java.awt.Image;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -13,11 +10,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.imageio.ImageIO;
-import javax.swing.DefaultListModel;
-import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
-import javax.swing.JLabel;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
@@ -27,11 +20,11 @@ import org.junit.Test;
 import es.deusto.spq.Billboard;
 import es.deusto.spq.Film;
 import es.deusto.spq.Main;
-import es.deusto.spq.Release;
 import es.deusto.spq.User;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
+
 /**
  * Clase test Ventana Pelicula
  *
@@ -47,16 +40,18 @@ public class FilmWindowTest {
 	private JComboBox<String> comboBox;
 
 	private User u;
-	
+
 	private List<Billboard> billList;
-	private List<Film> filmList; 
+	private List<Film> filmList;
 
 	private HttpServer server;
 	private WebTarget appTarget;
 
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
 	/**
-	 * Metodo para construir objeto Usuario y Pelicula con sus atributos correspondientes.
+	 * Metodo para construir objeto Usuario y Pelicula con sus atributos
+	 * correspondientes.
 	 *
 	 */
 	@Before
@@ -81,12 +76,13 @@ public class FilmWindowTest {
 		url = new URL(f.getUrl());
 
 		selectedFilm = 0;
-		
+
 		billList = new ArrayList<Billboard>();
 		filmList = new ArrayList<Film>();
-		
+
 		fw = new FilmWindow(selectedFilm);
 	}
+
 	/**
 	 * TearDown Test
 	 *
@@ -95,6 +91,7 @@ public class FilmWindowTest {
 	public void tearDown() throws Exception {
 		server.stop();
 	}
+
 	/**
 	 * Test para el tamaño de la imagen de la edad en una Pelicula
 	 *
@@ -108,6 +105,7 @@ public class FilmWindowTest {
 			logger.log(Level.WARNING, "ERROR", e);
 		}
 	}
+
 	/**
 	 * Test para nuevas Peliculas
 	 *
@@ -118,6 +116,7 @@ public class FilmWindowTest {
 		fw.nuevasPeliculas(comboBox);
 
 	}
+
 	/**
 	 * Test para el tamaño de la imagen de la edad en una Pelicula
 	 *
@@ -128,6 +127,7 @@ public class FilmWindowTest {
 		fw.filmAgeRestImage();
 
 	}
+
 	/**
 	 * Test para añadir nombre de usuario
 	 *
@@ -136,6 +136,7 @@ public class FilmWindowTest {
 	public void SetUserNameTest() {
 		fw.SetUserName(u);
 	}
+
 	/**
 	 * Test para transformar Peliculas
 	 *

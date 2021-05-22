@@ -3,9 +3,6 @@
  */
 package es.deusto.spq.gui;
 
-import static org.junit.Assert.*;
-
-import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -19,12 +16,13 @@ import es.deusto.spq.User;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
+
 /**
  * Clase test Ventana de Recibos
  *
  */
 public class ReceiptWindowTest {
-	
+
 	private JTextField textFieldPhoneNumber = new JTextField();
 	private JTextField textFieldName = new JTextField();
 	private JTextField textFieldNickname = new JTextField();
@@ -38,9 +36,10 @@ public class ReceiptWindowTest {
 
 	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
 	final WebTarget receiptTarget = appTarget.path("receipts");
+
 	/**
-	 * 	Metodo para construir objeto Usuario con sus atributos correspondientes.
-	 *	y la clase test ventana de recibos
+	 * Metodo para construir objeto Usuario con sus atributos correspondientes. y la
+	 * clase test ventana de recibos
 	 */
 	@Before
 	public void setUp() throws Exception {
@@ -59,6 +58,7 @@ public class ReceiptWindowTest {
 		u.setPassword(passwordField.getText());
 		u.setPhoneNumber(phone);
 	}
+
 	/**
 	 * Test para los recibos
 	 *
@@ -68,6 +68,7 @@ public class ReceiptWindowTest {
 		rw.SetUserName(u);
 		rw.SetEmail(u);
 	}
+
 	/**
 	 * TearDown Test
 	 *

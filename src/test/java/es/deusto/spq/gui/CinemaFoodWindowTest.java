@@ -15,6 +15,7 @@ import org.junit.Test;
 
 import es.deusto.spq.Film;
 import es.deusto.spq.Product;
+
 /**
  * Clase test Ventana Alimentos
  *
@@ -25,7 +26,7 @@ public class CinemaFoodWindowTest {
 			13, "https://pics.filmaffinity.com/avengers_infinity_war-181539353-large.jpg",
 			"https://www.youtube.com/watch?v=6ZfuNTqbHE8");
 	private Product p = new Product("Palomitas Medianas", "500g", 4,
-			"https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg"); 
+			"https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg");
 
 	private String urlS = "https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg";
 	private JLabel jb = new JLabel();
@@ -35,8 +36,10 @@ public class CinemaFoodWindowTest {
 	private OrderWindow ow;
 
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
 	/**
-	 * Metodo para crear la ventana alimentos y construir la ventana Order con sus atributos correspondientes
+	 * Metodo para crear la ventana alimentos y construir la ventana Order con sus
+	 * atributos correspondientes
 	 *
 	 */
 	@Before
@@ -45,6 +48,7 @@ public class CinemaFoodWindowTest {
 		ow = new OrderWindow(selectedFilm);
 
 	}
+
 	/**
 	 * Test para añadir una imagen a la ventana alimentos
 	 *
@@ -58,6 +62,7 @@ public class CinemaFoodWindowTest {
 			// e.printStackTrace();
 		}
 	}
+
 	/**
 	 * Test para añadir productos a la ventana alimentos
 	 *
@@ -65,7 +70,7 @@ public class CinemaFoodWindowTest {
 	@Test
 	public void addProducts() {
 		listmodelAlimentos.addElement(p);
-		cfw.addProducts(ow,listmodelAlimentos);
+		cfw.addProducts(ow, listmodelAlimentos);
 
 	}
 

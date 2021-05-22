@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -39,7 +40,7 @@ import jakarta.ws.rs.core.MediaType;
 /**
  * Ventana Administrador para salas
  */
-public class AdminRoomsWindow extends JFrame {
+public class AdminRoomsWindow extends JFrame implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -47,9 +48,6 @@ public class AdminRoomsWindow extends JFrame {
 
 	private final WebTarget appTarget = client.target("http://localhost:8080/myapp");
 	private final WebTarget CinemasTarget = appTarget.path("cinemas");
-
-	// private CinemaResource cr;
-	// private List<Cinema> cinemas = cr.getReleases();
 
 	GenericType<List<Cinema>> genericType0 = new GenericType<List<Cinema>>() {
 	};
@@ -60,11 +58,6 @@ public class AdminRoomsWindow extends JFrame {
 	private GenericType<List<Room>> genericType1 = new GenericType<List<Room>>() {
 	};
 	private List<Room> rooms = RoomsTarget.request(MediaType.APPLICATION_JSON).get(genericType1);
-	// private RoomResource rr;
-	// private List<Room> rooms = rr.getReleases();
-
-	// private FilmResources fr;
-	// private List<Film> films = fr.getFilms();
 
 	private final WebTarget FilmsTarget = appTarget.path("films");
 
@@ -238,17 +231,13 @@ public class AdminRoomsWindow extends JFrame {
 		for (Film film : films) {
 			comboFilm.addItem(film);
 		}
-		/*
-		 * for (Room room : rooms) { //r = room; //roomCinema = room.getCinema();
-		 * comboRoom.addItem(room.getName()); }
-		 */
+
 		comboFilm.setBounds(51, 68, 265, 57);
 		contentPane.add(comboFilm);
 		comboCinema.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// System.out.println(comboCinema.getSelectedIndex());
 				getCineYSalas(comboCinema, comboRoom, comboCinema.getSelectedIndex());
-				// System.out.println(comboCinema.getSelectedItem().toString());
+
 			}
 
 		});

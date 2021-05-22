@@ -3,40 +3,40 @@
  */
 package es.deusto.spq.gui;
 
-import static org.junit.Assert.*;
-
-import java.awt.Image;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JTextField;
 
 import org.glassfish.grizzly.http.server.HttpServer;
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.experimental.categories.Category;
 //import org.mockito.*;
 
 import es.deusto.spq.Main;
 import es.deusto.spq.Release;
 import es.deusto.spq.types.GuiTest;
-import jakarta.ws.rs.client.*;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase test Ventana ultimos estrenos
  *
  */
 @Category(GuiTest.class)
 public class LastRealeasesTest {
-	
+
 	private HttpServer server;
 	private WebTarget appTarget;
 	private WebTarget releaseTarget;
@@ -64,6 +64,7 @@ public class LastRealeasesTest {
 	private int selectedUser;
 
 	private LastReleasesWindow lrw;
+
 	/**
 	 * Metodo para crear la ventana de ultimos estrenos
 	 *
@@ -86,6 +87,7 @@ public class LastRealeasesTest {
 
 		lrw = new LastReleasesWindow();
 	}
+
 	/**
 	 * TearDown Test
 	 *
@@ -94,6 +96,7 @@ public class LastRealeasesTest {
 	public void tearDown() throws Exception {
 		server.stop();
 	}
+
 	/**
 	 * Test para el tamaño de la imagen de la edad en un Ultimo estreno
 	 *
@@ -106,6 +109,7 @@ public class LastRealeasesTest {
 			logger.log(Level.WARNING, "ERROR", e);
 		}
 	}
+
 	/**
 	 * Test para nuevos lanzamientos
 	 *
@@ -121,6 +125,7 @@ public class LastRealeasesTest {
 				releaseName, trailer);
 
 	}
+
 	/**
 	 * Test para el tamaño de la imagen de la edad en un ultimo estreno
 	 *

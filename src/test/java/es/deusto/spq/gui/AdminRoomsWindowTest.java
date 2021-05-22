@@ -3,13 +3,10 @@
  */
 package es.deusto.spq.gui;
 
-import static org.junit.Assert.*;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 
 import org.glassfish.grizzly.http.server.HttpServer;
@@ -23,14 +20,12 @@ import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
 import es.deusto.spq.Main;
 import es.deusto.spq.Room;
-import es.deusto.spq.jdo.CinemaResource;
-import es.deusto.spq.jdo.RoomResource;
-import es.deusto.spq.jdo.RoomResourceTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase test Ventana Administrador para salas
  *
@@ -65,6 +60,7 @@ public class AdminRoomsWindowTest {
 	private int selectedCinema2;
 
 	private AdminRoomsWindow arw;
+
 	/**
 	 * Metodo para construir objeto Sala con sus atributos correspondientes.
 	 *
@@ -101,6 +97,7 @@ public class AdminRoomsWindowTest {
 		arw = new AdminRoomsWindow();
 
 	}
+
 	/**
 	 * TearDown Test
 	 *
@@ -109,6 +106,7 @@ public class AdminRoomsWindowTest {
 	public void tearDown() throws Exception {
 		server.stop();
 	}
+
 	/**
 	 * Test para añadir Pelicula a Sala
 	 *
@@ -116,11 +114,12 @@ public class AdminRoomsWindowTest {
 	@Test
 	public void addFilmtoRoom() {
 		selectedCinema0 = 0;
-		//for (int i = 3; selectedCinema0 <= i; selectedCinema0++) {
-			arw.getCineYSalas(comboCinema, comboRoom, selectedCinema0);
-			arw.addFilmtoRoom(comboCinema, comboFilm, comboRoom, date, 100);
+		// for (int i = 3; selectedCinema0 <= i; selectedCinema0++) {
+		arw.getCineYSalas(comboCinema, comboRoom, selectedCinema0);
+		arw.addFilmtoRoom(comboCinema, comboFilm, comboRoom, date, 100);
 
 	}
+
 	/**
 	 * Test para obtener el Cine y Sala
 	 *

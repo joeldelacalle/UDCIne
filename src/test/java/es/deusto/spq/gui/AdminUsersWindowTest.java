@@ -3,14 +3,8 @@
  */
 package es.deusto.spq.gui;
 
-import static org.junit.Assert.*;
-
 import java.util.List;
 
-import javax.jdo.JDOHelper;
-import javax.jdo.PersistenceManager;
-import javax.jdo.PersistenceManagerFactory;
-import javax.jdo.Transaction;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 
@@ -26,6 +20,7 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase test Ventana Administrador para usuarios
  *
@@ -45,6 +40,7 @@ public class AdminUsersWindowTest {
 	private User u;
 	private int selectedUser;
 	private AdminUsersWindow auw;
+
 	/**
 	 * Metodo para construir objeto Usuario con sus atributos correspondientes.
 	 *
@@ -67,6 +63,7 @@ public class AdminUsersWindowTest {
 		auw = new AdminUsersWindow();
 
 	}
+
 	/**
 	 * TearDown Test
 	 *
@@ -75,6 +72,7 @@ public class AdminUsersWindowTest {
 	public void tearDown() throws Exception {
 		server.stop();
 	}
+
 	/**
 	 * Test para eliminar Usuario de BD
 	 *
@@ -88,7 +86,7 @@ public class AdminUsersWindowTest {
 		}
 		// System.out.println(uList);
 		uList.addElement(u);
-		//System.out.println(uList.toString());
+		// System.out.println(uList.toString());
 		selectedUser = 0;
 		lista = new JList<User>(uList);
 		auw.eliminarUsuarioBd(lista, selectedUser);
