@@ -4,19 +4,19 @@
 package es.deusto.spq;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+
 /**
  * Clase base Pedido.
  *
  */
 @PersistenceCapable
 public class Order {
-	
+
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.NATIVE)
 	protected long id;

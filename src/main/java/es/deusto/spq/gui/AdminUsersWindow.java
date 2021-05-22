@@ -5,6 +5,8 @@ package es.deusto.spq.gui;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
@@ -14,6 +16,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 import javax.swing.DefaultListModel;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -22,25 +25,18 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
-import es.deusto.spq.Cinema;
 import es.deusto.spq.User;
-import es.deusto.spq.jdo.CinemaResource;
-import es.deusto.spq.jdo.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 /**
  * Ventana Administrador para usuarios
  */
 public class AdminUsersWindow extends JFrame {
 
-	
 	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
@@ -136,7 +132,7 @@ public class AdminUsersWindow extends JFrame {
 		JButton btnNewButton = new JButton("Eliminar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				eliminarUsuarioBd(lista,lista.getSelectedIndex());
+				eliminarUsuarioBd(lista, lista.getSelectedIndex());
 				AdminUsersWindow auw = new AdminUsersWindow();
 				auw.setVisible(true);
 				dispose();
@@ -159,7 +155,7 @@ public class AdminUsersWindow extends JFrame {
 		try {
 			tx.begin();
 			User user = lUser.getModel().getElementAt(selectedUser);
-			//System.out.println(user.toString());
+			// System.out.println(user.toString());
 			User u = pm.getObjectById(User.class, user.getId());
 			pm.deletePersistent(u);
 

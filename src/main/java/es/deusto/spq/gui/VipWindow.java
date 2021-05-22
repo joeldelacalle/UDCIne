@@ -34,6 +34,10 @@ import es.deusto.spq.jdo.UserResource;
 public class VipWindow extends JFrame {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
 	 * Ventana de Usuarios vip.
 	 *
 	 */

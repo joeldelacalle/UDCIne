@@ -7,22 +7,24 @@ import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+
 /**
  * Clase base Usuario.
  *
  */
 @PersistenceCapable
 public class User {
-	
+
 	@PrimaryKey
-    @Persistent(valueStrategy=IdGeneratorStrategy.NATIVE)
-    protected long id;
-	
+	@Persistent(valueStrategy = IdGeneratorStrategy.NATIVE)
+	protected long idU;
+
 	protected String name;
 	protected String nickname;
 	protected String email;
 	protected String password;
 	protected int phoneNumber;
+
 	/**
 	 * Construir objeto Usuario con sus atributos correspondientes.
 	 */
@@ -34,87 +36,102 @@ public class User {
 		this.password = password;
 		this.phoneNumber = phoneNumber;
 	}
-	public User() {}
-	
+
+	public User() {
+	}
+
 	/**
 	 * Obtener el id de un Usuario
 	 */
 	public long getId() {
-		return id;
+		return idU;
 	}
+
 	/**
 	 * Establecer el id de un Usuario
 	 */
 	public void setId(long id) {
-		this.id = id;
+
+		this.idU = id;
 	}
+
 	/**
 	 * Obtener el nombre de un Usuario
 	 */
 	public String getName() {
 		return name;
 	}
+
 	/**
 	 * Establecer el nombre de un Usuario
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	/**
 	 * Obtener el apodo de un Usuario
 	 */
 	public String getNickname() {
 		return nickname;
 	}
+
 	/**
 	 * Establecer el apodo de un Usuario
 	 */
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
+
 	/**
 	 * Obtener el email de un Usuario
 	 */
 	public String getEmail() {
 		return email;
 	}
+
 	/**
 	 * Establecer el email de un Usuario
 	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	/**
 	 * Obtener el password de un Usuario
 	 */
 	public String getPassword() {
 		return password;
 	}
+
 	/**
 	 * Establecer el password de un Usuario
 	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	/**
 	 * Obtener el número de teléfono de un Usuario
 	 */
 	public int getPhoneNumber() {
 		return phoneNumber;
 	}
+
 	/**
 	 * Establecer el número de teléfono de un Usuario
 	 */
 	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
 	/**
-	 * ToString del Usuario, saca un string con la estructura definida en el propio método.
+	 * ToString del Usuario, saca un string con la estructura definida en el propio
+	 * método.
 	 */
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", nickname=" + nickname + ", email=" + email + ", password="
+		return "User [id=" + idU + ", name=" + name + ", nickname=" + nickname + ", email=" + email + ", password="
 				+ password + ", phoneNumber=" + phoneNumber + "]";
 	}
-	
-	
+
 }

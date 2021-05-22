@@ -5,6 +5,8 @@ import org.glassfish.jersey.server.ResourceConfig;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Main class.
@@ -14,6 +16,8 @@ public class Main {
     // Base URI the Grizzly HTTP server will listen on
     public static final String BASE_URI = "http://localhost:8080/myapp/";
 
+    public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
      * @return Grizzly HTTP server.
@@ -33,12 +37,12 @@ public class Main {
      * @param args
      * @throws IOException
      */
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
         final HttpServer server = startServer();
-        System.out.println(String.format("UDCINE app started with WADL available at "
-                + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
+        logger.log(Level.INFO,"UDCINE app started with WADL available at "
+                + "%sapplication.wadl\nHit enter to stop it...", BASE_URI);
         System.in.read();
-        server.stop();
+        server.shutdownNow();
     }
 }
 

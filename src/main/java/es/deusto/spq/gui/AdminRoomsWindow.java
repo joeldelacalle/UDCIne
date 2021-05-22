@@ -5,11 +5,19 @@ package es.deusto.spq.gui;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Date;
 import java.util.List;
 
+import javax.jdo.JDOHelper;
+import javax.jdo.PersistenceManager;
+import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Transaction;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -17,35 +25,22 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+import com.toedter.calendar.JDateChooser;
+
 import es.deusto.spq.Cinema;
 import es.deusto.spq.Film;
 import es.deusto.spq.Room;
-import es.deusto.spq.jdo.CinemaResource;
-import es.deusto.spq.jdo.FilmResources;
-import es.deusto.spq.jdo.RoomResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 
-import javax.swing.JComboBox;
-import javax.jdo.JDOHelper;
-import javax.jdo.PersistenceManager;
-import javax.jdo.PersistenceManagerFactory;
-import javax.jdo.Transaction;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-import com.toedter.calendar.JDateChooser;
-import java.awt.event.MouseMotionAdapter;
 /**
  * Ventana Administrador para salas
  */
 public class AdminRoomsWindow extends JFrame {
 
-	
 	private static final long serialVersionUID = 1L;
 
 	Client client = ClientBuilder.newClient();
@@ -252,7 +247,7 @@ public class AdminRoomsWindow extends JFrame {
 		comboCinema.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// System.out.println(comboCinema.getSelectedIndex());
-				getCineYSalas(comboCinema, comboRoom,comboCinema.getSelectedIndex());
+				getCineYSalas(comboCinema, comboRoom, comboCinema.getSelectedIndex());
 				// System.out.println(comboCinema.getSelectedItem().toString());
 			}
 
