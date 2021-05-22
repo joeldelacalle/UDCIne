@@ -121,20 +121,4 @@ public class AdminFilmsWindowTest {
 		afw.eliminarPeliculaBd(fList, selectedFilm);
 	}
 
-	@Ignore
-	@Test
-	public void eliminarPeliculaBD() {
-
-		// System.out.println(films);
-		for (Film film : films) {
-			fList.addElement(film);
-		}
-		// fList.addElement(filmA);
-
-		selectedFilm = filmA.getName();
-
-		afw.eliminarPeliculaBd(fList, selectedFilm);
-
-	}
-
 }

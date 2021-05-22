@@ -147,6 +147,15 @@ public class PreparedData {
 	
 	public static void crearSalas() {
 		
+		pm.makePersistent(filmA);
+		pm.makePersistent(filmB);
+		pm.makePersistent(filmC);
+		pm.makePersistent(filmD);
+		
+		pm.makePersistent(cinema1);
+		pm.makePersistent(cinema2);
+		pm.makePersistent(cinema3);
+		
 		pm.makePersistent(room1);
 		pm.makePersistent(room2);
 		pm.makePersistent(room3);
