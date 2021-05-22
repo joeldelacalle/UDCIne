@@ -42,12 +42,12 @@ import javax.swing.JTextPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 /**
  * Ventana ultimos estrenos
  */
 public class LastReleasesWindow extends JFrame {
 
-	
 	private static final long serialVersionUID = 1L;
 	Client client = ClientBuilder.newClient();
 
@@ -138,13 +138,20 @@ public class LastReleasesWindow extends JFrame {
 	public void nuevosLanzamientos(JList<Release> lReleases, int selectedUser, JTextField tRelease, int aRelease,
 			String urRelease, String decRelease, String relName, String tra) {
 		Image image = null;
-		tRelease.setText(lReleases.getModel().getElementAt(selectedUser).getName());
+		final JTextField tR = new JTextField();
+		final int aR;
+		final String uR;
+		final String dR;
+		final String rN;
+		final String t;
+
+		tR.setText(lReleases.getModel().getElementAt(selectedUser).getName());
 		String selectedRelease = tRelease.getText();
-		aRelease = lReleases.getModel().getElementAt(selectedUser).getAgeRestriction();
-		urRelease = lReleases.getModel().getElementAt(selectedUser).getUrl();
-		relName = lReleases.getModel().getElementAt(selectedUser).getName();
-		decRelease = lReleases.getModel().getElementAt(selectedUser).getDescription();
-		tra = lReleases.getModel().getElementAt(selectedUser).getTrailer();
+		aR = lReleases.getModel().getElementAt(selectedUser).getAgeRestriction();
+		uR = lReleases.getModel().getElementAt(selectedUser).getUrl();
+		rN = lReleases.getModel().getElementAt(selectedUser).getName();
+		dR = lReleases.getModel().getElementAt(selectedUser).getDescription();
+		t = lReleases.getModel().getElementAt(selectedUser).getTrailer();
 
 		if (releaseName.equals(selectedRelease)) {
 			try {

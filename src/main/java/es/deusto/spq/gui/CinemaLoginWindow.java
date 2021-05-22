@@ -265,7 +265,6 @@ public class CinemaLoginWindow extends JFrame {
 	 *
 	 */
 	public void Login(JPasswordField txtPassword1, JTextField txtUsername1) {
-		System.out.println(txtPassword1.getPassword().toString());
 		UserResource ur = new UserResource();
 		if (txtUsername1.getText().equals("admin") && txtPassword1.getText().equals("admin")) {
 			// los datos son correctos

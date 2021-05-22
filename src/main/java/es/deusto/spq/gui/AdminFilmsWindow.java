@@ -377,7 +377,6 @@ public class AdminFilmsWindow extends JFrame {
 
 			try {
 				tx.begin();
-				trailer = textFieldTrailer.getText().toString();
 				Film film = new Film(txtDirector.getText().toString(), txtName.getText().toString(),
 						txtDescription.getText().toString(), age, txtFoto.getText().toString(), trailer);
 				pm.makePersistent(film);
@@ -409,8 +408,7 @@ public class AdminFilmsWindow extends JFrame {
 
 		try {
 			// Film f = pm.getObjectById(Film.class, filmList.get(0).getId());
-			Query<Film> q = pm
-					.newQuery("SELECT FROM " + Film.class.getName() + " WHERE name== '" + selectedFilm + "'");
+			Query<Film> q = pm.newQuery("SELECT FROM " + Film.class.getName() + " WHERE name== '" + selectedFilm + "'");
 			List<Film> filmList = q.executeList();
 			q.deletePersistentAll(filmList);
 			// pm.deletePersistent(f);
