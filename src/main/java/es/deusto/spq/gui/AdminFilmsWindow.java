@@ -14,11 +14,13 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Query;
 import javax.jdo.Transaction;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -31,6 +33,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ListModel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
@@ -42,12 +45,13 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Ventana Administrador para Películas.
  *
  */
 public class AdminFilmsWindow extends JFrame {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
@@ -316,7 +320,8 @@ public class AdminFilmsWindow extends JFrame {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				añadirPeliculaBd(txtName, txtDirector, txtFoto, cbAge, txtDescription);
+				añadirPeliculaBd(txtName, txtDirector, txtFoto, cbAge, txtDescription,
+						textFieldTrailer.getText().toString());
 
 			}
 		});
@@ -329,7 +334,7 @@ public class AdminFilmsWindow extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				eliminarPeliculaBd(listBillboard, listBillboard.getSelectedIndex());
+				eliminarPeliculaBd(listBillboard.getModel(), listBillboard.getSelectedValue().getName());
 			}
 		});
 		btnDelete.setBounds(115, 430, 200, 30);
@@ -354,7 +359,7 @@ public class AdminFilmsWindow extends JFrame {
 	 * Añade una nueva película a la BD
 	 */
 	public void añadirPeliculaBd(JTextField txtName, JTextField txtDirector, JTextField txtFoto,
-			JComboBox<Integer> cbAge, JTextArea txtDescription) {
+			JComboBox<Integer> cbAge, JTextArea txtDescription, String trailer) {
 		if (txtName.getText().equals("") || txtName.getText().equals("Título") || txtDirector.getText().equals("")
 				|| txtDirector.getText().equals("Director") || txtDescription.getText().equals("")
 				|| txtDescription.getText().equals("Descripción (max 255)") || txtFoto.getText().equals("")
@@ -372,9 +377,9 @@ public class AdminFilmsWindow extends JFrame {
 
 			try {
 				tx.begin();
+				trailer = textFieldTrailer.getText().toString();
 				Film film = new Film(txtDirector.getText().toString(), txtName.getText().toString(),
-						txtDescription.getText().toString(), age, txtFoto.getText().toString(),
-						textFieldTrailer.getText().toString());
+						txtDescription.getText().toString(), age, txtFoto.getText().toString(), trailer);
 				pm.makePersistent(film);
 
 				tx.commit();
@@ -397,26 +402,22 @@ public class AdminFilmsWindow extends JFrame {
 	/**
 	 * Elimina la película seleccionada de la lista de la BD
 	 */
-	public void eliminarPeliculaBd(JList<Film> lFilm, int selectedFilm) {
+	public void eliminarPeliculaBd(ListModel<Film> listModel, String selectedFilm) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
 		System.out.println("Eliminando película de la BD");
 
 		try {
-			tx.begin();
-			Film film = listBillboard.getModel().getElementAt(selectedFilm);
-			//System.out.println(film.toString());
-			Film f = pm.getObjectById(Film.class, film.getId());
-			pm.deletePersistent(f);
+			// Film f = pm.getObjectById(Film.class, filmList.get(0).getId());
+			Query<Film> q = pm
+					.newQuery("SELECT FROM " + Film.class.getName() + " WHERE name== '" + selectedFilm + "'");
+			List<Film> filmList = q.executeList();
+			q.deletePersistentAll(filmList);
+			// pm.deletePersistent(f);
 
-			tx.commit();
 			System.out.println("Eliminada película de la Base de Datos");
 
 		} finally {
-			if (tx.isActive()) {
-				tx.rollback();
-			}
 			pm.close();
 
 			AdminFilmsWindow afw = new AdminFilmsWindow();

@@ -84,6 +84,10 @@ public class VipWindow extends JFrame {
 		lblName.setBounds(36, 21, 85, 29);
 		contentPane.add(lblName);
 
+		listOrders = new JList<Order>(listModelOrders);
+		listOrders.setBounds(409, 52, 276, 389);
+		contentPane.add(listOrders);
+
 		/**
 		 * Boton para obtener la lista de pedidos de un Usuario concreto
 		 */
@@ -92,16 +96,12 @@ public class VipWindow extends JFrame {
 		btnViewOrders.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				displayOrders(lblUserName, listModelOrders);
+				displayOrders(lblUserName.getText(), listModelOrders);
 
 			}
 		});
 		btnViewOrders.setBounds(36, 77, 142, 58);
 		contentPane.add(btnViewOrders);
-
-		listOrders = new JList<Order>(listModelOrders);
-		listOrders.setBounds(409, 52, 276, 389);
-		contentPane.add(listOrders);
 
 	}
 
@@ -136,15 +136,14 @@ public class VipWindow extends JFrame {
 
 			}
 		}
-
 		return oList2;
 
 	}
 
-	public void displayOrders(JLabel lblUserName, ListModel<Order> listModelOrders) {
-		List<Order> oList = SetOrderRecord(lblUserName.getText());
+	public void displayOrders(String lblUserName1, ListModel<Order> listModelOrders1) {
+		List<Order> oList = SetOrderRecord(lblUserName1);
 		for (int i = 0; i < oList.size(); i++) {
-			((DefaultListModel<Order>) listModelOrders).addElement(oList.get(i));
+			((DefaultListModel<Order>) listModelOrders1).addElement(oList.get(i));
 		}
 	}
 }
