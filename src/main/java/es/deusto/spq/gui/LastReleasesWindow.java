@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
@@ -156,7 +157,7 @@ public class LastReleasesWindow extends JFrame {
 				setRelease(urlRelease, image, lblFilmImage, textDescription, descRelease);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.log(Level.WARNING,"IOException",e);
 			}
 
 		}
@@ -293,7 +294,7 @@ public class LastReleasesWindow extends JFrame {
 					Desktop.getDesktop().browse(new URL(trailer).toURI());
 				} catch (IOException | URISyntaxException e1) {
 					// TODO Auto-generated catch block
-
+					logger.log(Level.WARNING,"IOException",e1);
 					// e1.printStackTrace();
 				}
 			}

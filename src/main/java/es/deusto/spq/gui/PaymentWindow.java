@@ -40,6 +40,7 @@ import es.deusto.spq.jdo.PagoResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
+
 /**
  * Ventana de Pago.
  *
@@ -47,7 +48,7 @@ import jakarta.ws.rs.client.WebTarget;
 public class PaymentWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private JPanel contentPane;
 	private JTextField textField;
 	private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
@@ -195,7 +196,8 @@ public class PaymentWindow extends JFrame {
 			PayPal paypal = pr.getPaypal(email);
 
 			if (paypal.getPassword().equals(contraseña)) {
-				//JOptionPane.showMessageDialog(null, "Usuario correcto, se ha llevado a cabo la reserva, pagada");
+				// JOptionPane.showMessageDialog(null, "Usuario correcto, se ha llevado a cabo
+				// la reserva, pagada");
 				o.setPaymentMethod("Pagado con Paypal");
 				String Email = o.getMail();
 				String Paymentmethod = o.getPaymentMethod();
@@ -270,7 +272,8 @@ public class PaymentWindow extends JFrame {
 		// opciones, opciones[0]);
 		// switch (respuesta) {
 		// case 0:
-		//JOptionPane.showMessageDialog(null, "Se ha llevado a cabo la reserva, pendiente de pago");
+		// JOptionPane.showMessageDialog(null, "Se ha llevado a cabo la reserva,
+		// pendiente de pago");
 		o.setPaymentMethod("Pendiente de pago");
 		String Email = o.getMail();
 		String Paymentmethod = o.getPaymentMethod();
@@ -319,13 +322,6 @@ public class PaymentWindow extends JFrame {
 		dispose();
 		MainWindow mw = new MainWindow();
 		mw.setVisible(true);
-		// break;
-		// case 1:
-		// JOptionPane.showMessageDialog(null, "Se ha cancelado la operacion");
-		// break;
-		// default:
-		// break;
-		// }
 	}
 
 }
