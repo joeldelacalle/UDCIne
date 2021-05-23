@@ -1,0 +1,8 @@
+ -----------------
+|-Fecha de compra: Fri May 21 23:24:27 CEST 2021
+|-Email: null
+|-Tickets: pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2
+|-Products: Productos Producto:1 Nombre:Palomitas Medianas Producto:2 Nombre:Palomitas Grandes + Coca Cola
+|-Paymentmethod: Pendiente de pago
+|-Price: 28
+ -----------------

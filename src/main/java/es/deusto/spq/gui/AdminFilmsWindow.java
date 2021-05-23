@@ -237,14 +237,8 @@ public class AdminFilmsWindow extends JFrame {
 
 			@Override
 			public void keyTyped(KeyEvent e) {
-				int max = 255;
-				if (txtDescription.getText().length() > max + 1) {
-					e.consume();
-					String shortened = txtDescription.getText().substring(0, max);
-					txtDescription.setText(shortened);
-				} else if (txtDescription.getText().length() > max) {
-					e.consume();
-				}
+				maxLengthdesc( txtDescription);
+				e.consume();
 			}
 
 			@Override
@@ -413,5 +407,17 @@ public class AdminFilmsWindow extends JFrame {
 			afw.setVisible(true);
 			dispose();
 		}
+	}
+
+	public void maxLengthdesc( JTextArea txtDescription) {
+
+		int max = 255;
+		if (txtDescription.getText().length() > max + 1) {
+			String shortened = txtDescription.getText().substring(0, max);
+			txtDescription.setText(shortened);
+		} else if (txtDescription.getText().length() > max) {
+			
+		}
+
 	}
 }

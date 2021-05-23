@@ -120,4 +120,18 @@ public class AdminFilmsWindowTest {
 		afw.eliminarPeliculaBd(fList, selectedFilm);
 	}
 
+	@Test
+	public void maxLengthdescTest() {
+		txtDescription.setText(
+				"La historia. 1​ es la ciencia que estudia los sucesos del pasado; generalmente son de la humanidad, aunque, también puede no estar centrada en el humano n. 2​. Asimismo, es una disciplina académica que narra dichos acontecimientos. Es una ciencia social debido a su clasificación y método; pero, si no se centra en el humano, puede ser considerada como una ciencia natural, especialmente en un marco de la interdisciplinariedad; de cualquier forma, forma parte del la clasificación de la ciencia que engloba las anteriores dos, es decir, una ciencia fáctica (también llamada factual).\r\n"
+						+ "\r\n"
+						+ "Su propósito es averiguar los hechos y procesos que ocurrieron y se desarrollaron en el pasado e interpretarlos ateniéndose a criterios de la mayor objetividad posible; aunque la posibilidad de cumplimiento de tales propósitos y el grado en que sean posibles son en sí mismos objetos de estudio de la historiología o teoría de la historia, como epistemología o conocimiento científico de la historia.[cita requerida]\r\n"
+						+ "\r\n"
+						+ "Se denomina historiador o historiadora a la persona encargada del estudio de la historia. Al historiador profesional se le concibe como el especialista en la disciplina académica de la historia, y al historiador no profesional se le suele denominar cronista.2​");
+
+		afw.maxLengthdesc(txtDescription);
+		
+
+	}
+
 }
