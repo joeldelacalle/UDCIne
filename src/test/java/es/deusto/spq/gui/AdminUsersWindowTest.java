@@ -59,7 +59,7 @@ public class AdminUsersWindowTest {
 		};
 		users = UsersallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 
-		u = new User("Jaime", "jaimesanta", "jaimesanta@hotmail.com", "jaimesanta", 435345);
+		u = new User("Jaime", "jaimesanta", "jaimesantamazo@gmail.com", "jaimesanta", 435345);
 		auw = new AdminUsersWindow();
 
 	}

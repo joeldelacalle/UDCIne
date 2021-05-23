@@ -70,14 +70,14 @@ public class OrderResourceTest {
 	@PerfTest(invocations = 100, threads = 40)
 	public void testgetOrders() {
 		WebTarget ordersTarget = appTarget.path("order");
-		WebTarget getOrdersTarget = ordersTarget.path("getorders").queryParam("mail", "jaimesantamazo@hotmail.com");
-		List<Order> listOrders = Arrays.asList(new Order("jaimesantamazo@hotmail.com", null, 3, "Pendiente de pago",
+		WebTarget getOrdersTarget = ordersTarget.path("getorders").queryParam("mail", "jaimesantamazo@gmail.com");
+		List<Order> listOrders = Arrays.asList(new Order("jaimesantamazo@gmail.com", null, 3, "Pendiente de pago",
 				"Vacio",
 				"pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2 Entrada:3 fila:3 asiento:3",
 				24),
-				new Order("jaimesantamazo@hotmail.com", null, 1, "Pendiente de pago", "Vacio",
+				new Order("jaimesantamazo@gmail.com", null, 1, "Pendiente de pago", "Vacio",
 						"pelicula:Infinity war Entrada:1 fila:1 asiento:1", 8),
-				new Order("jaimesantamazo@hotmail.com", null, 2, "Pendiente de pago", "Vacio",
+				new Order("jaimesantamazo@gmail.com", null, 2, "Pendiente de pago", "Vacio",
 						"pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2", 16));
 
 		GenericType<List<Order>> genericType = new GenericType<List<Order>>() {

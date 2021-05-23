@@ -36,7 +36,7 @@ public class RegisterWindowTest {
 		u = new User();
 		textFieldName = new JTextField("Jaime");
 		textFieldNickname = new JTextField("jaimesanta");
-		textFieldEmail = new JTextField("jaimesantamazo@hotmail.com");
+		textFieldEmail = new JTextField("jaimesantamazo@gmail.com");
 		passwordField = new JPasswordField("1234");
 		textFieldPhoneNumber = new JTextField("99");
 		rw = new RegisterWindow();

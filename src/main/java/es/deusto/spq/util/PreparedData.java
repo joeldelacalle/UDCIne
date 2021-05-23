@@ -54,12 +54,12 @@ public class PreparedData {
 	public static Cinema cinema2 = new Cinema("Cine Deusto Santander", "Santander", "Corte Ingles nueva montaña", 345345345);
 	public static Cinema cinema3 = new Cinema("Cine Deusto Barakaldo", "Barakaldo", "Max Center", 458345345);
 	
-	public static Order o1 = new Order("jaimesantamazo@hotmail.com", null, 3, "Pendiente de pago", "Vacio",
+	public static Order o1 = new Order("jaimesantamazo@gmail.com", null, 3, "Pendiente de pago", "Vacio",
 			"pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2 Entrada:3 fila:3 asiento:3",
 			24);
-	public static Order o2 = new Order("jaimesantamazo@hotmail.com", null, 1, "Pendiente de pago", "Vacio",
+	public static Order o2 = new Order("jaimesantamazo@gmail.com", null, 1, "Pendiente de pago", "Vacio",
 			"pelicula:Infinity war Entrada:1 fila:1 asiento:1", 8);
-	public static Order o3 = new Order("jaimesantamazo@hotmail.com", null, 2, "Pendiente de pago", "Vacio",
+	public static Order o3 = new Order("jaimesantamazo@gmail.com", null, 2, "Pendiente de pago", "Vacio",
 			"pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2", 16);
 	
 	public static Release release1 = new Release("Anthony y Joe Russo", "Cherry",
