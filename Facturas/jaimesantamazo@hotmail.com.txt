@@ -5,4 +5,11 @@
 |-Products: Vacio
 |-Paymentmethod: Pendiente de pago
 |-Price: 16
+ ----------------- -----------------
+|-Fecha de compra: Sun May 23 17:58:44 CEST 2021
+|-Email: jaimesantamazo@hotmail.com
+|-Tickets: pelicula:Iron Man 3 Entrada:1 fila:1 asiento:1
+|-Products: Vacio
+|-Paymentmethod: Pendiente de pago
+|-Price: 8
  -----------------
