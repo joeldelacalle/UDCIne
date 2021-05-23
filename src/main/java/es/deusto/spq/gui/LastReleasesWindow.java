@@ -153,20 +153,12 @@ public class LastReleasesWindow extends JFrame {
 
 		if (releaseName.equals(selectedRelease)) {
 			try {
-				URL url = new URL(urlRelease);
-				image = ImageIO.read(url);
-				ImageIcon myImg = new ImageIcon(url);
-				image = myImg.getImage();
-
-				int width = myImg.getIconWidth() / 9 * 2;
-				int height = myImg.getIconHeight() / 9 * 2;
-
-				Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-				ImageIcon resizeImg = new ImageIcon(newImg);
-				lblFilmImage.setIcon(resizeImg);
-				textDescription.setText(descRelease);
-			} catch (IOException e7) {
+				setRelease(urlRelease, image, lblFilmImage, textDescription, descRelease);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
+
 		}
 
 		releaseAgeRestImage();
@@ -310,5 +302,21 @@ public class LastReleasesWindow extends JFrame {
 		btnNewButton.setBounds(611, 353, 115, 31);
 		contentPane.add(btnNewButton);
 
+	}
+
+	public void setRelease(String urlRelease, Image image, JLabel lblFilmImage, JTextPane textDescription,
+			String descRelease) throws IOException {
+		URL url = new URL(urlRelease);
+		image = ImageIO.read(url);
+		ImageIcon myImg = new ImageIcon(url);
+		image = myImg.getImage();
+
+		int width = myImg.getIconWidth() / 9 * 2;
+		int height = myImg.getIconHeight() / 9 * 2;
+
+		Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+		ImageIcon resizeImg = new ImageIcon(newImg);
+		lblFilmImage.setIcon(resizeImg);
+		textDescription.setText(descRelease);
 	}
 }

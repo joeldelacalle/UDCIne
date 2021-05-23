@@ -3,6 +3,7 @@
  */
 package es.deusto.spq.gui;
 
+import java.awt.Image;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -13,6 +14,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
@@ -47,6 +49,7 @@ public class LastRealeasesTest {
 	private JTextField textFieldReleaseName = new JTextField("");
 	private JLabel lblReleaseImage = new JLabel("");
 	private JLabel textPaneDescription = new JLabel("");
+	JTextPane textDescription = new JTextPane();
 
 	private int ageRelease;
 	private String urlRelease;
@@ -133,5 +136,18 @@ public class LastRealeasesTest {
 	@Test
 	public void releaseAgeRestImage() {
 		lrw.releaseAgeRestImage();
+	}
+
+	@Test
+	public void testsetRelease() {
+		Image image = null;
+		descRelease = "hola";
+		urlRelease = "https://pics.filmaffinity.com/cherry-952736388-large.jpg";
+		try {
+			lrw.setRelease(urlRelease, image, lblRecommendedAge, textDescription, descRelease);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
