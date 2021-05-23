@@ -17,20 +17,21 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
+
 /**
  * Ventana Administrador
  */
-public class AdminWindow extends JFrame{
+public class AdminWindow extends JFrame {
 
-	
 	private static final long serialVersionUID = 1L;
-	
+
 	private JPanel contentPane;
+
 	/**
 	 * Crea la ventana de Administracion
 	 */
 	public AdminWindow() {
-		
+
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 501);
@@ -39,7 +40,7 @@ public class AdminWindow extends JFrame{
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 139), 2));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		final JLabel lblX = new JLabel("X");
 		lblX.addMouseListener(new MouseAdapter() {
 			@Override
@@ -66,14 +67,14 @@ public class AdminWindow extends JFrame{
 		lblX.setForeground(new Color(255, 255, 255));
 		lblX.setBounds(707, 10, 19, 31);
 		contentPane.add(lblX);
-		
+
 		final JLabel lblFlecha = new JLabel("<-");
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CinemaLoginWindow lw = new CinemaLoginWindow();
 				lw.setVisible(true);
-				dispose();		
+				dispose();
 			}
 
 			@Override
@@ -92,61 +93,76 @@ public class AdminWindow extends JFrame{
 		lblFlecha.setForeground(new Color(255, 255, 255));
 		lblFlecha.setBounds(50, 10, 25, 31);
 		contentPane.add(lblFlecha);
-		
+
 		JLabel lblAdmin = new JLabel("ADMINISTRACIÓN");
 		lblAdmin.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAdmin.setFont(new Font("Cooper Black", Font.BOLD, 33));
 		lblAdmin.setBounds(199, 20, 338, 54);
 		contentPane.add(lblAdmin);
 		/**
-    	 * Boton que contiene un metodo para acceder a la ventana administrador para peliculas
-    	 */
+		 * Boton que contiene un metodo para acceder a la ventana administrador para
+		 * peliculas
+		 */
 		JButton btnPelis = new JButton("Administrar Películas");
 		btnPelis.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AdminFilmsWindow afw = new AdminFilmsWindow();
-				afw.setVisible(true);
-				dispose();
+				initAdminFilmsWindow();
 			}
 		});
 		btnPelis.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnPelis.setForeground(Color.WHITE);
 		btnPelis.setBackground(new Color(47, 79, 79));
 		btnPelis.setBounds(240, 170, 250, 50);
-        contentPane.add(btnPelis);
-        /**
-    	 * Boton que contiene un metodo para acceder a la ventana administrador para salas
-    	 */
-        JButton btnSalas = new JButton("Administrar Salas");
-        btnSalas.addActionListener(new ActionListener() {
+		contentPane.add(btnPelis);
+		/**
+		 * Boton que contiene un metodo para acceder a la ventana administrador para
+		 * salas
+		 */
+		JButton btnSalas = new JButton("Administrar Salas");
+		btnSalas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AdminRoomsWindow arw = new AdminRoomsWindow();
-				arw.setVisible(true);
-				dispose();
+				initAdminRoomsWindow();
 			}
 		});
-        btnSalas.setFont(new Font("Tahoma", Font.BOLD, 15));
-        btnSalas.setForeground(Color.WHITE);
-        btnSalas.setBackground(new Color(47, 79, 79));
-        btnSalas.setBounds(240, 250, 250, 50);
-        contentPane.add(btnSalas);
-        /**
-    	 * Boton que contiene un metodo para acceder a la ventana administrador para usuarios
-    	 */
-        JButton btnUsuarios = new JButton("Administrar Usuarios");
-        btnUsuarios.addActionListener(new ActionListener() {
+		btnSalas.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnSalas.setForeground(Color.WHITE);
+		btnSalas.setBackground(new Color(47, 79, 79));
+		btnSalas.setBounds(240, 250, 250, 50);
+		contentPane.add(btnSalas);
+		/**
+		 * Boton que contiene un metodo para acceder a la ventana administrador para
+		 * usuarios
+		 */
+		JButton btnUsuarios = new JButton("Administrar Usuarios");
+		btnUsuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AdminUsersWindow auw = new AdminUsersWindow();
-				auw.setVisible(true);
-				dispose();
+				initAdminUsersWindow();
 			}
 		});
-        btnUsuarios.setFont(new Font("Tahoma", Font.BOLD, 15));
-        btnUsuarios.setForeground(Color.WHITE);
-        btnUsuarios.setBackground(new Color(47, 79, 79));
-        btnUsuarios.setBounds(240, 330, 250, 50);
-        contentPane.add(btnUsuarios);
-        
+		btnUsuarios.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnUsuarios.setForeground(Color.WHITE);
+		btnUsuarios.setBackground(new Color(47, 79, 79));
+		btnUsuarios.setBounds(240, 330, 250, 50);
+		contentPane.add(btnUsuarios);
+
 	}
-	
+
+	public void initAdminFilmsWindow() {
+		AdminFilmsWindow afw = new AdminFilmsWindow();
+		afw.setVisible(true);
+		dispose();
+	}
+
+	public void initAdminRoomsWindow() {
+		AdminRoomsWindow arw = new AdminRoomsWindow();
+		arw.setVisible(true);
+		dispose();
+	}
+
+	public void initAdminUsersWindow() {
+		AdminUsersWindow auw = new AdminUsersWindow();
+		auw.setVisible(true);
+		dispose();
+	}
+
 }
