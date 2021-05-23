@@ -75,7 +75,7 @@ public class PreparedData {
 			16, "https://pics.filmaffinity.com/judas_and_the_black_messiah-912646266-large.jpg",
 			"https://www.youtube.com/watch?v=iaibc6LI1_g");
 	
-	public static User user1 = new User("Jaime", "jaimesanta", "jaimesantamazo@hotmail.com", "jaimesanta", 435345);
+	public static User user1 = new User("Jaime", "jaimesanta", "jaimesantamazo@gmail.com", "jaimesanta", 435345);
 	
 	public static Room room1 = new Room(cinema1, filmA, "ZUBIARTE SALA 1", Calendar.getInstance().getTime(), 100);
 	public static Room room2 = new Room(cinema1, filmB, "ZUBIARTE SALA 2", Calendar.getInstance().getTime(), 100);
@@ -94,9 +94,9 @@ public class PreparedData {
 	public static Product p3 = new Product("Palomitas Grandes + Coca Cola", "Unas palomitas grandes y coca cola", 8,
 			"https://previews.123rf.com/images/imagestore/imagestore1606/imagestore160601787/58756143-palomitas-en-rect%C3%A1ngulo-con-el-color-en-la-copa-para-llevar-aislado-en-el-fondo-blanco.jpg");
 	
-	public static PayPal pp1 = new PayPal("jaimesantamazo@hotmail.com", "123");
+	public static PayPal pp1 = new PayPal("jaimesantamazo@gmail.com", "123");
 	
-	public static Receipt r1 = new Receipt("jaimesantamazo@hotmail.com", null, o1, 99);
+	public static Receipt r1 = new Receipt("jaimesantamazo@gmail.com", null, o1, 99);
 	
 	public static void crearPeliculas() {
 		
