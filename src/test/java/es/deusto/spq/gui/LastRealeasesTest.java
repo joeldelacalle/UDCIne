@@ -135,7 +135,16 @@ public class LastRealeasesTest {
 	 */
 	@Test
 	public void releaseAgeRestImage() {
-		lrw.releaseAgeRestImage();
+		int ageRelease;
+		ageRelease = 0;
+		lrw.releaseAgeRestImage(ageRelease);
+		ageRelease = 7;
+		lrw.releaseAgeRestImage(ageRelease);
+		ageRelease = 13;
+		lrw.releaseAgeRestImage(ageRelease);
+		ageRelease = 16;
+		lrw.releaseAgeRestImage(ageRelease);
+
 	}
 
 	@Test

@@ -93,7 +93,7 @@ public class LastReleasesWindow extends JFrame {
 	/**
 	 * Metodo para asignar una imagen para cada edad
 	 */
-	public void releaseAgeRestImage() {
+	public void releaseAgeRestImage( int ageRelease) {
 		if (ageAll == ageRelease) {
 			try {
 				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/6/68/Edad_TP.png");
@@ -161,7 +161,7 @@ public class LastReleasesWindow extends JFrame {
 
 		}
 
-		releaseAgeRestImage();
+		releaseAgeRestImage(ageRelease);
 
 	}
 
