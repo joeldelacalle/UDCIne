@@ -106,7 +106,7 @@ public class AdminRoomsWindow extends JFrame implements Serializable {
 	 * Metodo para obtener el cine y las salas
 	 */
 	public void getCineYSalas(JComboBox<Cinema> comboCinema, JComboBox<String> comboRoom, int selCinema) {
-		if (comboCinema.getModel().getElementAt(selCinema).getId() == 0) {
+		if (comboCinema.getModel().getElementAt(selCinema).getId() == 1) {
 			if (comboRoom.getItemCount() >= 1) {
 				comboRoom.removeItemAt(2);
 				comboRoom.removeItemAt(1);
@@ -123,7 +123,7 @@ public class AdminRoomsWindow extends JFrame implements Serializable {
 			}
 
 		}
-		if (comboCinema.getModel().getElementAt(selCinema).getId() == 1) {
+		if (comboCinema.getModel().getElementAt(selCinema).getId() == 2) {
 			if (comboRoom.getItemCount() >= 1) {
 				comboRoom.removeItemAt(2);
 				comboRoom.removeItemAt(1);
@@ -140,7 +140,7 @@ public class AdminRoomsWindow extends JFrame implements Serializable {
 			}
 
 		}
-		if (comboCinema.getModel().getElementAt(selCinema).getId() == 2) {
+		if (comboCinema.getModel().getElementAt(selCinema).getId() == 3) {
 			if (comboRoom.getItemCount() >= 1) {
 				comboRoom.removeItemAt(2);
 				comboRoom.removeItemAt(1);
@@ -260,5 +260,12 @@ public class AdminRoomsWindow extends JFrame implements Serializable {
 
 		calendar.setBounds(123, 329, 110, 31);
 		getContentPane().add(calendar);
+	}
+	
+	public void comboRemoveItems() {
+		
+	}
+	public void comboAddItems() {
+		
 	}
 }

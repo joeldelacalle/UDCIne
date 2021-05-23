@@ -60,6 +60,8 @@ public class AdminRoomsWindowTest {
 	private int selectedCinema2;
 
 	private AdminRoomsWindow arw;
+	private AdminRoomsWindow arw2;
+	private AdminRoomsWindow arw3;
 
 	/**
 	 * Metodo para construir objeto Sala con sus atributos correspondientes.
@@ -94,8 +96,6 @@ public class AdminRoomsWindowTest {
 			comboFilm.addItem(film);
 		}
 
-		arw = new AdminRoomsWindow();
-
 	}
 
 	/**
@@ -114,9 +114,25 @@ public class AdminRoomsWindowTest {
 	@Test
 	public void addFilmtoRoom() {
 		selectedCinema0 = 0;
+		selectedCinema1 = 1;
+		selectedCinema2 = 2;
+
+		comboRoom.addItem(room1.getName());
+		comboRoom.addItem(room1.getName());
+		comboRoom.addItem(room1.getName());
 		// for (int i = 3; selectedCinema0 <= i; selectedCinema0++) {
+		arw = new AdminRoomsWindow();
 		arw.getCineYSalas(comboCinema, comboRoom, selectedCinema0);
-		arw.addFilmtoRoom(comboCinema, comboFilm, comboRoom, date, 100);
+		arw.dispose();
+
+		arw2 = new AdminRoomsWindow();
+
+		arw2.getCineYSalas(comboCinema, comboRoom, selectedCinema1);
+		arw2.dispose();
+		arw3 = new AdminRoomsWindow();
+		arw3.getCineYSalas(comboCinema, comboRoom, selectedCinema2);
+		arw3.dispose();
+		arw.addFilmtoRoom(comboCinema, comboFilm, comboRoom, date, selectedCinema0);
 
 	}
 
