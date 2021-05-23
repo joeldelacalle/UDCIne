@@ -45,7 +45,7 @@ public class PaymentWindowTest {
 	 */
 	@Test
 	public void testPagarPaypal() {
-		textField.setText("jaimesantamazo@hotmail.com");
+		textField.setText("jaimesantamazo@gmail.com");
 		passwordField.setText("123");
 		pw.PagarPaypal(o, textField, passwordField);
 	}
@@ -59,6 +59,10 @@ public class PaymentWindowTest {
 		pw.PagarCaja(o);
 	}
 	
+	/**
+	 * Test para mandar Email
+	 *
+	 */
 	@Test
 	public void mandarMensajeTest() {
 		pw.mandarMensaje("pruebasjaimedeusto@gmail.com", r);
