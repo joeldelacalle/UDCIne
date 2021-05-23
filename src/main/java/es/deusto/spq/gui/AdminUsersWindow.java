@@ -107,9 +107,7 @@ public class AdminUsersWindow extends JFrame {
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				AdminWindow aw = new AdminWindow();
-				aw.setVisible(true);
-				dispose();
+				initAdminWindow();
 			}
 
 			@Override
@@ -133,9 +131,7 @@ public class AdminUsersWindow extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				eliminarUsuarioBd(lista, lista.getSelectedIndex());
-				AdminUsersWindow auw = new AdminUsersWindow();
-				auw.setVisible(true);
-				dispose();
+				rerunAdminUsersWindow();
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -170,4 +166,17 @@ public class AdminUsersWindow extends JFrame {
 		}
 	}
 
+	public void rerunAdminUsersWindow() {
+
+		AdminUsersWindow auw = new AdminUsersWindow();
+		auw.setVisible(true);
+		dispose();
+
+	}
+
+	public void initAdminWindow() {
+		AdminWindow aw = new AdminWindow();
+		aw.setVisible(true);
+		dispose();
+	}
 }

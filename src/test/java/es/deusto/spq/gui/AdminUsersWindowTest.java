@@ -81,15 +81,24 @@ public class AdminUsersWindowTest {
 	public void eliminarUsuarioBd() {
 
 		for (User user : users) {
-			// System.out.println(user.getName());
 			uList.addElement(user);
 		}
-		// System.out.println(uList);
+
 		uList.addElement(u);
-		// System.out.println(uList.toString());
+
 		selectedUser = 0;
 		lista = new JList<User>(uList);
 		auw.eliminarUsuarioBd(lista, selectedUser);
+	}
+
+	@Test
+	public void testRerunAdminUsersWindow() {
+		auw.rerunAdminUsersWindow();
+	}
+
+	@Test
+	public void testinitAdminWindow() {
+		auw.initAdminWindow();
 	}
 
 }
