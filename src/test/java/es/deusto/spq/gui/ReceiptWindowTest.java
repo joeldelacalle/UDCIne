@@ -3,6 +3,7 @@
  */
 package es.deusto.spq.gui;
 
+import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -36,6 +37,7 @@ public class ReceiptWindowTest {
 
 	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
 	final WebTarget receiptTarget = appTarget.path("receipts");
+	private JLabel labeluser;
 
 	/**
 	 * Metodo para construir objeto Usuario con sus atributos correspondientes. y la
@@ -57,6 +59,7 @@ public class ReceiptWindowTest {
 		u.setEmail(textFieldEmail.getText());
 		u.setPassword(passwordField.getText());
 		u.setPhoneNumber(phone);
+		labeluser = new JLabel("jaimesanta");
 	}
 
 	/**
@@ -76,5 +79,10 @@ public class ReceiptWindowTest {
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
+	}
+	
+	@Test
+	public void testInitMainWindow() {
+		rw.initMainWindow(labeluser);
 	}
 }

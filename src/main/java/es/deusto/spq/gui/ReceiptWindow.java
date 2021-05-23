@@ -23,17 +23,18 @@ import javax.swing.border.EmptyBorder;
 
 import es.deusto.spq.Receipt;
 import es.deusto.spq.User;
+import es.deusto.spq.jdo.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Ventana de recibos.
  *
  */
 public class ReceiptWindow extends JFrame {
-	
 
 	private JPanel contentPane;
 	private JLabel labeluser = new JLabel("");
@@ -42,20 +43,6 @@ public class ReceiptWindow extends JFrame {
 	final WebTarget appTarget = cliente.target("http://localhost:8080/myapp");
 	final WebTarget receiptTarget = appTarget.path("receipts");
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ReceiptWindow frame = new ReceiptWindow();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					logger.log(Level.WARNING, "ERROR", e);
-					// e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Construir la ventana de Recibos con sus atributos correspondientes
@@ -84,9 +71,7 @@ public class ReceiptWindow extends JFrame {
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MainWindow vp = new MainWindow();
-				vp.setVisible(true);
-				dispose();
+				initMainWindow(labeluser);
 			}
 
 			@Override
@@ -165,5 +150,13 @@ public class ReceiptWindow extends JFrame {
 		for (Receipt receipt : r) {
 			listamodelreceipt.addElement(receipt);
 		}
+	}
+
+	public void initMainWindow(JLabel labeluser) {
+		MainWindow vp = new MainWindow();
+		UserResource ur = new UserResource();
+		vp.SetUserName(ur.getUser(labeluser.getText()));
+		vp.setVisible(true);
+		dispose();
 	}
 }
