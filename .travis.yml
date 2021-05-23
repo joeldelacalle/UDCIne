@@ -1,15 +1,5 @@
 lenguage: java
 services:
   - mysql
-  env:
-  - DB_DATABASE: cine
-  - DB_USER: 'spq'
-  - DB_PASSWORD: 'spq'
-  - DB_HOST: 'localhost'
-  - ports: - 3306:3306
 before_install:
-  - sudo /etc/init.d/mysql start
-  - mysql -e "CREATE SCHEMA cine;" -uroot -proot
-  - mysql -e "CREATE USER 'spq'@'localhost' IDENTIFIED BY 'spq';" -uroot -proot
-  - mysql -e "GRANT ALL ON cine.* TO 'spq'@'localhost';" -uroot -proot
-  - mysql -e "SHOW DATABASES;" -uroot -proot
+  - mysql -u root --password="" < src/main/resources/database.sql
