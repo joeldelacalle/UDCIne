@@ -1,5 +1,5 @@
 lenguage: java
 services:
   - mysql
-before_install:
+before_script:
   - mysql -u root --password="" < src/main/resources/database.sql
