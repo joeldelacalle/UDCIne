@@ -166,6 +166,9 @@ public class AdminUsersWindow extends JFrame {
 		}
 	}
 
+	/**
+	 * Metodo para volver a ejecutar la adminUsersWindow
+	 */
 	public void rerunAdminUsersWindow() {
 
 		AdminUsersWindow auw = new AdminUsersWindow();
@@ -174,6 +177,9 @@ public class AdminUsersWindow extends JFrame {
 
 	}
 
+	/**
+	 * Metodo para iniciar la AdminWindow
+	 */
 	public void initAdminWindow() {
 		AdminWindow aw = new AdminWindow();
 		aw.setVisible(true);

@@ -91,11 +91,18 @@ public class AdminUsersWindowTest {
 		auw.eliminarUsuarioBd(lista, selectedUser);
 	}
 
+	/**
+	 * test del Metodo para volver a ejecutar la adminUsersWindow
+	 */
+
 	@Test
 	public void testRerunAdminUsersWindow() {
 		auw.rerunAdminUsersWindow();
 	}
 
+	/**
+	 * test del metodo para iniciar la AdminWindow
+	 */
 	@Test
 	public void testinitAdminWindow() {
 		auw.initAdminWindow();

@@ -261,11 +261,5 @@ public class AdminRoomsWindow extends JFrame implements Serializable {
 		calendar.setBounds(123, 329, 110, 31);
 		getContentPane().add(calendar);
 	}
-	
-	public void comboRemoveItems() {
-		
-	}
-	public void comboAddItems() {
-		
-	}
+
 }

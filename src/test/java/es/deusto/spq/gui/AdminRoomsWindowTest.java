@@ -120,7 +120,7 @@ public class AdminRoomsWindowTest {
 		comboRoom.addItem(room1.getName());
 		comboRoom.addItem(room1.getName());
 		comboRoom.addItem(room1.getName());
-		// for (int i = 3; selectedCinema0 <= i; selectedCinema0++) {
+
 		arw = new AdminRoomsWindow();
 		arw.getCineYSalas(comboCinema, comboRoom, selectedCinema0);
 		arw.dispose();

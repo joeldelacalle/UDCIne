@@ -119,6 +119,10 @@ public class AdminFilmsWindowTest {
 		selectedFilm = f.getName();
 		afw.eliminarPeliculaBd(fList, selectedFilm);
 	}
+	/**
+	 * Test para que la descripcion no sea mas larga de 255 
+	 *
+	 */
 
 	@Test
 	public void maxLengthdescTest() {

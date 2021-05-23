@@ -408,6 +408,10 @@ public class AdminFilmsWindow extends JFrame {
 			dispose();
 		}
 	}
+	/**
+	 * metodo para el tamaño de la imagen de la edad en un ultimo estreno
+	 *
+	 */
 
 	public void maxLengthdesc( JTextArea txtDescription) {
 

@@ -303,6 +303,9 @@ public class LastReleasesWindow extends JFrame {
 		contentPane.add(btnNewButton);
 
 	}
+	/**
+	 * Metodo para poner la imagen de un tamaño estandar en el label
+	 */
 
 	public void setRelease(String urlRelease, Image image, JLabel lblFilmImage, JTextPane textDescription,
 			String descRelease) throws IOException {

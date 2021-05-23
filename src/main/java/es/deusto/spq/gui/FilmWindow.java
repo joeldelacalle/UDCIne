@@ -41,6 +41,7 @@ import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
+
 /**
  * Ventana Pelicula
  */
@@ -85,7 +86,7 @@ public class FilmWindow extends JFrame {
 		String selectedFilm = textFieldFilmName.getText();
 		Image image = null;
 		transformFilms(billFilms, films);
-		
+
 		for (Film film : films) {
 			if (film.getName().equals(selectedFilm)) {
 				ageFilm = film.getAgeRestriction();
@@ -371,6 +372,10 @@ public class FilmWindow extends JFrame {
 		contentPane.setLayout(gl_contentPane);
 	}
 
+	/**
+	 * Metodo para transformar Peliculas
+	 *
+	 */
 	public void SetUserName(User u) {
 		this.lblUserName.setBounds(525, 28, 46, 14);
 		this.lblUserName.setText(u.getNickname());
@@ -379,14 +384,12 @@ public class FilmWindow extends JFrame {
 
 	public List<Film> transformFilms(List<Billboard> billFilms, List<Film> films) {
 
-		for (int i = 0; i< billFilms.size();i++) {
-			
+		for (int i = 0; i < billFilms.size(); i++) {
+
 			films.add(new Film(billFilms.get(i)));
-			
+
 		}
-		
-		
-		
+
 		return films;
 
 	}

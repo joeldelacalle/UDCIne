@@ -130,7 +130,7 @@ public class LastRealeasesTest {
 	}
 
 	/**
-	 * Test para el tamaño de la imagen de la edad en un ultimo estreno
+	 * Test para la imagen de la edad en un ultimo estreno
 	 *
 	 */
 	@Test
@@ -147,6 +147,9 @@ public class LastRealeasesTest {
 
 	}
 
+	/**
+	 * Test para poner la imagen de un tamaño estandar en el label
+	 */
 	@Test
 	public void testsetRelease() {
 		Image image = null;

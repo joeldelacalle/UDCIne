@@ -125,37 +125,37 @@ $(function() {
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> selectedCinema2;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html">AdminRoomsWindow</a> arw;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    @Before</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a0d03ae5ee25e25de247ef9030ecc7af1">   69</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a0d03ae5ee25e25de247ef9030ecc7af1">setUp</a>() throws Exception {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        server = <a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html#ace1eed5d51bf4a847234dc83e4677d1e">startServer</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        Client c = ClientBuilder.newClient();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        appTarget = c.target(<span class="stringliteral">&quot;http://localhost:8080/myapp&quot;</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        FilmsTarget = appTarget.path(<span class="stringliteral">&quot;films&quot;</span>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        roomsTarget = appTarget.path(<span class="stringliteral">&quot;rooms&quot;</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        cinemasTarget = appTarget.path(<span class="stringliteral">&quot;cinemas&quot;</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        room1 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>(cinema1, filmA, <span class="stringliteral">&quot;SANTANDER SALA 1&quot;</span>, Calendar.getInstance().getTime(), 100);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html">AdminRoomsWindow</a> arw2;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html">AdminRoomsWindow</a> arw3;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    @Before</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a0d03ae5ee25e25de247ef9030ecc7af1">   71</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a0d03ae5ee25e25de247ef9030ecc7af1">setUp</a>() throws Exception {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        server = <a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html#ace1eed5d51bf4a847234dc83e4677d1e">startServer</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        Client c = ClientBuilder.newClient();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        appTarget = c.target(<span class="stringliteral">&quot;http://localhost:8080/myapp&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        FilmsTarget = appTarget.path(<span class="stringliteral">&quot;films&quot;</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        roomsTarget = appTarget.path(<span class="stringliteral">&quot;rooms&quot;</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        cinemasTarget = appTarget.path(<span class="stringliteral">&quot;cinemas&quot;</span>);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        genericType0 = <span class="keyword">new</span> GenericType&lt;List&lt;Cinema&gt;&gt;() {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        };</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        cinemas = cinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType0);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        genericType1 = <span class="keyword">new</span> GenericType&lt;List&lt;Room&gt;&gt;() {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        };</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        rooms = roomsTarget.request(MediaType.APPLICATION_JSON).get(genericType1);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        genericType2 = <span class="keyword">new</span> GenericType&lt;List&lt;Film&gt;&gt;() {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        };</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType2);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1_cinema.html">Cinema</a> cinema : cinemas) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            comboCinema.addItem(cinema);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a> film : films) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            comboFilm.addItem(film);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        arw = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html">AdminRoomsWindow</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        room1 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>(cinema1, filmA, <span class="stringliteral">&quot;SANTANDER SALA 1&quot;</span>, Calendar.getInstance().getTime(), 100);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        genericType0 = <span class="keyword">new</span> GenericType&lt;List&lt;Cinema&gt;&gt;() {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        };</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        cinemas = cinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType0);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        genericType1 = <span class="keyword">new</span> GenericType&lt;List&lt;Room&gt;&gt;() {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        };</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        rooms = roomsTarget.request(MediaType.APPLICATION_JSON).get(genericType1);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        genericType2 = <span class="keyword">new</span> GenericType&lt;List&lt;Film&gt;&gt;() {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        };</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType2);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1_cinema.html">Cinema</a> cinema : cinemas) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            comboCinema.addItem(cinema);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a> film : films) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            comboFilm.addItem(film);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
@@ -167,29 +167,46 @@ $(function() {
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    @Test</div>
 <div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a8cb586f85f55ab895a75e7074bf3a7b9">  115</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a8cb586f85f55ab895a75e7074bf3a7b9">addFilmtoRoom</a>() {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        selectedCinema0 = 0;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment">// for (int i = 3; selectedCinema0 &lt;= i; selectedCinema0++) {</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        arw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html#aa5578437c39c95acb6e9f1273a0b2c44">getCineYSalas</a>(comboCinema, comboRoom, selectedCinema0);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        arw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html#af06b621c73f053d9e5ba0588cb815cf0">addFilmtoRoom</a>(comboCinema, comboFilm, comboRoom, date, 100);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    @Test</div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a790c9ff85142b8860d2198a39f195acb">  128</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a790c9ff85142b8860d2198a39f195acb">getCineYSalas</a>() {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        selectedCinema0 = 0;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        selectedCinema1 = 1;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        selectedCinema2 = 2;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        comboRoom.addItem(room1.<a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html#a8243b48895868e6a6b2ed19c96ab9dc3">getName</a>());</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        comboRoom.addItem(room1.<a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html#a8243b48895868e6a6b2ed19c96ab9dc3">getName</a>());</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        comboRoom.addItem(room1.<a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html#a8243b48895868e6a6b2ed19c96ab9dc3">getName</a>());</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        arw = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html">AdminRoomsWindow</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        arw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html#aa5578437c39c95acb6e9f1273a0b2c44">getCineYSalas</a>(comboCinema, comboRoom, selectedCinema0);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        arw.dispose();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        arw2 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html">AdminRoomsWindow</a>();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        arw2.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html#aa5578437c39c95acb6e9f1273a0b2c44">getCineYSalas</a>(comboCinema, comboRoom, selectedCinema1);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        arw2.dispose();</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        arw3 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html">AdminRoomsWindow</a>();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        arw3.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html#aa5578437c39c95acb6e9f1273a0b2c44">getCineYSalas</a>(comboCinema, comboRoom, selectedCinema2);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        arw3.dispose();</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        arw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html#af06b621c73f053d9e5ba0588cb815cf0">addFilmtoRoom</a>(comboCinema, comboFilm, comboRoom, date, selectedCinema0);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    @Test</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a790c9ff85142b8860d2198a39f195acb">  144</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a790c9ff85142b8860d2198a39f195acb">getCineYSalas</a>() {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        selectedCinema0 = 0;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_cinema_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_cinema.html">es.deusto.spq.Cinema</a></div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00015">Cinema.java:15</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html">es.deusto.spq.Film</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00015">Film.java:15</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_main_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_main.html">es.deusto.spq.Main</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00015">Main.java:15</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_main_html_ace1eed5d51bf4a847234dc83e4677d1e"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_main.html#ace1eed5d51bf4a847234dc83e4677d1e">es.deusto.spq.Main.startServer</a></div><div class="ttdeci">static HttpServer startServer()</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00025">Main.java:25</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_room_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_room.html">es.deusto.spq.Room</a></div><div class="ttdef"><b>Definition:</b> <a href="_room_8java_source.html#l00016">Room.java:16</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_room_html_a8243b48895868e6a6b2ed19c96ab9dc3"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_room.html#a8243b48895868e6a6b2ed19c96ab9dc3">es.deusto.spq.Room.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition:</b> <a href="_room_8java_source.html#l00088">Room.java:88</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html">es.deusto.spq.gui.AdminRoomsWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_8java_source.html#l00043">AdminRoomsWindow.java:43</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_html_aa5578437c39c95acb6e9f1273a0b2c44"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html#aa5578437c39c95acb6e9f1273a0b2c44">es.deusto.spq.gui.AdminRoomsWindow.getCineYSalas</a></div><div class="ttdeci">void getCineYSalas(JComboBox&lt; Cinema &gt; comboCinema, JComboBox&lt; String &gt; comboRoom, int selCinema)</div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_8java_source.html#l00108">AdminRoomsWindow.java:108</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_html_af06b621c73f053d9e5ba0588cb815cf0"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html#af06b621c73f053d9e5ba0588cb815cf0">es.deusto.spq.gui.AdminRoomsWindow.addFilmtoRoom</a></div><div class="ttdeci">void addFilmtoRoom(JComboBox&lt; Cinema &gt; comboCinema, JComboBox&lt; Film &gt; comboFilm, JComboBox&lt; String &gt; comboRoom, Date d, int i)</div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_8java_source.html#l00080">AdminRoomsWindow.java:80</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html">es.deusto.spq.gui.AdminRoomsWindowTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_test_8java_source.html#l00033">AdminRoomsWindowTest.java:33</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test_html_a0d03ae5ee25e25de247ef9030ecc7af1"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a0d03ae5ee25e25de247ef9030ecc7af1">es.deusto.spq.gui.AdminRoomsWindowTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_test_8java_source.html#l00069">AdminRoomsWindowTest.java:69</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test_html_a790c9ff85142b8860d2198a39f195acb"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a790c9ff85142b8860d2198a39f195acb">es.deusto.spq.gui.AdminRoomsWindowTest.getCineYSalas</a></div><div class="ttdeci">void getCineYSalas()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_test_8java_source.html#l00128">AdminRoomsWindowTest.java:128</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test_html_a0d03ae5ee25e25de247ef9030ecc7af1"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a0d03ae5ee25e25de247ef9030ecc7af1">es.deusto.spq.gui.AdminRoomsWindowTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_test_8java_source.html#l00071">AdminRoomsWindowTest.java:71</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test_html_a790c9ff85142b8860d2198a39f195acb"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a790c9ff85142b8860d2198a39f195acb">es.deusto.spq.gui.AdminRoomsWindowTest.getCineYSalas</a></div><div class="ttdeci">void getCineYSalas()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_test_8java_source.html#l00144">AdminRoomsWindowTest.java:144</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test_html_a8cb586f85f55ab895a75e7074bf3a7b9"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a8cb586f85f55ab895a75e7074bf3a7b9">es.deusto.spq.gui.AdminRoomsWindowTest.addFilmtoRoom</a></div><div class="ttdeci">void addFilmtoRoom()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_test_8java_source.html#l00115">AdminRoomsWindowTest.java:115</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test_html_ac40c93ff3b29e3b15508a67111697ac5"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#ac40c93ff3b29e3b15508a67111697ac5">es.deusto.spq.gui.AdminRoomsWindowTest.tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_test_8java_source.html#l00106">AdminRoomsWindowTest.java:106</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

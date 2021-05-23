@@ -36,6 +36,7 @@ import jakarta.ws.rs.core.MediaType;
  */
 public class ReceiptWindow extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel labeluser = new JLabel("");
 	private JLabel labelmail = new JLabel("");

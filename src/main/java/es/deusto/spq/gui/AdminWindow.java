@@ -147,18 +147,31 @@ public class AdminWindow extends JFrame {
 
 	}
 
+	/**
+	 * metodo para iniciar la ventana adminFilmsWindow desde la AdminWindow
+	 *
+	 */
+
 	public void initAdminFilmsWindow() {
 		AdminFilmsWindow afw = new AdminFilmsWindow();
 		afw.setVisible(true);
 		dispose();
 	}
 
+	/**
+	 * metodo para iniciar la ventana adminRoomsWindow desde la AdminWindow
+	 *
+	 */
 	public void initAdminRoomsWindow() {
 		AdminRoomsWindow arw = new AdminRoomsWindow();
 		arw.setVisible(true);
 		dispose();
 	}
 
+	/**
+	 * metodo para iniciar la ventana adminUserWindow desde la AdminWindow
+	 *
+	 */
 	public void initAdminUsersWindow() {
 		AdminUsersWindow auw = new AdminUsersWindow();
 		auw.setVisible(true);

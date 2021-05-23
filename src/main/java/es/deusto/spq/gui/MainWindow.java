@@ -278,6 +278,10 @@ public class MainWindow extends JFrame {
 		jb.setIcon(resizeImg);
 	}
 
+	/**
+	 * metodo para iniciar la ventana ReceiptWindow desde la MainWindow
+	 *
+	 */
 	public void initReceiptWindow(JLabel lblUserName) {
 		ReceiptWindow rw = new ReceiptWindow();
 		UserResource ur = new UserResource();
@@ -286,6 +290,10 @@ public class MainWindow extends JFrame {
 		rw.setVisible(true);
 	}
 
+	/**
+	 * metodo para iniciar la ventana VipWindow desde la MainWindow
+	 *
+	 */
 	public void initVipWindow(JLabel lblUserName) {
 		VipWindow vw = new VipWindow();
 		UserResource ur = new UserResource();
@@ -293,12 +301,21 @@ public class MainWindow extends JFrame {
 		vw.setVisible(true);
 	}
 
+	/**
+	 * metodo para iniciar la ventana FilmWindow desde la MainWindow
+	 *
+	 */
 	public void initFilmWindow(JLabel lblUserName, int i) {
 		FilmWindow fw = new FilmWindow(i);
 		UserResource ur = new UserResource();
 		fw.SetUserName(ur.getUser(lblUserName.getText()));
 		fw.setVisible(true);
 	}
+
+	/**
+	 * metodo para iniciar la ventana RatingWindow desde la MainWindow
+	 *
+	 */
 
 	public void initRatingWindow(JLabel lblUserName) {
 		RatingWindow vv = new RatingWindow();
@@ -308,6 +325,10 @@ public class MainWindow extends JFrame {
 		dispose();
 	}
 
+	/**
+	 * metodo para iniciar la ventana ReleasesWindow desde la MainWindow
+	 *
+	 */
 	public void initLastReleasesWindow() {
 		LastReleasesWindow vne = new LastReleasesWindow();
 		vne.setVisible(true);

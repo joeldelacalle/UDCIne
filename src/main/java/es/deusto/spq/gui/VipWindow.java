@@ -144,6 +144,10 @@ public class VipWindow extends JFrame {
 
 	}
 
+	/**
+	 * cargar la lista de pedidos de un usuario concreto en un list model
+	 */
+
 	public void displayOrders(String lblUserName1, ListModel<Order> listModelOrders1) {
 		List<Order> oList = SetOrderRecord(lblUserName1);
 		for (int i = 0; i < oList.size(); i++) {

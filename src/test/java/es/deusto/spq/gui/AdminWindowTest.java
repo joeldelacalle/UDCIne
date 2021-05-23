@@ -34,6 +34,10 @@ public class AdminWindowTest {
 		server = Main.startServer();
 	}
 
+	/**
+	 * parar el servidor
+	 *
+	 */
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
