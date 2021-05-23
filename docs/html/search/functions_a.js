@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['nuevaspeliculas_618',['nuevasPeliculas',['../classes_1_1deusto_1_1spq_1_1gui_1_1_film_window_test.html#a1d860182cf6d36b2048e1bba6ba67386',1,'es::deusto::spq::gui::FilmWindowTest']]],
-  ['nuevoslanzamientostest_619',['NuevosLanzamientosTest',['../classes_1_1deusto_1_1spq_1_1gui_1_1_last_realeases_test.html#af722d0af47000b537cf22f3c04af0212',1,'es::deusto::spq::gui::LastRealeasesTest']]]
+  ['nuevaspeliculas_712',['nuevasPeliculas',['../classes_1_1deusto_1_1spq_1_1gui_1_1_film_window.html#a56b598f7b7e7444ca5796a2fd5558fed',1,'es::deusto::spq::gui::FilmWindow']]],
+  ['nuevaspeliculastest_713',['nuevasPeliculasTest',['../classes_1_1deusto_1_1spq_1_1gui_1_1_film_window_test.html#a9483e88fa5760870c4b94fae9d48276f',1,'es::deusto::spq::gui::FilmWindowTest']]],
+  ['nuevoslanzamientos_714',['nuevosLanzamientos',['../classes_1_1deusto_1_1spq_1_1gui_1_1_last_releases_window.html#af6d38495ea9011c27d7055289065122d',1,'es.deusto.spq.gui.LastReleasesWindow.nuevosLanzamientos()'],['../classes_1_1deusto_1_1spq_1_1gui_1_1_last_realeases_test.html#a359e4425a6d61245f6bf41913bcc8e48',1,'es.deusto.spq.gui.LastRealeasesTest.nuevosLanzamientos()']]]
 ];

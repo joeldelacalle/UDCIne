@@ -1,4 +1,5 @@
 <map id="es.deusto.spq.gui.AdminRoomsWindow" name="es.deusto.spq.gui.AdminRoomsWindow">
 <area shape="rect" id="node1" title=" " alt="" coords="5,80,212,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="76,5,141,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="25,5,91,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="115,5,204,32"/>
 </map>

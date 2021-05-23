@@ -1,4 +1,7 @@
 <map id="es.deusto.spq.Billboard.setFilmBillboard" name="es.deusto.spq.Billboard.setFilmBillboard">
-<area shape="rect" id="node1" title=" " alt="" coords="235,5,415,47"/>
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1util_1_1_prepared_data.html#af81584db142b678a9eba52d031a4bcba" title=" " alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="493,71,673,112"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1util_1_1_prepared_data.html#ad18fa4ad9c8e366c5bd08d3041ad8c58" title=" " alt="" coords="250,37,431,79"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1_billboard_test.html#ae57be52386af28dd347bc886d9f563e3" title=" " alt="" coords="236,103,445,144"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1util_1_1_prepared_data_test.html#a75b0a6b0e11649f32a1baae7e50ff447" title=" " alt="" coords="5,5,188,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1util_1_1_prepared_data.html#af81584db142b678a9eba52d031a4bcba" title=" " alt="" coords="6,71,187,112"/>
 </map>

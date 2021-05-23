@@ -69,93 +69,90 @@ $(function() {
 <div class="title">ProductResourceTest.java</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_product_resource_test_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>es.deusto.spq.jdo;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> java.util.ArrayList;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> java.util.Arrays;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> java.util.List;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> org.databene.contiperf.PerfTest;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> org.databene.contiperf.junit.ContiPerfRule;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> org.glassfish.grizzly.http.server.HttpServer;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> org.junit.After;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> org.junit.Before;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> org.junit.Rule;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> org.junit.experimental.categories.Category;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> es.deusto.spq.Main;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> es.deusto.spq.Product;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> es.deusto.spq.types.IntegrationTest;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.Client;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.ClientBuilder;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.WebTarget;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.GenericType;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.MediaType;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;@Category(IntegrationTest.class)</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html">   28</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html">ProductResourceTest</a> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    @Rule</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#a3b854e281541215d04c9c543163639d0">   30</a></span>&#160;    <span class="keyword">public</span> ContiPerfRule rule = <span class="keyword">new</span> ContiPerfRule();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">private</span> HttpServer server;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">private</span> WebTarget appTarget;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">private</span> Client c;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    @Before</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#aac57bd5b609266e0b05ec5588f4f8d9f">   36</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#aac57bd5b609266e0b05ec5588f4f8d9f">setUp</a>() throws Exception {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        server = <a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html#ace1eed5d51bf4a847234dc83e4677d1e">startServer</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        c = ClientBuilder.newClient();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        appTarget = c.target(<a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html#a302eae72af03bb14f5e6afaea97a3d6b">BASE_URI</a>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    @SuppressWarnings(<span class="stringliteral">&quot;deprecation&quot;</span>)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    @After</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#ae2b1fccceb30e8ba0e7f249e65d36f34">   44</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#ae2b1fccceb30e8ba0e7f249e65d36f34">tearDown</a>() throws Exception {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        server.stop();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    @Test</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    @PerfTest(invocations = 100, threads = 40)</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#a0fbd7a682d59cf735f38ec0ba1abd245">   50</a></span>&#160;    public <span class="keywordtype">void</span> testgetProducts() {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        WebTarget productTarget = appTarget.path(<span class="stringliteral">&quot;products&quot;</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        List&lt;Product&gt; listaproducts = Arrays.asList(</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a>(<span class="stringliteral">&quot;Palomitas Medianas&quot;</span>, <span class="stringliteral">&quot;500g&quot;</span>, 4,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        <span class="stringliteral">&quot;https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg&quot;</span>),</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a>(<span class="stringliteral">&quot;Palomitas Grandes&quot;</span>, <span class="stringliteral">&quot;1000g&quot;</span>, 6,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        <span class="stringliteral">&quot;https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg&quot;</span>),</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a>(<span class="stringliteral">&quot;Palomitas Grandes + Coca Cola&quot;</span>, <span class="stringliteral">&quot;Unas palomitas grandes y coca cola&quot;</span>, 8,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        <span class="stringliteral">&quot;https://previews.123rf.com/images/imagestore/imagestore1606/imagestore160601787/58756143-palomitas-en-rect%C3%A1ngulo-con-el-color-en-la-copa-para-llevar-aislado-en-el-fondo-blanco.jpg&quot;</span>));</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        GenericType&lt;List&lt;Product&gt;&gt; genericType = <span class="keyword">new</span> GenericType&lt;List&lt;Product&gt;&gt;() {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        };</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        List&lt;Product&gt; releases = productTarget.request(MediaType.APPLICATION_JSON).get(genericType);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        List&lt;Product&gt; releases2 = <span class="keyword">new</span> ArrayList&lt;Product&gt;();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; releases.size(); i++) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">if</span> (releases.get(i).getName().equals(listaproducts.get(0).getName())) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                releases2.add(releases.get(i));</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                assertEquals(listaproducts.get(0).getName(), releases2.get(0).getName());</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">// assertEquals(listaproducts.get(0).getName(), releases.get(0).getName());</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// assertEquals(listaproducts.get(1).getName(), releases.get(2).getName());</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">// assertEquals(listaproducts.get(2).getName(), releases.get(1).getName());</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<a href="_product_resource_test_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.jdo;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> java.util.ArrayList;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> java.util.Arrays;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> org.databene.contiperf.PerfTest;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> org.databene.contiperf.junit.ContiPerfRule;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> org.glassfish.grizzly.http.server.HttpServer;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> org.junit.After;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> org.junit.Before;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> org.junit.Rule;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> org.junit.experimental.categories.Category;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> es.deusto.spq.Main;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> es.deusto.spq.Product;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">import</span> es.deusto.spq.types.IntegrationTest;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.Client;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.ClientBuilder;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.WebTarget;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.GenericType;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.MediaType;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;@Category(IntegrationTest.class)</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html">   34</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html">ProductResourceTest</a> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    @Rule</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#a3b854e281541215d04c9c543163639d0">   40</a></span>&#160;    <span class="keyword">public</span> ContiPerfRule rule = <span class="keyword">new</span> ContiPerfRule();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">private</span> HttpServer server;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">private</span> WebTarget appTarget;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">private</span> Client c;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    @Before</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#aac57bd5b609266e0b05ec5588f4f8d9f">   49</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#aac57bd5b609266e0b05ec5588f4f8d9f">setUp</a>() throws Exception {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        server = <a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html#ace1eed5d51bf4a847234dc83e4677d1e">startServer</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        c = ClientBuilder.newClient();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        appTarget = c.target(<a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html#a302eae72af03bb14f5e6afaea97a3d6b">BASE_URI</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    @SuppressWarnings(<span class="stringliteral">&quot;deprecation&quot;</span>)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    @After</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#ae2b1fccceb30e8ba0e7f249e65d36f34">   60</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#ae2b1fccceb30e8ba0e7f249e65d36f34">tearDown</a>() throws Exception {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        server.stop();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    @Test</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    @PerfTest(invocations = 100, threads = 40)</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#a0fbd7a682d59cf735f38ec0ba1abd245">   69</a></span>&#160;    public <span class="keywordtype">void</span> testgetProducts() {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        WebTarget productTarget = appTarget.path(<span class="stringliteral">&quot;products&quot;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        List&lt;Product&gt; listaproducts = Arrays.asList(</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a>(<span class="stringliteral">&quot;Palomitas Medianas&quot;</span>, <span class="stringliteral">&quot;500g&quot;</span>, 4,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        <span class="stringliteral">&quot;https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg&quot;</span>),</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a>(<span class="stringliteral">&quot;Palomitas Grandes&quot;</span>, <span class="stringliteral">&quot;1000g&quot;</span>, 6,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        <span class="stringliteral">&quot;https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg&quot;</span>),</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a>(<span class="stringliteral">&quot;Palomitas Grandes + Coca Cola&quot;</span>, <span class="stringliteral">&quot;Unas palomitas grandes y coca cola&quot;</span>, 8,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        <span class="stringliteral">&quot;https://previews.123rf.com/images/imagestore/imagestore1606/imagestore160601787/58756143-palomitas-en-rect%C3%A1ngulo-con-el-color-en-la-copa-para-llevar-aislado-en-el-fondo-blanco.jpg&quot;</span>));</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_main_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_main.html">es.deusto.spq.Main</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00013">Main.java:13</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_main_html_a302eae72af03bb14f5e6afaea97a3d6b"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_main.html#a302eae72af03bb14f5e6afaea97a3d6b">es.deusto.spq.Main.BASE_URI</a></div><div class="ttdeci">static final String BASE_URI</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00015">Main.java:15</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_main_html_ace1eed5d51bf4a847234dc83e4677d1e"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_main.html#ace1eed5d51bf4a847234dc83e4677d1e">es.deusto.spq.Main.startServer</a></div><div class="ttdeci">static HttpServer startServer()</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00021">Main.java:21</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_product_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_product.html">es.deusto.spq.Product</a></div><div class="ttdef"><b>Definition:</b> <a href="_product_8java_source.html#l00012">Product.java:12</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html">es.deusto.spq.jdo.ProductResourceTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_product_resource_test_8java_source.html#l00028">ProductResourceTest.java:28</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test_html_aac57bd5b609266e0b05ec5588f4f8d9f"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#aac57bd5b609266e0b05ec5588f4f8d9f">es.deusto.spq.jdo.ProductResourceTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_product_resource_test_8java_source.html#l00036">ProductResourceTest.java:36</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test_html_ae2b1fccceb30e8ba0e7f249e65d36f34"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#ae2b1fccceb30e8ba0e7f249e65d36f34">es.deusto.spq.jdo.ProductResourceTest.tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdef"><b>Definition:</b> <a href="_product_resource_test_8java_source.html#l00044">ProductResourceTest.java:44</a></div></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        GenericType&lt;List&lt;Product&gt;&gt; genericType = <span class="keyword">new</span> GenericType&lt;List&lt;Product&gt;&gt;() {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        };</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        List&lt;Product&gt; releases = productTarget.request(MediaType.APPLICATION_JSON).get(genericType);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        List&lt;Product&gt; releases2 = <span class="keyword">new</span> ArrayList&lt;Product&gt;();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; releases.size(); i++) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">if</span> (releases.get(i).getName().equals(listaproducts.get(0).getName())) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                releases2.add(releases.get(i));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                assertEquals(listaproducts.get(0).getName(), releases2.get(0).getName());</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">// assertEquals(listaproducts.get(0).getName(), releases.get(0).getName());</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">// assertEquals(listaproducts.get(1).getName(), releases.get(2).getName());</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">// assertEquals(listaproducts.get(2).getName(), releases.get(1).getName());</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_main_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_main.html">es.deusto.spq.Main</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00015">Main.java:15</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_main_html_a302eae72af03bb14f5e6afaea97a3d6b"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_main.html#a302eae72af03bb14f5e6afaea97a3d6b">es.deusto.spq.Main.BASE_URI</a></div><div class="ttdeci">static final String BASE_URI</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00017">Main.java:17</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_main_html_ace1eed5d51bf4a847234dc83e4677d1e"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_main.html#ace1eed5d51bf4a847234dc83e4677d1e">es.deusto.spq.Main.startServer</a></div><div class="ttdeci">static HttpServer startServer()</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00025">Main.java:25</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_product_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_product.html">es.deusto.spq.Product</a></div><div class="ttdef"><b>Definition:</b> <a href="_product_8java_source.html#l00016">Product.java:16</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html">es.deusto.spq.jdo.ProductResourceTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_product_resource_test_8java_source.html#l00034">ProductResourceTest.java:34</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test_html_aac57bd5b609266e0b05ec5588f4f8d9f"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#aac57bd5b609266e0b05ec5588f4f8d9f">es.deusto.spq.jdo.ProductResourceTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_product_resource_test_8java_source.html#l00049">ProductResourceTest.java:49</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test_html_ae2b1fccceb30e8ba0e7f249e65d36f34"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#ae2b1fccceb30e8ba0e7f249e65d36f34">es.deusto.spq.jdo.ProductResourceTest.tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdef"><b>Definition:</b> <a href="_product_resource_test_8java_source.html#l00060">ProductResourceTest.java:60</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

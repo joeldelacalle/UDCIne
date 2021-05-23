@@ -1,11 +1,14 @@
 <map id="es.deusto.spq.gui.PaymentWindow.PaymentWindow" name="es.deusto.spq.gui.PaymentWindow.PaymentWindow">
-<area shape="rect" id="node1" title=" " alt="" coords="5,202,187,243"/>
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1_order.html#a547748c9a199276f05f884a411388f9a" title=" " alt="" coords="247,5,437,32"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1_order.html#a8b3af03c25ec845836c5fce3b8c9ca25" title=" " alt="" coords="249,56,435,83"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1_pay_pal.html#a0dc1bcec23818262d93366c9dfd125b8" title=" " alt="" coords="256,107,428,149"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1_order.html#a49c13852fd8c957198db55d818c43def" title=" " alt="" coords="235,173,449,214"/>
-<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1_order.html#adb7ddb64df1e4d2161f3a5cd0e716b91" title=" " alt="" coords="246,239,438,265"/>
-<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1_order.html#a955989f3ed98c0a61e6b16f4dd9e0853" title=" " alt="" coords="235,289,449,316"/>
-<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1_order.html#a590edfdbc96c739f134e2791098277ca" title=" " alt="" coords="240,340,444,367"/>
-<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1_order.html#abe4b32c856c8b5c0fca97cc8e398e850" title=" " alt="" coords="235,391,449,433"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,196,187,237"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window.html#a19b64df2fa2ffa539dbc7f6fb6861e06" title=" " alt="" coords="235,163,416,204"/>
+<area shape="rect" id="node10" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window.html#a73c315fbc4f2045f87a032655552f38a" title=" " alt="" coords="235,228,416,269"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1_order.html#a547748c9a199276f05f884a411388f9a" title=" " alt="" coords="487,290,677,317"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1_order.html#a8b3af03c25ec845836c5fce3b8c9ca25" title=" " alt="" coords="489,341,675,367"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1_order.html#a49c13852fd8c957198db55d818c43def" title=" " alt="" coords="475,5,689,47"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1_order.html#adb7ddb64df1e4d2161f3a5cd0e716b91" title=" " alt="" coords="486,71,678,98"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1_order.html#a955989f3ed98c0a61e6b16f4dd9e0853" title=" " alt="" coords="475,122,689,149"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1_order.html#a590edfdbc96c739f134e2791098277ca" title=" " alt="" coords="480,173,684,199"/>
+<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1_order.html#abe4b32c856c8b5c0fca97cc8e398e850" title=" " alt="" coords="475,224,689,265"/>
+<area shape="rect" id="node11" href="$classes_1_1deusto_1_1spq_1_1_pay_pal.html#a0dc1bcec23818262d93366c9dfd125b8" title=" " alt="" coords="496,457,668,499"/>
+<area shape="rect" id="node12" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_pago_resource.html#a242253d446121902bcbdb3b43b35ed1a" title=" " alt="" coords="464,392,700,433"/>
 </map>

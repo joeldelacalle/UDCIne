@@ -69,42 +69,42 @@ $(function() {
 <div class="title">ReceiptResource.java</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_receipt_resource_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>es.deusto.spq.jdo;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> java.util.List;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> javax.jdo.JDOHelper;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> javax.jdo.PersistenceManager;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> javax.jdo.PersistenceManagerFactory;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> javax.jdo.Query;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> es.deusto.spq.Receipt;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.GET;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.Path;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.Produces;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.QueryParam;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.MediaType;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;@Path(<span class="stringliteral">&quot;receipts&quot;</span>)</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_receipt_resource.html">   18</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_receipt_resource.html">ReceiptResource</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    @GET</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    @Path(<span class="stringliteral">&quot;getreceipt&quot;</span>)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    @Produces(MediaType.APPLICATION_JSON)</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_receipt_resource.html#a0cc17621842a867e8088597283d6ee91">   26</a></span>&#160;    public List&lt;<a class="code" href="classes_1_1deusto_1_1spq_1_1_receipt.html">Receipt</a>&gt; getReceipt(@QueryParam(&quot;mail&quot;) String mail) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory(<span class="stringliteral">&quot;datanucleus.properties&quot;</span>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        PersistenceManager pm = pmf.getPersistenceManager();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        Query&lt;Receipt&gt; u = pm.newQuery(<span class="stringliteral">&quot;SELECT FROM &quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1_receipt.html">Receipt</a>.class.getName() + <span class="stringliteral">&quot; WHERE mail== &#39;&quot;</span> + mail + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        List&lt;Receipt&gt; receiptlista = u.executeList();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        pm.close();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> receiptlista;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_receipt_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_receipt.html">es.deusto.spq.Receipt</a></div><div class="ttdef"><b>Definition:</b> <a href="_receipt_8java_source.html#l00014">Receipt.java:14</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_receipt_resource_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_receipt_resource.html">es.deusto.spq.jdo.ReceiptResource</a></div><div class="ttdef"><b>Definition:</b> <a href="_receipt_resource_8java_source.html#l00018">ReceiptResource.java:18</a></div></div>
+<a href="_receipt_resource_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.jdo;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> javax.jdo.JDOHelper;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> javax.jdo.PersistenceManager;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> javax.jdo.PersistenceManagerFactory;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> javax.jdo.Query;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> es.deusto.spq.Receipt;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.GET;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.Path;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.Produces;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.QueryParam;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.MediaType;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;@Path(<span class="stringliteral">&quot;receipts&quot;</span>)</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_receipt_resource.html">   23</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_receipt_resource.html">ReceiptResource</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    @GET</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    @Path(<span class="stringliteral">&quot;getreceipt&quot;</span>)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    @Produces(MediaType.APPLICATION_JSON)</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_receipt_resource.html#a0cc17621842a867e8088597283d6ee91">   31</a></span>&#160;    public List&lt;<a class="code" href="classes_1_1deusto_1_1spq_1_1_receipt.html">Receipt</a>&gt; getReceipt(@QueryParam(&quot;mail&quot;) String mail) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory(<span class="stringliteral">&quot;datanucleus.properties&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        PersistenceManager pm = pmf.getPersistenceManager();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        Query&lt;Receipt&gt; u = pm.newQuery(<span class="stringliteral">&quot;SELECT FROM &quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1_receipt.html">Receipt</a>.class.getName() + <span class="stringliteral">&quot; WHERE mail== &#39;&quot;</span> + mail + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        List&lt;Receipt&gt; receiptlista = u.executeList();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        pm.close();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> receiptlista;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_receipt_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_receipt.html">es.deusto.spq.Receipt</a></div><div class="ttdef"><b>Definition:</b> <a href="_receipt_8java_source.html#l00017">Receipt.java:17</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_receipt_resource_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_receipt_resource.html">es.deusto.spq.jdo.ReceiptResource</a></div><div class="ttdef"><b>Definition:</b> <a href="_receipt_resource_8java_source.html#l00023">ReceiptResource.java:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,4 +1,9 @@
 <map id="es.deusto.spq.Order.getTickets" name="es.deusto.spq.Order.getTickets">
-<area shape="rect" id="node1" title=" " alt="" coords="244,13,448,39"/>
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1_order_test.html#a7549f9245166573d2888b3f8e9076261" title=" " alt="" coords="5,5,196,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="485,110,689,137"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window.html#a19b64df2fa2ffa539dbc7f6fb6861e06" title=" " alt="" coords="251,37,433,79"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window.html#a73c315fbc4f2045f87a032655552f38a" title=" " alt="" coords="251,103,433,144"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1_order_test.html#a7549f9245166573d2888b3f8e9076261" title=" " alt="" coords="247,168,437,209"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window.html#a89994d68d5bd652f2333741e737d2dcf" title=" " alt="" coords="11,71,193,112"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window_test.html#a51fd3d8c7d6c6ba44b8f4f8e1296209e" title=" " alt="" coords="11,5,193,47"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window_test.html#af321b25e134f141ca311cb065754d812" title=" " alt="" coords="5,136,199,177"/>
 </map>

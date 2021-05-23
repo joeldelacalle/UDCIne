@@ -1,7 +1,8 @@
 <map id="es.deusto.spq.gui.AdminRoomsWindow" name="es.deusto.spq.gui.AdminRoomsWindow">
-<area shape="rect" id="node1" title=" " alt="" coords="332,86,539,127"/>
+<area shape="rect" id="node1" title=" " alt="" coords="332,107,539,149"/>
 <area shape="rect" id="node2" title=" " alt="" coords="71,5,137,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="14,57,194,98"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,123,203,149"/>
-<area shape="rect" id="node5" title=" " alt="" coords="77,173,131,200"/>
+<area shape="rect" id="node3" title=" " alt="" coords="59,56,149,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="14,107,194,149"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,173,203,200"/>
+<area shape="rect" id="node6" title=" " alt="" coords="77,224,131,251"/>
 </map>

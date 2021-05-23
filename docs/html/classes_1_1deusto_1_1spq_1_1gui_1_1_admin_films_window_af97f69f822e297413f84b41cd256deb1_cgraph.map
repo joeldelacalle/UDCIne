@@ -1,5 +1,7 @@
 <map id="es.deusto.spq.gui.AdminFilmsWindow.AdminFilmsWindow" name="es.deusto.spq.gui.AdminFilmsWindow.AdminFilmsWindow">
-<area shape="rect" id="node1" title=" " alt="" coords="5,23,204,65"/>
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1_film.html#a08859f9d8a16825692a6cdbdc95c43d0" title=" " alt="" coords="261,5,426,32"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1_film.html#aaebc9ca1f64e372d99025fb9dd019f0d" title=" " alt="" coords="252,56,435,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,204,112"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#a84f34a864511c89ac7e761adadbbb312" title=" " alt="" coords="252,5,451,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#ad4e78b44bf4dd583747d65254c00d3aa" title=" " alt="" coords="252,71,451,112"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#a184a48b3c02b6967e7d1937c8fea3aed" title=" " alt="" coords="252,136,451,177"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1_film.html#a6a1c03b0547193477cabe9f7ac1c8303" title=" " alt="" coords="499,78,688,105"/>
 </map>
