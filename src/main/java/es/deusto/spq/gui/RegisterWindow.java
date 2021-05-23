@@ -41,23 +41,6 @@ public class RegisterWindow extends JFrame {
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	/**
-	 * Construir la ventana de Registro con sus atributos correspondientes
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RegisterWindow frame = new RegisterWindow();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					logger.log(Level.WARNING, "ERROR", e);
-					// e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Crea la ventana de registro
 	 */
 	public RegisterWindow() {
