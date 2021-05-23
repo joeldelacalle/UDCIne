@@ -15,6 +15,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,6 +23,13 @@ import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -73,9 +81,10 @@ public class PaymentWindow extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		final DefaultListModel<String> listapedido = new DefaultListModel<String>();
-		JList<String> list = new JList<String>(listapedido);
+		final DefaultListModel<Order> listapedido = new DefaultListModel<Order>();
+		JList<Order> list = new JList<Order>(listapedido);
 		list.setBounds(45, 68, 275, 317);
+		listapedido.addElement(o);
 		contentPane.add(list);
 
 		final JLabel lblNewLabel_1 = new JLabel("X");
@@ -281,6 +290,7 @@ public class PaymentWindow extends JFrame {
 		String Tickets = o.getTickets();
 		long Price = o.getPrice();
 		Date Fecha = o.getDate();
+		Receipt r = new Receipt(Email, Fecha, o, Price);
 
 		try {
 			FileWriter archivo = new FileWriter("Facturas/" + Email + ".txt", true);
@@ -307,8 +317,11 @@ public class PaymentWindow extends JFrame {
 
 		try {
 			tx.begin();
+			
+			mandarMensaje(Email, r);
 
 			pm.makePersistent(o);
+			pm.makePersistent(r);
 
 			tx.commit();
 			System.out.println("Añadido una nuevo pedido a la Base de Datos");
@@ -322,6 +335,51 @@ public class PaymentWindow extends JFrame {
 		dispose();
 		MainWindow mw = new MainWindow();
 		mw.setVisible(true);
+	}
+	
+	/**
+	 * Metodo para enviar factura por email
+	 */
+	public void mandarMensaje(String correo, Receipt recibo) {
+
+        final String from = "pruebasjaimedeusto@gmail.com";
+        final String contra = "deustocine";
+
+        String host = "smtp.gmail.com";
+
+        Properties properties = System.getProperties();
+
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.port", "465");
+        properties.put("mail.smtp.ssl.enable", "true");
+        properties.put("mail.smtp.auth", "true");
+
+        Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+
+            protected PasswordAuthentication getPasswordAuthentication() {
+
+                return new PasswordAuthentication(from, contra);
+
+            }
+
+        });
+        session.setDebug(false);
+
+        try {
+        	
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(correo));
+            message.setSubject("Confirmación de Reserva");
+            message.setText("El código de tu reserva es: " + recibo.getOrder());
+
+            System.out.println("sending...");
+            Transport.send(message);
+            System.out.println("Sent message successfully....");
+            
+        } catch (MessagingException mex) {
+            mex.printStackTrace();
+        }
 	}
 
 }

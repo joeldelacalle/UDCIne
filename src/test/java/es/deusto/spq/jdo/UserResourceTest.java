@@ -70,7 +70,7 @@ public class UserResourceTest {
 		WebTarget usersTarget = appTarget.path("users");
 		WebTarget usersallTarget = usersTarget.path("allusers");
     	
-	    List<User> listausers = Arrays.asList(new User("Jaime", "jaimesanta", "jaimesantamazo@hotmail.com", "jaimesanta", 435345));
+	    List<User> listausers = Arrays.asList(new User("Jaime", "jaimesanta", "jaimesantamazo@gmail.com", "jaimesanta", 435345));
 
 	    GenericType<List<User>> genericType = new GenericType<List<User>>() {};
 	    List<User> users = usersallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
@@ -86,7 +86,7 @@ public class UserResourceTest {
 	public void testGetUser() {
 		WebTarget usersTarget = appTarget.path("users");
 		WebTarget getusersTarget = usersTarget.path("getuser").queryParam("nickname", "jaimesanta");
-	    List<User> listauser = Arrays.asList(new User("jaime", "jaimesanta","jaimesantamazo@hotmail.com","jaimesanta",99));
+	    List<User> listauser = Arrays.asList(new User("jaime", "jaimesanta","jaimesantamazo@gmail.com","jaimesanta",99));
 	    	 
 	    GenericType<User> genericType = new GenericType<User>() {};
 		User user = getusersTarget.request(MediaType.APPLICATION_JSON).get(genericType);
