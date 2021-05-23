@@ -1,5 +1,5 @@
 <map id="es.deusto.spq.Main.startServer" name="es.deusto.spq.Main.startServer">
-<area shape="rect" id="node1" title=" " alt="" coords="272,579,439,621"/>
+<area shape="rect" id="node1" title=" " alt="" coords="272,613,439,654"/>
 <area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1_main.html#ac14da79282eae99f0ca7832d5ff0e16b" title=" " alt="" coords="31,5,199,32"/>
 <area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_test.html#a3b00f8c55336cbfb27f99e5a1e255311" title=" " alt="" coords="15,57,214,98"/>
 <area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_test.html#a0d03ae5ee25e25de247ef9030ecc7af1" title=" " alt="" coords="11,122,218,163"/>
@@ -7,16 +7,17 @@
 <area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#a4917e70f9071f7acaf1593b404fdeec6" title=" " alt="" coords="9,253,221,294"/>
 <area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_film_window_test.html#a62f5f10f2aada488a3ae5de77f7e9df6" title=" " alt="" coords="15,318,215,359"/>
 <area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_last_realeases_test.html#a605f6f431ce742bdd51fe04a02654924" title=" " alt="" coords="7,383,222,425"/>
-<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_rating_window_test.html#aeeef782119bc36973337ef6be03929da" title=" " alt="" coords="31,449,198,490"/>
-<area shape="rect" id="node10" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window_test.html#a9ec7f8ce9f45765aa31f75b056567b27" title=" " alt="" coords="28,514,201,555"/>
-<area shape="rect" id="node11" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_billboard_resource_test.html#a25c54d26d53ee9f3402fd6ff1e9759d0" title=" " alt="" coords="25,579,204,621"/>
-<area shape="rect" id="node12" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_resource_test.html#aceeae734e07b2ea44d739a4867791094" title=" " alt="" coords="28,645,201,686"/>
-<area shape="rect" id="node13" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#ae4a6781c5fb9479b6a5cf5e7aceda3d2" title=" " alt="" coords="10,710,219,751"/>
-<area shape="rect" id="node14" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order_resource_test.html#a915bcee239f37c7dd03c13e9efa4a511" title=" " alt="" coords="7,775,223,817"/>
-<area shape="rect" id="node15" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_pago_resource_test.html#a77b50d497b29fa28c501e87c4300760b" title=" " alt="" coords="7,841,222,882"/>
-<area shape="rect" id="node16" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#aac57bd5b609266e0b05ec5588f4f8d9f" title=" " alt="" coords="27,906,202,947"/>
-<area shape="rect" id="node17" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_receipt_resource_test.html#adff6019df2e1df9a32e1bdf46dce5446" title=" " alt="" coords="28,971,201,1013"/>
-<area shape="rect" id="node18" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_release_resource_test.html#a29e20c9a3e956a6256adbfe6dc0dd814" title=" " alt="" coords="27,1037,203,1078"/>
-<area shape="rect" id="node19" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_room_resource_test.html#a4e078763b9dc26ff518ddf724e683922" title=" " alt="" coords="5,1102,224,1143"/>
-<area shape="rect" id="node20" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user_resource_test.html#a5150933cc1f41a809996adca81bc16fb" title=" " alt="" coords="9,1167,220,1209"/>
+<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#afe8dfc8fe649c854b77051ae4f0fa3a7" title=" " alt="" coords="13,449,216,490"/>
+<area shape="rect" id="node10" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_rating_window_test.html#aeeef782119bc36973337ef6be03929da" title=" " alt="" coords="31,514,198,555"/>
+<area shape="rect" id="node11" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window_test.html#a9ec7f8ce9f45765aa31f75b056567b27" title=" " alt="" coords="28,579,201,621"/>
+<area shape="rect" id="node12" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_billboard_resource_test.html#a25c54d26d53ee9f3402fd6ff1e9759d0" title=" " alt="" coords="25,645,204,686"/>
+<area shape="rect" id="node13" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_resource_test.html#aceeae734e07b2ea44d739a4867791094" title=" " alt="" coords="28,710,201,751"/>
+<area shape="rect" id="node14" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#ae4a6781c5fb9479b6a5cf5e7aceda3d2" title=" " alt="" coords="10,775,219,817"/>
+<area shape="rect" id="node15" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order_resource_test.html#a915bcee239f37c7dd03c13e9efa4a511" title=" " alt="" coords="7,841,223,882"/>
+<area shape="rect" id="node16" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_pago_resource_test.html#a77b50d497b29fa28c501e87c4300760b" title=" " alt="" coords="7,906,222,947"/>
+<area shape="rect" id="node17" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_test.html#aac57bd5b609266e0b05ec5588f4f8d9f" title=" " alt="" coords="27,971,202,1013"/>
+<area shape="rect" id="node18" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_receipt_resource_test.html#adff6019df2e1df9a32e1bdf46dce5446" title=" " alt="" coords="28,1037,201,1078"/>
+<area shape="rect" id="node19" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_release_resource_test.html#a29e20c9a3e956a6256adbfe6dc0dd814" title=" " alt="" coords="27,1102,203,1143"/>
+<area shape="rect" id="node20" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_room_resource_test.html#a4e078763b9dc26ff518ddf724e683922" title=" " alt="" coords="5,1167,224,1209"/>
+<area shape="rect" id="node21" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user_resource_test.html#a5150933cc1f41a809996adca81bc16fb" title=" " alt="" coords="9,1233,220,1274"/>
 </map>

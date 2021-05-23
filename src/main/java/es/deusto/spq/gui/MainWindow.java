@@ -25,6 +25,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
@@ -34,12 +35,12 @@ import es.deusto.spq.User;
 import es.deusto.spq.jdo.BillboardResource;
 import es.deusto.spq.jdo.FilmResources;
 import es.deusto.spq.jdo.UserResource;
+
 /**
  * Esta es la ventana principal de nuestra aplicacion
  */
 public class MainWindow extends JFrame {
 
-	
 	private static final long serialVersionUID = 6673510127789501132L;
 	private JPanel contentPane;
 	private List<Film> films;
@@ -85,9 +86,7 @@ public class MainWindow extends JFrame {
 		btnFutureFilms.setBounds(10, 429, 224, 61);
 		btnFutureFilms.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				LastReleasesWindow vne = new LastReleasesWindow();
-				vne.setVisible(true);
-				dispose();
+				initLastReleasesWindow();
 			}
 		});
 		btnFutureFilms.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -127,11 +126,7 @@ public class MainWindow extends JFrame {
 		btnAsessment.setBounds(587, 429, 153, 61);
 		btnAsessment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				RatingWindow vv = new RatingWindow();
-				UserResource ur = new UserResource();
-				vv.SetUserName(ur.getUser(lblUserName.getText()));
-				vv.setVisible(true);
-				dispose();
+				initRatingWindow(lblUserName);
 			}
 		});
 		btnAsessment.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -140,10 +135,7 @@ public class MainWindow extends JFrame {
 		JButton btnFilm1 = new JButton();
 		btnFilm1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				FilmWindow fw = new FilmWindow(0);
-				UserResource ur = new UserResource();
-				fw.SetUserName(ur.getUser(lblUserName.getText()));
-				fw.setVisible(true);
+				initFilmWindow(lblUserName, 0);
 			}
 		});
 		btnFilm1.setBounds(36, 105, 130, 180);
@@ -158,10 +150,7 @@ public class MainWindow extends JFrame {
 		JButton btnFilm2 = new JButton("");
 		btnFilm2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				FilmWindow fw = new FilmWindow(1);
-				UserResource ur = new UserResource();
-				fw.SetUserName(ur.getUser(lblUserName.getText()));
-				fw.setVisible(true);
+				initFilmWindow(lblUserName, 1);
 			}
 		});
 		btnFilm2.setBounds(176, 105, 130, 180);
@@ -176,10 +165,7 @@ public class MainWindow extends JFrame {
 		JButton btnFilm3 = new JButton("");
 		btnFilm3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				FilmWindow fw = new FilmWindow(2);
-				UserResource ur = new UserResource();
-				fw.SetUserName(ur.getUser(lblUserName.getText()));
-				fw.setVisible(true);
+				initFilmWindow(lblUserName, 2);
 			}
 		});
 		btnFilm3.setBounds(316, 105, 130, 180);
@@ -194,10 +180,7 @@ public class MainWindow extends JFrame {
 		JButton btnFilm4 = new JButton("");
 		btnFilm4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				FilmWindow fw = new FilmWindow(3);
-				UserResource ur = new UserResource();
-				fw.SetUserName(ur.getUser(lblUserName.getText()));
-				fw.setVisible(true);
+				initFilmWindow(lblUserName, 3);
 			}
 		});
 		btnFilm4.setBounds(456, 105, 130, 180);
@@ -219,10 +202,7 @@ public class MainWindow extends JFrame {
 		btnVip.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnVip.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				VipWindow vw = new VipWindow();
-				UserResource ur = new UserResource();
-				vw.SetUserName(ur.getUser(lblUserName.getText()));
-				vw.setVisible(true);
+				initVipWindow(lblUserName);
 			}
 		});
 		btnVip.setBounds(412, 429, 165, 61);
@@ -234,11 +214,7 @@ public class MainWindow extends JFrame {
 		JButton btnNewButton = new JButton("Facturas");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ReceiptWindow rw = new ReceiptWindow();
-				UserResource ur = new UserResource();
-				rw.SetUserName(ur.getUser(lblUserName.getText()));
-				rw.SetEmail(ur.getUser(lblUserName.getText()));
-				rw.setVisible(true);
+				initReceiptWindow(lblUserName);
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -300,5 +276,41 @@ public class MainWindow extends JFrame {
 		Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		ImageIcon resizeImg = new ImageIcon(newImg);
 		jb.setIcon(resizeImg);
+	}
+
+	public void initReceiptWindow(JLabel lblUserName) {
+		ReceiptWindow rw = new ReceiptWindow();
+		UserResource ur = new UserResource();
+		rw.SetUserName(ur.getUser(lblUserName.getText()));
+		rw.SetEmail(ur.getUser(lblUserName.getText()));
+		rw.setVisible(true);
+	}
+
+	public void initVipWindow(JLabel lblUserName) {
+		VipWindow vw = new VipWindow();
+		UserResource ur = new UserResource();
+		vw.SetUserName(ur.getUser(lblUserName.getText()));
+		vw.setVisible(true);
+	}
+
+	public void initFilmWindow(JLabel lblUserName, int i) {
+		FilmWindow fw = new FilmWindow(i);
+		UserResource ur = new UserResource();
+		fw.SetUserName(ur.getUser(lblUserName.getText()));
+		fw.setVisible(true);
+	}
+
+	public void initRatingWindow(JLabel lblUserName) {
+		RatingWindow vv = new RatingWindow();
+		UserResource ur = new UserResource();
+		vv.SetUserName(ur.getUser(lblUserName.getText()));
+		vv.setVisible(true);
+		dispose();
+	}
+
+	public void initLastReleasesWindow() {
+		LastReleasesWindow vne = new LastReleasesWindow();
+		vne.setVisible(true);
+		dispose();
 	}
 }
