@@ -317,7 +317,7 @@ public class PaymentWindow extends JFrame {
 
 		try {
 			tx.begin();
-			
+
 			mandarMensaje(Email, r);
 
 			pm.makePersistent(o);
@@ -336,50 +336,50 @@ public class PaymentWindow extends JFrame {
 		MainWindow mw = new MainWindow();
 		mw.setVisible(true);
 	}
-	
+
 	/**
 	 * Metodo para enviar factura por email
 	 */
 	public void mandarMensaje(String correo, Receipt recibo) {
 
-        final String from = "pruebasjaimedeusto@gmail.com";
-        final String contra = "deustocine";
+		final String from = "pruebasjaimedeusto@gmail.com";
+		final String contra = "deustocine";
 
-        String host = "smtp.gmail.com";
+		String host = "smtp.gmail.com";
 
-        Properties properties = System.getProperties();
+		Properties properties = System.getProperties();
 
-        properties.put("mail.smtp.host", host);
-        properties.put("mail.smtp.port", "465");
-        properties.put("mail.smtp.ssl.enable", "true");
-        properties.put("mail.smtp.auth", "true");
+		properties.put("mail.smtp.host", host);
+		properties.put("mail.smtp.port", "465");
+		properties.put("mail.smtp.ssl.enable", "true");
+		properties.put("mail.smtp.auth", "true");
 
-        Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+		Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
-            protected PasswordAuthentication getPasswordAuthentication() {
+			protected PasswordAuthentication getPasswordAuthentication() {
 
-                return new PasswordAuthentication(from, contra);
+				return new PasswordAuthentication(from, contra);
 
-            }
+			}
 
-        });
-        session.setDebug(false);
+		});
+		session.setDebug(false);
 
-        try {
-        	
-            MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(from));
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(correo));
-            message.setSubject("Confirmación de Reserva");
-            message.setText("El código de tu reserva es: " + recibo.getOrder());
+		try {
 
-            System.out.println("sending...");
-            Transport.send(message);
-            System.out.println("Sent message successfully....");
-            
-        } catch (MessagingException mex) {
-            mex.printStackTrace();
-        }
+			MimeMessage message = new MimeMessage(session);
+			message.setFrom(new InternetAddress(from));
+			message.addRecipient(Message.RecipientType.TO, new InternetAddress(correo));
+			message.setSubject("Confirmación de Reserva");
+			message.setText("El código de tu reserva es: " + recibo.getOrder());
+
+			System.out.println("sending...");
+			Transport.send(message);
+			System.out.println("Sent message successfully....");
+
+		} catch (MessagingException mex) {
+			logger.log(Level.WARNING, "ERROR", mex);
+		}
 	}
 
 }

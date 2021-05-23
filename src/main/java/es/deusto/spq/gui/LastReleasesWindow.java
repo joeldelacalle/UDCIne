@@ -94,7 +94,7 @@ public class LastReleasesWindow extends JFrame {
 	/**
 	 * Metodo para asignar una imagen para cada edad
 	 */
-	public void releaseAgeRestImage( int ageRelease) {
+	public void releaseAgeRestImage(int ageRelease) {
 		if (ageAll == ageRelease) {
 			try {
 				URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/6/68/Edad_TP.png");
@@ -157,7 +157,7 @@ public class LastReleasesWindow extends JFrame {
 				setRelease(urlRelease, image, lblFilmImage, textDescription, descRelease);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				logger.log(Level.WARNING,"IOException",e);
+				logger.log(Level.WARNING, "IOException", e);
 			}
 
 		}
@@ -294,7 +294,7 @@ public class LastReleasesWindow extends JFrame {
 					Desktop.getDesktop().browse(new URL(trailer).toURI());
 				} catch (IOException | URISyntaxException e1) {
 					// TODO Auto-generated catch block
-					logger.log(Level.WARNING,"IOException",e1);
+					logger.log(Level.WARNING, "IOException", e1);
 					// e1.printStackTrace();
 				}
 			}
@@ -304,6 +304,7 @@ public class LastReleasesWindow extends JFrame {
 		contentPane.add(btnNewButton);
 
 	}
+
 	/**
 	 * Metodo para poner la imagen de un tamaño estandar en el label
 	 */
