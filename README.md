@@ -46,7 +46,7 @@ Para comprobar los teses unitarios
     
 Para comprobar los teses de integracion
 
-    mvn -Pintegration verify
+    mvn -Pperf verify
     
 Para comprobar los teses de la ventana
 
