@@ -55,7 +55,7 @@ jobs:
     - name: Test Unitarios
       run: mvn --batch-mode --update-snapshots -Punit test 
     - name: Test Rendimiento
-      run: mvn --batch-mode --update-snapshots -Pintegration verify
+      run: mvn --batch-mode --update-snapshots -Pperf verify
     - name: Test Ventanas
       run: |
           mvn --batch-mode --update-snapshots exec:java -P datos
