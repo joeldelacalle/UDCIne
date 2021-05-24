@@ -200,7 +200,8 @@
 						<exclude>**/*Resource*</exclude>
 						<exclude>**/Last*Test*</exclude>
 					</excludes>
-					<excludedGroups>es.deusto.spq.types.IntegrationTest, es.deusto.spq.types.GuiTest</excludedGroups>
+					<excludedGroups>es.deusto.spq.types.IntegrationTest,
+						es.deusto.spq.types.GuiTest</excludedGroups>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -291,6 +292,30 @@
 							</includes>
 							<groups>es.deusto.spq.types.GuiTest</groups>
 							<excludedGroups>es.deusto.spq.types.IntegrationTest</excludedGroups>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>integration-test</goal>
+									<goal>verify</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>full</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>2.22.0</version>
+						<configuration>
+							<includes>
+								<include>**/*</include>
+							</includes>
 						</configuration>
 						<executions>
 							<execution>
