@@ -189,14 +189,7 @@ public class PaymentWindow extends JFrame {
 	public void PagarPaypal(Order o, JTextField textField, JPasswordField passwordField) {
 		String email = textField.getText();
 		String contraseña = String.valueOf(passwordField.getPassword());
-		// String[] opciones = { "Aceptar", "Cancelar" };
-		// String confirmacion = "¿Estas seguro de que quieres pagar con PayPal?";
-		// int respuesta = JOptionPane.showOptionDialog(null, confirmacion, "¿Estas
-		// seguro?",
-		// JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null,
-		// opciones, opciones[0]);
-		// switch (respuesta) {
-		// case 0:
+		
 		if (!email.matches(EMAIL_PATTERN)) {
 			JOptionPane.showMessageDialog(null, "Email no valido", "ERROR", JOptionPane.ERROR_MESSAGE);
 		} else {
@@ -205,8 +198,7 @@ public class PaymentWindow extends JFrame {
 			PayPal paypal = pr.getPaypal(email);
 
 			if (paypal.getPassword().equals(contraseña)) {
-				// JOptionPane.showMessageDialog(null, "Usuario correcto, se ha llevado a cabo
-				// la reserva, pagada");
+				
 				o.setPaymentMethod("Pagado con Paypal");
 				String Email = o.getMail();
 				String Paymentmethod = o.getPaymentMethod();
@@ -229,7 +221,6 @@ public class PaymentWindow extends JFrame {
 					archivo.close();
 				} catch (IOException e6) {
 					logger.log(Level.WARNING, "ERROR", e6);
-					// e6.printStackTrace();
 				}
 
 				PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -241,6 +232,9 @@ public class PaymentWindow extends JFrame {
 
 				try {
 					tx.begin();
+					
+					mandarMensaje(Email, r);
+					
 					pm.makePersistent(r);
 					pm.makePersistent(o);
 
@@ -260,29 +254,14 @@ public class PaymentWindow extends JFrame {
 				JOptionPane.showMessageDialog(null, "Usuario incorrecto");
 			}
 		}
-		// break;
-		// case 1:
-		// JOptionPane.showMessageDialog(null, "Se ha cancelado la operacion");
-		// break;
-		// default:
-		// break;
-		// }
+
 	}
 
 	/**
 	 * Metodo para pagar En caja
 	 */
 	public void PagarCaja(Order o) {
-		// String[] opciones = { "Aceptar", "Cancelar" };
-		// String confirmacion = "¿Estas seguro de que quieres pagar en la caja?";
-		// int respuesta = JOptionPane.showOptionDialog(null, confirmacion, "¿Estas
-		// seguro?",
-		// JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null,
-		// opciones, opciones[0]);
-		// switch (respuesta) {
-		// case 0:
-		// JOptionPane.showMessageDialog(null, "Se ha llevado a cabo la reserva,
-		// pendiente de pago");
+		
 		o.setPaymentMethod("Pendiente de pago");
 		String Email = o.getMail();
 		String Paymentmethod = o.getPaymentMethod();
@@ -306,7 +285,7 @@ public class PaymentWindow extends JFrame {
 			archivo.close();
 		} catch (IOException e6) {
 			logger.log(Level.WARNING, "ERROR", e6);
-			// e6.printStackTrace();
+			
 		}
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
@@ -373,9 +352,9 @@ public class PaymentWindow extends JFrame {
 			message.setSubject("Confirmación de Reserva");
 			message.setText("El código de tu reserva es: " + recibo.getOrder());
 
-			System.out.println("sending...");
+			System.out.println("Enviando mensaje...");
 			Transport.send(message);
-			System.out.println("Sent message successfully....");
+			System.out.println("El mensaje se ha enviado correctamente");
 
 		} catch (MessagingException mex) {
 			logger.log(Level.WARNING, "ERROR", mex);

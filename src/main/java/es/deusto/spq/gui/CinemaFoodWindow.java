@@ -115,13 +115,11 @@ public class CinemaFoodWindow extends JFrame {
 		lblPopcornImage.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//
 				listmodelAlimentos.addElement(products.get(0));
 			}
 		});
 		lblPopcornImage.setBounds(47, 76, 161, 179);
 		contentPane.add(lblPopcornImage);
-		Image image = null;
 		try {
 			btnSetImageIcon(products.get(0).getUrl(), lblPopcornImage);
 		} catch (IOException e) {
@@ -159,10 +157,6 @@ public class CinemaFoodWindow extends JFrame {
 		list = new JList<Product>(listmodelAlimentos);
 		list.setBounds(47, 332, 390, 158);
 		contentPane.add(list);
-
-		String Popcorn = "Palomitas Medianas";
-		String PopcornBig = "Palomitas Grandes";
-		String PopcornCola = "Palomitas Grandes + Coca Cola";
 
 		JLabel lblNewLabel = new JLabel("PALOMITAS MEDIANAS");
 		lblNewLabel.setFont(new Font("Cooper Black", Font.PLAIN, 12));
@@ -214,7 +208,6 @@ public class CinemaFoodWindow extends JFrame {
 		}
 
 		ow.setProducts(listProducts);
-		System.out.println(listProducts.toString());
 	}
 	/**
 	 * Metodo para establecer la imagen. Ajusta la altura y anchura de la imagen.
@@ -229,9 +222,7 @@ public class CinemaFoodWindow extends JFrame {
 		image = myImg.getImage();
 
 		int width = myImg.getIconWidth() / 3;
-		// System.out.println(width);
 		int height = myImg.getIconHeight() / 3;
-		// System.out.println(height);
 
 		Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		ImageIcon resizeImg = new ImageIcon(newImg);

@@ -175,12 +175,6 @@ public class RatingWindow extends JFrame {
 		lblNewLabel_1_2.setBounds(401, 128, 191, 42);
 		contentPane.add(lblNewLabel_1_2);
 
-		/*
-		 * JButton btnNewButton = new JButton("Exit"); btnNewButton.setFont(new
-		 * Font("Cooper Black", Font.PLAIN, 16)); btnNewButton.setBounds(658, 448, 70,
-		 * 49); contentPane.add(btnNewButton);
-		 */
-
 		final JLabel lblX = new JLabel("X");
 		lblX.addMouseListener(new MouseAdapter() {
 			@Override

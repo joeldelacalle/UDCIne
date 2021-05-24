@@ -47,8 +47,6 @@ public class AdminUsersWindow extends JFrame {
 	final WebTarget UsersTarget = appTarget.path("users");
 	final WebTarget UsersallTarget = UsersTarget.path("allusers");
 
-	// private UserResource ur;
-	// private List<User> users = ur.getUsers();
 	/**
 	 * Crea la ventana de Administracion de usuarios
 	 */
@@ -151,7 +149,6 @@ public class AdminUsersWindow extends JFrame {
 		try {
 			tx.begin();
 			User user = lUser.getModel().getElementAt(selectedUser);
-			// System.out.println(user.toString());
 			User u = pm.getObjectById(User.class, user.getId());
 			pm.deletePersistent(u);
 

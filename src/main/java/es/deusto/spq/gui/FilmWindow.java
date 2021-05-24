@@ -96,7 +96,7 @@ public class FilmWindow extends JFrame {
 				trailerFilm = film.getTrailer();
 			}
 		}
-		// System.out.println(filmName);
+		
 		if (filmName.equals(selectedFilm)) {
 			try {
 				URL url = new URL(urlFilm);
@@ -105,9 +105,7 @@ public class FilmWindow extends JFrame {
 				image = myImg.getImage();
 
 				int width = myImg.getIconWidth() / 7 * 2;
-				// System.out.println(width);
 				int height = myImg.getIconHeight() / 7 * 2;
-				// System.out.println(height);
 
 				Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 				ImageIcon resizeImg = new ImageIcon(newImg);
@@ -116,6 +114,7 @@ public class FilmWindow extends JFrame {
 			} catch (IOException e7) {
 			}
 		}
+		
 		filmAgeRestImage();
 	}
 
@@ -169,9 +168,7 @@ public class FilmWindow extends JFrame {
 		image = myImg.getImage();
 
 		int width = myImg.getIconWidth() / 5;
-		// System.out.println(width);
 		int height = myImg.getIconHeight() / 5;
-		// System.out.println(height);
 
 		Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		ImageIcon resizeImg = new ImageIcon(newImg);
@@ -191,27 +188,11 @@ public class FilmWindow extends JFrame {
 		setContentPane(contentPane);
 
 		lblFilmImage.setHorizontalAlignment(SwingConstants.CENTER);
-		/*
-		 * Image image = null; try { URL url = new
-		 * URL("https://i.blogs.es/7ccbec/iron-man/1366_2000.jpg"); image =
-		 * ImageIO.read(url); ImageIcon myImg = new ImageIcon(url); image =
-		 * myImg.getImage();
-		 * 
-		 * int width = myImg.getIconWidth() / 3; //System.out.println(width); int height
-		 * = myImg.getIconHeight() / 3; //System.out.println(height);
-		 * 
-		 * Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-		 * ImageIcon resizeImg = new ImageIcon(newImg); lblFilmImage.setIcon(resizeImg);
-		 * } catch (IOException e) { }
-		 */
 
 		JButton btnExit = new JButton("SALIR");
 		btnExit.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*
-				 * MainWindow vp = new MainWindow(); vp.setVisible(true);
-				 */
 				dispose();
 			}
 		});
@@ -222,19 +203,6 @@ public class FilmWindow extends JFrame {
 		JLabel lblDsc = new JLabel("Descripción:");
 		lblDsc.setHorizontalAlignment(SwingConstants.CENTER);
 
-		/*
-		 * try { URL url = new URL(
-		 * "https://www.kindpng.com/picc/m/27-275692_pg-13-png-rated-pg-transparent-png.png"
-		 * ); image = ImageIO.read(url); ImageIcon myImg = new ImageIcon(url); image =
-		 * myImg.getImage();
-		 * 
-		 * int width = myImg.getIconWidth() / 6; //System.out.println(width); int height
-		 * = myImg.getIconHeight() / 6; //System.out.println(height);
-		 * 
-		 * Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-		 * ImageIcon resizeImg = new ImageIcon(newImg);
-		 * lblRecommendedAge.setIcon(resizeImg); } catch (IOException e) { }
-		 */
 		final JComboBox<String> comboBoxFilm = new JComboBox<String>();
 
 		transformFilms(billFilms, films);
@@ -261,9 +229,7 @@ public class FilmWindow extends JFrame {
 			image = myImg.getImage();
 
 			int width = myImg.getIconWidth() / 7 * 2;
-			// System.out.println(width);
 			int height = myImg.getIconHeight() / 7 * 2;
-			// System.out.println(height);
 
 			Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 			ImageIcon resizeImg = new ImageIcon(newImg);
@@ -305,15 +271,12 @@ public class FilmWindow extends JFrame {
 		JButton btnTrailer = new JButton("TRAILER");
 		btnTrailer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// System.out.println(trailerFilm);
-				// TrailerPlayer tp = new TrailerPlayer(trailerFilm);
-				// tp.setVisible(true);
+				
 				try {
 					Desktop.getDesktop().browse(new URL(trailerFilm).toURI());
 				} catch (IOException | URISyntaxException e1) {
-					// TODO Auto-generated catch block
 					logger.log(Level.WARNING, "ERROR", e1);
-					// e1.printStackTrace();
+					
 				}
 			}
 		});

@@ -60,9 +60,6 @@ public class AdminFilmsWindow extends JFrame {
 	final WebTarget FilmsTarget = appTarget.path("films");
 	private JTextField textFieldTrailer = new JTextField();
 
-	// private FilmResources fr;
-	// private List<Film> films = fr.getFilms();
-
 	/**
 	 * Crea la ventana de Administración de películas
 	 */
@@ -84,7 +81,7 @@ public class AdminFilmsWindow extends JFrame {
 
 		billboard.clear();
 		for (Film film : films) {
-			// System.out.println(film.getName());
+			
 			billboard.addElement(film);
 		}
 
@@ -392,11 +389,10 @@ public class AdminFilmsWindow extends JFrame {
 		System.out.println("Eliminando película de la BD");
 
 		try {
-			// Film f = pm.getObjectById(Film.class, filmList.get(0).getId());
+			
 			Query<Film> q = pm.newQuery("SELECT FROM " + Film.class.getName() + " WHERE name== '" + selectedFilm + "'");
 			List<Film> filmList = q.executeList();
 			q.deletePersistentAll(filmList);
-			// pm.deletePersistent(f);
 
 			System.out.println("Eliminada película de la Base de Datos");
 

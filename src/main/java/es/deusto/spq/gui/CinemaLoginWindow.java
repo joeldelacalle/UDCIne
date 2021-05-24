@@ -61,7 +61,6 @@ public class CinemaLoginWindow extends JFrame {
 					frame.setVisible(true);
 				} catch (Exception e) {
 					logger.log(Level.WARNING, "ERROR", e);
-					// e.printStackTrace();
 				}
 			}
 		});
@@ -111,7 +110,6 @@ public class CinemaLoginWindow extends JFrame {
 		txtUsername1.setBounds(10, 10, 170, 20);
 		panel.add(txtUsername1);
 		txtUsername1.setColumns(10);
-		//
 
 		JPanel lblIconPassword1 = new JPanel();
 		lblIconPassword1.setBackground(Color.WHITE);
@@ -267,7 +265,6 @@ public class CinemaLoginWindow extends JFrame {
 	public void Login(JPasswordField txtPassword1, JTextField txtUsername1) {
 		UserResource ur = new UserResource();
 		if (txtUsername1.getText().equals("admin") && txtPassword1.getText().equals("admin")) {
-			// los datos son correctos
 			lblLoginMessage1.setText("");
 			AdminWindow aw = new AdminWindow();
 			aw.setVisible(true);

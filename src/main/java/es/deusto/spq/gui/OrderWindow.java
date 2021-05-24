@@ -262,7 +262,6 @@ public class OrderWindow extends JFrame {
 
 		o.setPrice(totalPrice);
 
-		System.out.println(o.toString());
 		PaymentWindow pw = new PaymentWindow(o);
 		pw.setVisible(true);
 	}

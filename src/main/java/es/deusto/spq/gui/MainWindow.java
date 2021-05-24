@@ -143,7 +143,7 @@ public class MainWindow extends JFrame {
 			btnSetImageIcon(getBillboardFilm(0).getUrl(), btnFilm1);
 		} catch (IOException e1) {
 			logger.log(Level.WARNING, "ERROR", e1);
-			// e1.printStackTrace();
+			
 		}
 		contentPane.add(btnFilm1);
 
@@ -158,7 +158,7 @@ public class MainWindow extends JFrame {
 			btnSetImageIcon(getBillboardFilm(1).getUrl(), btnFilm2);
 		} catch (IOException e1) {
 			logger.log(Level.WARNING, "ERROR", e1);
-			// e1.printStackTrace();
+			
 		}
 		contentPane.add(btnFilm2);
 
@@ -173,7 +173,7 @@ public class MainWindow extends JFrame {
 			btnSetImageIcon(getBillboardFilm(2).getUrl(), btnFilm3);
 		} catch (IOException e1) {
 			logger.log(Level.WARNING, "ERROR", e1);
-			// e1.printStackTrace();
+			
 		}
 		contentPane.add(btnFilm3);
 
@@ -231,7 +231,6 @@ public class MainWindow extends JFrame {
 
 		BillboardResource br = new BillboardResource();
 		List<Billboard> bl = br.getBillboardFilms();
-		System.out.println(bl.toString());
 		Billboard billboardFilm = bl.get(i);
 		return billboardFilm;
 
@@ -269,9 +268,7 @@ public class MainWindow extends JFrame {
 		image = myImg.getImage();
 
 		int width = myImg.getIconWidth() / 5;
-		// System.out.println(width);
 		int height = myImg.getIconHeight() / 5;
-		// System.out.println(height);
 
 		Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		ImageIcon resizeImg = new ImageIcon(newImg);

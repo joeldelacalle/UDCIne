@@ -82,9 +82,7 @@ public class LastReleasesWindow extends JFrame {
 		image = myImg.getImage();
 
 		int width = myImg.getIconWidth() / 7;
-		// System.out.println(width);
 		int height = myImg.getIconHeight() / 7;
-		// System.out.println(height);
 
 		Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		ImageIcon resizeImg = new ImageIcon(newImg);
@@ -156,7 +154,6 @@ public class LastReleasesWindow extends JFrame {
 			try {
 				setRelease(urlRelease, image, lblFilmImage, textDescription, descRelease);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				logger.log(Level.WARNING, "IOException", e);
 			}
 
