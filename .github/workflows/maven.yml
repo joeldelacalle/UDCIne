@@ -51,11 +51,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
-            mvn --batch-mode --update-snapshots -Pintegration verify 
-            mvn --batch-mode --update-snapshots exec:java -P datos 
-            mvn --batch-mode --update-snapshots -Pgui verify 
-            mvn --batch-mode --update-snapshots test org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-      
+            mvn --batch-mode --update-snapshots -Pfull verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
     - name: Test Unitarios
       run: mvn --batch-mode --update-snapshots test 
     - name: Test Integracion
