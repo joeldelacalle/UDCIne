@@ -97,9 +97,9 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">import</span> com.toedter.calendar.JDateChooser;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">import</span> es.deusto.spq.Cinema;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">import</span> es.deusto.spq.Film;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">import</span> es.deusto.spq.Room;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Cinema;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Film;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Room;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.Client;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.ClientBuilder;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.WebTarget;</div>
@@ -150,7 +150,7 @@ $(function() {
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        System.out.println(<span class="stringliteral">&quot;Añadiendo pelicula a la sala&quot;</span>);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            tx.begin();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a> room = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>((<a class="code" href="classes_1_1deusto_1_1spq_1_1_cinema.html">Cinema</a>) comboCinema.getSelectedItem(), (<a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a>) comboFilm.getSelectedItem(),</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room.html">Room</a> room = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room.html">Room</a>((<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html">Cinema</a>) comboCinema.getSelectedItem(), (<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a>) comboFilm.getSelectedItem(),</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    comboRoom.getSelectedItem().toString(), date, 100);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            pm.makePersistent(room);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
@@ -282,10 +282,10 @@ $(function() {
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        lblFlecha.setBounds(50, 10, 25, 31);</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        contentPane.add(lblFlecha);</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1_cinema.html">Cinema</a> cinema : cinemas) {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html">Cinema</a> cinema : cinemas) {</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            comboCinema.addItem(cinema);</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        }</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a> film : films) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a> film : films) {</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            comboFilm.addItem(film);</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        }</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
@@ -320,14 +320,14 @@ $(function() {
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_cinema_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_cinema.html">es.deusto.spq.Cinema</a></div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00015">Cinema.java:15</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html">es.deusto.spq.Film</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00015">Film.java:15</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_room_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_room.html">es.deusto.spq.Room</a></div><div class="ttdef"><b>Definition:</b> <a href="_room_8java_source.html#l00016">Room.java:16</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html">es.deusto.spq.gui.AdminRoomsWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_8java_source.html#l00043">AdminRoomsWindow.java:43</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_html_a38b21d50b96b42795429072d94bea405"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html#a38b21d50b96b42795429072d94bea405">es.deusto.spq.gui.AdminRoomsWindow.AdminRoomsWindow</a></div><div class="ttdeci">AdminRoomsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_8java_source.html#l00165">AdminRoomsWindow.java:165</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_html_aa5578437c39c95acb6e9f1273a0b2c44"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html#aa5578437c39c95acb6e9f1273a0b2c44">es.deusto.spq.gui.AdminRoomsWindow.getCineYSalas</a></div><div class="ttdeci">void getCineYSalas(JComboBox&lt; Cinema &gt; comboCinema, JComboBox&lt; String &gt; comboRoom, int selCinema)</div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_8java_source.html#l00108">AdminRoomsWindow.java:108</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window_html_af06b621c73f053d9e5ba0588cb815cf0"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html#af06b621c73f053d9e5ba0588cb815cf0">es.deusto.spq.gui.AdminRoomsWindow.addFilmtoRoom</a></div><div class="ttdeci">void addFilmtoRoom(JComboBox&lt; Cinema &gt; comboCinema, JComboBox&lt; Film &gt; comboFilm, JComboBox&lt; String &gt; comboRoom, Date d, int i)</div><div class="ttdef"><b>Definition:</b> <a href="_admin_rooms_window_8java_source.html#l00080">AdminRoomsWindow.java:80</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_window_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html">es.deusto.spq.gui.AdminWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_admin_window_8java_source.html#l00024">AdminWindow.java:24</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html">es.deusto.spq.jdo.Cinema</a></div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00015">Cinema.java:15</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_film_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">es.deusto.spq.jdo.Film</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00015">Film.java:15</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_room_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room.html">es.deusto.spq.jdo.Room</a></div><div class="ttdef"><b>Definition:</b> <a href="_room_8java_source.html#l00016">Room.java:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

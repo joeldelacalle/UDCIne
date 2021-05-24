@@ -1,11 +1,11 @@
 <map id="es.deusto.spq.gui.FilmWindow.nuevasPeliculas" name="es.deusto.spq.gui.FilmWindow.nuevasPeliculas">
-<area shape="rect" id="node1" title=" " alt="" coords="5,180,249,221"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,195,249,236"/>
 <area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_film_window.html#a644ff5d56031e513caf9ccfd64e8c330" title=" " alt="" coords="315,5,539,47"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1_film.html#a4f008d9e5c77c1e7f1a443dd377cf0c5" title=" " alt="" coords="337,71,516,112"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1_film.html#a724e3d5bcb547fd0233dbe083d0bd39d" title=" " alt="" coords="317,137,537,163"/>
-<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1_film.html#a6a1c03b0547193477cabe9f7ac1c8303" title=" " alt="" coords="332,187,521,214"/>
-<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1_film.html#a4bf506a1d319bdbab7fc203ab6ecc8e5" title=" " alt="" coords="331,238,522,265"/>
-<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1_film.html#a34562009632bafdddc1bbe4ab29b5d32" title=" " alt="" coords="341,289,512,315"/>
-<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_film_window.html#a3330c3a029d56e274b739bfcf20df868" title=" " alt="" coords="297,340,556,381"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html#adf64ee2ebd9ffaea738995ea9fdcdd3e" title=" " alt="" coords="339,71,515,112"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html#a6d9ae59f9fdb3d36a3bdfe98ab52e290" title=" " alt="" coords="339,136,515,177"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html#aff8ee0dd3384d5263c0cc152006deab7" title=" " alt="" coords="321,202,532,229"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html#a29392ac076b4fe15a921406d137f621c" title=" " alt="" coords="339,253,515,295"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html#a36398fc763986319f3049a0a3cf5cd97" title=" " alt="" coords="331,319,523,346"/>
+<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_film_window.html#a3330c3a029d56e274b739bfcf20df868" title=" " alt="" coords="297,371,556,412"/>
 <area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_film_window.html#aa223b20433778db3d1b391dfd0c94a5d" title=" " alt="" coords="604,5,829,47"/>
 </map>

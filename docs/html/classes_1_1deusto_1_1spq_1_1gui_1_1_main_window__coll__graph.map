@@ -1,6 +1,6 @@
 <map id="es.deusto.spq.gui.MainWindow" name="es.deusto.spq.gui.MainWindow">
-<area shape="rect" id="node1" title=" " alt="" coords="102,95,305,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,71,32"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resources.html" title=" " alt="" coords="95,5,311,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="335,5,397,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="78,109,281,136"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,13,71,39"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1resources_1_1_film_resources.html" title=" " alt="" coords="95,5,264,47"/>
+<area shape="rect" id="node4" title=" " alt="" coords="289,13,350,39"/>
 </map>

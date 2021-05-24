@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>UD Cine: Fichero Fuente src/test/java/es/deusto/spq/jdo/FilmResourceTest.java</title>
+<title>UD Cine: Fichero Fuente src/test/java/es/deusto/spq/resources/FilmResourceTest.java</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_120ed4da3e3217b1e7fc0b4f48568e79.html">test</a></li><li class="navelem"><a class="el" href="dir_97debbc39e3b917fca663601bb2b0709.html">java</a></li><li class="navelem"><a class="el" href="dir_4b96a8b33d1f8ef41fbe8cb4eb39245a.html">es</a></li><li class="navelem"><a class="el" href="dir_25b06560d1af80143ff1acfc9209093d.html">deusto</a></li><li class="navelem"><a class="el" href="dir_ed5d40ea3cf05e796193518606629533.html">spq</a></li><li class="navelem"><a class="el" href="dir_4fe56d8183522424bf650048df85d518.html">jdo</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_120ed4da3e3217b1e7fc0b4f48568e79.html">test</a></li><li class="navelem"><a class="el" href="dir_97debbc39e3b917fca663601bb2b0709.html">java</a></li><li class="navelem"><a class="el" href="dir_4b96a8b33d1f8ef41fbe8cb4eb39245a.html">es</a></li><li class="navelem"><a class="el" href="dir_25b06560d1af80143ff1acfc9209093d.html">deusto</a></li><li class="navelem"><a class="el" href="dir_ed5d40ea3cf05e796193518606629533.html">spq</a></li><li class="navelem"><a class="el" href="dir_75388bc81011a6d64dd7f126a0d011f4.html">resources</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -70,7 +70,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="_film_resource_test_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.jdo;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.resources;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
@@ -87,9 +87,9 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> org.junit.experimental.categories.Category;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> es.deusto.spq.Film;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> es.deusto.spq.Main;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">import</span> es.deusto.spq.Room;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Film;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Main;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Room;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">import</span> es.deusto.spq.types.IntegrationTest;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.Client;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.ClientBuilder;</div>
@@ -97,38 +97,38 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.GenericType;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.MediaType;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;@Category(IntegrationTest.class)</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html">   35</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html">FilmResourceTest</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test.html">   35</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test.html">FilmResourceTest</a> {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    @Rule</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#a4c9eadf19c5bfd1b23d8266c032244f8">   42</a></span>&#160;    <span class="keyword">public</span> ContiPerfRule rule = <span class="keyword">new</span> ContiPerfRule();</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test.html#a4191630228dc5a07d17204b88c4cc255">   42</a></span>&#160;    <span class="keyword">public</span> ContiPerfRule rule = <span class="keyword">new</span> ContiPerfRule();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">private</span> HttpServer server;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">private</span> WebTarget appTarget;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">private</span> Client c;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    @Before</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#ae4a6781c5fb9479b6a5cf5e7aceda3d2">   51</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#ae4a6781c5fb9479b6a5cf5e7aceda3d2">setUp</a>() throws Exception {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        server = <a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html#ace1eed5d51bf4a847234dc83e4677d1e">startServer</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test.html#a1a59701881fe33f0095465cf9c9b0caf">   51</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test.html#a1a59701881fe33f0095465cf9c9b0caf">setUp</a>() throws Exception {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        server = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a23ceca01d3d581472df36f867877fdbd">startServer</a>();</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        c = ClientBuilder.newClient();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        appTarget = c.target(<a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html#a302eae72af03bb14f5e6afaea97a3d6b">BASE_URI</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        appTarget = c.target(<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a205bb87ce76fc17dbcd6852e34e5d84d">BASE_URI</a>);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    @SuppressWarnings(<span class="stringliteral">&quot;deprecation&quot;</span>)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    @After</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#a82b25acb91ee243c538e634ce2ccd932">   62</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#a82b25acb91ee243c538e634ce2ccd932">tearDown</a>() throws Exception {</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test.html#a0c5ece3e6790f944dcf2ac75b3d94215">   62</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test.html#a0c5ece3e6790f944dcf2ac75b3d94215">tearDown</a>() throws Exception {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        server.stop();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    @Test</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    @PerfTest(invocations = 100, threads = 40)</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#a25f8f6ed17c2d8cf75681f94c4085176">   71</a></span>&#160;    public <span class="keywordtype">void</span> testgetFilms() {</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test.html#a9e4c75316c8a0a2ffaec787b728f0482">   71</a></span>&#160;    public <span class="keywordtype">void</span> testgetFilms() {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        WebTarget peliculasTarget = appTarget.path(<span class="stringliteral">&quot;films&quot;</span>);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        List&lt;Film&gt; listapelis = Arrays.asList(<span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a>(<span class="stringliteral">&quot;Jon&quot;</span>, <span class="stringliteral">&quot;Iron Man&quot;</span>,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        List&lt;Film&gt; listapelis = Arrays.asList(<span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a>(<span class="stringliteral">&quot;Jon&quot;</span>, <span class="stringliteral">&quot;Iron Man&quot;</span>,</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="stringliteral">&quot;El acto principal es Tony Stark, un magnate multimillonario y hÃ¡bil ingeniero con abundantes vicios que construye un exoesqueleto mecÃ¡nico y se convierte en el superhÃ©roe Iron Man.&quot;</span>,</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                13, <span class="stringliteral">&quot;https://pics.filmaffinity.com/iron_man-108960873-large.jpg&quot;</span>,</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="stringliteral">&quot;https://www.youtube.com/watch?v=RLiO7pt8MbU&quot;</span>),</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a>(<span class="stringliteral">&quot;Jon&quot;</span>, <span class="stringliteral">&quot;Iron Man 2&quot;</span>,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a>(<span class="stringliteral">&quot;Jon&quot;</span>, <span class="stringliteral">&quot;Iron Man 2&quot;</span>,</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        <span class="stringliteral">&quot;El mundo sabe que el multimillonario Tony Stark es Iron Man, el superhÃ©roe enmascarado, el cual forja alianzas nuevas y se enfrenta a nuevas y poderosas fuerzas.&quot;</span>,</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        13, <span class="stringliteral">&quot;https://pics.filmaffinity.com/iron_man_2-466103197-large.jpg&quot;</span>,</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        <span class="stringliteral">&quot;youtube.com/watch?v=Ab_mvS68xng&quot;</span>),</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a>(<span class="stringliteral">&quot;Jon&quot;</span>, <span class="stringliteral">&quot;Iron Man 3&quot;</span>,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a>(<span class="stringliteral">&quot;Jon&quot;</span>, <span class="stringliteral">&quot;Iron Man 3&quot;</span>,</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        <span class="stringliteral">&quot;Tony Stark tendrÃ¡ que enfrentarse a un enemigo cuyo alcance no conoce lÃ­mites. Cuando Stark encuentre su vida personal destruida a manos de su enemigo, se embarca en una difÃ­cil aventura para encontrar al responsable.&quot;</span>,</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        13, <span class="stringliteral">&quot;https://pics.filmaffinity.com/iron_man_3_aka_ironman_3-972235216-large.jpg&quot;</span>,</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        <span class="stringliteral">&quot;https://www.youtube.com/watch?v=6dhCPF_Jsco&quot;</span>));</div>
@@ -153,13 +153,13 @@ $(function() {
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html">es.deusto.spq.Film</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00015">Film.java:15</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_main_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_main.html">es.deusto.spq.Main</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00015">Main.java:15</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_main_html_a302eae72af03bb14f5e6afaea97a3d6b"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_main.html#a302eae72af03bb14f5e6afaea97a3d6b">es.deusto.spq.Main.BASE_URI</a></div><div class="ttdeci">static final String BASE_URI</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00017">Main.java:17</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_main_html_ace1eed5d51bf4a847234dc83e4677d1e"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_main.html#ace1eed5d51bf4a847234dc83e4677d1e">es.deusto.spq.Main.startServer</a></div><div class="ttdeci">static HttpServer startServer()</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00025">Main.java:25</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html">es.deusto.spq.jdo.FilmResourceTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_resource_test_8java_source.html#l00035">FilmResourceTest.java:35</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test_html_a82b25acb91ee243c538e634ce2ccd932"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#a82b25acb91ee243c538e634ce2ccd932">es.deusto.spq.jdo.FilmResourceTest.tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdef"><b>Definition:</b> <a href="_film_resource_test_8java_source.html#l00062">FilmResourceTest.java:62</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test_html_ae4a6781c5fb9479b6a5cf5e7aceda3d2"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resource_test.html#ae4a6781c5fb9479b6a5cf5e7aceda3d2">es.deusto.spq.jdo.FilmResourceTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_film_resource_test_8java_source.html#l00051">FilmResourceTest.java:51</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_film_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">es.deusto.spq.jdo.Film</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00015">Film.java:15</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">es.deusto.spq.jdo.Main</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00018">Main.java:18</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html_a205bb87ce76fc17dbcd6852e34e5d84d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a205bb87ce76fc17dbcd6852e34e5d84d">es.deusto.spq.jdo.Main.BASE_URI</a></div><div class="ttdeci">static final String BASE_URI</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00020">Main.java:20</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html_a23ceca01d3d581472df36f867877fdbd"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a23ceca01d3d581472df36f867877fdbd">es.deusto.spq.jdo.Main.startServer</a></div><div class="ttdeci">static HttpServer startServer()</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00030">Main.java:30</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test.html">es.deusto.spq.resources.FilmResourceTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_resource_test_8java_source.html#l00035">FilmResourceTest.java:35</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test_html_a0c5ece3e6790f944dcf2ac75b3d94215"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test.html#a0c5ece3e6790f944dcf2ac75b3d94215">es.deusto.spq.resources.FilmResourceTest.tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdef"><b>Definition:</b> <a href="_film_resource_test_8java_source.html#l00062">FilmResourceTest.java:62</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test_html_a1a59701881fe33f0095465cf9c9b0caf"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1resources_1_1_film_resource_test.html#a1a59701881fe33f0095465cf9c9b0caf">es.deusto.spq.resources.FilmResourceTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_film_resource_test_8java_source.html#l00051">FilmResourceTest.java:51</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

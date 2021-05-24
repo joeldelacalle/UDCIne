@@ -1,3 +1,19 @@
 <map id="Representación gráfica de la clase" name="Representación gráfica de la clase">
-<area shape="rect" id="node1" href="$classes_1_1deusto_1_1spq_1_1_administrator_test.html" title=" " alt="" coords="5,5,216,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="17,443,83,470"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html" title=" " alt="" coords="149,71,348,112"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_rooms_window.html" title=" " alt="" coords="145,5,352,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html" title=" " alt="" coords="149,136,349,177"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html" title=" " alt="" coords="143,202,355,229"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_cinema_food_window.html" title=" " alt="" coords="162,253,335,295"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_cinema_login_window.html" title=" " alt="" coords="162,319,335,360"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_film_window.html" title=" " alt="" coords="149,385,349,411"/>
+<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_last_releases_window.html" title=" " alt="" coords="145,436,353,477"/>
+<area shape="rect" id="node10" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html" title=" " alt="" coords="147,502,350,529"/>
+<area shape="rect" id="node11" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html" title=" " alt="" coords="145,553,352,579"/>
+<area shape="rect" id="node12" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window.html" title=" " alt="" coords="158,604,339,645"/>
+<area shape="rect" id="node13" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_rating_window.html" title=" " alt="" coords="165,669,332,711"/>
+<area shape="rect" id="node14" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html" title=" " alt="" coords="162,735,335,776"/>
+<area shape="rect" id="node15" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_register_window.html" title=" " alt="" coords="160,800,337,841"/>
+<area shape="rect" id="node16" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html" title=" " alt="" coords="151,866,346,893"/>
+<area shape="rect" id="node17" title=" " alt="" coords="5,13,95,39"/>
 </map>

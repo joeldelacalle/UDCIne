@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['user_877',['User',['../classes_1_1deusto_1_1spq_1_1_user.html#ae7874889eddeaa2a5ab18d7415e9fe39',1,'es.deusto.spq.User.User(String name, String nickname, String email, String password, int phoneNumber)'],['../classes_1_1deusto_1_1spq_1_1_user.html#a7a41f4a9545b0fb4f170141d08912046',1,'es.deusto.spq.User.User()']]]
+  ['user_890',['User',['../classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a927d3cfc703bba13f7f9ca43ddceffc1',1,'es.deusto.spq.jdo.User.User(String name, String nickname, String email, String password, int phoneNumber)'],['../classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a18841481860193fffeba566334f7b7a3',1,'es.deusto.spq.jdo.User.User()']]]
 ];

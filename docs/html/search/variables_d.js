@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['seat_937',['seat',['../classes_1_1deusto_1_1spq_1_1_ticket.html#aa32dcb8aa56dae6301a5bb1dce3a9a56',1,'es::deusto::spq::Ticket']]],
-  ['seats_938',['seats',['../classes_1_1deusto_1_1spq_1_1_room.html#afc1e496a17216b406e27a876338ef5af',1,'es::deusto::spq::Room']]],
-  ['session_939',['session',['../classes_1_1deusto_1_1spq_1_1_ticket.html#a50af38a9d108992d723b480d0616b2f3',1,'es::deusto::spq::Ticket']]]
+  ['seat_950',['seat',['../classes_1_1deusto_1_1spq_1_1jdo_1_1_ticket.html#ad651f80044410e2bdb7eacb7ae3f617c',1,'es::deusto::spq::jdo::Ticket']]],
+  ['seats_951',['seats',['../classes_1_1deusto_1_1spq_1_1jdo_1_1_room.html#a615318673d8b395c55bdc07cd74c2487',1,'es::deusto::spq::jdo::Room']]],
+  ['session_952',['session',['../classes_1_1deusto_1_1spq_1_1jdo_1_1_ticket.html#ac31fc76546a352b9c8d6257c500d1310',1,'es::deusto::spq::jdo::Ticket']]]
 ];

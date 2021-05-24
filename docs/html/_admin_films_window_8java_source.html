@@ -105,7 +105,7 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">import</span> javax.swing.SwingConstants;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">import</span> javax.swing.border.LineBorder;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">import</span> es.deusto.spq.Film;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Film;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.Client;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.ClientBuilder;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.WebTarget;</div>
@@ -144,7 +144,7 @@ $(function() {
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        List&lt;Film&gt; films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        billboard.clear();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a> film : films) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a> film : films) {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="comment">// System.out.println(film.getName());</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            billboard.addElement(film);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
@@ -416,7 +416,7 @@ $(function() {
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                tx.begin();</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a> film = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a>(txtDirector.getText().toString(), txtName.getText().toString(),</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a> film = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a>(txtDirector.getText().toString(), txtName.getText().toString(),</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                        txtDescription.getText().toString(), age, txtFoto.getText().toString(), trailer);</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                pm.makePersistent(film);</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
@@ -444,7 +444,7 @@ $(function() {
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="comment">// Film f = pm.getObjectById(Film.class, filmList.get(0).getId());</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            Query&lt;Film&gt; q = pm.newQuery(<span class="stringliteral">&quot;SELECT FROM &quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html">Film</a>.class.<a class="code" href="classes_1_1deusto_1_1spq_1_1_film.html#a6a1c03b0547193477cabe9f7ac1c8303">getName</a>() + <span class="stringliteral">&quot; WHERE name== &#39;&quot;</span> + selectedFilm + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            Query&lt;Film&gt; q = pm.newQuery(<span class="stringliteral">&quot;SELECT FROM &quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a>.class.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html#aff8ee0dd3384d5263c0cc152006deab7">getName</a>() + <span class="stringliteral">&quot; WHERE name== &#39;&quot;</span> + selectedFilm + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            List&lt;Film&gt; filmList = q.executeList();</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            q.deletePersistentAll(filmList);</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="comment">// pm.deletePersistent(f);</span></div>
@@ -471,14 +471,14 @@ $(function() {
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    }</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;}</div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html">es.deusto.spq.Film</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00015">Film.java:15</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_film_html_a6a1c03b0547193477cabe9f7ac1c8303"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_film.html#a6a1c03b0547193477cabe9f7ac1c8303">es.deusto.spq.Film.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00130">Film.java:130</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html">es.deusto.spq.gui.AdminFilmsWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_admin_films_window_8java_source.html#l00050">AdminFilmsWindow.java:50</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_html_a184a48b3c02b6967e7d1937c8fea3aed"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#a184a48b3c02b6967e7d1937c8fea3aed">es.deusto.spq.gui.AdminFilmsWindow.maxLengthdesc</a></div><div class="ttdeci">void maxLengthdesc(JTextArea txtDescription)</div><div class="ttdef"><b>Definition:</b> <a href="_admin_films_window_8java_source.html#l00416">AdminFilmsWindow.java:416</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_html_a84f34a864511c89ac7e761adadbbb312"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#a84f34a864511c89ac7e761adadbbb312">es.deusto.spq.gui.AdminFilmsWindow.añadirPeliculaBd</a></div><div class="ttdeci">void añadirPeliculaBd(JTextField txtName, JTextField txtDirector, JTextField txtFoto, JComboBox&lt; Integer &gt; cbAge, JTextArea txtDescription, String trailer)</div><div class="ttdef"><b>Definition:</b> <a href="_admin_films_window_8java_source.html#l00346">AdminFilmsWindow.java:346</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_html_ad4e78b44bf4dd583747d65254c00d3aa"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#ad4e78b44bf4dd583747d65254c00d3aa">es.deusto.spq.gui.AdminFilmsWindow.eliminarPeliculaBd</a></div><div class="ttdeci">void eliminarPeliculaBd(ListModel&lt; Film &gt; listModel, String selectedFilm)</div><div class="ttdef"><b>Definition:</b> <a href="_admin_films_window_8java_source.html#l00389">AdminFilmsWindow.java:389</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window_html_af97f69f822e297413f84b41cd256deb1"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#af97f69f822e297413f84b41cd256deb1">es.deusto.spq.gui.AdminFilmsWindow.AdminFilmsWindow</a></div><div class="ttdeci">AdminFilmsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_films_window_8java_source.html#l00070">AdminFilmsWindow.java:70</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_window_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html">es.deusto.spq.gui.AdminWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_admin_window_8java_source.html#l00024">AdminWindow.java:24</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_film_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">es.deusto.spq.jdo.Film</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00015">Film.java:15</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_film_html_aff8ee0dd3384d5263c0cc152006deab7"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html#aff8ee0dd3384d5263c0cc152006deab7">es.deusto.spq.jdo.Film.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00130">Film.java:130</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

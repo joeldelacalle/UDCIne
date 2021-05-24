@@ -1,21 +1,21 @@
 <map id="es.deusto.spq.gui.MainWindow.MainWindow" name="es.deusto.spq.gui.MainWindow.MainWindow">
 <area shape="rect" id="node1" title=" " alt="" coords="5,235,212,276"/>
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a78db5d7c1dc3ef5ed85f1a116eb6de4e" title=" " alt="" coords="267,5,492,47"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a2fd41b2722fb220838c3f5939c15d709" title=" " alt="" coords="267,71,492,112"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_film_resources.html#a6ca398f7447f9e6d85598e2e8e8619bf" title=" " alt="" coords="260,136,499,177"/>
-<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a908a80afa3947b13b7a455c83add6e17" title=" " alt="" coords="267,201,491,243"/>
-<area shape="rect" id="node11" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a37b1afa2d9cc16e58e6696c197aad746" title=" " alt="" coords="267,463,491,504"/>
-<area shape="rect" id="node12" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#af0ae5c1aaf81f010acaeb2f7ad41811a" title=" " alt="" coords="267,267,491,308"/>
-<area shape="rect" id="node14" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#ad49d76e5ced2abfaa7e3741c3091421e" title=" " alt="" coords="267,397,491,439"/>
-<area shape="rect" id="node18" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a73b45801996ba1368f14949a2f6489e3" title=" " alt="" coords="267,332,491,373"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_billboard_resource.html#a86732e60685629cd099b8bc617e9ae56" title=" " alt="" coords="586,71,767,112"/>
-<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user_resource.html#a12039924e28a6029df559f3175041f5f" title=" " alt="" coords="547,215,807,242"/>
-<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_film_window.html#a2ae90c241115f55f0c8b1b0ec36c00b4" title=" " alt="" coords="575,149,779,191"/>
-<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1_user.html#a4dbdafcb1847a0b029d2cbd8d21a8b83" title=" " alt="" coords="867,215,1057,242"/>
-<area shape="rect" id="node10" href="$classes_1_1deusto_1_1spq_1_1_user.html#a6df6b0c745cb9da58600e97caa5df29f" title=" " alt="" coords="855,307,1069,334"/>
-<area shape="rect" id="node13" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_rating_window.html#adce1356b186f359e60664098e3b4efe1" title=" " alt="" coords="593,267,760,308"/>
-<area shape="rect" id="node15" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#a258a01c7a016b2569af199215cd24387" title=" " alt="" coords="590,463,763,504"/>
-<area shape="rect" id="node17" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#ae58806798448b463c4e3bdb6c2441369" title=" " alt="" coords="590,397,763,439"/>
-<area shape="rect" id="node16" href="$classes_1_1deusto_1_1spq_1_1_user.html#a8eb958f1263ff4eab882c5b414154316" title=" " alt="" coords="867,470,1057,497"/>
-<area shape="rect" id="node19" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#a0b73da3725fdda41e642e2d65798aabb" title=" " alt="" coords="577,332,776,373"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a78db5d7c1dc3ef5ed85f1a116eb6de4e" title=" " alt="" coords="260,5,485,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a2fd41b2722fb220838c3f5939c15d709" title=" " alt="" coords="260,71,485,112"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1resources_1_1_film_resources.html#a5a8a62d9dfa7a0287b19ac3a2a932755" title=" " alt="" coords="288,136,457,177"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a908a80afa3947b13b7a455c83add6e17" title=" " alt="" coords="261,201,485,243"/>
+<area shape="rect" id="node11" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a37b1afa2d9cc16e58e6696c197aad746" title=" " alt="" coords="261,463,485,504"/>
+<area shape="rect" id="node12" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#af0ae5c1aaf81f010acaeb2f7ad41811a" title=" " alt="" coords="261,267,485,308"/>
+<area shape="rect" id="node14" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#ad49d76e5ced2abfaa7e3741c3091421e" title=" " alt="" coords="261,397,485,439"/>
+<area shape="rect" id="node18" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a73b45801996ba1368f14949a2f6489e3" title=" " alt="" coords="261,332,485,373"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1resources_1_1_billboard_resource.html#a721d56b1f2dcf1c7e5e6f8b5d20d1d5b" title=" " alt="" coords="533,71,764,112"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1resources_1_1_user_resource.html#ae1b5852c0f7d11f6fa996dc266cad91e" title=" " alt="" coords="564,201,733,243"/>
+<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_film_window.html#a2ae90c241115f55f0c8b1b0ec36c00b4" title=" " alt="" coords="547,136,751,177"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ab052a72d2f65d9dec93e9e55efc0013c" title=" " alt="" coords="812,209,1024,235"/>
+<area shape="rect" id="node10" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#af0f1fce6fbd31608e0d127dd90551439" title=" " alt="" coords="829,300,1007,341"/>
+<area shape="rect" id="node13" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_rating_window.html#adce1356b186f359e60664098e3b4efe1" title=" " alt="" coords="565,267,732,308"/>
+<area shape="rect" id="node15" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#a258a01c7a016b2569af199215cd24387" title=" " alt="" coords="562,463,735,504"/>
+<area shape="rect" id="node17" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#ae58806798448b463c4e3bdb6c2441369" title=" " alt="" coords="562,397,735,439"/>
+<area shape="rect" id="node16" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#aa07f1d750ea775cc94fa44fae2a9ec14" title=" " alt="" coords="829,463,1007,504"/>
+<area shape="rect" id="node19" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_vip_window.html#a0b73da3725fdda41e642e2d65798aabb" title=" " alt="" coords="549,332,748,373"/>
 </map>

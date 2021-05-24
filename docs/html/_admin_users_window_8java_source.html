@@ -94,7 +94,7 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">import</span> javax.swing.SwingConstants;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">import</span> javax.swing.border.LineBorder;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">import</span> es.deusto.spq.User;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.User;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.Client;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.ClientBuilder;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.WebTarget;</div>
@@ -134,7 +134,7 @@ $(function() {
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        contentPane.add(lista);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        listausuarios.clear();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html">User</a> user : users) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a> user : users) {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            System.out.println(user.getName());</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            listausuarios.addElement(user);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
@@ -210,9 +210,9 @@ $(function() {
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            tx.begin();</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html">User</a> user = lUser.getModel().getElementAt(selectedUser);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a> user = lUser.getModel().getElementAt(selectedUser);</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="comment">// System.out.println(user.toString());</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html">User</a> u = pm.getObjectById(<a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html">User</a>.class, user.<a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html#aa7575ad1522de9cce6b10a1bdd7a8133">getId</a>());</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a> u = pm.getObjectById(<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a>.class, user.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#acad20b584734d201fff31baef651e497">getId</a>());</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            pm.deletePersistent(u);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            tx.commit();</div>
@@ -240,14 +240,14 @@ $(function() {
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        dispose();</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_user_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_user.html">es.deusto.spq.User</a></div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00016">User.java:16</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_user_html_aa7575ad1522de9cce6b10a1bdd7a8133"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_user.html#aa7575ad1522de9cce6b10a1bdd7a8133">es.deusto.spq.User.getId</a></div><div class="ttdeci">long getId()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00046">User.java:46</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html">es.deusto.spq.gui.AdminUsersWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_8java_source.html#l00038">AdminUsersWindow.java:38</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_html_a3d06d8b53603c6fb03d91b25f7085860"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html#a3d06d8b53603c6fb03d91b25f7085860">es.deusto.spq.gui.AdminUsersWindow.initAdminWindow</a></div><div class="ttdeci">void initAdminWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_8java_source.html#l00183">AdminUsersWindow.java:183</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_html_a485ceee8b3723a274a063546a9205090"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html#a485ceee8b3723a274a063546a9205090">es.deusto.spq.gui.AdminUsersWindow.AdminUsersWindow</a></div><div class="ttdeci">AdminUsersWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_8java_source.html#l00055">AdminUsersWindow.java:55</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_html_a5f14cc1b9d2c54c8a18cf6898c5cfc41"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html#a5f14cc1b9d2c54c8a18cf6898c5cfc41">es.deusto.spq.gui.AdminUsersWindow.eliminarUsuarioBd</a></div><div class="ttdeci">void eliminarUsuarioBd(JList&lt; User &gt; lUser, int selectedUser)</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_8java_source.html#l00145">AdminUsersWindow.java:145</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_html_afd22faa868932e3a07636fcf3535f5a7"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html#afd22faa868932e3a07636fcf3535f5a7">es.deusto.spq.gui.AdminUsersWindow.rerunAdminUsersWindow</a></div><div class="ttdeci">void rerunAdminUsersWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_8java_source.html#l00172">AdminUsersWindow.java:172</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_window_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html">es.deusto.spq.gui.AdminWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_admin_window_8java_source.html#l00024">AdminWindow.java:24</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">es.deusto.spq.jdo.User</a></div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00016">User.java:16</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_acad20b584734d201fff31baef651e497"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#acad20b584734d201fff31baef651e497">es.deusto.spq.jdo.User.getId</a></div><div class="ttdeci">long getId()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00046">User.java:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

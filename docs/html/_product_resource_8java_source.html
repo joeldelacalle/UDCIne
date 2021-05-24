@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>UD Cine: Fichero Fuente src/main/java/es/deusto/spq/jdo/ProductResource.java</title>
+<title>UD Cine: Fichero Fuente src/main/java/es/deusto/spq/resources/ProductResource.java</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_f9b1e2a59d62d001356ff527358589e3.html">es</a></li><li class="navelem"><a class="el" href="dir_218602b84a76f1dba535b3f8d119ec0a.html">deusto</a></li><li class="navelem"><a class="el" href="dir_7df73947654fe6d5c668d5365112078e.html">spq</a></li><li class="navelem"><a class="el" href="dir_b44f20764fb01a7190e6ea555f39e2d6.html">jdo</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_f9b1e2a59d62d001356ff527358589e3.html">es</a></li><li class="navelem"><a class="el" href="dir_218602b84a76f1dba535b3f8d119ec0a.html">deusto</a></li><li class="navelem"><a class="el" href="dir_7df73947654fe6d5c668d5365112078e.html">spq</a></li><li class="navelem"><a class="el" href="dir_152d89d05893f600b66e2b3a00295713.html">resources</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -70,7 +70,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="_product_resource_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.jdo;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.resources;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> java.util.List;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
@@ -79,21 +79,21 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> javax.jdo.PersistenceManagerFactory;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> javax.jdo.Query;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> es.deusto.spq.Product;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Product;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.GET;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.Path;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.Produces;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.MediaType;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;@Path(<span class="stringliteral">&quot;products&quot;</span>)</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource.html">   22</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource.html">ProductResource</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_product_resource.html">   22</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1resources_1_1_product_resource.html">ProductResource</a> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    @GET</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    @Produces(MediaType.APPLICATION_JSON)</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource.html#acb023d3fb3ee047de0c91babb3ebea4f">   29</a></span>&#160;    public List&lt;<a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a>&gt; getProducts() {</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_product_resource.html#a2651532b7ce762be60c518fdd992c573">   29</a></span>&#160;    public List&lt;<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">Product</a>&gt; getProducts() {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory(<span class="stringliteral">&quot;datanucleus.properties&quot;</span>);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        PersistenceManager pm = pmf.getPersistenceManager();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        Query&lt;Product&gt; q = pm.newQuery(<a class="code" href="classes_1_1deusto_1_1spq_1_1_product.html">Product</a>.class);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        Query&lt;Product&gt; q = pm.newQuery(<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">Product</a>.class);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        q.setOrdering(<span class="stringliteral">&quot;name desc&quot;</span>);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        List&lt;Product&gt; products = q.executeList();</div>
@@ -103,8 +103,8 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> products;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_product_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_product.html">es.deusto.spq.Product</a></div><div class="ttdef"><b>Definition:</b> <a href="_product_8java_source.html#l00016">Product.java:16</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_product_resource_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product_resource.html">es.deusto.spq.jdo.ProductResource</a></div><div class="ttdef"><b>Definition:</b> <a href="_product_resource_8java_source.html#l00022">ProductResource.java:22</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_product_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">es.deusto.spq.jdo.Product</a></div><div class="ttdef"><b>Definition:</b> <a href="_product_8java_source.html#l00016">Product.java:16</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1resources_1_1_product_resource_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1resources_1_1_product_resource.html">es.deusto.spq.resources.ProductResource</a></div><div class="ttdef"><b>Definition:</b> <a href="_product_resource_8java_source.html#l00022">ProductResource.java:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

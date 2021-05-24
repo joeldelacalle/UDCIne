@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>UD Cine: Fichero Fuente src/main/java/es/deusto/spq/jdo/RoomResource.java</title>
+<title>UD Cine: Fichero Fuente src/main/java/es/deusto/spq/resources/RoomResource.java</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_f9b1e2a59d62d001356ff527358589e3.html">es</a></li><li class="navelem"><a class="el" href="dir_218602b84a76f1dba535b3f8d119ec0a.html">deusto</a></li><li class="navelem"><a class="el" href="dir_7df73947654fe6d5c668d5365112078e.html">spq</a></li><li class="navelem"><a class="el" href="dir_b44f20764fb01a7190e6ea555f39e2d6.html">jdo</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_f9b1e2a59d62d001356ff527358589e3.html">es</a></li><li class="navelem"><a class="el" href="dir_218602b84a76f1dba535b3f8d119ec0a.html">deusto</a></li><li class="navelem"><a class="el" href="dir_7df73947654fe6d5c668d5365112078e.html">spq</a></li><li class="navelem"><a class="el" href="dir_152d89d05893f600b66e2b3a00295713.html">resources</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -70,7 +70,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="_room_resource_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.jdo;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.resources;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> java.util.List;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
@@ -79,24 +79,24 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> javax.jdo.PersistenceManagerFactory;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> javax.jdo.Query;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> es.deusto.spq.Cinema;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> es.deusto.spq.Release;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> es.deusto.spq.Room;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Cinema;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Release;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Room;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.GET;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.POST;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.Path;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.Produces;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.MediaType;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;@Path(<span class="stringliteral">&quot;rooms&quot;</span>)</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room_resource.html">   25</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room_resource.html">RoomResource</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource.html">   25</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource.html">RoomResource</a> {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    @GET</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    @Produces(MediaType.APPLICATION_JSON)</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room_resource.html#abe3f724c7af0062f5716cb206e7ba5ef">   32</a></span>&#160;    public List&lt;<a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>&gt; getReleases() {</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource.html#a8a7fa7f339e6c14260588692450b2082">   32</a></span>&#160;    public List&lt;<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room.html">Room</a>&gt; getReleases() {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory(<span class="stringliteral">&quot;datanucleus.properties&quot;</span>);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        PersistenceManager pm = pmf.getPersistenceManager();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        Query&lt;Room&gt; q = pm.newQuery(<a class="code" href="classes_1_1deusto_1_1spq_1_1_room.html">Room</a>.class);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        Query&lt;Room&gt; q = pm.newQuery(<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room.html">Room</a>.class);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        q.setOrdering(<span class="stringliteral">&quot;name desc&quot;</span>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        List&lt;Room&gt; room = q.executeList();</div>
@@ -108,8 +108,8 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_room_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_room.html">es.deusto.spq.Room</a></div><div class="ttdef"><b>Definition:</b> <a href="_room_8java_source.html#l00016">Room.java:16</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_room_resource_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room_resource.html">es.deusto.spq.jdo.RoomResource</a></div><div class="ttdef"><b>Definition:</b> <a href="_room_resource_8java_source.html#l00025">RoomResource.java:25</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_room_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room.html">es.deusto.spq.jdo.Room</a></div><div class="ttdef"><b>Definition:</b> <a href="_room_8java_source.html#l00016">Room.java:16</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1resources_1_1_room_resource_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource.html">es.deusto.spq.resources.RoomResource</a></div><div class="ttdef"><b>Definition:</b> <a href="_room_resource_8java_source.html#l00025">RoomResource.java:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

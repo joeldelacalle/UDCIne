@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['email_894',['email',['../classes_1_1deusto_1_1spq_1_1_pay_pal.html#a98bdf0e800ed1ff37601054bc3403a0f',1,'es.deusto.spq.PayPal.email()'],['../classes_1_1deusto_1_1spq_1_1_user.html#a6c3febbd26c19029c30375ee701e74ff',1,'es.deusto.spq.User.email()']]]
+  ['email_907',['email',['../classes_1_1deusto_1_1spq_1_1jdo_1_1_pay_pal.html#afac2de57ad9617335c7d79a3d6deaa26',1,'es.deusto.spq.jdo.PayPal.email()'],['../classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a6d7a432908e97d2c66c3c872262017c6',1,'es.deusto.spq.jdo.User.email()']]]
 ];

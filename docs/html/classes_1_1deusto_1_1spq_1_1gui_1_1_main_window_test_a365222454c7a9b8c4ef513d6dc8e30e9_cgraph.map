@@ -1,10 +1,10 @@
 <map id="es.deusto.spq.gui.MainWindowTest.testInitReceiptWindow" name="es.deusto.spq.gui.MainWindowTest.testInitReceiptWindow">
-<area shape="rect" id="node1" title=" " alt="" coords="5,57,208,98"/>
-<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#ad49d76e5ced2abfaa7e3741c3091421e" title=" " alt="" coords="256,57,480,98"/>
-<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user_resource.html#a12039924e28a6029df559f3175041f5f" title=" " alt="" coords="528,5,788,32"/>
-<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#a258a01c7a016b2569af199215cd24387" title=" " alt="" coords="571,57,745,98"/>
-<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#ae58806798448b463c4e3bdb6c2441369" title=" " alt="" coords="571,122,745,163"/>
-<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1_user.html#a4dbdafcb1847a0b029d2cbd8d21a8b83" title=" " alt="" coords="848,5,1039,32"/>
-<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1_user.html#a8eb958f1263ff4eab882c5b414154316" title=" " alt="" coords="848,64,1039,91"/>
-<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1_user.html#a6df6b0c745cb9da58600e97caa5df29f" title=" " alt="" coords="836,129,1051,156"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,208,112"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#ad49d76e5ced2abfaa7e3741c3091421e" title=" " alt="" coords="256,71,480,112"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1resources_1_1_user_resource.html#ae1b5852c0f7d11f6fa996dc266cad91e" title=" " alt="" coords="530,5,699,47"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#a258a01c7a016b2569af199215cd24387" title=" " alt="" coords="528,71,701,112"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#ae58806798448b463c4e3bdb6c2441369" title=" " alt="" coords="528,136,701,177"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ab052a72d2f65d9dec93e9e55efc0013c" title=" " alt="" coords="749,13,961,39"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#aa07f1d750ea775cc94fa44fae2a9ec14" title=" " alt="" coords="766,71,945,112"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#af0f1fce6fbd31608e0d127dd90551439" title=" " alt="" coords="766,136,945,177"/>
 </map>

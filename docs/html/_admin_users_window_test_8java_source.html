@@ -81,93 +81,96 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> org.junit.After;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> org.junit.Before;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> es.deusto.spq.Main;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> es.deusto.spq.User;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.Client;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.ClientBuilder;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.WebTarget;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.GenericType;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.MediaType;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html">   28</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html">AdminUsersWindowTest</a> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">private</span> HttpServer server;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">private</span> WebTarget appTarget;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">private</span> WebTarget UsersTarget;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">private</span> WebTarget UsersallTarget;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">private</span> DefaultListModel&lt;User&gt; uList;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">private</span> GenericType&lt;List&lt;User&gt;&gt; genericType;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">private</span> List&lt;User&gt; users;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span> JList&lt;User&gt; lista = <span class="keyword">new</span> JList&lt;User&gt;();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html">User</a> u;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> selectedUser;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html">AdminUsersWindow</a> auw;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    @Before</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a043e7bfd150aa929ffad22065905202b">   49</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a043e7bfd150aa929ffad22065905202b">setUp</a>() throws Exception {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        server = <a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1_main.html#ace1eed5d51bf4a847234dc83e4677d1e">startServer</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        Client client = ClientBuilder.newClient();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        appTarget = client.target(<span class="stringliteral">&quot;http://localhost:8080/myapp&quot;</span>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        UsersTarget = appTarget.path(<span class="stringliteral">&quot;users&quot;</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        UsersallTarget = UsersTarget.path(<span class="stringliteral">&quot;allusers&quot;</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        uList = <span class="keyword">new</span> DefaultListModel&lt;User&gt;();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        genericType = <span class="keyword">new</span> GenericType&lt;List&lt;User&gt;&gt;() {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        };</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        users = UsersallTarget.request(MediaType.APPLICATION_JSON).get(genericType);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        u = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html">User</a>(<span class="stringliteral">&quot;Jaime&quot;</span>, <span class="stringliteral">&quot;jaimesanta&quot;</span>, <span class="stringliteral">&quot;jaimesanta@hotmail.com&quot;</span>, <span class="stringliteral">&quot;jaimesanta&quot;</span>, 435345);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        auw = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html">AdminUsersWindow</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> org.junit.experimental.categories.Category;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Main;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.User;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> es.deusto.spq.types.GuiTest;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.Client;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.ClientBuilder;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.WebTarget;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.GenericType;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.MediaType;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;@Category(GuiTest.class)</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html">   31</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html">AdminUsersWindowTest</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">private</span> HttpServer server;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">private</span> WebTarget appTarget;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">private</span> WebTarget UsersTarget;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">private</span> WebTarget UsersallTarget;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">private</span> DefaultListModel&lt;User&gt; uList;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span> GenericType&lt;List&lt;User&gt;&gt; genericType;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">private</span> List&lt;User&gt; users;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">private</span> JList&lt;User&gt; lista = <span class="keyword">new</span> JList&lt;User&gt;();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a> u;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> selectedUser;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html">AdminUsersWindow</a> auw;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    @Before</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a043e7bfd150aa929ffad22065905202b">   52</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a043e7bfd150aa929ffad22065905202b">setUp</a>() throws Exception {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        server = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a23ceca01d3d581472df36f867877fdbd">startServer</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        Client client = ClientBuilder.newClient();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        appTarget = client.target(<span class="stringliteral">&quot;http://localhost:8080/myapp&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        UsersTarget = appTarget.path(<span class="stringliteral">&quot;users&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        UsersallTarget = UsersTarget.path(<span class="stringliteral">&quot;allusers&quot;</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        uList = <span class="keyword">new</span> DefaultListModel&lt;User&gt;();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        genericType = <span class="keyword">new</span> GenericType&lt;List&lt;User&gt;&gt;() {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        };</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        users = UsersallTarget.request(MediaType.APPLICATION_JSON).get(genericType);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    @After</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a2561d9a52a9ae90ec99b03e13e323a24">   72</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a2561d9a52a9ae90ec99b03e13e323a24">tearDown</a>() throws Exception {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        server.stop();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    @Test</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#abdfa406ea0e31f99242a69500b87461c">   81</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#abdfa406ea0e31f99242a69500b87461c">eliminarUsuarioBd</a>() {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1_user.html">User</a> user : users) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            uList.addElement(user);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        uList.addElement(u);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        selectedUser = 0;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        lista = <span class="keyword">new</span> JList&lt;User&gt;(uList);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        auw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html#a5f14cc1b9d2c54c8a18cf6898c5cfc41">eliminarUsuarioBd</a>(lista, selectedUser);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    @Test</div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a8ca8efd08cf5315925fe1c97bbbafe30">   99</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a8ca8efd08cf5315925fe1c97bbbafe30">testRerunAdminUsersWindow</a>() {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        auw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html#afd22faa868932e3a07636fcf3535f5a7">rerunAdminUsersWindow</a>();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    @Test</div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#ab4a8d501bd478bb2301c128066887afb">  107</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#ab4a8d501bd478bb2301c128066887afb">testinitAdminWindow</a>() {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        auw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html#a3d06d8b53603c6fb03d91b25f7085860">initAdminWindow</a>();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_main_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_main.html">es.deusto.spq.Main</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00015">Main.java:15</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_main_html_ace1eed5d51bf4a847234dc83e4677d1e"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_main.html#ace1eed5d51bf4a847234dc83e4677d1e">es.deusto.spq.Main.startServer</a></div><div class="ttdeci">static HttpServer startServer()</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00025">Main.java:25</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1_user_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1_user.html">es.deusto.spq.User</a></div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00016">User.java:16</a></div></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        u = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a>(<span class="stringliteral">&quot;Jaime&quot;</span>, <span class="stringliteral">&quot;jaimesanta&quot;</span>, <span class="stringliteral">&quot;jaimesantamazo@gmail.com&quot;</span>, <span class="stringliteral">&quot;jaimesanta&quot;</span>, 435345);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        auw = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html">AdminUsersWindow</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    @After</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a2561d9a52a9ae90ec99b03e13e323a24">   75</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a2561d9a52a9ae90ec99b03e13e323a24">tearDown</a>() throws Exception {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        server.stop();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    @Test</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#abdfa406ea0e31f99242a69500b87461c">   84</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#abdfa406ea0e31f99242a69500b87461c">eliminarUsuarioBd</a>() {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a> user : users) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            uList.addElement(user);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        uList.addElement(u);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        selectedUser = 0;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        lista = <span class="keyword">new</span> JList&lt;User&gt;(uList);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        auw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html#a5f14cc1b9d2c54c8a18cf6898c5cfc41">eliminarUsuarioBd</a>(lista, selectedUser);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    @Test</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a8ca8efd08cf5315925fe1c97bbbafe30">  102</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a8ca8efd08cf5315925fe1c97bbbafe30">testRerunAdminUsersWindow</a>() {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        auw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html#afd22faa868932e3a07636fcf3535f5a7">rerunAdminUsersWindow</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    @Test</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#ab4a8d501bd478bb2301c128066887afb">  110</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#ab4a8d501bd478bb2301c128066887afb">testinitAdminWindow</a>() {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        auw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html#a3d06d8b53603c6fb03d91b25f7085860">initAdminWindow</a>();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html">es.deusto.spq.gui.AdminUsersWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_8java_source.html#l00038">AdminUsersWindow.java:38</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_html_a3d06d8b53603c6fb03d91b25f7085860"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html#a3d06d8b53603c6fb03d91b25f7085860">es.deusto.spq.gui.AdminUsersWindow.initAdminWindow</a></div><div class="ttdeci">void initAdminWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_8java_source.html#l00183">AdminUsersWindow.java:183</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_html_a5f14cc1b9d2c54c8a18cf6898c5cfc41"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html#a5f14cc1b9d2c54c8a18cf6898c5cfc41">es.deusto.spq.gui.AdminUsersWindow.eliminarUsuarioBd</a></div><div class="ttdeci">void eliminarUsuarioBd(JList&lt; User &gt; lUser, int selectedUser)</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_8java_source.html#l00145">AdminUsersWindow.java:145</a></div></div>
 <div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_html_afd22faa868932e3a07636fcf3535f5a7"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window.html#afd22faa868932e3a07636fcf3535f5a7">es.deusto.spq.gui.AdminUsersWindow.rerunAdminUsersWindow</a></div><div class="ttdeci">void rerunAdminUsersWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_8java_source.html#l00172">AdminUsersWindow.java:172</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html">es.deusto.spq.gui.AdminUsersWindowTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_test_8java_source.html#l00028">AdminUsersWindowTest.java:28</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test_html_a043e7bfd150aa929ffad22065905202b"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a043e7bfd150aa929ffad22065905202b">es.deusto.spq.gui.AdminUsersWindowTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_test_8java_source.html#l00049">AdminUsersWindowTest.java:49</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test_html_a2561d9a52a9ae90ec99b03e13e323a24"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a2561d9a52a9ae90ec99b03e13e323a24">es.deusto.spq.gui.AdminUsersWindowTest.tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_test_8java_source.html#l00072">AdminUsersWindowTest.java:72</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test_html_a8ca8efd08cf5315925fe1c97bbbafe30"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a8ca8efd08cf5315925fe1c97bbbafe30">es.deusto.spq.gui.AdminUsersWindowTest.testRerunAdminUsersWindow</a></div><div class="ttdeci">void testRerunAdminUsersWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_test_8java_source.html#l00099">AdminUsersWindowTest.java:99</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test_html_ab4a8d501bd478bb2301c128066887afb"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#ab4a8d501bd478bb2301c128066887afb">es.deusto.spq.gui.AdminUsersWindowTest.testinitAdminWindow</a></div><div class="ttdeci">void testinitAdminWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_test_8java_source.html#l00107">AdminUsersWindowTest.java:107</a></div></div>
-<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test_html_abdfa406ea0e31f99242a69500b87461c"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#abdfa406ea0e31f99242a69500b87461c">es.deusto.spq.gui.AdminUsersWindowTest.eliminarUsuarioBd</a></div><div class="ttdeci">void eliminarUsuarioBd()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_test_8java_source.html#l00081">AdminUsersWindowTest.java:81</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html">es.deusto.spq.gui.AdminUsersWindowTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_test_8java_source.html#l00031">AdminUsersWindowTest.java:31</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test_html_a043e7bfd150aa929ffad22065905202b"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a043e7bfd150aa929ffad22065905202b">es.deusto.spq.gui.AdminUsersWindowTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_test_8java_source.html#l00052">AdminUsersWindowTest.java:52</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test_html_a2561d9a52a9ae90ec99b03e13e323a24"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a2561d9a52a9ae90ec99b03e13e323a24">es.deusto.spq.gui.AdminUsersWindowTest.tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_test_8java_source.html#l00075">AdminUsersWindowTest.java:75</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test_html_a8ca8efd08cf5315925fe1c97bbbafe30"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#a8ca8efd08cf5315925fe1c97bbbafe30">es.deusto.spq.gui.AdminUsersWindowTest.testRerunAdminUsersWindow</a></div><div class="ttdeci">void testRerunAdminUsersWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_test_8java_source.html#l00102">AdminUsersWindowTest.java:102</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test_html_ab4a8d501bd478bb2301c128066887afb"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#ab4a8d501bd478bb2301c128066887afb">es.deusto.spq.gui.AdminUsersWindowTest.testinitAdminWindow</a></div><div class="ttdeci">void testinitAdminWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_test_8java_source.html#l00110">AdminUsersWindowTest.java:110</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test_html_abdfa406ea0e31f99242a69500b87461c"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_users_window_test.html#abdfa406ea0e31f99242a69500b87461c">es.deusto.spq.gui.AdminUsersWindowTest.eliminarUsuarioBd</a></div><div class="ttdeci">void eliminarUsuarioBd()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_users_window_test_8java_source.html#l00084">AdminUsersWindowTest.java:84</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">es.deusto.spq.jdo.Main</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00018">Main.java:18</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html_a23ceca01d3d581472df36f867877fdbd"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a23ceca01d3d581472df36f867877fdbd">es.deusto.spq.jdo.Main.startServer</a></div><div class="ttdeci">static HttpServer startServer()</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00030">Main.java:30</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">es.deusto.spq.jdo.User</a></div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00016">User.java:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
