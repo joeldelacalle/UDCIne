@@ -39,14 +39,22 @@ Inicio de la aplicación cliente
 La aplicación cliente puede iniciarse usando el comando
 
     mvn exec::java -Pcliente
+  
+Para comprobar los teses unitarios
+
+    mvn -Punit test
     
 Para comprobar los teses de integracion
 
-    mvn verify -P integration
+    mvn -Pintegration verify
     
 Para comprobar los teses de la ventana
 
-    mvn verify -P gui
+    mvn -Pgui verify
+    
+Para comprobar los todos los teses
+
+    mvn -Pfull test
 
 Para generar la documentación mediante Doxyfile
     
