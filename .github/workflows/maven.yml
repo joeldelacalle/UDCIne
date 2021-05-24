@@ -54,11 +54,11 @@ jobs:
     - name: Test Unitarios
       run: mvn --batch-mode --update-snapshots test 
     - name: Test Integracion
-      run: mvn --batch-mode --update-snapshots verify -Pintegration
+      run: mvn --batch-mode --update-snapshots -Pintegration verify
     - name: Test Ventanas
       run: |
           mvn --batch-mode --update-snapshots exec:java -P datos
-          mvn --batch-mode --update-snapshots verify -P gui  
+          mvn --batch-mode --update-snapshots -Pgui verify   
       
     - name: Install doxygen
       run: sudo apt-get install -y doxygen
