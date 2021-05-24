@@ -109,13 +109,8 @@
 			<artifactId>javax.mail</artifactId>
 			<version>1.6.2</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-failsafe-plugin</artifactId>
-			<version>2.22.0</version>
-		</dependency>
-
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -183,6 +178,7 @@
 					</execution>
 					<execution>
 						<id>report</id>
+						<phase>test</phase>
 						<goals>
 							<goal>report</goal>
 						</goals>
@@ -193,15 +189,6 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.9.1</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M5</version>
-				<configuration>
-					<excludedGroups>es.deusto.spq.types.IntegrationTest,
-						es.deusto.spq.types.GuiTest</excludedGroups>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -256,14 +243,14 @@
 			<build>
 				<plugins>
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-failsafe-plugin</artifactId>
 						<version>2.22.0</version>
 						<configuration>
 							<includes>
-								<include>**/*</include>
+								<include>**/*ResourceTest*</include>
 							</includes>
 							<groups>es.deusto.spq.types.IntegrationTest</groups>
+							<excludedGroups>ses.deusto.spq.types.GuiTest</excludedGroups>
 						</configuration>
 						<executions>
 							<execution>
@@ -286,9 +273,52 @@
 						<version>2.22.0</version>
 						<configuration>
 							<includes>
-								<include>**/*GuiTest</include>
+								<include>**/*WindowTest*</include>
+								<include>**/Last*Test*</include>
 							</includes>
 							<groups>es.deusto.spq.types.GuiTest</groups>
+							<excludedGroups>es.deusto.spq.types.IntegrationTest</excludedGroups>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>integration-test</goal>
+									<goal>verify</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>full</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M5</version>
+						<configuration>
+							<includes>
+								<include>**/*</include>
+							</includes>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>test</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>2.22.0</version>
+						<configuration>
+							<includes>
+								<include>**/*</include>
+							</includes>
 						</configuration>
 						<executions>
 							<execution>

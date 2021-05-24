@@ -8,13 +8,16 @@ import javax.swing.JTextField;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.User;
+import es.deusto.spq.types.GuiTest;
 
 /**
  * Clase test Ventana de Registro
  *
  */
+@Category(GuiTest.class)
 public class RegisterWindowTest {
 
 	private JTextField textFieldPhoneNumber = new JTextField();
@@ -36,7 +39,7 @@ public class RegisterWindowTest {
 		u = new User();
 		textFieldName = new JTextField("Jaime");
 		textFieldNickname = new JTextField("jaimesanta");
-		textFieldEmail = new JTextField("jaimesantamazo@hotmail.com");
+		textFieldEmail = new JTextField("jaimesantamazo@gmail.com");
 		passwordField = new JPasswordField("1234");
 		textFieldPhoneNumber = new JTextField("99");
 		rw = new RegisterWindow();

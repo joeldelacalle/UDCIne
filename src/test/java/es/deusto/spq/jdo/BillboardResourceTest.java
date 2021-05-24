@@ -16,10 +16,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.Billboard;
 import es.deusto.spq.Film;
 import es.deusto.spq.Main;
+import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -29,6 +31,8 @@ import jakarta.ws.rs.core.MediaType;
  * Clase test BillboardResource
  *
  */
+
+@Category(IntegrationTest.class)
 public class BillboardResourceTest {
 	/**
 	 * Rule test

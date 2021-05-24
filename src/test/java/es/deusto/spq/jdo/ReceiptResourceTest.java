@@ -81,7 +81,7 @@ public class ReceiptResourceTest {
 		tickets.add(ticket);
 		product = new Product("palomitas", "palomitas Grandes", 3,null);
 		products.add(product);
-		o = new Order("perro@gmail.com", dfd1,1, tickets.toString(), products.toString(), "En caja", 1);
+		o = new Order("jaimesantamazo@gmail.com", dfd1,1, tickets.toString(), products.toString(), "En caja", 1);
     }
     /**
 	 * TearDown Test
@@ -100,9 +100,9 @@ public class ReceiptResourceTest {
     @PerfTest(invocations = 100, threads = 40)
 	public void testgetReceipts() {
 		WebTarget receiptsTarget = appTarget.path("receipts");
-		WebTarget getreceiptsallTarget = receiptsTarget.path("getreceipt").queryParam("mail", "jaimesantamazo@hotmail.com");
+		WebTarget getreceiptsallTarget = receiptsTarget.path("getreceipt").queryParam("mail", "jaimesantamazo@gmail.com");
     	
-		List<Receipt> listareceipts = Arrays.asList(new Receipt("jaimesantamazo@hotmail.com", dfd1,o,99),new Receipt("jaimesantamazo@gmail.com", dfd1,o,99));
+		List<Receipt> listareceipts = Arrays.asList(new Receipt("jaimesantamazo@gmail.com", dfd1,o,99),new Receipt("jaimesantamazo@gmail.com", dfd1,o,99));
    	 
 	    GenericType<List<Receipt>> genericType = new GenericType<List<Receipt>>() {};
 		List<Receipt> r = getreceiptsallTarget.request(MediaType.APPLICATION_JSON).get(genericType);

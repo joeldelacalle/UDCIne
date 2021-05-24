@@ -8,19 +8,22 @@ import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import org.apache.maven.settings.Server;
+//import org.apache.maven.settings.Server;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.Main;
 import es.deusto.spq.User;
+import es.deusto.spq.types.GuiTest;
 
 /**
  * Clase test Ventana Principal
  *
  */
+@Category(GuiTest.class)
 public class MainWindowTest {
 
 	private MainWindow mw;

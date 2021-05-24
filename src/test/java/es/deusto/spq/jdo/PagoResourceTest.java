@@ -69,8 +69,8 @@ public class PagoResourceTest {
 	@PerfTest(invocations = 100, threads = 40)
 	public void testPaypal() {
 		WebTarget pagosTarget = appTarget.path("paypal");
-		WebTarget paypalTarget = pagosTarget.path("getemail").queryParam("email", "jaimesantamazo@hotmail.com");
-		List<PayPal> listapaypal = Arrays.asList(new PayPal("jaimesantamazo@hotmail.com", "123"));
+		WebTarget paypalTarget = pagosTarget.path("getemail").queryParam("email", "jaimesantamazo@gmail.com");
+		List<PayPal> listapaypal = Arrays.asList(new PayPal("jaimesantamazo@gmail.com", "123"));
 
 		GenericType<PayPal> genericType = new GenericType<PayPal>() {
 		};

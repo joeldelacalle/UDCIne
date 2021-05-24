@@ -46,20 +46,22 @@ jobs:
           mvn --batch-mode --update-snapshots datanucleus:enhance
           mvn --batch-mode --update-snapshots datanucleus:schema-create
           mvn --batch-mode --update-snapshots exec:java -Pdatos
-    - name: Build with Maven including only unit testing (with SonarCloud)
+    - name: Build with Maven including testing (with SonarCloud)
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn --batch-mode --update-snapshots test org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+      run: |
+            mvn --batch-mode --update-snapshots -Pfull test org.sonarsource.scanner.maven:sonar-maven-plugin:sonar 
+            
     - name: Test Unitarios
       run: mvn --batch-mode --update-snapshots test 
     - name: Test Integracion
-      run: mvn --batch-mode --update-snapshots verify -Pintegration
+      run: mvn --batch-mode --update-snapshots -Pintegration verify
     - name: Test Ventanas
       run: |
           mvn --batch-mode --update-snapshots exec:java -P datos
-          mvn --batch-mode --update-snapshots verify -P gui  
-      
+          mvn --batch-mode --update-snapshots -Pgui verify  
+          
     - name: Install doxygen
       run: sudo apt-get install -y doxygen
     - name: Install graphviz

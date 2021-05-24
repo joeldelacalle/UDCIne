@@ -14,9 +14,11 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.Film;
 import es.deusto.spq.Main;
+import es.deusto.spq.types.GuiTest;
 import es.deusto.spq.util.PreparedData;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
@@ -28,6 +30,7 @@ import jakarta.ws.rs.core.MediaType;
  * Clase test Ventana Administrador para Peliculas
  *
  */
+@Category(GuiTest.class)
 public class AdminFilmsWindowTest {
 	private JTextField txtName;
 	private JTextField txtDirector;
