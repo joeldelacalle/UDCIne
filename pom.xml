@@ -105,18 +105,12 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-            <groupId>com.sun.mail</groupId>
-            <artifactId>javax.mail</artifactId>
-            <version>1.6.2</version>
-        </dependency>
-		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-failsafe-plugin</artifactId>
-			<version>2.22.0</version>
-			<scope>test</scope>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.2</version>
 		</dependency>
-
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -201,7 +195,12 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version>
 				<configuration>
-					<excludedGroups>es.deusto.spq.types.IntegrationTest</excludedGroups>
+					<excludes>
+						<exclude>**/*WindowTest*</exclude>
+						<exclude>**/*Resource*</exclude>
+						<exclude>**/Last*Test*</exclude>
+					</excludes>
+					<excludedGroups>es.deusto.spq.types.IntegrationTest, es.deusto.spq.types.GuiTest</excludedGroups>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -257,14 +256,14 @@
 			<build>
 				<plugins>
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-failsafe-plugin</artifactId>
 						<version>2.22.0</version>
 						<configuration>
 							<includes>
-								<include>**/*</include>
+								<include>**/*ResourceTest*</include>
 							</includes>
 							<groups>es.deusto.spq.types.IntegrationTest</groups>
+							<excludedGroups>ses.deusto.spq.types.GuiTest</excludedGroups>
 						</configuration>
 						<executions>
 							<execution>
@@ -287,9 +286,11 @@
 						<version>2.22.0</version>
 						<configuration>
 							<includes>
-								<include>**/*</include>
+								<include>**/*WindowTest*</include>
+								<include>**/Last*Test*</include>
 							</includes>
 							<groups>es.deusto.spq.types.GuiTest</groups>
+							<excludedGroups>es.deusto.spq.types.IntegrationTest</excludedGroups>
 						</configuration>
 						<executions>
 							<execution>

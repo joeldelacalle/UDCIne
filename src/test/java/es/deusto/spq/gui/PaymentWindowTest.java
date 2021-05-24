@@ -8,14 +8,17 @@ import javax.swing.JTextField;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.Order;
 import es.deusto.spq.Receipt;
+import es.deusto.spq.types.GuiTest;
 
 /**
  * Clase test Ventana de Pago
  *
  */
+@Category(GuiTest.class)
 public class PaymentWindowTest {
 
 	private Order o;

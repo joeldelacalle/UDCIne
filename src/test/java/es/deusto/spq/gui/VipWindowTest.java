@@ -12,15 +12,18 @@ import javax.swing.ListModel;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.Order;
 import es.deusto.spq.User;
 import es.deusto.spq.jdo.OrderResource;
+import es.deusto.spq.types.GuiTest;
 
 /**
  * Clase test Ventana de Usuarios VIP
  *
  */
+@Category(GuiTest.class)
 public class VipWindowTest {
 
 	private VipWindow vw;

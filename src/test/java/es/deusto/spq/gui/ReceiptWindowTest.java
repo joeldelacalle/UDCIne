@@ -11,9 +11,11 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.Main;
 import es.deusto.spq.User;
+import es.deusto.spq.types.GuiTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -22,6 +24,7 @@ import jakarta.ws.rs.client.WebTarget;
  * Clase test Ventana de Recibos
  *
  */
+@Category(GuiTest.class)
 public class ReceiptWindowTest {
 
 	private JTextField textFieldPhoneNumber = new JTextField();

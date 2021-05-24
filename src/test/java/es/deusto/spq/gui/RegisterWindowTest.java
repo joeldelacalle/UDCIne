@@ -8,13 +8,16 @@ import javax.swing.JTextField;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.User;
+import es.deusto.spq.types.GuiTest;
 
 /**
  * Clase test Ventana de Registro
  *
  */
+@Category(GuiTest.class)
 public class RegisterWindowTest {
 
 	private JTextField textFieldPhoneNumber = new JTextField();

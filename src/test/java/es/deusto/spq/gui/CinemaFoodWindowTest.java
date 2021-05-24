@@ -12,14 +12,17 @@ import javax.swing.JLabel;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.Film;
 import es.deusto.spq.Product;
+import es.deusto.spq.types.GuiTest;
 
 /**
  * Clase test Ventana Alimentos
  *
  */
+@Category(GuiTest.class)
 public class CinemaFoodWindowTest {
 	private Film selectedFilm = new Film("Jon", "Infinity war",
 			"El todopoderoso Thanos ha despertado con la promesa de arrasar con todo a su paso, portando el Guantelete del Infinito. Los únicos capaces de pararle los pies son los Vengadores y el resto de superhéroes de la galaxia",
