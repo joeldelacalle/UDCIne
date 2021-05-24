@@ -47,7 +47,8 @@ public class Main {
 		if (i == 0) {
 			i = System.in.read();
 			server.shutdownNow();
-		} else if (i == 13) {
+		}
+		if (i == 13) {
 			server.shutdownNow();
 		}
 	}
