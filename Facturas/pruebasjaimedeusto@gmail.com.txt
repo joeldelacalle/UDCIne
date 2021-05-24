@@ -1,0 +1,15 @@
+ -----------------
+|-Fecha de compra: null
+|-Email: pruebasjaimedeusto@gmail.com
+|-Tickets: Pendiente de pago
+|-Products: Vacio
+|-Paymentmethod: Pagado con Paypal
+|-Price: 24
+ ----------------- -----------------
+|-Fecha de compra: null
+|-Email: pruebasjaimedeusto@gmail.com
+|-Tickets: Pendiente de pago
+|-Products: Vacio
+|-Paymentmethod: Pendiente de pago
+|-Price: 24
+ -----------------
