@@ -20,7 +20,6 @@ import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.jdo.Main;
 import es.deusto.spq.jdo.Order;
-import es.deusto.spq.jdo.Room;
 import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;

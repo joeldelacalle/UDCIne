@@ -5,7 +5,6 @@ package es.deusto.spq.resources;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,7 +18,6 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.jdo.Main;
-import es.deusto.spq.jdo.Order;
 import es.deusto.spq.jdo.PayPal;
 import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;

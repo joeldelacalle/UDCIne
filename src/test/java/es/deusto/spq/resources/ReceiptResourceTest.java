@@ -27,7 +27,6 @@ import es.deusto.spq.jdo.Order;
 import es.deusto.spq.jdo.Product;
 import es.deusto.spq.jdo.Receipt;
 import es.deusto.spq.jdo.Ticket;
-import es.deusto.spq.jdo.User;
 import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;

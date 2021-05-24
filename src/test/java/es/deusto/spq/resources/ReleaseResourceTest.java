@@ -14,14 +14,11 @@ import org.databene.contiperf.junit.ContiPerfRule;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import es.deusto.spq.jdo.Cinema;
 import es.deusto.spq.jdo.Main;
-import es.deusto.spq.jdo.Product;
 import es.deusto.spq.jdo.Release;
 import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;

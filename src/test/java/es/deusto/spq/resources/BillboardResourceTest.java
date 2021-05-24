@@ -19,15 +19,11 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.jdo.Billboard;
-import es.deusto.spq.jdo.Film;
 import es.deusto.spq.jdo.Main;
-import es.deusto.spq.resources.BillboardResource;
 import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
-import jakarta.ws.rs.core.GenericType;
-import jakarta.ws.rs.core.MediaType;
 /**
  * Clase test BillboardResource
  *
