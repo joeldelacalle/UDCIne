@@ -38,7 +38,7 @@ public class MainTest {
 	@Test
 	public void testMain() {
 		try {
-			Main.main(new String[0], 0);
+			Main.main(new String[0]);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			logger.log(Level.WARNING, "IOException", e);

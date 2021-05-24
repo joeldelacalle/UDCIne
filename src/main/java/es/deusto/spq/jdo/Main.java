@@ -43,16 +43,11 @@ public class Main {
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args, int i) throws IOException {
+	public static void main(String[] args) throws IOException {
 		final HttpServer server = startServer();
 		logger.log(Level.INFO,
 				"UDCINE app started with WADL available at " + "%sapplication.wadl\nHit enter to stop it...", BASE_URI);
-		if (i == 0) {
-			i = System.in.read();
-			server.shutdownNow();
-		}
-		if (i == 13) {
-			server.shutdownNow();
-		}
+		System.in.read();
+		server.shutdownNow();
 	}
 }

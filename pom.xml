@@ -144,7 +144,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>es.deusto.spq.Main</mainClass>
+					<mainClass>es.deusto.spq.jdo.Main</mainClass>
 				</configuration>
 			</plugin>
 			<plugin>
