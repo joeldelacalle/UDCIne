@@ -10,11 +10,8 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 
-import es.deusto.spq.jdo.Cinema;
-import es.deusto.spq.jdo.Release;
 import es.deusto.spq.jdo.Room;
 import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;

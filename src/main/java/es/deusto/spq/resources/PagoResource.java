@@ -5,7 +5,6 @@ package es.deusto.spq.resources;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.jdo.JDOHelper;
@@ -13,7 +12,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 
-import es.deusto.spq.jdo.Order;
+
 import es.deusto.spq.jdo.PayPal;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
