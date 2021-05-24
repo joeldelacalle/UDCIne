@@ -239,7 +239,7 @@
 			</build>
 		</profile>
 		<profile>
-			<id>integration</id>
+			<id>perf</id>
 			<build>
 				<plugins>
 					<plugin>
