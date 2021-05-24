@@ -17,10 +17,10 @@ import org.junit.experimental.categories.Category;
 
 import com.toedter.calendar.JDateChooser;
 
-import es.deusto.spq.Cinema;
-import es.deusto.spq.Film;
-import es.deusto.spq.Main;
-import es.deusto.spq.Room;
+import es.deusto.spq.jdo.Cinema;
+import es.deusto.spq.jdo.Film;
+import es.deusto.spq.jdo.Main;
+import es.deusto.spq.jdo.Room;
 import es.deusto.spq.types.GuiTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;

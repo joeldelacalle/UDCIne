@@ -7,16 +7,16 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
-import es.deusto.spq.Billboard;
-import es.deusto.spq.Cinema;
-import es.deusto.spq.Film;
-import es.deusto.spq.Order;
-import es.deusto.spq.PayPal;
-import es.deusto.spq.Product;
-import es.deusto.spq.Receipt;
-import es.deusto.spq.Release;
-import es.deusto.spq.Room;
-import es.deusto.spq.User;
+import es.deusto.spq.jdo.Billboard;
+import es.deusto.spq.jdo.Cinema;
+import es.deusto.spq.jdo.Film;
+import es.deusto.spq.jdo.Order;
+import es.deusto.spq.jdo.PayPal;
+import es.deusto.spq.jdo.Product;
+import es.deusto.spq.jdo.Receipt;
+import es.deusto.spq.jdo.Release;
+import es.deusto.spq.jdo.Room;
+import es.deusto.spq.jdo.User;
 
 public class PreparedData {
 

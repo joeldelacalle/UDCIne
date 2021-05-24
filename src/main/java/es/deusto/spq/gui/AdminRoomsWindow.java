@@ -28,9 +28,9 @@ import javax.swing.border.LineBorder;
 
 import com.toedter.calendar.JDateChooser;
 
-import es.deusto.spq.Cinema;
-import es.deusto.spq.Film;
-import es.deusto.spq.Room;
+import es.deusto.spq.jdo.Cinema;
+import es.deusto.spq.jdo.Film;
+import es.deusto.spq.jdo.Room;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;

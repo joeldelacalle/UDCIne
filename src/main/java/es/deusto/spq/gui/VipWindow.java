@@ -22,10 +22,10 @@ import javax.swing.JPanel;
 import javax.swing.ListModel;
 import javax.swing.border.LineBorder;
 
-import es.deusto.spq.Order;
-import es.deusto.spq.User;
-import es.deusto.spq.jdo.OrderResource;
-import es.deusto.spq.jdo.UserResource;
+import es.deusto.spq.jdo.Order;
+import es.deusto.spq.jdo.User;
+import es.deusto.spq.resources.OrderResource;
+import es.deusto.spq.resources.UserResource;
 
 /**
  * Ventana de Usuarios vip.

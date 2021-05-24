@@ -26,16 +26,16 @@ import javax.swing.JSpinner;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
-import es.deusto.spq.Cinema;
-import es.deusto.spq.Film;
-import es.deusto.spq.Order;
-import es.deusto.spq.Product;
-import es.deusto.spq.Room;
-import es.deusto.spq.Ticket;
-import es.deusto.spq.User;
-import es.deusto.spq.jdo.CinemaResource;
-import es.deusto.spq.jdo.RoomResource;
-import es.deusto.spq.jdo.UserResource;
+import es.deusto.spq.jdo.Cinema;
+import es.deusto.spq.jdo.Film;
+import es.deusto.spq.jdo.Order;
+import es.deusto.spq.jdo.Product;
+import es.deusto.spq.jdo.Room;
+import es.deusto.spq.jdo.Ticket;
+import es.deusto.spq.jdo.User;
+import es.deusto.spq.resources.CinemaResource;
+import es.deusto.spq.resources.RoomResource;
+import es.deusto.spq.resources.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 /**

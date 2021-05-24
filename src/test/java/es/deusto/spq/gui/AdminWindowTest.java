@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import es.deusto.spq.Main;
+import es.deusto.spq.jdo.Main;
 import es.deusto.spq.types.GuiTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;

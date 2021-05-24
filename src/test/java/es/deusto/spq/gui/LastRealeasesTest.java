@@ -23,8 +23,8 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 //import org.mockito.*;
 
-import es.deusto.spq.Main;
-import es.deusto.spq.Release;
+import es.deusto.spq.jdo.Main;
+import es.deusto.spq.jdo.Release;
 import es.deusto.spq.types.GuiTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;

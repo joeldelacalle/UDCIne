@@ -27,9 +27,9 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
-import es.deusto.spq.Film;
-import es.deusto.spq.Product;
-import es.deusto.spq.jdo.ProductResource;
+import es.deusto.spq.jdo.Film;
+import es.deusto.spq.jdo.Product;
+import es.deusto.spq.resources.ProductResource;
 /**
  * Ventana de alimentos
  *

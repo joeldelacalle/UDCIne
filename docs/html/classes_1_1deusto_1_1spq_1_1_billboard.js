@@ -1,0 +1,27 @@
+var classes_1_1deusto_1_1spq_1_1_billboard =
+[
+    [ "Billboard", "classes_1_1deusto_1_1spq_1_1_billboard.html#a78f71dd508c7a9462edc4512765e9cce", null ],
+    [ "Billboard", "classes_1_1deusto_1_1spq_1_1_billboard.html#acc867e27b15e97afbc5061ce22fb5718", null ],
+    [ "getAgeRestriction", "classes_1_1deusto_1_1spq_1_1_billboard.html#ae24b388dacef63b9ea2a28a494ce96e2", null ],
+    [ "getDescription", "classes_1_1deusto_1_1spq_1_1_billboard.html#a2457174fb62d55f64fa0c0a14e1fa91a", null ],
+    [ "getDirector", "classes_1_1deusto_1_1spq_1_1_billboard.html#a4a18b92532d70321781dbfe710d68c75", null ],
+    [ "getId", "classes_1_1deusto_1_1spq_1_1_billboard.html#a45f0f5e8b400cb3820373668219b91f8", null ],
+    [ "getName", "classes_1_1deusto_1_1spq_1_1_billboard.html#aaa30e04ff3cc9be24c3cf3ff62b14beb", null ],
+    [ "getTrailer", "classes_1_1deusto_1_1spq_1_1_billboard.html#afaf697faba393a86f89c43e36d341fc9", null ],
+    [ "getUrl", "classes_1_1deusto_1_1spq_1_1_billboard.html#ae96a58169e452d62b4e100a83a2472cb", null ],
+    [ "setAgeRestriction", "classes_1_1deusto_1_1spq_1_1_billboard.html#a103c9ea4cca5821849e8e1e54b0c4639", null ],
+    [ "setDescription", "classes_1_1deusto_1_1spq_1_1_billboard.html#a954f361b534bbdb644f3a9ad4dbee8f5", null ],
+    [ "setDirector", "classes_1_1deusto_1_1spq_1_1_billboard.html#a8b055187fcc29974c8c98f35f1a05eae", null ],
+    [ "setFilmBillboard", "classes_1_1deusto_1_1spq_1_1_billboard.html#a77f04c3b1d8e655846273ac7e6847d63", null ],
+    [ "setId", "classes_1_1deusto_1_1spq_1_1_billboard.html#a946a3d93f381de900432f0dced8939a2", null ],
+    [ "setName", "classes_1_1deusto_1_1spq_1_1_billboard.html#a9d16cec2e1d4eeb8b4aba240ba429141", null ],
+    [ "setTrailer", "classes_1_1deusto_1_1spq_1_1_billboard.html#ac9e9197ccbed71d333280639da39cddc", null ],
+    [ "setUrl", "classes_1_1deusto_1_1spq_1_1_billboard.html#adfc5a182637b69f209088f33990277d7", null ],
+    [ "ageRestriction", "classes_1_1deusto_1_1spq_1_1_billboard.html#aefe793df65f93f484c17eeb35a8d94b2", null ],
+    [ "description", "classes_1_1deusto_1_1spq_1_1_billboard.html#a0cc3d250922800060362f9d8a0d92095", null ],
+    [ "director", "classes_1_1deusto_1_1spq_1_1_billboard.html#a3fe4e6406005b0a1263628da143e24f9", null ],
+    [ "id", "classes_1_1deusto_1_1spq_1_1_billboard.html#ad747d84ea86a32ab39a401c95267534e", null ],
+    [ "name", "classes_1_1deusto_1_1spq_1_1_billboard.html#a4e64de18c48e928926302da706623982", null ],
+    [ "trailer", "classes_1_1deusto_1_1spq_1_1_billboard.html#a37741b7c1b9d768cf6c8dafcf23844b9", null ],
+    [ "url", "classes_1_1deusto_1_1spq_1_1_billboard.html#a532672edf82520c6e7c666533af2d14d", null ]
+];

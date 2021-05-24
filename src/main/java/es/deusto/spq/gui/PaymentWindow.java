@@ -41,10 +41,10 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import es.deusto.spq.Order;
-import es.deusto.spq.PayPal;
-import es.deusto.spq.Receipt;
-import es.deusto.spq.jdo.PagoResource;
+import es.deusto.spq.jdo.Order;
+import es.deusto.spq.jdo.PayPal;
+import es.deusto.spq.jdo.Receipt;
+import es.deusto.spq.resources.PagoResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;

@@ -14,9 +14,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import es.deusto.spq.Order;
-import es.deusto.spq.User;
-import es.deusto.spq.jdo.OrderResource;
+import es.deusto.spq.jdo.Order;
+import es.deusto.spq.jdo.User;
+import es.deusto.spq.resources.OrderResource;
 import es.deusto.spq.types.GuiTest;
 
 /**

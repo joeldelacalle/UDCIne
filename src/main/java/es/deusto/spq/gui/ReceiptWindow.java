@@ -21,9 +21,9 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import es.deusto.spq.Receipt;
-import es.deusto.spq.User;
-import es.deusto.spq.jdo.UserResource;
+import es.deusto.spq.jdo.Receipt;
+import es.deusto.spq.jdo.User;
+import es.deusto.spq.resources.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;

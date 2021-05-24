@@ -23,7 +23,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import es.deusto.spq.User;
+import es.deusto.spq.jdo.User;
 
 /**
  * Ventana de registro.

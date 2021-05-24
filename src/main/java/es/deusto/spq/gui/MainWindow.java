@@ -29,12 +29,12 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
-import es.deusto.spq.Billboard;
-import es.deusto.spq.Film;
-import es.deusto.spq.User;
-import es.deusto.spq.jdo.BillboardResource;
-import es.deusto.spq.jdo.FilmResources;
-import es.deusto.spq.jdo.UserResource;
+import es.deusto.spq.jdo.Billboard;
+import es.deusto.spq.jdo.Film;
+import es.deusto.spq.jdo.User;
+import es.deusto.spq.resources.BillboardResource;
+import es.deusto.spq.resources.FilmResources;
+import es.deusto.spq.resources.UserResource;
 
 /**
  * Esta es la ventana principal de nuestra aplicacion

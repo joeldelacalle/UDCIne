@@ -10,8 +10,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import es.deusto.spq.Order;
-import es.deusto.spq.Receipt;
+import es.deusto.spq.jdo.Order;
+import es.deusto.spq.jdo.Receipt;
 import es.deusto.spq.types.GuiTest;
 
 /**

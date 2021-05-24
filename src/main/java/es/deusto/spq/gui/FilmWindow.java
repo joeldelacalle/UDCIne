@@ -32,11 +32,11 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import es.deusto.spq.Billboard;
-import es.deusto.spq.Film;
-import es.deusto.spq.User;
-import es.deusto.spq.jdo.BillboardResource;
-import es.deusto.spq.jdo.UserResource;
+import es.deusto.spq.jdo.Billboard;
+import es.deusto.spq.jdo.Film;
+import es.deusto.spq.jdo.User;
+import es.deusto.spq.resources.BillboardResource;
+import es.deusto.spq.resources.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;

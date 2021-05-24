@@ -16,8 +16,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import es.deusto.spq.Film;
-import es.deusto.spq.Main;
+import es.deusto.spq.jdo.Film;
+import es.deusto.spq.jdo.Main;
 import es.deusto.spq.types.GuiTest;
 import es.deusto.spq.util.PreparedData;
 import jakarta.ws.rs.client.Client;
