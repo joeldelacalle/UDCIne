@@ -123,11 +123,13 @@ public class CinemaLoginWindow extends JFrame {
 		txtPassword1.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
-				if (txtPassword1.getText().equals("Password")) {
-					txtPassword1.setEchoChar('-');
+				if (txtPassword1.getText().equals("Contraseña")) {
 					txtPassword1.setText("");
+					txtPassword1.setEchoChar('\u25CF');
+					
 				} else {
 					txtPassword1.selectAll();
+					txtPassword1.setEchoChar('\u25CF');
 				}
 
 			}
