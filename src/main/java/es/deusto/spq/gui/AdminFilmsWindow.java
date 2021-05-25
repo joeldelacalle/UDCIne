@@ -234,8 +234,7 @@ public class AdminFilmsWindow extends JFrame {
 
 			@Override
 			public void keyTyped(KeyEvent e) {
-				maxLengthdesc( txtDescription);
-				e.consume();
+				maxLengthdesc(txtDescription, e);
 			}
 
 			@Override
@@ -409,14 +408,15 @@ public class AdminFilmsWindow extends JFrame {
 	 *
 	 */
 
-	public void maxLengthdesc( JTextArea txtDescription) {
+	public void maxLengthdesc( JTextArea txtDescription, KeyEvent e) {
 
 		int max = 255;
 		if (txtDescription.getText().length() > max + 1) {
 			String shortened = txtDescription.getText().substring(0, max);
 			txtDescription.setText(shortened);
+			e.consume();
 		} else if (txtDescription.getText().length() > max) {
-			
+			e.consume();
 		}
 
 	}
