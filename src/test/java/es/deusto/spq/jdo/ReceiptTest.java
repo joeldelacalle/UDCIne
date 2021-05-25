@@ -115,8 +115,10 @@ public class ReceiptTest {
 	 */
 	@Test
 	public void testToString() {
-		assertEquals("Receipt [id=0" + ", mail=perro@gmail.com" + ", date=" + dfd1 + ", order=" + o + ", price=1" + "]",
+		assertEquals("Factura: Id = "+"0" +"| Email=" + "perro@gmail.com" + "| Fecha = " + dfd1 + "| Pedido = " + o + "| Precio = " + "1",
 				r.toString());
+		
+		
 	}
 
 }

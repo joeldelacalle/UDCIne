@@ -134,8 +134,7 @@ public class Receipt {
 	 */
 	@Override
 	public String toString() {
-		return "Receipt [id=" + id + ", mail=" + mail + ", date=" + date + ", order=" + order + ", price=" + price
-				+ "]";
+		return "Factura: Id = " + id + "| Email=" + mail + "| Fecha = " + date + "| Pedido = " + order + "| Precio = " + price;
 	}
 
 }
