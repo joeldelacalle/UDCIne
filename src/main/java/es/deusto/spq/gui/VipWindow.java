@@ -20,6 +20,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.ListModel;
+import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import es.deusto.spq.jdo.Order;
@@ -53,12 +54,35 @@ public class VipWindow extends JFrame {
 	public VipWindow() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 750, 501);
+		setBounds(100, 100, 600, 501);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(64, 224, 208));
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 139), 2));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		final JLabel lblFlecha = new JLabel("<-");
+		lblFlecha.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				dispose();
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblFlecha.setForeground(Color.RED);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblFlecha.setForeground(Color.WHITE);
+			}
+		});
+		lblFlecha.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFlecha.setHorizontalTextPosition(SwingConstants.CENTER);
+		lblFlecha.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblFlecha.setForeground(new Color(255, 255, 255));
+		lblFlecha.setBounds(29, 27, 25, 31);
+		contentPane.add(lblFlecha);
 		final JLabel lblNewLabel_1 = new JLabel("X");
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
 			@Override
@@ -81,15 +105,16 @@ public class VipWindow extends JFrame {
 		});
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblNewLabel_1.setBounds(641, 24, 22, 14);
+		lblNewLabel_1.setBounds(550, 24, 22, 14);
 		contentPane.add(lblNewLabel_1);
 
 		JLabel lblName = new JLabel("USER:");
-		lblName.setBounds(36, 21, 85, 29);
+		lblName.setFont(new Font("Tahoma", Font.BOLD, 17));
+		lblName.setBounds(55, 91, 85, 29);
 		contentPane.add(lblName);
 
 		listOrders = new JList<Order>(listModelOrders);
-		listOrders.setBounds(409, 52, 276, 389);
+		listOrders.setBounds(274, 57, 276, 389);
 		contentPane.add(listOrders);
 
 		/**
@@ -97,6 +122,7 @@ public class VipWindow extends JFrame {
 		 */
 
 		JButton btnViewOrders = new JButton("Ver Mis Pedidos");
+		btnViewOrders.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnViewOrders.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -104,17 +130,19 @@ public class VipWindow extends JFrame {
 
 			}
 		});
-		btnViewOrders.setBounds(36, 77, 142, 58);
+		btnViewOrders.setBounds(29, 163, 142, 58);
 		contentPane.add(btnViewOrders);
 
 	}
+	
 
 	/**
 	 * Obtener el nombre del usuario actualmente activo
 	 */
 	public void SetUserName(User u) {
-		this.lblUserName.setBounds(131, 24, 202, 26);
+		this.lblUserName.setBounds(130, 90, 202, 26);
 		this.lblUserName.setText(u.getNickname());
+		lblUserName.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		this.contentPane.add(lblUserName);
 	}
 
