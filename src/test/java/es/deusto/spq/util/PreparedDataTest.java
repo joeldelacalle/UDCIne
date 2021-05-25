@@ -5,11 +5,15 @@ package es.deusto.spq.util;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
+
+import es.deusto.spq.types.GuiTest;
 
 /**
  * Clase Test PreparedData
  *
  */
+@Category(GuiTest.class)
 public class PreparedDataTest {
 
 	private static PreparedData pd;

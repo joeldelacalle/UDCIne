@@ -160,28 +160,6 @@
 				<executions>
 					<execution>
 						<phase>compile</phase>
-						<goals>
-							<goal>enhance</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.6</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>report</id>
-						<phase>test</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
 					</execution>
 				</executions>
 			</plugin>
@@ -280,6 +258,25 @@
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<groupId>org.jacoco</groupId>
+						<artifactId>jacoco-maven-plugin</artifactId>
+						<version>0.8.6</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>prepare-agent</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>report</id>
+								<phase>test</phase>
+								<goals>
+									<goal>report</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
@@ -310,7 +307,9 @@
 						<artifactId>maven-failsafe-plugin</artifactId>
 						<version>2.22.0</version>
 						<configuration>
+							<runOrder>alphabetical</runOrder>
 							<includes>
+								<include>**/*DataTest*</include>
 								<include>**/*WindowTest*</include>
 								<include>**/Last*Test*</include>
 							</includes>
@@ -322,6 +321,25 @@
 								<goals>
 									<goal>integration-test</goal>
 									<goal>verify</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.jacoco</groupId>
+						<artifactId>jacoco-maven-plugin</artifactId>
+						<version>0.8.6</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>prepare-agent</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>report</id>
+								<phase>test</phase>
+								<goals>
+									<goal>report</goal>
 								</goals>
 							</execution>
 						</executions>
@@ -341,6 +359,7 @@
 							<excludes>
 								<exclude>**/*WindowTest*</exclude>
 								<exclude>**/*ResourceTest*</exclude>
+								<exclude>**/*Data*</exclude>
 							</excludes>
 							<excludedGroups>es.deusto.spq.types.IntegrationTest,
 								es.deusto.spq.types.GuiTest</excludedGroups>
@@ -349,6 +368,25 @@
 							<execution>
 								<goals>
 									<goal>test</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.jacoco</groupId>
+						<artifactId>jacoco-maven-plugin</artifactId>
+						<version>0.8.6</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>prepare-agent</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>report</id>
+								<phase>test</phase>
+								<goals>
+									<goal>report</goal>
 								</goals>
 							</execution>
 						</executions>
@@ -390,6 +428,25 @@
 								<goals>
 									<goal>integration-test</goal>
 									<goal>verify</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.jacoco</groupId>
+						<artifactId>jacoco-maven-plugin</artifactId>
+						<version>0.8.6</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>prepare-agent</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>report</id>
+								<phase>test</phase>
+								<goals>
+									<goal>report</goal>
 								</goals>
 							</execution>
 						</executions>
