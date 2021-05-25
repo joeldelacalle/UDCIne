@@ -27,7 +27,6 @@ public class PaymentWindowTest {
 	private JPasswordField passwordField;
 	private JTextField textField;
 	private Receipt r;
-	private JTextField textFieldPhoneNumber = new JTextField();
 	private JTextField textFieldName = new JTextField();
 	private JTextField textFieldNickname = new JTextField();
 	private JTextField textFieldEmail = new JTextField();
@@ -58,7 +57,7 @@ public class PaymentWindowTest {
 		u.setEmail(textFieldEmail.getText());
 		u.setPassword(password.getText());
 		u.setPhoneNumber(phone);
-		textFieldPhoneNumber = new JTextField("99");
+		new JTextField("99");
 	}
 
 	/**

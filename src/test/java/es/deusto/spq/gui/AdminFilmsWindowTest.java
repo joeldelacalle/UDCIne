@@ -43,7 +43,6 @@ public class AdminFilmsWindowTest {
 	private HttpServer server;
 	private WebTarget appTarget;
 	private WebTarget FilmsTarget;
-	private List<Film> films;
 	private Film filmA;
 	private String selectedFilm;
 	private DefaultListModel<Film> fList;
@@ -72,7 +71,7 @@ public class AdminFilmsWindowTest {
 
 		GenericType<List<Film>> genericType = new GenericType<List<Film>>() {
 		};
-		films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+		FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 
 		fList = new DefaultListModel<Film>();
 		new PreparedData();

@@ -4,7 +4,6 @@
 package es.deusto.spq.gui;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
@@ -28,11 +27,6 @@ public class VipWindowTest {
 
 	private VipWindow vw;
 	private User user;
-	private List<Order> listExpected;
-	private OrderResource or;
-	private Order o1;
-	private Order o2;
-	private Order o3;
 	private ListModel<Order> listModelOrders;
 	private JLabel lblUserName;
 
@@ -46,20 +40,20 @@ public class VipWindowTest {
 
 		vw = new VipWindow();
 		user = new User();
-		or = new OrderResource();
-		listExpected = new ArrayList<Order>();
+		new OrderResource();
+		new ArrayList<Order>();
 
 		user.setEmail("jaimesantamazo@gmail.com");
 		user.setNickname("jaimesanta");
 
-		o1 = new Order("jaimesantamazo@gmail.com", null, 3, "Pendiente de pago", "Vacio",
+		new Order("jaimesantamazo@gmail.com", null, 3, "Pendiente de pago", "Vacio",
 				"pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2 Entrada:3 fila:3 asiento:3",
 				24);
 
-		o2 = new Order("jaimesantamazo@gmail.com", null, 1, "Pendiente de pago", "Vacio",
+		new Order("jaimesantamazo@gmail.com", null, 1, "Pendiente de pago", "Vacio",
 				"pelicula:Infinity war Entrada:1 fila:1 asiento:1", 8);
 
-		o3 = new Order("jaimesantamazo@gmail.com", null, 2, "Pendiente de pago", "Vacio",
+		new Order("jaimesantamazo@gmail.com", null, 2, "Pendiente de pago", "Vacio",
 				"pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2", 16);
 		listModelOrders = new DefaultListModel<Order>();
 		lblUserName = new JLabel();

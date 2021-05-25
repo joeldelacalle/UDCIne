@@ -15,8 +15,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import com.toedter.calendar.JDateChooser;
-
 import es.deusto.spq.jdo.Cinema;
 import es.deusto.spq.jdo.Film;
 import es.deusto.spq.jdo.Main;
@@ -43,21 +41,16 @@ public class AdminRoomsWindowTest {
 	private GenericType<List<Cinema>> genericType0;
 	private List<Cinema> cinemas;
 	private GenericType<List<Room>> genericType1;
-	private List<Room> rooms;
 	private GenericType<List<Film>> genericType2;
 	private List<Film> films;
 
 	private Room room1;
 	private Cinema cinema1;
 	private Film filmA;
-	private long roomCinemaId;
-
 	private Date date = null;
 	private final JComboBox<Film> comboFilm = new JComboBox<Film>();
 	private final JComboBox<Cinema> comboCinema = new JComboBox<Cinema>();
 	private final JComboBox<String> comboRoom = new JComboBox<String>();
-	private JDateChooser calendar = new JDateChooser("yyyy/MM/dd", "####/##/##", '_');
-
 	private int selectedCinema0;
 	private int selectedCinema1;
 	private int selectedCinema2;
@@ -88,7 +81,7 @@ public class AdminRoomsWindowTest {
 
 		genericType1 = new GenericType<List<Room>>() {
 		};
-		rooms = roomsTarget.request(MediaType.APPLICATION_JSON).get(genericType1);
+		roomsTarget.request(MediaType.APPLICATION_JSON).get(genericType1);
 		genericType2 = new GenericType<List<Film>>() {
 		};
 		films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType2);

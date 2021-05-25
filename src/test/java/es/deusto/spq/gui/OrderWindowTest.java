@@ -32,8 +32,6 @@ public class OrderWindowTest {
 	private Film f = new Film(null, null, null, numberTickets, null, null);
 	private User u = new User();
 
-	private Product p;
-
 	/**
 	 * Metodo para establecer el apodo de un Usuario y construir objeto Producto con
 	 * sus atributos correspondientes.
@@ -43,7 +41,7 @@ public class OrderWindowTest {
 	public void setUp() throws Exception {
 
 		u.setNickname("hola");
-		p = new Product("palomitas", "descripcion", numberTickets, "");
+		new Product("palomitas", "descripcion", numberTickets, "");
 
 	}
 

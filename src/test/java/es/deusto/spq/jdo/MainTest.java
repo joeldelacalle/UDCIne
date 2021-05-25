@@ -14,12 +14,11 @@ import org.junit.Test;
 
 public class MainTest {
 
-	private Main m;
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	@Before
 	public void setUp() throws Exception {
-		m = new Main();
+		new Main();
 	}
 
 	@After

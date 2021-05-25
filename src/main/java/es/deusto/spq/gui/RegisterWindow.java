@@ -29,6 +29,7 @@ import es.deusto.spq.jdo.User;
  */
 public class RegisterWindow extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textFieldPhoneNumber = new JTextField();
 	private JTextField textFieldName = new JTextField();

@@ -40,7 +40,6 @@ import es.deusto.spq.resources.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
-import jakarta.ws.rs.core.GenericType;
 
 /**
  * Ventana Pelicula
@@ -53,8 +52,6 @@ public class FilmWindow extends JFrame {
 	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
 	final WebTarget FilmsTarget = appTarget.path("films");
 
-	private GenericType<List<Film>> genericType = new GenericType<List<Film>>() {
-	};
 	private BillboardResource br = new BillboardResource();
 	private List<Billboard> billFilms = br.getBillboardFilms();
 	private List<Film> films = new ArrayList<Film>();

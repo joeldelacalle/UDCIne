@@ -25,7 +25,6 @@ import es.deusto.spq.jdo.User;
 import es.deusto.spq.types.GuiTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
-import jakarta.ws.rs.client.WebTarget;
 
 /**
  * Clase test Ventana Pelicula
@@ -48,8 +47,6 @@ public class FilmWindowTest {
 	private List<Film> filmList;
 
 	private HttpServer server;
-	private WebTarget appTarget;
-
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	/**
@@ -63,7 +60,7 @@ public class FilmWindowTest {
 		server = Main.startServer();
 		Client c = ClientBuilder.newClient();
 
-		appTarget = c.target(Main.BASE_URI);
+		c.target(Main.BASE_URI);
 
 		u = new User();
 

@@ -23,7 +23,6 @@ import es.deusto.spq.jdo.Main;
 import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
-import jakarta.ws.rs.client.WebTarget;
 
 /**
  * Clase test BillboardResource
@@ -39,7 +38,6 @@ public class BillboardResourceTest {
 	@Rule
 	public ContiPerfRule rule = new ContiPerfRule();
 	private HttpServer server;
-	private WebTarget appTarget;
 	private Client c;
 
 	/**
@@ -50,7 +48,7 @@ public class BillboardResourceTest {
 	public void setUp() throws Exception {
 		server = Main.startServer();
 		c = ClientBuilder.newClient();
-		appTarget = c.target(Main.BASE_URI);
+		c.target(Main.BASE_URI);
 	}
 
 	/**
