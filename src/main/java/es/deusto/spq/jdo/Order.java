@@ -162,8 +162,14 @@ public class Order {
 	 */
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", mail=" + mail + ", date=" + date + ", tickets=" + tickets + ", products="
-				+ products + ", paymentMethod=" + paymentMethod + ", price=" + price + "]";
+		return "PEDIDO CONFIRMADO" + " .%n " + 
+				"-------------------------------" + " .%n " +
+				"Id de pedido: " + id + ".%n " + 
+				"Fecha: " + date +  ".%n " +
+				"Tickets: " + tickets + 
+				"Productos: "+ products + ".%n " +
+				"Método de pago: " + paymentMethod + ".%n " + 
+				"Precio: " + price + "]";
 	}
 
 }
