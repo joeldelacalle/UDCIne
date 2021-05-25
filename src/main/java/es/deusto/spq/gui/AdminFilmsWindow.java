@@ -277,35 +277,12 @@ public class AdminFilmsWindow extends JFrame {
 		contentPane.add(areaScrollPane);
 
 		JButton btnAdd = new JButton("Añadir");
-		btnAdd.addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-
-			}
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				añadirPeliculaBd(txtName, txtDirector, txtFoto, cbAge, txtDescription,
-						textFieldTrailer.getText().toString());
-
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				eliminarPeliculaBd(listBillboard.getModel(), listBillboard.getSelectedValue().getName());
 			}
 		});
+		
 		btnAdd.setBounds(481, 447, 200, 30);
 		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnAdd);

@@ -1,0 +1,8 @@
+ -----------------
+|-Fecha de compra: Tue May 25 09:50:04 CEST 2021
+|-Email: lucasdeprit@gmail.com
+|-Tickets: pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2
+|-Products: Vacio
+|-Paymentmethod: Pagado con Paypal
+|-Price: 16
+ -----------------

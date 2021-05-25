@@ -307,6 +307,7 @@ public class MainWindow extends JFrame {
 		UserResource ur = new UserResource();
 		fw.SetUserName(ur.getUser(lblUserName.getText()));
 		fw.setVisible(true);
+		dispose();
 	}
 
 	/**

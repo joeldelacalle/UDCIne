@@ -44,7 +44,9 @@ import javax.swing.border.EmptyBorder;
 import es.deusto.spq.jdo.Order;
 import es.deusto.spq.jdo.PayPal;
 import es.deusto.spq.jdo.Receipt;
+import es.deusto.spq.jdo.User;
 import es.deusto.spq.resources.PagoResource;
+import es.deusto.spq.resources.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -65,6 +67,8 @@ public class PaymentWindow extends JFrame {
 	Client cliente = ClientBuilder.newClient();
 	final WebTarget appTarget = cliente.target("http://localhost:8080/myapp");
 	final WebTarget pagoTarget = appTarget.path("paypal");
+
+	private JLabel lblUserName = new JLabel("");
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	/**
@@ -189,7 +193,7 @@ public class PaymentWindow extends JFrame {
 	public void PagarPaypal(Order o, JTextField textField, JPasswordField passwordField) {
 		String email = textField.getText();
 		String contraseña = String.valueOf(passwordField.getPassword());
-		
+
 		if (!email.matches(EMAIL_PATTERN)) {
 			JOptionPane.showMessageDialog(null, "Email no valido", "ERROR", JOptionPane.ERROR_MESSAGE);
 		} else {
@@ -198,7 +202,7 @@ public class PaymentWindow extends JFrame {
 			PayPal paypal = pr.getPaypal(email);
 
 			if (paypal.getPassword().equals(contraseña)) {
-				
+
 				o.setPaymentMethod("Pagado con Paypal");
 				String Email = o.getMail();
 				String Paymentmethod = o.getPaymentMethod();
@@ -232,9 +236,9 @@ public class PaymentWindow extends JFrame {
 
 				try {
 					tx.begin();
-					
+
 					mandarMensaje(Email, r);
-					
+
 					pm.makePersistent(r);
 					pm.makePersistent(o);
 
@@ -261,7 +265,7 @@ public class PaymentWindow extends JFrame {
 	 * Metodo para pagar En caja
 	 */
 	public void PagarCaja(Order o) {
-		
+
 		o.setPaymentMethod("Pendiente de pago");
 		String Email = o.getMail();
 		String Paymentmethod = o.getPaymentMethod();
@@ -285,7 +289,7 @@ public class PaymentWindow extends JFrame {
 			archivo.close();
 		} catch (IOException e6) {
 			logger.log(Level.WARNING, "ERROR", e6);
-			
+
 		}
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
@@ -313,6 +317,8 @@ public class PaymentWindow extends JFrame {
 		}
 		dispose();
 		MainWindow mw = new MainWindow();
+		UserResource ur = new UserResource();
+		mw.SetUserName(ur.getUser(lblUserName.getText()));
 		mw.setVisible(true);
 	}
 
@@ -359,6 +365,12 @@ public class PaymentWindow extends JFrame {
 		} catch (MessagingException mex) {
 			logger.log(Level.WARNING, "ERROR", mex);
 		}
+	}
+
+	public void SetUserName(User u) {
+		this.lblUserName.setBounds(525, 28, 46, 14);
+		this.lblUserName.setText(u.getNickname());
+		this.contentPane.add(this.lblUserName);
 	}
 
 }

@@ -1,0 +1,15 @@
+ -----------------
+|-Fecha de compra: Tue May 25 12:29:29 CEST 2021
+|-Email: jaimesantamazo@gmail.com
+|-Tickets: pelicula:Iron Man Entrada:1 fila:1 asiento:1
+|-Products: Productos Producto:1 Nombre:Palomitas Medianas Producto:2 Nombre:Palomitas Grandes + Coca Cola
+|-Paymentmethod: Pendiente de pago
+|-Price: 20
+ ----------------- -----------------
+|-Fecha de compra: Tue May 25 12:48:32 CEST 2021
+|-Email: jaimesantamazo@gmail.com
+|-Tickets: pelicula:Iron Man Entrada:1 fila:1 asiento:1
+|-Products: Productos Producto:1 Nombre:Palomitas Medianas Producto:2 Nombre:Palomitas Grandes + Coca Cola
+|-Paymentmethod: Pendiente de pago
+|-Price: 20
+ -----------------

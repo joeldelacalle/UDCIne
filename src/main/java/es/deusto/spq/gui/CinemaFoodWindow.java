@@ -24,18 +24,22 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.ListModel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import es.deusto.spq.jdo.Film;
 import es.deusto.spq.jdo.Product;
+import es.deusto.spq.jdo.User;
 import es.deusto.spq.resources.ProductResource;
+import es.deusto.spq.resources.UserResource;
+
 /**
  * Ventana de alimentos
  *
  */
 public class CinemaFoodWindow extends JFrame {
-	
+
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
@@ -43,11 +47,13 @@ public class CinemaFoodWindow extends JFrame {
 	private DefaultListModel<Product> listmodelAlimentos;
 	private ProductResource pr = new ProductResource();
 	private List<Product> products = pr.getProducts();
+	private JLabel lblUserName = new JLabel("");
+
 	/**
 	 * Crea la ventana de alimentos
 	 *
 	 */
-	public CinemaFoodWindow(final Film selectedFilm) {
+	public CinemaFoodWindow(final Film selectedFilm, final ListModel<Film> listModelShoppingCart) {
 
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -183,8 +189,12 @@ public class CinemaFoodWindow extends JFrame {
 		btnAadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				OrderWindow ow = new OrderWindow(selectedFilm);
+
 				addProducts(ow, listmodelAlimentos);
+				UserResource ur = new UserResource();
+				ow.SetUserName(ur.getUser(lblUserName.getText()));
 				ow.setVisible(true);
+				ow.setListModelShoppingCart(listModelShoppingCart, selectedFilm);
 				dispose();
 
 			}
@@ -196,6 +206,7 @@ public class CinemaFoodWindow extends JFrame {
 		contentPane.add(btnAadir);
 
 	}
+
 	/**
 	 * Metodo para añadir productos
 	 *
@@ -209,9 +220,10 @@ public class CinemaFoodWindow extends JFrame {
 
 		ow.setProducts(listProducts);
 	}
+
 	/**
 	 * Metodo para establecer la imagen. Ajusta la altura y anchura de la imagen.
-	 *	
+	 * 
 	 */
 	public void btnSetImageIcon(String urlS, JLabel jb) throws IOException {
 		URL url = new URL(urlS);
@@ -227,5 +239,11 @@ public class CinemaFoodWindow extends JFrame {
 		Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		ImageIcon resizeImg = new ImageIcon(newImg);
 		jb.setIcon(resizeImg);
+	}
+
+	public void SetUserName(User u) {
+		this.lblUserName.setBounds(131, 24, 202, 26);
+		this.lblUserName.setText(u.getNickname());
+		this.contentPane.add(this.lblUserName);
 	}
 }

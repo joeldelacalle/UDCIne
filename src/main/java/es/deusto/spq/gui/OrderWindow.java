@@ -23,6 +23,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
+import javax.swing.ListModel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
@@ -38,12 +39,12 @@ import es.deusto.spq.resources.RoomResource;
 import es.deusto.spq.resources.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
+
 /**
  * Ventana de pedidos
  */
 public class OrderWindow extends JFrame {
 
-	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JSpinner spinner;
@@ -58,6 +59,7 @@ public class OrderWindow extends JFrame {
 	private List<Product> products = null;
 	private int numberTickets = 0;
 	private JLabel lblUserName = new JLabel("");
+	private final DefaultListModel<Film> listModelShoppingCart;
 
 	/**
 	 * Obtener los productos Para la posterior generación del pedido
@@ -138,7 +140,7 @@ public class OrderWindow extends JFrame {
 		lblSession.setBounds(10, 235, 139, 62);
 		contentPane.add(lblSession);
 
-		final DefaultListModel<Film> listModelShoppingCart = new DefaultListModel<Film>();
+		listModelShoppingCart = new DefaultListModel<Film>();
 		JList<Film> list = new JList<Film>(listModelShoppingCart);
 		list.setBounds(409, 52, 276, 389);
 		contentPane.add(list);
@@ -147,7 +149,7 @@ public class OrderWindow extends JFrame {
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				for (int i = 0; i < (Integer) spinner.getValue(); i++) {
-					listModelShoppingCart.addElement(selectedFilm);
+					setListModelShoppingCart(listModelShoppingCart, selectedFilm);
 				}
 				numberTickets = numberTickets + (int) spinner.getValue();
 
@@ -185,7 +187,9 @@ public class OrderWindow extends JFrame {
 		JButton btnComida = new JButton("Comida");
 		btnComida.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CinemaFoodWindow vac = new CinemaFoodWindow(selectedFilm);
+				CinemaFoodWindow vac = new CinemaFoodWindow(selectedFilm, listModelShoppingCart);
+				UserResource ur = new UserResource();
+				vac.SetUserName(ur.getUser(lblUserName.getText()));
 				vac.setVisible(true);
 				dispose();
 			}
@@ -263,6 +267,11 @@ public class OrderWindow extends JFrame {
 		o.setPrice(totalPrice);
 
 		PaymentWindow pw = new PaymentWindow(o);
+		pw.SetUserName(ur.getUser(lblUserName.getText()));
 		pw.setVisible(true);
+	}
+
+	public void setListModelShoppingCart(ListModel<Film> listModelShoppingCart, Film film) {
+		this.listModelShoppingCart.addElement(film);
 	}
 }

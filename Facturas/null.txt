@@ -5,4 +5,11 @@
 |-Products: Productos Producto:1 Nombre:Palomitas Medianas Producto:2 Nombre:Palomitas Grandes + Coca Cola
 |-Paymentmethod: Pendiente de pago
 |-Price: 28
+ ----------------- -----------------
+|-Fecha de compra: Tue May 25 12:12:00 CEST 2021
+|-Email: null
+|-Tickets: pelicula:Iron Man Entrada:1 fila:1 asiento:1
+|-Products: Productos Producto:1 Nombre:Palomitas Medianas
+|-Paymentmethod: Pendiente de pago
+|-Price: 12
  -----------------

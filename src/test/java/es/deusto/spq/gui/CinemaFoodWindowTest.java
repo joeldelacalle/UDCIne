@@ -47,7 +47,7 @@ public class CinemaFoodWindowTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		cfw = new CinemaFoodWindow(selectedFilm);
+		cfw = new CinemaFoodWindow(selectedFilm, null);
 		ow = new OrderWindow(selectedFilm);
 
 	}

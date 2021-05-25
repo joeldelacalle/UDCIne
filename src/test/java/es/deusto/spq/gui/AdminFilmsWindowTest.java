@@ -127,7 +127,7 @@ public class AdminFilmsWindowTest {
 	 * Test para que la descripcion no sea mas larga de 255 
 	 *
 	 */
-	@Ignore
+	/*@Ignore
 	@Test
 	public void maxLengthdescTest() {
 		txtDescription.setText(
@@ -137,9 +137,9 @@ public class AdminFilmsWindowTest {
 						+ "\r\n"
 						+ "Se denomina historiador o historiadora a la persona encargada del estudio de la historia. Al historiador profesional se le concibe como el especialista en la disciplina académica de la historia, y al historiador no profesional se le suele denominar cronista.2​");
 
-		//afw.maxLengthdesc(txtDescription, KeyEvent e);
+		//afw.maxLengthdesc(txtDescription,  e);
 		
 
-	}
+	}*/
 
 }

@@ -33,6 +33,7 @@ import es.deusto.spq.jdo.Assessment;
 import es.deusto.spq.jdo.Cinema;
 import es.deusto.spq.jdo.Film;
 import es.deusto.spq.jdo.User;
+import es.deusto.spq.resources.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -206,6 +207,8 @@ public class RatingWindow extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				MainWindow vp = new MainWindow();
+				UserResource ur = new UserResource();
+				SetUserName(ur.getUser(labeluser.getText()));
 				vp.setVisible(true);
 				dispose();
 			}
