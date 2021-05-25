@@ -11,13 +11,13 @@ La configuración por defecto para la base de datos y los usuarios puede ser act
 
 Creación de las tablas
 
+Antes de crear las tablas es necesario ejecutar el Enchance del proyecto
+
+    mvn datanucleus:enhance
+
 Para la creación de las tablas se debe ejecutar el comando de maven
 
     mvn compile datanucleus:schema-create
-
-Enhance del proyecto
-
-    mvn datanucleus:enhance
 
 Datos de prueba
 
