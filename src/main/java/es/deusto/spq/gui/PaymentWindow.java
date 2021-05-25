@@ -38,6 +38,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
@@ -50,8 +51,6 @@ import es.deusto.spq.resources.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
-import javax.swing.JScrollBar;
-import javax.swing.JScrollPane;
 
 /**
  * Ventana de Pago.
@@ -91,7 +90,6 @@ public class PaymentWindow extends JFrame {
 		JList<Order> list = new JList<Order>(listapedido);
 		list.setBounds(45, 68, 275, 317);
 		listapedido.addElement(o);
-		
 
 		final JLabel lblNewLabel_1 = new JLabel("X");
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
@@ -187,7 +185,7 @@ public class PaymentWindow extends JFrame {
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblNewLabel_4.setBounds(440, 272, 136, 23);
 		contentPane.add(lblNewLabel_4);
-		
+
 		JScrollPane jcroll = new JScrollPane(list);
 		jcroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		jcroll.setBounds(45, 68, 275, 317);

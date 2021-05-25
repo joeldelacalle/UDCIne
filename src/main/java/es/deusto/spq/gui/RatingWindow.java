@@ -33,7 +33,6 @@ import es.deusto.spq.jdo.Assessment;
 import es.deusto.spq.jdo.Cinema;
 import es.deusto.spq.jdo.Film;
 import es.deusto.spq.jdo.User;
-import es.deusto.spq.resources.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -92,7 +91,6 @@ public class RatingWindow extends JFrame {
 		List<Film> films = FilmsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 
 		for (Film film : films) {
-			System.out.println(film.getName());
 			comboBox.addItem(film.getName());
 		}
 
@@ -105,7 +103,6 @@ public class RatingWindow extends JFrame {
 		List<Cinema> cinemas = CinemasTarget.request(MediaType.APPLICATION_JSON).get(genericType2);
 
 		for (Cinema cinema : cinemas) {
-			System.out.println(cinema.getName());
 			comboBox_1.addItem(cinema.getName());
 		}
 
