@@ -70,7 +70,6 @@ public class AdminUsersWindow extends JFrame {
 
 		listausuarios.clear();
 		for (User user : users) {
-			System.out.println(user.getName());
 			listausuarios.addElement(user);
 		}
 

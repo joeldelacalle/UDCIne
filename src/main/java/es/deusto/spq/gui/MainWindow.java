@@ -118,6 +118,18 @@ public class MainWindow extends JFrame {
 		lblX.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblX.setForeground(new Color(255, 255, 255));
 		contentPane.add(lblX);
+		
+		JButton btnLogout = new JButton("Cerrar Sesión");
+		btnLogout.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				initLoginWindow();
+			}
+		});
+		btnLogout.setBounds(550, 10, 150, 31);
+		btnLogout.setFont(new Font("Tahoma", Font.BOLD, 15));
+		contentPane.add(btnLogout);
 
 		/**
 		 * Botón que ejecuta la ventana de valoraciones pasandole los datos necesarios
@@ -330,6 +342,12 @@ public class MainWindow extends JFrame {
 	public void initLastReleasesWindow() {
 		LastReleasesWindow vne = new LastReleasesWindow();
 		vne.setVisible(true);
+		dispose();
+	}
+	
+	public void initLoginWindow() {
+		CinemaLoginWindow clw = new CinemaLoginWindow();
+		clw.setVisible(true);
 		dispose();
 	}
 }
