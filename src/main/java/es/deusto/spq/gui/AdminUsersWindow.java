@@ -97,6 +97,8 @@ public class AdminUsersWindow extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane(lista);
 		scrollPane.setBounds(45, 126, 517, 281);
+		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		
 		contentPane.add(scrollPane);
 		lblX.setHorizontalAlignment(SwingConstants.CENTER);
 		lblX.setHorizontalTextPosition(SwingConstants.CENTER);
