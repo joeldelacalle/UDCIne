@@ -112,8 +112,8 @@ public class Cinema {
 	 */
 	@Override
 	public String toString() {
-		return "Cinema [id=" + id + ", name=" + name + ", city=" + city + ", address=" + address + ", phoneNumber="
-				+ phoneNumber + "]";
+		
+		return "Nombre: " + name + ", ciudad:" + city;
 	}
 
 }

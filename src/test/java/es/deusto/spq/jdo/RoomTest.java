@@ -111,7 +111,7 @@ public class RoomTest {
 	@Test
 	public void testToString() {
 		assertEquals(
-				"Room [id=0" + ", cinema=" + c + ", film=" + f + ", name=name" + ", date=null" + ", seats=100" + "]",
+				"Cine" + c + ", Pelicula: " + f,
 				r.toString());
 	}
 }

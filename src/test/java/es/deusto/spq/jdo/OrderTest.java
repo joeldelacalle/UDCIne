@@ -133,8 +133,15 @@ public class OrderTest {
 	 */
 	@Test
 	public void testToString() {
-		assertEquals("Order [id=0" + ", mail=perro@gmail.com" + ", date=" + dfd1 + ", tickets=" + tickets
-				+ ", products=" + products + ", paymentMethod=En caja" + ", price=1" + "]", o.toString());
+		assertEquals("PEDIDO CONFIRMADO" + " \r\n " + 
+				"-------------------------------" + " \r\n " +
+				"Id de pedido: " + "0" + " \r\n " + 
+				"Fecha: " + dfd1 +  " \r\n " +
+				"Tickets: " + tickets + " \r\n " +
+				"Productos: "+ products + " \r\n " +
+				"Método de pago: " + "En caja" + " \r\n " + 
+				"Precio: " + "1", o.toString());
+
 	}
 
 }

@@ -130,8 +130,7 @@ public class User {
 	 * método.
 	 */
 	public String toString() {
-		return "User [id=" + idU + ", name=" + name + ", nickname=" + nickname + ", email=" + email + ", password="
-				+ password + ", phoneNumber=" + phoneNumber + "]";
+		return "User: Nombre = " + name + "| Username = " + nickname + "| Email = " + email + "| Teléfono = " + phoneNumber;
 	}
 
 }

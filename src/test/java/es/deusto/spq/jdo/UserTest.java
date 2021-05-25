@@ -91,8 +91,8 @@ public class UserTest {
 	 */
 	@Test
 	public void testToString() {
-		assertEquals("User [id=0" + ", name=name" + ", nickname=nickname" + ", email=email" + ", password=password"
-				+ ", phoneNumber=99" + "]", u.toString());
+		assertEquals("User: Nombre = " + "name" + "| Username = " + "nickname" + "| Email = " + "email" + "| Teléfono = " + "99", u.toString());
+		
 	}
 
 }
