@@ -98,7 +98,7 @@ public class CinemaFoodWindowTest {
 	}
 
 	/**
-	 * Test para añadir productos a la ventana alimentos
+	 * Test para comprobar si el usuario se pasa bien de ventna en ventana
 	 *
 	 */
 	@Test

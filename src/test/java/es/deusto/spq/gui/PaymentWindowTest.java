@@ -71,6 +71,10 @@ public class PaymentWindowTest {
 		passwordField.setText("123");
 		pw.PagarPaypal(o, textField, passwordField);
 	}
+	/**
+	 * Test para comprobar si el usuario se pasa bien de ventna en ventana
+	 *
+	 */
 	@Test
 	public void comprobaruser() {
 		pw.SetUserName(u);
