@@ -92,10 +92,20 @@ public class ReceiptTest {
 	 * Test para obtener el Pedido de un Recibo
 	 *
 	 */
+	
 	@Test
 	public void testSetGetOrder() {
 		r.setOrder(o);
 		assertEquals(o, r.getOrder());
+	}
+	/**
+	 * Test para obtener el precio de una factura
+	 *
+	 */
+	@Test
+	public void testSetGetPrice() {
+		r.setPrice(7);
+		assertEquals(7, r.getPrice());
 	}
 	/**
 	 * Test para obtener el ToString de el Recivo, saca un string con la estructura definida en el propio método.
