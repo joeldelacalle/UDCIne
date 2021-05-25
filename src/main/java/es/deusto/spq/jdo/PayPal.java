@@ -4,13 +4,14 @@
 package es.deusto.spq.jdo;
 
 import javax.jdo.annotations.PersistenceCapable;
+
 /**
  * Clase base PayPal.
  *
  */
 @PersistenceCapable
 public class PayPal {
-	
+
 	protected String email;
 
 	protected String password;

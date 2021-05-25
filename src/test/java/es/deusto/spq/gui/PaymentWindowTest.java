@@ -44,7 +44,7 @@ public class PaymentWindowTest {
 		o = new Order("pruebasjaimedeusto@gmail.com", null, 3, "Pendiente de pago", "Vacio",
 				"pelicula:Infinity war Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2 Entrada:3 fila:3 asiento:3",
 				24);
-		r = new Receipt("pruebasjaimedeusto@gmail.com",null,o,20);
+		r = new Receipt("pruebasjaimedeusto@gmail.com", null, o, 20);
 		pw = new PaymentWindow(o);
 		passwordField = new JPasswordField();
 		textField = new JTextField();
@@ -71,6 +71,7 @@ public class PaymentWindowTest {
 		passwordField.setText("123");
 		pw.PagarPaypal(o, textField, passwordField);
 	}
+
 	/**
 	 * Test para comprobar si el usuario se pasa bien de ventna en ventana
 	 *
@@ -88,7 +89,7 @@ public class PaymentWindowTest {
 	public void testPagarCaja() {
 		pw.PagarCaja(o);
 	}
-	
+
 	/**
 	 * Test para mandar Email
 	 *
@@ -96,6 +97,15 @@ public class PaymentWindowTest {
 	@Test
 	public void mandarMensajeTest() {
 		pw.mandarMensaje("pruebasjaimedeusto@gmail.com", r);
+	}
+
+	/**
+	 * Test inicio de la ventana principal
+	 *
+	 */
+	@Test
+	public void testInitMainWindow() {
+		pw.initMainWindow();
 	}
 
 }

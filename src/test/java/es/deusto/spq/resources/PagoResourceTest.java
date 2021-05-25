@@ -3,7 +3,7 @@
  */
 package es.deusto.spq.resources;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,6 +25,7 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase test PagoResource
  *
@@ -40,6 +41,7 @@ public class PagoResourceTest {
 	private HttpServer server;
 	private WebTarget appTarget;
 	private Client c;
+
 	/**
 	 * Metodo para: iniciar el servidor Grizzly, crear un nuevo cliente
 	 *
@@ -50,6 +52,7 @@ public class PagoResourceTest {
 		c = ClientBuilder.newClient();
 		appTarget = c.target(Main.BASE_URI);
 	}
+
 	/**
 	 * TearDown Test
 	 *
@@ -59,6 +62,7 @@ public class PagoResourceTest {
 	public void tearDown() throws Exception {
 		server.stop();
 	}
+
 	/**
 	 * Test para obtener pago con Paypal
 	 *

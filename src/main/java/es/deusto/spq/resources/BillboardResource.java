@@ -12,6 +12,7 @@ import javax.jdo.Query;
 
 import es.deusto.spq.jdo.Billboard;
 import jakarta.ws.rs.Path;
+
 /**
  * Clase para obtener datos de BillBoard de la base de datos
  */

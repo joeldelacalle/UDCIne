@@ -316,10 +316,7 @@ public class PaymentWindow extends JFrame {
 			pm.close();
 		}
 		dispose();
-		MainWindow mw = new MainWindow();
-		UserResource ur = new UserResource();
-		mw.SetUserName(ur.getUser(lblUserName.getText()));
-		mw.setVisible(true);
+		initMainWindow();
 	}
 
 	/**
@@ -371,6 +368,14 @@ public class PaymentWindow extends JFrame {
 		this.lblUserName.setBounds(525, 28, 46, 14);
 		this.lblUserName.setText(u.getNickname());
 		this.contentPane.add(this.lblUserName);
+	}
+
+	public void initMainWindow() {
+		MainWindow mw = new MainWindow();
+		UserResource ur = new UserResource();
+		mw.SetUserName(ur.getUser(lblUserName.getText()));
+		mw.setVisible(true);
+		dispose();
 	}
 
 }

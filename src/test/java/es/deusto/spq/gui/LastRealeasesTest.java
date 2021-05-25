@@ -3,7 +3,6 @@
  */
 package es.deusto.spq.gui;
 
-import java.awt.Image;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -123,7 +122,8 @@ public class LastRealeasesTest {
 		listReleases = new JList<Release>(releases);
 		listReleases.setSelectedIndex(0);
 		try {
-			lrw.nuevosLanzamientos(listReleases,selected,textFieldReleaseName, lblReleaseImage, textPaneDescription,trailer,trailerButton);
+			lrw.nuevosLanzamientos(listReleases, selected, textFieldReleaseName, lblReleaseImage, textPaneDescription,
+					trailer, trailerButton);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -161,7 +161,7 @@ public class LastRealeasesTest {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Test para obtener el trailer del próximo lanzamiento
 	 */
@@ -169,12 +169,21 @@ public class LastRealeasesTest {
 	public void getTrailerTest() {
 		lrw.getTrailer();
 	}
-	
+
 	/**
 	 * Test para poner el trailer del próximo lanzamiento
 	 */
 	@Test
 	public void setTrailerTest() {
 		lrw.setTrailer(trailer);
+	}
+
+	/**
+	 * Test inicio de la ventana principal
+	 *
+	 */
+	@Test
+	public void testInitMainWindow() {
+		lrw.initMainWindow();
 	}
 }

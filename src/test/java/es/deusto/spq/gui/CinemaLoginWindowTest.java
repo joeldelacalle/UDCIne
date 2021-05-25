@@ -70,13 +70,14 @@ public class CinemaLoginWindowTest {
 		lw2.Login(txtPassword2, txtUsername2);
 		lw3.Login(txtPassword3, txtUsername3);
 	}
+
 	/**
-	 * Test main de la ventana. 
+	 * Test main de la ventana.
 	 *
 	 */
 	@Test
 	public void testMain() {
-	    CinemaLoginWindow.main(new String[0]);
+		CinemaLoginWindow.main(new String[0]);
 	}
 
 }

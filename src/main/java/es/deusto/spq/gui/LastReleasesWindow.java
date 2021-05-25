@@ -36,6 +36,8 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import es.deusto.spq.jdo.Release;
+import es.deusto.spq.jdo.User;
+import es.deusto.spq.resources.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -66,6 +68,7 @@ public class LastReleasesWindow extends JFrame {
 	private int age16 = 16;
 	private String trailer = null;
 	private JButton btnNewButton;
+	private JLabel lblUserName = new JLabel("");
 
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
@@ -113,9 +116,7 @@ public class LastReleasesWindow extends JFrame {
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MainWindow vp = new MainWindow();
-				vp.setVisible(true);
-				dispose();
+				initMainWindow();
 			}
 
 			@Override
@@ -165,8 +166,7 @@ public class LastReleasesWindow extends JFrame {
 				try {
 					nuevosLanzamientos(listReleases, listReleases.getSelectedIndex(), textFieldReleaseTitle,
 							lblFilmImage, textDescription, trailer, btnNewButton);
-					
-					
+
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
@@ -287,7 +287,7 @@ public class LastReleasesWindow extends JFrame {
 		setRelease(lReleases.getSelectedValue().getUrl(), lblFilmImage);
 
 		releaseAgeRestImage(lReleases.getModel().getElementAt(selected).getAgeRestriction());
-		
+
 		setTrailer(lReleases.getModel().getElementAt(selected).getTrailer());
 		btnNewButton.setVisible(true);
 
@@ -319,6 +319,20 @@ public class LastReleasesWindow extends JFrame {
 
 	public void setTrailer(String trailer) {
 		this.trailer = trailer;
+	}
+
+	public void setUserName(User u) {
+		this.lblUserName.setBounds(131, 24, 202, 26);
+		this.lblUserName.setText(u.getNickname());
+		this.contentPane.add(this.lblUserName);
+	}
+
+	public void initMainWindow() {
+		MainWindow vp = new MainWindow();
+		UserResource ur = new UserResource();
+		setUserName(ur.getUser(lblUserName.getText()));
+		vp.setVisible(true);
+		dispose();
 	}
 
 }

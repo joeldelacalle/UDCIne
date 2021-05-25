@@ -83,6 +83,7 @@ public class ReceiptWindowTest {
 	public void tearDown() throws Exception {
 		server.stop();
 	}
+
 	/**
 	 * Test inicio de la ventana principal
 	 *

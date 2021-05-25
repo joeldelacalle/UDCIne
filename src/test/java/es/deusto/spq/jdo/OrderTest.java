@@ -3,7 +3,7 @@
  */
 package es.deusto.spq.jdo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -13,17 +13,12 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.deusto.spq.jdo.Cinema;
-import es.deusto.spq.jdo.Film;
-import es.deusto.spq.jdo.Order;
-import es.deusto.spq.jdo.Product;
-import es.deusto.spq.jdo.Ticket;
 /**
  * Clase test Pedido
  *
  */
 public class OrderTest {
-	
+
 	private Order o;
 	private List<Product> products;
 	private List<Ticket> tickets;
@@ -33,8 +28,10 @@ public class OrderTest {
 	private Product product;
 	private Cinema cinema;
 	private Film film;
+
 	/**
-	 * Metodo para construir objeto:Ticket, Cine, Pelicula, Producto, Pedido con sus atributos correspondientes
+	 * Metodo para construir objeto:Ticket, Cine, Pelicula, Producto, Pedido con sus
+	 * atributos correspondientes
 	 *
 	 */
 	@Before
@@ -53,11 +50,12 @@ public class OrderTest {
 		film = new Film("john", "iron man", "el hombre de hierro", 13, null, null);
 		ticket = new Ticket(cinema, film, 1, 2, 3, 4, dfd1);
 		tickets.add(ticket);
-		product = new Product("palomitas", "palomitas Grandes", 3,null);
+		product = new Product("palomitas", "palomitas Grandes", 3, null);
 		products.add(product);
-		o = new Order("perro@gmail.com", dfd1,1, tickets.toString(), products.toString(), "En caja", 1);
+		o = new Order("perro@gmail.com", dfd1, 1, tickets.toString(), products.toString(), "En caja", 1);
 
 	}
+
 	/**
 	 * Test para obtener el id de un Pedido
 	 *
@@ -67,6 +65,7 @@ public class OrderTest {
 		o.setId(5);
 		assertEquals(5, o.getId());
 	}
+
 	/**
 	 * Test para obtener el email de un Pedido
 	 *
@@ -76,6 +75,7 @@ public class OrderTest {
 		o.setMail("perrosanxe@yahoo.com");
 		assertEquals("perrosanxe@yahoo.com", o.getMail());
 	}
+
 	/**
 	 * Test para obtener la fecha de un Pedido
 	 *
@@ -85,6 +85,7 @@ public class OrderTest {
 		o.setDate(dfd1);
 		assertEquals(dfd1, o.getDate());
 	}
+
 	/**
 	 * Test para obtener el precio de un Pedido
 	 *
@@ -94,6 +95,7 @@ public class OrderTest {
 		o.setPrice(7);
 		assertEquals(7, o.getPrice());
 	}
+
 	/**
 	 * Test para obtener los tickets de un Pedido
 	 *
@@ -103,6 +105,7 @@ public class OrderTest {
 		o.setTickets(tickets.toString());
 		assertEquals(tickets.toString(), o.getTickets().toString());
 	}
+
 	/**
 	 * Test para obtener los productos de un Pedido
 	 *
@@ -112,6 +115,7 @@ public class OrderTest {
 		o.setProducts(products.toString());
 		assertEquals(products.toString(), o.getProducts());
 	}
+
 	/**
 	 * Test para obtener el metodo de pago de un Pedido
 	 *
@@ -121,14 +125,16 @@ public class OrderTest {
 		o.setPaymentMethod("paypal");
 		assertEquals("paypal", o.getPaymentMethod());
 	}
+
 	/**
-	 * Test para obtener el ToString del Pedido, saca un string con la estructura definida en el propio método.
+	 * Test para obtener el ToString del Pedido, saca un string con la estructura
+	 * definida en el propio método.
 	 *
 	 */
-	@Test 
+	@Test
 	public void testToString() {
-		assertEquals("Order [id=0" + ", mail=perro@gmail.com" + ", date=" + dfd1 + ", tickets=" + tickets + ", products="
-				+ products + ", paymentMethod=En caja"  + ", price=1" + "]", o.toString());
+		assertEquals("Order [id=0" + ", mail=perro@gmail.com" + ", date=" + dfd1 + ", tickets=" + tickets
+				+ ", products=" + products + ", paymentMethod=En caja" + ", price=1" + "]", o.toString());
 	}
-	
+
 }

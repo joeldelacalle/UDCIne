@@ -26,13 +26,14 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
+
 /**
-* Clase test OrderResource
-*
-*/
+ * Clase test OrderResource
+ *
+ */
 @Category(IntegrationTest.class)
 public class OrderResourceTest {
-	
+
 	/**
 	 * Rule test
 	 *
@@ -42,6 +43,7 @@ public class OrderResourceTest {
 	private HttpServer server;
 	private WebTarget appTarget;
 	private Client c;
+
 	/**
 	 * Metodo para: iniciar el servidor Grizzly, crear un nuevo cliente
 	 *
@@ -52,6 +54,7 @@ public class OrderResourceTest {
 		c = ClientBuilder.newClient();
 		appTarget = c.target(Main.BASE_URI);
 	}
+
 	/**
 	 * TearDown Test
 	 *
@@ -61,6 +64,7 @@ public class OrderResourceTest {
 	public void tearDown() throws Exception {
 		server.stop();
 	}
+
 	/**
 	 * Test para obtener Pedidos
 	 *
@@ -82,7 +86,7 @@ public class OrderResourceTest {
 		GenericType<List<Order>> genericType = new GenericType<List<Order>>() {
 		};
 		List<Order> orders = getOrdersTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-		
+
 		List<Order> orders2 = new ArrayList<Order>();
 		for (int i = 0; i < orders.size(); i++) {
 
@@ -91,7 +95,7 @@ public class OrderResourceTest {
 				orders2.add(orders.get(i));
 				assertEquals(listOrders.get(0).getMail(), orders2.get(0).getMail());
 			}
-			
+
 		}
 
 		assertEquals(listOrders.get(0).getMail(), orders.get(0).getMail());

@@ -24,6 +24,7 @@ import es.deusto.spq.types.IntegrationTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
+
 /**
  * Clase test BillboardResource
  *
@@ -40,6 +41,7 @@ public class BillboardResourceTest {
 	private HttpServer server;
 	private WebTarget appTarget;
 	private Client c;
+
 	/**
 	 * Metodo para: iniciar el servidor Grizzly, crear un nuevo cliente
 	 *
@@ -50,6 +52,7 @@ public class BillboardResourceTest {
 		c = ClientBuilder.newClient();
 		appTarget = c.target(Main.BASE_URI);
 	}
+
 	/**
 	 * TearDown Test
 	 *
@@ -59,6 +62,7 @@ public class BillboardResourceTest {
 	public void tearDown() throws Exception {
 		server.stop();
 	}
+
 	/**
 	 * Test para obtener Peliculas
 	 *
@@ -66,7 +70,6 @@ public class BillboardResourceTest {
 	@Test
 	@PerfTest(invocations = 100, threads = 40)
 	public void testgetFilms() {
-		
 
 		List<Billboard> listapelis = Arrays.asList(new Billboard("Jon", "Iron Man",
 				"El acto principal es Tony Stark, un magnate multimillonario y hÃ¡bil ingeniero con abundantes vicios que construye un exoesqueleto mecÃ¡nico y se convierte en el superhÃ©roe Iron Man.",

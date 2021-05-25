@@ -95,9 +95,7 @@ public class CinemaFoodWindow extends JFrame {
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MainWindow vp = new MainWindow();
-				vp.setVisible(true);
-				dispose();
+				initMainWindow();
 			}
 
 			@Override
@@ -188,15 +186,7 @@ public class CinemaFoodWindow extends JFrame {
 		JButton btnAadir = new JButton("AÑADIR AL CARRITO");
 		btnAadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				OrderWindow ow = new OrderWindow(selectedFilm);
-
-				addProducts(ow, listmodelAlimentos);
-				UserResource ur = new UserResource();
-				ow.SetUserName(ur.getUser(lblUserName.getText()));
-				ow.setVisible(true);
-				ow.setListModelShoppingCart(listModelShoppingCart, selectedFilm);
-				dispose();
-
+				initOrderWindow(selectedFilm, listModelShoppingCart, listmodelAlimentos);
 			}
 		});
 		btnAadir.setBackground(new Color(0, 153, 153));
@@ -241,9 +231,40 @@ public class CinemaFoodWindow extends JFrame {
 		jb.setIcon(resizeImg);
 	}
 
+	/**
+	 * metodo para pasar el usuario de ventna en ventana
+	 *
+	 */
 	public void SetUserName(User u) {
 		this.lblUserName.setBounds(131, 24, 202, 26);
 		this.lblUserName.setText(u.getNickname());
 		this.contentPane.add(this.lblUserName);
+	}
+
+	/**
+	 * Metodo inicio de la ventana pedido
+	 *
+	 */
+	public void initOrderWindow(Film selectedFilm, ListModel<Film> listModelShoppingCart,
+			DefaultListModel<Product> listmodelAlimentos) {
+		OrderWindow ow = new OrderWindow(selectedFilm);
+		addProducts(ow, listmodelAlimentos);
+		UserResource ur = new UserResource();
+		ow.SetUserName(ur.getUser(lblUserName.getText()));
+		ow.setVisible(true);
+		ow.setListModelShoppingCart(listModelShoppingCart, selectedFilm);
+		dispose();
+	}
+
+	/**
+	 * Metodo inicio de la ventana principal
+	 *
+	 */
+	public void initMainWindow() {
+		MainWindow mw = new MainWindow();
+		UserResource ur = new UserResource();
+		mw.SetUserName(ur.getUser(lblUserName.getText()));
+		mw.setVisible(true);
+		dispose();
 	}
 }

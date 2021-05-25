@@ -14,13 +14,14 @@ import es.deusto.spq.types.GuiTest;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
+
 /**
  * Clase test Ventana Administrador
  *
  */
 @Category(GuiTest.class)
 public class AdminWindowTest {
-	
+
 	AdminWindow aw;
 	private HttpServer server;
 

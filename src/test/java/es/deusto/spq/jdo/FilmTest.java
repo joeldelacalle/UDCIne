@@ -3,12 +3,11 @@
  */
 package es.deusto.spq.jdo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import es.deusto.spq.jdo.Film;
 /**
  * Clase test Pelicula
  *
@@ -16,14 +15,16 @@ import es.deusto.spq.jdo.Film;
 public class FilmTest {
 
 	private Film f;
+
 	/**
 	 * Metodo para construir objeto Pelicula con sus atributos correspondientes
 	 *
 	 */
 	@Before
 	public void setup() {
-		f = new Film("director", "name", "description", 13,"url","trailer");
+		f = new Film("director", "name", "description", 13, "url", "trailer");
 	}
+
 	/**
 	 * Test para obtener el id de una pelicula
 	 *
@@ -33,6 +34,7 @@ public class FilmTest {
 		f.setId(5);
 		assertEquals(5, f.getId());
 	}
+
 	/**
 	 * Test para obtener el director de una pelicula
 	 *
@@ -42,6 +44,7 @@ public class FilmTest {
 		f.setDirector("testDirector");
 		assertEquals("testDirector", f.getDirector());
 	}
+
 	/**
 	 * Test para obtener el nombre de una pelicula
 	 *
@@ -51,6 +54,7 @@ public class FilmTest {
 		f.setName("testName");
 		assertEquals("testName", f.getName());
 	}
+
 	/**
 	 * Test para obtener la descripción de una pelicula
 	 *
@@ -60,6 +64,7 @@ public class FilmTest {
 		f.setDescription("testDescription");
 		assertEquals("testDescription", f.getDescription());
 	}
+
 	/**
 	 * Test para obtener la edad recomendada de una pelicula
 	 *
@@ -69,6 +74,7 @@ public class FilmTest {
 		f.setAgeRestriction(18);
 		assertEquals(18, f.getAgeRestriction());
 	}
+
 	/**
 	 * Test para obtener el url de una pelicula
 	 *
@@ -78,6 +84,7 @@ public class FilmTest {
 		f.setUrl("url");
 		assertEquals("url", f.getUrl());
 	}
+
 	/**
 	 * Test para obtener el trailer de una pelicula
 	 *
@@ -87,8 +94,10 @@ public class FilmTest {
 		f.setTrailer("trailer");
 		assertEquals("trailer", f.getTrailer());
 	}
+
 	/**
-	 * Test para obtener el ToString de la pelicula, saca un string con la estructura definida en elpropio método.
+	 * Test para obtener el ToString de la pelicula, saca un string con la
+	 * estructura definida en elpropio método.
 	 *
 	 */
 	@Test

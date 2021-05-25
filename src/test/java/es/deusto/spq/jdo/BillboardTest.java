@@ -8,17 +8,15 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.deusto.spq.jdo.Billboard;
-import es.deusto.spq.jdo.Film;
 /**
  * Clase test Cartelera
  *
  */
 public class BillboardTest {
 
-	
 	private Billboard f;
 	private Film f2;
+
 	/**
 	 * Metodo para construir objeto Cartelera vacio y con sus atributos
 	 * correspondientes
@@ -30,6 +28,7 @@ public class BillboardTest {
 		f2 = new Film("director", "name", "description", 13, "url", "trailer");
 		f = new Billboard();
 	}
+
 	/**
 	 * Test para obtener el id de una pelicula de la cartelera
 	 *
@@ -39,6 +38,7 @@ public class BillboardTest {
 		f.setId(5);
 		assertEquals(5, f.getId());
 	}
+
 	/**
 	 * Test para obtener el director de una pelicula de la cartelera
 	 *
@@ -48,6 +48,7 @@ public class BillboardTest {
 		f.setDirector("testDirector");
 		assertEquals("testDirector", f.getDirector());
 	}
+
 	/**
 	 * Test para obtener el trailer de una pelicula de la cartelera
 	 *
@@ -57,6 +58,7 @@ public class BillboardTest {
 		f.setName("testName");
 		assertEquals("testName", f.getName());
 	}
+
 	/**
 	 * Test para obtener la descripción de una pelicula de la cartelera
 	 *
@@ -66,6 +68,7 @@ public class BillboardTest {
 		f.setDescription("testDescription");
 		assertEquals("testDescription", f.getDescription());
 	}
+
 	/**
 	 * Test para obtener la edad recomendada de una pelicula de la cartelera
 	 *
@@ -75,6 +78,7 @@ public class BillboardTest {
 		f.setAgeRestriction(18);
 		assertEquals(18, f.getAgeRestriction());
 	}
+
 	/**
 	 * Test para obtener el url de una pelicula de la cartelera
 	 *
@@ -84,6 +88,7 @@ public class BillboardTest {
 		f.setUrl("url");
 		assertEquals("url", f.getUrl());
 	}
+
 	/**
 	 * Test para obtener el trailer de una pelicula de la cartelera
 	 *
@@ -93,6 +98,7 @@ public class BillboardTest {
 		f.setTrailer("trailer");
 		assertEquals("trailer", f.getTrailer());
 	}
+
 	/**
 	 * Test para aladir una pelicula al billboard
 	 *

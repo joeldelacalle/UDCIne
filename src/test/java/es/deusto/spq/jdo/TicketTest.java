@@ -3,7 +3,7 @@
  */
 package es.deusto.spq.jdo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -11,9 +11,6 @@ import java.util.Date;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.deusto.spq.jdo.Cinema;
-import es.deusto.spq.jdo.Film;
-import es.deusto.spq.jdo.Ticket;
 /**
  * Clase test Ticket
  *
@@ -24,14 +21,16 @@ public class TicketTest {
 	private Film f;
 	private Calendar dfd;
 	private Date dfd1;
+
 	/**
-	 * Metodo para construir objeto Pelicula y Cine con sus atributos correspondientes.
+	 * Metodo para construir objeto Pelicula y Cine con sus atributos
+	 * correspondientes.
 	 *
 	 */
 	@Before
 	public void Setup() {
 		c = new Cinema("name", "city", "address", 99);
-		f = new Film("director", "name", "description", 0,"url","");
+		f = new Film("director", "name", "description", 0, "url", "");
 		dfd = Calendar.getInstance();
 		dfd.set(Calendar.YEAR, 2020);
 		dfd.set(Calendar.MONTH, Calendar.NOVEMBER);
@@ -43,6 +42,7 @@ public class TicketTest {
 
 		t = new Ticket(c, f, 1, 1, 1, 1, null);
 	}
+
 	/**
 	 * Test para obtener el id de un Ticket
 	 *
@@ -52,6 +52,7 @@ public class TicketTest {
 		t.setId(0);
 		assertEquals(0, t.getId());
 	}
+
 	/**
 	 * Test para obtener el Cine de un Ticket
 	 *
@@ -61,6 +62,7 @@ public class TicketTest {
 		t.setCinema(c);
 		assertEquals(c, t.getCinema());
 	}
+
 	/**
 	 * Test para obtener la Pelicula de un Ticket
 	 *
@@ -70,6 +72,7 @@ public class TicketTest {
 		t.setFilm(f);
 		assertEquals(f, t.getFilm());
 	}
+
 	/**
 	 * Test para obtener la Sala de un Ticket
 	 *
@@ -79,6 +82,7 @@ public class TicketTest {
 		t.setRoom(0);
 		assertEquals(0, t.getRoom());
 	}
+
 	/**
 	 * Test para obtener la Fila de un Ticket
 	 *
@@ -88,6 +92,7 @@ public class TicketTest {
 		t.setRow(0);
 		assertEquals(0, t.getRow());
 	}
+
 	/**
 	 * Test para obtener el asiento de un Ticket
 	 *
@@ -97,6 +102,7 @@ public class TicketTest {
 		t.setSeat(0);
 		assertEquals(0, t.getSeat());
 	}
+
 	/**
 	 * Test para obtener el precio de un Ticket
 	 *
@@ -106,6 +112,7 @@ public class TicketTest {
 		t.setPrice(0);
 		assertEquals(0, t.getPrice());
 	}
+
 	/**
 	 * Test para obtener la sesion de un Ticket
 	 *
@@ -115,13 +122,15 @@ public class TicketTest {
 		t.setSession(dfd1);
 		assertEquals(dfd1, t.getSession());
 	}
+
 	/**
-	 * Test para obtener el ToString de El Ticket, saca un string con la estructura definida en el propio método.
+	 * Test para obtener el ToString de El Ticket, saca un string con la estructura
+	 * definida en el propio método.
 	 *
 	 */
 	@Test
 	public void testToString() {
-		assertEquals("Ticket [id=0" + ", cinema=" + c + ", film="+ f + ", room=" + 1 + ", row=" + 1 + ", seat=" + 1
+		assertEquals("Ticket [id=0" + ", cinema=" + c + ", film=" + f + ", room=" + 1 + ", row=" + 1 + ", seat=" + 1
 				+ ", price=" + 1 + ", session=" + null + "]", t.toString());
 	}
 

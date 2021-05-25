@@ -26,6 +26,7 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase test CinemaResource
  *
@@ -43,9 +44,10 @@ public class CinemaResourceTest {
 	private WebTarget appTarget;
 	private Client c;
 	private List<Cinema> listacines;
+
 	/**
-	 * Metodo para: iniciar el servidor Grizzly, crear un nuevo cliente
-	 *	y construir objeto Pelicula con sus atributos correspondientes.
+	 * Metodo para: iniciar el servidor Grizzly, crear un nuevo cliente y construir
+	 * objeto Pelicula con sus atributos correspondientes.
 	 */
 	@Before
 	public void setUp() throws Exception {
@@ -56,6 +58,7 @@ public class CinemaResourceTest {
 				new Cinema("Cine Deusto Santander", "Santander", "Corte Ingles nueva montaña", 345345345),
 				new Cinema("Cine Deusto Barakaldo", "Barakaldo", "Max Center", 458345345));
 	}
+
 	/**
 	 * TearDown Test
 	 *
@@ -65,6 +68,7 @@ public class CinemaResourceTest {
 	public void tearDown() throws Exception {
 		server.stop();
 	}
+
 	/**
 	 * Test para obtener el Cine
 	 *
@@ -82,7 +86,7 @@ public class CinemaResourceTest {
 		// System.out.println(cines.get(2).getName());
 		// System.out.println(listacines.get(2).getName());
 		// System.out.println(cines.get(3).getName());
-	
+
 		List<Cinema> cines2 = new ArrayList<Cinema>();
 		for (int i = 0; i < cines.size(); i++) {
 
@@ -91,12 +95,11 @@ public class CinemaResourceTest {
 				cines2.add(cines.get(i));
 				assertEquals(listacines.get(0).getName(), cines2.get(0).getName());
 			}
-			
+
 		}
-		
-		
-		//assertEquals(listacines.get(1).getName(), cines.get(2).getName());
-		//assertEquals(listacines.get(2).getName(), cines.get(3).getName());
+
+		// assertEquals(listacines.get(1).getName(), cines.get(2).getName());
+		// assertEquals(listacines.get(2).getName(), cines.get(3).getName());
 	}
 
 }

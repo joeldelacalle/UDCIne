@@ -4,6 +4,7 @@
 package es.deusto.spq.resources;
 
 import java.util.List;
+
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
@@ -14,12 +15,13 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase para obtener datos de las peliculas de la base de datos
  */
 @Path("films")
 public class FilmResources {
-	
+
 	/**
 	 * Metodo para obtener toda la lista de peliculas de la base de datos
 	 */
@@ -38,5 +40,5 @@ public class FilmResources {
 
 		return films;
 	}
-	
+
 }

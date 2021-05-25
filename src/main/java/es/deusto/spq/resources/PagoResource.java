@@ -12,13 +12,13 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 
-
 import es.deusto.spq.jdo.PayPal;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase para obtener datos de paypal de la base de datos
  */
@@ -42,7 +42,6 @@ public class PagoResource {
 		Query<PayPal> q = pm.newQuery(PayPal.class);
 		List<PayPal> paypallista = q.executeList();
 
-		
 		List<PayPal> paypal2 = new ArrayList<PayPal>();
 		for (int i = 0; i < paypallista.size(); i++) {
 

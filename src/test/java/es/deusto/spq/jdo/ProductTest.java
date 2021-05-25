@@ -3,19 +3,19 @@
  */
 package es.deusto.spq.jdo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import es.deusto.spq.jdo.Product;
 /**
  * Clase test Producto
  *
  */
 public class ProductTest {
-	
+
 	private Product p;
+
 	/**
 	 * Metodo para construir objeto Producto con sus atributos correspondientes.
 	 *
@@ -24,6 +24,7 @@ public class ProductTest {
 	public void setup() {
 		p = new Product("name", "description", 1, null);
 	}
+
 	/**
 	 * Test para obtener el nombre de un Producto
 	 *
@@ -33,6 +34,7 @@ public class ProductTest {
 		p.setName("testName");
 		assertEquals("testName", p.getName());
 	}
+
 	/**
 	 * Test para obtener la descripcion de un Producto
 	 *
@@ -42,6 +44,7 @@ public class ProductTest {
 		p.setDescription("testDescription");
 		assertEquals("testDescription", p.getDescription());
 	}
+
 	/**
 	 * Test para obtener el precio de un Producto
 	 *
@@ -51,6 +54,7 @@ public class ProductTest {
 		p.setPrice(2);
 		assertEquals(2, p.getPrice(), 0.1);
 	}
+
 	/**
 	 * Test para obtener el id de un Producto
 	 *
@@ -59,6 +63,7 @@ public class ProductTest {
 	public void testGetId() {
 		assertEquals(0, p.getId());
 	}
+
 	/**
 	 * Test para obtener la url de la imagen de un Producto
 	 *
@@ -68,13 +73,16 @@ public class ProductTest {
 		p.setUrl("url");
 		assertEquals("url", p.getUrl());
 	}
+
 	/**
-	 * Test para obtener el ToString de el Producto, saca un string con la estructura definida en el propio método.
+	 * Test para obtener el ToString de el Producto, saca un string con la
+	 * estructura definida en el propio método.
 	 *
 	 */
 	@Test
 	public void testToString() {
-		assertEquals("Product [id=0" + ", name=name" + ", description=description"+ ", price=1"+ ", url=null"+ "]", p.toString());
+		assertEquals("Product [id=0" + ", name=name" + ", description=description" + ", price=1" + ", url=null" + "]",
+				p.toString());
 	}
 
 }

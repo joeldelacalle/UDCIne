@@ -29,12 +29,13 @@ import es.deusto.spq.resources.UserResource;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
+
 /**
  * Ventana de login
  *
  */
 public class CinemaLoginWindow extends JFrame {
-	
+
 	private static final long serialVersionUID = 1L;
 	Client client = ClientBuilder.newClient();
 
@@ -45,9 +46,9 @@ public class CinemaLoginWindow extends JFrame {
 	private JPasswordField txtPassword1;
 	private JLabel lblLoginMessage1 = new JLabel("");
 	private JLabel lblGest;
-	
 
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
 	/**
 	 * Metodo main. Crea la ventana de login
 	 *
@@ -65,6 +66,7 @@ public class CinemaLoginWindow extends JFrame {
 			}
 		});
 	}
+
 	/**
 	 * Crea la ventana de login.
 	 *
@@ -258,8 +260,10 @@ public class CinemaLoginWindow extends JFrame {
 		contentPane.add(btnRegister);
 
 	}
+
 	/**
-	 * Metodo que para hacer login. Hay varias comprobaciones para que no se permita añadir un campo vacio y para que el usuario y contraseña sean correctos
+	 * Metodo que para hacer login. Hay varias comprobaciones para que no se permita
+	 * añadir un campo vacio y para que el usuario y contraseña sean correctos
 	 *
 	 */
 	public void Login(JPasswordField txtPassword1, JTextField txtUsername1) {

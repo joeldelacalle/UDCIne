@@ -7,6 +7,7 @@ import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+
 /**
  * Clase base Producto.
  *
@@ -14,7 +15,7 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Product {
-	
+
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.NATIVE)
 	protected long id;

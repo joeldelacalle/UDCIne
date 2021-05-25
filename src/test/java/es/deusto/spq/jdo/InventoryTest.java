@@ -3,7 +3,7 @@
  */
 package es.deusto.spq.jdo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,20 +11,19 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.deusto.spq.jdo.Inventory;
-import es.deusto.spq.jdo.Product;
 /**
  * Clase test Inventario
  *
  */
 public class InventoryTest {
-	
+
 	private Inventory i;
 	private Set<Product> products;
 	private Product p;
+
 	/**
-	 *	Metodo para construir objeto Inventario con sus atributos correspondientes.
-	 *	Y construir objeto Producto con sus atributos correspondientes.
+	 * Metodo para construir objeto Inventario con sus atributos correspondientes. Y
+	 * construir objeto Producto con sus atributos correspondientes.
 	 */
 	@Before
 	public void setup() {
@@ -33,6 +32,7 @@ public class InventoryTest {
 		p = new Product("TestName", "TestDescription", 1, null);
 		products.add(p);
 	}
+
 	/**
 	 * Test para establecer el nombre de un Inventario
 	 *
@@ -42,6 +42,7 @@ public class InventoryTest {
 		i.setName("testName");
 		assertEquals("testName", i.getName());
 	}
+
 	/**
 	 * Test para obtener el tamaño de los productos
 	 *
@@ -50,8 +51,10 @@ public class InventoryTest {
 	public void testGetProducts() {
 		assertEquals(products.size(), 1);
 	}
+
 	/**
-	 * Test para obtener el ToString del Inventario, saca un string con la estructura definida en el propio método.
+	 * Test para obtener el ToString del Inventario, saca un string con la
+	 * estructura definida en el propio método.
 	 *
 	 */
 	@Test

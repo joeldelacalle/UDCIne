@@ -3,7 +3,7 @@
  */
 package es.deusto.spq.resources;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,18 +33,20 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase test ReceiptResource
  *
  */
 @Category(IntegrationTest.class)
 public class ReceiptResourceTest {
-	
-	@Rule public ContiPerfRule rule = new ContiPerfRule();
+
+	@Rule
+	public ContiPerfRule rule = new ContiPerfRule();
 	private HttpServer server;
-    private WebTarget appTarget;
-    private Client c;
-    private Calendar dfd;
+	private WebTarget appTarget;
+	private Client c;
+	private Calendar dfd;
 	private Date dfd1;
 	private Cinema cinema;
 	private Film film;
@@ -55,16 +57,16 @@ public class ReceiptResourceTest {
 	private List<Ticket> tickets;
 
 	/**
-	 * Metodo para: iniciar el servidor Grizzly, crear un nuevo cliente,
-	 *	arraylist de Productos, arraylist de Tickets,
-	 *	y Construir objetos: Pelicula, Cine, Ticket, Producto, Pedido con sus atributos correspondientes.
+	 * Metodo para: iniciar el servidor Grizzly, crear un nuevo cliente, arraylist
+	 * de Productos, arraylist de Tickets, y Construir objetos: Pelicula, Cine,
+	 * Ticket, Producto, Pedido con sus atributos correspondientes.
 	 */
-    @Before
-    public void setUp() throws Exception {
-    	server = Main.startServer();
-        c = ClientBuilder.newClient();
-        appTarget = c.target(Main.BASE_URI);
-        products = new ArrayList<Product>();
+	@Before
+	public void setUp() throws Exception {
+		server = Main.startServer();
+		c = ClientBuilder.newClient();
+		appTarget = c.target(Main.BASE_URI);
+		products = new ArrayList<Product>();
 		tickets = new ArrayList<Ticket>();
 		dfd = Calendar.getInstance();
 		dfd.set(Calendar.YEAR, 2020);
@@ -78,34 +80,39 @@ public class ReceiptResourceTest {
 		film = new Film("john", "iron man", "el hombre de hierro", 13, null, null);
 		ticket = new Ticket(cinema, film, 1, 2, 3, 4, dfd1);
 		tickets.add(ticket);
-		product = new Product("palomitas", "palomitas Grandes", 3,null);
+		product = new Product("palomitas", "palomitas Grandes", 3, null);
 		products.add(product);
-		o = new Order("jaimesantamazo@gmail.com", dfd1,1, tickets.toString(), products.toString(), "En caja", 1);
-    }
-    /**
+		o = new Order("jaimesantamazo@gmail.com", dfd1, 1, tickets.toString(), products.toString(), "En caja", 1);
+	}
+
+	/**
 	 * TearDown Test
 	 *
 	 */
-    @SuppressWarnings("deprecation")
+	@SuppressWarnings("deprecation")
 	@After
-    public void tearDown() throws Exception {
-        server.stop();
-    }
-    /**
+	public void tearDown() throws Exception {
+		server.stop();
+	}
+
+	/**
 	 * Test para obtener Recibos
 	 *
 	 */
-    @Test
-    @PerfTest(invocations = 100, threads = 40)
+	@Test
+	@PerfTest(invocations = 100, threads = 40)
 	public void testgetReceipts() {
 		WebTarget receiptsTarget = appTarget.path("receipts");
-		WebTarget getreceiptsallTarget = receiptsTarget.path("getreceipt").queryParam("mail", "jaimesantamazo@gmail.com");
-    	
-		List<Receipt> listareceipts = Arrays.asList(new Receipt("jaimesantamazo@gmail.com", dfd1,o,99),new Receipt("jaimesantamazo@gmail.com", dfd1,o,99));
-   	 
-	    GenericType<List<Receipt>> genericType = new GenericType<List<Receipt>>() {};
+		WebTarget getreceiptsallTarget = receiptsTarget.path("getreceipt").queryParam("mail",
+				"jaimesantamazo@gmail.com");
+
+		List<Receipt> listareceipts = Arrays.asList(new Receipt("jaimesantamazo@gmail.com", dfd1, o, 99),
+				new Receipt("jaimesantamazo@gmail.com", dfd1, o, 99));
+
+		GenericType<List<Receipt>> genericType = new GenericType<List<Receipt>>() {
+		};
 		List<Receipt> r = getreceiptsallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-			 
+
 		assertEquals(listareceipts.get(0).getMail(), r.get(0).getMail());
 	}
 }

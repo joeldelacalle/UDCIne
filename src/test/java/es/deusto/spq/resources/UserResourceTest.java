@@ -3,7 +3,7 @@
  */
 package es.deusto.spq.resources;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,6 +25,7 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase test UserResource
  *
@@ -35,29 +36,30 @@ public class UserResourceTest {
 	 * Rule test
 	 *
 	 */
-	@Rule 
+	@Rule
 	public ContiPerfRule rule = new ContiPerfRule();
 	private HttpServer server;
-    private WebTarget appTarget;
-    private Client c;
+	private WebTarget appTarget;
+	private Client c;
 
-    /**
+	/**
 	 * Metodo para: iniciar el servidor Grizzly, crear un nuevo cliente
 	 *
 	 */
-    @Before
-    public void setUp() throws Exception {
-    	server = Main.startServer();
-        c = ClientBuilder.newClient();
-        appTarget = c.target(Main.BASE_URI);
-    }
-    
-    @SuppressWarnings("deprecation")
+	@Before
+	public void setUp() throws Exception {
+		server = Main.startServer();
+		c = ClientBuilder.newClient();
+		appTarget = c.target(Main.BASE_URI);
+	}
+
+	@SuppressWarnings("deprecation")
 	@After
-    public void tearDown() throws Exception {
-        server.stop();
-    }
-    /**
+	public void tearDown() throws Exception {
+		server.stop();
+	}
+
+	/**
 	 * TearDown Test
 	 *
 	 */
@@ -66,14 +68,17 @@ public class UserResourceTest {
 	public void testgetUsers() {
 		WebTarget usersTarget = appTarget.path("users");
 		WebTarget usersallTarget = usersTarget.path("allusers");
-    	
-	    List<User> listausers = Arrays.asList(new User("Jaime", "jaimesanta", "jaimesantamazo@gmail.com", "jaimesanta", 435345));
 
-	    GenericType<List<User>> genericType = new GenericType<List<User>>() {};
-	    List<User> users = usersallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-	    	
-	    assertEquals(listausers.get(0).getName(), users.get(0).getName());
+		List<User> listausers = Arrays
+				.asList(new User("Jaime", "jaimesanta", "jaimesantamazo@gmail.com", "jaimesanta", 435345));
+
+		GenericType<List<User>> genericType = new GenericType<List<User>>() {
+		};
+		List<User> users = usersallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+
+		assertEquals(listausers.get(0).getName(), users.get(0).getName());
 	}
+
 	/**
 	 * Test para obtener Usuarios
 	 *
@@ -83,12 +88,14 @@ public class UserResourceTest {
 	public void testGetUser() {
 		WebTarget usersTarget = appTarget.path("users");
 		WebTarget getusersTarget = usersTarget.path("getuser").queryParam("nickname", "jaimesanta");
-	    List<User> listauser = Arrays.asList(new User("jaime", "jaimesanta","jaimesantamazo@gmail.com","jaimesanta",99));
-	    	 
-	    GenericType<User> genericType = new GenericType<User>() {};
+		List<User> listauser = Arrays
+				.asList(new User("jaime", "jaimesanta", "jaimesantamazo@gmail.com", "jaimesanta", 99));
+
+		GenericType<User> genericType = new GenericType<User>() {
+		};
 		User user = getusersTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-			 
+
 		assertEquals(listauser.get(0).getNickname(), user.getNickname());
-	   }
+	}
 
 }

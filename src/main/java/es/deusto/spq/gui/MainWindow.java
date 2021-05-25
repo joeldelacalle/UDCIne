@@ -25,7 +25,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
@@ -118,10 +117,10 @@ public class MainWindow extends JFrame {
 		lblX.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblX.setForeground(new Color(255, 255, 255));
 		contentPane.add(lblX);
-		
+
 		JButton btnLogout = new JButton("Cerrar Sesión");
 		btnLogout.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				initLoginWindow();
@@ -155,7 +154,7 @@ public class MainWindow extends JFrame {
 			btnSetImageIcon(getBillboardFilm(0).getUrl(), btnFilm1);
 		} catch (IOException e1) {
 			logger.log(Level.WARNING, "ERROR", e1);
-			
+
 		}
 		contentPane.add(btnFilm1);
 
@@ -170,7 +169,7 @@ public class MainWindow extends JFrame {
 			btnSetImageIcon(getBillboardFilm(1).getUrl(), btnFilm2);
 		} catch (IOException e1) {
 			logger.log(Level.WARNING, "ERROR", e1);
-			
+
 		}
 		contentPane.add(btnFilm2);
 
@@ -185,7 +184,7 @@ public class MainWindow extends JFrame {
 			btnSetImageIcon(getBillboardFilm(2).getUrl(), btnFilm3);
 		} catch (IOException e1) {
 			logger.log(Level.WARNING, "ERROR", e1);
-			
+
 		}
 		contentPane.add(btnFilm3);
 
@@ -344,7 +343,7 @@ public class MainWindow extends JFrame {
 		vne.setVisible(true);
 		dispose();
 	}
-	
+
 	public void initLoginWindow() {
 		CinemaLoginWindow clw = new CinemaLoginWindow();
 		clw.setVisible(true);

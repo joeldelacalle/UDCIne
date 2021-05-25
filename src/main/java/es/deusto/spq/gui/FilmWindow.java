@@ -96,7 +96,7 @@ public class FilmWindow extends JFrame {
 				trailerFilm = film.getTrailer();
 			}
 		}
-		
+
 		if (filmName.equals(selectedFilm)) {
 			try {
 				URL url = new URL(urlFilm);
@@ -114,7 +114,7 @@ public class FilmWindow extends JFrame {
 			} catch (IOException e7) {
 			}
 		}
-		
+
 		filmAgeRestImage();
 	}
 
@@ -271,12 +271,12 @@ public class FilmWindow extends JFrame {
 		JButton btnTrailer = new JButton("TRAILER");
 		btnTrailer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				try {
 					Desktop.getDesktop().browse(new URL(trailerFilm).toURI());
 				} catch (IOException | URISyntaxException e1) {
 					logger.log(Level.WARNING, "ERROR", e1);
-					
+
 				}
 			}
 		});

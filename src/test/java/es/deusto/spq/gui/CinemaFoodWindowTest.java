@@ -11,6 +11,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.ListModel;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -41,12 +42,12 @@ public class CinemaFoodWindowTest {
 	private CinemaFoodWindow cfw;
 	private OrderWindow ow;
 	private User u;
-	private JTextField textFieldPhoneNumber = new JTextField();
 	private JTextField textFieldName = new JTextField();
 	private JTextField textFieldNickname = new JTextField();
 	private JTextField textFieldEmail = new JTextField();
 	private JPasswordField passwordField = new JPasswordField();
 	private int phone;
+	private ListModel<Film> listModelShoppingCart;
 
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
@@ -64,7 +65,7 @@ public class CinemaFoodWindowTest {
 		textFieldNickname = new JTextField("jaimesanta");
 		textFieldEmail = new JTextField("jaimesantamazo@hotmail.com");
 		passwordField = new JPasswordField("1234");
-		textFieldPhoneNumber = new JTextField("99");
+		new JTextField("99");
 		u.setName(textFieldName.getText());
 		u.setNickname(textFieldNickname.getText());
 		u.setEmail(textFieldEmail.getText());
@@ -86,6 +87,7 @@ public class CinemaFoodWindowTest {
 			// e.printStackTrace();
 		}
 	}
+
 	/**
 	 * Test para añadir productos a la ventana alimentos
 	 *
@@ -104,6 +106,25 @@ public class CinemaFoodWindowTest {
 	@Test
 	public void comprobaruser() {
 		cfw.SetUserName(u);
+	}
+
+	/**
+	 * Test inicio de la ventana principal
+	 *
+	 */
+	@Test
+	public void testInitOrderWindow() {
+
+		cfw.initOrderWindow(selectedFilm, listModelShoppingCart, listmodelAlimentos);
+	}
+
+	/**
+	 * Test inicio de la ventana principal
+	 *
+	 */
+	@Test
+	public void testInitMainWindow() {
+		cfw.initMainWindow();
 	}
 
 }

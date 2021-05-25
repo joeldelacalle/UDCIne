@@ -18,13 +18,14 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase para obtener datos de los usuarios de la base de datos
  */
 @Path("users")
 public class UserResource {
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-	
+
 	/**
 	 * Metodo para obtener toda la lista de los usuarios de la base de datos
 	 */
@@ -44,9 +45,10 @@ public class UserResource {
 
 		return users;
 	}
-	
+
 	/**
-	 * Metodo para obtener un usuario de la base de datos de un nombre de usuario en especifico
+	 * Metodo para obtener un usuario de la base de datos de un nombre de usuario en
+	 * especifico
 	 */
 	@GET
 	@Path("getuser")
@@ -56,7 +58,6 @@ public class UserResource {
 		PersistenceManager pm = pmf.getPersistenceManager();
 
 		User user = new User();
-		
 
 		try (Query<User> u = pm
 				.newQuery("SELECT FROM " + User.class.getName() + " WHERE nickname== '" + nickname + "'")) {
@@ -64,15 +65,16 @@ public class UserResource {
 
 			user = userlista.get(0);
 		} catch (Exception e) {
-			logger.log(Level.WARNING, "ERROR",e);
-			//e.printStackTrace();
+			logger.log(Level.WARNING, "ERROR", e);
+			// e.printStackTrace();
 		}
 		pm.close();
 		return user;
 	}
-	
+
 	/**
-	 * Metodo para obtener un usuario de la base de datos de un email y contraseña en especifico
+	 * Metodo para obtener un usuario de la base de datos de un email y contraseña
+	 * en especifico
 	 */
 	public boolean CheckUser(String email, String password) {
 
@@ -90,8 +92,8 @@ public class UserResource {
 
 			return true;
 		} catch (Exception e) {
-			logger.log(Level.WARNING, "ERROR",e);
-			//e.printStackTrace();
+			logger.log(Level.WARNING, "ERROR", e);
+			// e.printStackTrace();
 
 		}
 		pm.close();

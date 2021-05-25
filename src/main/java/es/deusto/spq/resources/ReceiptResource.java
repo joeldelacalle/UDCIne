@@ -16,14 +16,16 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase para obtener datos de las facturas de la base de datos
  */
 @Path("receipts")
 public class ReceiptResource {
-	
+
 	/**
-	 * Metodo para obtener una lista de facturas de la base de datos de un email en especifico
+	 * Metodo para obtener una lista de facturas de la base de datos de un email en
+	 * especifico
 	 */
 	@GET
 	@Path("getreceipt")
@@ -31,7 +33,6 @@ public class ReceiptResource {
 	public List<Receipt> getReceipt(@QueryParam("mail") String mail) {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
-
 
 		Query<Receipt> u = pm.newQuery("SELECT FROM " + Receipt.class.getName() + " WHERE mail== '" + mail + "'");
 		List<Receipt> receiptlista = u.executeList();

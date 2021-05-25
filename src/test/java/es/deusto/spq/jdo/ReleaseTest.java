@@ -3,18 +3,17 @@
  */
 package es.deusto.spq.jdo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import es.deusto.spq.jdo.Release;
 /**
  * Clase test Estreno
  *
  */
 public class ReleaseTest {
-	
+
 	private Release r;
 
 	/**
@@ -23,8 +22,9 @@ public class ReleaseTest {
 	 */
 	@Before
 	public void setup() {
-		r = new Release("director", "name", "description", 13,"url", "");
+		r = new Release("director", "name", "description", 13, "url", "");
 	}
+
 	/**
 	 * Test para obtener el trailer de un estreno
 	 *
@@ -34,6 +34,7 @@ public class ReleaseTest {
 		r.setTrailer("trailer");
 		assertEquals("trailer", r.getTrailer());
 	}
+
 	/**
 	 * Test para obtener el Id de un estreno
 	 *
@@ -43,6 +44,7 @@ public class ReleaseTest {
 		r.setId(5);
 		assertEquals(5, r.getId());
 	}
+
 	/**
 	 * Test para obtener el Director de un estreno
 	 *
@@ -52,6 +54,7 @@ public class ReleaseTest {
 		r.setDirector("testDirector");
 		assertEquals("testDirector", r.getDirector());
 	}
+
 	/**
 	 * Test para obtener el nombre de un estreno
 	 *
@@ -61,6 +64,7 @@ public class ReleaseTest {
 		r.setName("testName");
 		assertEquals("testName", r.getName());
 	}
+
 	/**
 	 * Test para obtener la descripcion de un estreno
 	 *
@@ -70,6 +74,7 @@ public class ReleaseTest {
 		r.setDescription("testDescription");
 		assertEquals("testDescription", r.getDescription());
 	}
+
 	/**
 	 * Test para obtener la restriccion de edad de un estreno
 	 *
@@ -79,6 +84,7 @@ public class ReleaseTest {
 		r.setAgeRestriction(18);
 		assertEquals(18, r.getAgeRestriction());
 	}
+
 	/**
 	 * Test para obtener la url de la imagen de un estreno
 	 *
@@ -88,8 +94,10 @@ public class ReleaseTest {
 		r.setUrl("url");
 		assertEquals("url", r.getUrl());
 	}
+
 	/**
-	 * Test para obtener el ToString de estreno, saca un string con la estructura definida en el propio método.
+	 * Test para obtener el ToString de estreno, saca un string con la estructura
+	 * definida en el propio método.
 	 *
 	 */
 	@Test

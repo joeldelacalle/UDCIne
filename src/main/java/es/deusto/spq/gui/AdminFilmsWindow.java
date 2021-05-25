@@ -13,7 +13,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
@@ -81,7 +80,7 @@ public class AdminFilmsWindow extends JFrame {
 
 		billboard.clear();
 		for (Film film : films) {
-			
+
 			billboard.addElement(film);
 		}
 
@@ -282,7 +281,7 @@ public class AdminFilmsWindow extends JFrame {
 				eliminarPeliculaBd(listBillboard.getModel(), listBillboard.getSelectedValue().getName());
 			}
 		});
-		
+
 		btnAdd.setBounds(481, 447, 200, 30);
 		btnAdd.setFont(new Font("Tahoma", Font.BOLD, 20));
 		contentPane.add(btnAdd);
@@ -365,7 +364,7 @@ public class AdminFilmsWindow extends JFrame {
 		System.out.println("Eliminando película de la BD");
 
 		try {
-			
+
 			Query<Film> q = pm.newQuery("SELECT FROM " + Film.class.getName() + " WHERE name== '" + selectedFilm + "'");
 			List<Film> filmList = q.executeList();
 			q.deletePersistentAll(filmList);
@@ -380,12 +379,13 @@ public class AdminFilmsWindow extends JFrame {
 			dispose();
 		}
 	}
+
 	/**
 	 * metodo para el tamaño de la imagen de la edad en un ultimo estreno
 	 *
 	 */
 
-	public void maxLengthdesc( JTextArea txtDescription, KeyEvent e) {
+	public void maxLengthdesc(JTextArea txtDescription, KeyEvent e) {
 
 		int max = 255;
 		if (txtDescription.getText().length() > max + 1) {

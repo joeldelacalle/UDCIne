@@ -3,12 +3,11 @@
  */
 package es.deusto.spq.jdo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import es.deusto.spq.jdo.PayPal;
 /**
  * Clase test Paypal
  *
@@ -16,6 +15,7 @@ import es.deusto.spq.jdo.PayPal;
 public class PayPalTest {
 
 	private PayPal p;
+
 	/**
 	 * Metodo para construir objeto Paypal con sus atributos correspondientes.
 	 *
@@ -24,6 +24,7 @@ public class PayPalTest {
 	public void setUp() {
 		p = new PayPal("jaimesantamazo@hotmail.com", "123");
 	}
+
 	/**
 	 * Test para obtener el email de Paypal
 	 *
@@ -33,6 +34,7 @@ public class PayPalTest {
 		p.setEmail("jaimesantamazo@hotmail.com");
 		assertEquals("jaimesantamazo@hotmail.com", p.getEmail());
 	}
+
 	/**
 	 * Test para obtener la contraseña de Paypal
 	 *
@@ -42,13 +44,15 @@ public class PayPalTest {
 		p.setPassword("123");
 		assertEquals("123", p.getPassword());
 	}
+
 	/**
-	 * Test para obtener el ToString del PayPal, saca un string con la estructura definida en el propio método.
+	 * Test para obtener el ToString del PayPal, saca un string con la estructura
+	 * definida en el propio método.
 	 *
 	 */
 	@Test
 	public void testToString() {
-		assertEquals("PayPal [email=jaimesantamazo@hotmail.com" + ", password=123"+ "]", p.toString());
+		assertEquals("PayPal [email=jaimesantamazo@hotmail.com" + ", password=123" + "]", p.toString());
 	}
 
 }

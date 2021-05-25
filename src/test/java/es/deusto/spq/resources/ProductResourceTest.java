@@ -26,6 +26,7 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase test ProductResource
  *
@@ -41,6 +42,7 @@ public class ProductResourceTest {
 	private HttpServer server;
 	private WebTarget appTarget;
 	private Client c;
+
 	/**
 	 * Metodo para: iniciar el servidor Grizzly, crear un nuevo cliente
 	 *
@@ -51,6 +53,7 @@ public class ProductResourceTest {
 		c = ClientBuilder.newClient();
 		appTarget = c.target(Main.BASE_URI);
 	}
+
 	/**
 	 * TearDown Test
 	 *
@@ -60,6 +63,7 @@ public class ProductResourceTest {
 	public void tearDown() throws Exception {
 		server.stop();
 	}
+
 	/**
 	 * Test para obtener Productos
 	 *

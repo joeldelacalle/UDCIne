@@ -15,12 +15,13 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+
 /**
  * Clase para obtener datos de las salas de los cines de la base de datos
  */
 @Path("rooms")
 public class RoomResource {
-	
+
 	/**
 	 * Metodo para obtener toda la lista de las salas de un cine de la base de datos
 	 */
@@ -39,6 +40,5 @@ public class RoomResource {
 
 		return room;
 	}
-	
-}
 
+}
