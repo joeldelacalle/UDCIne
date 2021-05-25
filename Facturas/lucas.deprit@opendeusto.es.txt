@@ -5,4 +5,11 @@
 |-Products: Vacio
 |-Paymentmethod: Pendiente de pago
 |-Price: 16
+ ----------------- -----------------
+|-Fecha de compra: Tue May 25 08:49:05 CEST 2021
+|-Email: lucas.deprit@opendeusto.es
+|-Tickets: pelicula:Iron Man 2 Entrada:1 fila:1 asiento:1 Entrada:2 fila:2 asiento:2
+|-Products: Vacio
+|-Paymentmethod: Pendiente de pago
+|-Price: 16
  -----------------
