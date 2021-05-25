@@ -40,6 +40,14 @@ La aplicación cliente puede iniciarse usando el comando
 
     mvn exec::java -Pcliente
   
+
+Para hacer login se debe entrar con el usuario de prueba: "jaimesanta" y contraseña: "jaimesanta"
+
+Para entrar a administración se debe hacer login con usuario: "admin" y contraseña: "admin"
+
+
+Tests
+
 Para comprobar los teses unitarios
 
     mvn -Punit test
@@ -55,6 +63,8 @@ Para comprobar los teses de la ventana
 Para comprobar los todos los teses
 
     mvn -Pfull test
+
+Documentación
 
 Para generar la documentación mediante Doxyfile
     
