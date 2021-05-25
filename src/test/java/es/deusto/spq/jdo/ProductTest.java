@@ -81,8 +81,7 @@ public class ProductTest {
 	 */
 	@Test
 	public void testToString() {
-		assertEquals("Product [id=0" + ", name=name" + ", description=description" + ", price=1" + ", url=null" + "]",
-				p.toString());
+		assertEquals("name" + ": description" + ", Precio: 1 |", p.toString());
 	}
 
 }
