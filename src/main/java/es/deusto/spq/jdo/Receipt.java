@@ -129,7 +129,7 @@ public class Receipt {
 	}
 
 	/**
-	 * ToString de el Recivo, saca un string con la estructura definida en el propio
+	 * ToString de el Recibo, saca un string con la estructura definida en el propio
 	 * método.
 	 */
 	@Override
