@@ -10,7 +10,6 @@ import java.util.List;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
-import javax.swing.ListModel;
 
 import org.junit.Before;
 import org.junit.Test;
