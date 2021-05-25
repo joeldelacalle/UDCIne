@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JTextField;
@@ -45,16 +46,12 @@ public class LastRealeasesTest {
 
 	private URL url;
 
-	private JLabel lblRecommendedAge = new JLabel("");
 	private JTextField textFieldReleaseName = new JTextField("");
 	private JLabel lblReleaseImage = new JLabel("");
-	private JLabel textPaneDescription = new JLabel("");
-	JTextPane textDescription = new JTextPane();
+	private JTextPane textPaneDescription = new JTextPane();
+	private JButton trailerButton = new JButton();
 
-	private int ageRelease;
 	private String urlRelease;
-	private String descRelease;
-	private String releaseName;
 	private String trailer;
 
 	private DefaultListModel<Release> releases;
@@ -64,7 +61,7 @@ public class LastRealeasesTest {
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	private JList<Release> listReleases;
 
-	private int selectedUser;
+	private int selected;
 
 	private LastReleasesWindow lrw;
 
@@ -119,13 +116,17 @@ public class LastRealeasesTest {
 	 */
 	@Test
 	public void nuevosLanzamientos() {
-		selectedUser = 0;
+		selected = 0;
 		for (Release release : lastReleases) {
 			releases.addElement(release);
 		}
 		listReleases = new JList<Release>(releases);
-		lrw.nuevosLanzamientos(listReleases, selectedUser, textFieldReleaseName, ageRelease, urlRelease, descRelease,
-				releaseName, trailer);
+		listReleases.setSelectedIndex(0);
+		try {
+			lrw.nuevosLanzamientos(listReleases,selected,textFieldReleaseName, lblReleaseImage, textPaneDescription,trailer,trailerButton);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 	}
 
@@ -152,14 +153,28 @@ public class LastRealeasesTest {
 	 */
 	@Test
 	public void testsetRelease() {
-		Image image = null;
-		descRelease = "hola";
 		urlRelease = "https://pics.filmaffinity.com/cherry-952736388-large.jpg";
 		try {
-			lrw.setRelease(urlRelease, image, lblRecommendedAge, textDescription, descRelease);
+			lrw.setRelease(urlRelease, lblReleaseImage);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * Test para obtener el trailer del próximo lanzamiento
+	 */
+	@Test
+	public void getTrailerTest() {
+		lrw.getTrailer();
+	}
+	
+	/**
+	 * Test para poner el trailer del próximo lanzamiento
+	 */
+	@Test
+	public void setTrailerTest() {
+		lrw.setTrailer(trailer);
 	}
 }
