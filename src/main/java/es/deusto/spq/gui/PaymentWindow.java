@@ -358,7 +358,7 @@ public class PaymentWindow extends JFrame {
 			message.setFrom(new InternetAddress(from));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(correo));
 			message.setSubject("Confirmación de Reserva");
-			message.setText("El código de tu reserva es: " + recibo.getOrder());
+			message.setText("" + recibo.getOrder());
 
 			System.out.println("Enviando mensaje...");
 			Transport.send(message);
