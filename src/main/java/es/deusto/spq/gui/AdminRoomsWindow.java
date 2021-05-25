@@ -232,7 +232,7 @@ public class AdminRoomsWindow extends JFrame implements Serializable {
 			comboFilm.addItem(film);
 		}
 
-		comboFilm.setBounds(51, 68, 265, 57);
+		comboFilm.setBounds(240, 68, 265, 57);
 		contentPane.add(comboFilm);
 		comboCinema.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -242,10 +242,10 @@ public class AdminRoomsWindow extends JFrame implements Serializable {
 
 		});
 
-		comboCinema.setBounds(50, 161, 265, 57);
+		comboCinema.setBounds(240, 161, 265, 57);
 		contentPane.add(comboCinema);
 
-		comboRoom.setBounds(50, 247, 265, 57);
+		comboRoom.setBounds(240, 247, 265, 57);
 		contentPane.add(comboRoom);
 
 		JButton btnAddFilmtoRoom = new JButton("ASIGNAR");
@@ -255,10 +255,10 @@ public class AdminRoomsWindow extends JFrame implements Serializable {
 			}
 		});
 		btnAddFilmtoRoom.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnAddFilmtoRoom.setBounds(50, 387, 266, 41);
+		btnAddFilmtoRoom.setBounds(240, 387, 266, 41);
 		contentPane.add(btnAddFilmtoRoom);
 
-		calendar.setBounds(123, 329, 110, 31);
+		calendar.setBounds(320, 329, 110, 31);
 		getContentPane().add(calendar);
 	}
 

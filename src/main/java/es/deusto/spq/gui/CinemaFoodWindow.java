@@ -148,7 +148,7 @@ public class CinemaFoodWindow extends JFrame {
 		lblPopcornBig.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				listmodelAlimentos.addElement(products.get(1));
+				listmodelAlimentos.addElement(products.get(2));
 			}
 		});
 		lblPopcornBig.setBounds(245, 85, 192, 157);
