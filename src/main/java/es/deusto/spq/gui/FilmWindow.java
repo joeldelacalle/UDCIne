@@ -178,7 +178,7 @@ public class FilmWindow extends JFrame {
 	 */
 	public FilmWindow(int billboard) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 725, 588);
+		setBounds(100, 100, 731, 588);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(64, 224, 208));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
