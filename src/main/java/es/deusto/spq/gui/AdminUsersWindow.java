@@ -31,6 +31,7 @@ import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
+import javax.swing.JScrollPane;
 
 /**
  * Ventana Administrador para usuarios
@@ -53,7 +54,7 @@ public class AdminUsersWindow extends JFrame {
 	public AdminUsersWindow() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 750, 501);
+		setBounds(100, 100, 613, 501);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(64, 224, 208));
 		contentPane.setBorder(new LineBorder(new Color(0, 0, 139), 2));
@@ -64,9 +65,6 @@ public class AdminUsersWindow extends JFrame {
 		GenericType<List<User>> genericType = new GenericType<List<User>>() {
 		};
 		List<User> users = UsersallTarget.request(MediaType.APPLICATION_JSON).get(genericType);
-		lista = new JList<User>(listausuarios);
-		lista.setBounds(50, 63, 467, 343);
-		contentPane.add(lista);
 
 		listausuarios.clear();
 		for (User user : users) {
@@ -74,7 +72,7 @@ public class AdminUsersWindow extends JFrame {
 		}
 
 		final JLabel lblX = new JLabel("X");
-		lblX.setBounds(707, 10, 19, 31);
+		lblX.setBounds(584, 10, 19, 31);
 		lblX.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -94,6 +92,12 @@ public class AdminUsersWindow extends JFrame {
 				lblX.setForeground(Color.WHITE);
 			}
 		});
+		lista = new JList<User>(listausuarios);
+		lista.setBounds(50, 126, 512, 281);
+		
+		JScrollPane scrollPane = new JScrollPane(lista);
+		scrollPane.setBounds(45, 126, 517, 281);
+		contentPane.add(scrollPane);
 		lblX.setHorizontalAlignment(SwingConstants.CENTER);
 		lblX.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblX.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -132,8 +136,13 @@ public class AdminUsersWindow extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton.setBounds(50, 433, 129, 23);
+		btnNewButton.setBounds(217, 432, 183, 23);
 		contentPane.add(btnNewButton);
+		
+		JLabel lblUsuarios = new JLabel("USUARIOS");
+		lblUsuarios.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblUsuarios.setBounds(256, 85, 160, 31);
+		contentPane.add(lblUsuarios);
 	}
 
 	/**
