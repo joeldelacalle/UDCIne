@@ -138,8 +138,8 @@ public class Room {
 
 	@Override
 	public String toString() {
-		return "Room [id=" + id + ", cinema=" + cinema + ", film=" + film + ", name=" + name + ", date=" + date
-				+ ", seats=" + seats + "]";
+		//Sala de cine x, Nombre
+		return "Cine" + cinema + ", Pelicula: " + film;
 	}
 
 }
