@@ -9,6 +9,8 @@ import java.util.logging.Logger;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,6 +18,7 @@ import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.jdo.Film;
 import es.deusto.spq.jdo.Product;
+import es.deusto.spq.jdo.User;
 import es.deusto.spq.types.GuiTest;
 
 /**
@@ -37,6 +40,13 @@ public class CinemaFoodWindowTest {
 
 	private CinemaFoodWindow cfw;
 	private OrderWindow ow;
+	private User u;
+	private JTextField textFieldPhoneNumber = new JTextField();
+	private JTextField textFieldName = new JTextField();
+	private JTextField textFieldNickname = new JTextField();
+	private JTextField textFieldEmail = new JTextField();
+	private JPasswordField passwordField = new JPasswordField();
+	private int phone;
 
 	public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
@@ -49,6 +59,17 @@ public class CinemaFoodWindowTest {
 	public void setUp() throws Exception {
 		cfw = new CinemaFoodWindow(selectedFilm, null);
 		ow = new OrderWindow(selectedFilm);
+		u = new User();
+		textFieldName = new JTextField("Jaime");
+		textFieldNickname = new JTextField("jaimesanta");
+		textFieldEmail = new JTextField("jaimesantamazo@hotmail.com");
+		passwordField = new JPasswordField("1234");
+		textFieldPhoneNumber = new JTextField("99");
+		u.setName(textFieldName.getText());
+		u.setNickname(textFieldNickname.getText());
+		u.setEmail(textFieldEmail.getText());
+		u.setPassword(passwordField.getText());
+		u.setPhoneNumber(phone);
 
 	}
 
@@ -65,7 +86,6 @@ public class CinemaFoodWindowTest {
 			// e.printStackTrace();
 		}
 	}
-
 	/**
 	 * Test para añadir productos a la ventana alimentos
 	 *
@@ -75,6 +95,15 @@ public class CinemaFoodWindowTest {
 		listmodelAlimentos.addElement(p);
 		cfw.addProducts(ow, listmodelAlimentos);
 
+	}
+
+	/**
+	 * Test para añadir productos a la ventana alimentos
+	 *
+	 */
+	@Test
+	public void comprobaruser() {
+		cfw.SetUserName(u);
 	}
 
 }

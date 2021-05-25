@@ -12,6 +12,7 @@ import org.junit.experimental.categories.Category;
 
 import es.deusto.spq.jdo.Order;
 import es.deusto.spq.jdo.Receipt;
+import es.deusto.spq.jdo.User;
 import es.deusto.spq.types.GuiTest;
 
 /**
@@ -26,6 +27,13 @@ public class PaymentWindowTest {
 	private JPasswordField passwordField;
 	private JTextField textField;
 	private Receipt r;
+	private JTextField textFieldPhoneNumber = new JTextField();
+	private JTextField textFieldName = new JTextField();
+	private JTextField textFieldNickname = new JTextField();
+	private JTextField textFieldEmail = new JTextField();
+	private JPasswordField password = new JPasswordField();
+	private int phone;
+	private User u;
 
 	/**
 	 * Metodo para construir objeto Pedido con sus atributos correspondientes y
@@ -40,6 +48,17 @@ public class PaymentWindowTest {
 		pw = new PaymentWindow(o);
 		passwordField = new JPasswordField();
 		textField = new JTextField();
+		u = new User();
+		textFieldName = new JTextField("Jaime");
+		textFieldNickname = new JTextField("jaimesanta");
+		textFieldEmail = new JTextField("jaimesantamazo@hotmail.com");
+		password = new JPasswordField("1234");
+		u.setName(textFieldName.getText());
+		u.setNickname(textFieldNickname.getText());
+		u.setEmail(textFieldEmail.getText());
+		u.setPassword(password.getText());
+		u.setPhoneNumber(phone);
+		textFieldPhoneNumber = new JTextField("99");
 	}
 
 	/**
@@ -51,6 +70,10 @@ public class PaymentWindowTest {
 		textField.setText("jaimesantamazo@gmail.com");
 		passwordField.setText("123");
 		pw.PagarPaypal(o, textField, passwordField);
+	}
+	@Test
+	public void comprobaruser() {
+		pw.SetUserName(u);
 	}
 
 	/**
