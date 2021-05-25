@@ -187,11 +187,8 @@ public class OrderWindow extends JFrame {
 		JButton btnComida = new JButton("Comida");
 		btnComida.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CinemaFoodWindow vac = new CinemaFoodWindow(selectedFilm, listModelShoppingCart);
-				UserResource ur = new UserResource();
-				vac.SetUserName(ur.getUser(lblUserName.getText()));
-				vac.setVisible(true);
-				dispose();
+				initCinemaFoodWindow(selectedFilm, listModelShoppingCart, lblUserName);
+
 			}
 		});
 		btnComida.setBounds(222, 439, 158, 51);
@@ -266,12 +263,25 @@ public class OrderWindow extends JFrame {
 
 		o.setPrice(totalPrice);
 
-		PaymentWindow pw = new PaymentWindow(o);
-		pw.SetUserName(ur.getUser(lblUserName.getText()));
-		pw.setVisible(true);
+		initPaymentWindow(o, ur);
+
 	}
 
 	public void setListModelShoppingCart(ListModel<Film> listModelShoppingCart, Film film) {
 		this.listModelShoppingCart.addElement(film);
+	}
+
+	public void initCinemaFoodWindow(Film selectedFilm, ListModel<Film> listModelShoppingCart, JLabel lblUserName) {
+		CinemaFoodWindow vac = new CinemaFoodWindow(selectedFilm, listModelShoppingCart);
+		UserResource ur = new UserResource();
+		vac.SetUserName(ur.getUser(lblUserName.getText()));
+		vac.setVisible(true);
+		dispose();
+	}
+
+	public void initPaymentWindow(Order o, UserResource ur) {
+		PaymentWindow pw = new PaymentWindow(o);
+		pw.SetUserName(ur.getUser(lblUserName.getText()));
+		pw.setVisible(true);
 	}
 }

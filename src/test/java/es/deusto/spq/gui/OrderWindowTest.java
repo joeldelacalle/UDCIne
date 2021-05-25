@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JLabel;
+import javax.swing.ListModel;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -17,6 +19,7 @@ import org.junit.experimental.categories.Category;
 import es.deusto.spq.jdo.Film;
 import es.deusto.spq.jdo.Product;
 import es.deusto.spq.jdo.User;
+import es.deusto.spq.resources.UserResource;
 import es.deusto.spq.types.GuiTest;
 
 /**
@@ -29,8 +32,9 @@ public class OrderWindowTest {
 	private List<Product> products = null;
 	private int numberTickets = 0;
 
-	private Film f = new Film(null, null, null, numberTickets, null, null);
+	private Film f = new Film("hola", "hola", null, numberTickets, null, null);
 	private User u = new User();
+	private JLabel lblUserName = new JLabel("");
 
 	/**
 	 * Metodo para establecer el apodo de un Usuario y construir objeto Producto con
@@ -105,6 +109,21 @@ public class OrderWindowTest {
 
 		ow2.CrearPedido(listModelShoppingCart, f, nickName);
 
+	}
+
+	@Test
+	public void initCinemaFoodWindow() {
+		//final DefaultListModel<Film> listModelShoppingCart = new DefaultListModel<Film>();
+		OrderWindow ow = new OrderWindow(f);
+		ow.setProducts(products);
+		// ow.initCinemaFoodWindow(f, listModelShoppingCart, lblUserName);
+	}
+
+	@Test
+	public void initPaymentWindow() {
+		OrderWindow ow = new OrderWindow(f);
+		UserResource ur = new UserResource();
+		ow.initPaymentWindow(null, ur);
 	}
 
 }
