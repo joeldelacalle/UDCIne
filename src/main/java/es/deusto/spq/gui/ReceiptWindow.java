@@ -51,7 +51,7 @@ public class ReceiptWindow extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 426, 521);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(72, 209, 204));
+		contentPane.setBackground(new Color(64, 224, 208));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -70,7 +70,7 @@ public class ReceiptWindow extends JFrame {
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				initMainWindow(labeluser);
+				dispose();
 			}
 
 			@Override

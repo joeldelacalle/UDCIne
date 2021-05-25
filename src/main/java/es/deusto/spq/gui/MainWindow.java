@@ -124,6 +124,7 @@ public class MainWindow extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				initLoginWindow();
+				dispose();
 			}
 		});
 		btnLogout.setBounds(550, 10, 150, 31);
@@ -147,6 +148,7 @@ public class MainWindow extends JFrame {
 		btnFilm1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				initFilmWindow(lblUserName, 0);
+				dispose();
 			}
 		});
 		btnFilm1.setBounds(36, 105, 130, 180);
@@ -162,6 +164,7 @@ public class MainWindow extends JFrame {
 		btnFilm2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				initFilmWindow(lblUserName, 1);
+				dispose();
 			}
 		});
 		btnFilm2.setBounds(176, 105, 130, 180);
@@ -177,6 +180,7 @@ public class MainWindow extends JFrame {
 		btnFilm3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				initFilmWindow(lblUserName, 2);
+				dispose();
 			}
 		});
 		btnFilm3.setBounds(316, 105, 130, 180);
@@ -192,6 +196,7 @@ public class MainWindow extends JFrame {
 		btnFilm4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				initFilmWindow(lblUserName, 3);
+				dispose();
 			}
 		});
 		btnFilm4.setBounds(456, 105, 130, 180);
@@ -318,7 +323,7 @@ public class MainWindow extends JFrame {
 		UserResource ur = new UserResource();
 		fw.SetUserName(ur.getUser(lblUserName.getText()));
 		fw.setVisible(true);
-		dispose();
+		
 	}
 
 	/**
@@ -331,7 +336,7 @@ public class MainWindow extends JFrame {
 		UserResource ur = new UserResource();
 		vv.SetUserName(ur.getUser(lblUserName.getText()));
 		vv.setVisible(true);
-		dispose();
+		
 	}
 
 	/**
@@ -341,12 +346,12 @@ public class MainWindow extends JFrame {
 	public void initLastReleasesWindow() {
 		LastReleasesWindow vne = new LastReleasesWindow();
 		vne.setVisible(true);
-		dispose();
+		
 	}
 
 	public void initLoginWindow() {
 		CinemaLoginWindow clw = new CinemaLoginWindow();
 		clw.setVisible(true);
-		dispose();
+		
 	}
 }

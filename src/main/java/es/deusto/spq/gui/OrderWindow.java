@@ -164,7 +164,6 @@ public class OrderWindow extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				CrearPedido(listModelShoppingCart, selectedFilm, lblUserName.getText());
-
 			}
 
 		});
@@ -283,5 +282,6 @@ public class OrderWindow extends JFrame {
 		PaymentWindow pw = new PaymentWindow(o);
 		pw.SetUserName(ur.getUser(lblUserName.getText()));
 		pw.setVisible(true);
+		dispose();
 	}
 }

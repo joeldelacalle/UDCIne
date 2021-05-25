@@ -116,7 +116,7 @@ public class LastReleasesWindow extends JFrame {
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				initMainWindow();
+				dispose();
 			}
 
 			@Override

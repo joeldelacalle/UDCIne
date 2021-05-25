@@ -75,7 +75,7 @@ public class RatingWindow extends JFrame {
 		JLabel lblNewLabel = new JLabel("AREA PERSONAL Y VALORACIONES");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Cooper Black", Font.BOLD, 27));
-		lblNewLabel.setBounds(88, 28, 539, 27);
+		lblNewLabel.setBounds(67, 28, 593, 27);
 		contentPane.add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("Usuario conectado:");
@@ -206,10 +206,6 @@ public class RatingWindow extends JFrame {
 		lblFlecha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MainWindow vp = new MainWindow();
-				UserResource ur = new UserResource();
-				SetUserName(ur.getUser(labeluser.getText()));
-				vp.setVisible(true);
 				dispose();
 			}
 

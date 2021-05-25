@@ -113,13 +113,20 @@ public class RegisterWindow extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				Registro(textFieldPhoneNumber, textFieldName, textFieldNickname, textFieldEmail, passwordField);
-
+				dispose();
+				CinemaLoginWindow clw = new CinemaLoginWindow();
+				clw.setVisible(true);
 			}
 
 		});
 		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnRegistrarse.setBounds(325, 411, 164, 33);
 		getContentPane().add(btnRegistrarse);
+		
+		JLabel lblNewLabel_4 = new JLabel("Ventana de registro");
+		lblNewLabel_4.setFont(new Font("Cooper Black", Font.BOLD, 30));
+		lblNewLabel_4.setBounds(149, 39, 396, 50);
+		contentPane.add(lblNewLabel_4);
 
 	}
 
@@ -150,5 +157,4 @@ public class RegisterWindow extends JFrame {
 			pm.close();
 		}
 	}
-
 }
