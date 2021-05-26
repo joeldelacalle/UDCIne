@@ -1,0 +1,9 @@
+<map id="es.deusto.spq.gui.MainWindow.initReceiptWindow" name="es.deusto.spq.gui.MainWindow.initReceiptWindow">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,229,112"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1resources_1_1_user_resource.html#ae1b5852c0f7d11f6fa996dc266cad91e" title=" " alt="" coords="279,5,449,47"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#a258a01c7a016b2569af199215cd24387" title=" " alt="" coords="277,71,451,112"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_receipt_window.html#ae58806798448b463c4e3bdb6c2441369" title=" " alt="" coords="277,136,451,177"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ab052a72d2f65d9dec93e9e55efc0013c" title=" " alt="" coords="499,13,711,39"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#aa07f1d750ea775cc94fa44fae2a9ec14" title=" " alt="" coords="515,71,694,112"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#af0f1fce6fbd31608e0d127dd90551439" title=" " alt="" coords="515,136,694,177"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="es.deusto.spq.gui.OrderWindow.CrearPedido" name="es.deusto.spq.gui.OrderWindow.CrearPedido">
+<area shape="rect" id="node1" title=" " alt="" coords="5,253,216,295"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#aa07f1d750ea775cc94fa44fae2a9ec14" title=" " alt="" coords="280,5,459,47"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html#aff8ee0dd3384d5263c0cc152006deab7" title=" " alt="" coords="264,71,475,98"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_ticket.html#a79f5eca4e5a58b9f9a98a683fd85dcb3" title=" " alt="" coords="276,123,463,164"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1resources_1_1_user_resource.html#ae1b5852c0f7d11f6fa996dc266cad91e" title=" " alt="" coords="285,188,454,229"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order.html#a688f9c74d1d003a422fa2b96c5d25939" title=" " alt="" coords="278,253,461,295"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order.html#a73ab6d307dfc80dbe15b25f562eab74c" title=" " alt="" coords="278,319,461,360"/>
+<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order.html#aed2614c8d9903ecb6f8a322e50d9bf69" title=" " alt="" coords="278,384,461,425"/>
+<area shape="rect" id="node10" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order.html#a4edd7ae2a12a1eaff2692fdfb0a826d1" title=" " alt="" coords="278,449,461,491"/>
+<area shape="rect" id="node11" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order.html#a7c746ef70f44f14db841670b5328ece8" title=" " alt="" coords="281,515,457,556"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ab052a72d2f65d9dec93e9e55efc0013c" title=" " alt="" coords="523,195,735,222"/>
+</map>

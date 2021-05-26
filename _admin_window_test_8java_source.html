@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/test/java/es/deusto/spq/gui/AdminWindowTest.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_120ed4da3e3217b1e7fc0b4f48568e79.html">test</a></li><li class="navelem"><a class="el" href="dir_97debbc39e3b917fca663601bb2b0709.html">java</a></li><li class="navelem"><a class="el" href="dir_4b96a8b33d1f8ef41fbe8cb4eb39245a.html">es</a></li><li class="navelem"><a class="el" href="dir_25b06560d1af80143ff1acfc9209093d.html">deusto</a></li><li class="navelem"><a class="el" href="dir_ed5d40ea3cf05e796193518606629533.html">spq</a></li><li class="navelem"><a class="el" href="dir_8ae5c32b2cfc0752ea2169b12e529f4e.html">gui</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">AdminWindowTest.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_admin_window_test_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.gui;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> org.glassfish.grizzly.http.server.HttpServer;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> org.junit.After;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> org.junit.Before;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> org.junit.experimental.categories.Category;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Main;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> es.deusto.spq.types.GuiTest;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.Client;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.ClientBuilder;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.WebTarget;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;@Category(GuiTest.class)</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html">   22</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html">AdminWindowTest</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html">AdminWindow</a> aw;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">private</span> HttpServer server;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Client client = ClientBuilder.newClient();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">final</span> WebTarget appTarget = client.target(<span class="stringliteral">&quot;http://localhost:8080/myapp&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    @Before</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#a4917e70f9071f7acaf1593b404fdeec6">   35</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#a4917e70f9071f7acaf1593b404fdeec6">setUp</a>() {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        aw = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html">AdminWindow</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        server = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a23ceca01d3d581472df36f867877fdbd">startServer</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    @After</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#aacfe2269a0e2e691b0d0346840e88d99">   45</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#aacfe2269a0e2e691b0d0346840e88d99">tearDown</a>() throws Exception {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        server.stop();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    @Test</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#abab62a3b991040d5342eb150840dea93">   54</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#abab62a3b991040d5342eb150840dea93">testinitAdminFilmsWindow</a>() {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        aw = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html">AdminWindow</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        aw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html#a03b4b866e62763f0f5c0310a1fc4b7b9">initAdminFilmsWindow</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    @Test</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#a97411a0e04d278ebeeaa93cab64a1932">   64</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#a97411a0e04d278ebeeaa93cab64a1932">testinitAdminRoomsWindow</a>() {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        aw = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html">AdminWindow</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        aw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html#a2c3fc2479397750d015c85ad9ddf172c">initAdminRoomsWindow</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    @Test</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#a5cce7855bab5d66c9683d123d6585a27">   74</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#a5cce7855bab5d66c9683d123d6585a27">testinitAdminUsersWindow</a>() {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        aw = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html">AdminWindow</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        aw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html#a43193f617afa7bbfdc0b6fdfd47d4558">initAdminUsersWindow</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_window_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html">es.deusto.spq.gui.AdminWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_admin_window_8java_source.html#l00024">AdminWindow.java:24</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_window_html_a03b4b866e62763f0f5c0310a1fc4b7b9"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html#a03b4b866e62763f0f5c0310a1fc4b7b9">es.deusto.spq.gui.AdminWindow.initAdminFilmsWindow</a></div><div class="ttdeci">void initAdminFilmsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_window_8java_source.html#l00155">AdminWindow.java:155</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_window_html_a2c3fc2479397750d015c85ad9ddf172c"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html#a2c3fc2479397750d015c85ad9ddf172c">es.deusto.spq.gui.AdminWindow.initAdminRoomsWindow</a></div><div class="ttdeci">void initAdminRoomsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_window_8java_source.html#l00165">AdminWindow.java:165</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_window_html_a43193f617afa7bbfdc0b6fdfd47d4558"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window.html#a43193f617afa7bbfdc0b6fdfd47d4558">es.deusto.spq.gui.AdminWindow.initAdminUsersWindow</a></div><div class="ttdeci">void initAdminUsersWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_window_8java_source.html#l00175">AdminWindow.java:175</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html">es.deusto.spq.gui.AdminWindowTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_admin_window_test_8java_source.html#l00022">AdminWindowTest.java:22</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test_html_a4917e70f9071f7acaf1593b404fdeec6"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#a4917e70f9071f7acaf1593b404fdeec6">es.deusto.spq.gui.AdminWindowTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_window_test_8java_source.html#l00035">AdminWindowTest.java:35</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test_html_a5cce7855bab5d66c9683d123d6585a27"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#a5cce7855bab5d66c9683d123d6585a27">es.deusto.spq.gui.AdminWindowTest.testinitAdminUsersWindow</a></div><div class="ttdeci">void testinitAdminUsersWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_window_test_8java_source.html#l00074">AdminWindowTest.java:74</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test_html_a97411a0e04d278ebeeaa93cab64a1932"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#a97411a0e04d278ebeeaa93cab64a1932">es.deusto.spq.gui.AdminWindowTest.testinitAdminRoomsWindow</a></div><div class="ttdeci">void testinitAdminRoomsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_window_test_8java_source.html#l00064">AdminWindowTest.java:64</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test_html_aacfe2269a0e2e691b0d0346840e88d99"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#aacfe2269a0e2e691b0d0346840e88d99">es.deusto.spq.gui.AdminWindowTest.tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_window_test_8java_source.html#l00045">AdminWindowTest.java:45</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test_html_abab62a3b991040d5342eb150840dea93"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_admin_window_test.html#abab62a3b991040d5342eb150840dea93">es.deusto.spq.gui.AdminWindowTest.testinitAdminFilmsWindow</a></div><div class="ttdeci">void testinitAdminFilmsWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_admin_window_test_8java_source.html#l00054">AdminWindowTest.java:54</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">es.deusto.spq.jdo.Main</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00018">Main.java:18</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html_a23ceca01d3d581472df36f867877fdbd"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a23ceca01d3d581472df36f867877fdbd">es.deusto.spq.jdo.Main.startServer</a></div><div class="ttdeci">static HttpServer startServer()</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00030">Main.java:30</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/test/java/es/deusto/spq/resources/RoomResourceTest.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_120ed4da3e3217b1e7fc0b4f48568e79.html">test</a></li><li class="navelem"><a class="el" href="dir_97debbc39e3b917fca663601bb2b0709.html">java</a></li><li class="navelem"><a class="el" href="dir_4b96a8b33d1f8ef41fbe8cb4eb39245a.html">es</a></li><li class="navelem"><a class="el" href="dir_25b06560d1af80143ff1acfc9209093d.html">deusto</a></li><li class="navelem"><a class="el" href="dir_ed5d40ea3cf05e796193518606629533.html">spq</a></li><li class="navelem"><a class="el" href="dir_75388bc81011a6d64dd7f126a0d011f4.html">resources</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">RoomResourceTest.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_room_resource_test_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.resources;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.*;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> java.util.ArrayList;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> java.util.Arrays;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> java.util.Calendar;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> org.databene.contiperf.PerfTest;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> org.databene.contiperf.junit.ContiPerfRule;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> org.glassfish.grizzly.http.server.HttpServer;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> org.junit.After;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> org.junit.Before;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> org.junit.Ignore;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> org.junit.Rule;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> org.junit.experimental.categories.Category;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Cinema;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Film;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Main;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Room;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">import</span> es.deusto.spq.types.IntegrationTest;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.Client;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.ClientBuilder;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.client.WebTarget;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.GenericType;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.MediaType;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;@Category(IntegrationTest.class)</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test.html">   38</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test.html">RoomResourceTest</a> {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    @Rule </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test.html#af03283e4c1ca6d16fe0b33c9340bd8f8">   44</a></span>&#160;    <span class="keyword">public</span> ContiPerfRule rule = <span class="keyword">new</span> ContiPerfRule();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">private</span> HttpServer server;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">private</span> WebTarget appTarget;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">private</span> Client c;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    @Before</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test.html#a99336fae8ed988e8bcbbe7779a633d2f">   54</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test.html#a99336fae8ed988e8bcbbe7779a633d2f">setUp</a>() throws Exception {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        server = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a23ceca01d3d581472df36f867877fdbd">startServer</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        c = ClientBuilder.newClient();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        appTarget = c.target(<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a205bb87ce76fc17dbcd6852e34e5d84d">BASE_URI</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    @SuppressWarnings(<span class="stringliteral">&quot;deprecation&quot;</span>)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    @After</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test.html#a8abe50b7e7ee7fb210305c0eaa145649">   65</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test.html#a8abe50b7e7ee7fb210305c0eaa145649">tearDown</a>() throws Exception {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        server.stop();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    @Test</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    @PerfTest(invocations = 100, threads = 40)</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test.html#a8d124e7a53bae811a2fb3cc1b107ae62">   74</a></span>&#160;    public <span class="keywordtype">void</span> testgetRooms() {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        WebTarget roomTarget = appTarget.path(<span class="stringliteral">&quot;rooms&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a> filmA = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a>(<span class="stringliteral">&quot;Jon&quot;</span>, <span class="stringliteral">&quot;Iron Man&quot;</span>,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="stringliteral">&quot;El acto principal es Tony Stark, un magnate multimillonario y hÃ¡bil ingeniero con abundantes vicios que construye un exoesqueleto mecÃ¡nico y se convierte en el superhÃ©roe Iron Man.&quot;</span>,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                13, <span class="stringliteral">&quot;https://pics.filmaffinity.com/iron_man-108960873-large.jpg&quot;</span>, <span class="stringliteral">&quot;https://www.youtube.com/watch?v=RLiO7pt8MbU&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a> filmB = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a>(<span class="stringliteral">&quot;Jon&quot;</span>, <span class="stringliteral">&quot;Iron Man 2&quot;</span>,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="stringliteral">&quot;El mundo sabe que el multimillonario Tony Stark es Iron Man, el superhÃ©roe enmascarado, el cual forja alianzas nuevas y se enfrenta a nuevas y poderosas fuerzas.&quot;</span>,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                13, <span class="stringliteral">&quot;https://pics.filmaffinity.com/iron_man_2-466103197-large.jpg&quot;</span>, <span class="stringliteral">&quot;youtube.com/watch?v=Ab_mvS68xng&quot;</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a> filmC = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a>(<span class="stringliteral">&quot;Jon&quot;</span>, <span class="stringliteral">&quot;Iron Man 3&quot;</span>,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="stringliteral">&quot;Tony Stark tendrÃ¡ que enfrentarse a un enemigo cuyo alcance no conoce lÃ­mites. Cuando Stark encuentre su vida personal destruida a manos de su enemigo, se embarca en una difÃ­cil aventura para encontrar al responsable.&quot;</span>,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                13, <span class="stringliteral">&quot;https://pics.filmaffinity.com/iron_man_3_aka_ironman_3-972235216-large.jpg&quot;</span>, <span class="stringliteral">&quot;https://www.youtube.com/watch?v=6dhCPF_Jsco&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html">Cinema</a> cinema1 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html">Cinema</a>(<span class="stringliteral">&quot;Cine Deusto Zubiarte&quot;</span>, <span class="stringliteral">&quot;Bilbao&quot;</span>, <span class="stringliteral">&quot;Centro Comercial Zubiarte&quot;</span>, 123456789);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        List&lt;Room&gt; listarooms = Arrays.asList(<span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room.html">Room</a>(cinema1, filmA, <span class="stringliteral">&quot;ZUBIARTE SALA 1&quot;</span>, Calendar.getInstance().getTime(), 100),<span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room.html">Room</a>(cinema1, filmB, <span class="stringliteral">&quot;ZUBIARTE SALA 2&quot;</span>, Calendar.getInstance().getTime(), 100),<span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room.html">Room</a>(cinema1, filmC, <span class="stringliteral">&quot;ZUBIARTE SALA 3&quot;</span>, Calendar.getInstance().getTime(), 100));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        GenericType&lt;List&lt;Room&gt;&gt; genericType = <span class="keyword">new</span> GenericType&lt;List&lt;Room&gt;&gt;() {};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        List&lt;Room&gt; rooms = roomTarget.request(MediaType.APPLICATION_JSON).get(genericType);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        List&lt;Room&gt; rooms2 = <span class="keyword">new</span> ArrayList&lt;Room&gt;();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rooms.size(); i++) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">if</span> (rooms.get(i).getName().equals(listarooms.get(0).getName())) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                rooms2.add(rooms.get(i));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                assertEquals(listarooms.get(0).getName(), rooms2.get(0).getName());</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">//assertEquals(listarooms.get(0).getName(), rooms.get(2).getName());</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="comment">//assertEquals(listarooms.get(1).getName(), rooms.get(1).getName());</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="comment">//assertEquals(listarooms.get(2).getName(), rooms.get(0).getName());</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html">es.deusto.spq.jdo.Cinema</a></div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00015">Cinema.java:15</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_film_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">es.deusto.spq.jdo.Film</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00015">Film.java:15</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">es.deusto.spq.jdo.Main</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00018">Main.java:18</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html_a205bb87ce76fc17dbcd6852e34e5d84d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a205bb87ce76fc17dbcd6852e34e5d84d">es.deusto.spq.jdo.Main.BASE_URI</a></div><div class="ttdeci">static final String BASE_URI</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00020">Main.java:20</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html_a23ceca01d3d581472df36f867877fdbd"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a23ceca01d3d581472df36f867877fdbd">es.deusto.spq.jdo.Main.startServer</a></div><div class="ttdeci">static HttpServer startServer()</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00030">Main.java:30</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_room_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_room.html">es.deusto.spq.jdo.Room</a></div><div class="ttdef"><b>Definition:</b> <a href="_room_8java_source.html#l00016">Room.java:16</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test.html">es.deusto.spq.resources.RoomResourceTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_room_resource_test_8java_source.html#l00038">RoomResourceTest.java:38</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test_html_a8abe50b7e7ee7fb210305c0eaa145649"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test.html#a8abe50b7e7ee7fb210305c0eaa145649">es.deusto.spq.resources.RoomResourceTest.tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdef"><b>Definition:</b> <a href="_room_resource_test_8java_source.html#l00065">RoomResourceTest.java:65</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test_html_a99336fae8ed988e8bcbbe7779a633d2f"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1resources_1_1_room_resource_test.html#a99336fae8ed988e8bcbbe7779a633d2f">es.deusto.spq.resources.RoomResourceTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_room_resource_test_8java_source.html#l00054">RoomResourceTest.java:54</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,26 @@
+var classes_1_1deusto_1_1spq_1_1_release =
+[
+    [ "Release", "classes_1_1deusto_1_1spq_1_1_release.html#a5e2fc16eb5de09bb3de4300695e0d9f1", null ],
+    [ "getAgeRestriction", "classes_1_1deusto_1_1spq_1_1_release.html#a2e908e5eb3a2e484c29ee35c4520da9d", null ],
+    [ "getDescription", "classes_1_1deusto_1_1spq_1_1_release.html#a37ab534f71522ddac70e8b7269fb06eb", null ],
+    [ "getDirector", "classes_1_1deusto_1_1spq_1_1_release.html#a22e86ff6a15fd41e000199e3e56f1bd8", null ],
+    [ "getId", "classes_1_1deusto_1_1spq_1_1_release.html#aac001c7027da91d06e6d5370fa2a2acb", null ],
+    [ "getName", "classes_1_1deusto_1_1spq_1_1_release.html#aae8a2c6db99cbe2a79dc8545f01321f1", null ],
+    [ "getTrailer", "classes_1_1deusto_1_1spq_1_1_release.html#aa5b9fc2494bc257130c63d3018c7f79f", null ],
+    [ "getUrl", "classes_1_1deusto_1_1spq_1_1_release.html#ad8b9fc65d08ce9113940928152ab2981", null ],
+    [ "setAgeRestriction", "classes_1_1deusto_1_1spq_1_1_release.html#a852b499a237a8a92d78b168b4bc9d7f9", null ],
+    [ "setDescription", "classes_1_1deusto_1_1spq_1_1_release.html#a925f9adbb687e9b7f145623dff3c3a5b", null ],
+    [ "setDirector", "classes_1_1deusto_1_1spq_1_1_release.html#a7f47e728b1f273ecb157c2b79237ff12", null ],
+    [ "setId", "classes_1_1deusto_1_1spq_1_1_release.html#ab170df6fa66d86e40583ca6072f9b513", null ],
+    [ "setName", "classes_1_1deusto_1_1spq_1_1_release.html#a0aa783a359220754875a5f4959da84af", null ],
+    [ "setTrailer", "classes_1_1deusto_1_1spq_1_1_release.html#a9514e258e31d3ef57d10f7cdabaf1344", null ],
+    [ "setUrl", "classes_1_1deusto_1_1spq_1_1_release.html#a60fb83df29500a874bc1dec14fe20947", null ],
+    [ "toString", "classes_1_1deusto_1_1spq_1_1_release.html#a761d635548205048d21a924dffa49baf", null ],
+    [ "ageRestriction", "classes_1_1deusto_1_1spq_1_1_release.html#a0425280ff51841fbebcba3706f7f8a37", null ],
+    [ "description", "classes_1_1deusto_1_1spq_1_1_release.html#a857bb5ad7dfbbfd786fc611c568744c0", null ],
+    [ "director", "classes_1_1deusto_1_1spq_1_1_release.html#aeed156797912a9777edc9cc279944a48", null ],
+    [ "id", "classes_1_1deusto_1_1spq_1_1_release.html#a1154714043e4336aaa698311cbdb155f", null ],
+    [ "name", "classes_1_1deusto_1_1spq_1_1_release.html#aff5170d7e96c3d94884903654a0e9142", null ],
+    [ "trailer", "classes_1_1deusto_1_1spq_1_1_release.html#ae01d1c0eac1f905d8f38e645cf9dfd2c", null ],
+    [ "url", "classes_1_1deusto_1_1spq_1_1_release.html#a50ea795a9bc31029341be6bee1b37dcc", null ]
+];

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/test/java/es/deusto/spq/jdo/MainTest.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_120ed4da3e3217b1e7fc0b4f48568e79.html">test</a></li><li class="navelem"><a class="el" href="dir_97debbc39e3b917fca663601bb2b0709.html">java</a></li><li class="navelem"><a class="el" href="dir_4b96a8b33d1f8ef41fbe8cb4eb39245a.html">es</a></li><li class="navelem"><a class="el" href="dir_25b06560d1af80143ff1acfc9209093d.html">deusto</a></li><li class="navelem"><a class="el" href="dir_ed5d40ea3cf05e796193518606629533.html">spq</a></li><li class="navelem"><a class="el" href="dir_4fe56d8183522424bf650048df85d518.html">jdo</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MainTest.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_main_test_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.jdo;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> java.io.IOException;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> java.util.logging.Level;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> java.util.logging.Logger;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> org.junit.After;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> org.junit.Before;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Main;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html">   16</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html">MainTest</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">Main</a> m;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#a07df9b0e4e6336dbe68e8dbaebd8079d">   19</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> Logger <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#a07df9b0e4e6336dbe68e8dbaebd8079d">logger</a> = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    @Before</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#aeb917963a88ec776a06d5145911ddb43">   22</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#aeb917963a88ec776a06d5145911ddb43">setUp</a>() throws Exception {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        m = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">Main</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    @<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#a6cff889f2accc5721809c8873bd02ffe">After</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#a6cff889f2accc5721809c8873bd02ffe">   27</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#a6cff889f2accc5721809c8873bd02ffe">After</a>() {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     * @Test public void startServer() { Main.startServer(); }</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    @Test</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#aac4b8b07f5f84c9becfe7f5e193cce8d">   39</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#aac4b8b07f5f84c9becfe7f5e193cce8d">testMain</a>() {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#ac6e1b3f6a9415d216e41ab844fedaf2f">main</a>(<span class="keyword">new</span> String[0], 0);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="comment">// TODO Auto-generated catch block</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#a07df9b0e4e6336dbe68e8dbaebd8079d">logger</a>.log(Level.WARNING, <span class="stringliteral">&quot;IOException&quot;</span>, e);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">es.deusto.spq.jdo.Main</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00018">Main.java:18</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html_ac6e1b3f6a9415d216e41ab844fedaf2f"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#ac6e1b3f6a9415d216e41ab844fedaf2f">es.deusto.spq.jdo.Main.main</a></div><div class="ttdeci">static void main(String[] args, int i)</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00046">Main.java:46</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html">es.deusto.spq.jdo.MainTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_test_8java_source.html#l00016">MainTest.java:16</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_test_html_a07df9b0e4e6336dbe68e8dbaebd8079d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#a07df9b0e4e6336dbe68e8dbaebd8079d">es.deusto.spq.jdo.MainTest.logger</a></div><div class="ttdeci">static final Logger logger</div><div class="ttdef"><b>Definition:</b> <a href="_main_test_8java_source.html#l00019">MainTest.java:19</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_test_html_a6cff889f2accc5721809c8873bd02ffe"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#a6cff889f2accc5721809c8873bd02ffe">es.deusto.spq.jdo.MainTest.After</a></div><div class="ttdeci">void After()</div><div class="ttdef"><b>Definition:</b> <a href="_main_test_8java_source.html#l00027">MainTest.java:27</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_test_html_aac4b8b07f5f84c9becfe7f5e193cce8d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#aac4b8b07f5f84c9becfe7f5e193cce8d">es.deusto.spq.jdo.MainTest.testMain</a></div><div class="ttdeci">void testMain()</div><div class="ttdef"><b>Definition:</b> <a href="_main_test_8java_source.html#l00039">MainTest.java:39</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_test_html_aeb917963a88ec776a06d5145911ddb43"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main_test.html#aeb917963a88ec776a06d5145911ddb43">es.deusto.spq.jdo.MainTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_main_test_8java_source.html#l00022">MainTest.java:22</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

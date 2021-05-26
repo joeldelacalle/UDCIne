@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/main/java/es/deusto/spq/jdo/Cinema.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_f9b1e2a59d62d001356ff527358589e3.html">es</a></li><li class="navelem"><a class="el" href="dir_218602b84a76f1dba535b3f8d119ec0a.html">deusto</a></li><li class="navelem"><a class="el" href="dir_7df73947654fe6d5c668d5365112078e.html">spq</a></li><li class="navelem"><a class="el" href="dir_b44f20764fb01a7190e6ea555f39e2d6.html">jdo</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Cinema.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_cinema_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.jdo;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> javax.jdo.annotations.IdGeneratorStrategy;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> javax.jdo.annotations.PersistenceCapable;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> javax.jdo.annotations.Persistent;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> javax.jdo.annotations.PrimaryKey;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;@PersistenceCapable</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html">   15</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html">Cinema</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    @PrimaryKey</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    @Persistent(valueStrategy=IdGeneratorStrategy.NATIVE)</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a548af163a651cfe4f0f21355e0d09241">   19</a></span>&#160;    protected <span class="keywordtype">long</span> <span class="keywordtype">id</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a0c46da047ce4bcd05a2a8afc75faa84f">   21</a></span>&#160;    protected String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a0c46da047ce4bcd05a2a8afc75faa84f">name</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6d0fd490c5dde95014a1161002e0692e">   22</a></span>&#160;    protected String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6d0fd490c5dde95014a1161002e0692e">city</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a7c4a7a26d340f2b76903d2cd8a6c836c">   23</a></span>&#160;    protected String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a7c4a7a26d340f2b76903d2cd8a6c836c">address</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#abf93dfde0072372f08fc48517fa3547f">   24</a></span>&#160;    protected <span class="keywordtype">int</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#abf93dfde0072372f08fc48517fa3547f">phoneNumber</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#aec473a2323a7304fd621cf16968b8231">   28</a></span>&#160;    public <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html">Cinema</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a0c46da047ce4bcd05a2a8afc75faa84f">name</a>, String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6d0fd490c5dde95014a1161002e0692e">city</a>, String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a7c4a7a26d340f2b76903d2cd8a6c836c">address</a>, <span class="keywordtype">int</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#abf93dfde0072372f08fc48517fa3547f">phoneNumber</a>) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        super();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        this.name = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a0c46da047ce4bcd05a2a8afc75faa84f">name</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        this.city = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6d0fd490c5dde95014a1161002e0692e">city</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        this.address = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a7c4a7a26d340f2b76903d2cd8a6c836c">address</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        this.phoneNumber = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#abf93dfde0072372f08fc48517fa3547f">phoneNumber</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a5e30ece5f9a10a5d09dc67d810db07a8">   39</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a5e30ece5f9a10a5d09dc67d810db07a8">getId</a>() {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a548af163a651cfe4f0f21355e0d09241">id</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#aa2b08510b06ada1b4d6923df1b7b8467">   45</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#aa2b08510b06ada1b4d6923df1b7b8467">setId</a>(<span class="keywordtype">long</span> <span class="keywordtype">id</span>) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        this.<span class="keywordtype">id</span> = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a548af163a651cfe4f0f21355e0d09241">id</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a688e3c140e7259b63e0cbeb6893bc57e">   51</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a688e3c140e7259b63e0cbeb6893bc57e">getName</a>() {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a0c46da047ce4bcd05a2a8afc75faa84f">name</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a3743bf3b9eb8cbddede6fc42868b18f4">   57</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a3743bf3b9eb8cbddede6fc42868b18f4">setName</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a0c46da047ce4bcd05a2a8afc75faa84f">name</a>) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        this.name = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a0c46da047ce4bcd05a2a8afc75faa84f">name</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6f1a9e3f74d117b08d5dc1b0b2513641">   63</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6f1a9e3f74d117b08d5dc1b0b2513641">getCity</a>() {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6d0fd490c5dde95014a1161002e0692e">city</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#ab95cdbd4efe9c406db457a93715fda7d">   69</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#ab95cdbd4efe9c406db457a93715fda7d">setCity</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6d0fd490c5dde95014a1161002e0692e">city</a>) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        this.city = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6d0fd490c5dde95014a1161002e0692e">city</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#af2c50833651be0c246fd8aa24d501240">   75</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#af2c50833651be0c246fd8aa24d501240">getAddress</a>() {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a7c4a7a26d340f2b76903d2cd8a6c836c">address</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#aa4356824616bca70996b2ca630fbc111">   81</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#aa4356824616bca70996b2ca630fbc111">setAddress</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a7c4a7a26d340f2b76903d2cd8a6c836c">address</a>) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        this.address = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a7c4a7a26d340f2b76903d2cd8a6c836c">address</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a5c64efa4f9a4e4a4ef0be9e564cb580d">   87</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a5c64efa4f9a4e4a4ef0be9e564cb580d">getPhoneNumber</a>() {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#abf93dfde0072372f08fc48517fa3547f">phoneNumber</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a55fd59dc2dba8d45023db6ec63680a0c">   93</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a55fd59dc2dba8d45023db6ec63680a0c">setPhoneNumber</a>(<span class="keywordtype">int</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#abf93dfde0072372f08fc48517fa3547f">phoneNumber</a>) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        this.phoneNumber = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#abf93dfde0072372f08fc48517fa3547f">phoneNumber</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    @Override</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a8481e2f90c0cf48a08b6395e501f5232">  100</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a8481e2f90c0cf48a08b6395e501f5232">toString</a>() {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Cinema [id=&quot;</span> + <span class="keywordtype">id</span> + <span class="stringliteral">&quot;, name=&quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a0c46da047ce4bcd05a2a8afc75faa84f">name</a> + <span class="stringliteral">&quot;, city=&quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6d0fd490c5dde95014a1161002e0692e">city</a> + <span class="stringliteral">&quot;, address=&quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a7c4a7a26d340f2b76903d2cd8a6c836c">address</a> + <span class="stringliteral">&quot;, phoneNumber=&quot;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                + <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#abf93dfde0072372f08fc48517fa3547f">phoneNumber</a> + <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html">es.deusto.spq.jdo.Cinema</a></div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00015">Cinema.java:15</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a0c46da047ce4bcd05a2a8afc75faa84f"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a0c46da047ce4bcd05a2a8afc75faa84f">es.deusto.spq.jdo.Cinema.name</a></div><div class="ttdeci">String name</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00021">Cinema.java:21</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a3743bf3b9eb8cbddede6fc42868b18f4"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a3743bf3b9eb8cbddede6fc42868b18f4">es.deusto.spq.jdo.Cinema.setName</a></div><div class="ttdeci">void setName(String name)</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00057">Cinema.java:57</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a548af163a651cfe4f0f21355e0d09241"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a548af163a651cfe4f0f21355e0d09241">es.deusto.spq.jdo.Cinema.id</a></div><div class="ttdeci">long id</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00019">Cinema.java:19</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a55fd59dc2dba8d45023db6ec63680a0c"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a55fd59dc2dba8d45023db6ec63680a0c">es.deusto.spq.jdo.Cinema.setPhoneNumber</a></div><div class="ttdeci">void setPhoneNumber(int phoneNumber)</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00093">Cinema.java:93</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a5c64efa4f9a4e4a4ef0be9e564cb580d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a5c64efa4f9a4e4a4ef0be9e564cb580d">es.deusto.spq.jdo.Cinema.getPhoneNumber</a></div><div class="ttdeci">int getPhoneNumber()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00087">Cinema.java:87</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a5e30ece5f9a10a5d09dc67d810db07a8"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a5e30ece5f9a10a5d09dc67d810db07a8">es.deusto.spq.jdo.Cinema.getId</a></div><div class="ttdeci">long getId()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00039">Cinema.java:39</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a688e3c140e7259b63e0cbeb6893bc57e"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a688e3c140e7259b63e0cbeb6893bc57e">es.deusto.spq.jdo.Cinema.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00051">Cinema.java:51</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a6d0fd490c5dde95014a1161002e0692e"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6d0fd490c5dde95014a1161002e0692e">es.deusto.spq.jdo.Cinema.city</a></div><div class="ttdeci">String city</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00022">Cinema.java:22</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a6f1a9e3f74d117b08d5dc1b0b2513641"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6f1a9e3f74d117b08d5dc1b0b2513641">es.deusto.spq.jdo.Cinema.getCity</a></div><div class="ttdeci">String getCity()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00063">Cinema.java:63</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a7c4a7a26d340f2b76903d2cd8a6c836c"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a7c4a7a26d340f2b76903d2cd8a6c836c">es.deusto.spq.jdo.Cinema.address</a></div><div class="ttdeci">String address</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00023">Cinema.java:23</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a8481e2f90c0cf48a08b6395e501f5232"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a8481e2f90c0cf48a08b6395e501f5232">es.deusto.spq.jdo.Cinema.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00100">Cinema.java:100</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_aa2b08510b06ada1b4d6923df1b7b8467"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#aa2b08510b06ada1b4d6923df1b7b8467">es.deusto.spq.jdo.Cinema.setId</a></div><div class="ttdeci">void setId(long id)</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00045">Cinema.java:45</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_aa4356824616bca70996b2ca630fbc111"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#aa4356824616bca70996b2ca630fbc111">es.deusto.spq.jdo.Cinema.setAddress</a></div><div class="ttdeci">void setAddress(String address)</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00081">Cinema.java:81</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_ab95cdbd4efe9c406db457a93715fda7d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#ab95cdbd4efe9c406db457a93715fda7d">es.deusto.spq.jdo.Cinema.setCity</a></div><div class="ttdeci">void setCity(String city)</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00069">Cinema.java:69</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_abf93dfde0072372f08fc48517fa3547f"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#abf93dfde0072372f08fc48517fa3547f">es.deusto.spq.jdo.Cinema.phoneNumber</a></div><div class="ttdeci">int phoneNumber</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00024">Cinema.java:24</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_af2c50833651be0c246fd8aa24d501240"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#af2c50833651be0c246fd8aa24d501240">es.deusto.spq.jdo.Cinema.getAddress</a></div><div class="ttdeci">String getAddress()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00075">Cinema.java:75</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

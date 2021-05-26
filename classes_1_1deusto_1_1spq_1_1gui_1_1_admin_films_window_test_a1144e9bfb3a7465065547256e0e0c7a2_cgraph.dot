@@ -1,0 +1,32 @@
+digraph "es.deusto.spq.gui.AdminFilmsWindowTest.AñadirPeliculaBDTest"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="es.deusto.spq.gui.AdminFilms\lWindowTest.AñadirPeliculaBDTest",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="es.deusto.spq.gui.AdminFilms\lWindow.AñadirPeliculaBd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#a6ada5b157bd55054be34aa51fbd20af9",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="es.deusto.spq.gui.AdminFilms\lWindow.AdminFilmsWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#af97f69f822e297413f84b41cd256deb1",tooltip=" "];
+  Node3 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="es.deusto.spq.gui.AdminFilms\lWindow.EliminarPeliculaBd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1gui_1_1_admin_films_window.html#ac001073c773cccd6ad96676bdb1d4e80",tooltip=" "];
+  Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="es.deusto.spq.Film.getId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1_film.html#a08859f9d8a16825692a6cdbdc95c43d0",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="es.deusto.spq.Film.toString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1_film.html#aaebc9ca1f64e372d99025fb9dd019f0d",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="es.deusto.spq.Film.setAge\lRestriction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1_film.html#a736b00cca3e323a5230cf6c98cc045a2",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="es.deusto.spq.Film.setDescription",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1_film.html#adabe7a83cd8ef6848f121f009eb01088",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="es.deusto.spq.Film.setDirector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1_film.html#ae9fb79d9830786d895b6b4ea5001f409",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="es.deusto.spq.Film.setName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1_film.html#a47f7e03f607499d2ae893d08f6cb7a23",tooltip=" "];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="es.deusto.spq.Film.setTrailer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1_film.html#a13cdb127456679cc923b296445823b9e",tooltip=" "];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="es.deusto.spq.Film.setUrl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classes_1_1deusto_1_1spq_1_1_film.html#af713c7c61e53014a39fa4ef6fbb572f0",tooltip=" "];
+}

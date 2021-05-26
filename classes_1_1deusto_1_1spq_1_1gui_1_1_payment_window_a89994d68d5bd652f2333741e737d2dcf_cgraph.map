@@ -1,0 +1,15 @@
+<map id="es.deusto.spq.gui.PaymentWindow.PaymentWindow" name="es.deusto.spq.gui.PaymentWindow.PaymentWindow">
+<area shape="rect" id="node1" title=" " alt="" coords="5,272,187,313"/>
+<area shape="rect" id="node2" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window.html#a19b64df2fa2ffa539dbc7f6fb6861e06" title=" " alt="" coords="235,239,416,280"/>
+<area shape="rect" id="node11" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window.html#a73c315fbc4f2045f87a032655552f38a" title=" " alt="" coords="235,304,416,345"/>
+<area shape="rect" id="node3" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order.html#a9f06ede9a8d8a4c9f0d107648717c6cb" title=" " alt="" coords="464,137,675,163"/>
+<area shape="rect" id="node4" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order.html#a3d3f8a383bb69fd3a300e2f37b5a9b00" title=" " alt="" coords="466,187,673,214"/>
+<area shape="rect" id="node5" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order.html#a14f943b19ca9138780a3aabeb80502bc" title=" " alt="" coords="478,239,661,280"/>
+<area shape="rect" id="node6" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order.html#aca9a5ed5403c0911ba553ca9243b229b" title=" " alt="" coords="478,304,661,345"/>
+<area shape="rect" id="node7" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order.html#a5df4bc36a13e571fee9e642d458dd83a" title=" " alt="" coords="478,369,661,411"/>
+<area shape="rect" id="node8" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order.html#a0a72830e39f9854dd41402969dd81702" title=" " alt="" coords="478,435,661,476"/>
+<area shape="rect" id="node9" href="$classes_1_1deusto_1_1spq_1_1gui_1_1_payment_window.html#ae6cbe14b8355dba2623d18ff0cbe27c0" title=" " alt="" coords="479,5,660,47"/>
+<area shape="rect" id="node10" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_order.html#a9889b72269b1fe67cfcfb38c9c52493c" title=" " alt="" coords="478,71,661,112"/>
+<area shape="rect" id="node12" href="$classes_1_1deusto_1_1spq_1_1jdo_1_1_pay_pal.html#afdfbe9b01f4bfc34b49e1015dcb2011c" title=" " alt="" coords="473,500,666,541"/>
+<area shape="rect" id="node13" href="$classes_1_1deusto_1_1spq_1_1resources_1_1_pago_resource.html#a8e370e884319348464b5e01e600aa682" title=" " alt="" coords="485,565,654,607"/>
+</map>

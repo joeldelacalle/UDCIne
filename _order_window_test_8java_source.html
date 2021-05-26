@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/test/java/es/deusto/spq/gui/OrderWindowTest.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_120ed4da3e3217b1e7fc0b4f48568e79.html">test</a></li><li class="navelem"><a class="el" href="dir_97debbc39e3b917fca663601bb2b0709.html">java</a></li><li class="navelem"><a class="el" href="dir_4b96a8b33d1f8ef41fbe8cb4eb39245a.html">es</a></li><li class="navelem"><a class="el" href="dir_25b06560d1af80143ff1acfc9209093d.html">deusto</a></li><li class="navelem"><a class="el" href="dir_ed5d40ea3cf05e796193518606629533.html">spq</a></li><li class="navelem"><a class="el" href="dir_8ae5c32b2cfc0752ea2169b12e529f4e.html">gui</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">OrderWindowTest.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_order_window_test_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.gui;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> java.util.ArrayList;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> javax.swing.DefaultListModel;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> org.junit.Before;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> org.junit.experimental.categories.Category;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Film;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Product;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.User;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> es.deusto.spq.types.GuiTest;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;@Category(GuiTest.class)</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html">   27</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html">OrderWindowTest</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">private</span> List&lt;Product&gt; products = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">int</span> numberTickets = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a> f = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">Film</a>(<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, numberTickets, <span class="keyword">null</span>, <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a> u = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">Product</a> p;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    @Before</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a8b13c51051c47477cca169fdb7e91dbc">   43</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a8b13c51051c47477cca169fdb7e91dbc">setUp</a>() throws Exception {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        u.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ae69b8acddec7f3c31b4cb3c02c518be0">setNickname</a>(<span class="stringliteral">&quot;hola&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        p = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">Product</a>(<span class="stringliteral">&quot;palomitas&quot;</span>, <span class="stringliteral">&quot;descripcion&quot;</span>, numberTickets, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    @Test</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a59aace6531cb8f49d8e53e53e2a6a85b">   55</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a59aace6531cb8f49d8e53e53e2a6a85b">testSetGetProducts</a>() {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html">OrderWindow</a> ow = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html">OrderWindow</a>(f);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        ow.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a24551aa54f5dcd3cf33a746231dd535c">setProducts</a>(products);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        assertEquals(products, ow.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a4ee896e5dee6292c1963b918572142c6">getProducts</a>());</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    @Test</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a8e84b0158d173f6222d2cda80cdb5ae1">   67</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a8e84b0158d173f6222d2cda80cdb5ae1">testSetUserName</a>() {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html">OrderWindow</a> ow = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html">OrderWindow</a>(f);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        ow.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#af2c96f2dec21df6eb9f3b2a1c8882fe0">SetUserName</a>(u);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        assertEquals(u.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#af0f1fce6fbd31608e0d127dd90551439">getNickname</a>(), ow.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#ae9b1ae8bb382370cd201c69baafdb146">getLblUserName</a>().getText());</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    @Test</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a4461cdb5aabdd68f5daee16fedb02ee9">   79</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a4461cdb5aabdd68f5daee16fedb02ee9">testCrearPedido</a>() {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">final</span> DefaultListModel&lt;Film&gt; listModelShoppingCart = <span class="keyword">new</span> DefaultListModel&lt;Film&gt;();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        listModelShoppingCart.addElement(f);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        String nickName = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html">OrderWindow</a> ow = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html">OrderWindow</a>(f);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        ow.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a24551aa54f5dcd3cf33a746231dd535c">setProducts</a>(products);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        ow.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a013277d533e0cff51814f54a57a536f6">CrearPedido</a>(listModelShoppingCart, f, nickName);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html">OrderWindow</a> ow2 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html">OrderWindow</a>(f);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">Product</a> p1 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">Product</a>(<span class="stringliteral">&quot;Palomitas Medianas&quot;</span>, <span class="stringliteral">&quot;500g&quot;</span>, 4,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="stringliteral">&quot;https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg&quot;</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">Product</a> p2 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">Product</a>(<span class="stringliteral">&quot;Palomitas Grandes&quot;</span>, <span class="stringliteral">&quot;1000g&quot;</span>, 6,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="stringliteral">&quot;https://cdns3-2.primor.eu/90833-thickbox/cubo-palomitas-grande.jpg&quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">Product</a> p3 = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">Product</a>(<span class="stringliteral">&quot;Palomitas Grandes + Coca Cola&quot;</span>, <span class="stringliteral">&quot;Unas palomitas grandes y coca cola&quot;</span>, 8,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="stringliteral">&quot;https://previews.123rf.com/images/imagestore/imagestore1606/imagestore160601787/58756143-palomitas-en-rect%C3%A1ngulo-con-el-color-en-la-copa-para-llevar-aislado-en-el-fondo-blanco.jpg&quot;</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        List&lt;Product&gt; products2 = <span class="keyword">new</span> ArrayList&lt;Product&gt;();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        products2.add(p1);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        products2.add(p2);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        products2.add(p3);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        ow2.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a24551aa54f5dcd3cf33a746231dd535c">setProducts</a>(products2);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        ow2.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a013277d533e0cff51814f54a57a536f6">CrearPedido</a>(listModelShoppingCart, f, nickName);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_order_window_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html">es.deusto.spq.gui.OrderWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_order_window_8java_source.html#l00044">OrderWindow.java:44</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_order_window_html_a013277d533e0cff51814f54a57a536f6"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a013277d533e0cff51814f54a57a536f6">es.deusto.spq.gui.OrderWindow.CrearPedido</a></div><div class="ttdeci">void CrearPedido(final DefaultListModel&lt; Film &gt; listModelShoppingCart, Film selectedFilm, String nickName)</div><div class="ttdef"><b>Definition:</b> <a href="_order_window_8java_source.html#l00218">OrderWindow.java:218</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_order_window_html_a24551aa54f5dcd3cf33a746231dd535c"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a24551aa54f5dcd3cf33a746231dd535c">es.deusto.spq.gui.OrderWindow.setProducts</a></div><div class="ttdeci">void setProducts(List&lt; Product &gt; products)</div><div class="ttdef"><b>Definition:</b> <a href="_order_window_8java_source.html#l00073">OrderWindow.java:73</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_order_window_html_a4ee896e5dee6292c1963b918572142c6"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#a4ee896e5dee6292c1963b918572142c6">es.deusto.spq.gui.OrderWindow.getProducts</a></div><div class="ttdeci">List&lt; Product &gt; getProducts()</div><div class="ttdef"><b>Definition:</b> <a href="_order_window_8java_source.html#l00065">OrderWindow.java:65</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_order_window_html_ae9b1ae8bb382370cd201c69baafdb146"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#ae9b1ae8bb382370cd201c69baafdb146">es.deusto.spq.gui.OrderWindow.getLblUserName</a></div><div class="ttdeci">JLabel getLblUserName()</div><div class="ttdef"><b>Definition:</b> <a href="_order_window_8java_source.html#l00211">OrderWindow.java:211</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_order_window_html_af2c96f2dec21df6eb9f3b2a1c8882fe0"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window.html#af2c96f2dec21df6eb9f3b2a1c8882fe0">es.deusto.spq.gui.OrderWindow.SetUserName</a></div><div class="ttdeci">void SetUserName(User u)</div><div class="ttdef"><b>Definition:</b> <a href="_order_window_8java_source.html#l00201">OrderWindow.java:201</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_order_window_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html">es.deusto.spq.gui.OrderWindowTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_order_window_test_8java_source.html#l00027">OrderWindowTest.java:27</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_order_window_test_html_a4461cdb5aabdd68f5daee16fedb02ee9"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a4461cdb5aabdd68f5daee16fedb02ee9">es.deusto.spq.gui.OrderWindowTest.testCrearPedido</a></div><div class="ttdeci">void testCrearPedido()</div><div class="ttdef"><b>Definition:</b> <a href="_order_window_test_8java_source.html#l00079">OrderWindowTest.java:79</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_order_window_test_html_a59aace6531cb8f49d8e53e53e2a6a85b"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a59aace6531cb8f49d8e53e53e2a6a85b">es.deusto.spq.gui.OrderWindowTest.testSetGetProducts</a></div><div class="ttdeci">void testSetGetProducts()</div><div class="ttdef"><b>Definition:</b> <a href="_order_window_test_8java_source.html#l00055">OrderWindowTest.java:55</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_order_window_test_html_a8b13c51051c47477cca169fdb7e91dbc"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a8b13c51051c47477cca169fdb7e91dbc">es.deusto.spq.gui.OrderWindowTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_order_window_test_8java_source.html#l00043">OrderWindowTest.java:43</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_order_window_test_html_a8e84b0158d173f6222d2cda80cdb5ae1"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_order_window_test.html#a8e84b0158d173f6222d2cda80cdb5ae1">es.deusto.spq.gui.OrderWindowTest.testSetUserName</a></div><div class="ttdeci">void testSetUserName()</div><div class="ttdef"><b>Definition:</b> <a href="_order_window_test_8java_source.html#l00067">OrderWindowTest.java:67</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_film_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_film.html">es.deusto.spq.jdo.Film</a></div><div class="ttdef"><b>Definition:</b> <a href="_film_8java_source.html#l00015">Film.java:15</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_product_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">es.deusto.spq.jdo.Product</a></div><div class="ttdef"><b>Definition:</b> <a href="_product_8java_source.html#l00016">Product.java:16</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">es.deusto.spq.jdo.User</a></div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00016">User.java:16</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_ae69b8acddec7f3c31b4cb3c02c518be0"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ae69b8acddec7f3c31b4cb3c02c518be0">es.deusto.spq.jdo.User.setNickname</a></div><div class="ttdeci">void setNickname(String nickname)</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00082">User.java:82</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_af0f1fce6fbd31608e0d127dd90551439"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#af0f1fce6fbd31608e0d127dd90551439">es.deusto.spq.jdo.User.getNickname</a></div><div class="ttdeci">String getNickname()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00075">User.java:75</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

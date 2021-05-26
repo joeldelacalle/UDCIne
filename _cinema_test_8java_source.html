@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/test/java/es/deusto/spq/jdo/CinemaTest.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_120ed4da3e3217b1e7fc0b4f48568e79.html">test</a></li><li class="navelem"><a class="el" href="dir_97debbc39e3b917fca663601bb2b0709.html">java</a></li><li class="navelem"><a class="el" href="dir_4b96a8b33d1f8ef41fbe8cb4eb39245a.html">es</a></li><li class="navelem"><a class="el" href="dir_25b06560d1af80143ff1acfc9209093d.html">deusto</a></li><li class="navelem"><a class="el" href="dir_ed5d40ea3cf05e796193518606629533.html">spq</a></li><li class="navelem"><a class="el" href="dir_4fe56d8183522424bf650048df85d518.html">jdo</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CinemaTest.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_cinema_test_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.jdo;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.*;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> org.junit.Before;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Cinema;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html">   16</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html">CinemaTest</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html">Cinema</a> c;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    @Before</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#ad8bd2e03380b9a06b0a827a5ebd0412c">   24</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#ad8bd2e03380b9a06b0a827a5ebd0412c">setUp</a>() {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        c = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html">Cinema</a>(<span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;city&quot;</span>, <span class="stringliteral">&quot;address&quot;</span>, 99);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    @Test</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a5b54c529516439c0566e2660eca274cf">   32</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a5b54c529516439c0566e2660eca274cf">testSetGetId</a>() {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        c.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#aa2b08510b06ada1b4d6923df1b7b8467">setId</a>(5);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        assertEquals(5, c.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a5e30ece5f9a10a5d09dc67d810db07a8">getId</a>());</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    @Test</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#ab42c312b33cac1b090794e3db0364693">   41</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#ab42c312b33cac1b090794e3db0364693">testSetGetName</a>() {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        c.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a3743bf3b9eb8cbddede6fc42868b18f4">setName</a>(<span class="stringliteral">&quot;testName&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        assertEquals(<span class="stringliteral">&quot;testName&quot;</span>, c.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a688e3c140e7259b63e0cbeb6893bc57e">getName</a>());</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    @Test</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a82c2f5075366191cdd7e6a7be49dc6ab">   50</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a82c2f5075366191cdd7e6a7be49dc6ab">testSetGetCity</a>() {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        c.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#ab95cdbd4efe9c406db457a93715fda7d">setCity</a>(<span class="stringliteral">&quot;testCity&quot;</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        assertEquals(<span class="stringliteral">&quot;testCity&quot;</span>, c.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6f1a9e3f74d117b08d5dc1b0b2513641">getCity</a>());</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    @Test</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a1d1f99dc8497cb2daeffdaaaf0d89877">   59</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a1d1f99dc8497cb2daeffdaaaf0d89877">testSetGetAddress</a>() {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        c.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#aa4356824616bca70996b2ca630fbc111">setAddress</a>(<span class="stringliteral">&quot;testAddress&quot;</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        assertEquals(<span class="stringliteral">&quot;testAddress&quot;</span>, c.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#af2c50833651be0c246fd8aa24d501240">getAddress</a>());</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    @Test</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a79a8ff51bb2977a985dca25586dcab7a">   68</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a79a8ff51bb2977a985dca25586dcab7a">testSetGetPhoneNumber</a>() {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        c.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a55fd59dc2dba8d45023db6ec63680a0c">setPhoneNumber</a>(8);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        assertEquals(8, c.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a5c64efa4f9a4e4a4ef0be9e564cb580d">getPhoneNumber</a>());</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    @Test</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a2b498fc9f5c9a5c83636229f3c16e96f">   77</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a2b498fc9f5c9a5c83636229f3c16e96f">testToString</a>() {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        assertEquals(<span class="stringliteral">&quot;Cinema [id=0&quot;</span> + <span class="stringliteral">&quot;, name=name&quot;</span> + <span class="stringliteral">&quot;, city=city&quot;</span> + <span class="stringliteral">&quot;, address=address&quot;</span> + <span class="stringliteral">&quot;, phoneNumber=99&quot;</span> + <span class="stringliteral">&quot;]&quot;</span>,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                c.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a8481e2f90c0cf48a08b6395e501f5232">toString</a>());</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html">es.deusto.spq.jdo.Cinema</a></div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00015">Cinema.java:15</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a3743bf3b9eb8cbddede6fc42868b18f4"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a3743bf3b9eb8cbddede6fc42868b18f4">es.deusto.spq.jdo.Cinema.setName</a></div><div class="ttdeci">void setName(String name)</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00057">Cinema.java:57</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a55fd59dc2dba8d45023db6ec63680a0c"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a55fd59dc2dba8d45023db6ec63680a0c">es.deusto.spq.jdo.Cinema.setPhoneNumber</a></div><div class="ttdeci">void setPhoneNumber(int phoneNumber)</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00093">Cinema.java:93</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a5c64efa4f9a4e4a4ef0be9e564cb580d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a5c64efa4f9a4e4a4ef0be9e564cb580d">es.deusto.spq.jdo.Cinema.getPhoneNumber</a></div><div class="ttdeci">int getPhoneNumber()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00087">Cinema.java:87</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a5e30ece5f9a10a5d09dc67d810db07a8"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a5e30ece5f9a10a5d09dc67d810db07a8">es.deusto.spq.jdo.Cinema.getId</a></div><div class="ttdeci">long getId()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00039">Cinema.java:39</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a688e3c140e7259b63e0cbeb6893bc57e"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a688e3c140e7259b63e0cbeb6893bc57e">es.deusto.spq.jdo.Cinema.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00051">Cinema.java:51</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a6f1a9e3f74d117b08d5dc1b0b2513641"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a6f1a9e3f74d117b08d5dc1b0b2513641">es.deusto.spq.jdo.Cinema.getCity</a></div><div class="ttdeci">String getCity()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00063">Cinema.java:63</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_a8481e2f90c0cf48a08b6395e501f5232"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#a8481e2f90c0cf48a08b6395e501f5232">es.deusto.spq.jdo.Cinema.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00100">Cinema.java:100</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_aa2b08510b06ada1b4d6923df1b7b8467"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#aa2b08510b06ada1b4d6923df1b7b8467">es.deusto.spq.jdo.Cinema.setId</a></div><div class="ttdeci">void setId(long id)</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00045">Cinema.java:45</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_aa4356824616bca70996b2ca630fbc111"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#aa4356824616bca70996b2ca630fbc111">es.deusto.spq.jdo.Cinema.setAddress</a></div><div class="ttdeci">void setAddress(String address)</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00081">Cinema.java:81</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_ab95cdbd4efe9c406db457a93715fda7d"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#ab95cdbd4efe9c406db457a93715fda7d">es.deusto.spq.jdo.Cinema.setCity</a></div><div class="ttdeci">void setCity(String city)</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00069">Cinema.java:69</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_html_af2c50833651be0c246fd8aa24d501240"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema.html#af2c50833651be0c246fd8aa24d501240">es.deusto.spq.jdo.Cinema.getAddress</a></div><div class="ttdeci">String getAddress()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_8java_source.html#l00075">Cinema.java:75</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html">es.deusto.spq.jdo.CinemaTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_cinema_test_8java_source.html#l00016">CinemaTest.java:16</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test_html_a1d1f99dc8497cb2daeffdaaaf0d89877"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a1d1f99dc8497cb2daeffdaaaf0d89877">es.deusto.spq.jdo.CinemaTest.testSetGetAddress</a></div><div class="ttdeci">void testSetGetAddress()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_test_8java_source.html#l00059">CinemaTest.java:59</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test_html_a2b498fc9f5c9a5c83636229f3c16e96f"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a2b498fc9f5c9a5c83636229f3c16e96f">es.deusto.spq.jdo.CinemaTest.testToString</a></div><div class="ttdeci">void testToString()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_test_8java_source.html#l00077">CinemaTest.java:77</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test_html_a5b54c529516439c0566e2660eca274cf"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a5b54c529516439c0566e2660eca274cf">es.deusto.spq.jdo.CinemaTest.testSetGetId</a></div><div class="ttdeci">void testSetGetId()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_test_8java_source.html#l00032">CinemaTest.java:32</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test_html_a79a8ff51bb2977a985dca25586dcab7a"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a79a8ff51bb2977a985dca25586dcab7a">es.deusto.spq.jdo.CinemaTest.testSetGetPhoneNumber</a></div><div class="ttdeci">void testSetGetPhoneNumber()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_test_8java_source.html#l00068">CinemaTest.java:68</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test_html_a82c2f5075366191cdd7e6a7be49dc6ab"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#a82c2f5075366191cdd7e6a7be49dc6ab">es.deusto.spq.jdo.CinemaTest.testSetGetCity</a></div><div class="ttdeci">void testSetGetCity()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_test_8java_source.html#l00050">CinemaTest.java:50</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test_html_ab42c312b33cac1b090794e3db0364693"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#ab42c312b33cac1b090794e3db0364693">es.deusto.spq.jdo.CinemaTest.testSetGetName</a></div><div class="ttdeci">void testSetGetName()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_test_8java_source.html#l00041">CinemaTest.java:41</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test_html_ad8bd2e03380b9a06b0a827a5ebd0412c"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_cinema_test.html#ad8bd2e03380b9a06b0a827a5ebd0412c">es.deusto.spq.jdo.CinemaTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_cinema_test_8java_source.html#l00024">CinemaTest.java:24</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

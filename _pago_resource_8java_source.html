@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/main/java/es/deusto/spq/resources/PagoResource.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_f9b1e2a59d62d001356ff527358589e3.html">es</a></li><li class="navelem"><a class="el" href="dir_218602b84a76f1dba535b3f8d119ec0a.html">deusto</a></li><li class="navelem"><a class="el" href="dir_7df73947654fe6d5c668d5365112078e.html">spq</a></li><li class="navelem"><a class="el" href="dir_152d89d05893f600b66e2b3a00295713.html">resources</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PagoResource.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_pago_resource_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.resources;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> java.util.ArrayList;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> java.util.logging.Level;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> java.util.logging.Logger;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> javax.jdo.JDOHelper;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> javax.jdo.PersistenceManager;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> javax.jdo.PersistenceManagerFactory;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> javax.jdo.Query;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Order;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.PayPal;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.GET;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.Path;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.Produces;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.QueryParam;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.MediaType;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;@Path(<span class="stringliteral">&quot;paypal&quot;</span>)</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_pago_resource.html">   27</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1resources_1_1_pago_resource.html">PagoResource</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_pago_resource.html#a7a5e43a3f551165d60876195d8c06f71">   28</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    @GET</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    @Path(<span class="stringliteral">&quot;getemail&quot;</span>)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    @Produces(MediaType.APPLICATION_JSON)</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_pago_resource.html#a8e370e884319348464b5e01e600aa682">   37</a></span>&#160;    public <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_pay_pal.html">PayPal</a> getPaypal(@QueryParam(&quot;email&quot;) String email) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory(<span class="stringliteral">&quot;datanucleus.properties&quot;</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        PersistenceManager pm = pmf.getPersistenceManager();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_pay_pal.html">PayPal</a> paypal = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_pay_pal.html">PayPal</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        Query&lt;PayPal&gt; q = pm.newQuery(<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_pay_pal.html">PayPal</a>.class);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        List&lt;PayPal&gt; paypallista = q.executeList();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        List&lt;PayPal&gt; paypal2 = <span class="keyword">new</span> ArrayList&lt;PayPal&gt;();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; paypallista.size(); i++) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (paypallista.get(i).getEmail().equals(email)) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                paypal2.add(paypallista.get(i));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        paypal = paypal2.get(0);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        pm.close();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> paypal;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_pay_pal_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_pay_pal.html">es.deusto.spq.jdo.PayPal</a></div><div class="ttdef"><b>Definition:</b> <a href="_pay_pal_8java_source.html#l00012">PayPal.java:12</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1resources_1_1_pago_resource_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1resources_1_1_pago_resource.html">es.deusto.spq.resources.PagoResource</a></div><div class="ttdef"><b>Definition:</b> <a href="_pago_resource_8java_source.html#l00027">PagoResource.java:27</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/test/java/es/deusto/spq/jdo/InventoryTest.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_120ed4da3e3217b1e7fc0b4f48568e79.html">test</a></li><li class="navelem"><a class="el" href="dir_97debbc39e3b917fca663601bb2b0709.html">java</a></li><li class="navelem"><a class="el" href="dir_4b96a8b33d1f8ef41fbe8cb4eb39245a.html">es</a></li><li class="navelem"><a class="el" href="dir_25b06560d1af80143ff1acfc9209093d.html">deusto</a></li><li class="navelem"><a class="el" href="dir_ed5d40ea3cf05e796193518606629533.html">spq</a></li><li class="navelem"><a class="el" href="dir_4fe56d8183522424bf650048df85d518.html">jdo</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">InventoryTest.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_inventory_test_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.jdo;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.*;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> java.util.HashSet;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> java.util.Set;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> org.junit.Before;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Inventory;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Product;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html">   20</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html">InventoryTest</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory.html">Inventory</a> i;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">private</span> Set&lt;Product&gt; products;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">Product</a> p;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    @Before</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html#a3e3bb0c13c82c4c94477ed553b520f26">   30</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html#a3e3bb0c13c82c4c94477ed553b520f26">setup</a>() {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        i = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory.html">Inventory</a>(<span class="stringliteral">&quot;name&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        products = <span class="keyword">new</span> HashSet&lt;Product&gt;();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        p = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">Product</a>(<span class="stringliteral">&quot;TestName&quot;</span>, <span class="stringliteral">&quot;TestDescription&quot;</span>, 1, <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        products.add(p);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    @Test</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html#a46b9bc523759778b889497192324d6eb">   41</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html#a46b9bc523759778b889497192324d6eb">testSetGetName</a>() {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        i.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory.html#a449c6523d413a60c4219a24ac9d09f12">setName</a>(<span class="stringliteral">&quot;testName&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        assertEquals(<span class="stringliteral">&quot;testName&quot;</span>, i.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory.html#ae6de8da73477f068e5d7585387889491">getName</a>());</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    @Test</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html#ad48a786a113ef38306c4015000a00312">   50</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html#ad48a786a113ef38306c4015000a00312">testGetProducts</a>() {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        assertEquals(products.size(), 1);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    @Test</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html#ae6998321ee2a315b3d1ffd48b5521d73">   58</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html#ae6998321ee2a315b3d1ffd48b5521d73">testToString</a>() {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        assertEquals(<span class="stringliteral">&quot;Inventory : name&quot;</span>, i.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory.html#a2838d211b354b71d3211bb3155a29f31">toString</a>());</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_inventory_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory.html">es.deusto.spq.jdo.Inventory</a></div><div class="ttdef"><b>Definition:</b> <a href="_inventory_8java_source.html#l00017">Inventory.java:17</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_inventory_html_a2838d211b354b71d3211bb3155a29f31"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory.html#a2838d211b354b71d3211bb3155a29f31">es.deusto.spq.jdo.Inventory.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_inventory_8java_source.html#l00056">Inventory.java:56</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_inventory_html_a449c6523d413a60c4219a24ac9d09f12"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory.html#a449c6523d413a60c4219a24ac9d09f12">es.deusto.spq.jdo.Inventory.setName</a></div><div class="ttdeci">void setName(String name)</div><div class="ttdef"><b>Definition:</b> <a href="_inventory_8java_source.html#l00034">Inventory.java:34</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_inventory_html_ae6de8da73477f068e5d7585387889491"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory.html#ae6de8da73477f068e5d7585387889491">es.deusto.spq.jdo.Inventory.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition:</b> <a href="_inventory_8java_source.html#l00041">Inventory.java:41</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html">es.deusto.spq.jdo.InventoryTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_inventory_test_8java_source.html#l00020">InventoryTest.java:20</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test_html_a3e3bb0c13c82c4c94477ed553b520f26"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html#a3e3bb0c13c82c4c94477ed553b520f26">es.deusto.spq.jdo.InventoryTest.setup</a></div><div class="ttdeci">void setup()</div><div class="ttdef"><b>Definition:</b> <a href="_inventory_test_8java_source.html#l00030">InventoryTest.java:30</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test_html_a46b9bc523759778b889497192324d6eb"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html#a46b9bc523759778b889497192324d6eb">es.deusto.spq.jdo.InventoryTest.testSetGetName</a></div><div class="ttdeci">void testSetGetName()</div><div class="ttdef"><b>Definition:</b> <a href="_inventory_test_8java_source.html#l00041">InventoryTest.java:41</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test_html_ad48a786a113ef38306c4015000a00312"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html#ad48a786a113ef38306c4015000a00312">es.deusto.spq.jdo.InventoryTest.testGetProducts</a></div><div class="ttdeci">void testGetProducts()</div><div class="ttdef"><b>Definition:</b> <a href="_inventory_test_8java_source.html#l00050">InventoryTest.java:50</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test_html_ae6998321ee2a315b3d1ffd48b5521d73"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_inventory_test.html#ae6998321ee2a315b3d1ffd48b5521d73">es.deusto.spq.jdo.InventoryTest.testToString</a></div><div class="ttdeci">void testToString()</div><div class="ttdef"><b>Definition:</b> <a href="_inventory_test_8java_source.html#l00058">InventoryTest.java:58</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_product_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_product.html">es.deusto.spq.jdo.Product</a></div><div class="ttdef"><b>Definition:</b> <a href="_product_8java_source.html#l00016">Product.java:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

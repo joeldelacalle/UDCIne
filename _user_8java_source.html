@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/main/java/es/deusto/spq/jdo/User.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_f9b1e2a59d62d001356ff527358589e3.html">es</a></li><li class="navelem"><a class="el" href="dir_218602b84a76f1dba535b3f8d119ec0a.html">deusto</a></li><li class="navelem"><a class="el" href="dir_7df73947654fe6d5c668d5365112078e.html">spq</a></li><li class="navelem"><a class="el" href="dir_b44f20764fb01a7190e6ea555f39e2d6.html">jdo</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">User.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_user_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.jdo;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> javax.jdo.annotations.IdGeneratorStrategy;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> javax.jdo.annotations.PersistenceCapable;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> javax.jdo.annotations.Persistent;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> javax.jdo.annotations.PrimaryKey;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;@PersistenceCapable</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">   16</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    @PrimaryKey</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    @Persistent(valueStrategy = IdGeneratorStrategy.NATIVE)</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a7b358ce50fd3accab320dd1a28648b10">   20</a></span>&#160;    protected <span class="keywordtype">long</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a7b358ce50fd3accab320dd1a28648b10">idU</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad59d1177e9691687dbc929845873f569">   22</a></span>&#160;    protected String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad59d1177e9691687dbc929845873f569">name</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a65cb59d82a82c5c800337ccad36e0298">   23</a></span>&#160;    protected String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a65cb59d82a82c5c800337ccad36e0298">nickname</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a6d7a432908e97d2c66c3c872262017c6">   24</a></span>&#160;    protected String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a6d7a432908e97d2c66c3c872262017c6">email</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad21333df8731146d77183c6c35fd7249">   25</a></span>&#160;    protected String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad21333df8731146d77183c6c35fd7249">password</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a2e76a85b43e177d54a51f35dc2c62e19">   26</a></span>&#160;    protected <span class="keywordtype">int</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a2e76a85b43e177d54a51f35dc2c62e19">phoneNumber</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a927d3cfc703bba13f7f9ca43ddceffc1">   31</a></span>&#160;    public <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad59d1177e9691687dbc929845873f569">name</a>, String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a65cb59d82a82c5c800337ccad36e0298">nickname</a>, String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a6d7a432908e97d2c66c3c872262017c6">email</a>, String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad21333df8731146d77183c6c35fd7249">password</a>, <span class="keywordtype">int</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a2e76a85b43e177d54a51f35dc2c62e19">phoneNumber</a>) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        super();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        this.name = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad59d1177e9691687dbc929845873f569">name</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        this.nickname = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a65cb59d82a82c5c800337ccad36e0298">nickname</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        this.email = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a6d7a432908e97d2c66c3c872262017c6">email</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        this.password = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad21333df8731146d77183c6c35fd7249">password</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        this.phoneNumber = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a2e76a85b43e177d54a51f35dc2c62e19">phoneNumber</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a18841481860193fffeba566334f7b7a3">   40</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a18841481860193fffeba566334f7b7a3">User</a>() {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#acad20b584734d201fff31baef651e497">   46</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#acad20b584734d201fff31baef651e497">getId</a>() {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a7b358ce50fd3accab320dd1a28648b10">idU</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a80d8cf60f2ba93ffa3514df13e92f52b">   53</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a80d8cf60f2ba93ffa3514df13e92f52b">setId</a>(<span class="keywordtype">long</span> <span class="keywordtype">id</span>) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        this.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a7b358ce50fd3accab320dd1a28648b10">idU</a> = id;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ab052a72d2f65d9dec93e9e55efc0013c">   61</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ab052a72d2f65d9dec93e9e55efc0013c">getName</a>() {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad59d1177e9691687dbc929845873f569">name</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a62b0f51ed87599acc5732d68143856ac">   68</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a62b0f51ed87599acc5732d68143856ac">setName</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad59d1177e9691687dbc929845873f569">name</a>) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        this.name = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad59d1177e9691687dbc929845873f569">name</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#af0f1fce6fbd31608e0d127dd90551439">   75</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#af0f1fce6fbd31608e0d127dd90551439">getNickname</a>() {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a65cb59d82a82c5c800337ccad36e0298">nickname</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ae69b8acddec7f3c31b4cb3c02c518be0">   82</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ae69b8acddec7f3c31b4cb3c02c518be0">setNickname</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a65cb59d82a82c5c800337ccad36e0298">nickname</a>) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        this.nickname = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a65cb59d82a82c5c800337ccad36e0298">nickname</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#aa07f1d750ea775cc94fa44fae2a9ec14">   89</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#aa07f1d750ea775cc94fa44fae2a9ec14">getEmail</a>() {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a6d7a432908e97d2c66c3c872262017c6">email</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ae9b315e35cffac85d80e58024c456665">   96</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ae9b315e35cffac85d80e58024c456665">setEmail</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a6d7a432908e97d2c66c3c872262017c6">email</a>) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        this.email = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a6d7a432908e97d2c66c3c872262017c6">email</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a910ebf09df4768d2bceb1ff58b26e0ae">  103</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a910ebf09df4768d2bceb1ff58b26e0ae">getPassword</a>() {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad21333df8731146d77183c6c35fd7249">password</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a551482765276d3dbbe7bb971db13a4d3">  110</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a551482765276d3dbbe7bb971db13a4d3">setPassword</a>(String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad21333df8731146d77183c6c35fd7249">password</a>) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        this.password = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad21333df8731146d77183c6c35fd7249">password</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a62b8c1a6190118d413c380b083e6a917">  117</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a62b8c1a6190118d413c380b083e6a917">getPhoneNumber</a>() {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a2e76a85b43e177d54a51f35dc2c62e19">phoneNumber</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a8dfef17a7091cf9346c993455fac697b">  124</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a8dfef17a7091cf9346c993455fac697b">setPhoneNumber</a>(<span class="keywordtype">int</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a2e76a85b43e177d54a51f35dc2c62e19">phoneNumber</a>) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        this.phoneNumber = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a2e76a85b43e177d54a51f35dc2c62e19">phoneNumber</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a5513b9b5e95dbeb18976315c9039ee1f">  132</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a5513b9b5e95dbeb18976315c9039ee1f">toString</a>() {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;User [id=&quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a7b358ce50fd3accab320dd1a28648b10">idU</a> + <span class="stringliteral">&quot;, name=&quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad59d1177e9691687dbc929845873f569">name</a> + <span class="stringliteral">&quot;, nickname=&quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a65cb59d82a82c5c800337ccad36e0298">nickname</a> + <span class="stringliteral">&quot;, email=&quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a6d7a432908e97d2c66c3c872262017c6">email</a> + <span class="stringliteral">&quot;, password=&quot;</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                + <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad21333df8731146d77183c6c35fd7249">password</a> + <span class="stringliteral">&quot;, phoneNumber=&quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a2e76a85b43e177d54a51f35dc2c62e19">phoneNumber</a> + <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">es.deusto.spq.jdo.User</a></div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00016">User.java:16</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_a18841481860193fffeba566334f7b7a3"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a18841481860193fffeba566334f7b7a3">es.deusto.spq.jdo.User.User</a></div><div class="ttdeci">User()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00040">User.java:40</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_a2e76a85b43e177d54a51f35dc2c62e19"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a2e76a85b43e177d54a51f35dc2c62e19">es.deusto.spq.jdo.User.phoneNumber</a></div><div class="ttdeci">int phoneNumber</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00026">User.java:26</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_a5513b9b5e95dbeb18976315c9039ee1f"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a5513b9b5e95dbeb18976315c9039ee1f">es.deusto.spq.jdo.User.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00132">User.java:132</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_a551482765276d3dbbe7bb971db13a4d3"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a551482765276d3dbbe7bb971db13a4d3">es.deusto.spq.jdo.User.setPassword</a></div><div class="ttdeci">void setPassword(String password)</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00110">User.java:110</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_a62b0f51ed87599acc5732d68143856ac"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a62b0f51ed87599acc5732d68143856ac">es.deusto.spq.jdo.User.setName</a></div><div class="ttdeci">void setName(String name)</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00068">User.java:68</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_a62b8c1a6190118d413c380b083e6a917"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a62b8c1a6190118d413c380b083e6a917">es.deusto.spq.jdo.User.getPhoneNumber</a></div><div class="ttdeci">int getPhoneNumber()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00117">User.java:117</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_a65cb59d82a82c5c800337ccad36e0298"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a65cb59d82a82c5c800337ccad36e0298">es.deusto.spq.jdo.User.nickname</a></div><div class="ttdeci">String nickname</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00023">User.java:23</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_a6d7a432908e97d2c66c3c872262017c6"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a6d7a432908e97d2c66c3c872262017c6">es.deusto.spq.jdo.User.email</a></div><div class="ttdeci">String email</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00024">User.java:24</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_a7b358ce50fd3accab320dd1a28648b10"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a7b358ce50fd3accab320dd1a28648b10">es.deusto.spq.jdo.User.idU</a></div><div class="ttdeci">long idU</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00020">User.java:20</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_a80d8cf60f2ba93ffa3514df13e92f52b"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a80d8cf60f2ba93ffa3514df13e92f52b">es.deusto.spq.jdo.User.setId</a></div><div class="ttdeci">void setId(long id)</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00053">User.java:53</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_a8dfef17a7091cf9346c993455fac697b"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a8dfef17a7091cf9346c993455fac697b">es.deusto.spq.jdo.User.setPhoneNumber</a></div><div class="ttdeci">void setPhoneNumber(int phoneNumber)</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00124">User.java:124</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_a910ebf09df4768d2bceb1ff58b26e0ae"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a910ebf09df4768d2bceb1ff58b26e0ae">es.deusto.spq.jdo.User.getPassword</a></div><div class="ttdeci">String getPassword()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00103">User.java:103</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_aa07f1d750ea775cc94fa44fae2a9ec14"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#aa07f1d750ea775cc94fa44fae2a9ec14">es.deusto.spq.jdo.User.getEmail</a></div><div class="ttdeci">String getEmail()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00089">User.java:89</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_ab052a72d2f65d9dec93e9e55efc0013c"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ab052a72d2f65d9dec93e9e55efc0013c">es.deusto.spq.jdo.User.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00061">User.java:61</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_acad20b584734d201fff31baef651e497"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#acad20b584734d201fff31baef651e497">es.deusto.spq.jdo.User.getId</a></div><div class="ttdeci">long getId()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00046">User.java:46</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_ad21333df8731146d77183c6c35fd7249"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad21333df8731146d77183c6c35fd7249">es.deusto.spq.jdo.User.password</a></div><div class="ttdeci">String password</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00025">User.java:25</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_ad59d1177e9691687dbc929845873f569"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ad59d1177e9691687dbc929845873f569">es.deusto.spq.jdo.User.name</a></div><div class="ttdeci">String name</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00022">User.java:22</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_ae69b8acddec7f3c31b4cb3c02c518be0"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ae69b8acddec7f3c31b4cb3c02c518be0">es.deusto.spq.jdo.User.setNickname</a></div><div class="ttdeci">void setNickname(String nickname)</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00082">User.java:82</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_ae9b315e35cffac85d80e58024c456665"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ae9b315e35cffac85d80e58024c456665">es.deusto.spq.jdo.User.setEmail</a></div><div class="ttdeci">void setEmail(String email)</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00096">User.java:96</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_af0f1fce6fbd31608e0d127dd90551439"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#af0f1fce6fbd31608e0d127dd90551439">es.deusto.spq.jdo.User.getNickname</a></div><div class="ttdeci">String getNickname()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00075">User.java:75</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

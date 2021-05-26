@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/main/java/es/deusto/spq/resources/UserResource.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_f9b1e2a59d62d001356ff527358589e3.html">es</a></li><li class="navelem"><a class="el" href="dir_218602b84a76f1dba535b3f8d119ec0a.html">deusto</a></li><li class="navelem"><a class="el" href="dir_7df73947654fe6d5c668d5365112078e.html">spq</a></li><li class="navelem"><a class="el" href="dir_152d89d05893f600b66e2b3a00295713.html">resources</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">UserResource.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_user_resource_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.resources;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> java.util.logging.Level;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> java.util.logging.Logger;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> javax.jdo.JDOHelper;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> javax.jdo.PersistenceManager;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> javax.jdo.PersistenceManagerFactory;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> javax.jdo.Query;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.PayPal;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.User;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.GET;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.Path;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.Produces;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.QueryParam;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> jakarta.ws.rs.core.MediaType;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;@Path(<span class="stringliteral">&quot;users&quot;</span>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_user_resource.html">   26</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1resources_1_1_user_resource.html">UserResource</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_user_resource.html#a9125637bb7070f1684c5075dd4b4c13e">   27</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    @GET</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    @Path(<span class="stringliteral">&quot;allusers&quot;</span>)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    @Produces(MediaType.APPLICATION_JSON)</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_user_resource.html#ae117502e820d199b93b0d0c8130df100">   35</a></span>&#160;    public List&lt;<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a>&gt; getUsers() {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory(<span class="stringliteral">&quot;datanucleus.properties&quot;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        PersistenceManager pm = pmf.getPersistenceManager();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        Query&lt;User&gt; q = pm.newQuery(<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a>.class);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        q.setOrdering(<span class="stringliteral">&quot;name desc&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        List&lt;User&gt; users = q.executeList();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        pm.close();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> users;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    @GET</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    @Path(<span class="stringliteral">&quot;getuser&quot;</span>)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    @Produces(MediaType.APPLICATION_JSON)</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_user_resource.html#ae1b5852c0f7d11f6fa996dc266cad91e">   55</a></span>&#160;    public <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a> getUser(@QueryParam(&quot;nickname&quot;) String nickname) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory(<span class="stringliteral">&quot;datanucleus.properties&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        PersistenceManager pm = pmf.getPersistenceManager();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a> user = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">try</span> (Query&lt;User&gt; u = pm</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                .newQuery(<span class="stringliteral">&quot;SELECT FROM &quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a>.class.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ab052a72d2f65d9dec93e9e55efc0013c">getName</a>() + <span class="stringliteral">&quot; WHERE nickname== &#39;&quot;</span> + nickname + <span class="stringliteral">&quot;&#39;&quot;</span>)) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            List&lt;User&gt; userlista = u.executeList();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            user = userlista.get(0);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            logger.log(Level.WARNING, <span class="stringliteral">&quot;ERROR&quot;</span>,e);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="comment">//e.printStackTrace();</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        pm.close();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> user;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1resources_1_1_user_resource.html#a38cda098afe498287e0d28d80873fa1e">   78</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1resources_1_1_user_resource.html#a38cda098afe498287e0d28d80873fa1e">CheckUser</a>(String email, String password) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory(<span class="stringliteral">&quot;datanucleus.properties&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        PersistenceManager pm = pmf.getPersistenceManager();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a> user = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">try</span> (Query&lt;User&gt; q = pm.newQuery(<span class="stringliteral">&quot;SELECT FROM &quot;</span> + <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a>.class.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ab052a72d2f65d9dec93e9e55efc0013c">getName</a>() + <span class="stringliteral">&quot; WHERE nickname== &#39;&quot;</span> + email</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                + <span class="stringliteral">&quot;&#39; &amp;&amp; password== &#39;&quot;</span> + password + <span class="stringliteral">&quot;&#39;&quot;</span>)) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            List&lt;User&gt; users = q.executeList();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            user = users.get(0);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            System.out.println(user.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a5513b9b5e95dbeb18976315c9039ee1f">toString</a>());</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            logger.log(Level.WARNING, <span class="stringliteral">&quot;ERROR&quot;</span>,e);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="comment">//e.printStackTrace();</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        pm.close();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">es.deusto.spq.jdo.User</a></div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00016">User.java:16</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_a5513b9b5e95dbeb18976315c9039ee1f"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#a5513b9b5e95dbeb18976315c9039ee1f">es.deusto.spq.jdo.User.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00132">User.java:132</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html_ab052a72d2f65d9dec93e9e55efc0013c"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html#ab052a72d2f65d9dec93e9e55efc0013c">es.deusto.spq.jdo.User.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00061">User.java:61</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1resources_1_1_user_resource_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1resources_1_1_user_resource.html">es.deusto.spq.resources.UserResource</a></div><div class="ttdef"><b>Definition:</b> <a href="_user_resource_8java_source.html#l00026">UserResource.java:26</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1resources_1_1_user_resource_html_a38cda098afe498287e0d28d80873fa1e"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1resources_1_1_user_resource.html#a38cda098afe498287e0d28d80873fa1e">es.deusto.spq.resources.UserResource.CheckUser</a></div><div class="ttdeci">boolean CheckUser(String email, String password)</div><div class="ttdef"><b>Definition:</b> <a href="_user_resource_8java_source.html#l00078">UserResource.java:78</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UD Cine: Fichero Fuente src/test/java/es/deusto/spq/gui/MainWindowTest.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UD Cine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_120ed4da3e3217b1e7fc0b4f48568e79.html">test</a></li><li class="navelem"><a class="el" href="dir_97debbc39e3b917fca663601bb2b0709.html">java</a></li><li class="navelem"><a class="el" href="dir_4b96a8b33d1f8ef41fbe8cb4eb39245a.html">es</a></li><li class="navelem"><a class="el" href="dir_25b06560d1af80143ff1acfc9209093d.html">deusto</a></li><li class="navelem"><a class="el" href="dir_ed5d40ea3cf05e796193518606629533.html">spq</a></li><li class="navelem"><a class="el" href="dir_8ae5c32b2cfc0752ea2169b12e529f4e.html">gui</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MainWindowTest.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_main_window_test_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">package </span>es.deusto.spq.gui;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> java.io.IOException;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> javax.swing.JButton;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> javax.swing.JLabel;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//import org.apache.maven.settings.Server;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> org.glassfish.grizzly.http.server.HttpServer;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> org.junit.After;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> org.junit.Before;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> org.junit.Test;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> org.junit.experimental.categories.Category;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.Main;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> es.deusto.spq.jdo.User;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> es.deusto.spq.types.GuiTest;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;@Category(GuiTest.class)</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html">   27</a></span>&#160;public class <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html">MainWindowTest</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html">MainWindow</a> mw;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">private</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a> u;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">private</span> String urlS;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">private</span> JButton jbutton;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">private</span> JLabel lblUserName;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">private</span> HttpServer server;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    @Before</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#afe8dfc8fe649c854b77051ae4f0fa3a7">   42</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#afe8dfc8fe649c854b77051ae4f0fa3a7">setUp</a>() {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        server = <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">Main</a>.<a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a23ceca01d3d581472df36f867877fdbd">startServer</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        mw = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html">MainWindow</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        u = <span class="keyword">new</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">User</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        urlS = <span class="stringliteral">&quot;https://pics.filmaffinity.com/iron_man-108960873-large.jpg&quot;</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        jbutton = <span class="keyword">new</span> JButton();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        lblUserName = <span class="keyword">new</span> JLabel(<span class="stringliteral">&quot;jaimesanta&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    @After</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#ad30d5d9b4013d76970804cf7f2d13846">   53</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#ad30d5d9b4013d76970804cf7f2d13846">tearDown</a>() throws Exception {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        server.stop();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    @Test</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a8b8071a0228e83882b4cd0539177e874">   62</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a8b8071a0228e83882b4cd0539177e874">testSetUserName</a>() {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        mw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a81ba60f3312d1f7618e18dd87065010c">SetUserName</a>(u);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    @Test</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a1bcd78d8a0960ff23514c267315bd2b5">   72</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a1bcd78d8a0960ff23514c267315bd2b5">SetEmail</a>() {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        mw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a149c572246c26da41c67a5608292bd62">SetEmail</a>(u);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    @Test</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a87667ab4c13754389ae8e079c791b082">   82</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a87667ab4c13754389ae8e079c791b082">btnSetImageIcon</a>() throws IOException {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        mw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a78db5d7c1dc3ef5ed85f1a116eb6de4e">btnSetImageIcon</a>(urlS, jbutton);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    @Test</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a365222454c7a9b8c4ef513d6dc8e30e9">   93</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a365222454c7a9b8c4ef513d6dc8e30e9">testInitReceiptWindow</a>() {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        mw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#ad49d76e5ced2abfaa7e3741c3091421e">initReceiptWindow</a>(lblUserName);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    @Test</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a6efc15b5a1f676147cb40428b3a15481">  102</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a6efc15b5a1f676147cb40428b3a15481">testInitFilmWindow</a>() {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        mw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a908a80afa3947b13b7a455c83add6e17">initFilmWindow</a>(lblUserName, 0);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    @Test</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a4a83b39fa0c8e7e8c9d8a7e2ab31b453">  111</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a4a83b39fa0c8e7e8c9d8a7e2ab31b453">testInitReleasesWindow</a>() {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        mw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a37b1afa2d9cc16e58e6696c197aad746">initLastReleasesWindow</a>();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    @Test</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a10f39719638de3e4521fb2c36c3f7dec">  120</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a10f39719638de3e4521fb2c36c3f7dec">testInitRatingWindow</a>() {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        mw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#af0ae5c1aaf81f010acaeb2f7ad41811a">initRatingWindow</a>(lblUserName);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    @Test</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#adeb8909add768417a8667db4c7fa694f">  129</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#adeb8909add768417a8667db4c7fa694f">testInitVipWindow</a>() {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        mw.<a class="code" href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a73b45801996ba1368f14949a2f6489e3">initVipWindow</a>(lblUserName);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html">es.deusto.spq.gui.MainWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8java_source.html#l00042">MainWindow.java:42</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_html_a149c572246c26da41c67a5608292bd62"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a149c572246c26da41c67a5608292bd62">es.deusto.spq.gui.MainWindow.SetEmail</a></div><div class="ttdeci">void SetEmail(User u)</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8java_source.html#l00253">MainWindow.java:253</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_html_a37b1afa2d9cc16e58e6696c197aad746"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a37b1afa2d9cc16e58e6696c197aad746">es.deusto.spq.gui.MainWindow.initLastReleasesWindow</a></div><div class="ttdeci">void initLastReleasesWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8java_source.html#l00332">MainWindow.java:332</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_html_a73b45801996ba1368f14949a2f6489e3"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a73b45801996ba1368f14949a2f6489e3">es.deusto.spq.gui.MainWindow.initVipWindow</a></div><div class="ttdeci">void initVipWindow(JLabel lblUserName)</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8java_source.html#l00297">MainWindow.java:297</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_html_a78db5d7c1dc3ef5ed85f1a116eb6de4e"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a78db5d7c1dc3ef5ed85f1a116eb6de4e">es.deusto.spq.gui.MainWindow.btnSetImageIcon</a></div><div class="ttdeci">void btnSetImageIcon(String urlS, JButton jb)</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8java_source.html#l00263">MainWindow.java:263</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_html_a81ba60f3312d1f7618e18dd87065010c"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a81ba60f3312d1f7618e18dd87065010c">es.deusto.spq.gui.MainWindow.SetUserName</a></div><div class="ttdeci">void SetUserName(User u)</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8java_source.html#l00243">MainWindow.java:243</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_html_a908a80afa3947b13b7a455c83add6e17"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#a908a80afa3947b13b7a455c83add6e17">es.deusto.spq.gui.MainWindow.initFilmWindow</a></div><div class="ttdeci">void initFilmWindow(JLabel lblUserName, int i)</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8java_source.html#l00308">MainWindow.java:308</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_html_ad49d76e5ced2abfaa7e3741c3091421e"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#ad49d76e5ced2abfaa7e3741c3091421e">es.deusto.spq.gui.MainWindow.initReceiptWindow</a></div><div class="ttdeci">void initReceiptWindow(JLabel lblUserName)</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8java_source.html#l00285">MainWindow.java:285</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_html_af0ae5c1aaf81f010acaeb2f7ad41811a"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window.html#af0ae5c1aaf81f010acaeb2f7ad41811a">es.deusto.spq.gui.MainWindow.initRatingWindow</a></div><div class="ttdeci">void initRatingWindow(JLabel lblUserName)</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8java_source.html#l00320">MainWindow.java:320</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_test_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html">es.deusto.spq.gui.MainWindowTest</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_window_test_8java_source.html#l00027">MainWindowTest.java:27</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_test_html_a10f39719638de3e4521fb2c36c3f7dec"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a10f39719638de3e4521fb2c36c3f7dec">es.deusto.spq.gui.MainWindowTest.testInitRatingWindow</a></div><div class="ttdeci">void testInitRatingWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_test_8java_source.html#l00120">MainWindowTest.java:120</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_test_html_a1bcd78d8a0960ff23514c267315bd2b5"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a1bcd78d8a0960ff23514c267315bd2b5">es.deusto.spq.gui.MainWindowTest.SetEmail</a></div><div class="ttdeci">void SetEmail()</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_test_8java_source.html#l00072">MainWindowTest.java:72</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_test_html_a365222454c7a9b8c4ef513d6dc8e30e9"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a365222454c7a9b8c4ef513d6dc8e30e9">es.deusto.spq.gui.MainWindowTest.testInitReceiptWindow</a></div><div class="ttdeci">void testInitReceiptWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_test_8java_source.html#l00093">MainWindowTest.java:93</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_test_html_a4a83b39fa0c8e7e8c9d8a7e2ab31b453"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a4a83b39fa0c8e7e8c9d8a7e2ab31b453">es.deusto.spq.gui.MainWindowTest.testInitReleasesWindow</a></div><div class="ttdeci">void testInitReleasesWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_test_8java_source.html#l00111">MainWindowTest.java:111</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_test_html_a6efc15b5a1f676147cb40428b3a15481"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a6efc15b5a1f676147cb40428b3a15481">es.deusto.spq.gui.MainWindowTest.testInitFilmWindow</a></div><div class="ttdeci">void testInitFilmWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_test_8java_source.html#l00102">MainWindowTest.java:102</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_test_html_a87667ab4c13754389ae8e079c791b082"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a87667ab4c13754389ae8e079c791b082">es.deusto.spq.gui.MainWindowTest.btnSetImageIcon</a></div><div class="ttdeci">void btnSetImageIcon()</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_test_8java_source.html#l00082">MainWindowTest.java:82</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_test_html_a8b8071a0228e83882b4cd0539177e874"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#a8b8071a0228e83882b4cd0539177e874">es.deusto.spq.gui.MainWindowTest.testSetUserName</a></div><div class="ttdeci">void testSetUserName()</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_test_8java_source.html#l00062">MainWindowTest.java:62</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_test_html_ad30d5d9b4013d76970804cf7f2d13846"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#ad30d5d9b4013d76970804cf7f2d13846">es.deusto.spq.gui.MainWindowTest.tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_test_8java_source.html#l00053">MainWindowTest.java:53</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_test_html_adeb8909add768417a8667db4c7fa694f"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#adeb8909add768417a8667db4c7fa694f">es.deusto.spq.gui.MainWindowTest.testInitVipWindow</a></div><div class="ttdeci">void testInitVipWindow()</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_test_8java_source.html#l00129">MainWindowTest.java:129</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1gui_1_1_main_window_test_html_afe8dfc8fe649c854b77051ae4f0fa3a7"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1gui_1_1_main_window_test.html#afe8dfc8fe649c854b77051ae4f0fa3a7">es.deusto.spq.gui.MainWindowTest.setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_test_8java_source.html#l00042">MainWindowTest.java:42</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html">es.deusto.spq.jdo.Main</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00018">Main.java:18</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_main_html_a23ceca01d3d581472df36f867877fdbd"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_main.html#a23ceca01d3d581472df36f867877fdbd">es.deusto.spq.jdo.Main.startServer</a></div><div class="ttdeci">static HttpServer startServer()</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00030">Main.java:30</a></div></div>
+<div class="ttc" id="aclasses_1_1deusto_1_1spq_1_1jdo_1_1_user_html"><div class="ttname"><a href="classes_1_1deusto_1_1spq_1_1jdo_1_1_user.html">es.deusto.spq.jdo.User</a></div><div class="ttdef"><b>Definition:</b> <a href="_user_8java_source.html#l00016">User.java:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
